@@ -21,6 +21,8 @@ pipenv install
 ```
 pipenv shell
 
+cd BCpy2000
+
 cd batch
 
 PythonDemo1_Triangle_p3.bat
