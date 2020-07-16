@@ -1,0 +1,76 @@
+Source:Signal%20Properties int SourceCh= 16 16 1 % // number of digitized and stored channels
+Source:Signal%20Properties int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
+Source:Signal%20Properties int SamplingRate= 256 256Hz 1 % // sample rate
+Source:Signal%20Properties list ChannelNames= 16 Ch1 Ch2 Ch3 Ch4 Ch5 Ch6 Ch7 Ch8 Ch9 Ch10 Ch11 Ch12 Ch13 Ch14 Ch15 Ch16 // list of channel names
+Source:Signal%20Properties floatlist SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 % % // Offset for channels in A/D units
+Source:Signal%20Properties floatlist SourceChGain= 16 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 % % // gain for each channel (A/D units -> muV)
+Storage:Data%20Location string DataDirectory= ../data ../data % % // path to top level data directory (directory)
+Storage:Session string SubjectName= Name Name % % // subject alias
+Storage:Session string SubjectSession= 001 001 % % // three-digit session number
+Storage:Session string SubjectRun= 00 00 % % // two-digit run number
+Storage:Documentation string ID_System= % // BCI2000 System Code
+Storage:Documentation string ID_Amp= % // BCI2000 Amp Code
+Storage:Documentation string ID_Montage= % // BCI2000 Cap Montage Code
+Visualize:Timing int VisualizeRoundtrip= 1 1 0 1 // visualize roundtrip time (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSourceDecimation= 1 1 0 % // decimation factor for raw brain signal
+Visualize:Source%20Signal int VisualizeSourceTime= 2s 2 0 % // how much time in Source visualization
+Source:SignalGeneratorADC int ModulateAmplitude= 1 0 0 1 // Modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source:SignalGeneratorADC int SineChannelX= 0 0 0 % // Channel number of sinewave controlled by mouse x position
+Source:SignalGeneratorADC int SineChannelY= 0 0 0 % // Channel number of sinewave controlled by mouse y position (0 for all)
+Source:SignalGeneratorADC int SineChannelZ= 0 0 0 % // Channel number of sinewave controlled by mouse key state
+Source:SignalGeneratorADC float SineFrequency= 10Hz 10Hz % % // Frequency of sine wave
+Source:SignalGeneratorADC int SineAmplitude= 100muV 100muV % % // Amplitude of sine wave
+Source:SignalGeneratorADC int NoiseAmplitude= 80muV 30muV % % // Amplitude of white noise (common to all channels)
+Source:SignalGeneratorADC int DCOffset= 0muV 0muV % % // DC offset (common to all channels)
+Source:SignalGeneratorADC string OffsetMultiplier= % StimulusType % % // Expression to multiply offset by
+Source:SignalGeneratorADC int RandomSeed= 0 0 0 1 // Initialization value for random number generator (initialize from time if 0)
+Source:SignalGeneratorADC int SignalType= 0 0 0 2 // numeric type of output signal:  0: int16, 1: int32  2: float32,(enumeration)
+Storage:BCI2000FileWriter int SavePrmFile= 0 1 0 1 // save additional parameter file (0=no, 1=yes) (boolean)
+Storage:BCI2000FileWriter string StorageTime= % // time of beginning of data storage
+Source:Source%20Filter int NotchFilter= 0 0 0 2 // Power line notch filter: 0: disabled, 1: at 50Hz, 2: at 60Hz (enumeration)
+Source:Source%20Filter int HighPassFilter= 0 0 0 1 // Source high pass filter: 0: disabled, 1: at 0.1Hz (enumeration)
+Source:Alignment int AlignChannels= 1 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Source:Online%20Processing stringlist TransmitChList= 4 1 2 3 4 1 1 128 // list of transmitted channels
+Visualize:Processing%20Stages int VisualizeAlignmentFilter= 0 0 0 1 // Visualize AlignmentFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeTransmissionFilter= 0 0 0 1 // Visualize TransmissionFilter output (boolean)
+Filtering:SpatialFilter matrix SpatialFilter= { Sf1 Sf2 Sf3 Sf4 } 4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 % % // columns represent input channels, rows represent output channels
+Filtering:ARFilter int WindowLength= 0.5s 0.5s % % // Time window for spectrum computation
+Filtering:ARFilter int Detrend= 0 0 0 2 // Detrend data? 0: no, 1: mean, 2: linear (enumeration)
+Filtering:ARFilter int ModelOrder= 16 16 0 % // AR model order
+Filtering:ARFilter int OutputType= 0 0 0 2 // 0: Spectral Amplitude, 1: Spectral Power, 2: AR Coefficients (enumeration)
+Filtering:ARFilter float FirstBinCenter= 0Hz 0Hz % % // Center of first frequency bin in Hz
+Filtering:ARFilter float LastBinCenter= 30Hz 30Hz % % // Center of last frequency bin in Hz
+Filtering:ARFilter float BinWidth= 3Hz 3Hz % % // Width of spectral bins in Hz
+Filtering:ARFilter int EvaluationsPerBin= 15 15 1 % // Number of uniformly spaced evaluation points entering into a single bin value
+Filtering:LinearClassifier matrix Classifier= 1 { input%20channel input%20element%20(bin) output%20channel weight } Sf1 9Hz 1 1 // Linear classification matrix in sparse representation
+Filtering:LPFilter float LPTimeConstant= 1/2s 16s 0 % // time constant for the low pass filter
+Filtering:Normalizer floatlist NormalizerOffsets= 1 341.93 0 % % // normalizer offsets
+Filtering:Normalizer floatlist NormalizerGains= 1 0.0112692 0 % % // normalizer gain values
+Filtering:Normalizer intlist Adaptation= 2 2 2 0 0 2 // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer matrix BufferConditions= 2 1 (Feedback)&&(TargetCode==1) (Feedback)&&(TargetCode==2) // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+Filtering:Normalizer float BufferLength= 9s 9s % % // time window of past data per buffer that enters into statistic
+Filtering:Normalizer string UpdateTrigger= (Feedback==0) // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)
+Visualize:Processing%20Stages int VisualizeSpatialFilter= 1 0 0 1 // Visualize SpatialFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeARFilter= 1 0 0 1 // Visualize ARFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeLinearClassifier= 0 0 0 1 // Visualize LinearClassifier output (boolean)
+Visualize:Processing%20Stages int VisualizeLPFilter= 0 0 0 1 // Visualize LPFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeNormalizer= 1 0 0 1 // Visualize Normalizer output (boolean)
+Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
+Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
+Application:Window int WindowWidth= 640 640 0 % // width of application window
+Application:Window int WindowHeight= 480 480 0 % // height of application window
+Application:Window int WindowLeft= 0 0 % % // screen coordinate of application window's left edge
+Application:Window int WindowTop= 0 0 % % // screen coordinate of application window's top edge
+Application:Sequencing float PreRunDuration= 2s 2s 0 % // duration of pause preceding first trial
+Application:Sequencing float PreFeedbackDuration= 2s 2s 0 % // duration of target display prior to feedback
+Application:Sequencing float FeedbackDuration= 3s 3s 0 % // duration of feedback
+Application:Sequencing float PostFeedbackDuration= 1s 1s 0 % // duration of result display after feedback
+Application:Sequencing float ITIDuration= 1s 1s 0 % // duration of inter-trial interval
+Application:Sequencing float MinRunLength= 120s 120s 0 % // minimum duration of a run
+Application:Targets int NumberTargets= 2 2 0 15 // number of targets
+Application:Cursor int CursorColor= 0xFF0000 0xFF0000 % % // feedback cursor color (color)
+Application:Cursor float CursorWidth= 5 5 0.0 % // feedback cursor width in percent of screen width
+Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20320 % % // IP address/port to write to, e.g. localhost:20320
+Application:Localization string Language= Default Default % % // Language for user messages

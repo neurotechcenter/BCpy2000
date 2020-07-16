@@ -1,0 +1,4 @@
+Filtering:Hijacking                           int       Hijack=                   0     // Turn on Hijacking? (boolean)
+Filtering:SpatialFilter                       int       SpatialFilterType=        1     // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
+Filtering:LinearClassifier                    matrix    Classifier=      7 { input%20channel input%20element output%20channel weight }  C4 9Hz 1 -1.0   C3 9Hz 2 -1.0   CP3 9Hz 2 -1.0   P3 9Hz 2 -1.0   C3 18Hz 2 -1.0   CP3 18Hz 2 -1.0   P3 18Hz 2 -1.0              // Linear classification weight matrix in sparse representation
+Filtering:SpatialFilter                       matrix    SpatialFilter=   { C3 Cz C4 } { F3 F4 T7 C3 Cz C4 T8 Pz } -0.25 0.00 -0.25 1.00 -0.25 0.00 0.00 -0.25 -0.20 -0.20 0.00 -0.20 1.00 -0.20 0.00 -0.20 0.00 -0.25 0.00 0.00 -0.25 1.00 -0.25 -0.25 0 % % // columns represent input channels, rows represent output channels

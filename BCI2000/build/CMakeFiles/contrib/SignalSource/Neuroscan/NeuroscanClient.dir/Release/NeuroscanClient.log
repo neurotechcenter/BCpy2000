@@ -1,0 +1,17 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/Neuroscan/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/Neuroscan/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  NeuroscanADC.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  NeuroscanClient.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Neuroscan\Release\NeuroscanClient.exe
+  	Deploying executable
+  copying files:
+  Copying NeuroscanClient.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

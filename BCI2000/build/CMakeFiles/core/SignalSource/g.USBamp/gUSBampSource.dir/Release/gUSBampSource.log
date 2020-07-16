@@ -1,0 +1,18 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/core/SignalSource/g.USBamp/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/core/SignalSource/g.USBamp/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  gUSBampADC.cpp
+  gUSBamp.imports.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  gUSBampSource.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.USBamp\Release\gUSBampSource.exe
+  	Deploying executable
+  copying files:
+  Copying gUSBampSource.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

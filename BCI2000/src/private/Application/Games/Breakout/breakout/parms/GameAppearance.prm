@@ -1,0 +1,9 @@
+Application:Game                        matrix    VideoTheme= 8 { type texture } Block breakout/images/Block.bmp Block_2 breakout/images/Block_2.bmp Block_1 breakout/images/Block_1.bmp Ball breakout/images/basketball.png Paddle breakout/images/Paddle.bmp Background breakout/images/Background.bmp Reward breakout/images/coin.png Ineligible breakout/images/noentry.png // Graphical theme for the game 
+Application:Game                        matrix    AudioTheme= 7 { event sound }  HitBlock breakout/sounds/tick.wav HitPaddle breakout/sounds/tack.wav HitSideOfPaddle breakout/sounds/tock.wav MissPaddle breakout/sounds/no.wav Reward breakout/sounds/kerching.wav HitBlockVariant breakout/sounds/tick_leftOnly.wav  HitPaddleVariant breakout/sounds/tack_leftOnly.wav // Audio theme for the game 
+
+Application:Game                        float     VariantProportion=       0.10     // proportion of each eligible sound type to vary
+
+Application:Game                        string    ClearColor=              0x224422 // Color to clear the gl screen to (color) 
+Application:Game                        string    TextColor=               0xFFFFFF // Color for in game scoring text (color) 
+Application:Game                        int       TextSize=               13        // Size for in game scoring text 
+

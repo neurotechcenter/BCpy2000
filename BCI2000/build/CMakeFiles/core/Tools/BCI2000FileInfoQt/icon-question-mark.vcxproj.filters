@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\0782d4bb8c44a00599f49d4a44824222\question-mark256.png.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\343e5492c5dd792180098191e5b25ab0\icon-question-mark.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Tools\BCI2000FileInfoQt\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\CMakeFiles\icon-question-mark" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{110FD9AA-8569-3FE5-A68E-6802E5F295ED}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

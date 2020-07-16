@@ -1,0 +1,1 @@
+matlab -nosplash -r "elocHelper"

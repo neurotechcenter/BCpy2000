@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>BCPy2000: Phase_Machine</title>
+<link type="text/css" rel="stylesheet" href="styles/gears/style.css" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div class="header"><span class="gotobar bar"><a class="local" href="Home.html">Home</a> <a class="local" href="About.html">About</a> <a class="local" href="Download.html">Download</a> <a class="local" href="Structure.html">Structure</a> <a class="local" href="Demo.html">Demo</a> <a class="local" href="Hooks.html">Hooks</a> <a class="local" href="API.html">API</a> <a class="local" href="Contact.html">Contact</a> <a class="local" href="Credits.html">Credits</a> <a class="local" href="License.html">License</a> </span><h1>Phase Machine</h1></div><div class="content"><p>The <em>phase machine</em> is  a thread which is launched by the BCPy2000 application module when "Start" or "Resume" is pressed. It governs and executes the transitions between <a class="local canonical" title="Presentation_Phase" href="Presentation_Phase.html">presentation phases</a> during the experiment.</p><p>You specify the phase machine's structure in a <a class="local canonical" title="Hook" href="Hook.html">hook</a> method called <a class="local anchor" href="BciGenericApplication.html#BciGenericApplication-Phases">Phases</a>, during which you use the <a class="local anchor" href="BciGenericApplication.html#BciGenericApplication-phase">phase</a> and <a class="local anchor" href="BciGenericApplication.html#BciGenericApplication-design">design</a> API methods.</p><p>Whenever it is time to transition from one phase to the next, the phase machine will automatically call your <a class="local anchor" href="BciGenericApplication.html#BciGenericApplication-Transition">Transition</a> hook, which should then set state variables values that reflect what is happening during the new presentation phase, and present any appropriate stimuli.</p><p>Here is an example of the beginning of a simple, deterministic, linear phase-machine definition, in which a 3-second "baseline" phase leads to a 1-second "startcue" phase followed by a 5-second "imagination" phase.</p><pre class="real">class BciApplication (BciGenericApplication):
+
+    # ...
+
+    def Phases(self):
+        self.phase('baseline',    duration=3000, next='startcue')  
+        self.phase('startcue',    duration=1000, next='imagination')
+        self.phase('imagination', duration=5000, next='stopcue')
+
+        # ...
+        
+        self.design(start='baseline',  new_trial='startcue')
+
+</pre><p>The <code>Phases</code> hook is re-called once per transition, in case the phase machine definition needs to change. This allows for the implementation of non-deterministic or state-variable-sensitive temporal structures: a simple example would be an inter-trial interval of randomized duration.</p><p>Note that, in conventional computer-science terms, the phase machine would be called a "state machine", but we have adapted its name in order to avoid confusion with the BCI2000's "state variables". Initially we had a state variable called "State" which stated which state our state machine was in, and our brains melted.</p></div><div class="footer"><hr /> <span class="gotobar bar"><a class="local" href="Home.html">Home</a> <a class="local" href="About.html">About</a> <a class="local" href="Download.html">Download</a> <a class="local" href="Structure.html">Structure</a> <a class="local" href="Demo.html">Demo</a> <a class="local" href="Hooks.html">Hooks</a> <a class="local" href="API.html">API</a> <a class="local" href="Contact.html">Contact</a> <a class="local" href="Credits.html">Credits</a> <a class="local" href="License.html">License</a> </span> <span class="edit"></span> <span class="time"><span class="time"><br /> Last edited 2008-09-03 22:09 UTC by <a class="author" title="from localhost" href="jez.html">jez</a> <a class="diff">(diff)</a></span></span></div></body></html>

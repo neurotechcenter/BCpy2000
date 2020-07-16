@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\SignalSource\RDAClient\RDAClientADC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\SignalSource\RDAClient\RDAProtocol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\RDAClient\CorePCH.cpp">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\CoreMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\CoreModule.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\bcistream\BCIStream_module.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\bcistream</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\SourceFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalsource</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\IIRFilterBase.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\math\FilterDesign.cpp">
+      <Filter>Source Files\BCI2000 Framework\math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.cpp">
+      <Filter>Generated\Version</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\compat\WinMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\compat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\SignalSource\RDAClient\RDAClientADC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\SignalSource\RDAClient\RDAProtocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\SignalSource\RDAClient\RDA\RecorderRDA.h">
+      <Filter>Header Files\RDA</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\CoreModule.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\SourceFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalsource</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\IIRFilterBase.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\FilterDesign.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\IIRFilter.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\contrib\SignalSource\RDAClient\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\RDAClient\RDAClient\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\signal-screen.ico">
+      <Filter>Generated\AppIcon</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\RDAClient\appicon.rc">
+      <Filter>Generated\AppIcon</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc">
+      <Filter>Generated\Version</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\AppIcon">
+      <UniqueIdentifier>{7B6861FE-6AD2-353B-914A-C15FCD201E9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\BCI2000 Framework">
+      <UniqueIdentifier>{5F667A99-7CE6-3DA4-96A4-82A7D98398CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Version">
+      <UniqueIdentifier>{79EF525C-6BF6-3B2D-86D9-96258C1C83CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\math">
+      <UniqueIdentifier>{57D9639F-6982-3369-B566-78524FE27659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{D333AF79-ED40-369D-8F3A-9E5D16CCF51B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\signalprocessing">
+      <UniqueIdentifier>{22E1DF44-74E5-38D7-99B9-9E3A40CDF883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\signalsource">
+      <UniqueIdentifier>{B16E01FE-A7AC-3B68-8B85-1C2460DBC343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RDA">
+      <UniqueIdentifier>{DA3E0357-E02B-3FC1-AB17-E7A98AA92FFB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\math">
+      <UniqueIdentifier>{BAB1B2A6-28A5-3996-B584-1A9B0272518B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\bcistream">
+      <UniqueIdentifier>{FBCA4655-BB91-309E-8A89-1B02E7786D7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\compat">
+      <UniqueIdentifier>{2B2B0696-82DA-3F6F-B029-174E1C314E07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{76E86A67-18EF-35F1-B46E-D09E9B955FFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\signalprocessing">
+      <UniqueIdentifier>{68CE846B-9AE7-362F-A4DB-0E42D12544F7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\signalsource">
+      <UniqueIdentifier>{FAADC550-A838-3D82-B0C9-69B75B368795}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

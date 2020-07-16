@@ -1,0 +1,29 @@
+Source:Signal%20Properties:DataIOFilter int SourceCh= 8 16 1 % // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
+Source:Signal%20Properties:DataIOFilter int SamplingRate= 256 256Hz 1 % // sample rate
+Source:Signal%20Properties:DataIOFilter list ChannelNames= 0 // list of channel names
+Source:Signal%20Properties:DataIOFilter floatlist SourceChOffset= 8 0 0 0 0 0 0 0 0 0 % % // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter floatlist SourceChGain= 8 1 1 1 1 1 1 1 1 0.003 % % // gain for each channel (A/D units -> muV) Source:gUSBampADC intlist SourceChList= 0 0 1 128 // list of channels to digitize
+Source:gUSBampADC intlist SourceChDevices= 1 8 16 1 17 // number of digitized channels per device
+Source:gUSBampADC int NumBuffers= 2 1 2 32 // number of software buffers to use
+Source:gUSBampADC string DeviceIDMaster= auto // deviceID for the device whose SYNC goes to the slaves
+Source:gUSBampADC int FilterEnabled= 1 1 0 1 // Enable pass band filter (0=no, 1=yes)
+Source:gUSBampADC float FilterHighPass= 0.1 0.1 0 50 // high pass filter for pass band
+Source:gUSBampADC float FilterLowPass= 60 60 0 4000 // low pass filter for pass band
+Source:gUSBampADC int FilterModelOrder= 8 8 1 12 // filter model order for pass band
+Source:gUSBampADC int FilterType= 1 1 1 2 // filter type for pass band (1=BUTTERWORTH, 2=CHEBYSHEV)
+Source:gUSBampADC int NotchEnabled= 1 1 0 1 // Enable notch (0=no, 1=yes)
+Source:gUSBampADC float NotchHighPass= 58 58 0 70 // high pass filter for notch filter
+Source:gUSBampADC float NotchLowPass= 62 62 0 4000 // low pass filter for notch filter
+Source:gUSBampADC int NotchModelOrder= 4 4 1 10 // filter model order for notch filter
+Source:gUSBampADC int NotchType= 1 1 1 2 // filter type for pass band (1=CHEBYSHEV, 2=BUTTERWORTH)
+Source:gUSBampADC list DeviceIDs= 1 auto // list of USBamps to be used (or auto)
+Source:gUSBampADC int DigitalInput= 0 0 0 1 // enable digital input:  0: false, 1: true (enumeration)
+Source:gUSBampADC int DigitalOutput= 0 0 0 1 // enable digital output on block acquisition (boolean)
+Source:gUSBampADC string DigitalOutputEx= % // expression for output on digital output 2 (expression)
+Source:gUSBampADC int SignalType= 1 0 0 1 // numeric type of output signal:  0: int16, 1: float32 (enumeration)
+Source:gUSBampADC int AcquisitionMode= 0 0 0 2 // data acquisition mode:  0: analog signal acquisition, 1: calibration, 2: impedance (enumeration)
+Source:gUSBampADC int CommonGround= 1 0 0 1 // internally connect GNDs from all blocks:  0: false, 1: true (enumeration)
+Source:gUSBampADC int CommonReference= 1 0 0 1 // internally connect Refs from all blocks:  0: false, 1: true (enumeration)
+Source:Alignment:AlignmentFilter int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)

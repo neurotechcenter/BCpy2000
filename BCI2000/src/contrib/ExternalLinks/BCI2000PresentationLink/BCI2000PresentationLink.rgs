@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'{15F66634-3953-4448-9B38-9F3AD1DACB97}' = s 'BCI2000PresentationLink'
+		'BCI2000PresentationLink.DLL'
+		{
+			val AppID = s '{15F66634-3953-4448-9B38-9F3AD1DACB97}'
+		}
+	}
+}

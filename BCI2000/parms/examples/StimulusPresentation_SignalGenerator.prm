@@ -1,0 +1,85 @@
+Source:Signal%20Properties int SourceCh= 16 16 1 % // number of digitized and stored channels
+Source:Signal%20Properties int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
+Source:Signal%20Properties int SamplingRate= 256 256Hz 1 % // sample rate
+Source:Signal%20Properties list ChannelNames= 1 auto // list of channel names
+Source:Signal%20Properties floatlist SourceChOffset= 1 auto // Offset for channels in A/D units
+Source:Signal%20Properties floatlist SourceChGain= 1 auto // gain for each channel (A/D units -> muV)
+Storage:Data%20Location string DataDirectory= ../data ../data % % // path to top level data directory (directory)
+Storage:Session string SubjectName= test Name % % // subject alias
+Storage:Session string SubjectSession= 001 001 % % // three-digit session number
+Storage:Session string SubjectRun= 01 00 % % // two-digit run number
+Storage:Documentation string ID_System= % // BCI2000 System Code
+Storage:Documentation string ID_Amp= % // BCI2000 Amp Code
+Storage:Documentation string ID_Montage= % // BCI2000 Cap Montage Code
+Visualize:DataIOFilter int VisualizeRoundtrip= 1 1 0 1 // visualize roundtrip time (0=no, 1=yes) (boolean)
+Visualize:DataIOFilter int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:DataIOFilter int VisualizeSourceDecimation= 1 1 0 1 // decimation factor for raw brain signal
+Visualize:DataIOFilter int VisualizeSourceTime= 2s 2 0 % // how much time in Source visualization
+Source:RandomNumberADC int ModulateAmplitude= 0 0 0 1 // Modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source:RandomNumberADC int SineChannelX= 0 0 0 % // Channel number of sinewave controlled by mouse x position
+Source:RandomNumberADC int SineChannelY= 0 0 0 % // Channel number of sinewave controlled by mouse y position (0 for all)
+Source:RandomNumberADC float SineFrequency= 0 10Hz % % // Frequency of sine wave
+Source:RandomNumberADC int SineAmplitude= 0 100muV % % // Amplitude of sine wave
+Source:RandomNumberADC int NoiseAmplitude= 30muV 30muV % % // Amplitude of white noise (common to all channels)
+Source:RandomNumberADC int DCOffset= 60muV 0muV % % // DC offset (common to all channels)
+Source:RandomNumberADC string OffsetMultiplier= StimulusType StimulusType % % // Expression to multiply offset by
+Source:RandomNumberADC int RandomSeed= 0 0 0 1 // Initialization value for random number generator (initialize from time if 0)
+Source:RandomNumberADC int SignalType= 0 0 0 2 // numeric type of output signal:  0: int16, 1: float32, 2: int32 (enumeration)
+Storage:BCI2000FileWriter int SavePrmFile= 0 1 0 1 // save additional parameter file (0=no, 1=yes) (boolean)
+Storage:BCI2000FileWriter string StorageTime= % // time of beginning of data storage
+Source:Notch%20Filter int NotchFilter= 0 0 0 2 // Power line notch filter: 0: disabled, 1: at 50Hz, 2: at 60Hz (enumeration)
+Source:Alignment int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Visualize:AlignmentFilter int VisualizeAlignment= 0 0 0 1 // visualize aligned channels (0=no, 1=yes) (boolean)
+Source:Online%20Processing stringlist TransmitChList= 4 1 2 3 4 1 1 128 // list of transmitted channels
+Filtering:SpatialFilter matrix SpatialFilter= 4 4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 % % // columns represent input channels, rows represent output channels
+Visualize:SpatialFilter int VisualizeSpatialFiltering= 0 0 0 1 // visualize spatially filtered signals (0=no 1=yes) (boolean)
+Filtering:P3TemporalFilter int EpochLength= 500ms 500ms 0 % // Length of data epoch from stimulus onset
+Filtering:P3TemporalFilter int EpochsToAverage= 0 1 0 % // Number of epochs to average
+Visualize:P3TemporalFilter int VisualizeP3TemporalFiltering= 0 0 0 1 // visualize Temporal filtered signals (0=no 1=yes) (boolean)
+Visualize:P3TemporalFilter int TargetERPChannel= 1 1 0 128 // Target Channel for ERP Display in order of SigProc transfer
+Visualize:P3TemporalFilter float ERPMinDispVal= 0 0 -16383 16384 // Minimum value for ERP display
+Visualize:P3TemporalFilter float ERPMaxDispVal= 300 300 -16383 16384 // Maximum value for ERP display
+Filtering:LinearClassifier matrix Classifier= 2 { input%20channel input%20element%20(bin) output%20channel weight } 1 4 1 1 1 6 2 1 // Linear classification matrix in sparse representation
+Visualize:LinearClassifier int VisualizeClassFiltering= 0 0 0 1 // visualize Class filtered signals: 0=no, 1=yes (boolean)
+Filtering:Normalizer floatlist NormalizerOffsets= 2 0 0 0 % % // normalizer offsets
+Filtering:Normalizer floatlist NormalizerGains= 2 1 1 0 % % // normalizer gain values
+Filtering:Normalizer intlist Adaptation= 2 0 0 0 0 2 // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer matrix BufferConditions= 2 1 (Feedback)&&(TargetCode==1) (Feedback)&&(TargetCode==2) // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+Filtering:Normalizer float BufferLength= 9s 9s % % // time window of past data per buffer that enters into statistic
+Filtering:Normalizer string UpdateTrigger= (Feedback==0) // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)
+Visualize:Normalizer int VisualizeNormalFiltering= 0 0 0 1 // visualize normalized signals (boolean)
+Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
+Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
+Application:Window int WindowWidth= 640 640 0 % // width of application window
+Application:Window int WindowHeight= 480 480 0 % // height of application window
+Application:Window int WindowLeft= 0 0 % % // screen coordinate of application window's left edge
+Application:Window int WindowTop= 0 0 % % // screen coordinate of application window's top edge
+Application:Window string WindowBackgroundColor= 0x505050 0x505050 0x000000 0x000000 // background color (color)
+Application:Sequencing float PreRunDuration= 1s 0 0 % // pause preceding first sequence
+Application:Sequencing float PostRunDuration= 1s 0 0 % // pause following last sequence
+Application:Sequencing float PreSequenceDuration= 2s 2s 0 % // pause preceding sequences/sets of intensifications
+Application:Sequencing float PostSequenceDuration= 2s 2s 0 % // pause following sequences/sets of intensifications
+Application:Sequencing float StimulusDuration= 375ms 40ms 0 % // stimulus duration
+Application:Sequencing float ISIMinDuration= 375ms 80ms 0 % // minimum duration of inter-stimulus interval
+Application:Sequencing float ISIMaxDuration= 437.5ms 80ms 0 % // maximum duration of inter-stimulus interval
+Application:Result%20Processing int InterpretMode= 0 0 0 2 // interpretation of results: 0 none, 1 online free mode, 2 offline copy mode (enumeration)
+Application:Result%20Processing int DisplayResults= 1 1 0 1 // display results of copy/free spelling (boolean)
+Application:Sequencing intlist Sequence= 6 3 3 3 3 3 3 1 1 % // Sequence in which stimuli are presented (deterministic mode)/ Stimulus frequencies for each stimulus (random mode)
+Application:Sequencing int SequenceType= 1 0 0 1 // Sequence of stimuli is 0 deterministic, 1 random (enumeration)
+Application:Sequencing int NumberOfSequences= 2 1 0 % // number of sequence repetitions in a run
+Application:Sequencing intlist ToBeCopied= 4 1 2 3 4 1 1 % // Sequence in which stimuli need to be copied (only used in copy mode)
+Application:Sequencing string UserComment= Test%20Run // User comments for a specific run
+Application:Stimuli matrix Stimuli= { caption icon audio StimulusDuration AudioVolume } { stimulus1 stimulus2 stimulus3 stimulus4 stimulus5 stimulus6 } One Two Three Four Five Six images/1.bmp images/2.bmp images/3.bmp images/4.bmp images/5.bmp images/6.bmp sounds/1.wav sounds/2.wav sounds/3.wav sounds/4.wav sounds/5.wav sounds/6.wav 93.75ms 187.5ms 187.5ms 62.5ms 125ms 250ms 85 88 91 94 97 100 // captions and icons to be displayed, sounds to be played for different stimuli
+Application:Stimuli matrix FocusOn= { caption icon audio } { focuson } Please%20focus%20on images/focuson.bmp sounds/uh-uh.wav // initial announcement what to focus on
+Application:Stimuli matrix Result= { caption icon audio } { result } The%20result%20was images/result.bmp sounds/uh-uh.wav // final result announcement 
+Application:Stimuli int StimulusWidth= 0 0 0 100 // StimulusWidth in percent of screen width (zero for original pixel size)
+Application:Stimuli int CaptionHeight= 10 0 0 100 // Height of stimulus caption text in percent of screen height
+Application:Stimuli string CaptionColor= 0x004040 0x00FFFFFF 0x00000000 0x00000000 // Color of stimulus caption text (color)
+Application:Stimuli string BackgroundColor= 0x80FF00 0x00FFFF00 0x00000000 0x00000000 // Color of stimulus background (color)
+Application:Stimuli int CaptionSwitch= 0 1 0 1 // Present captions (boolean)
+Application:Stimuli int IconSwitch= 1 1 0 1 // Present icon files (boolean)
+Application:Stimuli int AudioSwitch= 1 1 0 1 // Present audio files (boolean)
+Application:Stimuli float AudioVolume= 100 100 0 100 // Volume for audio playback in percent
+Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20320 % % // IP address/port to write to, e.g. localhost:20320
+Application:Localization string Language= Default Default % % // Language for user messages

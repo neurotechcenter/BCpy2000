@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B433E419-281F-3243-9C4F-739B9CBCFC5E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>BCI2000FrameworkSigSrcModule</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BCI2000FrameworkSigSrcModule.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BCI2000FrameworkSigSrcModule</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">BCI2000FrameworkSigSrcModule.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">BCI2000FrameworkSigSrcModule</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BCI2000FrameworkSigSrcModule.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BCI2000FrameworkSigSrcModule</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForcedIncludeFiles>PCHIncludes.h</ForcedIncludeFiles>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCHIncludes.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(OutDir)/$(TargetName)_Core.pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;HAVE_CORELIB;PRECOMPILED_HEADERS=1;IS_FIRST_MODULE;REGISTRY_NAME=SigSrcRegistry;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;HAVE_CORELIB;PRECOMPILED_HEADERS=1;IS_FIRST_MODULE;REGISTRY_NAME=SigSrcRegistry;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForcedIncludeFiles>PCHIncludes.h</ForcedIncludeFiles>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCHIncludes.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(OutDir)/$(TargetName)_Core.pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;HAVE_CORELIB;PRECOMPILED_HEADERS=1;IS_FIRST_MODULE;REGISTRY_NAME=SigSrcRegistry;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;HAVE_CORELIB;PRECOMPILED_HEADERS=1;IS_FIRST_MODULE;REGISTRY_NAME=SigSrcRegistry;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForcedIncludeFiles>PCHIncludes.h</ForcedIncludeFiles>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>PCHIncludes.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(OutDir)/$(TargetName)_Core.pch</PrecompiledHeaderOutputFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;HAVE_CORELIB;PRECOMPILED_HEADERS=1;IS_FIRST_MODULE;REGISTRY_NAME=SigSrcRegistry;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;HAVE_CORELIB;PRECOMPILED_HEADERS=1;IS_FIRST_MODULE;REGISTRY_NAME=SigSrcRegistry;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\15fb885a5228fc2006aa234ef7513139\SigSrcRegistry.inc.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating SigSrcRegistry.inc</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "// Generated file -- do not edit" &gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/FileWriterBase.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/GenericFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/NullFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/dat/BCI2000FileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/dat/BCI2000OutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFHeader.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFOutputBase.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFOutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDF.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDFFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDFOutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/BufferedADC.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/GenericADC.h &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/AlignmentFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/DataIOFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/TransmissionFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/EventLink.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/JoystickLogger.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/KeyLogger.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/CorePCH.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/CMakeFiles/15fb885a5228fc2006aa234ef7513139/SigSrcRegistry.inc.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\extract_registry.exe;C:\BCI2000.python3\src\shared\fileio\FileWriterBase.cpp;C:\BCI2000.python3\src\shared\fileio\GenericFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\NullFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\dat\BCI2000FileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\dat\BCI2000OutputFormat.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFHeader.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputBase.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputFormat.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDF.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFOutputFormat.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\BufferedADC.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\GenericADC.h;C:\BCI2000.python3\src\shared\modules\signalsource\AlignmentFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\DataIOFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\TransmissionFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\EventLink.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\JoystickLogger.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\KeyLogger.cpp;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\CorePCH.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\SigSrcRegistry.inc</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating SigSrcRegistry.inc</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "// Generated file -- do not edit" &gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/FileWriterBase.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/GenericFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/NullFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/dat/BCI2000FileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/dat/BCI2000OutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFHeader.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFOutputBase.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFOutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDF.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDFFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDFOutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/BufferedADC.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/GenericADC.h &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/AlignmentFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/DataIOFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/TransmissionFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/EventLink.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/JoystickLogger.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/KeyLogger.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/CorePCH.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/CMakeFiles/15fb885a5228fc2006aa234ef7513139/SigSrcRegistry.inc.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\extract_registry.exe;C:\BCI2000.python3\src\shared\fileio\FileWriterBase.cpp;C:\BCI2000.python3\src\shared\fileio\GenericFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\NullFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\dat\BCI2000FileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\dat\BCI2000OutputFormat.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFHeader.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputBase.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputFormat.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDF.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFOutputFormat.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\BufferedADC.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\GenericADC.h;C:\BCI2000.python3\src\shared\modules\signalsource\AlignmentFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\DataIOFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\TransmissionFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\EventLink.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\JoystickLogger.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\KeyLogger.cpp;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\CorePCH.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\SigSrcRegistry.inc</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating SigSrcRegistry.inc</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo "// Generated file -- do not edit" &gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/FileWriterBase.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/GenericFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/NullFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/dat/BCI2000FileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/dat/BCI2000OutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFHeader.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFOutputBase.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/EDFOutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDF.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDFFileWriter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/fileio/edf_gdf/GDFOutputFormat.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/BufferedADC.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/GenericADC.h &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/AlignmentFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/DataIOFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/TransmissionFilter.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/EventLink.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/JoystickLogger.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/src/shared/modules/signalsource/logging/KeyLogger.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\extract_registry &lt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/CorePCH.cpp &gt;&gt; C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/SigSrcRegistry.inc
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/CMakeFiles/15fb885a5228fc2006aa234ef7513139/SigSrcRegistry.inc.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\extract_registry.exe;C:\BCI2000.python3\src\shared\fileio\FileWriterBase.cpp;C:\BCI2000.python3\src\shared\fileio\GenericFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\NullFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\dat\BCI2000FileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\dat\BCI2000OutputFormat.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFHeader.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputBase.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputFormat.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDF.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFFileWriter.cpp;C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFOutputFormat.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\BufferedADC.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\GenericADC.h;C:\BCI2000.python3\src\shared\modules\signalsource\AlignmentFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\DataIOFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\TransmissionFilter.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\EventLink.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\JoystickLogger.cpp;C:\BCI2000.python3\src\shared\modules\signalsource\logging\KeyLogger.cpp;C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\CorePCH.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\SigSrcRegistry.inc</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/build/cmake/frameworks/SigSrcModuleLib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/cmake/frameworks/SigSrcModuleLib/CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModule.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\SigSrcFiles.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/build/cmake/frameworks/SigSrcModuleLib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/cmake/frameworks/SigSrcModuleLib/CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModule.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\SigSrcFiles.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/build/cmake/frameworks/SigSrcModuleLib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/cmake/frameworks/SigSrcModuleLib/CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModule.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\SigSrcFiles.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModuleLib\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\FileWriterBase.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\FileWriterBase.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\GenericFileWriter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\GenericFileWriter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\NullFileWriter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\NullFileWriter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\dat\BCI2000FileWriter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\dat\BCI2000FileWriter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\dat\BCI2000OutputFormat.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\dat\BCI2000OutputFormat.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFHeader.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFHeader.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFFileWriter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFFileWriter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputBase.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputBase.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputFormat.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\EDFOutputFormat.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDF.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDF.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFFileWriter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFFileWriter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFOutputFormat.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\fileio\edf_gdf\GDFOutputFormat.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\BufferedADC.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\BufferedADC.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\GenericADC.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\AlignmentFilter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\AlignmentFilter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\DataIOFilter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\DataIOFilter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\TransmissionFilter.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\TransmissionFilter.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\logging\EventLink.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\logging\EventLink.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\logging\JoystickLogger.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\logging\JoystickLogger.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalsource\logging\KeyLogger.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalsource\logging\KeyLogger.cpp" />
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\CorePCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">PCHIncludes.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)/$(TargetName)_Core.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">PCHIncludes.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(OutDir)/$(TargetName)_Core.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PCHIncludes.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)/$(TargetName)_Core.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <None Include="C:\BCI2000.python3\build\Inventory.inc" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\SigSrcRegistry.inc" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\BCIRegistry.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\config\BCIRegistry.cpp" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule\Resources.inc" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\extract_registry.vcxproj">
+      <Project>{A0F57A17-E4BF-3747-ABCE-F26FCFE358C2}</Project>
+      <Name>extract_registry</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

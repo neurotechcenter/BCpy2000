@@ -1,0 +1,4 @@
+Storage:Session:DataIOFilter            string     SubjectName=           REPLAY_         // subject alias
+Source:Playback                         int        EnslavePython=               1         // force BCPy2000 modules to follow states supplied by the source module without being able to change them (boolean)
+PythonApp                               int        ShowSignalTime=              1         // show a timestamp based on the number of processed samples (boolean)
+Source:Playback                         string     PlaybackFileName=            $DATA\TRIANGLE_001\TRIANGLE_S001R01.dat

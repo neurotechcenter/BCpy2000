@@ -1,0 +1,21 @@
+Application:Game                        float     PaddleWidth=             0.3      // Initial width of the paddle rectangle (0-2) 
+Application:Game                        float     PaddleWidthHitFactor=    0.90     // Multiplier for the paddle width when a hit occurs 
+
+Application:Game                        float     BallRadius=              0.05     // Initial radius of the ball in game (0-2) 
+Application:Game                        float     BallRadiusHitFactor=     0.95     // Multiplier for the ball size when a hit occurs 
+
+Application:Game                        float     BallSpeed=               0.8      // Initial ball speed (distance per second) 
+Application:Game                        float     BallSpeedHitFactor=      1.00  1.02   // Multiplier for the ball speed when a hit occurs 
+
+
+Application:Game%20Challenge            float     InitialGameDifficulty=  -5.0      // Starting point for staircase GameDifficulty
+Application:Game                        float     TargetAccuracy=          0.75     // Weighted-up-down staircase's target proportion of hits
+
+Application:Game                        float     MinSpawnTime=            1.0      // Minimum path duration in seconds for a respawned ball
+Application:Game                        float     MaxSpawnTime=            1.0      // Maximum path duration in seconds for a respawned ball
+
+Application:Game                        float     PaddleHeight=            0.1      // Height of the paddle rectangle (0-2) 
+Application:Game:BreakoutGame           string    PaddleExpressionY=      -0.8      // Expression for Y position of the paddle (-1:1) 
+Application:Game:BreakoutGame           int       IntegratePaddleY=        0        // 
+
+Application:Game%20Challenge            int       ShowPredictor=           0        // Show a guide (boolean)

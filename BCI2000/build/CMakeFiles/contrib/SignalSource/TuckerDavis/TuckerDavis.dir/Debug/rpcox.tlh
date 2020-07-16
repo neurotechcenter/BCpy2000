@@ -1,0 +1,212 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.14.26433.0 (2b72df58).
+//
+// c:\bci2000.python3\build\cmakefiles\contrib\signalsource\tuckerdavis\tuckerdavis.dir\debug\rpcox.tlh
+//
+// C++ source equivalent of Win32 type library RPcoX.ocx
+// compiler-generated file created 01/15/19 at 12:36:37 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace RPCOXLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("d323a622-1d13-11d4-8858-444553540000"))
+/* LIBID */ __RPCOXLib;
+struct __declspec(uuid("d323a623-1d13-11d4-8858-444553540000"))
+/* dispinterface */ _DRPcoX;
+struct __declspec(uuid("d323a624-1d13-11d4-8858-444553540000"))
+/* dispinterface */ _DRPcoXEvents;
+struct /* coclass */ RPcoX;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_DRPcoX, __uuidof(_DRPcoX));
+_COM_SMARTPTR_TYPEDEF(_DRPcoXEvents, __uuidof(_DRPcoXEvents));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("d323a623-1d13-11d4-8858-444553540000"))
+_DRPcoX : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    _bstr_t GetError ( );
+    long Connect (
+        long Interface,
+        long DevNum );
+    long SetTagVal (
+        _bstr_t Name,
+        float Val );
+    long LoadCOF (
+        _bstr_t FileName );
+    long Run ( );
+    long Halt ( );
+    long SoftTrg (
+        long Trg_Bitn );
+    float GetTagVal (
+        _bstr_t Name );
+    long ReadTag (
+        _bstr_t Name,
+        float * pBuf,
+        long nOS,
+        long nWords );
+    long WriteTag (
+        _bstr_t Name,
+        float * pBuf,
+        long nOS,
+        long nWords );
+    long SendParTable (
+        _bstr_t Name,
+        float IndexID );
+    long SendSrcFile (
+        _bstr_t Name,
+        long SeekOS,
+        long nWords );
+    long GetNames (
+        _bstr_t NameList,
+        long MaxNames,
+        long ObjType );
+    _variant_t ReadTagV (
+        _bstr_t Name,
+        long nOS,
+        long nWords );
+    long WriteTagV (
+        _bstr_t Name,
+        long nOS,
+        const _variant_t & Buf );
+    long GetTagSize (
+        _bstr_t Name );
+    long GetTagType (
+        _bstr_t Name );
+    long SetSrcFileName (
+        _bstr_t Name,
+        _bstr_t FileName );
+    long GetNumOf (
+        _bstr_t ObjTypeName );
+    _bstr_t GetNameOf (
+        _bstr_t ObjTypeName,
+        long Index );
+    long ReadCOF (
+        _bstr_t FileName );
+    long ConnectRP2 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRL2 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRA16 (
+        _bstr_t IntName,
+        long DevNum );
+    _variant_t ReadTagVEX (
+        _bstr_t Name,
+        long nOS,
+        long nWords,
+        _bstr_t SrcType,
+        _bstr_t DstType,
+        long nChans );
+    long GetStatus ( );
+    long GetCycUse ( );
+    long ClearCOF ( );
+    long WriteTagVEX (
+        _bstr_t Name,
+        long nOS,
+        _bstr_t DstType,
+        const _variant_t & Buf );
+    long ZeroTag (
+        _bstr_t Name );
+    float GetSFreq ( );
+    long ConnectRV8 (
+        _bstr_t IntName,
+        long DevNum );
+    long GetDevCfg (
+        long Addr,
+        long Width32 );
+    long SetDevCfg (
+        long Addr,
+        long Val,
+        long Width32 );
+    long LoadCOFsf (
+        _bstr_t FileName,
+        float SampFreq );
+    long DefStatus (
+        long DefID );
+    _variant_t GetDefData (
+        long DefID );
+    HRESULT AboutBox ( );
+    long ConnectRM1 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRM2 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRX5 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRX6 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRX7 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRX8 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRX9 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRZ2 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRZ3 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRZ4 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRZ5 (
+        _bstr_t IntName,
+        long DevNum );
+    long ConnectRZ6 (
+        _bstr_t IntName,
+        long DevNum );
+};
+
+struct __declspec(uuid("d323a624-1d13-11d4-8858-444553540000"))
+_DRPcoXEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT DefComplete (
+        long DefID );
+};
+
+struct __declspec(uuid("d323a625-1d13-11d4-8858-444553540000"))
+RPcoX;
+    // [ default ] dispinterface _DRPcoX
+    // [ default, source ] dispinterface _DRPcoXEvents
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\bci2000.python3\build\cmakefiles\contrib\signalsource\tuckerdavis\tuckerdavis.dir\debug\rpcox.tli"
+
+} // namespace RPCOXLib
+
+#pragma pack(pop)

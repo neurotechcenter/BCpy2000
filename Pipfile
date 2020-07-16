@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pipreq = "*"
+pipreqs = "*"
+ipython = "*"
+matplotlib = "*"
+numpy = "*"
+pillow = "*"
+psychopy = "*"
+pyaudio = "*"
+pygame = "*"
+pyglet = "*"
+pylibusb = "*"
+pyreadline = "*"
+scipy = "*"
+
+[requires]
+python_version = "3.6.8"

@@ -1,0 +1,26 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000PresentationLink/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000PresentationLink/CMakeFiles/generate.stamp is up-to-date.
+  BCI2000PresentationLink.cpp
+  BCI2000DataPortExtension.cpp
+  BCI2000DataPort.cpp
+  BCI2000ActiveDataPort.cpp
+  BCI2000PCLLibrary.cpp
+  BCI2000ControllerType.cpp
+  BCI2000Controller.cpp
+  Utils.cpp
+  VersionInfo.cpp
+  BCI2000Remote.cpp
+  BCI2000Connection.cpp
+  ComModule.cpp
+  ComClassFactory.cpp
+  ComRegistrar.cpp
+  ComStrings.cpp
+  Version.cpp
+  Generating Code...
+  BCI2000PresentationLink_i.c
+  DataPortExtension_i.c
+  PCLExtension_i.c
+  Generating Code...
+     Creating library C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000PresentationLink/Release/BCI2000PresentationLink.lib and object C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000PresentationLink/Release/BCI2000PresentationLink.exp
+  BCI2000PresentationLink.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000PresentationLink\Release\BCI2000PresentationLink.dll
+  	Copy to destination	

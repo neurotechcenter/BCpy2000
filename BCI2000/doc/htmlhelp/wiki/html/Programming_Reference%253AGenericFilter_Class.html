@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:GenericFilter Class - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:GenericFilter Class,BCI2000 Glossary,Programming Reference:Error Handling,Programming Reference:GenericVisualization Class,Technical Reference:Parameter Definition,Technical Reference:State Definition,Technical Reference:States of Operation,User Reference:Expression Syntax" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">GenericFilter Class</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253AGenericFilter_Class.html#The_GenericFilter_class"><span class="tocnumber">1</span> <span class="toctext">The GenericFilter class</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AGenericFilter_Class.html#Required_Members"><span class="tocnumber">2</span> <span class="toctext">Required Members</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#Publish"><span class="tocnumber">2.1</span> <span class="toctext">Publish</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#Preflight"><span class="tocnumber">2.2</span> <span class="toctext">Preflight</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#Initialize"><span class="tocnumber">2.3</span> <span class="toctext">Initialize</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#Process"><span class="tocnumber">2.4</span> <span class="toctext">Process</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AGenericFilter_Class.html#Optional_Member_Functions"><span class="tocnumber">3</span> <span class="toctext">Optional Member Functions</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#StartRun"><span class="tocnumber">3.1</span> <span class="toctext">StartRun</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#StopRun"><span class="tocnumber">3.2</span> <span class="toctext">StopRun</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#Resting"><span class="tocnumber">3.3</span> <span class="toctext">Resting</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#Halt"><span class="tocnumber">3.4</span> <span class="toctext">Halt</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#Destructor"><span class="tocnumber">3.5</span> <span class="toctext">Destructor</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AGenericFilter_Class.html#AllowsVisualization"><span class="tocnumber">3.6</span> <span class="toctext">AllowsVisualization</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AGenericFilter_Class.html#Rules_for_Parameter_and_State_access"><span class="tocnumber">4</span> <span class="toctext">Rules for Parameter and State access</span></a></li>
+</ul>
+</td></tr></table>
+<a name="The_GenericFilter_class"></a><h2>The <tt>GenericFilter</tt> class</h2>
+<p><tt>GenericFilter</tt> is a base class that provides a programming
+interface for all user code inside the core modules of this BCI2000
+implementation.
+Programming your own data acquisition module, your own filter inside
+Signal Processing, or your own application, implies deriving your
+own
+class from <tt>GenericFilter</tt>.
+<tt>GenericFilter</tt>'s member functions represent the various
+initialization and processing events that occur during system startup
+and operation (see <a href="Technical_Reference%253AStates_of_Operation.html" title="Technical Reference:States of Operation">Technical Reference:States of Operation</a>).
+Your own filter code <i>must</i>  implement its own
+versions of some of these member functions:
+</p>
+<a name="Required_Members"></a><h2>Required Members</h2>
+<a name="Publish"></a><h3>Publish</h3>
+<p>The <i>Publish</i> function publishes the parameters and states your filter wants to introduce into the system (the <tt>BEGIN_...</tt> and <tt>END_...</tt> macros handle the actual function calls): 
+</p>
+<pre>
+void
+ MyFilter::Publish()
+ {
+   BEGIN_PARAMETER_DEFINITIONS
+     &quot;MySection int MyParam= 1 &quot;
+       &quot;0 0 3 // This is range-checked between 0 and 3&quot;,
+     &quot;MySection float MyOtherParam= 0.1 &quot;
+       &quot;0 % % // This is not automatically range-checked&quot;,
+   END_PARAMETER_DEFINITIONS
+
+   BEGIN_STATE_DEFINITIONS
+     &quot;MyState 1 0 0 0&quot;,
+   END_STATE_DEFINITIONS
+ } </pre>
+<p>The data between the <code>BEGIN_...</code> and <code>END_...</code> macros are lists of comma-separated C-strings, which are additionally broken across lines to improve readability. For the compiler, anything is fine here that is allowed between the curly braces in
+</p>
+<pre>const char* array[] = { "entry 1", "entry 2", "entry 3", };
+</pre>
+<p>For successful filter instantiation at runtime, the strings must also be valid <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">parameter</a> and <a href="Technical_Reference%253AState_Definition.html" title="Technical Reference:State Definition">state definitions</a>.
+</p><p><b>NOTE:</b> Traditionally, parameters and states have been published from inside a filter's constructor. For more flexibility, a separate <code>Publish()</code> function has been introduced. For backward compatibility, parameters and states may still be published from the constructor, but this is deprecated for newer code.
+</p>
+<a name="Preflight"></a><h3>Preflight</h3>
+<p>The <tt>Preflight</tt> function checks whether the preconditions for successful operation are met. This function is called whenever parameter values are re-applied, i.e., whenever the user presses "Set Config" in the operator window. If <tt>Preflight</tt> does not report an error, this counts as a statement that <tt>Initialize</tt> and <tt>Process</tt> will work properly with the current parameters. The first argument to <tt>Preflight</tt> will inform you about what kind of input signal your filter is going to receive, and your filter is expected to report the properties of its output signal via the second parameter:
+</p>
+<pre>
+ void MyFilter::Preflight( const SignalProperties&amp; Input,
+                                 SignalProperties&amp; Output ) const
+ {
+   PreflightCondition( Parameter( &quot;MyOtherParam&quot; ) &gt; 0.0 );
+   PreflightCondition( Input.Channels() &gt; 0 );
+   Output = Input;
+ } </pre>
+<p>Note that the <tt>const</tt> keyword following the function argument list forbids altering any data member of your filter object. This avoids diffusion of initialization code from <tt>Initialize</tt> into <tt>Preflight</tt>. If you have your own sub-objects instantiated and maintained by your filter, you should provide them with their own <tt>Preflight() const</tt> member functions, and call these from your filter's <tt>Preflight</tt>.
+</p><p>In the same way as other BCI2000 code does, the <tt>Preflight()</tt> function reports errors by writing descriptive text into the <a href="Programming_Reference%253AError_Handling.html#Reporting_Errors" title="Programming Reference:Error Handling"><tt>bcierr</tt> output stream</a>.
+</p>
+<a name="Initialize"></a><h3>Initialize</h3>
+<p><tt>Initialize</tt> is called after a successful <tt>Preflight</tt>. Thus, it may safely omit all checks related to parameter consistency. In <tt>Initialize</tt>, your filter's data members are set to the values implied by the user's choices, or to the initial values required for the filter's operation:
+</p>
+<pre>
+ void MyFilter::Initialize( const SignalProperties&amp; Input,
+                            const SignalProperties&amp; Output )
+ {
+   mMyParam = Parameter( &quot;MyParam&quot; );
+   mMyOtherParam = Parameter( &quot;MyOtherParam&quot; );
+   mCount = 0;
+ } </pre>
+<a name="Process"></a><h3>Process</h3>
+<p>The <tt>Process</tt> function is called once for each block of EEG data. It receives an input in its first argument, and sets its output signal to values resulting from filter operation. In the current BCI2000 implementation, there is a single chain of filters--one filter's output signal is the next filter's input. A filter which does not perform any modification to the signal (e.g., a statistics filter) needs to copy its input signal into the output signal, as in the example:
+</p>
+<pre>
+ void MyFilter::Process( const GenericSignal&amp; Input,
+                               GenericSignal&amp; Output )
+ {
+   if( Input( 0, 0 ) &gt; mMyOtherParam )
+     ++mCount;
+   Output = Input;
+ } </pre>
+<p>The <tt>Process</tt> function should not acquire or release resources (opening/closing files, allocating memory, etc). Natural places for such operations are the <tt>Initialize</tt>, <tt>StartRun</tt>, and <tt>StopRun</tt> member functions.
+</p>
+<a name="Optional_Member_Functions"></a><h2>Optional Member Functions</h2>
+<p>Other member functions are <i>optional;</i>  you may decide whether
+you
+override their default implementation with your own version,
+depending on what your filter needs to do:
+</p>
+<a name="StartRun"></a><h3>StartRun</h3>
+<p><tt>StartRun</tt> is called when the system enters the running state. As opposed to <tt>Initialize</tt>, which is the place for tasks that need to be performed on each parameter change, <tt>StartRun</tt> is provided for tasks that need to be performed each time the user clicks "Run" or "Resume" in the operator window. As a canonical example, the <tt>DataIOFilter</tt> opens a new <tt>.dat</tt> file from its <tt>StartRun</tt> member function.
+</p>
+<a name="StopRun"></a><h3>StopRun</h3>
+<p><tt>StopRun</tt> is called each time the system leaves the running state, entering the suspended state. Typically, this happens whenever the user clicks "Suspend" in the operator window. The <tt>DataIOFilter</tt> provides an example for its usage: This filter closes the current <tt>.dat</tt> file from its <tt>StopRun</tt> member function.
+</p><p><tt>StopRun</tt> is also the only function from which a filter may change a parameter value. Any parameter changes inside <tt>StopRun</tt> will propagate to the other modules without any explicit request from your side.
+</p>
+<a name="Resting"></a><h3>Resting</h3>
+<p><tt>Resting</tt> is called instead of <tt>Process</tt> while the system is in suspended state.
+Typically, <tt>Resting</tt> is called repeatedly for filters inside source modules; in the remaining modules, <tt>Resting</tt> is called once when the system enters suspended state. Except that it is called at least once in suspended state, you should not make any assumption how often <tt>Resting</tt> is called.
+</p>
+<a name="Halt"></a><h3>Halt</h3>
+<p>The <tt>Halt</tt> function is called before any reconfiguration of the system takes place. If your filter initiates asynchronous operations such as playing a sound file, acquiring EEG data, or executing threads, its <tt>Halt</tt> member function should terminate all such operations immediately. Failure to do so might result in a non-responding module, or in other errors difficult to track down. For descendants of <tt>GenericADC</tt>, implementing the <tt>Halt</tt> function is mandatory. 
+</p>
+<a name="Destructor"></a><h3>Destructor</h3>
+<p>Your filter's <i>Destructor</i>  should free all resources acquired in the Constructor or in <tt>Initialize</tt>. In many cases, freeing of resources will be done automatically if you use direct members instead of pointers, removing the need for a destructor. However, if your filter has a non-empty <tt>Halt</tt> function, it needs a destructor that calls <tt>Halt</tt> - this can not be done from the base class destructor because overridden virtual functions cannot be called from base class constructors or destructors.
+</p>
+<pre>
+ MyFilter::~MyFilter()
+ {
+   Halt();
+ } </pre>
+<a name="AllowsVisualization"></a><h3>AllowsVisualization</h3>
+<p>Unlike the previous members of <code>GenericFilter</code>, this function represents a property rather than an event.
+Through its return value, a filter can decide whether its output may be offered for visualization by the framework, i.e. whether it appears in the Processing Stages section in the operator's Visualize tab.
+</p><p><code>AllowsVisualization</code> is called once at instantiation, and then after each Initialize() that occurs.
+If it returns false at instantiation, no visualization parameter is created for the filter.
+If it returns false at initialization time, no default visualization is displayed,
+independently of the visualization parameter's value.
+The filter itself may still maintain its own visualization parameters and <a href="Programming_Reference%253AGenericVisualization_Class.html" title="Programming Reference:GenericVisualization Class">GenericVisualization</a> object.
+</p>
+<a name="Rules_for_Parameter_and_State_access"></a><h2>Rules for Parameter and State access</h2>
+<p>For consistent and robust overall system operation, it is crucial that individual filters actually check <a href="BCI2000_Glossary.html#Parameter" title="BCI2000 Glossary">parameter</a> values and <a href="BCI2000_Glossary.html#States" title="BCI2000 Glossary">state</a> accessibility from their <code>Preflight()</code> function. To support this idea, the BCI2000 framework imposes a set of rules to parameter and state access:
+</p>
+<ul><li>Parameters and states accessed during initialization or processing <i>must</i> be accessed during the preflight phase. Otherwise, an error message will be displayed when the first access occurs.
+</li><li>To avoid pointless cludging of the <code>Preflight()</code> function, there are some exceptions to this rule:
+<ul><li>States defined in a filter's constructor are known to be present, and thus need not be accessed from that filter's <code>Preflight()</code> function.
+</li><li>Parameters defined in a filter's <code>Publish()</code> function will be range-checked automatically if any of their <code>LowRange</code> or <code>HighRange</code> <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">properties</a> is set, and need not be accessed explicitly from <code>Preflight()</code>.
+</li><li>To disable automatic range checking, set both these properties to the empty string in your <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">parameter definition line</a>:<br /><code>MySection int MyParam= 1 0 % % // a parameter that is not automatically range-checked</code><br />This implies that you need to implement your own range-check in <code>Preflight()</code>. If there are no actual constraints on the parameter's value, just add a line <code>Parameter( "MyParam" );</code> to the filter's <code>Preflight()</code> function.
+</li></ul>
+</li><li><a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">Expressions</a> may involve state names, and thus need to be evaluated in order to check whether referred-to states are present. Just add a line <br /><code>Expression( Parameter( "MyExpressionParam" ) ).Evaluate();</code><br /> to the filter's <code>Preflight()</code> function.
+</li></ul>
+
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li>GenericFilter</li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li><a href="Programming_Reference%253AStimulusTask_Class.html">StimulusTask</a></li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

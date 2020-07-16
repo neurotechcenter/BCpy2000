@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:StatisticsFilter - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:StatisticsFilter,Contributions:SignalProcessing,User Reference:Filters" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">StatisticsFilter</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253AStatisticsFilter.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AStatisticsFilter.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AStatisticsFilter.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#Author"><span class="tocnumber">3.1</span> <span class="toctext">Author</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#Source_Code_Revisions"><span class="tocnumber">3.2</span> <span class="toctext">Source Code Revisions</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AStatisticsFilter.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#User-defined_Objects"><span class="tocnumber">4.1</span> <span class="toctext">User-defined Objects</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253AStatisticsFilter.html#Observers_and_ChannelSets"><span class="tocnumber">4.1.1</span> <span class="toctext">Observers and ChannelSets</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253AStatisticsFilter.html#Views"><span class="tocnumber">4.1.2</span> <span class="toctext">Views</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253AStatisticsFilter.html#Output_format"><span class="tocnumber">4.1.3</span> <span class="toctext">Output format</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253AStatisticsFilter.html#Computation_of_weighted_statistics"><span class="tocnumber">4.1.4</span> <span class="toctext">Computation of weighted statistics</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253AStatisticsFilter.html#Expressions"><span class="tocnumber">4.1.5</span> <span class="toctext">Expressions</span></a>
+<ul>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#RSquared.28_obs1.2C_obs2.2C_idx1.2C_idx2_.29"><span class="tocnumber">4.1.5.1</span> <span class="toctext">RSquared( obs1, obs2, idx1, idx2 )</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#ZScore.28_obs1.2C_obs2.2C_idx1.2C_idx2_.29"><span class="tocnumber">4.1.5.2</span> <span class="toctext">ZScore( obs1, obs2, idx1, idx2 )</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Count.28.29"><span class="tocnumber">4.1.5.3</span> <span class="toctext">obs.Count()</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Mean.28.29"><span class="tocnumber">4.1.5.4</span> <span class="toctext">obs.Mean()</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Variance.28.29"><span class="tocnumber">4.1.5.5</span> <span class="toctext">obs.Variance()</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Covariance.28idx1.2Cidx2.29"><span class="tocnumber">4.1.5.6</span> <span class="toctext">obs.Covariance(idx1,idx2)</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Correlation.28idx1.2Cidx2.29"><span class="tocnumber">4.1.5.7</span> <span class="toctext">obs.Correlation(idx1,idx2)</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Skewness.28.29.2C_obs.Kurtosis.28.29"><span class="tocnumber">4.1.5.8</span> <span class="toctext">obs.Skewness(), obs.Kurtosis()</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.CentralMoment.28n.29"><span class="tocnumber">4.1.5.9</span> <span class="toctext">obs.CentralMoment(n)</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Quantile.280.3E.3Dp.3E.3D1.29"><span class="tocnumber">4.1.5.10</span> <span class="toctext">obs.Quantile(0>=p>=1)</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.QQuantiles.28n.29"><span class="tocnumber">4.1.5.11</span> <span class="toctext">obs.QQuantiles(n)</span></a></li>
+<li class='toclevel-4'><a href="Contributions%253AStatisticsFilter.html#obs.Histogram.28center.2C_resolution.2C_numBins.29"><span class="tocnumber">4.1.5.12</span> <span class="toctext">obs.Histogram(center, resolution, numBins)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AStatisticsFilter.html#Parameters"><span class="tocnumber">5</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#ChannelSets"><span class="tocnumber">5.1</span> <span class="toctext">ChannelSets</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#Observers"><span class="tocnumber">5.2</span> <span class="toctext">Observers</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#Views_2"><span class="tocnumber">5.3</span> <span class="toctext">Views</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#OutputView"><span class="tocnumber">5.4</span> <span class="toctext">OutputView</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#VisualizeViews"><span class="tocnumber">5.5</span> <span class="toctext">VisualizeViews</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AStatisticsFilter.html#EventScripts"><span class="tocnumber">5.6</span> <span class="toctext">EventScripts</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AStatisticsFilter.html#States"><span class="tocnumber">6</span> <span class="toctext">States</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AStatisticsFilter.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>The StatisticsFilter is able to compute a number of statistical measures over a signal it is observing. Statistics are computed over decaying time windows of past data, and are thus updated continuously. Amongst other purposes, the StatisticsFilter may be used to compute feature maps displaying correlation between task and features online, during a measurement.
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/trunk/src/contrib/SignalProcessing/Statistics" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/SignalProcessing/Statistics" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/SignalProcessing/Statistics</a>
+</p>
+<a name="Versioning"></a><h2>Versioning</h2>
+<a name="Author"></a><h3>Author</h3>
+<p>juergen.mellinger@uni-tuebingen.de
+</p>
+<a name="Source_Code_Revisions"></a><h3>Source Code Revisions</h3>
+<ul><li>Initial development: 3758
+</li><li>Tested under: 4151
+</li><li>Known to compile under: 4164
+</li></ul>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<p>The StatisticsFilter allows to statistically observe incoming data, and to compute various statistical measures over these data. Data observation may be restricted to boolean conditions involving state variables. Also, when computing statistics, older data may be weighted less, allowing for continuously updated statistics.
+</p><p>In addition to its input signal, the StatisticsFilter is able to include its own output into observation.
+</p>
+<a name="User-defined_Objects"></a><h3>User-defined Objects</h3>
+<p>Configuration of the StatisticsFilter is done by defining objects which belong to one of the following classes: <b>ChannelSets,</b> <b>Observers,</b> and <b>Views.</b>
+For each class, there exists a parameter containing definitions of objects that belong that class. In these matrix-valued parameters, columns vary according to class, but each row corresponds to exactly one object. Objects must be uniquely named, and object names are specified by setting the corresponding row's label (double-click the row's header).
+</p>
+<a name="Observers_and_ChannelSets"></a><h4>Observers and ChannelSets</h4>
+<ul><li><b>Observers</b> are the central components of the StatisticsFilter. They "observe" their inputs over time, and may provide statistical information based on their observations.
+</li><li>For each observer, there exists an observation condition in a column labelled "observe when." There, a boolean expression is expected, such as "TargetCode==1". No observation is made while the observation condition evaluates to "false".
+</li><li>Observers also have a typical observation duration in the column labelled "observe over". When computing statistics, data are exponentially weighted according to their age. An observer's "observe over" entry defines for which age a data point's weight has decayed to a factor of exp(-1). An observer's data will only age when new data is being observed, i.e. while its observation condition evaluates to "true".
+</li><li><b>ChannelSets</b> serve to define observers' inputs. Besides ChannelSets, BCI2000 expressions may be specified, e.g. in order to set a BCI2000 state to be the input to an observer. An observer's input is specified in the column labelled "observe what".
+</li></ul>
+<a name="Views"></a><h4>Views</h4>
+<ul><li><b>Views</b> define the output of statistical information. A view is a mathematical expression, which may contain general mathematical functions such as log(), sqrt(), +, *, / as well as statistical functions operating on observer objects. E.g., to get the mean value of the signal observed by observer "obs1", one defines a view computing the expression "obs1.mean()". 
+</li><li>To compute the squared correlation coefficient ("Determination coefficient, r^2") between two conditions, one needs to define two observers, one for each condition. Into each observer's "observe when" column, one enters the desired condition, e.g. "TargetCode==1" and "TargetCode==2". Then, one creates a view to compute the r^2 value. For two observers "obs1" and "obs2", the corresponding expression would be "RSquared( obs1, obs2 )".
+</li><li>To compute correlation between two signals, one defines a single observer with multivariate input. E.g., to compute a continuously updated correlation between the "TargetCode" state, and an input signal, one creates an observer with "true" as observation condition, i.e. an observer that observes continuously. For this observer, two entries are then specified under "observe what": First, "TargetCode", and then "AllChannels" (or the name of a different ChannelSet). This observer's input then has two dimensions: TargetCode and signal. In an output view, one may then write "obs.Correlation(1,2)", or short "obs.Correlation()", to view the 1,2 entry of the correlation matrix.
+</li><li>Just like ChannelSets, views may be specified as input to observers. This allows for multi-level statistics, where statistical measures themselves become subject of statistical observation.
+</li></ul>
+<a name="Output_format"></a><h4>Output format</h4>
+<p>A view's output channels are the outer product of the input channels of the observers involved. Only "compatible" observers may be combined in a view's expression. When an observer has only a single ChannelSet in its input (as has been the case in all examples so far), then output channels directly correspond to input channels. When an observer has multivariate input, and there are ChannelSets associated with two of its input dimensions, then output channels correspond to pairwise combinations of input channels.
+</p><p>Output channel labels are constructed by combining input channel labels, such that is possible to identify each single combination in the output.
+</p>
+<a name="Computation_of_weighted_statistics"></a><h4>Computation of weighted statistics</h4>
+<p>In order to derive formulae for weighted statistics, one proceeds as if computing statistics from a histogram (or from pairs of histograms, in case of the RSquared() and ZScore() functions). First, the total weight of data points is normalized to 1. Then, statistical measures are expressed in terms of power sums of observed values. Finally, each contributing term in each power sum is weighted by the normalized weight of its corresponding data point.
+</p>
+<a name="Expressions"></a><h4>Expressions</h4>
+<p>For the syntax of boolean and mathematical expressions, see:
+<a href="User_Reference%253AExpression_Syntax.html" class='external free' title="http://www.bci2000.org/wiki/index.php/User_Reference:Expression_Syntax" rel="nofollow">http://www.bci2000.org/wiki/index.php/User_Reference:Expression_Syntax</a>
+</p><p>In addition to standard functions, the following statistical functions may be used when defining views:
+</p>
+<a name="RSquared.28_obs1.2C_obs2.2C_idx1.2C_idx2_.29"></a><h5>RSquared( obs1, obs2, idx1, idx2 )</h5>
+<p>Computes the squared correlation coefficient (Determination coefficient, squared Pearson's r) between two sets of observations. For univariate observers, index arguments may be omitted. Otherwise, they specify a pair of dimensions to combine between first and second observer.
+</p>
+<a name="ZScore.28_obs1.2C_obs2.2C_idx1.2C_idx2_.29"></a><h5>ZScore( obs1, obs2, idx1, idx2 )</h5>
+<p>Computes a z score between two sets of observations, taking the first observer as a reference. As for the RSquared() function, indices refer to observer input dimensions, and may be omitted in case of two univariate observers.
+</p>
+<a name="obs.Count.28.29"></a><h5>obs.Count()</h5>
+<p>Computes the effective number of observations entering into statistics for observer "obs". The effective number of observations takes the weight decay of older observations into account, and approaches a constant for finite entries in the "observe over" column.
+</p>
+<a name="obs.Mean.28.29"></a><h5>obs.Mean()</h5>
+<p>The mean of observations for observer "obs".
+</p>
+<a name="obs.Variance.28.29"></a><h5>obs.Variance()</h5>
+<p>The variance of observations for each dimension of observer "obs".
+</p>
+<a name="obs.Covariance.28idx1.2Cidx2.29"></a><h5>obs.Covariance(idx1,idx2)</h5>
+<p>The covariance of observations for observer "obs". For a two-dimensional observer, indices may be omitted, resulting in the 1,2 entry of the covariance matrix. Diagonal elements of covariance are identical to the elements of variance.
+</p>
+<a name="obs.Correlation.28idx1.2Cidx2.29"></a><h5>obs.Correlation(idx1,idx2)</h5>
+<p>The correlation matrix for the dimensions of observer "obs". For a two-dimensional observer, indices may be omitted, resulting in the 1,2 entry of the correlation matrix. Diagonal elements of correlation are always 1.
+</p>
+<a name="obs.Skewness.28.29.2C_obs.Kurtosis.28.29"></a><h5>obs.Skewness(), obs.Kurtosis()</h5>
+<p>The skewness and kurtosis for each dimension of observer "obs". Kurtosis is computed such that it becomes zero for Gaussian distributed data.
+</p>
+<a name="obs.CentralMoment.28n.29"></a><h5>obs.CentralMoment(n)</h5>
+<p>The n-th central moment for each dimension of observer "obs".
+</p>
+<a name="obs.Quantile.280.3E.3Dp.3E.3D1.29"></a><h5>obs.Quantile(0>=p>=1)</h5>
+<p>The value corresponding to the the given relative frequency in each dimension of observer "obs".
+</p>
+<a name="obs.QQuantiles.28n.29"></a><h5>obs.QQuantiles(n)</h5>
+<p>For each dimension of observer "obs", a vector of values corresponding to the n-th q-quantile. This vector has n+1 entries, with the minimum in the first entry, and the maximum in the last entry.
+</p>
+<a name="obs.Histogram.28center.2C_resolution.2C_numBins.29"></a><h5>obs.Histogram(center, resolution, numBins)</h5>
+<p>For each dimension of observer "obs", a vector of histogram frequencies with the specified properties.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<a name="ChannelSets"></a><h3>ChannelSets</h3>
+<p>Rows represent channel sets, defined as space-separated lists of channel names. Use row labels to name channel sets. Channel names may include * and&nbsp;? wildcards, and character ranges enclosed in [], optionally negated by an exclamation mark. Ranges of channels may be specified using&nbsp;: or - to separate begin from end.
+</p>
+<a name="Observers"></a><h3>Observers</h3>
+<p>Rows represent observers. In the "observe what" column, you may specify channel sets, views, or expressions. In the "observe when" column, provide a boolean condition, or "true" in order to observe always. For "observe over", give a typical lifetime of an observation. Specify multiple entries in the first column in order to do multivariate statistics.
+</p>
+<a name="Views_2"></a><h3>Views</h3>
+<p>Rows represent views. Views are defined by arithmetic expressions that may contain <a href="Contributions%253AStatisticsFilter.html#Expressions" title="">statistical functions</a>, and properties of observers. Data from multiple columns will be concatenated in the output.
+</p>
+<a name="OutputView"></a><h3>OutputView</h3>
+<p>Specify a view to be copied into the filter's output signal. When empty, the filter's input will be used as an output.
+</p>
+<a name="VisualizeViews"></a><h3>VisualizeViews</h3>
+<p>Wildcard expressions matching views to be displayed. Enter a * to display all defined views.
+</p>
+<a name="EventScripts"></a><h3>EventScripts</h3>
+<p>Specify statements to be executed during StartRun, StopRun, Initialize, or Process. This is intended for creating and initializing variables that are later used within Observer or View expressions.
+</p>
+<a name="States"></a><h2>States</h2>
+<p>"Observe when", "observe what", and view expressions may contain any state variable present in the system.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AFilters.html" title="User Reference:Filters">User Reference:Filters</a>, <a href="Contributions%253ASignalProcessing.html" title="Contributions:SignalProcessing">Contributions:SignalProcessing</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

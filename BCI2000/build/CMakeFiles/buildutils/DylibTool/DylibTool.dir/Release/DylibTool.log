@@ -1,0 +1,13 @@
+﻿  Generating DylibTool/imports.h.in.res.cpp
+  Generating DylibTool/imports.cpp.in.res.cpp
+  Generating DylibTool/cdecl_imports.cpp.in.res.cpp
+  Building Custom Rule C:/BCI2000.python3/build/buildutils/DylibTool/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/buildutils/DylibTool/CMakeFiles/generate.stamp is up-to-date.
+  DylibTool.cpp
+  imports.h.in.res.cpp
+  imports.cpp.in.res.cpp
+  cdecl_imports.cpp.in.res.cpp
+  Version.cpp
+  Generating Code...
+  DylibTool.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\DylibTool\Release\DylibTool.exe
+  	Copy to destination

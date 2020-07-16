@@ -1,0 +1,26 @@
+HKCR
+{
+	BCI2000PresentationLink.PCLLibrary.1 = s 'BCI2000PCLLibrary Class'
+	{
+		CLSID = s '{E03BF661-4CDE-4252-86D8-933260255E8C}'
+	}
+	BCI2000PresentationLink.PCLLibrary = s 'BCI2000PCLLibrary Class'
+	{
+		CLSID = s '{E03BF661-4CDE-4252-86D8-933260255E8C}'
+		CurVer = s 'BCI2000PresentationLink.PCLLibrary.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {E03BF661-4CDE-4252-86D8-933260255E8C} = s 'BCI2000PCLLibrary Class'
+		{
+			ProgID = s 'BCI2000PresentationLink.PCLLibrary.1'
+			VersionIndependentProgID = s 'BCI2000PresentationLink.PCLLibrary'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{92EB0322-0798-48D0-BB72-D2ADDE4B7781}'
+		}
+	}
+}

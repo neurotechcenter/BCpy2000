@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\build\buildutils\create_resource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\types\Blob.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\types</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\types\Blob.h">
+      <Filter>Header Files\BCI2000 Framework\shared\types</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Resource.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\buildutils\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\create_resource\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\types">
+      <UniqueIdentifier>{865E71D0-B993-3B40-86B6-195D90041B7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{2DBCCB9D-4479-3D5F-9C13-F337F231BB05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\types">
+      <UniqueIdentifier>{B2EE1258-69FB-399C-BC1F-A531A14364C7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

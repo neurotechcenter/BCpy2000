@@ -1,0 +1,28 @@
+\section{Introduction and Setup}
+\subsection{AppConnectorExample}The AppConnectorExample program was designed as an example of how to use the AppConnector functionality for BCI2000, and as an example of a cross-platform application. The AppConnector functionality included in BCI2000 allows an external program to read and modify internal BCI2000 states (see the BCI2000 implementation guide and user manual for additional information about states). This program was written using Qt 4, which runs on Linux/Unix, Windows, and MacOS, and uses the platform-independent TCPStream class included with BCI2000 for TCP/UDP communication. ACE makes two network connections (sending and receiving) on two separate ports to a running BCI2000 session. The purposes of this documentation are:
+\begin{enumerate}
+ \item Introduce the concept of cross-platform development using Qt 4
+ \item Provide an example program that can read BCI2000 states, locally or remotely
+ \item Show how to modify a state value, and send that state back to BCI2000
+\end{enumerate}
+
+\subsection{Qt4 Setup}
+Setting up Qt4 is largely dependent on your platform, and the distribution used (if on linux).
+\subsubsection{Windows}
+Installing Qt4 is reasonably straightforward on Windows. Go to \url{http://www.trolltech.com/products/qt/downloads}, and download the version that includes MinGW (it should say MinGW in the filename, as opposed to src). MinGW is a compiler for windows, and is needed because the open source version of Qt cannot be used with MS Visual Studio or the Borland Compiler. Download and setup Qt and MinGW. Next, you need to add the Qt/bin and MinGW/bin directories to your path. Do this by right-clicking on My Computer->Properties, go to Advanced, and click on Environment Variables. Under system variables, select Path, and add\\ \texttt{c:$\backslash$Qt$\backslash$4.2.3$\backslash$bin;c:$\backslash$MinGW$\backslash$bin;}\\ 
+to the FRONT of the existing path. Note that this does depend on where you actually installed qt and mingw, so adjust these directories accordingly.\newline
+One caveat to be aware of if you also have Cygwin installed on windows (if you do not, you can safely skip this) is that some of the files and programs can conflict if MinGW and Cygwin are present simultaneously. The quick and dirty solution is to start a Cygwin shell, and rename the \texttt{sh.exe} file, like:\\
+ \texttt{\# mv /usr/bin/sh /usr/bin/shold}. \\
+(\textit{A better solution may be to move sh to shold, and then link to bash, since sh is recreated every time a bash shell starts; I have not tried this yet though.}\\
+To work in the qt4 environment, go to the Start Menu->Qt 4 (Trolltech...), and select the Qt 4 Environment program. This opens a command window with all of the path variables set correctly, and will help reduce conflicts with Cygwin and possibly other compilers on the system. To use the mingw make program, you must type \texttt{mingw32-make}, and not just make.
+
+\subsubsection{Linux}
+This will depend on your distribution. Under gentoo (which I use), simply type \texttt{\# emerge -av qt}. The newest version will be downloaded, compiled, and installed. Under debian, kubuntu, or ubuntu, type \texttt{sudo apt-get install libqt4-dev libqt4-gui libqt4-core libqt4-debug}. This may be wrong, since I do not have debian or kubuntu installed, but it should be in the ballpark, and if you are using these distros you should know what you are doing anyway :-). Also, make sure that you have gcc installed.
+
+\subsubsection{OS X}
+Note: I do not have OS X, nor have I ever used it. The Trolltech site at \url{http://www.trolltech.com/products/qt/downloads} has a section for Macs, so download and install the program according to those instructions, and hope for the best...and stop putting the letter 'i' in front of everything, it's annoying.
+
+\subsection{Development Environment}
+Unfortunately, the free version of Qt4 does not integrate with MS Visual Studio or Borland Developer Studio. However, there are many free IDE's available for C++. On Windows, DevC++ is a good choice, and has syntax highlighting, code completion, and integrates well with MinGW. On Linux, KDevelop and/or Kate (KDE Advanced Text Editor) are great choices. Mac people, again, you are on your own here.\\
+Qt on linux also comes with Qt Designer, which allows for the quick development of forms and user interfaces. However, it does not include code generation; it saves an xml file describing the form, which uses an intermediate compiler called uic (user interface compiler) to generate the c++ code, which is THEN integrated with your code. I personally think it is easer to just write the GUI code by hand, and in this example this is what is done.\\
+Another open source IDE available for Qt development is called QDevelop. This looks promising, since it combines the Qt Designer RAD interface with integrated code generation, and includes a code editor. I have not had a chance to check it out though.

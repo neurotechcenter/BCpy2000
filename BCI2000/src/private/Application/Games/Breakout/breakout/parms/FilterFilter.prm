@@ -1,0 +1,4 @@
+Filtering:IIR%20Filter                  float     HighPassCorner=               65Hz           //
+Filtering:IIR%20Filter                  float     LowPassCorner=               115Hz           //
+Filtering:IIR%20Filter                  float     NotchCenter=                  60Hz           //
+Filtering:IIR%20Filter                  float     FilterGain=               500000             //

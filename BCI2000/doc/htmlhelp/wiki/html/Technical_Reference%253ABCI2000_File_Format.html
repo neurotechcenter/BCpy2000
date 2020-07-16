@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Technical Reference:BCI2000 File Format - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Technical Reference:BCI2000 File Format,BCI2000 Glossary,Programming Reference:BCI2000FileReader,Technical Reference:Parameter Definition,Technical Reference:State Definition,User Reference:BCI2000FileWriter,User Reference:Data File Formats,User Reference:Filters,User Reference:Matlab MEX Files,User Reference:Timing" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">BCI2000 File Format</h1><p class="subtitle">Technical Reference</p><hr class="sep" /><p>A BCI2000 data file consists of a header and the actual raw brain signals.
+Its associated file name extension is <code>.dat</code>.
+The header consists of a definition of all system parameters and states. 
+Thus, parameter values cannot change within a <a href="BCI2000_Glossary.html#Run" title="BCI2000 Glossary">run</a>, which in turn corresponds to a single data file.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Technical_Reference%253ABCI2000_File_Format.html#Header"><span class="tocnumber">1</span> <span class="toctext">Header</span></a>
+<ul>
+<li class='toclevel-2'><a href="Technical_Reference%253ABCI2000_File_Format.html#Meta_Information"><span class="tocnumber">1.1</span> <span class="toctext">Meta Information</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ABCI2000_File_Format.html#State_Definitions"><span class="tocnumber">1.2</span> <span class="toctext">State Definitions</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ABCI2000_File_Format.html#Parameter_Definitions"><span class="tocnumber">1.3</span> <span class="toctext">Parameter Definitions</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ABCI2000_File_Format.html#Summary"><span class="tocnumber">1.4</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Technical_Reference%253ABCI2000_File_Format.html#Binary_Data"><span class="tocnumber">2</span> <span class="toctext">Binary Data</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ABCI2000_File_Format.html#Required_Parameters"><span class="tocnumber">3</span> <span class="toctext">Required Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="Technical_Reference%253ABCI2000_File_Format.html#Section_Source"><span class="tocnumber">3.1</span> <span class="toctext">Section Source</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ABCI2000_File_Format.html#Section_Storage"><span class="tocnumber">3.2</span> <span class="toctext">Section Storage</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ABCI2000_File_Format.html#Section_System"><span class="tocnumber">3.3</span> <span class="toctext">Section System</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Technical_Reference%253ABCI2000_File_Format.html#Required_States"><span class="tocnumber">4</span> <span class="toctext">Required States</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ABCI2000_File_Format.html#Software_Components"><span class="tocnumber">5</span> <span class="toctext">Software Components</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ABCI2000_File_Format.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Header"></a><h2>Header</h2>
+<p>The header of a data file consists of lines of ASCII characters, separated by a carriage return/line feed (CRLF) control character sequence typically present in DOS/Windows text files.
+Its total length is given by the <code>HeaderLen</code> field in the first line.
+The header contains meta information, state (event) definitions, and parameters.
+</p>
+<a name="Meta_Information"></a><h3>Meta Information</h3>
+<p>The fields in the first line specify meta information required to access the binary data that follows the header.
+</p><p>Since version 1.1, the first line begins with a <code>BCI2000V</code>
+field containing a floating point version number, and ends with a
+<code>DataFormat</code> field describing the format of the binary data as
+<code>int16</code>, <code>int32</code>, or <code>float32</code>.
+A missing <code>BCI2000V</code> field indicates a file format version of
+1.0, and a <code>DataFormat</code> of <code>int16</code>.
+</p><p>The number of bytes in the state vector is determined by the sum of the lengths (given in bits) for all states, rounded up to the next byte (which equals the value of <code>StateVectorLength</code> in both the first line and, since <code>StateVectorLength</code> is also a system-wide parameter, in one of the lines in the <code>[ Parameter Definition ]</code> section).
+Thus, the first line contains all information required to read the binary information contained in the data file.
+</p>
+<a name="State_Definitions"></a><h3>State Definitions</h3>
+<p>State definitions are preceded with a line <code>[ State Vector Definition ]</code>, and given in the general <a href="Technical_Reference%253AState_Definition.html" title="Technical Reference:State Definition">State Definition</a> format.
+In the context of the file header, the state definitions' <i>value</i> fields are redundant since they match the values associated with the first sample in the data file.
+</p>
+<a name="Parameter_Definitions"></a><h3>Parameter Definitions</h3>
+<p>Parameter definitions are preceded with a line <code>[ Parameter Definition ]</code>, and follow the general <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">Parameter Definition</a> format. They represent the respective parameters' values at the beginning of the recording.
+</p>
+<a name="Summary"></a><h3>Summary</h3>
+<pre>BCI2000V= 1.1 HeaderLen= l SourceCh= m StateVectorLength= k DataFormat= f CRLF
+[ State Vector Definition ] CRLF
+Name1 Length1 Value1 ByteLocation1 BitLocation1 CRLF
+Name2 Length2 Value2 ByteLocation2 BitLocation2 CRLF
+Name3 Length3 Value3 ByteLocation3 BitLocation3 CRLF
+...
+[ Parameter Definition ] CRLF
+Section1 DataType1 Name1= Value1 DefaultValue1 LowRange1 HighRange1 // Comment CRLF
+Section2 DataType2 Name2= Value2 DefaultValue2 LowRange2 HighRange2 // Comment CRLF
+Section3 DataType3 Name3= Value3 DefaultValue3 LowRange3 HighRange3 // Comment CRLF
+...
+CRLF
+</pre>
+<a name="Binary_Data"></a><h2>Binary Data</h2>
+<p>The end of the header is marked by CRLF CRLF, and the binary data directly follows the last CRLF. 
+For each sample, data values for all channels are stored, followed by <code>StateVectorLength</code> bytes for the state vector.
+Data samples are always stored in little endian byte ordering.
+Their format depends on the <code>DataFormat</code> field:
+</p>
+<table border="1">
+<tr>
+<th> DataFormat field </th><th> data type
+</th></tr>
+<tr>
+<td>  int16           </td><td> 2-byte signed integer
+</td></tr>
+<tr>
+<td>  int32           </td><td> 4-byte signed integer
+</td></tr>
+<tr>
+<td>  float32         </td><td> 4-byte floating point (IEEE 754)
+</td></tr></table>
+<p>From the total file size, and the information present in the header's first line, the number of samples in a data file may be calculated as follows:
+<img class='tex' src="../images/math/c/7/2/c7230c4d532488550a87dbb07ae6b448.png" alt="\textrm{samples}     =\frac{(\textrm{file\ size\ in\ bytes})-\texttt{HeaderLen}}     {\textrm{(data\ value\ size\ in\ bytes)}\times\texttt{SourceCh}     +\texttt{StateVectorLength}}" />
+</p>
+<a name="Required_Parameters"></a><h2>Required Parameters</h2>
+<p>These parameters will be present in any BCI2000 data file.
+While some of these parameters are required to interpret a data file's content (source parameters), others reflect information about external circumstances (storage parameters), or internal housekeeping (system parameters).
+</p>
+<a name="Section_Source"></a><h3>Section Source</h3>
+<p>The parameters in this section are required to be present in any BCI2000 data file.
+These parameters are necessary to interpret the raw data contained in the file, and are thus belonging into section <i>Source</i>.
+</p>
+<table border="1">
+<caption>Required Parameters
+</caption><tr>
+<th> Type </th><th> Parameter Name </th><th> Description
+</th></tr>
+<tr>
+<td> int </td><td> SampleBlockSize </td><td> number of samples acquired, transmitted, and stored at a time
+</td></tr>
+<tr>
+<td> float </td><td> SamplingRate </td><td> data acquisition rate in samples per second
+</td></tr>
+<tr>
+<td> int </td><td> SourceCh </td><td> number of digitized and stored channels
+</td></tr>
+<tr>
+<td> floatlist </td><td> SourceChOffset </td><td> raw data zero offset in AD units
+</td></tr>
+<tr>
+<td> floatlist </td><td> SourceChGain </td><td> factor to convert raw AD units into <span class="texhtml">&mu;<i>V</i></span>
+</td></tr>
+<tr>
+<td> int </td><td> AlignChannels </td><td> flag indicating whether data require alignment in time
+</td></tr>
+<tr>
+<td> floatlist </td><td> SourceChTimeOffset </td><td> individual channel offsets in time, ranging between 0 and 1; -1 indicates that offsets are distributed uniformly over 0..1
+</td></tr></table>
+<a name="Section_Storage"></a><h3>Section Storage</h3>
+<p>These parameters are used to identify external circumstances of a recording, by listing subject, technical equipment, and technician information.
+</p>
+<table border="1">
+<caption>Storage Parameters
+</caption><tr>
+<th> Type </th><th> Parameter Name </th><th> Description
+</th></tr>
+<tr>
+<td> string </td><td> SubjectName </td><td> subject alias
+</td></tr>
+<tr>
+<td> string </td><td> SubjectSession </td><td> subject session number
+</td></tr>
+<tr>
+<td> string </td><td> SubjectRun </td><td> run number within session (auto-incremented)
+</td></tr>
+<tr>
+<td> string </td><td> DataDirectory </td><td> directory under which the session directory is to be created
+</td></tr>
+<tr>
+<td> string </td><td> ID_System </td><td rowspan="3"> equipment identification
+</td></tr>
+<tr>
+<td> string </td><td> ID_Amp
+</td></tr>
+<tr>
+<td> string </td><td> ID_Montage
+</td></tr></table>
+<p><br />
+</p>
+<a name="Section_System"></a><h3>Section System</h3>
+<p>The parameters in this section are used by the BCI2000 modules to organize their connections, and they provide module versioning information.
+</p>
+<table border="1">
+<caption>System Parameters
+</caption><tr>
+<th> Type </th><th> Parameter Name </th><th> Description
+</th></tr>
+<tr>
+<td> string </td><td> EEGsourceIP</td><td> IP address the source module listens on
+</td></tr>
+<tr>
+<td> int </td><td> EEGsourcePort</td><td> IP port the source module listens on
+</td></tr>
+<tr>
+<td> matrix </td><td> EEGsourceVersion </td><td> source module versioning information
+</td></tr>
+<tr>
+<td> string </td><td> SignalProcessingIP</td><td> IP address the signal processing module listens on
+</td></tr>
+<tr>
+<td> int </td><td> SignalProcessingPort</td><td> IP port the signal processing module listens on
+</td></tr>
+<tr>
+<td> matrix </td><td> SignalProcessingVersion </td><td> signal processing module versioning information
+</td></tr>
+<tr>
+<td> string </td><td> ApplicationIP</td><td> IP address the application module listens on
+</td></tr>
+<tr>
+<td> int </td><td> ApplicationPort</td><td> IP port the application module listens on
+</td></tr>
+<tr>
+<td> matrix </td><td> ApplicationVersion </td><td> application module versioning information
+</td></tr>
+<tr>
+<td> matrix </td><td> OperatorVersion </td><td> operator module versioning information
+</td></tr>
+<tr>
+<td> int </td><td> StateVectorLength </td><td> length of the state vector in bytes
+</td></tr></table>
+<a name="Required_States"></a><h2>Required States</h2>
+<p>These states are present in all BCI2000 data files.
+Individual <a href="User_Reference%253AFilters.html" title="User Reference:Filters">filters</a> may add states to the system; see filter reference pages for a description of these states.
+</p>
+<table border="1">
+<caption>Common States
+</caption><tr>
+<th> Length (bits) </th><th> State Name </th><th> Remarks
+</th></tr>
+<tr>
+<td> 1 </td><td> Running </td><td> Setting this state to 0 will put BCI2000 into suspended mode.
+</td></tr>
+<tr>
+<td> 16 </td><td> SourceTime </td><td rowspan="2"> Time of data acquisition/stimulus delivery as an unsigned wrap-around value with a resolution of 1ms. This information is used to measure <a href="User_Reference%253ATiming.html" title="User Reference:Timing">system timing</a>.
+</td></tr>
+<tr>
+<td> 16 </td><td> StimulusTime
+</td></tr></table>
+<a name="Software_Components"></a><h2>Software Components</h2>
+<ul><li>For writing, information about the BCI2000 data file format is encapsulated into the <a href="User_Reference%253ABCI2000FileWriter.html" title="User Reference:BCI2000FileWriter"><code>shared/fileio/dat/BCI2000FileWriter</code></a> component.
+</li><li>For reading, information about the BCI2000 data file format is encapsulated into <a href="Programming_Reference%253ABCI2000FileReader.html" title="Programming Reference:BCI2000FileReader"><code>shared/fileio/dat/BCI2000FileReader</code></a>.
+</li><li>A Matlab mex file to read BCI2000 data files is provided at <a href="User_Reference%253AMatlab_MEX_Files.html#load_bcidat" title="User Reference:Matlab MEX Files"><code>Tools/mex/load_bcidat</code></a>. This mex file uses the <code>BCI2000FileReader</code> component.
+</li></ul>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AData_File_Formats.html" title="User Reference:Data File Formats">User Reference:Data File Formats</a>, <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">Technical Reference:Parameter Definition</a>, <a href="Technical_Reference%253AState_Definition.html" title="Technical Reference:State Definition">Technical Reference:State Definition</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<ul><li><a href="Technical_Reference%253ASystem_Design.html">System Design</a></li>
+<li><a href="Technical_Reference%253ACore_Modules.html">Core Modules</a></li>
+<li><a href="Technical_Reference%253AStates_of_Operation.html">States of Operation</a></li>
+<li><a href="Technical_Reference%253ABCI2000_Messages.html">BCI2000 Messages</a></li>
+<li><a href="Technical_Reference%253AParameter_Definition.html">Parameter Definition</a></li>
+<li><a href="Technical_Reference%253AState_Definition.html">State Definition</a></li>
+</ul><a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

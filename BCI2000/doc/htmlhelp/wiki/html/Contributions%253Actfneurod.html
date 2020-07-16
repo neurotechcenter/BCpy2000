@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:ctfneurod - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:ctfneurod,Contributions:ADCs,Contributions:NeuroscanADC" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">ctfneurod</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253Actfneurod.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253Actfneurod.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253Actfneurod.html#Author"><span class="tocnumber">3</span> <span class="toctext">Author</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253Actfneurod.html#Compiling_and_Linking"><span class="tocnumber">4</span> <span class="toctext">Compiling and Linking</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253Actfneurod.html#Usage"><span class="tocnumber">5</span> <span class="toctext">Usage</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253Actfneurod.html#Options"><span class="tocnumber">6</span> <span class="toctext">Options</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253Actfneurod.html#--pattern_.3Cregular_expression.3E"><span class="tocnumber">6.1</span> <span class="toctext">--pattern &lt;regular expression&gt;</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253Actfneurod.html#--freqCorrection_.3Cfactor.3E"><span class="tocnumber">6.2</span> <span class="toctext">--freqCorrection &lt;factor&gt;</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253Actfneurod.html#--outputFormat_.3Cnbits.3E"><span class="tocnumber">6.3</span> <span class="toctext">--outputFormat &lt;nbits&gt;</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253Actfneurod.html#--disableHP"><span class="tocnumber">6.4</span> <span class="toctext">--disableHP</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253Actfneurod.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p><i>ctfneurod</i> is a relay program that reads data from the CTF Acq program's RealTime 
+interface, and provides them to client software over a TCP socket.
+On the client side, <i>ctfneurod</i> implements the Neuroscan Acquire protocol, allowing
+to use the <a href="Contributions%253ANeuroscanADC.html" title="Contributions:NeuroscanADC">BCI2000 Neuroscan Source Module</a> for MEG
+data acquisition.
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/Neuroscan/ctfneurod" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/Neuroscan/ctfneurod" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/Neuroscan/ctfneurod</a>
+</p>
+<a name="Author"></a><h2>Author</h2>
+<p><i>ctfneurod</i> was written by <tt>juergen.mellinger@uni-tuebingen.de</tt>. When using it in your
+research, please give credit by citing the following reference:
+</p><p>J. Mellinger, G. Schalk, C. Braun, H. Preissl, W. Rosenstiel, N. Birbaumer, A. K&uuml;bler:
+An MEG-based brain-computer interface (BCI), NeuroImage 2007 Mar;36(3):581-93.
+</p>
+<a name="Compiling_and_Linking"></a><h2>Compiling and Linking</h2>
+<p><i>ctfneurod</i> requires CTF's development SDK. It links against the <tt>ctfds</tt> and <tt>ctfutil</tt> libraries, and requires the associated header files to compile. If the CTF development SDK is not yet installed on your CTF acquisition system, you can find it on a CDROM labeled "C++ Dataset Library". You should copy "/mnt/cdrom/develop.linux" to your home directory, resulting in the following files and directories
+</p><p><tt>
+/home/meg/develop.linux/code <br />
+/home/meg/develop.linux/doc  <br />
+/home/meg/develop.linux/Makefile  <br />
+/home/meg/develop.linux/Makefile.local  <br />
+develop.linux/obj.linux
+</tt>
+</p><p>The ctfneurod directory from BCI2000 should be copied into /home/meg/develop.linux/code/ctfneurod and the Makefile should be edited to list ctfneurod as one of the "PROGS" to be compiled. Subsequently you can type "make" on the linux command line and all programs, including ctfneurod will be compiled.
+</p><p><br />
+</p>
+<a name="Usage"></a><h2>Usage</h2>
+<p><i>ctfneurod</i> runs on the data acquisition machine connected to the MEG system, and must be started before CTF's Acq program. When started up, <i>ctfneurod</i> waits for
+the Acq software to begin streaming data, and acts like a Neuroscan Acquire server once 
+data is available.
+Its command line syntax is
+</p>
+<pre> ctfneurod &lt;listening address&gt; &lt;options&gt;
+</pre>
+<p>There, the server's listening address is specified in the form <tt>&lt;ip&gt;:&lt;port&gt;</tt>, and defaults to
+<tt>localhost:4000</tt>.
+</p>
+<a name="Options"></a><h2>Options</h2>
+<a name="--pattern_.3Cregular_expression.3E"></a><h3><tt>--pattern &lt;regular expression&gt;</tt></h3>
+<p>Restricts transmission to a subset of all the channels available from the Acq RealTime interface.
+The subset is defined by matching an extended regular expression against channel names, e.g.
+<tt>ctfneurod --pattern "^MLC.*"</tt>
+will only transfer channels whose names begin with "MLC".
+The default is to transfer all channels that are present on the Acq side.
+</p>
+<a name="--freqCorrection_.3Cfactor.3E"></a><h3><tt>--freqCorrection &lt;factor&gt;</tt></h3>
+<p>Normally, the sampling rate on the Neuroscan side is reported to be identical to the
+one on the Acq side. When a correction factor is specified, this is multiplied onto the
+Acq sampling rate prior to reporting the sampling rate on the Neuroscan side.
+</p>
+<a name="--outputFormat_.3Cnbits.3E"></a><h3><tt>--outputFormat &lt;nbits&gt;</tt></h3>
+<p>Defines the bit depth of data transmission, which is either 16 or 32, and defaults to 16.
+When 16 bit data transmission is selected, the two least significant bits of data are ignored to avoid 
+numeric overflow.
+</p>
+<a name="--disableHP"></a><h3><tt>--disableHP</tt></h3>
+<p>By default, <i>ctfneurod</i> applies a first-order HP filter with a corner frequency of 0.1Hz
+to Acq data prior to transmission. If this is undesired, use the <tt>--disableHP</tt> option to
+disable HP filtering.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Contributions%253AADCs.html" title="Contributions:ADCs">Contributions:ADCs</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

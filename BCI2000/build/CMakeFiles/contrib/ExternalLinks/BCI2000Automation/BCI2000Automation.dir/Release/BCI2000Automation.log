@@ -1,0 +1,16 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Automation/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/CMakeFiles/generate.stamp is up-to-date.
+  BCI2000Automation.cpp
+  CBCI2000Remote.cpp
+  sockstream.cpp
+  BCI2000Remote.cpp
+  BCI2000Connection.cpp
+  ComModule.cpp
+  ComClassFactory.cpp
+  ComRegistrar.cpp
+  ComStrings.cpp
+  Generating Code...
+  BCI2000Automation_i.c
+     Creating library C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Release/BCI2000Automation.lib and object C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Release/BCI2000Automation.exp
+  BCI2000Automation.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\Release\BCI2000Automation.dll
+  	Copy to destination	

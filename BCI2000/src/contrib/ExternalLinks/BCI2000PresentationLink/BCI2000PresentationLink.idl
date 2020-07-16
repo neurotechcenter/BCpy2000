@@ -1,0 +1,68 @@
+// BCI2000PresentationLink.idl : IDL source for BCI2000PresentationLink
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (BCI2000PresentationLink.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "../../../extlib/nbs/PCLExtension/interface/PCLExtension.idl";
+import "../../../extlib/nbs/DataPortExtension/interfaces/DataPortExtension.idl";
+
+[
+	uuid(92EB0322-0798-48D0-BB72-D2ADDE4B7781),
+	version(1.0),
+	helpstring("BCI2000PresentationLink 1.0 Type Library")
+]
+library BCI2000PresentationLinkLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(E03BF661-4CDE-4252-86D8-933260255E8C),
+		helpstring("BCI2000PCLLibrary Class")
+	]
+	coclass BCI2000PCLLibrary
+	{
+		[default] interface IPCLLibrary;
+	};
+	[
+		uuid(69E9A267-DFDC-4ACE-B690-63D952E74EC1),
+		helpstring("BCI2000ControllerType Class")
+	]
+	coclass BCI2000ControllerType
+	{
+		[default] interface IPCLType;
+	};
+	[
+		uuid(E0DC5246-7815-4C37-9D85-4DBEC82F4D0B),
+		helpstring("BCI2000Controller Class")
+	]
+	coclass BCI2000Controller
+	{
+		[default] interface IPCLObject;
+	};
+	[
+		uuid(20F54217-4B33-4956-9961-3052447F2F79),
+		helpstring("BCI2000DataPortExtension Class")
+	]
+	coclass BCI2000DataPortExtension
+	{
+		[default] interface IDataPortExtension;
+	};
+	[
+		uuid(E2E0A5C1-E632-402B-AB24-3CE3A5F238D3),
+		helpstring("BCI2000DataPort Class")
+	]
+	coclass BCI2000DataPort
+	{
+		[default] interface IDataPort;
+	};
+	[
+		uuid(32950798-DDBD-46B4-ABA3-3438FD94B42D),
+		helpstring("BCI2000ActiveDataPort Class")
+	]
+	coclass BCI2000ActiveDataPort
+	{
+		[default] interface IActiveDataPort;
+	};
+};

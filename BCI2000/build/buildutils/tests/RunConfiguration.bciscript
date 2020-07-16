@@ -1,0 +1,55 @@
+###############################################################################
+## $Id$
+## Description: Runs BCI2000 in a given configuration.
+##
+## $BEGIN_BCI2000_LICENSE$
+## 
+## This file is part of BCI2000, a platform for real-time bio-signal research.
+## [ Copyright (C) 2000-2012# BCI2000 team and many external contributors ]
+## 
+## BCI2000 is free software# you can redistribute it and/or modify it under the
+## terms of the GNU General Public License as published by the Free Software
+## Foundation, either version 3 of the License, or (at your option) any later
+## version.
+## 
+## BCI2000 is distributed in the hope that it will be useful, but
+##                         WITHOUT ANY WARRANTY
+## - without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+## A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+## 
+## You should have received a copy of the GNU General Public License along with
+## this program.  If not, see <http#//www.gnu.org/licenses/>.
+## 
+## $END_BCI2000_LICENSE$
+###############################################################################
+If [ $3 == "" ]
+  Abort Arguments are: SigProc module, App module, max index of parameter file
+End
+
+Set TestingDir ${Parent directory $0}
+Change directory $BCI2000LAUNCHDIR
+
+Echo Testing $1/$2 ...
+
+Reset system
+
+idx:=0
+While idx<=$3
+  Startup system localhost
+  Start executable SignalGenerator --local --RandomSeed=1 --TestLoggerFrequency=100Hz --TestLoggerEmitDebug=0 --EvaluateTiming=0
+  Start executable $1 --local
+  Start executable $2 --local
+  Wait for Connected 20
+  Load parameterfile $TestingDir/$2_test.prm
+  If idx>0
+    Echo " $idx"
+    Load parameterfile $TestingDir/parms/$2_$idx.prm
+  End
+  Set config
+  Start
+  Wait for Suspended 3600
+  Shutdown system
+  Sleep 1
+  idx:=idx+1
+End
+

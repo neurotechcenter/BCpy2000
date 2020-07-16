@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'{AppID GUID, independent of any other GUIDs}' = s 'MyModule'
+		''MyModule.DLL'
+		{
+			val AppID = s '{AppID GUID}'
+		}
+	}
+}

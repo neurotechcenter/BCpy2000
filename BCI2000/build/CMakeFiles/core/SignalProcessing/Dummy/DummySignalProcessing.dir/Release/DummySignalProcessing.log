@@ -1,0 +1,19 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/core/SignalProcessing/Dummy/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/core/SignalProcessing/Dummy/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  PipeDefinition.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  DummySignalProcessing.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\Dummy\Release\DummySignalProcessing.exe
+  	Deploying executable
+  copying files:
+  Copying DummySignalProcessing.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Copying vcomp140.dll ...
+  Copying libfftw3-3.dll ...
+  Done.

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Howto:Quickstart Guide - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Howto:Quickstart Guide,BCI2000 Binaries,BCI2000 Glossary,Contributions:FilePlayback,Creating a User Account,Programming Howto:SVN Client Setup,Programming Howto:Using TortoiseSVN,Programming Reference:ApplicationBase Class,Programming Reference:BCI2000 Source Code,Programming Reference:BufferedADC Class,Programming Reference:Build System" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Quickstart Guide</h1><p class="subtitle">Programming Howto</p><hr class="sep" /><p>This tutorial walks you through the process of obtaining the <a href="Programming_Reference%253ABCI2000_Source_Code.html" title="Programming Reference:BCI2000 Source Code">BCI2000 source distribution</a>, and using it to build and test your own custom <a href="BCI2000_Glossary.html#Filter" title="BCI2000 Glossary">filters</a>, implemented in C++ inside your own custom <a href="BCI2000_Glossary.html#Core_Module" title="BCI2000 Glossary">core module</a>. It assumes that you have a good working knowledge of the C++ language,  and basic familiarity with the compiler/IDE that you are going to use.
+</p><p>Many of the specific instructions below will assume that you are on a 32-bit Windows system, are using Microsoft's free <b>Visual C++ 2008 Express</b> compiler, and have checked out the BCI2000 distribution to a location <tt>C:\BCI2000\3.x</tt> on your hard-drive. However, the same steps are valid for other supported setups, with the appropriate setup-specific changes.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Prerequisites"><span class="tocnumber">1</span> <span class="toctext">Prerequisites</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Howto%253AQuickstart_Guide.html#Prerequisites_.28Mac_OSX.29"><span class="tocnumber">1.1</span> <span class="toctext">Prerequisites (Mac OSX)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Setup"><span class="tocnumber">2</span> <span class="toctext">Setup</span></a></li>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Creating_a_project_for_a_new_BCI2000_module.2C_from_a_template"><span class="tocnumber">3</span> <span class="toctext">Creating a project for a new BCI2000 module, from a template</span></a></li>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Adding_a_new_filter_to_a_BCI2000_module.2C_from_a_template"><span class="tocnumber">4</span> <span class="toctext">Adding a new filter to a BCI2000 module, from a template</span></a></li>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Running_and_testing_the_result"><span class="tocnumber">5</span> <span class="toctext">Running and testing the result</span></a></li>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Configuring_your_new_filter_for_offline_use"><span class="tocnumber">6</span> <span class="toctext">Configuring your new filter for offline use</span></a></li>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Exercises"><span class="tocnumber">7</span> <span class="toctext">Exercises</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Howto%253AQuickstart_Guide.html#Exercise_1:__RMSFilter"><span class="tocnumber">7.1</span> <span class="toctext">Exercise 1:  RMSFilter</span></a></li>
+<li class='toclevel-2'><a href="Programming_Howto%253AQuickstart_Guide.html#Exercise_2:__Debugging"><span class="tocnumber">7.2</span> <span class="toctext">Exercise 2:  Debugging</span></a></li>
+<li class='toclevel-2'><a href="Programming_Howto%253AQuickstart_Guide.html#Exercise_3:__Assembling_a_filter_chain"><span class="tocnumber">7.3</span> <span class="toctext">Exercise 3:  Assembling a filter chain</span></a></li>
+<li class='toclevel-2'><a href="Programming_Howto%253AQuickstart_Guide.html#Exercise_4:__Offline_filter-chain_reconstruction_in_Matlab"><span class="tocnumber">7.4</span> <span class="toctext">Exercise 4:  Offline filter-chain reconstruction in Matlab</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Howto%253AQuickstart_Guide.html#Further_reading"><span class="tocnumber">8</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Prerequisites"></a><h2>Prerequisites</h2>
+<ol><li> First, you need a complete BCI2000 distribution that includes the <tt>src</tt> and <tt>build</tt> directories. If you already have this, use SVN to make sure it is updated to a recent stable version (at least, for this tutorial to make sense, you will need revision 3279 or later / May 2011 or later).  If you do not already have the source distribution, here is how you obtain it:
+<ol><li> If you do not already have a <a href="Creating_a_User_Account.html" title="Creating a User Account">bci2000.org username</a>, get one <a href="http://www.bci2000.org/GPL/" class='external text' title="http://www.bci2000.org/GPL/" rel="nofollow">here</a>.  Your password will be mailed to you.
+</li><li> To download the BCI2000 source-code, you will need an SVN client. If you do not have one, for Windows we recommend TortoiseSVN, which can be downloaded <a href="http://tortoisesvn.net/downloads.html" class='external text' title="http://tortoisesvn.net/downloads.html" rel="nofollow">here</a>.  The BCI2000 wiki contains more documentation about how to <a href="Programming_Howto%253ASVN_Client_Setup.html" title="Programming Howto:SVN Client Setup">set up</a> and <a href="Programming_Howto%253AUsing_TortoiseSVN.html" title="Programming Howto:Using TortoiseSVN">use</a> SVN.
+</li><li> Use SVN, with your username and password, to check out the latest BCI2000 source-code-included distribution, the location of which is <a href="http://www.bci2000.org/svn/trunk" class='external free' title="http://www.bci2000.org/svn/trunk" rel="nofollow">http://www.bci2000.org/svn/trunk</a> . For stability reasons, you might want to tell SVN to download not the Head revision, but rather a source code revision number that corresponds to a <a href="BCI2000_Binaries.html#Version_History" title="BCI2000 Binaries">recent binary distribution</a>  (for example, revision 3604 for the October 2011 release). We will assume that you checked out the trunk to a location  <tt>C:\BCI2000\3.x</tt>  on your hard-drive. Wherever you see this path below, adjust it so that it reflects the location you actually used. More information about the layout of the resulting distribution can be found <a href="Programming_Reference%253ABCI2000_Source_Code.html" title="Programming Reference:BCI2000 Source Code">here</a>.
+</li></ol>
+</li><li> Next you will need to download and install CMake if you do not already have it (at least version 2.8.3 is recommended). CMake can be downloaded <a href="http://www.cmake.org/cmake/resources/software.html" class='external text' title="http://www.cmake.org/cmake/resources/software.html" rel="nofollow">here</a>. Make sure you select the option <b>add to PATH for all users</b> when installing.
+</li><li> Finally you will need a C++ compiler. We will proceed on the assumption that you are on 32-bit Windows and using the free Visual C++ 2008 Express environment which can be downloaded <a href="http://www.microsoft.com/visualstudio/en-us/products/2008-editions/express" class='external text' title="http://www.microsoft.com/visualstudio/en-us/products/2008-editions/express" rel="nofollow">here</a> (choose either the Visual C++ web-installer or, for something that can be installed offline, the option marked "All" - this will give you an .iso file which can be mounted as a virtual drive using a tool like <a href="http://www.slysoft.com/en/virtual-clonedrive.html" class='external text' title="http://www.slysoft.com/en/virtual-clonedrive.html" rel="nofollow">Virtual Clone Drive</a>).  Consult the documentation for the <a href="Programming_Reference%253ABuild_System.html" title="Programming Reference:Build System">BCI2000 build system</a> for information on other supported compilers, and more about CMake.
+</li></ol>
+<p>You should now have everything you need in order to build and customize BCI2000.
+</p>
+<a name="Prerequisites_.28Mac_OSX.29"></a><h3>Prerequisites (Mac OSX)</h3>
+<ol><li> Apple's Developer Tools (includes a C/C++ compiler and Subversion)
+</li><li> A <a href="http://www.cmake.org/cmake/resources/software.html" class='external text' title="http://www.cmake.org/cmake/resources/software.html" rel="nofollow">CMake binary installer</a> (<tt>.dmg</tt> file) appropriate to your platform, version 2.8.3 or later.
+</li><li> Qt libraries (You only need the libraries, not the full SDK.   We have performed successful builds with <a href="ftp://ftp.qt.nokia.com/qt/source/qt-mac-opensource-4.7.2.dmg" class='external text' title="ftp://ftp.qt.nokia.com/qt/source/qt-mac-opensource-4.7.2.dmg" rel="nofollow">v4.7.2</a>. Your mileage may vary according to the version you use.)
+</li></ol>
+<p>Then follow the "unix command-line equivalent" instructions from the Terminal.app command-line. Note that OSX is not yet officially supported by BCI2000, but a lot of things do work—in particular, if you regularly perform offline data analysis on OSX, you may find the command-line filter-tool mechanism, the mex files and the Matlab tools useful.
+</p>
+<pre>Unix command-line equivalent:
+
+$ cd ~  # or wherever
+$ svn checkout <a href="http://www.bci2000.org/svn/trunk" class='external free' title="http://www.bci2000.org/svn/trunk" rel="nofollow">http://www.bci2000.org/svn/trunk</a>  bci2000   # (or call it whatever you want)
+</pre>
+<a name="Setup"></a><h2>Setup</h2>
+<ol><li> Use CMake to build a project file.  This is done by going to <tt>C:\BCI2000\3.x\build</tt>  (which is the main workbench from which all build operations occur) and launching one of the "<tt>Make ... .bat</tt>"  batch-files.  If you are using Visual C++ 2008 Express,  the appropriate batch file is <tt>Make VS2008 Project Files.bat</tt> .  It may ask you several questions: feel free to answer "y" to building the "tools", "contrib" and "BCPy2000" components.  For now, for simplicity, you may wish to say no to framework extensions. Also say no to modules that require MFC (unless you are using a commercial version of Visual C++ Studio that includes MFC).  If successful, you should see a long list of sub-projects being created, and after several seconds of this, "Configuring done" followed by "Generating done".
+</li><li> Open the resulting solution file,  <tt>BCI2000.sln</tt> , in Visual C++ Express. The file should be located in <tt>C:\BCI2000\3.x\build</tt> .
+</li><li> Ensure that you are in "Release" mode rather than "Debug" (in Visual C++, this is a drop-down menu in a toolbar near the top)
+</li><li> You probably do not need to build all of BCI2000 at once.   To use BCI2000, the minimum you will need consists of the Operator, plus at least one SignalSource module, at least one SignalProcessing module, and at least one Application module. To build a single module in Visual C++ Express, right-click on the module's name in the list on the left, and select "Build".   The initial build will typically take a few minutes per module.  If you do not intend to modify a given module, you can always skip building it by copying the corresponding ready-built binary (for example, <tt>Operator.exe</tt>)  from the <tt>prog</tt> subdirectory of a BCI2000 v.2 or v.3 <a href="BCI2000_Binaries.html" title="BCI2000 Binaries">binary distribution</a>, and paste it into the corresponding directory of the distribution in which you are working, i.e. <tt>C:\BCI2000\3.x\prog</tt> .  (To <a href="http://bci2000.org/downloads/bin/BCI2000Setup.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup.exe" rel="nofollow">download the latest binary distribution</a>, you will need to supply the same username and password that you used for SVN download.) Let's assume you have built, or copied, the following modules: <b>SignalGenerator</b>, <b>ARSignalProcessing</b>, <b>CursorTask</b> and <b>Operator</b>, as well as the necessary <b>OperatorLib</b> shared library.
+</li><li> Build the <b>NewBCI2000Module</b>, <b>NewBCI2000Filter</b>  and <b>NewBCI2000FilterTool</b> targets for use in the subsequent steps.  The result will be new executables,  <tt>NewBCI2000Module.exe</tt>,  <tt>NewBCI2000Filter.exe</tt> and <tt>NewBCI2000FilterTool.exe</tt>,  in the <tt>C:\BCI2000\3.x\build</tt> directory.
+</li></ol>
+<pre>Unix command-line equivalent:
+
+$ cd ~/bci2000  # or wherever
+$ cd build
+$ ./Make\ Unix\ Makefiles.sh
+$ make NewBCI2000Module NewBCI2000Filter NewBCI2000FilterTool
+</pre>
+<a name="Creating_a_project_for_a_new_BCI2000_module.2C_from_a_template"></a><h2>Creating a project for a new BCI2000 module, from a template</h2>
+<ol><li> Navigate to <tt>C:\BCI2000\3.x\build</tt>
+</li><li> Find <tt>NewBCI2000Module.exe</tt> there, assuming you have already built it (see "Setup", above).
+</li><li> Launch it and answer the three questions it asks:
+<ol><li> What type of module are you creating? Enter "1" for a SignalSource module, "2" for a SignalProcessing module, or "3" for an Application module.
+</li><li> What should be the name of the new module?  This should be single word, without spaces or punctuation (For example: <b>VeryNiceSignalProcessing</b>.  Or, at your option, something even more informative.) This name will be used as the name of a new directory that will contain the project source information, as well as for the resulting binary (<tt>.exe</tt> file).
+</li><li> Where (i.e. inside what parent directory) should the new project directory be created?   You can express this as a relative path, in which case it is interpreted relative to the <tt>build</tt> directory where <tt>NewBCI2000Module.exe</tt> itself is running.  To accept the default answer, which is <tt>..\src\custom</tt>, just press return. This location (or some subdirectory of it) is a good choice: it maps to <tt>C:\BCI2000\3.x\src\custom</tt> which is an area reserved for your own projects.
+</li></ol>
+</li><li> Now re-run CMake (see step 1 of "Setup", above).  You should see your new project being added at the end of the long list of projects.  Re-open the project file (step 2 of "Setup") and you should see it listed in the alphabetical list of projects.
+</li><li> If you have just created a new SignalSource project,  a specialized source-acquisition filter (called an Analogue-to-Digital Converter or ADC) will already have been added to the project.  If your project was called <b>Foo</b>  or <b>FooSource</b>  this will be instantiated in files called <tt>FooADC.cpp</tt> and <tt>FooADC.h</tt>.  You can find this by expanding the tree (click on the plus sign) next to your project name in Visual C++.  Find the files under "Source" (or "Headers") and then "Project". Double-click them to edit.  You should already be able to compile the module: try it.
+</li><li> If you have created a SignalProcessing or Application project,  you may be able to compile it, but it will not do anything until you add at least one filter to it (see next section).
+</li></ol>
+<pre>Unix command-line equivalent:
+
+$ cd ~/bci2000  # or wherever
+$ cd build
+$ ./NewBCI2000Module 2 VeryNiceSignalProcessing ../src/custom
+$ ./Make\ Unix\ Makefiles.sh
+$ make VeryNiceSignalProcessing
+</pre>
+<p><br />
+</p>
+<a name="Adding_a_new_filter_to_a_BCI2000_module.2C_from_a_template"></a><h2>Adding a new filter to a BCI2000 module, from a template</h2>
+<ol><li> Navigate to <tt>C:\BCI2000\3.x\build</tt>
+</li><li> Find <tt>NewBCI2000Filter.exe</tt> there, assuming you have already built it (see "Setup", above).
+</li><li> Launch it and answer the three questions it asks:
+<ol><li> What type of filter are you creating?  Enter "1" for a subclass of <a href="Programming_Reference%253ABufferedADC_Class.html" title="Programming Reference:BufferedADC Class">BufferedADC</a> (although if you created a SignalSource project with the NewBCI2000Module tool, an ADC of this kind will already have been created for you),  enter "2" for a subclass of <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a>,  or "3" for a subclass of <a href="Programming_Reference%253AApplicationBase_Class.html" title="Programming Reference:ApplicationBase Class">ApplicationBase</a>.
+</li><li> What should be the name of the filter class?  This should be a legal name for a new C++ class (no spaces or punctuation). If you enter, for example, "FooFilter",  then a class of this name will be implemented in two new files, <tt>FooFilter.cpp</tt> and <tt>FooFilter.h</tt> .
+</li><li> To which project (i.e. in which project directory, relative to <tt>build</tt>) should the filter be added?  For example:  <tt>..\src\custom\VeryNiceSignalProcessing</tt>  (as in all of the BCI2000 framework, directory slashes are allowed to go this / way or that \ way regardless of whether you are on Windows or not)
+</li></ol>
+</li><li> Again, re-run CMake and re-open the master project file.
+</li><li> Find your new files under the Source/Project  and Headers/Project  trees by clicking on the + sign next to the project name. Double-click them to edit. Read the comments in the file for help as to how to flesh out the various filter methods.
+</li><li> Try building the project (right-click on the project and select "build").  SignalSource and Application projects may already build successfully.  SignalProcessing projects, or any project to which you have added a new GenericFilter subclass, will have at least one deliberate <b>#error</b> in the code.  When the build attempt finishes, double-click on the error message to go to the offending line. Read the comments in the file, and you will see that the error is there to force you to think about the ordering of the filters in your module.  Once you have resolved this issue, simply remove the #error line and select "build" again (the process will be quicker this time: only previously unbuilt files or newly modified files will be compiled).
+</li></ol>
+<pre>Unix command-line equivalent:
+
+$ cd ~/bci2000  # or wherever
+$ cd build
+$ ./NewBCI2000Filter 2 FooFilter ../src/custom/VeryNiceSignalProcessing
+$ ./Make\ Unix\ Makefiles.sh
+$ make VeryNiceSignalProcessing
+</pre>
+<p><br />
+</p>
+<a name="Running_and_testing_the_result"></a><h2>Running and testing the result</h2>
+<ol><li> Locate successfully built modules, which will appear as <tt>.exe</tt> files inside the top-level <tt>prog</tt> directory of the BCI2000 distribution,  for example <tt>C:\BCI2000\3.x\prog</tt>
+</li><li> The most basic way to launch BCI2000 is to double-click on each module in turn.  Start with <tt>Operator.exe</tt>,  then launch one SignalSource module, one SignalProcessing module, and one Application module (your new module will fill one of these three roles, but all three are required).
+</li><li> If you have a firewall running on your machine, dialogs may open for any modules that the firewall has never seen before. If so, click "unblock" to proceed, for each one. You should only ever need to do this once per newly-built module. (Check that your firewall is not configured to block network connections without telling you.)
+</li><li> In the <b>Config</b> dialog, under the <b>Visualize</b> tab, you should see a check-box for visualizing the output of all the filters in the chain, including your newly created filter.  You may find it useful, whenever you are developing a new filter, to visualize your filter input and output simultaneously (i.e. visualize both the new filter and the filter that immediately precedes it in the chain).
+</li></ol>
+<a name="Configuring_your_new_filter_for_offline_use"></a><h2>Configuring your new filter for offline use</h2>
+<p>This is an optional step which many developers of new custom filters will find useful. Filters may be compiled singly as standalone executables to allow them to be tested and used for data analysis offline. The resulting "filter tools" can be used either <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">from the DOS/Unix command-line</a> or, more comfortably, <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">from the Matlab command-line</a>.
+</p>
+<ol><li> Navigate to <tt>C:\BCI2000\3.x\build</tt>
+</li><li> Find <tt>NewBCI2000FilterTool.exe</tt> there, assuming you have already built it (see "Setup", above).
+</li><li> Launch it, and tell it which existing C++ file contains the filter definition (as always, specify the path relative to the <tt>build</tt> directory—for example, <tt>..\src\custom\VeryNiceSignalProcessing\FooFilter.cpp</tt>)
+</li><li> The tool will perform for you the necessary alterations to the CMakeLists files.  (The procedure, details of which can be found <a href="User_Reference%253ACommand_Line_Processing.html#Compiling_an_existing_filter_as_a_command_line_tool" title="User Reference:Command Line Processing">here</a>, involves creating a subdirectory called <tt>cmdline</tt> inside your project directory, because specifying a new executable target in the same <tt>CMakeLists.txt</tt> file as your module would cause a misconfiguration problems for either the module or the filter-tool. )
+</li><li> Close <tt>BCI2000.sln</tt>, re-run CMake, and re-open <tt>BCI2000.sln</tt>.   You should now have a new target, whose name is simply the name of the filter (e.g. <tt>FooFilter</tt>).
+</li><li> Right-click on the new target and select "build".  The resulting binary will appear as (for example) <tt>..\tools\cmdline\FooFilter.exe</tt>
+</li><li> If you have Matlab, consult  <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">User_Reference:Matlab_Tools</a> to see how to proceed.   Otherwise see <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">User_Reference:Command_Line_Processing</a>.  (In the Matlab version, the "Hello World" messages of the default template filter, and any other <tt>bciout</tt> debugging outputs you specify, will appear in the <tt>.ShellOutput</tt> field.)
+</li></ol>
+<pre>Unix command-line equivalent:
+
+$ cd ~/bci2000  # or wherever
+$ cd build
+$ ./NewBCI2000FilterTool  ../src/custom/VeryNiceSignalProcessing/FooFilter.cpp
+$ ./Make\ Unix\ Makefiles.sh
+$ make FooFilter
+$ ../tools/cmdline/FooFilter --help
+$ make bci_dat2stream bci_stream2mat  # you'll also need these
+</pre>
+<a name="Exercises"></a><h2>Exercises</h2>
+<a name="Exercise_1:__RMSFilter"></a><h3>Exercise 1:  RMSFilter</h3>
+<ol><li> Use NewBCI2000Module to create a new SignalProcessing module.
+</li><li> Use NewBCI2000Filter to create a new filter called RMSFilter in your new module.
+</li><li> NewBCI2000Module and NewBCI2000Filter report that they are creating and altering various files and directories.  Write down what you think is the purpose of each new directory, new file, or alteration to an existing file.
+</li><li> Write a filter called RMSFilter, which takes in multiple signal channels, and outputs a single channel containing the root-mean-square signal across all input channels.  (Advanced variant:  introduce a parameter which allows the user to specify groups of channels; then output one RMS signal per group.) Test the filter using the <a href="User_Reference%253ASignalGeneratorADC.html" title="User Reference:SignalGeneratorADC">SignalGenerator module</a> as an input, configuring the SignalGenerator to respond to mouse movement as described in the documentation.  First visualize just the <b>input</b> of your new filter (the output of the previous filter, which will presumably be the <a href="User_Reference%253ATransmissionFilter.html" title="User Reference:TransmissionFilter">TransmissionFilter</a>).  Then draw on paper what you would expect to see as an output of your filter in response to different mouse positions/actions. Finally, visualize your filter's output in order to verify that it matches your expectations.
+</li><li> Visualization allows you to test your code's behaviour qualitatively to some extent. In what various different ways could you verify, in a more precise, quantitative way, that your implementation is correct?  Under what circumstances should you spend the extra time to do this? (hint: the answer rhymes with "hallways")
+</li></ol>
+<a name="Exercise_2:__Debugging"></a><h3>Exercise 2:  Debugging</h3>
+<ol><li> Write a batch file to launch your combination of modules.  You may wish to use one of the existing files in the top-level <tt>batch</tt> directory as a template. A batch file will allow  you to go around each edit-compile-debug cycle much faster and more reliably. It will also allow you to pass useful command-line flags to the modules as you start them. And finally, if you need to set parameters in a certain way on each launch,  we strongly recommended that you take advantage of <a href="User_Reference%253AOperator_Module_Scripting.html#2" title="User Reference:Operator Module Scripting">operator scripting</a> in your batch file to ensure that the required parameters are loaded automatically from a file on each launch. Inconsistent behaviour from one debug cycle to the next can often be attributed to having forgotten to perform the menial task of loading parameters manually. 
+</li><li>  You can also use the Visual C++ debugger as follows:
+<ol><li> In your batch file, comment out or remove the line that launches the module you want to debug.
+</li><li> Again in your batch file, assuming you are using the <a href="User_Reference%253ASignalGeneratorADC.html" title="User Reference:SignalGeneratorADC">SignalGenerator</a>, <a href="Contributions%253AFilePlayback.html" title="Contributions:FilePlayback">FilePlayback</a>, or some other source module which does not have to run in real-time, add the flag <code>--EvaluateTiming=0</code> to the call that launches the source module (see example snippet below).  Putting a debug breakpoint in your Process() method will slow the system to below real-time, and we do not want the framework's real-time check to terminate the debug session for this reason.   
+</li><li> Launch the batch file, thereby launching all the necessary modules except one, and loading any parameters needed for the debug session.
+</li><li> Note that there are different "build modes" for the BCI2000 solution, with names like "Release" and "Debug".   In order to debug  a particular module, you will need to ensure that the module is built in either "Debug" mode or "RelWithDebInfo" mode. If you are in the wrong mode for debugging, select the correct build mode from the drop-down menu on Visual C++ Express's toolbar, then build your module again.  Note that the BCPy2000 modules (<i>PythonSource</i>, <i>PythonSignalProcessing</i> and <i>PythonApplication</i>) cannot be built in Debug mode.  Also, <a href="http://www.flounder.com/debug_release.htm" class='external text' title="http://www.flounder.com/debug_release.htm" rel="nofollow">Debug mode can sometimes mask dangerous bugs</a>, so you may experience the frustration of trying to investigate a crash only for it to stop happening when you switch from Release to Debug. Finally, a BCI2000 module built in Debug mode may exhibit poorer timing performance. For these reasons it is not generally advisable to use Debug mode as the default mode of your project, and RelWithDebInfo is often advisable when debugging (even though the compiler optimizations may lead to a less logical-seeming debugging experience).
+</li><li> In Visual C++, set a breakpoint in the source file you want to debug.
+</li><li> Although CMake directs Visual C++ to create the module in the correct directory, <tt>C:\BCI2000\3.x\prog</tt>, it is <a href="http://www.cmake.org/Wiki/CMake_FAQ#Can_CMake_set_the_Debugging.2FWorking_Directory_property_in_Visual_Studio_projects.3F" class='external text' title="http://www.cmake.org/Wiki/CMake_FAQ#Can_CMake_set_the_Debugging.2FWorking_Directory_property_in_Visual_Studio_projects.3F" rel="nofollow">unable to set the working directory in which the debug instance runs</a> to the same value. Therefore, if your module needs to load resources like image or sound files, and expects to find these at the end of a path that is expressed <i>relative</i> to <tt>prog</tt>, you will need to set the <tt>prog</tt> directory as the module's working directory by hand:  Right-click on the module -&gt; Properties -&gt; Configuration Properties -&gt; Debugging -&gt; Working Directory
+</li><li> In Visual C++, right-click on the module, then select "Debug" followed by "Start New Instance" (if you find this too fiddly to do with the mouse, right-click, then press "g", then press "s" ). If the build is not up-to-date, Visual Studio will prompt you:  in this case, allow it to build the module.
+</li><li> You are now debugging BCI2000. Verify that the debugger stops your module at the breakpoint you specified and at the time that you expected.  Browse the available variables and their properties.
+</li></ol>
+</li></ol>
+<pre>
+start SignalGenerator.exe --LogMouse=1 --EvaluateTiming=0
+</pre>
+<a name="Exercise_3:__Assembling_a_filter_chain"></a><h3>Exercise 3:  Assembling a filter chain</h3>
+<ol><li> Write a filter called DiffFilter, in which each output channel contains the numerical derivative, with respect to time, of the corresponding input channel. Note that your Process() method only sees one discrete chunk (or SampleBlock) of signal at a time.  Is this a problem? Use private member variables of your filter instance as a "scratch-pad" where necessary. 
+</li><li> Assemble the pre-existing <a href="User_Reference%253AExpressionFilter.html" title="User Reference:ExpressionFilter">ExpressionFilter</a>,  followed by your DiffFilter, followed by your RMSFilter (from exercise 1), in that order within one SignalProcessing module.  The ExpressionFilter implementation is already part of the framework, so all you need to do is uncomment the <tt>#include</tt> and <tt>Filter()</tt> statements that correspond to it in <tt>PipeDefinition.cpp</tt>.  Read the comments in <tt>PipeDefinition.cpp</tt>, and the <a href="Programming_Reference%253AFilter_Chain.html" title="Programming Reference:Filter Chain">Programming_Reference:Filter_Chain</a> wiki page, for more information about linking filters in a chain.
+</li><li> Make sure your SignalSource module is started with the <tt>--LogMouse=1</tt> flag (see the code snippet above).
+</li><li> Set the <b>Expressions</b> parameter (found in the <b>Filtering</b> tab of the <b>Config</b> dialog) such that it has two rows and one column, and contains the expressions "MousePosX" and "MousePosY".
+</li><li> Write down a full description of how you think the SignalProcessing module will process the signal, from start to finish, and exactly how you expect it to respond to different kinds of mouse movement.
+</li><li> Verify that the module behaves the way you expect, under all relevant input conditions.
+</li></ol>
+<a name="Exercise_4:__Offline_filter-chain_reconstruction_in_Matlab"></a><h3>Exercise 4:  Offline filter-chain reconstruction in Matlab</h3>
+<ol><li> Take one or more of the filters you have written (RMSFilter, DiffFilter), or create a new one which also does something whose numerical output can be checked very easily (examples: squaring the input signal, or doubling it, or taking the absolute value).
+</li><li> Use NewBCI2000FilterTool to create a command-line "filter tool" executable as described above.
+</li><li> Also ensure that the <tt>bci_dat2stream</tt> and <tt>bci_stream2mat</tt> targets have been built.
+</li><li> Learn how to use the matlab function <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">bci2000chain</a>  and the supporting Matlab tools.
+</li><li> Use <tt>bci2000chain</tt> to run your filter on some example data, or even on some toy data that you create using <tt>create_bcidat</tt>.  Then, separately, write a Matlab function for performing the same numerical operation that you believe your filter performs.  Compare the two outputs and verify that your filter does exactly what it is intended to do, at least to within some very small numerical tolerance. The maximum absolute difference between the two outputs should be very small (say, 1e-10 or less, depending on the operations and on the magnitude of the input signal).
+</li></ol>
+<a name="Further_reading"></a><h2>Further reading</h2>
+<p>Refer to the main <a href="Programming_Reference%253AContents.html" title="Programming Reference:Contents">Programming_Reference:Contents</a> page here on <a href="http://doc.bci2000.org" class='external free' title="http://doc.bci2000.org" rel="nofollow">http://doc.bci2000.org</a> for a list of topics on which you can find more in-depth documentation. In particular, you may wish to work through the various <a href="Programming_Reference%253AContents.html#Tutorials" title="Programming Reference:Contents">tutorials</a> at the bottom of the page.
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<li>Reference</li>
+<li>Howtos</li>
+<ul><li><a href="Programming_Howto%253ABuilding_BCI2000.html">Building BCI2000</a></li>
+<li><a href="Programming_Howto%253ASVN_Client_Setup.html">SVN Client Setup</a></li>
+<li><a href="Programming_Howto%253AUsing_TortoiseSVN.html">Using Tortoise SVN</a></li>
+</ul><li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

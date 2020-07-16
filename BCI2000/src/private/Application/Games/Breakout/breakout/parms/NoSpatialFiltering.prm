@@ -1,0 +1,1 @@
+Filtering:SpatialFilter                       int       SpatialFilterType=        0             // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)

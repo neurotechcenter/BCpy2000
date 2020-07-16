@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0AF24166-7472-305E-8BD5-4D044D2C9A23}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>icon-signal-screen</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\src\extlib\math;C:\BCI2000.python3\src\shared\modules\signalprocessing;C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\SignalGenerator;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\src\extlib\math;C:\BCI2000.python3\src\shared\modules\signalprocessing;C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\SignalGenerator;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\shared\fileio\edf_gdf;C:\BCI2000.python3\src\shared\modules\signalsource;C:\BCI2000.python3\src\extlib\math;C:\BCI2000.python3\src\shared\modules\signalprocessing;C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\SignalGenerator;C:\BCI2000.python3\src\shared\modules\signalsource\logging;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\0782d4bb8c44a00599f49d4a44824222\signal-screen256.png.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ../../../icons/signal-screen256.png</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILDUTILS_DIR=C:/BCI2000.python3/build/buildutils -DPROJECT_ICON_TEMPLATE=C:/BCI2000.python3/src/shared/gui/images/brain-outline -DSTYLE= -DICON=signal-screen -DOUTPUT=C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png -P C:/BCI2000.python3/build/cmake/MakeIcon.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/CMakeFiles/0782d4bb8c44a00599f49d4a44824222/signal-screen256.png.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\combine_png.exe;C:\BCI2000.python3\build\cmake\MakeIcon.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\icons\signal-screen256.png</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ../../../icons/signal-screen256.png</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILDUTILS_DIR=C:/BCI2000.python3/build/buildutils -DPROJECT_ICON_TEMPLATE=C:/BCI2000.python3/src/shared/gui/images/brain-outline -DSTYLE= -DICON=signal-screen -DOUTPUT=C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png -P C:/BCI2000.python3/build/cmake/MakeIcon.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/CMakeFiles/0782d4bb8c44a00599f49d4a44824222/signal-screen256.png.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\combine_png.exe;C:\BCI2000.python3\build\cmake\MakeIcon.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\icons\signal-screen256.png</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ../../../icons/signal-screen256.png</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILDUTILS_DIR=C:/BCI2000.python3/build/buildutils -DPROJECT_ICON_TEMPLATE=C:/BCI2000.python3/src/shared/gui/images/brain-outline -DSTYLE= -DICON=signal-screen -DOUTPUT=C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png -P C:/BCI2000.python3/build/cmake/MakeIcon.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/CMakeFiles/0782d4bb8c44a00599f49d4a44824222/signal-screen256.png.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\combine_png.exe;C:\BCI2000.python3\build\cmake\MakeIcon.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\icons\signal-screen256.png</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\6664babf8dcdce7f6dac7fbc538dfbaa\icon-signal-screen.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=16 --height=16 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen16.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen16.png &gt; signal-screen16.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=32 --height=32 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen32.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen32.png &gt; signal-screen32.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=48 --height=48 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen48.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen48.png &gt; signal-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\make_win32ico signal-screen16.bmp signal-screen32.bmp signal-screen48.bmp C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png &gt; C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen.ico
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E remove signal-screen16.png signal-screen32.png signal-screen48.png signal-screen16.bmp signal-screen32.bmp signal-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/CMakeFiles/6664babf8dcdce7f6dac7fbc538dfbaa/icon-signal-screen.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\make_win32ico.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\png2bmp.exe;C:\BCI2000.python3\build\CMakeFiles\icons\signal-screen256.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\CMakeFiles\icon-signal-screen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=16 --height=16 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen16.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen16.png &gt; signal-screen16.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=32 --height=32 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen32.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen32.png &gt; signal-screen32.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=48 --height=48 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen48.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen48.png &gt; signal-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\make_win32ico signal-screen16.bmp signal-screen32.bmp signal-screen48.bmp C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png &gt; C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen.ico
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E remove signal-screen16.png signal-screen32.png signal-screen48.png signal-screen16.bmp signal-screen32.bmp signal-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/CMakeFiles/6664babf8dcdce7f6dac7fbc538dfbaa/icon-signal-screen.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\make_win32ico.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\png2bmp.exe;C:\BCI2000.python3\build\CMakeFiles\icons\signal-screen256.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\CMakeFiles\icon-signal-screen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=16 --height=16 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen16.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen16.png &gt; signal-screen16.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=32 --height=32 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen32.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen32.png &gt; signal-screen32.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=48 --height=48 C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png signal-screen48.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp signal-screen48.png &gt; signal-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\make_win32ico signal-screen16.bmp signal-screen32.bmp signal-screen48.bmp C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen256.png &gt; C:/BCI2000.python3/build/CMakeFiles/icons/signal-screen.ico
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E remove signal-screen16.png signal-screen32.png signal-screen48.png signal-screen16.bmp signal-screen32.bmp signal-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/CMakeFiles/6664babf8dcdce7f6dac7fbc538dfbaa/icon-signal-screen.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\make_win32ico.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\png2bmp.exe;C:\BCI2000.python3\build\CMakeFiles\icons\signal-screen256.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\CMakeFiles\icon-signal-screen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\SignalSource\SignalGenerator\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/src/core/SignalSource/SignalGenerator/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/core/SignalSource/SignalGenerator/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/src/core/SignalSource/SignalGenerator/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\SOURCEFILTER.cmake;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModule.cmake;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator\CMakeLists.txt;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/src/core/SignalSource/SignalGenerator/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/core/SignalSource/SignalGenerator/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/src/core/SignalSource/SignalGenerator/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\SOURCEFILTER.cmake;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModule.cmake;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator\CMakeLists.txt;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/src/core/SignalSource/SignalGenerator/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/core/SignalSource/SignalGenerator/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/src/core/SignalSource/SignalGenerator/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\SOURCEFILTER.cmake;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\SigSrcModule.cmake;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator\CMakeLists.txt;C:\BCI2000.python3\src\core\SignalSource\SignalGenerator\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\CMakeFiles\icon-signal-screen" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png.vcxproj">
+      <Project>{E6A4420D-66D6-3535-AC72-EFA4C5C469B1}</Project>
+      <Name>combine_png</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\make_win32ico.vcxproj">
+      <Project>{AC6D685B-A144-3579-BCC0-CDA8FD932982}</Project>
+      <Name>make_win32ico</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp.vcxproj">
+      <Project>{734DA984-4085-331C-A653-1778B4A3C5A2}</Project>
+      <Name>png2bmp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png.vcxproj">
+      <Project>{9CFB6D8B-5A60-394B-AD87-E6024CF7F4E6}</Project>
+      <Name>transform_png</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

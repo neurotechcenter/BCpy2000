@@ -1,0 +1,97 @@
+BCI2000 Project: a platform for real-time bio-signal research
+(c) BCI2000 Team and contributors 2000-2015
+
+CORE TEAM
+
+Project Director, Project Coordinator, and Chief Evangelist
+ Gerwin Schalk, Ph.D.
+
+Chief Software Engineer and Documentation
+ Juergen Mellinger, M.E.
+
+Software Testing and Support
+ Peter Brunner, Ph.D.
+
+
+ADDITIONAL CONTRIBUTORS
+
+ Erik Aarnoutse (UMC Utrecht)
+ Brendan Allison (Georgia State)
+ Nick Anderson (Cardinal Health)
+ Kosta Andoni (RPI)
+ Sean Austin (RPI)
+ David Balderas (Tecnologico de Monterrey)
+ Bernd Battes (Max-Planck-Institute Tuebingen)
+ Robert Bell(EGI)
+ Tim Blakely (University of Washington)
+ Maria Laura Blefari (Scuola Superiore Sant'Anna, Pisa)
+ Sam Briskin (Wadsworth)
+ Peter Brunner (Wadsworth)
+ Simona Bufalari (Fondazione Santa Lucia)
+ Bob Cardillo
+ Rudi Cilibrasi
+ William Coon (Wadsworth)
+ Febo Cincotti (Fondazione Santa Lucia)
+ George Dimitriadis (Radboud University Nijmegen)
+ Nathaniel Elkins (Wadsworth)
+ Jason Farquhar (Max-Planck-Institute Tuebingen; Radboud University Nijmegen)
+ Joshua Fialkoff (Wadsworth/RPI)
+ Emanuele Fiorilla (Fondazione Santa Lucia)
+ Richmund Fries (RPI)
+ Dario Gaetano (University of Sydney)
+ Andrew Geronimo (Pennsylvania State University)
+ Gaetano Gargiulo (University of Naples)
+ Kaleb Goering (Kansas State University)
+ Christoph Guger (g.tec)
+ Shane Guillory (Ripple)
+ Fanny Grosselin (Institut du Cerveau et de la Moelle epiniere – ICM (Brain & Spine Institute))
+ Sebastian Halder (University of Tuebingen)
+ Masayo Haneda (Starlab)
+ Joerg Hansmann 
+ Steffen Heimes (Ant Neuro)
+ Jeremy Hill (Max-Planck-Institute Tuebingen; Wadsworth)
+ Thilo Hinterberger (University of Tuebingen)
+ Jenny Hizver (Wadsworth)
+ Sam Inverso (MIT Media Lab Europe)
+ Vaishali Kamat (Cambridge Consultants)
+ Stefan Klanke (Donders Center)
+ Dean Krusienski (Old Dominion University)
+ Marco Mattiocco (Fondazione Santa Lucia)
+ Dennis McFarland (Wadsworth)
+ Juergen Mellinger (University of Tuebingen)
+ Griffin Milsap (RPI)
+ Melody M. Moore-Jackson (Georgia State)
+ James Norton (University of Illinois)
+ Robert Oostenveld (Donders Center)
+ Giulio Pasquariello (University of Naples)
+ Yvan Pearson-Lecours (Cambridge Consultants)
+ Cristhian Potes (University of Texas/El Paso)
+ Christian Puzicha (Max-Planck-Institute Tuebingen)
+ Giby Raphael (B-Alert)
+ Justin Renga (RPI)
+ Alejandro Riera (Starlab)
+ Gerwin Schalk (Wadsworth)
+ Thomas Schreiner (Max-Planck-Institute Tuebingen)
+ Chintan Shah (Georgia State)
+ Sidhant Sharma (Cyberglove Systems)
+ Mark Span (University of Groningen)
+ David Steines (University of Illinois)
+ George Townsend (Algoma University)
+ Chris Veigl (FORTEC)
+ Janki Vora (Georgia State)
+ Richard Wang (Wadsworth)
+ Adam Wilson (Wadsworth; University of Cincinnati)
+ Yang Zhen
+ Matthias Zeintlinger(g.tec)
+ Shi Dong Zheng (Georgia State)
+ 
+
+CURRENT SPONSOR
+ National Center for Adaptive Neurotechnologies
+ PIs: Jonathan Wolpaw & Gerwin Schalk
+ P41 grant sponsored by NIN-NIBIB (EB018783)
+
+PREVIOUS SPONSORS
+ Gerwin Schalk     R01 grant sponsored by NIH/NIBIB (EB006356)
+ Jonathan Wolpaw   BRP grant sponsored by NIH/NIBIB/NINDS (EB000856)
+ 

@@ -1,0 +1,202 @@
+// This file will be processed by the MIDL tool to
+// produce the type library (BCI2000Automation.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+  uuid(D2A5DB6C-DE5B-4a1f-A042-3F4CEFB88F4F),
+  dual,
+  oleautomation,
+  helpstring( "BCI2000 Remote controller interface" )
+]
+interface IBCI2000Remote: IDispatch
+{
+// Properties
+  [
+  propget, helpstring( "Timeout in seconds." )
+  ]
+  HRESULT _stdcall Timeout( [out,retval] double* seconds );
+  [
+  propput, helpstring( "Timeout in seconds." )
+  ]
+  HRESULT _stdcall Timeout( [in] double seconds );
+  [
+  propget, helpstring( "Path to operator module, or batch file. May be empty." )
+  ]
+  HRESULT _stdcall OperatorPath( [out,retval] BSTR* path );
+  [
+  propput, helpstring( "Path to operator module, or batch file. May be empty." )
+  ]
+  HRESULT _stdcall OperatorPath( [in] BSTR path );
+  [
+  propget, helpstring( "Telnet address to use for connection. Defaults to localhost:3999." )
+  ]
+  HRESULT _stdcall TelnetAddress( [out,retval] BSTR* address );
+  [
+  propput, helpstring( "Telnet address to use for connection. Defaults to localhost:3999." )
+  ]
+  HRESULT _stdcall TelnetAddress( [in] BSTR address );
+  [
+  propget, helpstring( "Sets and gets visibility of the BCI2000 main window." )
+  ]
+  HRESULT _stdcall WindowVisible( [out,retval] int* visible );
+  [
+  propput, helpstring( "Sets and gets visibility of the BCI2000 main window." )
+  ]
+  HRESULT _stdcall WindowVisible( [in] int visible );
+  [
+  propget, helpstring( "Sets and gets the title of the BCI2000 main window." )
+  ]
+  HRESULT _stdcall WindowTitle( [out,retval] BSTR* title );
+  [
+  propput, helpstring( "Sets and gets the title of the BCI2000 main window." )
+  ]
+  HRESULT _stdcall WindowTitle( [in] BSTR title );
+  [
+  propget, helpstring( "Text output of the previously executed command, or error message." )
+  ]
+  HRESULT _stdcall Result( [out,retval] BSTR* result );
+
+//  Recording information
+  [
+  propget, helpstring( "Sets and gets the subject ID for the next recording." )
+  ]
+  HRESULT _stdcall SubjectID( [out,retval] BSTR* subjectID );
+  [
+  propput, helpstring( "Sets and gets the subject ID for the next recording." )
+  ]
+  HRESULT _stdcall SubjectID( [in] BSTR subjectID );
+  
+  [
+  propget, helpstring( "Sets and gets the session ID for the next recording." )
+  ]
+  HRESULT _stdcall SessionID( [out,retval] BSTR* sessionID );
+  [
+  propput, helpstring( "Sets and gets the session ID for the next recording." )
+  ]
+  HRESULT _stdcall SessionID( [in] BSTR sessionID );
+  
+  [
+  propget, helpstring( "Sets and gets the data directory for the next recording." )
+  ]
+  HRESULT _stdcall DataDirectory( [out,retval] BSTR* directory );
+  [
+  propput, helpstring( "Sets and gets the data directory for the next recording." )
+  ]
+  HRESULT _stdcall DataDirectory( [in] BSTR directory );
+
+// Connection methods
+  [
+    helpstring( "Connect to BCI2000. When OperatorPath is not empty, this starts up the operator module before connecting." )
+  ]
+  HRESULT _stdcall Connect( [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Disconnect from an existing connection. Terminates the running operator module if it was started by the previous Connect() call." )
+  ]
+  HRESULT _stdcall Disconnect( [out,retval] VARIANT_BOOL* success );
+
+// Control of operation
+  [
+  helpstring( "Start BCI2000 core modules, listed by executable name, including possible command line arguments." )
+  ]
+  HRESULT _stdcall StartupModules( [in,out] SAFEARRAY( BSTR )* modules, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Apply current set of parameters. Will be called from Start() automatically." )
+  ]
+  HRESULT _stdcall SetConfig( [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Starts a new run (recording) with current parameters." )
+  ]
+  HRESULT _stdcall Start( [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Stops the current run (recording)." )
+  ]
+  HRESULT _stdcall Stop( [out,retval] VARIANT_BOOL* success );
+  
+//  Parameters
+  [
+  helpstring( "Load parameters from a file, relative to the current working directory." )
+  ]
+  HRESULT _stdcall LoadParametersLocal( [in] BSTR file, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Load parameters from a file, relative to BCI2000's working directory." )
+  ]
+  HRESULT _stdcall LoadParametersRemote( [in] BSTR file, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Gets the value of a BCI2000 parameter." )
+  ]
+  HRESULT _stdcall GetParameter( [in] BSTR name, [in,out] BSTR* value, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Sets the value of a BCI2000 parameter." )
+  ]
+  HRESULT _stdcall SetParameter( [in] BSTR name, [in] BSTR value, [out,retval] VARIANT_BOOL* success );
+
+//  State variables
+  [
+  helpstring( "Creates a new BCI2000 state variable." )
+  ]
+  HRESULT _stdcall AddStateVariable( [in] BSTR stateName, [in] int bitWidth, [in] double initialValue, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Gets the value of a BCI2000 state variable." )
+  ]
+  HRESULT _stdcall GetStateVariable( [in] BSTR stateName, [in,out] double* value, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Sets the value of a BCI2000 state variable." )
+  ]
+  HRESULT _stdcall SetStateVariable( [in] BSTR stateName, [in] double value, [out,retval] VARIANT_BOOL* success );
+  
+//  Runtime information
+  [
+  helpstring( "Gets the current system state (state of operation)." )
+  ]
+  HRESULT _stdcall GetSystemState( [in,out] BSTR* state, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Gets the value of the BCI2000 control signal." )
+  ]
+  HRESULT _stdcall GetControlSignal( [in] int channel, [in] int element, [in,out] double* value, [out,retval] VARIANT_BOOL* success );
+
+// Scripts
+  [
+  helpstring( "Encode a string value for use as a single argument, or in parameter lines, when calling Execute(). "
+              "In the resulting string, white space and special characters will be encoded "
+              "as hexadecimal values with a % character prepended." )
+  ]
+  HRESULT _stdcall Encode( [in] BSTR rawValue, [out,retval] BSTR* encodedValue );
+  [
+  helpstring( "Execute a BCI2000 scripting command. If the command executed a shell command, returns the command's exit code. "
+              "Otherwise, the return value indicates interpretation of the command's result as a truth value: "
+              "0 for \"true\", 1 for \"false\", and -1 if there is no obvious interpretation." )
+  ]
+  HRESULT _stdcall Execute( [in] BSTR command, [optional,in,out] VARIANT* exitCode, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Associates scripting commands with an event." )
+  ]
+  HRESULT _stdcall SetScript( [in] BSTR eventName, [in] BSTR script, [out,retval] VARIANT_BOOL* success );
+  [
+  helpstring( "Gets scripting commands associated with an event." )
+  ]
+  HRESULT _stdcall GetScript( [in] BSTR eventName, [in,out] BSTR* script, [out,retval] VARIANT_BOOL* success );
+
+
+};
+
+
+[
+  uuid(363D672D-41EC-4b3e-AE58-50B49A83D530),
+  version(1.1),
+  helpstring("BCI2000Automation 1.1 Type Library")
+]
+library BCI2000AutomationLib
+{
+  importlib("stdole2.tlb");
+  [
+    uuid(F880B1BC-3511-4b06-8A79-895477300608),
+    helpstring("BCI2000Remote Class")
+  ]
+  coclass BCI2000Remote
+  {
+    [default] interface IBCI2000Remote;
+  };
+};
+

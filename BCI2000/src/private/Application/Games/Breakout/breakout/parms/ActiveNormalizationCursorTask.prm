@@ -1,0 +1,6 @@
+Filtering:Normalizer                    floatlist NormalizerGains=           1 100               // normalizer gain values
+Filtering:Normalizer                    intlist   Adaptation=                1   2               // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer                    float     BufferLength=                 15s              // time window of past data per buffer that enters into statistic
+Filtering:Normalizer                    string    UpdateTrigger=                 (Feedback==0)   // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)
+
+Filtering:Normalizer                    matrix    BufferConditions=       2  1   (Feedback)&&(TargetCode==1) (Feedback)&&(TargetCode==2)  // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)

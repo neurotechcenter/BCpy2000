@@ -1,0 +1,7 @@
+﻿  Building Custom Rule C:/BCI2000.python3/build/buildutils/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/buildutils/CMakeFiles/generate.stamp is up-to-date.
+  combine_png.cpp
+  lodepng.cpp
+  Generating Code...
+  combine_png.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\combine_png.exe
+  Copy to destination

@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Technical Reference:Core Modules - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Technical Reference:Core Modules,Technical Reference:System Design,User Reference:CursorTask,User Reference:Timing" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Core Modules</h1><p class="subtitle">Technical Reference</p><hr class="sep" /><p>Of the four BCI2000 modules, three make up the <i>Core Modules</i>: <i>Data Acquisition</i>, <i>Signal Processing</i>, and <i>User Application</i>.
+Between core modules, data flow in a closed loop, clocked by data acquisition hardware.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Technical_Reference%253ACore_Modules.html#Signal_Source_Module"><span class="tocnumber">1</span> <span class="toctext">Signal Source Module</span></a>
+<ul>
+<li class='toclevel-2'><a href="Technical_Reference%253ACore_Modules.html#Data_Acquisition_and_Storage_Loop"><span class="tocnumber">1.1</span> <span class="toctext">Data Acquisition and Storage Loop</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ACore_Modules.html#Real-Time_Constraint"><span class="tocnumber">1.2</span> <span class="toctext">Real-Time Constraint</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ACore_Modules.html#State_Vector_Storage"><span class="tocnumber">1.3</span> <span class="toctext">State Vector Storage</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Technical_Reference%253ACore_Modules.html#Signal_Processing_Module"><span class="tocnumber">2</span> <span class="toctext">Signal Processing Module</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ACore_Modules.html#Module_Independence"><span class="tocnumber">3</span> <span class="toctext">Module Independence</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ACore_Modules.html#Assumptions_and_Dependencies"><span class="tocnumber">4</span> <span class="toctext">Assumptions and Dependencies</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ACore_Modules.html#Application_Module"><span class="tocnumber">5</span> <span class="toctext">Application Module</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ACore_Modules.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Signal_Source_Module"></a><h2>Signal Source Module</h2>
+<p>The role of the Signal Source module is to wait for data
+blocks
+coming in from the A/D hardware, and to send these blocks of data on
+to Signal
+Processing, thus acting as the on-line system's "metronome"
+synchronized to
+the A/D hardware clock.
+At the same time, it receives state vector information from the
+Application
+module, and saves this state vector information to a file in BCI2000
+.dat
+format, together with the raw digitized data.
+</p>
+<a name="Data_Acquisition_and_Storage_Loop"></a><h3>Data Acquisition and Storage Loop</h3>
+<p>During normal operation (<i>Running</i>  is 1), the Signal Source module
+runs a data acquisition and storage loop that has the following structure:
+</p>
+<pre>
+1: While Running
+2:   Save state vector to file
+3:   Wait for A/D data
+4:   Send A/D data to Signal Processing
+5:   Wait for state vector from Application
+6:   Save A/D data to file
+</pre>
+<a name="Real-Time_Constraint"></a><h3>Real-Time Constraint</h3>
+<p>Note that statement 3 as well as statement 5 are blocking operations, i.e., the module will wait for A/D data as well as for the state vector data
+coming in from the Application module.
+This mode of operation imposes a real-time constraint on signal processing, and therefore requires a "sufficiently fast" system to work properly.
+For our purposes, a "sufficiently fast" system is a system where
+</p>
+<ul><li>synchronous I/O operations (2, 4, 5, and 6) require an execution time that is small compared to the duration of a data block (as given by the sampling rate and the sample block size), and 
+</li><li>the time required by the Signal Processing and Application modules for processing the data sent out in statement 4 is small compared to the duration of a data block. 
+</li></ul>
+<p>In an on-line system, the time between sampling of a data block, and
+display
+of the resulting feedback information to the subject, is critical.
+Given a "sufficiently fast" system as defined above, only statement 4
+will enter
+into this critical time path, while the time spent on execution of the
+remaining
+statements will reduce the waiting interval occurring in statement 3.
+</p>
+<a name="State_Vector_Storage"></a><h3>State Vector Storage</h3>
+<p>For the data in the file, the state vector which results from processing a data block <span class="texhtml"><i>n</i></span> is saved together with the following block, <span class="texhtml"><i>n</i> + 1</span>. For the first block, a state vector is saved that contains initial values.
+</p>
+<a name="Signal_Processing_Module"></a><h2>Signal Processing Module</h2>
+<p>Signal Processing acts like a black box to the rest of the system - it receives brain signals from the Signal Source and sends control signals on to the Application. 
+</p><p>The data flow in a typical implementation is as follows:
+</p>
+<pre>selected channels from data acquisition -> [Spatial Filter] -> spatially filtered signal
+-> [Temporal Filter] -> temporally filtered signal -> [Classifier] -> control signal
+-> [Normalizer] -> normalized control signal to go to application
+</pre>
+<p>There are basically 4 main filters (Spatial Filter, Temporal Filter, Classifier, and
+Normalizer) connected in form of a pipe: Each filter's output is the input to the next filter, and all filters act on each input block of data in sequence.
+For each input block of data, there must be a resulting output block.
+</p>
+<a name="Module_Independence"></a><h2>Module Independence</h2>
+<p>One of the goals for BCI2000 is for each module to be as independent of the others as possible. 
+For example, Signal Processing should not have to take the type of data collection
+hardware into account. For the same reason, Application should (ideally) not have to
+know about the signal processing method used. While in real-world situations this will not be possible, control signals shall be zero mean (to the extent that this is possible), shall be normalized to unit gain, and each value shall be equally accessible by the user's
+brain signals.
+In this fashion, the interdependence between Signal Processing and
+Application can be minimized.
+</p>
+<a name="Assumptions_and_Dependencies"></a><h2>Assumptions and Dependencies</h2>
+<p>BCI2000 core modules can contain instances of multiple filter classes.
+These filter classes cannot assume any specific values for system-wide parameters such as
+<i>SampleBlockSize</i>,
+<i>SamplingRate</i>, or <i>TransmitCh</i>. Rather, they have to be able to
+adapt their functionality according to these three parameters -- they might
+not only be used in scenarios with varying parameters, but they might also have
+to work together with other filters. Therefore, hard coded assumptions about
+system-wide parameters have to be avoided.
+</p>
+<a name="Application_Module"></a><h2>Application Module</h2>
+<p>One major goal for
+BCI2000 system design is the independence between modules. In most BCI
+systems, however, some parts of the applied signal processing module (i.e., the device-dependent part of signal processing) depend on the feedback to the user - a feature
+provided by the user application module.
+This inter-dependence between the signal processing and the user
+application modules poses severe problems to the system design, because it is not possible to
+completely encapsulate each module and separate it from others.
+In order to minimize inter-dependence, duties should be performed by the module that is conceptually defining the feature. For example, task paradigm and timing are, conceptually, parts of a task and should therefore be handled by the user application module.
+<a href="User_Reference%253ACursorTask.html" title="User Reference:CursorTask">User Reference:CursorTask</a> is an implementation of a such a user task - a simple cursor task - that complies with the idea of minimal inter-dependence.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Technical_Reference%253ASystem_Design.html" title="Technical Reference:System Design">Technical Reference:System Design</a>, <a href="User_Reference%253ATiming.html" title="User Reference:Timing">User Reference:Timing</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<ul><li><a href="Technical_Reference%253ASystem_Design.html">System Design</a></li>
+<li>Core Modules</li>
+<li><a href="Technical_Reference%253AStates_of_Operation.html">States of Operation</a></li>
+<li><a href="Technical_Reference%253ABCI2000_Messages.html">BCI2000 Messages</a></li>
+<li><a href="Technical_Reference%253AParameter_Definition.html">Parameter Definition</a></li>
+<li><a href="Technical_Reference%253AState_Definition.html">State Definition</a></li>
+</ul><a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

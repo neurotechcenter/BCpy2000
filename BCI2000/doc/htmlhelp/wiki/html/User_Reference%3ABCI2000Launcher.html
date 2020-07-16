@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:BCI2000Launcher - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:BCI2000Launcher,User Reference:DataIOFilter" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">BCI2000Launcher</h1><p class="subtitle">User Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253ABCI2000Launcher.html#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ABCI2000Launcher.html#Using_BCI2000Launcher"><span class="tocnumber">2</span> <span class="toctext">Using BCI2000Launcher</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ABCI2000Launcher.html#Organizing_BCI2000_Modules"><span class="tocnumber">2.1</span> <span class="toctext">Organizing BCI2000 Modules</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ABCI2000Launcher.html#Selecting_Parameter_Files"><span class="tocnumber">2.2</span> <span class="toctext">Selecting Parameter Files</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ABCI2000Launcher.html#Entering_Recording_Parameters"><span class="tocnumber">2.3</span> <span class="toctext">Entering Recording Parameters</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ABCI2000Launcher.html#Starting_a_BCI2000_Session"><span class="tocnumber">2.4</span> <span class="toctext">Starting a BCI2000 Session</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<a name="Introduction"></a><h2>Introduction</h2>
+<p>The BCI2000Launcher program provides a convenient user interface for organizing BCI2000 applications and parameter files. The Source, SignalProcessing, and Application modules are selected from a list, and multiple parameter files can be loaded.
+</p><p><a href="../images/4/43/BCI2000Launcher.png" class="image" title="Image:BCI2000Launcher.png"><img src="../images/4/43/BCI2000Launcher.png" alt="Image:BCI2000Launcher.png" width="707" height="650" longdesc="/wiki/index.php/Image:BCI2000Launcher.png" /></a>
+</p>
+<a name="Using_BCI2000Launcher"></a><h2>Using BCI2000Launcher</h2>
+<a name="Organizing_BCI2000_Modules"></a><h3>Organizing BCI2000 Modules</h3>
+<p>On the first launch, BCI2000Launcher examines the contents of the BCI2000/prog directory, looking for executable programs. Known programs are sorted appropriately, e.g., the gUSBampSource.exe program is placed in "Acquisition" column. If a program is not recognized, it is placed in the "Others" column. Right-clicking on a module brings up a context menu that allows it to be moved to another column. Programs that are rarely used can be moved to the "Others" column to keep them out of the way. BCI2000Launcher stores across sessions which modules are selected, using a BCILauncher.ini settings file.
+</p>
+<a name="Selecting_Parameter_Files"></a><h3>Selecting Parameter Files</h3>
+<p>A very useful feature of the BCI2000Launcher is the ability to load multiple parameter fragments. One or more fragments can be added to the list to be loaded by pressing the "+" button, and selecting the *.prm files. Files can be removed from the list using the "-" button. If more than one prm file contains the same parameter, files lower on the list will have precedence over those higher on the list.
+</p>
+<a name="Entering_Recording_Parameters"></a><h3>Entering Recording Parameters</h3>
+<p>The <a href="User_Reference%253ADataIOFilter.html#SubjectName" title="User Reference:DataIOFilter">SubjectName</a>, <a href="User_Reference%253ADataIOFilter.html#SubjectSession" title="User Reference:DataIOFilter">SubjectSession</a>, and <a href="User_Reference%253ADataIOFilter.html#DataDirectory" title="User Reference:DataIOFilter">DataDirectory</a> parameters may be entered directly in the BCI2000Launcher dialog. These values take precedence over the parameters' values in one of the specified parameter files.
+</p>
+<a name="Starting_a_BCI2000_Session"></a><h3>Starting a BCI2000 Session</h3>
+<p>Select the desired modules from each column, and click the "Launch" button in the bottom right corner. You can also select multiple programs to be started from the "Others" column at the same time. Additionally, you can deselect modules by pressing the "Clear Selection" button, and select individual programs to launch and connect to the Operator, without starting all required modules. This is useful for debugging new programs, since the new program can connect from a debugging session, and the others will start as normal.
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+<ul><li>BCI2000Launcher</li>
+<li><a href="User_Reference%253ABCI2000Viewer.html">BCI2000Viewer</a></li>
+<li><a href="User_Reference%253ABCI2000FileInfo.html">BCI2000FileInfo</a></li>
+<li><a href="User_Reference%253ABCI2000Export.html">BCI2000Export</a></li>
+<li><a href="User_Reference%253AEEGLabImport.html">EEGLabImport</a></li>
+<li><a href="User_Reference%253AMatlab_MEX_Files.html">Matlab MEX Files</a></li>
+<li><a href="User_Reference%253ACommand_Line_Processing.html">Command Line Processing</a></li>
+</ul></ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\GUI.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\GraphObject.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\GraphDisplay.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\Bitmap.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\DisplayWindow.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\OpenGLContext.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\DisplayClock.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\ClockTick.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\TextField.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\Shapes.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\SpinningWheel.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\DisplayStatisticsField.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\ApplicationBase.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\StimulusTask.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\FeedbackTask.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\AudioDevice.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\AudioSink.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\AVUtils.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\AVDecoder.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\AVPlayer.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\VideoPlayer.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\AudioPlayer.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\AV\ImageViewer.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\audio\TextToSpeech.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\audio\WavePlayer.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\gui\ApplicationWindow.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\gui\TextWindow.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\gui\StatusBar.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\utils\TrialStatistics.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\utils\BlockRandSeq.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\utils\Localization.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\Association.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\AudioStimulus.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\AVStimulus.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\ImageStimulus.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\TextStimulus.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\VisualStimulus.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\SpeechStimulus.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\SoundStimulus.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\speller\SpellerCommand.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\speller</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\speller\Speller.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\speller</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\ConnectorFilters.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtProxyThread.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\audio\MidiPlayer.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\application\human_interface_devices\KeystrokeFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\application\human_interface_devices</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\AppModuleLib\CorePCH.cpp">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\config\BCIRegistry.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\config</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\SAPILib\sapi.cpp">
+      <Filter>Source Files\External Libraries\SAPILib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\buffers.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\cameraNlight.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\cuboids.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\geomObj.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\Load3DS.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\model3D.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\primObj.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\Scene.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\Primitives.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\sphere.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\threeDText.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\twoDCursor.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\twoDOverlay.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\3DAPI\twoDText.cpp">
+      <Filter>Source Files\BCI2000 Framework\3DAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\BinaryDataIO\Win32BmpFormat.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils\BinaryDataIO</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtMessageHandler.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\GUI.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\GraphicResource.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\GraphObject.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\GraphDisplay.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\Bitmap.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\DisplayWindow.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\OpenGLContext.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\DisplayClock.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\ClockTick.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Rate.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\TextField.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\Shapes.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\SpinningWheel.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\DisplayStatisticsField.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\ApplicationBase.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\StimulusTask.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\FeedbackTask.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\AudioDevice.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\AudioSink.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\AVUtils.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\AVDecoder.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\AVPlayer.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\VideoPlayer.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\AudioPlayer.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\AV\ImageViewer.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\AV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\audio\TextToSpeech.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\audio\WavePlayer.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\gui\ApplicationWindow.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\gui\TextWindow.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\gui\StatusBar.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\utils\TrialStatistics.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\utils\BlockRandSeq.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\utils\Localization.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\Association.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\AudioStimulus.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\AVStimulus.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\ImageStimulus.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\TextStimulus.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\VisualStimulus.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\SpeechStimulus.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\stimuli\SoundStimulus.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\stimuli</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\speller\SpellerCommand.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\speller</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\speller\Speller.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\speller</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\speller\AudioSpellerTarget.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\speller</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\ConnectorFilters.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\QtMain.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\QtProxyThread.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\audio\MidiPlayer.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\application\human_interface_devices\KeystrokeFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\application\human_interface_devices</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComPtr.h">
+      <Filter>Header Files\BCI2000 Framework\com</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\BCIRegistry.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\SAPILib\sapi.h">
+      <Filter>Header Files\External Libraries\SAPILib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\buffers.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\cameraNlight.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\cuboids.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\geomObj.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\Load3DS.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\model3D.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\primObj.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\Scene.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\Primitives.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\sphere.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\threeDText.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\twoDCursor.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\twoDOverlay.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\3DAPI\twoDText.h">
+      <Filter>Header Files\BCI2000 Framework\3DAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\BinaryDataIO\Win32BmpFormat.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils\BinaryDataIO</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\08dfb6956b0b1bccdc630acd0253eba7\AppRegistry.inc.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\cmake\frameworks\AppModuleLib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\Inventory.inc">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\AppModuleLib\AppRegistry.inc">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\AppModuleLib\BCI2000FrameworkAppModule\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{110FD9AA-8569-3FE5-A68E-6802E5F295ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\BCI2000 Framework">
+      <UniqueIdentifier>{5F667A99-7CE6-3DA4-96A4-82A7D98398CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\3DAPI">
+      <UniqueIdentifier>{792DE9A7-01B3-3F6F-8533-4A8ABB72DE4D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\com">
+      <UniqueIdentifier>{E76A484D-F621-3FC9-BEE1-3C78DEE66D03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\gui">
+      <UniqueIdentifier>{BB8B8D64-507D-37B4-8ECE-2B457DE3279A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{D333AF79-ED40-369D-8F3A-9E5D16CCF51B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\application">
+      <UniqueIdentifier>{2268E9C7-774A-336B-B091-07D0E1C9A097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\application\audio">
+      <UniqueIdentifier>{E53C7972-3915-3895-B98D-0173C413F720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\application\gui">
+      <UniqueIdentifier>{7F8F047E-62C8-3F60-AA06-0DD7CC5B5253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\application\human_interface_devices">
+      <UniqueIdentifier>{9CBBECF2-1A13-36B8-9263-7EC63B35C769}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\application\speller">
+      <UniqueIdentifier>{01B9911B-7192-397C-A0D8-CB65D45C12D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\application\stimuli">
+      <UniqueIdentifier>{331F449D-463D-34F7-9DD9-53422102E7FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\application\utils">
+      <UniqueIdentifier>{B9BAAF20-205F-3E7B-A04C-6FA0A1B21E8F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{2DBCCB9D-4479-3D5F-9C13-F337F231BB05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\utils\AV">
+      <UniqueIdentifier>{066B6AA8-5E11-376D-8D5C-11FD53E82CB5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\utils\BinaryDataIO">
+      <UniqueIdentifier>{5154FA6A-D4FD-3C32-BD26-60A0B90E03EF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries">
+      <UniqueIdentifier>{13E01BCE-4291-3895-9816-1F1365FD135D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\SAPILib">
+      <UniqueIdentifier>{03886F59-96EF-3514-94A9-EE40BA4D638C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\3DAPI">
+      <UniqueIdentifier>{DD0B301B-90D1-38AF-8599-E59BC0BE8D87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{4D96E3E7-F808-3EE6-8A19-6A344C637392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\gui">
+      <UniqueIdentifier>{EE877380-CCED-3BD3-B5C3-C452300C5A87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{76E86A67-18EF-35F1-B46E-D09E9B955FFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\application">
+      <UniqueIdentifier>{0A145142-AD42-382B-B080-2DEF1A9C88EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\application\audio">
+      <UniqueIdentifier>{04A4BC7E-6F31-3405-950E-405D36596659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\application\gui">
+      <UniqueIdentifier>{57EEE20C-EFDA-3F53-AC75-718A10F47C64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\application\human_interface_devices">
+      <UniqueIdentifier>{BC9227B8-BFAD-3626-8E74-5E0B44D7E0F4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\application\speller">
+      <UniqueIdentifier>{F2FAC9EB-3DC3-3971-9C92-00F40E9DD69F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\application\stimuli">
+      <UniqueIdentifier>{ACBDD103-1E98-3365-8A3B-5C84AADC28D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\application\utils">
+      <UniqueIdentifier>{337E9B31-2859-395A-8EF1-BA501CB3308D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{A38F8834-17BA-34DF-8B43-89644E978F8F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\utils\AV">
+      <UniqueIdentifier>{39D2302D-14B7-3772-95B8-F1E709D513F5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\utils\BinaryDataIO">
+      <UniqueIdentifier>{6D7A4CFB-6D72-3AA2-9BBC-1B6CFF02F25F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries">
+      <UniqueIdentifier>{77F4A8FF-D7C7-331E-84AF-C255B38094F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\SAPILib">
+      <UniqueIdentifier>{03F91EF6-E09A-3CEE-9D81-F9BDDBFE9479}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

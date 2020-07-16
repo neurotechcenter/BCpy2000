@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A5C118A6-7F94-32E2-8E9E-DDCB736E8927}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>MessageBox</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MessageBox.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MessageBox</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">MessageBox.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">MessageBox</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MessageBox.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MessageBox</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;TARGET_NAME="MessageBox";TARGET_FILE_NAME="MessageBox.exe";TARGET_IS_DYLIB=0;TARGET_DESCRIPTION="BCI2000 MessageBox";UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;TARGET_NAME=\"MessageBox\";TARGET_FILE_NAME=\"MessageBox.exe\";TARGET_IS_DYLIB=0;TARGET_DESCRIPTION=\"BCI2000 MessageBox\";UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	Copy to destination</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/BCI2000.python3/build/CMakeFiles/version/VersionCheck
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Release/MessageBox.exe C:/BCI2000.python3/prog || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Release/MessageBox.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt;msvcrtd;msvcprt;msvcprtd;msvcrt;msvcrtd;msvcprt;msvcprtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Release/MessageBox.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Release/MessageBox.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;TARGET_NAME="MessageBox";TARGET_FILE_NAME="MessageBox.exe";TARGET_IS_DYLIB=0;TARGET_DESCRIPTION="BCI2000 MessageBox";UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;TARGET_NAME=\"MessageBox\";TARGET_FILE_NAME=\"MessageBox.exe\";TARGET_IS_DYLIB=0;TARGET_DESCRIPTION=\"BCI2000 MessageBox\";UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	Copy to destination</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/BCI2000.python3/build/CMakeFiles/version/VersionCheck
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/RelWithDebInfo/MessageBox.exe C:/BCI2000.python3/prog || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/RelWithDebInfo/MessageBox.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt;msvcrtd;msvcprt;msvcprtd;msvcrt;msvcrtd;msvcprt;msvcprtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/RelWithDebInfo/MessageBox.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/RelWithDebInfo/MessageBox.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;TARGET_NAME="MessageBox";TARGET_FILE_NAME="MessageBox.exe";TARGET_IS_DYLIB=0;TARGET_DESCRIPTION="BCI2000 MessageBox";UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;TARGET_NAME=\"MessageBox\";TARGET_FILE_NAME=\"MessageBox.exe\";TARGET_IS_DYLIB=0;TARGET_DESCRIPTION=\"BCI2000 MessageBox\";UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox;C:\BCI2000.python3\src\core\Operator\MessageBox;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils\Lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	Copy to destination</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/BCI2000.python3/build/CMakeFiles/version/VersionCheck
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Debug/MessageBox.exe C:/BCI2000.python3/prog || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Debug/MessageBox.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt;msvcrtd;msvcprt;msvcprtd;msvcrt;msvcrtd;msvcprt;msvcprtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Debug/MessageBox.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/core/Operator/MessageBox/Debug/MessageBox.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\MessageBox\MessageBox.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ParserToken.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ParserToken.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\types\EncodedString.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\types\EncodedString.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\StringUtils.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\StringUtils.cpp" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox\Resources.inc" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h" />
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\appicon.rc" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\exclamation-mark.ico" />
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\VersionCheck.vcxproj">
+      <Project>{B923BAA8-43E1-3A4D-B8D8-D51615F97C40}</Project>
+      <Name>VersionCheck</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\icon-exclamation-mark.vcxproj">
+      <Project>{451420BE-5852-34AF-8AEE-96D74A7EF76C}</Project>
+      <Name>icon-exclamation-mark</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

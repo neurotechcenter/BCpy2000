@@ -1,0 +1,15 @@
+# Testdatei für Target-Sequenz
+path .\demostim
+	1	"c:\winnt\media\Der Microsoft Sound.wav"	BASEB1W.BMP
+	2	c:\winnt\media\chimes.wav			Ball1.bmp
+	1	"c:\winnt\media\chimes.wav"			clock.avi
+	1	c:\winnt\media\chimes.wav			BUGPALET.BMP
+	2	c:\winnt\media\chimes.wav			BASEB1W.BMP
+	0	c:\winnt\media\chimes.wav			"ball.bmp"
+	1	""						dillo.avi
+	1	""						filecopy.avi
+	2	""						search.avi
+	2	""						memoadd.avi
+	2	""						moduls.avi
+	2	""						nb-resol.avi
+	

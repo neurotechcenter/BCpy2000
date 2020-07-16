@@ -1,0 +1,130 @@
+import "unknwn.idl"; 
+import "oaidl.idl";
+
+[
+	uuid(189CF5BB-CE52-44CC-B0CD-CC9F55D01E67)
+]
+typedef struct WaveFormat
+{
+	unsigned long channels;
+	unsigned long bytesPerSamplePerChannel;
+	unsigned long samplesPerSecond;
+} WaveFormat;
+
+[
+	uuid(6E6B3CF5-2FED-4C58-B395-12A9EF742F85)
+]
+typedef struct ImageParameters
+{
+	unsigned long height;
+	unsigned long width;
+	unsigned long pitch;
+	unsigned long bitsPerPixel;
+	unsigned long redMask;
+	unsigned long greenMask;
+	unsigned long blueMask;
+} ImageParameters;
+
+[
+	uuid(18072289-32DB-4C78-80DD-A5B52788550B)
+]
+typedef enum tagDataType
+{
+	DATA_TYPE_INT32 = 0,
+	DATA_TYPE_FLOAT64 = 1,
+	DATA_TYPE_INT8 = 2,
+	DATA_TYPE_FORCE_DWORD = 0x7fffffff
+} DataType;
+
+[
+	uuid(B05F73F2-B314-4F32-80A0-4E58E47C530B)
+]
+typedef struct Palette
+{
+	unsigned long colors[256];
+} Palette;
+
+[
+	uuid(901FECE5-C9A1-49C8-AF07-F5F0711614CC),
+	dual,
+	oleautomation
+]
+interface IWaveData: IDispatch
+{
+	[
+		id(0x00000001)
+	]
+	HRESULT GetFormat([out] WaveFormat * format );
+	[
+		id(0x00000002)
+	]
+	HRESULT GetSampleCount([out] long * samples );
+	[
+		id(0x00000003)
+	]
+	HRESULT DataLock([out] byte ** data );
+	[
+		id(0x00000004)
+	]
+	HRESULT Unlock( void );
+};
+
+[
+	uuid(B7269D32-1584-40CD-9B60-530BE165E2DC), 
+	dual, 
+	oleautomation
+]
+interface IImageData: IDispatch
+{
+	[
+		id(0x00000001)
+	]
+	HRESULT GetParameters([out] ImageParameters * parameters );
+	[
+		id(0x00000002)
+	]
+	HRESULT DataLock([out] byte ** data );
+	[
+		id(0x00000003)
+	]
+	HRESULT Unlock( void );
+};
+
+
+[
+	uuid(9FE2B8D7-9FD7-4EFD-9EE6-87F3B99CB56E), 
+	dual, 
+	oleautomation
+]
+interface IVariableData: IDispatch
+{
+	[
+		id(0x00000001)
+	]
+	HRESULT GetType([out] DataType * type );
+	[
+		id(0x00000002)
+	]
+	HRESULT GetDimension([out] unsigned long * dimension );
+	[
+		id(0x00000003)
+	]
+	HRESULT GetSizes([out] unsigned long * sizes );
+	[
+		id(0x00000004)
+	]
+	HRESULT GetData([in] unsigned long * indices, [out] byte ** data );
+};
+
+
+[
+	uuid(8E02FDF4-E563-466f-87AB-CCE81D3B13D1)
+]
+library InterfaceUtilities
+{
+	importlib("stdole2.tlb");
+
+	interface IWaveData;
+	interface IImageData;
+	interface IVariableData;
+};

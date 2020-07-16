@@ -1,0 +1,12 @@
+Application:Targets:FeedbackTask int NumberTargets= 2 2 0 255 // number of targets
+Application:Targets:FeedbackTask intlist TargetSequence= 0 1 % % // fixed sequence in which targets should be presented (leave empty for random)
+Application:Targets:CursorFeedbackTask matrix Targets= 2 { pos%20x pos%20y pos%20z width%20x width%20y width%20z } 50 96 50 50 8 8 50 4 50 50 8 8 // target positions and widths in percentage coordinates
+Application:Targets:CursorFeedbackTask int TargetColor= 0xff0000 // target color (color)
+Application:Targets:CursorFeedbackTask string TargetTexture= % // path of target texture (inputfile)
+Application:Targets:CursorFeedbackTask int TestAllTargets= 1 0 0 1 // test all targets for cursor collision? 0: test only the visible current target, 1: test all targets (enumeration)
+Filtering:Normalizer floatlist NormalizerOffsets= 3 0 280.004 0 0 % % // normalizer offsets
+Filtering:Normalizer floatlist NormalizerGains= 3 0 0.00781235 0 0 % % // normalizer gain values
+Filtering:Normalizer intlist Adaptation= 3 0 2 0 0 0 2 // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer matrix BufferConditions= 2 2 % (Feedback)&&(TargetCode==1) % (Feedback)&&(TargetCode==2) // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+Filtering:Normalizer float BufferLength= 4s 9s % % // time window of past data per buffer that enters into statistic
+Filtering:Normalizer string UpdateTrigger= (Feedback==0) // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)

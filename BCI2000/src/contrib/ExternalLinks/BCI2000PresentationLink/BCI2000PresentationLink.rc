@@ -1,0 +1,104 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "Resource.h"
+#include "Winuser.h"
+#include "Commctrl.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_OperatorName        "Operator.exe"
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DataPortProperties DIALOGEX 0, 0, 287, 364
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BCI2000PresentationLink Data Port Properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,175,344,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,230,344,50,14
+    GROUPBOX        "BCI2000 Startup",IDC_STATIC,7,4,273,150
+    EDITTEXT        IDC_EDITProgPath,22,92,246,14,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    PUSHBUTTON      "Choose ...",IDC_BUTTONChooseProgPath,91,111,50,14
+    EDITTEXT        IDC_EDITNetwork,91,205,106,13,ES_AUTOHSCROLL
+    CONTROL         "Start up and shut down BCI2000 locally.",IDC_CHECKStart,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,20,145,10
+    CONTROL         "Hide the Operator module's main window on startup.",IDC_CHECKHide,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,134,184,10
+    LTEXT           "Specify an Operator module or batch file to run when starting up BCI2000. When you leave the field empty, the Operator module is started from the directory in which BCI2000PresentationLink resides.",IDC_STATICDesc1,22,36,245,28
+    PUSHBUTTON      "Clear",IDC_BUTTONClearProgPath,146,111,50,14
+    GROUPBOX        "Network Address",IDC_STATIC,7,161,273,66
+    LTEXT           "When an Operator module is specified rather than a batch file, you need to start up modules from a PCL script, using bci2000::controller::startup_modules().",IDC_STATICDesc2,22,63,244,25
+    LTEXT           "BCI2000PresentationLink uses a network connection to establish a link with BCI2000. To override the default port, or to connect to a remote BCI2000 installation, you may enter a network address in the form ""myhost:3999"".",IDC_STATIC,22,175,248,28
+    EDITTEXT        IDC_EDITEventTypes,22,278,246,13,ES_AUTOHSCROLL
+    GROUPBOX        "Event Types",IDC_STATIC,7,234,273,103
+    LTEXT           "List Presentation event types to be recorded by BCI2000, separated by white space. When an event type contains a space character, use an underscore instead.",IDC_STATIC,22,248,248,28
+    CONTROL         "Use ""Resume"" and ""Pause"" type events to start and stop BCI2000. In ""Resume"" events, you may specify SubjectName, SubjectSession, and DataDirectory separated by white space.",IDC_CHECKUseResumePause,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,22,300,245,27
+END
+
+
+#if 0
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "BCI2000 Project"
+            VALUE "FileDescription", "BCI2000PresentationLink Interface Plugin"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "LegalCopyright", "(c) BCI2000 Project 2012.  All rights reserved."
+            VALUE "InternalName", "BCI2000PresentationLink.dll"
+            VALUE "OriginalFilename", "BCI2000PresentationLink.dll"
+            VALUE "ProductName", "BCI2000PresentationLink"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+1 REGISTRY                "BCI2000DataPortExtension.rgs"
+2 REGISTRY                "BCI2000PCLLibrary.rgs"
+3 REGISTRY                "BCI2000PresentationLink.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TYPELIB
+//
+
+1                       TYPELIB                 "BCI2000PresentationLink.tlb"
+

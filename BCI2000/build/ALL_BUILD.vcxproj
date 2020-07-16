@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1B7B2B43-FA37-3B5B-B6FF-E02B936924A0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build;C:\BCI2000.python3\src\shared\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build;C:\BCI2000.python3\src\shared\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build;C:\BCI2000.python3\src\shared\compat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/build/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/CMakeLists.txt;C:\BCI2000.python3\build\BuildEnv.sh.cmd.in;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeCCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeCXXCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeRCCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeSystem.cmake;C:\BCI2000.python3\build\CMakeFiles\version\Version.cmake;C:\BCI2000.python3\build\CMakeLists.txt;C:\BCI2000.python3\build\cmake\AddCoreMain.cmake;C:\BCI2000.python3\build\cmake\AddRegistryMacro.cmake;C:\BCI2000.python3\build\cmake\AddResourceMacro.cmake;C:\BCI2000.python3\build\cmake\AddTargetMacro.cmake;C:\BCI2000.python3\build\cmake\ApplicationMacro.cmake;C:\BCI2000.python3\build\cmake\BuildConfigurations.cmake;C:\BCI2000.python3\build\cmake\BuildOptions.cmake;C:\BCI2000.python3\build\cmake\IncludeExtensionMacro.cmake;C:\BCI2000.python3\build\cmake\ModuleInventory.cmake;C:\BCI2000.python3\build\cmake\SetOutputDirectoryMacro.cmake;C:\BCI2000.python3\build\cmake\SetupBCI2000Macros.cmake;C:\BCI2000.python3\build\cmake\SetupExtlibDependencies.cmake;C:\BCI2000.python3\build\cmake\SignalProcessingMacro.cmake;C:\BCI2000.python3\build\cmake\SignalSourceMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsCmdlineMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsGUIAppMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsMexfileMacro.cmake;C:\BCI2000.python3\build\cmake\Utils.cmake;C:\BCI2000.python3\src\contrib\Extensions\Extensions.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\ParameterGUI.CMakeLists.txt;C:\BCI2000.python3\src\private\PrivateConfig.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\BCI2000.python3\build\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/build/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/CMakeLists.txt;C:\BCI2000.python3\build\BuildEnv.sh.cmd.in;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeCCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeCXXCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeRCCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeSystem.cmake;C:\BCI2000.python3\build\CMakeFiles\version\Version.cmake;C:\BCI2000.python3\build\CMakeLists.txt;C:\BCI2000.python3\build\cmake\AddCoreMain.cmake;C:\BCI2000.python3\build\cmake\AddRegistryMacro.cmake;C:\BCI2000.python3\build\cmake\AddResourceMacro.cmake;C:\BCI2000.python3\build\cmake\AddTargetMacro.cmake;C:\BCI2000.python3\build\cmake\ApplicationMacro.cmake;C:\BCI2000.python3\build\cmake\BuildConfigurations.cmake;C:\BCI2000.python3\build\cmake\BuildOptions.cmake;C:\BCI2000.python3\build\cmake\IncludeExtensionMacro.cmake;C:\BCI2000.python3\build\cmake\ModuleInventory.cmake;C:\BCI2000.python3\build\cmake\SetOutputDirectoryMacro.cmake;C:\BCI2000.python3\build\cmake\SetupBCI2000Macros.cmake;C:\BCI2000.python3\build\cmake\SetupExtlibDependencies.cmake;C:\BCI2000.python3\build\cmake\SignalProcessingMacro.cmake;C:\BCI2000.python3\build\cmake\SignalSourceMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsCmdlineMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsGUIAppMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsMexfileMacro.cmake;C:\BCI2000.python3\build\cmake\Utils.cmake;C:\BCI2000.python3\src\contrib\Extensions\Extensions.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\ParameterGUI.CMakeLists.txt;C:\BCI2000.python3\src\private\PrivateConfig.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\BCI2000.python3\build\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/build/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/CMakeLists.txt;C:\BCI2000.python3\build\BuildEnv.sh.cmd.in;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeCCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeCXXCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeRCCompiler.cmake;C:\BCI2000.python3\build\CMakeFiles\3.12.0\CMakeSystem.cmake;C:\BCI2000.python3\build\CMakeFiles\version\Version.cmake;C:\BCI2000.python3\build\CMakeLists.txt;C:\BCI2000.python3\build\cmake\AddCoreMain.cmake;C:\BCI2000.python3\build\cmake\AddRegistryMacro.cmake;C:\BCI2000.python3\build\cmake\AddResourceMacro.cmake;C:\BCI2000.python3\build\cmake\AddTargetMacro.cmake;C:\BCI2000.python3\build\cmake\ApplicationMacro.cmake;C:\BCI2000.python3\build\cmake\BuildConfigurations.cmake;C:\BCI2000.python3\build\cmake\BuildOptions.cmake;C:\BCI2000.python3\build\cmake\IncludeExtensionMacro.cmake;C:\BCI2000.python3\build\cmake\ModuleInventory.cmake;C:\BCI2000.python3\build\cmake\SetOutputDirectoryMacro.cmake;C:\BCI2000.python3\build\cmake\SetupBCI2000Macros.cmake;C:\BCI2000.python3\build\cmake\SetupExtlibDependencies.cmake;C:\BCI2000.python3\build\cmake\SignalProcessingMacro.cmake;C:\BCI2000.python3\build\cmake\SignalSourceMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsCmdlineMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsGUIAppMacro.cmake;C:\BCI2000.python3\build\cmake\ToolsMexfileMacro.cmake;C:\BCI2000.python3\build\cmake\Utils.cmake;C:\BCI2000.python3\src\contrib\Extensions\Extensions.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\ParameterGUI.CMakeLists.txt;C:\BCI2000.python3\src\private\PrivateConfig.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\Platform\WindowsPaths.cmake;C:\BCI2000.python3\build\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\AR\ARSignalProcessing.vcxproj">
+      <Project>{26F602F3-578C-37DA-9369-968577210DE3}</Project>
+      <Name>ARSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\AmpServerPro\AmpServerPro.vcxproj">
+      <Project>{68122086-65E0-339D-8A4D-403E6B54A5D1}</Project>
+      <Name>AmpServerPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\AppCopier\AppCopier.vcxproj">
+      <Project>{70C0035A-73D0-3E05-BA4D-ADF1CBF23565}</Project>
+      <Name>AppCopier</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\B-Alert\BAlertSource.vcxproj">
+      <Project>{53971E87-198E-3DBC-BEC9-267B8184FC51}</Project>
+      <Name>BAlertSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation.vcxproj">
+      <Project>{4190DE96-2405-3256-9691-3C4EF05C03A5}</Project>
+      <Name>BCI2000Automation</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis.vcxproj">
+      <Project>{E33CFF1E-4D25-3835-A1BF-8E980AB6BE07}</Project>
+      <Name>BCI2000CertAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationTester\BCI2000CertificationTester.vcxproj">
+      <Project>{D7B8AD65-FF51-3010-94CC-9E3B1BBD9806}</Project>
+      <Name>BCI2000CertificationTester</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Command\BCI2000Command.vcxproj">
+      <Project>{3EDF3A2C-74F8-3842-A0C1-72E3343813D5}</Project>
+      <Name>BCI2000Command</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000ExportQt\BCI2000Export.vcxproj">
+      <Project>{153BD474-6831-33D3-9610-DF2DE04313FD}</Project>
+      <Name>BCI2000Export</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\BCI2000FileInfo.vcxproj">
+      <Project>{139160AE-8AC4-3A71-8A20-8758E17EE4F6}</Project>
+      <Name>BCI2000FileInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\AppModuleLib\BCI2000FrameworkAppModule.vcxproj">
+      <Project>{547FEFEA-D84F-3460-87A2-1E5B93579DBF}</Project>
+      <Name>BCI2000FrameworkAppModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\CoreLib\DynamicCrt\BCI2000FrameworkCore_DynamicCrt.vcxproj">
+      <Project>{18218554-40DB-365B-981E-75C8B88C4C9A}</Project>
+      <Name>BCI2000FrameworkCore_DynamicCrt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\CoreLib\StaticCrt\BCI2000FrameworkCore_StaticCrt.vcxproj">
+      <Project>{29703B84-C333-3936-9582-829575B0FCDE}</Project>
+      <Name>BCI2000FrameworkCore_StaticCrt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigProcModuleLib\BCI2000FrameworkSigProcModule.vcxproj">
+      <Project>{A322EA3F-61F9-34C0-8CB6-7044771790C9}</Project>
+      <Name>BCI2000FrameworkSigProcModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\BCI2000FrameworkSigSrcModule.vcxproj">
+      <Project>{B433E419-281F-3243-9C4F-739B9CBCFC5E}</Project>
+      <Name>BCI2000FrameworkSigSrcModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000LauncherQt\BCI2000Launcher.vcxproj">
+      <Project>{C7E47895-4A11-3757-AB8E-D240C2054B48}</Project>
+      <Name>BCI2000Launcher</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000MediaPlayer\BCI2000MediaPlayer.vcxproj">
+      <Project>{717F1428-6D95-3479-9691-7990A7328455}</Project>
+      <Name>BCI2000MediaPlayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PresentationLink.vcxproj">
+      <Project>{74D019A4-A606-3D8A-AD72-1DE7EDCF8FCA}</Project>
+      <Name>BCI2000PresentationLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000PythonBindings\BCI2000PythonBindings.vcxproj">
+      <Project>{91377600-23BA-3BF9-84A6-1D8F606750E0}</Project>
+      <Name>BCI2000PythonBindings</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\BCI2000Remote\BCI2000RemoteLib.vcxproj">
+      <Project>{F3778EB1-5798-3564-A2DE-3A2F8CC04889}</Project>
+      <Name>BCI2000RemoteLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\BCI2000Shell\BCI2000Shell.vcxproj">
+      <Project>{A6435DC9-7E83-3C5F-A965-E898C9E15D01}</Project>
+      <Name>BCI2000Shell</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000ViewerQt\BCI2000Viewer.vcxproj">
+      <Project>{B45CF798-94DC-3799-AD86-574E492B6471}</Project>
+      <Name>BCI2000Viewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\BioRadio\BioRadio.vcxproj">
+      <Project>{A65A0364-A67F-3C74-A3FA-D7193B9ED53E}</Project>
+      <Name>BioRadio</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Biosemi\Biosemi2.vcxproj">
+      <Project>{984664CC-4251-3D53-AF13-BB4719B4429D}</Project>
+      <Name>Biosemi2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Blackrock\Blackrock.vcxproj">
+      <Project>{5C1747CB-4528-3E22-92BF-5760E101D117}</Project>
+      <Name>Blackrock</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\CoherenceFFT\CoherenceFFTSignalProcessing.vcxproj">
+      <Project>{6869853E-D18D-31AD-A4EE-751281FEDD26}</Project>
+      <Name>CoherenceFFTSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\Coherence\CoherenceSignalProcessing.vcxproj">
+      <Project>{0F3020E5-6633-3DB4-B1D5-C1C760A4B85A}</Project>
+      <Name>CoherenceSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Application\CursorTask\CursorTask.vcxproj">
+      <Project>{02197C1A-E342-336A-9D76-2BA442276DD4}</Project>
+      <Name>CursorTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\DASSource\DASSource.vcxproj">
+      <Project>{3B3106DC-AB84-3B40-95AD-BF75B4D5688F}</Project>
+      <Name>DASSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\DSISerial\DSISerial.vcxproj">
+      <Project>{85C8E93B-AEA4-3479-937E-7D2090D6CF0B}</Project>
+      <Name>DSISerial</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Application\Dummy\DummyApplication.vcxproj">
+      <Project>{2E4ECCFD-217A-3884-98F3-4C691B0E3949}</Project>
+      <Name>DummyApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\Dummy\DummySignalProcessing.vcxproj">
+      <Project>{4BC3D885-56AB-336F-84D1-50809E83B1EE}</Project>
+      <Name>DummySignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\DylibTool\DylibTool.vcxproj">
+      <Project>{A052F002-5277-3DE9-9401-2772632880D8}</Project>
+      <Name>DylibTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\EEGOSource\EEGO.vcxproj">
+      <Project>{BBB10FAB-DFE0-3FA6-ADC5-B296AA133951}</Project>
+      <Name>EEGO</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Enobio\Enobio3G\ENOBIO3G.vcxproj">
+      <Project>{9A123280-0E0D-397C-9EC1-FB0691D6EC77}</Project>
+      <Name>ENOBIO3G</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Emotiv\Emotiv.vcxproj">
+      <Project>{3ADDFDFB-8EAD-350B-9A62-102B984816C6}</Project>
+      <Name>Emotiv</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\FFT\FFTSignalProcessing.vcxproj">
+      <Project>{FD5BA970-FE0B-3CE7-8B79-4335E4B5A273}</Project>
+      <Name>FFTSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\FIR\FIRProcessing.vcxproj">
+      <Project>{181FBD8B-B025-38A5-89E2-E336173219B4}</Project>
+      <Name>FIRProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Application\FeedbackDemo\FeedbackDemo.vcxproj">
+      <Project>{2C37B9AF-F874-3D2C-942A-55CBB1DCB22B}</Project>
+      <Name>FeedbackDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\FieldTripBuffer\FieldTripBuffer.vcxproj">
+      <Project>{DA91AF50-8B6A-32C2-838A-4666269EC6CB}</Project>
+      <Name>FieldTripBuffer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\FieldTripBufferSource\FieldTripBufferSource.vcxproj">
+      <Project>{4CCCADD7-616A-3502-B770-75300D439DD6}</Project>
+      <Name>FieldTripBufferSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\FilePlayback\FilePlayback.vcxproj">
+      <Project>{637ECC96-A855-3735-8DFD-2EF76827118D}</Project>
+      <Name>FilePlayback</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Ripple\Grapevine.vcxproj">
+      <Project>{E5552778-E1DB-30A5-A05F-5835CA5CA8A7}</Project>
+      <Name>Grapevine</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\HilbertSignalProcessing\HilbertSignalProcessing.vcxproj">
+      <Project>{6B48D5B7-D1D9-3DB7-BD28-2744C43B9AC6}</Project>
+      <Name>HilbertSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\LSLSource\LSLSource.vcxproj">
+      <Project>{B23D0440-04A0-3B9F-9F52-DB67666A7D5A}</Project>
+      <Name>LSLSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\DynamicCrt\LibTiny_DynamicCrt.vcxproj">
+      <Project>{CD62784C-7E91-3957-84FA-0036EC57BBE2}</Project>
+      <Name>LibTiny_DynamicCrt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt.vcxproj">
+      <Project>{7C2D4AB7-2D73-32F1-BC91-E08B94AD9117}</Project>
+      <Name>LibTiny_StaticCrt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\LiveAmp\LiveAmpSource.vcxproj">
+      <Project>{CE879D66-469E-3948-B556-2409ECFDAFE5}</Project>
+      <Name>LiveAmpSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\Matlab\MatlabSignalProcessing.vcxproj">
+      <Project>{C4B22C23-56BE-3714-8A1E-B063754CF2C2}</Project>
+      <Name>MatlabSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\MessageBox.vcxproj">
+      <Project>{A5C118A6-7F94-32E2-8E9E-DDCB736E8927}</Project>
+      <Name>MessageBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Micromed\Micromed.vcxproj">
+      <Project>{6DE9B58C-9D88-32BD-84DE-BCA668CE65C8}</Project>
+      <Name>Micromed</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\ModularEEG\ModularEEG.vcxproj">
+      <Project>{B0B6B3C5-BDF8-3C21-89CE-A832B8AA915E}</Project>
+      <Name>ModularEEG</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\NIDAQ-MX\NIDAQ_mx_Source.vcxproj">
+      <Project>{C0F58E69-377C-3BD3-8F7D-64928F0A5BB2}</Project>
+      <Name>NIDAQ_mx_Source</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\NeuroSky\NeuroSky.vcxproj">
+      <Project>{FAA1C9D7-E1B1-3099-BF33-2513A49BD205}</Project>
+      <Name>NeuroSky</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\NeuroscanAccessSDK\NeuroscanAccess.vcxproj">
+      <Project>{816A4434-F255-31A6-9967-1988EBBED214}</Project>
+      <Name>NeuroscanAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\Neuroscan\NeuroscanClient.vcxproj">
+      <Project>{5C4057E5-29F0-372D-AB2E-8CB5ACFDC02A}</Project>
+      <Name>NeuroscanClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\BootstrapCustomProjects\NewBCI2000Filter.vcxproj">
+      <Project>{46E9EB91-B3CD-3F74-A8DD-0358A3A27228}</Project>
+      <Name>NewBCI2000Filter</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\BootstrapCustomProjects\NewBCI2000FilterTool.vcxproj">
+      <Project>{A5618A7A-D660-32F1-AF40-EEC13254A347}</Project>
+      <Name>NewBCI2000FilterTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\BootstrapCustomProjects\NewBCI2000Module.vcxproj">
+      <Project>{0A4D6C9A-9CCA-31C2-8BA6-7709F10D4817}</Project>
+      <Name>NewBCI2000Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\OpenBCISource\OpenBCISource.vcxproj">
+      <Project>{922AB6BC-2302-3A67-A56E-C88903171B48}</Project>
+      <Name>OpenBCISource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\Operator.vcxproj">
+      <Project>{814EFC5B-940F-3DB4-BCF4-425A48501CC5}</Project>
+      <Name>Operator</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorLib\OperatorLib.vcxproj">
+      <Project>{08A04094-C3E7-34C2-B3BF-B998213E43D5}</Project>
+      <Name>OperatorLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\P300Classifier\P300Classifier.vcxproj">
+      <Project>{149C9AFF-8D5D-38AA-A9E3-0D870707F3CF}</Project>
+      <Name>P300Classifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\P3\P3SignalProcessing.vcxproj">
+      <Project>{AFF31969-DCF4-3C8D-9727-D8FC516296CA}</Project>
+      <Name>P3SignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Application\P3Speller\P3Speller.vcxproj">
+      <Project>{FC021F17-3099-3996-9BC2-B6826B746481}</Project>
+      <Name>P3Speller</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\PeakDetector\PeakDetectSignalProcessing.vcxproj">
+      <Project>{1139BA18-BD23-30B4-85AD-2E176BD56737}</Project>
+      <Name>PeakDetectSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\extlib\portaudio\PortAudio.vcxproj">
+      <Project>{8B13A038-9256-3A0F-80AC-D8B859554913}</Project>
+      <Name>PortAudio</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\PyffApplication\PyffApplication.vcxproj">
+      <Project>{A2D2709E-B6A5-3428-BF1C-33C7A0F399BB}</Project>
+      <Name>PyffApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\BCPy2000\foundation\Application\PythonApplication.vcxproj">
+      <Project>{328D9E81-4D03-3F2E-BD69-9FACB0F0F12A}</Project>
+      <Name>PythonApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\BCPy2000\foundation\SignalProcessing\PythonSignalProcessing.vcxproj">
+      <Project>{0013AA11-CE0C-3C49-9FC5-253D34E08CC8}</Project>
+      <Name>PythonSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\BCPy2000\foundation\SignalSource\PythonSource.vcxproj">
+      <Project>{5FF3869B-237C-3BCF-8888-F72180BDF8B5}</Project>
+      <Name>PythonSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\RDAClient\RDAClient.vcxproj">
+      <Project>{E0E306C2-2543-3CE0-8B2B-55B7387630C0}</Project>
+      <Name>RDAClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\RDAClient\getparams\RDAgetparams.vcxproj">
+      <Project>{3A28C515-B625-3BF3-AEF2-1DF14A3B66AE}</Project>
+      <Name>RDAgetparams</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\SW\SWSignalProcessing.vcxproj">
+      <Project>{21EE7BEF-22C8-3CBE-8400-72D8CB714BC7}</Project>
+      <Name>SWSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool.vcxproj">
+      <Project>{3A96BA95-F8B3-34F5-A5D6-929FFF782F2A}</Project>
+      <Name>SchedulingTool</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SignalGenerator\SignalGenerator.vcxproj">
+      <Project>{47EF3E73-47A8-3EB1-997E-F242F8726563}</Project>
+      <Name>SignalGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile\Sndfile.vcxproj">
+      <Project>{B8C9EA52-1703-39EF-BC75-1ACA2290ED35}</Project>
+      <Name>Sndfile</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\SoundcardSource\SoundcardSource.vcxproj">
+      <Project>{B0BD685F-D470-36BF-8E45-B19EAE9FEB70}</Project>
+      <Name>SoundcardSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\Spectral\SpectralSignalProcessing.vcxproj">
+      <Project>{AA0DA9BA-42D8-32AD-B97A-91026BD27790}</Project>
+      <Name>SpectralSignalProcessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\Statistics\StatisticsSignalProcessing1.vcxproj">
+      <Project>{48D099C8-241A-381D-8299-CBD4E281CACB}</Project>
+      <Name>StatisticsSignalProcessing1</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\Statistics\StatisticsSignalProcessing2.vcxproj">
+      <Project>{5E05877C-C1B1-3A78-AFAA-DC4FD2B1D042}</Project>
+      <Name>StatisticsSignalProcessing2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\Statistics\StatisticsSignalProcessing4.vcxproj">
+      <Project>{BBCB0449-409E-32E9-BE16-5DF59A126FEA}</Project>
+      <Name>StatisticsSignalProcessing4</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Application\StimulusPresentation\StimulusPresentation.vcxproj">
+      <Project>{1AD4B0FF-0F6B-3129-82FA-D02DCD364D04}</Project>
+      <Name>StimulusPresentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\TuckerDavis\TDTSampleRate\TDTSampleRate.vcxproj">
+      <Project>{651C05F8-F8BC-364C-A8CB-E7F50934151B}</Project>
+      <Name>TDTSampleRate</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\TMSi\TMSi.vcxproj">
+      <Project>{1A4FCA35-5774-317E-A81B-FCFBEFC1F4BC}</Project>
+      <Name>TMSi</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\TuckerDavis\TuckerDavis.vcxproj">
+      <Project>{5B29C8DF-64A2-3227-9344-6B1C30BCEA80}</Project>
+      <Name>TuckerDavis</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\actiCHamp\actiCHampSource.vcxproj">
+      <Project>{B2C562AD-A586-3290-924B-535AD998173E}</Project>
+      <Name>actiCHampSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\cmdline\bci_dat2stream.vcxproj">
+      <Project>{962B26F6-69A7-32CE-AC2B-8FBE1D86685D}</Project>
+      <Name>bci_dat2stream</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\bci_datadiff.vcxproj">
+      <Project>{8E01AF9D-07C3-369F-819D-220EEC61FBC2}</Project>
+      <Name>bci_datadiff</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\cmdline\bci_decimate.vcxproj">
+      <Project>{B5A6C2A9-8EE1-3E12-A1CC-0DA65B8A9D69}</Project>
+      <Name>bci_decimate</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\cmdline\bci_prm2stream.vcxproj">
+      <Project>{2E6CB23A-637F-35B2-A85A-567B06553297}</Project>
+      <Name>bci_prm2stream</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\cmdline\bci_stream2asc.vcxproj">
+      <Project>{CFF8E587-53BA-397D-A3E4-66F46997B78B}</Project>
+      <Name>bci_stream2asc</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\cmdline\bci_stream2mat.vcxproj">
+      <Project>{F06F84F2-CE2A-363A-9FED-97D2C600DA65}</Project>
+      <Name>bci_stream2mat</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\cmdline\bci_stream2prm.vcxproj">
+      <Project>{2261BA9F-D5CE-3E44-A38F-BFF15C49E083}</Project>
+      <Name>bci_stream2prm</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\cmdline\bci_stream2table.vcxproj">
+      <Project>{CE2279C9-44A2-3CC4-A898-DCEDCA6C97EB}</Project>
+      <Name>bci_stream2table</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png.vcxproj">
+      <Project>{E6A4420D-66D6-3535-AC72-EFA4C5C469B1}</Project>
+      <Name>combine_png</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\create_resource.vcxproj">
+      <Project>{52CBD563-BC29-3839-B7CC-4C571FD161D6}</Project>
+      <Name>create_resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\extract_registry.vcxproj">
+      <Project>{A0F57A17-E4BF-3747-ABCE-F26FCFE358C2}</Project>
+      <Name>extract_registry</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.HIampSource\gHIampSource.vcxproj">
+      <Project>{92EF7AA7-F1A7-3FF8-B8BB-DB538068B465}</Project>
+      <Name>gHIampSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.MOBIlab\gMOBIlab.vcxproj">
+      <Project>{C14DDE2F-3BE2-3ABE-AC01-1D3B4FCF03F4}</Project>
+      <Name>gMOBIlab</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.MOBIlabPlus\gMOBIlabPlus.vcxproj">
+      <Project>{2DD30CC0-A2D3-3BAD-9697-E2BBD64F20EA}</Project>
+      <Name>gMOBIlabPlus</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.NautilusSource\gNautilusSource.vcxproj">
+      <Project>{6910D370-D7E0-3721-83FD-26D5FD83756B}</Project>
+      <Name>gNautilusSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.USBamp\gUSBampSource.vcxproj">
+      <Project>{607770C6-B60E-3F2B-9E07-D7AE76268B04}</Project>
+      <Name>gUSBampSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.USBamp\getinfo\gUSBampgetinfo.vcxproj">
+      <Project>{0F4EC051-B78E-38A1-A082-233D79D41A25}</Project>
+      <Name>gUSBampgetinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.Unicorn\gUnicornADC.vcxproj">
+      <Project>{012D1A97-4CE0-39B3-97A7-25E8EBBD9166}</Project>
+      <Name>gUnicornADC</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\list_dependencies.vcxproj">
+      <Project>{9BA7DDA4-44AF-3C23-987D-0105F38CA271}</Project>
+      <Name>list_dependencies</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\make_win32ico.vcxproj">
+      <Project>{AC6D685B-A144-3579-BCC0-CDA8FD932982}</Project>
+      <Name>make_win32ico</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp.vcxproj">
+      <Project>{734DA984-4085-331C-A653-1778B4A3C5A2}</Project>
+      <Name>png2bmp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png.vcxproj">
+      <Project>{9CFB6D8B-5A60-394B-AD87-E6024CF7F4E6}</Project>
+      <Name>transform_png</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\vAmp\vAmpSource.vcxproj">
+      <Project>{A8F1685D-0A2B-30DC-9C42-4FFFBDB63D62}</Project>
+      <Name>vAmpSource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

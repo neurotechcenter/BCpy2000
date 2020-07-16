@@ -1,0 +1,31 @@
+Redistributable dependencies (authors don't know we're using their code but don't mind)
+
+	==> ./src/exlib/fftlib/*
+
+	==> ./src/exlib/fieldtrip/*
+
+	==> ./src/extlib/alglib/*
+		Copyright (c) 1992-2007 The University of Tennessee.  All rights reserved.
+		Contributors: Sergey Bochkanov (ALGLIB project).
+		and/or
+		Copyright (c) 2003-2007, Sergey Bochkanov (ALGLIB project).
+		(redistributable in both cases)
+
+	==> ./src/contrib/SignalSource/Ripple/stdint_ms.h
+	==> ./src/extlib/fieldtrip/buffer/src/win32/stdint.h
+		//  Copyright (c) 2006-2008 Alexander Chemeris
+		... but redistributable under permissive license, provided conditions remain intact.
+
+	==> ./src/shared/fileio/dirent_win.h <==
+		 * Copyright (C) 2006 Toni Ronkko
+
+	==> ./src/core/Tools/P300Classifier/CDataFile.cpp <==
+	==> ./src/core/Tools/P300Classifier/CDataFile.h <==
+		// Written July, 2002 by Gary McNickle <gary#sunstorm.net>
+		// If you use this class in your application, credit would be appreciated.
+		
+	==> ./src/core/Tools/P300Classifier/CmdLine.h <==
+	==> ./src/core/Tools/P300Classifier/CmdLine.cpp <==    
+		   Copyright (C) 1999 Chris Losinger, Smaller Animals Software.
+		   http://www.smalleranimals.com
+		   Redistributable under permissive license, provided conditions remain intact.

@@ -1,0 +1,23 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/LSLSource/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/LSLSource/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  LSLADC.cpp
+  liblsl64.imports.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  SourceFilter.cpp
+  IIRFilterBase.cpp
+  FilterDesign.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  LSLSource.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\LSLSource\Release\LSLSource.exe
+  				Deploying executable
+  copying files:
+  Copying LSLSource.exe ...
+  Copying liblsl32.dll ...
+  Copying liblsl64.dll ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

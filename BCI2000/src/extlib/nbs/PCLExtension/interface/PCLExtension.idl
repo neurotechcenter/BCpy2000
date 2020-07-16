@@ -1,0 +1,572 @@
+import "unknwn.idl";
+import "oaidl.idl";
+
+[
+	uuid(D43BB8BB-2BA3-492e-B3AB-150071B879A9),
+	dual,
+	oleautomation
+]
+interface IPCLArgument: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getType( [out] BSTR * type );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getRank( [out,retval] long * rank );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getIsReference( [out,retval] long * isRef );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+typedef struct tagPCLAudioParameters
+{
+	unsigned long frameCount;
+	unsigned long channelCount;
+	unsigned long dataSizeBytes;
+	unsigned long framesPerSecond;
+} PCLAudioParameters;
+
+[
+	uuid(E0934AAF-8832-44cf-A490-06F9172FC7BB),
+	dual,
+	oleautomation
+]
+interface IPCLWavefileLock: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getDataPtr( [out,retval] byte* * dataPtr );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getParameters( [out] PCLAudioParameters * parameters );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+[
+	uuid(A60D18A4-8C3F-44f0-97FA-B399E56FFDC2),
+	dual,
+	oleautomation
+]
+interface IPCLWavefile: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getIsNull( [out] long * null );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall getParameters( [out] PCLAudioParameters * parameters );
+	[
+	id(0x00000007)
+	]
+	HRESULT _stdcall resize( [in] long frameCount, [in] long channelCount );
+	[
+	id(0x00000008)
+	]
+	HRESULT _stdcall lock( [out,retval] IPCLWavefileLock* * lockObject );
+	[
+	id(0x00000009)
+	]
+	HRESULT _stdcall replace( [in] PCLAudioParameters parameters, [in] byte* data );
+};
+
+typedef struct tagPCLGraphicParameters
+{
+	unsigned long widthPixels;
+	unsigned long heightPixels;
+	unsigned long pitchBytes;
+	unsigned long bitsPerPixel;
+	unsigned long redMask;
+	unsigned long greenMask;
+	unsigned long blueMask;
+	unsigned long alphaMask;
+} PCLGraphicParameters;
+
+[
+	uuid(44E35511-BC78-40a5-B713-0E9077933E8D),
+	dual,
+	oleautomation
+]
+interface IPCLGraphicSurfaceLock: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getDataPtr( [out,retval] byte* * dataPtr );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getParameters( [out] PCLGraphicParameters * parameters );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+[
+	uuid(A96615CA-28B1-4958-9329-7F1A453610B7),
+	dual,
+	oleautomation
+]
+interface IPCLGraphicSurface: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getIsNull( [out] long * null );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall getSize( [out] long * widthPixels, [out] long * heightPixels );
+	[
+	id(0x00000007)
+	]
+	HRESULT _stdcall resize( [in] long widthPixels, [in] long heightPixels );
+	[
+	id(0x00000008)
+	]
+	HRESULT _stdcall lock( [out,retval] IPCLGraphicSurfaceLock* * lockObject );
+	[
+	id(0x00000009)
+	]
+	HRESULT _stdcall replace( [in] PCLGraphicParameters parameters, [in] byte* data );
+	[
+	id(0x0000000A)
+	]
+	HRESULT _stdcall convertCustomUnits( [in] double customWidth, [in] double customHeight, [out] double * pixelWidth, [out] double * pixelHeight );
+};
+
+[
+	uuid(DD64D836-F3DF-4097-A12A-45EF441B2FD0),
+	dual,
+	oleautomation
+]
+interface IPCLArray: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getCount( [out,retval] long * count );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall resize( [in] long count );
+	[
+	id(0x00000007)
+	]
+	HRESULT _stdcall getSubArray( [in] long index, [out,retval] IPCLArray* * subArray );
+};
+
+[
+	uuid(CEB1D686-B7EC-44bc-8FDA-870C50884088),
+	dual,
+	oleautomation
+]
+interface IPCLStringArray: IPCLArray
+{
+	[
+	id(0x00000008)
+	]
+	HRESULT _stdcall setValue( [in] long index, [in] BSTR value );
+	[
+	id(0x00000009)
+	]
+	HRESULT _stdcall getValue( [in] long index, [out,retval] BSTR * value );
+	[
+	id(0x0000000A)
+	]
+	HRESULT _stdcall add( [in] BSTR value );
+};
+
+[
+	uuid(6602A29A-38D8-4c3e-A980-F04A0DD64895),
+	dual,
+	oleautomation
+]
+interface IPCLIntArray: IPCLArray
+{
+	[
+	id(0x00000008)
+	]
+	HRESULT _stdcall getDataPtr( [out,retval] long* * dataPtr );
+	[
+	id(0x00000009)
+	]
+	HRESULT _stdcall setValue( [in] long index, [in] long value );
+	[
+	id(0x0000000A)
+	]
+	HRESULT _stdcall getValue( [in] long index, [out,retval] long * value );
+	[
+	id(0x0000000B)
+	]
+	HRESULT _stdcall add( [in] long value );
+};
+
+[
+	uuid(CA5BDA29-B722-4518-AF47-26C9F8628752),
+	dual,
+	oleautomation
+]
+interface IPCLDoubleArray: IPCLArray
+{
+	[
+	id(0x00000008)
+	]
+	HRESULT _stdcall getDataPtr( [out,retval] double* * dataPtr );
+	[
+	id(0x00000009)
+	]
+	HRESULT _stdcall setValue( [in] long index, [in] double value );
+	[
+	id(0x0000000A)
+	]
+	HRESULT _stdcall getValue( [in] long index, [out,retval] double * value );
+	[
+	id(0x0000000B)
+	]
+	HRESULT _stdcall add( [in] double value );
+};
+
+[
+	uuid(FF2B4A6F-7F73-41b4-A696-F28C1F3147ED),
+	dual,
+	oleautomation
+]
+interface IPCLBoolArray: IPCLArray
+{
+	[
+	id(0x00000008)
+	]
+	HRESULT _stdcall getDataPtr( [out,retval] byte* * dataPtr );
+	[
+	id(0x00000009)
+	]
+	HRESULT _stdcall setValue( [in] long index, [in] byte value );
+	[
+	id(0x0000000A)
+	]
+	HRESULT _stdcall getValue( [in] long index, [out,retval] byte * value );
+	[
+	id(0x0000000B)
+	]
+	HRESULT _stdcall add( [in] byte value );
+};
+
+[
+	uuid(023D3759-685A-4c63-85B3-9A50D545E565),
+	dual,
+	oleautomation
+]
+interface IPCLString: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getValue( [out,retval] BSTR * val );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall setValue( [in] BSTR val );
+};
+
+[
+	uuid(CF00C2BD-1595-4c6d-B2C9-8EB88B79A078),
+	dual,
+	oleautomation
+]
+interface IPCLInt: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getValue( [out,retval] long * val );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall setValue( [in] long val );
+};
+
+[
+	uuid(C41A6728-6307-4846-883C-0C8BF4AACA17),
+	dual,
+	oleautomation
+]
+interface IPCLDouble: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getValue( [out,retval] double * val );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall setValue( [in] double val );
+};
+
+[
+	uuid(525A6207-B78E-47b1-AB8E-4DED017B299D),
+	dual,
+	oleautomation
+]
+interface IPCLBool: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getValue( [out,retval] long * val );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall setValue( [in] long val );
+};
+
+[
+	uuid(B8D5BA56-01D5-4237-92A1-73C972C8470B),
+	dual,
+	oleautomation
+]
+interface IPCLArguments: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getCount( [out,retval] long * count );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getArgument( [in] long index, [out,retval] IPCLArgument* * argument );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getReturnValue( [out,retval] IPCLArgument* * value );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+interface IPCLType;
+
+[
+	uuid(83CE0178-FAE2-4734-8A90-31389543E4AE),
+	dual,
+	oleautomation
+]
+interface IPCLObject: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall callMethod( [in] long methodIndex, [in] IPCLArguments* arguments );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getType( [out] IPCLType* * type );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+[
+	uuid(0DECE6D3-85AE-4d3c-953A-15A55504C9E6),
+	dual,
+	oleautomation
+]
+interface IPCLExtensionObject: IPCLArgument
+{
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getValue( [out,retval] IPCLObject** val );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall setValue( [in] IPCLObject* val );
+};
+
+[
+	uuid(B74B2585-4C45-4747-A297-9ED841F4731D),
+	dual,
+	oleautomation
+]
+interface IPCLMethod: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall setName( [in] BSTR name );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall addArgument( [in] BSTR name, [in] BSTR type,
+		[in] long rank, [in] long isReference, [in] BSTR description );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall setReturnValue( [in] BSTR type, [in] long rank, [in] BSTR description );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall setDescription( [in] BSTR desc );
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+
+[
+	uuid(721705E4-275F-4aed-BFA9-6957E40BDE4F),
+	dual,
+	oleautomation
+]
+interface IPCLMethodList: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall addMethod( [out] IPCLMethod* * method );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall addNew( [out] IPCLMethod* * method );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall addPredefinedVariable( [in] BSTR type, [in] BSTR name, [in] BSTR value );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+interface IPCLLibrary;
+
+[
+	uuid(12349DAF-FD20-4ba6-B500-0FC8E0E49A0B),
+	dual,
+	oleautomation
+]
+interface IPCLType: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getName( [out] BSTR * name );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getDescription( [out] BSTR* desc );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getParentName( [out] BSTR* parent );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall getMethods( [in] IPCLMethodList* list );
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall createObject( [in] long newIndex, [in] IPCLArguments* arguments, [out] IPCLObject* * object );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall getLibrary( [out] IPCLLibrary* * lib );
+	[
+	id(0x00000007)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+
+[
+	uuid(5483302B-931F-4506-A9D0-30F5C22348CB),
+	dual,
+	oleautomation
+]
+interface IPCLLibrary: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getName( [out] BSTR* name );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getAuthor( [out] BSTR* author );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getVersion( [out] BSTR* ver );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall getDescription( [out] BSTR* desc );
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getPresentationMinimumVersion( [out] double* ver );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall getNamespaceName( [out] BSTR* ns );
+	[
+	id(0x00000007)
+	]
+	HRESULT _stdcall getTypeCount( [out] long * count );
+	[
+	id(0x00000008)
+	]
+	HRESULT _stdcall getType( [in] long index, [out] IPCLType* * type );
+	[
+	id(0x00000009)
+	]
+	HRESULT _stdcall getLastError( [out] BSTR * message );
+};
+
+[
+	uuid(6C8AA9C3-D6D1-46ba-8E56-FDAF36AFA8DE)
+]
+library PCLExtension
+{
+	importlib("STDOLE2.TLB");
+
+	interface IPCLGraphicSurfaceLock;
+	interface IPCLWavefileLock;
+	interface IPCLArgument;
+	interface IPCLBool;
+	interface IPCLDouble;
+	interface IPCLInt;
+	interface IPCLString;
+	interface IPCLExtensionObject;
+	interface IPCLGraphicSurface;
+	interface IPCLWavefile;
+	interface IPCLArray;
+	interface IPCLBoolArray;
+	interface IPCLDoubleArray;
+	interface IPCLIntArray;
+	interface IPCLStringArray;
+	interface IPCLLibrary;
+	interface IPCLMethod;
+	interface IPCLMethodList;
+	interface IPCLObject;
+	interface IPCLType;
+	interface IPCLArguments;
+}; 

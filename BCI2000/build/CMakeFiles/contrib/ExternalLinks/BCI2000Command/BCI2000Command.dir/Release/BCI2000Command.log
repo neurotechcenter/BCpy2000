@@ -1,0 +1,15 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Command/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Command/CMakeFiles/generate.stamp is up-to-date.
+  BCI2000Command.cpp
+  sockstream.cpp
+  BCI2000Remote.cpp
+  BCI2000Connection.cpp
+  WinMain.cpp
+  Generating Code...
+  BCI2000Command.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Command\Release\BCI2000Command.exe
+  	Deploying executable
+  copying files:
+  Copying BCI2000Command.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

@@ -1,0 +1,5 @@
+BCI2000_INCLUDE(MATH)
+
+SET( SIGPROC_DIR ${PROJECT_SOURCE_ROOT}/src/shared/modules/signalprocessing )
+
+BCI2000_ADD_CMDLINE_FILTER( StimResponseFilter FROM .. INCLUDING "MATH" EXTRA_SOURCES ${SIGPROC_DIR}/IIRFilterBase.cpp )

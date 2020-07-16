@@ -1,0 +1,13 @@
+Storage:Session string SubjectSession= 001 001 % % // 3-digit session #
+Storage:Session string SubjectRun= 01 00 % % // 2 digit run #
+Visualize:Timing int VisualizeRoundtrip= 0 1 0 1 // visualize roundtrip time (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSourceDecimation= 1 1 0 % // decimation factor for raw brain signal
+Visualize:Source%20Signal int VisualizeSourceTime= 2s 2s 0 % // how much time in Source visualization
+Visualize:Source%20Signal int SourceMin= -100muV -100muV % % // raw signal vis Min Value
+Visualize:Source%20Signal int SourceMax= 100muV 100muV % % // raw signal vis Max Value
+Visualize:Processing%20Stages int VisualizeSpatialFilter= 0 0 0 1 // Visualize SpatialFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeARFilter= 0 0 0 1 // Visualize ARFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeLinearClassifier= 0 0 0 1 // Visualize LinearClassifier output (boolean)
+Visualize:Processing%20Stages int VisualizeLPFilter= 0 0 0 1 // Visualize LPFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeNormalizer= 0 0 0 1 // Visualize Normalizer output (boolean)

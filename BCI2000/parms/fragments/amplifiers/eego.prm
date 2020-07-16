@@ -1,0 +1,8 @@
+Source:Signal%20Properties:DataIOFilter int SourceCh= 64 // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter int SampleBlockSize= 16 // number of samples transmitted at a time
+Source:Signal%20Properties:DataIOFilter int SamplingRate= 512 // sampling rate
+Source:Signal%20Properties:DataIOFilter list ChannelNames= 0 // list of channel names
+Source:Signal%20Properties:DataIOFilter list SourceChOffset= 1 auto // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter list SourceChGain= 1 auto // gain for each channel (A/D units per physical unit)
+Source:Signal%20Properties:EEGO int SourceRefVoltageRange= 150 150 100 2000 // The voltage range if the reference channels. [mV]
+Source:Signal%20Properties:EEGO int SourceBipVoltageRange= 150 150 150 5000 // The voltage range if the bipolar channels. [mV]

@@ -1,0 +1,11 @@
+// File contents created by utils_add_resource -- re-run CMake to update this file
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/CMakeLists-Application.txt.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/CMakeLists-SignalProcessing.txt.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/CMakeLists-SignalSource.txt.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/PipeDefinition.cpp.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/TemplateApplication.cpp.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/TemplateApplication.h.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/TemplateBufferedADC.cpp.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/TemplateBufferedADC.h.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/TemplateFilter.cpp.in.res.cpp"
+#include "C:/BCI200~1.PYT/build/CMAKEF~1/BUILDU~1/BOOTST~1/NEWBCI~1/TemplateFilter.h.in.res.cpp"

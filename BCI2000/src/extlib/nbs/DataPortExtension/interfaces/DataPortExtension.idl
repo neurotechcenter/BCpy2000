@@ -1,0 +1,117 @@
+import "unknwn.idl";
+import "oaidl.idl";
+
+[
+	uuid(199E48B8-1479-4ecc-B28B-2E6500E24B51),
+	version(1.0),
+	dual,
+	oleautomation
+]
+interface IActiveDataPort: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getName( [out,retval] BSTR * name );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getServerTime( [out] double* timeMicro, [out] double* uncertaintyMicro );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall sendData( [in] BSTR eventType, [in] BSTR eventCode,
+		[in] double serverTimeMicro, [in] double uncertaintyMicro, [in] BSTR other );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall processMessage( [in] BSTR message, [out,retval] BSTR * result );
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall getLastError( [out,retval] BSTR * error );
+};
+
+[
+	uuid(D8A27F2F-BC12-4206-8A34-5CB9ED9CEAE9),
+	version(1.0),
+	dual,
+	oleautomation
+]
+interface IDataPort: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getPropertiesViewable( [out,retval] unsigned char * viewable );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall showProperties( HWND parentWindow );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall setDefaults( void );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall getProperties( [out,retval] BSTR * parameters );
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall setProperties( [in] BSTR parameters );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall acquire( [out,retval] IActiveDataPort ** device );
+	[
+	id(0x00000007)
+	]
+	HRESULT _stdcall getLastError( [out,retval] BSTR * error );
+};
+
+[
+	uuid(5318AE38-6B92-4406-9178-51EAA811F9C5),
+	version(1.0),
+	dual,
+	oleautomation
+]
+interface IDataPortExtension: IDispatch
+{
+	[
+	id(0x00000001)
+	]
+	HRESULT _stdcall getName( [out,retval] BSTR* name );
+	[
+	id(0x00000002)
+	]
+	HRESULT _stdcall getAuthor( [out,retval] BSTR* author );
+	[
+	id(0x00000003)
+	]
+	HRESULT _stdcall getVersion( [out,retval] BSTR* ver );
+	[
+	id(0x00000004)
+	]
+	HRESULT _stdcall getDescription( [out,retval] BSTR* desc );
+	[
+	id(0x00000005)
+	]
+	HRESULT _stdcall addPort( [out,retval] IDataPort ** port );
+	[
+	id(0x00000006)
+	]
+	HRESULT _stdcall getLastError( [out,retval] BSTR * error );
+};
+
+[
+	uuid(BD66A923-7895-46e7-8999-029F99999E97)
+]
+library DataPortExtensionLibrary
+{
+	importlib("STDOLE2.TLB");
+
+	interface IActiveDataPort;
+	interface IDataPort;
+	interface IDataPortExtension;
+}; 

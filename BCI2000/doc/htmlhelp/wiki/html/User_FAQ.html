@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User FAQ - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User FAQ,Contributions:ADCs,Contributions:FilePlayback,Contributions:FilterGUI,Contributions:How to use a Contributed Source Module,User Reference:Command Line Processing,User Reference:Contents,User Reference:ExpressionFilter,User Reference:LinearClassifier,User Reference:Matlab MEX Files,User Reference:Matlab Tools" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">User FAQ</h1><p class="subtitle"></p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_FAQ.html#Troubleshooting"><span class="tocnumber">1</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_FAQ.html#Timing_Issues"><span class="tocnumber">1.1</span> <span class="toctext">Timing Issues</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#Startup"><span class="tocnumber">1.2</span> <span class="toctext">Startup</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#Feedback"><span class="tocnumber">1.3</span> <span class="toctext">Feedback</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#gUSBamp_not_recognized"><span class="tocnumber">1.4</span> <span class="toctext">gUSBamp not recognized</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#Matlab_Signal_Processing_shows_an_error_at_startup"><span class="tocnumber">1.5</span> <span class="toctext">Matlab Signal Processing shows an error at startup</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_FAQ.html#Configuration"><span class="tocnumber">2</span> <span class="toctext">Configuration</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_FAQ.html#Using_a_Contributed_Source_Module"><span class="tocnumber">2.1</span> <span class="toctext">Using a Contributed Source Module</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#Replaying_Recorded_Data"><span class="tocnumber">2.2</span> <span class="toctext">Replaying Recorded Data</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#Random_Sequences"><span class="tocnumber">2.3</span> <span class="toctext">Random Sequences</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#Visual_Stimulation"><span class="tocnumber">2.4</span> <span class="toctext">Visual Stimulation</span></a></li>
+<li class='toclevel-2'><a href="User_FAQ.html#Joystick_Control"><span class="tocnumber">2.5</span> <span class="toctext">Joystick Control</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_FAQ.html#Data_Analysis"><span class="tocnumber">3</span> <span class="toctext">Data Analysis</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_FAQ.html#Offline_Filtering"><span class="tocnumber">3.1</span> <span class="toctext">Offline Filtering</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_FAQ.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Troubleshooting"></a><h2>Troubleshooting</h2>
+<a name="Timing_Issues"></a><h3>Timing Issues</h3>
+<p>Q: In the EEG source display, the visualization cursor does not move at a constant speed but appears jumping.
+</p><p>Q: The feedback cursor is not updated at a constant rate but appears to be jumping.
+</p><p>A: In the timing display window, check whether block duration (the top curve in the <a href="User_Reference%253ATiming.html" title="User Reference:Timing">Timing Display</a>) is constantly at the level indicated by the tick mark to the left.
+When this is the case, the jumping cursor is merely a cosmetic problem. 
+Otherwise, try the following:
+</p>
+<ul><li>Increase the "VisualizeSourceDecimation" parameter on the "Visualize" tab to reduce the processor load associated with the source signal display.
+</li><li>Increase the "SampleBlockSize" parameter to reduce the system update rate.
+</li></ul>
+<a name="Startup"></a><h3>Startup</h3>
+<p>Q: When clicking 'Set Config', I get error messages for each of the modules such as: "EEGSource: Could not make a connection to the SignalProcessing Module" and "Application: SignalProcessing dropped connection unexpectedly." 
+</p><p>A: This may be caused by the "Microsoft TV/Video Connection" in Network Connections, if you have it.
+To remedy this: 
+</p>
+<ol><li>Right-click on My Network Places, 
+</li><li>Select Properties,
+</li><li>Right-click on Microsoft TV/Video Connection,
+</li><li>Select Properties,
+</li><li>Uncheck Internet Protocol, 
+</li><li>Click OK. 
+</li></ol>
+<p><br />
+Q: When I start the gUSBamp source module, I get the error message: "Cannot find ordinal 37 in dynamic library gUSBamp.dll".
+</p><p>A: Most likely, your gUSBamp source module finds an incompatible version of the gUSBamp.dll driver library. Make sure that, in the directory where gUSBampSource.exe resides, there is a file gUSBamp.dll in the exact version that originally came with your BCI2000 distribution.
+</p>
+<a name="Feedback"></a><h3>Feedback</h3>
+<p>Q: The first time a subject is run using the cursor feedback protocol, during the first trial of the first run only, the cursor moves to the top of the screen and does not respond to user input. BCI2000 outputs increasingly large negative numbers during this run. 
+</p><p>A: This is not so much a bug as a side effect of the way the adaptation mechanism works. Since the adaptation mechanism hasn't been trained, all it has are the initial values for offset and gain. For each subject, it will take a few trials to adapt BCI2000 to this subject's signals.
+</p><p>Therefore, you will typically save a subject's adapted parameters after each session, and use this as a starting point for the next session. Alternatively, you may load a subject's parameters from a previous session's <i>data</i> file by specifying the data file rather than a parameter file from the <i>Load parameters...</i> dialog.
+</p>
+<a name="gUSBamp_not_recognized"></a><h3>gUSBamp not recognized</h3>
+<p>Q: The BCI2000 gUSBamp source module does not recognize my gUSBamp amplifier. When I click "Set Config", I get the an error message: <tt>gUSBampADC::Preflight: Could not detect any amplifier. Make sure there is a single gUSBamp amplifier connected to your system, and switched on.</tt> I made sure that the amplifier was attached, switched on, and would work with Guger's demonstration program.
+</p><p>A: The current version of the BCI2000 gUSBamp source module will not work with the first generation of gUSBamps. Please contact <a href="http://www.gtec.at/" class='external text' title="http://www.gtec.at/" rel="nofollow">gtec</a> for a firmware update, or amplifier replacement.
+</p>
+<a name="Matlab_Signal_Processing_shows_an_error_at_startup"></a><h3>Matlab Signal Processing shows an error at startup</h3>
+<p>Q: With Matlab R2009b installed, I cannot start up BCI2000 with the Matlab Signal Processing module. There is an error reported that the library "libeng" cannot be found.
+</p><p>A: It appears that the Matlab R2009b installer does not add Matlab's bin/win32 directory to the system's PATH variable. After manually adding this directory to the PATH variable, the Matlab Signal Processing module is able to find the libeng library.
+</p>
+<a name="Configuration"></a><h2>Configuration</h2>
+<a name="Using_a_Contributed_Source_Module"></a><h3>Using a Contributed Source Module</h3>
+<p>Q: I have an amplifier that is listed under <a href="Contributions%253AADCs.html" title="Contributions:ADCs">Contributions:ADCs</a>, but I don't know how to actually use it with BCI2000.
+</p><p>A: Please see the <a href="Contributions%253AHow_to_use_a_Contributed_Source_Module.html" title="Contributions:How to use a Contributed Source Module">howto page</a> on using contributed source modules.
+</p>
+<a name="Replaying_Recorded_Data"></a><h3>Replaying Recorded Data</h3>
+<p>Q: Rather than controlling BCI2000 from a brain signal, I would like to use a recorded data file as input. Is there a kind of "replay mode" in BCI2000?
+</p><p>A: While there exists a <a href="Contributions%253AFilePlayback.html" title="Contributions:FilePlayback">contributed source module that reads from a file</a>, we have not included it into the BCI2000 core distribution, and that for at least two reasons:
+</p>
+<ol><li>If the version of BCI2000 that you are using is not the exact same as the one that was used to record the data, and/or you change some system parameters, then, depending on the experimental paradigm, results may be undefined. E.g., in a 2D cursor task, what should happen if you slow down the cursor such that the cursor has not yet reached a target when in the original data file it has (i.e., and the trial is over?). 
+</li><li>Scientifically, it is a bad idea to "simulate" online performance by loading a datafile, changing a few parameters, and seeing how it would have worked. If you are interested in evaluating the effect of different signal processing routines, you should write your own offline analysis routine that uses statistical analyses, together with a comprehensive body of data, or you need to run comprehensive online studies. 
+</li></ol>
+<p>For off-line analyses, you might also check out the <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">Command Line Processing Environment</a> which allows you to feed existing data files into arbitrary BCI2000 filter chains.
+</p>
+<a name="Random_Sequences"></a><h3>Random Sequences</h3>
+<p>Q: Is there a way to obtain the same random sequence each time BCI2000 is run? I don't care about the sequence itself, it should just be the same each time.
+</p><p>A: The SignalGenerator source module has a parameter, RandomSeed, that determines the pseudo random number generator's seed value. If this parameter is zero, the generator will be initialized from the system timer.
+</p><p>While absent from other BCI2000 modules by default, each component that uses the BCI2000 pseudo random generator will behave according to this parameter if it is present.
+To introduce the RandomSeed parameter into a module that does not provide the RandomSeed parameter, use <tt>--RandomSeed=10</tt> as a <a href="User_Reference%253AModule_Command_Line_Options.html" title="User Reference:Module Command Line Options">command line option</a> to that module when starting up BCI2000. Note that the parameter will have the same value across all modules (10 in the example), and it will appear on the "System" tab in the operator module's parameter dialog.
+</p>
+<a name="Visual_Stimulation"></a><h3>Visual Stimulation</h3>
+<p>Q: Is visual stimulation synchronized with screen refresh (vertical blanks)?
+</p><p>A: BCI2000 does not synchronize its video output with refresh cycles to avoid interference with its own timing. Also, for visually evoked potentials, it appears not to matter much whether video output is synchronized or not.
+If you feel that output should be synchronized, and have access to the BCI2000 source code, adding a DirectDraw WaitForVerticalBlank() call immediately before the Task filter's call to UpdateWindow() at the end of its Process() function should help.
+</p><p>Q: The StimulusPresentation program only allows for either a random sequence of stimuli, or a deterministic sequence of stimuli.  In my experimental paradigm, I would like to present random stimuli, but have them interspersed by a particular resting stimulus. It looks like BCI2000 does not support that?
+</p><p>A: BCI2000 can present any sequence of stimuli. Referring to the example above, where 1 may be the resting stimulus and stimuli 2-9 are to be randomly presented, the following could be a valid sequence: 1 3 1 2 1 9 1 8 1 5 1 6. Such a sequence could be determined using an external procedure, and then BCI2000 could be configured using that particular sequence. Specifically, it would be possible to write a Matlab program similar to the one below.
+</p>
+<pre>num_values=9;
+r=round(rand(1, num_values)*num_values+1);
+fp=fopen('fragment.prm', 'wb');
+fprintf(fp, 'Application:Sequencing intlist Sequence= %d', num_values*2);
+for i=1:num_values
+ fprintf(fp, ' 1 %d', r(i));
+end
+fprintf(fp, ' 1 1 % % // test parameter\r\n');
+fclose(fp);
+</pre>
+<p>Execution of that Matlab program would produce a parameter file fragment <i>fragment.prm</i>. When loaded on top of a full parameter file, this would produce a random sequence. This process can be fully automated using BCI2000 batch files, scripting, and <a href="User_Reference%253AModule_Command_Line_Options.html" title="User Reference:Module Command Line Options">command line parameters</a> so that clicking on one icon could run that Matlab program, execute BCI2000, load a full parameter file, load the parameter file fragment (containing the randomized sequence) produced by Matlab, set the configuration, and start operation.
+</p>
+<a name="Joystick_Control"></a><h3>Joystick Control</h3>
+<p>Q: I would like to control the CursorTask in BCI2000 using a joystick or a mouse, e.g. to implement a standard center-out paradigm. How do I do that?
+</p><p>A: As so often, there are different ways of accomplishing a particular goal. In this case, it would be possible to change the source code of the CursorTask such that it would be controlled by, for example, a joystick. However, BCI2000 supports a solution that is much more elegant and powerful. This solution is based on the <a href="User_Reference%253AExpressionFilter.html" title="User Reference:ExpressionFilter"><i>Expression Filter</i></a>.  Cursor movement in the Cursor Task is controlled by the first and second control signal produced by the Signal Processing module. Typically, this control signal is controlled by the brain signals that are classified by the <a href="User_Reference%253ALinearClassifier.html" title="User Reference:LinearClassifier">Linear Classifier</a>.  However, after classification, the control signals are also passed through the Expression Filter where they can be modified using an algebraic expression. This algebraic expression has access to BCI2000 states, and joystick position can easily be logged in states using the --LogJoystick=1 command line option when starting up the Source Module. Thus, first, logging of joystick position needs to be enabled using that command line option. Then, the Expression Filter needs to be configured to simply replace the first and second control signal by the states that represent joystick position. This is accomplished by simply setting the parameter <i>Expressions</i> to  the following 2-by-1 matrix:
+</p>
+<pre>JoystickXpos
+JoystickYpos
+</pre>
+<p>By modifying the simple expression shown above, it would also be easy to use a combination of classified brain signals and states to drive an output such as the Cursor Task.
+</p>
+<a name="Data_Analysis"></a><h2>Data Analysis</h2>
+<a name="Offline_Filtering"></a><h3>Offline Filtering</h3>
+<p>Q: I would like to apply a filter to recorded data, and then use the BCI2000 OfflineAnalysis and P300Classifier tools for data analysis.
+</p><p>A: You may achieve this using Matlab. First, use the <a href="User_Reference%253AMatlab_MEX_Files.html#load_bcidat" title="User Reference:Matlab MEX Files">load_bcidat</a> mex file to load data into Matlab. Then, apply the desired filtering to the "signal" output variable. Finally, save the resulting filtered data using the <a href="User_Reference%253AMatlab_MEX_Files.html#save_bcidat" title="User Reference:Matlab MEX Files">save_bcidat</a> mex file.   For elementary filtering operations, this procedure has been wrapped up in a simple Matlab GUI. See <a href="Contributions%253AFilterGUI.html" title="Contributions:FilterGUI">Contributions:FilterGUI</a> for a description of this program.
+</p><p>Q: I would like to see what would have happened if I had set my online processing parameters differently.
+</p><p>A: You can perform an offline analysis by recreating a BCI2000 filter chain either <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">from the system command-line</a> or <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">from within Matlab</a>.  In either case, it is possible to substitute different parameter values into the processing chain.  Naturally, however, if the original experiment included any kind of feedback that was dependent on the processed signal, you will not see the effects of this since you are working with a "frozen" data set that reflects the activity of a brain that was experiencing the results of the original parameters only.   Also, you should be aware that finding the "best" set of parameters for a given data-set is not the same thing as finding the parameter set that will work best next time. If you optimize parameters on a fixed data set, and do not hold out some data on which to perform (once only) a final evaluation, then you will almost certainly be looking at an unrealistically inflated level of performance, and may end up with parameters that will generalize <i>less</i> well to new data.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AContents.html" title="User Reference:Contents">User Reference:Contents</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

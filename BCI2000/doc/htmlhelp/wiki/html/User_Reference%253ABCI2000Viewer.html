@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:BCI2000Viewer - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:BCI2000Viewer,BCI2000 Glossary,Technical Reference:BCI2000 File Format,User Reference:BCI2000FileInfo,User Reference:Operator Module" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">BCI2000Viewer</h1><p class="subtitle">User Reference</p><hr class="sep" /><p><i>BCI2000Viewer</i> displays brain signal data and <a href="BCI2000_Glossary.html#State" title="BCI2000 Glossary">state variables</a> contained in <a href="Technical_Reference%253ABCI2000_File_Format.html" title="Technical Reference:BCI2000 File Format">BCI2000 data files</a>.
+</p><p><a href="../images/9/99/BCI2000Viewer.PNG" class="image" title="Image:BCI2000Viewer.PNG"><img src="../images/9/99/BCI2000Viewer.PNG" alt="Image:BCI2000Viewer.PNG" width="798" height="604" longdesc="/wiki/index.php/Image:BCI2000Viewer.PNG" /></a>
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253ABCI2000Viewer.html#Opening_Files"><span class="tocnumber">1</span> <span class="toctext">Opening Files</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ABCI2000Viewer.html#Browsing"><span class="tocnumber">2</span> <span class="toctext">Browsing</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ABCI2000Viewer.html#Selecting_States_and_Channels_for_Display"><span class="tocnumber">3</span> <span class="toctext">Selecting States and Channels for Display</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ABCI2000Viewer.html#Display_Properties"><span class="tocnumber">4</span> <span class="toctext">Display Properties</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ABCI2000Viewer.html#Unit_Display"><span class="tocnumber">4.1</span> <span class="toctext">Unit Display</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ABCI2000Viewer.html#Choosing_Signal_Colors"><span class="tocnumber">4.2</span> <span class="toctext">Choosing Signal Colors</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ABCI2000Viewer.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Opening_Files"></a><h2>Opening Files</h2>
+<p>To open a data file, drag-and-drop it into the program's main window. Alternatively, double-click a .dat file in Windows Explorer, and choose BCI2000 FileViewer when prompted for an application program to associate with the .dat extension.
+</p>
+<a name="Browsing"></a><h2>Browsing</h2>
+<p>User interface elements for browsing are located below the signal display.
+</p>
+<ul><li><tt>|&lt;&lt;</tt> and <tt>&gt;&gt;|</tt> move to beginning/end of file;
+</li><li><tt>&lt;&lt;</tt> and <tt>&gt;&gt;</tt> move forward/backward by entire pages (i.e., the amount of time displayed in the window);
+</li><li><tt>&lt;</tt> and <tt>&gt;</tt> move forward/backward by sample blocks;
+</li><li><i>Zoom in</i> and <i>Zoom out</i> enlarge/shrink the time axis;
+</li><li>the <i>position</i> field displays the current position in <tt>hh:mm:ss</tt> format, followed by the total length of the file. Entering a value in seconds, or in <tt>hh:mm:ss</tt> format, will move the center of the display to the specified position.
+</li></ul>
+<a name="Selecting_States_and_Channels_for_Display"></a><h2>Selecting States and Channels for Display</h2>
+<p>Once a file is opened in BCI2000 Viewer, the area to the right displays a list of state variables and brain signal channels contained in the data file.
+By default, all channels are selected for display, and none of the states is.
+To display one or more state, mark the respective checkbox.
+</p><p>State names and values are displayed above the signal; whenever a state changes its value, a vertical line indicates the respective point in time, and the state's new value appears at the top end of that line.
+</p>
+<a name="Display_Properties"></a><h2>Display Properties</h2>
+<p>Similar to the <a href="User_Reference%253AOperator_Module.html#Visualization_Windows" title="User Reference:Operator Module">signal display</a> in the operator module, display properties may be changed from the <i>View</i> menu (which is reduplicated as a context menu that appears by right-clicking the signal display).
+</p><p>Also, the following keyboard shortcuts are provided:
+</p>
+<table>
+<tr>
+<td><i>up/down</i></td><td>back/forward one channel,
+</td></tr>
+<tr>
+<td><i>page-up/page-down</i></td><td>back/forward one screenful of channels,
+</td></tr>
+<tr>
+<td><i> 'b'/space</i></td><td>same as page-up/page-down  ('less'-like shortcuts),
+</td></tr>
+<tr>
+<td><i>-/+</i></td><td>reduce/enlarge the signal,
+</td></tr>
+<tr>
+<td><i>,/.</i></td><td>fewer/more channels,
+</td></tr>
+<tr>
+<td><i>left/right</i></td><td>slow down/speed up the time sweep,
+</td></tr>
+<tr>
+<td><i>home/end</i></td><td>jump to the first/last screenful of channels,
+</td></tr>
+<tr>
+<td><i>typing a number and pressing return (or 'g')</i></td><td>jump to the specified channel number.
+</td></tr></table>
+<a name="Unit_Display"></a><h4>Unit Display</h4>
+<p>When the signal's physical unit is displayed, it is represented as a white bar:
+</p>
+<div class="center"><div class="floatnone"><span><a href="../images/c/c4/SignalUnitDisplay.PNG" class="image" title=""><img src="../images/c/c4/SignalUnitDisplay.PNG" alt="" width="104" height="104" longdesc="/wiki/index.php/Image:SignalUnitDisplay.PNG" /></a></span></div></div>
+<p>In the example, there are white markers above and below the bar, indicating the range corresponding to the value written in the bar.
+These markers may be missing; then the range corresponds to the height of the bar itself.
+</p><p>Finally, the physical unit may be displayed with a white marker attached to the bar:
+</p>
+<div class="center"><div class="floatnone"><span><a href="../images/5/55/SignalUnitDisplay2.PNG" class="image" title=""><img src="../images/5/55/SignalUnitDisplay2.PNG" alt="" width="70" height="145" longdesc="/wiki/index.php/Image:SignalUnitDisplay2.PNG" /></a></span></div></div>
+<p>This display is used for nonnegative signals. Here, the physical unit corresponds to the distance of the white marker to the signal's baseline.
+</p>
+<a name="Choosing_Signal_Colors"></a><h4>Choosing Signal Colors</h4>
+<p>Clicking <i>Choose Signal Colors...</i> from the context menu will open up a color chooser dialog.
+This dialog provides fields for "User defined colors" to the left, defining a list of channel colors, terminated with a black entry.
+</p><p>Signal colors are taken from these fields in the order in which they appear; when there are more signals displayed than colors defined, colors will be re-used in order.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253ABCI2000FileInfo.html" title="User Reference:BCI2000FileInfo">User Reference:BCI2000FileInfo</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+<ul><li><a href="User_Reference%253ABCI2000Launcher.html">BCI2000Launcher</a></li>
+<li>BCI2000Viewer</li>
+<li><a href="User_Reference%253ABCI2000FileInfo.html">BCI2000FileInfo</a></li>
+<li><a href="User_Reference%253ABCI2000Export.html">BCI2000Export</a></li>
+<li><a href="User_Reference%253AEEGLabImport.html">EEGLabImport</a></li>
+<li><a href="User_Reference%253AMatlab_MEX_Files.html">Matlab MEX Files</a></li>
+<li><a href="User_Reference%253ACommand_Line_Processing.html">Command Line Processing</a></li>
+</ul></ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

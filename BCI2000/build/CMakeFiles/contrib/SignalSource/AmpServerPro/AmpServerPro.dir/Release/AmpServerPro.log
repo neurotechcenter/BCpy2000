@@ -1,0 +1,17 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/AmpServerPro/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/AmpServerPro/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  AmpServerProADC.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  AmpServerPro.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\AmpServerPro\Release\AmpServerPro.exe
+  	Deploying executable
+  Copying AmpServerPro.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  copying files:
+  Done.

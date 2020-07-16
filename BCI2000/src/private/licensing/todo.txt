@@ -1,0 +1,130 @@
+(EAFP means "Easier to Ask Forgiveness than Permission", and therefore denotes things we
+might risk omitting in the first iteration, until we receive complaints)
+
+Going GPL
+
+	TODO (juergen, jez) automated signup engine:  view the BCI2000 license + GPL -> click
+	"i agree" -> receive authentication details in your email which are good for binary
+	download, read-only svn access, and (for now) read+write access to the wiki.  Ask
+	politely for institution details. Initially, send these out as CSV via email as before.
+	Later (ASAP after 3.0 rollout:)
+		- automatic link between signup engine, using the CSV institution data and the user database
+		- automatic link between signup engine and the bci2000-users mailing list
+		- choose a solution for a more community/ecosystem-based Q+A mailing-list or forum
+		  (see below).
+		- automatic link between signup engine and the aforementioned list/phpbb. In the
+		  automated signup email, advertise this as the place to ask and answer questions.
+		  Requires signup engine to check whether usernames are already in use in two places:
+		  svn/wiki system and BB system, since the latter should continue to be available to
+		  people who are not yet users. Solutions...?
+
+	TODO (juergen) incorporate FFTlib into src/extlib, and remove/adapt
+	src/extlib/fftlib/FFTWrap as appropriate
+	
+	
+	TODO (gerv, peter) what about SigFRIED?  What is the intention?  We can do whatever we want
+	with code under our control (dual-license it or whatever) but it might be clearest
+	and most consistent if a binary distro that breaks our own public rules is maintained
+	separately from the main public one that obeys them. SigFRIED breaks GPL rules
+	if I've understood it correctly, since it won't function without support from GPL'd
+	BCI2000 code, yet is itself proprietary.
+
+	EAFP? (jez) Contact "outsider" contributors where appropriate and ask whether they
+	mind putting their file under GPL.  Really this applies to only 4 people from the
+	"outsiders" list:  S.Klanke, T.Hinterberger, M.Span and C.Veigl.  Contribs by the
+	rest are either already GPL, or already "(c) BCI2000 project", or an insider is
+	listed as the first author.
+	
+	READY (jez) put GPL document at top level of release, and also within src
+	Ready at http://www.bci2000.org/svn/branches/3.0/src/private/licensing/LICENSE-GPL.TXT
+	
+	READY (jez) include a plain-english license file, clarifying the scope of the license
+	and warning that other licenses may apply to certain files.
+	Ready at http://www.bci2000.org/svn/branches/3.0/src/private/licensing/LICENSE-BCI2000.TXT
+	
+	READY (jez) compose a short form for inclusion in comments (perhaps use a $BEGIN_BCI2000_LICENSE
+	.... construct a la Qt). Include some trigger phrase like "part of the BCI2000 project" to
+	indicate that the BCI2000 GPL license applies. NB: not necessarily just "(c) BCI2000 Project":
+	the copyright/attribution is a separate issue from the license. Copyright belongs to whoever
+	wrote the file, unless they explicitly choose to surrender it to an entity called "the BCI2000
+	Project". This has clearly happened in some cases already, but it is not necessary for
+	contributors to do this: in future they will just need to agree that their files may be released
+	under the GPL.
+	Ready at http://www.bci2000.org/svn/branches/3.0/src/private/licensing/header.txt
+
+	DONE (juergen): script to inject license header as #, // or % comments into all files as
+	far as is feasible.
+		
+
+Arse-covering in response to likelihood of wider circulation (i.e. things we
+should be doing already - not affected by legal implications of GPL specifically)
+
+	TODO (griff, juergen) remove unused third-party files from the svn
+		
+		TODO (griff) NicoletOne: *far* too many SDK files. If they're really all necessary
+		as things stand, write an "interface" version containing void *?
+			
+	TODO (juergen, griff, jez) (longer-term): move necessary third-party files to a
+	consistent third-party structure (either a subdirectory of the project directory
+	with a standardized name like "extlib" or "SDK", or actually to a subdir of
+	/src/extlib).  See 
+	http://www.bci2000.org/svn/branches/3.0/src/private/licensing/inventory/proprietary.txt
+	for the list of files.
+	
+	TODO (gerv:assign to student?) check prog/images and sounds for proprietary content by googling
+	their filenames or using an image-content search engine: as a guard against those we miss,
+	peter suggested we just rename every file to foil similar automated googling by predatory lawyers
+	
+	TODO (gerv:assign to student?) check src/doc images for proprietary content in the same way.
+	
+	EAFP? (juergen, jez, griff) matlab, directx etc: for now, keep them? Prepare to remove
+	them if/when we are told to:
+
+		remove from svn
+		
+		change ./build/readme.txt instructions accordingly
+		
+		Write/crib FindDirectX.cmake
+		
+		conduct build tests against some platforms, directx sdk versions, Matlab
+		versions (but see below)
+
+	Credits:
+
+		READY (jez) summarize credits/contributors lists (insiders.txt + outsiders.txt) and
+		put it under the main svn at the top level of the release
+		ready at  http://bci2000.org/svn/branches/3.0/src/private/licensing/credits.txt
+		
+		TODO (juergen) make it displayable as scrollable credits in the operator's "about"
+		box.
+
+	SENT (jez) contact manufacturers for explicit permission to redistribute their SDKs
+	TODO (jez) chase them up
+
+
+Building a sustainable ecosystem
+ 		
+	encourage the community to answer the community's questions.  switch
+	bulletin-board to "mailing-list"-like model, users being subscribed by default,
+	but able to turn off automatic notification or go into digest mode.  Potential
+	solutions for implementing this include:
+
+		any existing mechanisms in phpbb v2...?
+		
+		upgrade to phpbb v3 (which claims to allow users to subscribe to an entire forum
+		as well as just a particular discussion)
+		
+		move to google groups? (if so, best thing would be to link group signup
+		automatically to svn-username signup; google groups is good for
+		restricted-access groups only, but a moderating nightmare for open/public
+		groups)
+		
+		others...?
+		
+	encourage the community to share success stories and HOWTOs regarding
+	building/compilation.  Tidy these up into an area of the BB, learn from them,
+	and redirect compilation problems to a forum. If we're distributing working
+	binaries, we shouldn't feel the *need* to test the build process on every last
+	combination of Matlab version, operating system, etc.  We can maintain a table
+	of users' successes, and incorporate *their* solutions/workarounds into the
+	canonical build mechanism where appropriate.

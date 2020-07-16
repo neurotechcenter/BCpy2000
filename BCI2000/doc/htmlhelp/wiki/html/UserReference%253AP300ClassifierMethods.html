@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>UserReference:P300ClassifierMethods - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="UserReference:P300ClassifierMethods,User Reference:P300 classifier" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">P300ClassifierMethods</h1><p class="subtitle">UserReference</p><hr class="sep" /><a name="Load_BCI2000_Data_Files"></a><h2> Load BCI2000 Data Files </h2>
+<p>Once the BCI2000 data files are check for compatibility, signals are extracted either from each training or testing data file and are arranged in a matrix form as:
+</p><p><img class='tex' src="../images/math/c/1/c/c1c22f4d3b4154a4fb5273841511a221.png" alt="{\mathbf{X_{i}^{k}(n)}} = \begin{bmatrix} x_{1}^{1}(0) &amp; x_{1}^{1}(1) &amp; \cdots &amp; x_{1}^{1}(p-1) &amp; \cdots &amp; x_{1}^{l}(0) &amp; x_{1}^{l}(1) &amp; \cdots &amp; x_{1}^{l}(p-1) \\ x_{2}^{1}(0) &amp; x_{2}^{1}(1) &amp; \cdots &amp; x_{2}^{1}(p-1) &amp; \cdots &amp;  x_{2}^{l}(0) &amp; x_{2}^{l}(1) &amp; \cdots &amp; x_{2}^{l}(p-1) \\ \vdots &amp; \vdots &amp; \cdots &amp;\vdots &amp; \cdots &amp; \vdots &amp; \vdots &amp; \cdots &amp; \vdots \\ x_{m}^{1}(0) &amp; x_{m}^{1}(1) &amp; \cdots &amp; x_{m}^{1}(p-1) &amp; \cdots &amp;  x_{m}^{l}(0) &amp; x_{m}^{l}(1) &amp; \cdots &amp; x_{m}^{l}(p-1) \\ \end{bmatrix}" />
+</p><p>for
+</p><p><img class='tex' src="../images/math/2/f/2/2f23c9eefa9b3d407f1240b73eea6353.png" alt="i = 1, 2, \ldots, m;" /> 
+</p><p><img class='tex' src="../images/math/0/0/b/00bc2358c414e192d896e3721f06aecb.png" alt="k = 1, 2, \ldots, l;" />
+</p><p><img class='tex' src="../images/math/e/a/3/ea30d883f0c12523df1dcec7df63686e.png" alt="n = 0, 1, \ldots, p-1;" />
+</p><p>being <span class="texhtml"><i>m</i></span> the total number of observations (stimuli), <span class="texhtml"><i>l</i></span> the total number of channels, and <span class="texhtml"><i>p</i> = <i>t</i> * <i>F</i><i>s</i></span> the total number of samples recorded for each channel. <span class="texhtml"><i>t</i></span> is the recording stimulus time, and <span class="texhtml"><i>F</i><i>s</i></span> is the sampling frequency.
+</p><p>Consider the following example to help you understand the previous mathematical notation. A BCI data set is recorded during a P300 Speller task using a 6 by 6 matrix of characters. Each row and column of the matrix is randomly intensified resulting in 12 different stimuli. The sets of 12 intensification are repeated 15 times for each intended character to spell. For this example, the subject pretend to spell the word "SEND", a total of 4 characters.
+</p>
+<div class="center"><div class="thumb tnone"><div style="width:361px;"><a href="../images/2/22/P3SpellerScreen.PNG" class="internal" title="A 6 by 6 speller matrix. Here, the user's task is to spell the word &quot;SEND&quot; (one character at a time).  For each character, all rows and columns in the matrix are intensified 15 times (here, the third row is shown intensified)."><img src="../images/2/22/P3SpellerScreen.PNG" alt="A 6 by 6 speller matrix. Here, the user's task is to spell the word &quot;SEND&quot; (one character at a time).  For each character, all rows and columns in the matrix are intensified 15 times (here, the third row is shown intensified)." width="359" height="360" longdesc="/wiki/index.php/Image:P3SpellerScreen.PNG" /></a>  <div class="thumbcaption" >A 6 by 6 speller matrix. Here, the user's task is to spell the word "SEND" (one character at a time).  For each character, all rows and columns in the matrix are intensified 15 times (here, the third row is shown intensified).</div></div></div></div>
+<p>Assume that the data set is recorded from 8 channels at 256 Hz, the elapsed time from the start to the end of each intensification is 800 ms, and the <a href="User_Reference%253AP300_classifier.html#Parameters_Pane" title="User Reference:P300 classifier"><b>Decimation Frequency</b></a> provided by the investigator is 20 Hz.  For this example, <span class="texhtml"><i>m</i> = 12<i>x</i>15<i>x</i>4 = 720</span>, <span class="texhtml"><i>l</i> = 8</span>, and <span class="texhtml"><i>p</i> = <i>r</i><i>o</i><i>u</i><i>n</i><i>d</i>(256<i>x</i>0.800) = 205</span>. The total number of columns (variables) of the above matrix is <span class="texhtml">8<i>x</i>205 = 1640</span>.
+</p>
+<a name="Get_P300_Responses"></a><h2> Get P300 Responses </h2>
+<p>In this step, it is computed the corresponding time samples of a time <a href="User_Reference%253AP300_classifier.html#Parameters_Pane" title="User Reference:P300 classifier"><b>Response Window</b></a> <span class="texhtml">[<i>t</i><sub>1</sub>,<i>t</i><sub>2</sub>]</span> in (ms). Following the above example, assume that the time Response Window specified by the investigator is [0 800] ms.
+</p><p><img class='tex' src="../images/math/5/2/7/527e1e0af7c6c17dcf1c2cecb179af7d.png" alt="n_{1} = round\left(\frac{t_{1}Fs}{1000}\right) = round\left(\frac{0*256}{1000}\right) = 0" />
+</p><p><img class='tex' src="../images/math/6/f/8/6f8d497d962464b89ced96686e95022d.png" alt="n_{2} = round\left(\frac{t_{2}Fs}{1000}\right) = round\left(\frac{800*256}{1000}\right) = 205" />
+</p><p>Signals of interest are extracted from <img class='tex' src="../images/math/1/5/d/15d85c16c8e44711acb7e700dd540005.png" alt="\mathbf{X_{i}^{k}(n)}" /> and are defined
+only for <img class='tex' src="../images/math/4/d/1/4d18e1d46c342842c2b5c9fb7d7fdcdc.png" alt="n_{1}\le n &lt; n_{2}" />.
+</p><p>The coefficients <span class="texhtml"><i>b</i><sub><i>i</i></sub></span> of the <a href="http://en.wikipedia.org/wiki/Moving_average" class='external text' title="http://en.wikipedia.org/wiki/Moving_average" rel="nofollow">Moving Average (MA)</a> filter are found as
+</p><p><img class='tex' src="../images/math/f/8/c/f8cbed87bb5360ee53705a04ea52e958.png" alt="b_{i} = \frac{1}{N+1}" />
+</p><p>for <img class='tex' src="../images/math/f/c/3/fc389dbdd82dcd8ef786a1e79a103f5e.png" alt="i = 0, 1, 2, \ldots, N" /> where <span class="texhtml"><i>N</i></span> is the filter order. The filter order can be computed from the sampling frequency <span class="texhtml"><i>F</i><i>s</i></span>  and the provided decimation frequency <span class="texhtml"><i>D</i><i>f</i></span> as 
+</p><p><img class='tex' src="../images/math/2/e/7/2e765531a84b9265198684eb8751ee0f.png" alt="N = round \left(\frac{Fs}{Df}\right) = round \left(\frac{256}{20}\right) = 13" />
+</p><p>Thus, the impulse response <span class="texhtml"><i>h</i>(<i>n</i>)</span> can be computed as
+</p><p><img class='tex' src="../images/math/d/7/c/d7cedc6204d1e1039f37470da7242da5.png" alt="h(n) = \frac{1}{N+1} \sum_{i=0}^{N-1} \delta(n-i)." />
+</p><p>To filter the selected signals, each channel <span class="texhtml"><i>k</i></span> and each observation (stimulus) <span class="texhtml"><i>i</i></span> of the matrix <img class='tex' src="../images/math/1/5/d/15d85c16c8e44711acb7e700dd540005.png" alt="\mathbf{X_{i}^{k}(n)}" /> is convolved <img class='tex' src="../images/math/1/7/f/17f4cb30584d4f48003024e7e88ef638.png" alt="(\star)" /> with the impulse response <span class="texhtml"><i>h</i>(<i>n</i>)</span>. The next equation shows how to filter a signal for channel <span class="texhtml"><i>k</i> = 1</span> and observation <span class="texhtml"><i>i</i> = 1</span>
+</p><p><img class='tex' src="../images/math/e/f/6/ef6d1e4d62438eaeac79233c6df65d62.png" alt="y_{1}^{1}(n) = x_{1}^{1}(n) \star h(n)." /> 
+</p><p>The output <img class='tex' src="../images/math/9/d/9/9d9ad883433091b0949ef8cd972efb91.png" alt="y_{i}^{k}(n)" />, result of the convolution between all the extracted signals —for channels <img class='tex' src="../images/math/e/8/f/e8f80de30d13db044b4f8d1e2fe66f99.png" alt="k = 1, 2, \ldots, l" /> and observations <img class='tex' src="../images/math/4/a/0/4a0d53a7852803df11f1d3fc117ef48b.png" alt="i = 1, 2, \ldots, m" />— and the impulse response, is <a href="http://en.wikipedia.org/wiki/Downsampling" class='external text' title="http://en.wikipedia.org/wiki/Downsampling" rel="nofollow">downsampled</a> by a factor <span class="texhtml"><i>N</i></span>.
+</p>
+<a name="Generate_Feature_Weights_for_a_Linear_Model_using_Stepwise_Linear_Discriminant_Analysis_.28SWLDA.29"></a><h2> Generate Feature Weights for a Linear Model using Stepwise Linear Discriminant Analysis (SWLDA) </h2>
+<p>Consider a data vector <img class='tex' src="../images/math/c/2/a/c2a4f31181da618cb305ad2ac71164b6.png" alt="\mathbf {d}" /> of <span class="texhtml"><i>m</i></span> observations, a vector <img class='tex' src="../images/math/2/c/5/2c5a3544056eab0411512e37fedea46d.png" alt="\mathbf{w}" /> of <span class="texhtml"><i>n</i></span> model parameters (weights) to estimate, and a matrix <img class='tex' src="../images/math/c/c/a/ccacc54c7979ca2c0c4c16ad2cc321a8.png" alt="\mathbf{G}" /> representing the final linear model. This inverse problem can be written as
+</p><p><img class='tex' src="../images/math/d/3/e/d3e3bbe12ae9a77490f10032916a98f3.png" alt="\mathbf{G}\mathbf{w} = \mathbf{d}" />
+</p><p>An approximate solution to this problem can be found by minimizing the difference (residuals) between the actual data <img class='tex' src="../images/math/c/2/a/c2a4f31181da618cb305ad2ac71164b6.png" alt="\mathbf{d}" /> and <img class='tex' src="../images/math/d/b/2/db2b279e251446908fc64603a74a6023.png" alt="\mathbf{G}\mathbf{w}" />. 
+</p><p><img class='tex' src="../images/math/d/1/b/d1bf205dca0d9f778703c909b1d8ad55.png" alt="\mathbf{r} = \mathbf{d} - \mathbf{G}\mathbf{w}" />
+</p><p>The least squares or 2-norm solution has been adopted to minimize these residuals.
+</p><p><img class='tex' src="../images/math/2/2/6/2265f670d02610c26d843ed4e0bfb3d4.png" alt="\mathbf{w} = (\mathbf{G^{T}}\mathbf{G})^{-1}\mathbf{G^{T}}\mathbf{d}." />
+</p><p>The symbol <span class="texhtml"><i>T</i></span> represents the transpose of the matrix <img class='tex' src="../images/math/c/c/a/ccacc54c7979ca2c0c4c16ad2cc321a8.png" alt="\mathbf{G}" />. Note that least squares solution is only valid for overdetermined systems (<img class='tex' src="../images/math/f/0/5/f05c1117f7cc1c070b9dc35da019fafb.png" alt="m \le n" />); there must be in the model more observations than variables. If the residuals have a normal distribution, the least squares corresponds to the maximum likelihood criterion.
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

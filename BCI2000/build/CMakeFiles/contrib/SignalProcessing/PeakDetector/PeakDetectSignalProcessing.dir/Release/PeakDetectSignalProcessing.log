@@ -1,0 +1,20 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalProcessing/PeakDetector/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalProcessing/PeakDetector/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  UPeakDetector.cpp
+  PipeDefinition.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  PeakDetectSignalProcessing.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\PeakDetector\Release\PeakDetectSignalProcessing.exe
+  	Deploying executable
+  copying files:
+  Copying PeakDetectSignalProcessing.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Copying vcomp140.dll ...
+  Copying libfftw3-3.dll ...
+  Done.

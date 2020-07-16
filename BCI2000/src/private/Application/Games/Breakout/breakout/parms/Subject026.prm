@@ -1,0 +1,4 @@
+Storage:Data%20Location:DataIOFilter    string    DataDirectory=           ../data       // path to top level data directory (directory)
+Storage:Session:DataIOFilter            string    SubjectName=             ECOG026       // subject alias
+Storage:Session:DataIOFilter            string    SubjectSession=          001           // three-digit session number
+Storage:Session:DataIOFilter            string    SubjectRun=              00            // two-digit run number

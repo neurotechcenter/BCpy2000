@@ -1,0 +1,20 @@
+Source:Log%20Input                      int       DataGloveDerivative=           1              // measure changes in glove signals?: 0: no - measure position, 1:yes - measure velocity (enumeration)
+Source:Log%20Input                      int       WiimoteDeriv=                  1              // measure changes in accelerometer readings?: 0: no - measure raw, 1:yes - measure changes (enumeration)
+
+Controller                              list      ControllerExpressions=   1     ((MousePosX-32767)/320)-1 //
+Controller                              int       DiffController=                1              // (boolean)
+Controller                              int       SplitController=               1              // (boolean)
+Controller                              float     ControllerGain=                2.0
+Controller                              float     ControllerNoise=               0.0
+
+Source:Signal%20Properties:DataIOFilter int       SourceCh=                      2              // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter int       SamplingRate=               1000              // sample rate
+Source:Signal%20Properties:DataIOFilter int       SampleBlockSize=              40              // 
+Source:Signal%20Properties:DataIOFilter list      ChannelNames=            0                    // list of channel names
+Source:Signal%20Properties:DataIOFilter floatlist SourceChOffset=          2     0 0            // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter floatlist SourceChGain=            2     1 1            // gain for each channel (A/D units -> muV)
+Source:Alignment:AlignmentFilter        int       AlignChannels=                 0             // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter        floatlist SourceChTimeOffset=      0                   // time offsets for all source channels (may be empty)
+Source:Online%20Processing              list      TransmitChList=          2     1 2           // list of transmitted channels
+
+Visualize:Processing%20Stages           int       VisualizeTransmissionFilter=   0

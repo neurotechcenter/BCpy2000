@@ -1,0 +1,114 @@
+BCI2000V= 1.1 HeaderLen= 11428 SourceCh= 16 StatevectorLen= 12 DataFormat= float32
+[ State Vector Definition ] 
+Recording 1 1 7 7
+SourceTime 16 0 0 0
+Running 1 1 10 0
+AppStartTime 16 0 2 0
+StimulusTime 16 17528 4 0
+SomeState 1 0 10 1
+CurrentBlock 7 0 9 1
+CurrentTrial 9 0 8 0
+PresentationPhase 5 0 7 2
+EventOffset 10 0 6 0
+__pad0 13 0 10 2
+[ Parameter Definition ] 
+Source:Signal%20Properties:DataIOFilter int SourceCh= 16 // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter int SampleBlockSize= 32 // number of samples transmitted at a time
+Source:Signal%20Properties:DataIOFilter int SamplingRate= 256Hz // sampling rate
+Source:Signal%20Properties:DataIOFilter list ChannelNames= 0 // list of channel names
+Source:Signal%20Properties:DataIOFilter list SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter list SourceChGain= 16 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 // gain for each channel (A/D units per physical unit)
+Storage:Data%20Location:DataIOFilter string DataDirectory= ..\data ..\data % % // path to top level data directory (directory)
+Storage:Session:DataIOFilter string SubjectName= Name Name % % // subject alias
+Storage:Session:DataIOFilter string SubjectSession= 001 001 % % // three-digit session number
+Storage:Session:DataIOFilter string SubjectRun= 24 00 % % // two-digit run number
+Storage:Documentation:DataIOFilter string ID_System= % // BCI2000 System Code
+Storage:Documentation:DataIOFilter string ID_Amp= % // BCI2000 Amp Code
+Storage:Documentation:DataIOFilter string ID_Montage= % // BCI2000 Cap Montage Code
+Visualize:Timing:DataIOFilter int VisualizeTiming= 1 1 0 1 // visualize system timing (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal:DataIOFilter int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal:DataIOFilter int VisualizeSourceDecimation= auto auto % % // decimation factor for raw brain signal
+Visualize:Source%20Signal:DataIOFilter int VisualizeSourceBufferSize= auto auto % % // number of blocks to aggregate before sending to operator
+Visualize:Source%20Signal:DataIOFilter int VisualizeSourceTime= 2s 2s 0 % // how much time in Source visualization
+Visualize:Source%20Signal:DataIOFilter int SourceMin= auto // raw signal vis Min Value
+Visualize:Source%20Signal:DataIOFilter int SourceMax= auto // raw signal vis Max Value
+Storage:BCI2000FileWriter string FileFormat= dat // format of data file (readonly)
+Storage:Documentation:BCI2000FileWriter string StorageTime= 2019-05-23T15:00:38 // time of beginning of data storage
+Source:Alignment:AlignmentFilter int AlignChannels= 1 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Source:Online%20Processing:TransmissionFilter list TransmitChList= 1 * // list of transmitted channels: Channel names may contain * and ? wildcards,  and character ranges enclosed in []; wildcard patterns may be negated by prepending an exclamation mark.  Ranges of channels may be specified using : or - to separate begin from end.
+System:Protocol:EventLink int EventLink= 1 1 0 1 // Send events from Operator to Source module (boolean)
+Storage:Data%20Location:RunManager string DataFile= $%7bSubjectName%7d$%7bSubjectSession%7d/$%7bSubjectName%7dS$%7bSubjectSession%7dR$%7bSubjectRun%7d.$%7bFileFormat%7d // name of data file relative to DataDirectory
+System:Command%20Line%20Arguments variant PythonSrcShell= 0 0 0 0 
+System:Command%20Line%20Arguments variant PythonSrcLog= Srclogger.txt Srclogger.txt Srclogger.txt Srclogger.txt 
+System:Core%20Connections string OperatorAddress= 127.0.0.1:4002 // (noedit)
+System string ModuleName= SignalSource 
+System string ListeningAddress= 127.0.0.1:50221 
+System:Core%20Connections string OperatorIP= 127.0.0.1 127.0.0.1 % % // the Operator module's IP (noedit)(readonly)
+Source:Signal%20Properties:DataIOFilter list ReferenceChannelName= 0 % % a // list of labels for reference channel or channels
+Source:Signal%20Properties:DataIOFilter list GroundChannelName= 0 % % a // label of the ground channel
+Source:Playback int EnslavePython= 0 0 0 1 // force BCPy2000 modules to follow states supplied by the source module without being able to change them (boolean)
+Source string SignalSourceDescription= implement%20the%20Description(self)%20hook%20to%20supply%20a%20description%20of%20what%20this%20module%20does % a z // Identifies the source generation module
+Source:Playback float WarpFactor= 1.0 1.0 0.0 % // slows down or speeds up the source generator's concept of time
+System:Version matrix SignalSourceVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-02-13T21:25:22Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // SignalSource version information (noedit)(readonly)
+System:Configuration matrix SignalSourceFilterChain= 8 { Filter%20Name Position%20String } DataIOFilter 0 PythonSrcADC 1 NullFileWriter 1 BCI2000FileWriter 1 EDFFileWriter 1 GDFFileWriter 1 AlignmentFilter 1.1 TransmissionFilter 1.2 // SignalSource filter chain (noedit)(readonly)
+System:Configuration matrix Filters= 11 1 /2/SpatialFilter /2/PythonSigFilter /1/DataIOFilter /1/PythonSrcADC /1/BCI2000FileWriter /1/AlignmentFilter /1/TransmissionFilter /3/ConnectorInput /3/PythonAppFilter /3/KeystrokeFilter /3/ConnectorOutput // Filter Directory (noedit)(readonly)
+Visualize:Processing%20Stages int VisualizeAlignmentFilter= 0 0 0 1 // Visualize AlignmentFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeTransmissionFilter= 0 0 0 1 // Visualize TransmissionFilter output (boolean)
+Visualize:Property%20Sets matrix VisPropertySets= 0 1 // row titles are properties in the form "SRCD.Left", columns are property sets
+System:Version matrix OperatorVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-02-13T19:15:28Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // operator module version information (noedit)(readonly)
+System:Protocol int AutoConfig= 1 1 0 1 // Use AutoConfig protocol extension (boolean)
+System:Protocol int OperatorBackLink= 1 1 0 1 // Send final state and signal information to Operator (boolean)
+Filtering:SpatialFilter int SpatialFilterType= 0 2 0 3 // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
+Filtering:SpatialFilter:SpatialFilter matrix SpatialFilter= 4 4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 % % // columns represent input channels, rows represent output channels
+Filtering:SpatialFilter:SpatialFilter intlist SpatialFilterCAROutput= 0 // when using CAR filter type: list of output channels, or empty for all channels
+Filtering:SpatialFilter:SpatialFilter int SpatialFilterMissingChannels= 1 0 0 1 // how to handle missing channels 0: ignore, 1: report error (enumeration)
+System:Command%20Line%20Arguments variant PythonSigShell= 0 0 0 0 
+System:Command%20Line%20Arguments variant PythonSigLog= Siglogger.txt Siglogger.txt Siglogger.txt Siglogger.txt 
+System:Core%20Connections string SignalProcessingIP= 127.0.0.1 // (readonly)(noedit)
+System:Core%20Connections string SignalProcessingPort= 50244 // (readonly)(noedit)
+PythonSig string SignalProcessingDescription= implement%20the%20Description(self)%20hook%20to%20supply%20a%20description%20of%20what%20this%20module%20does % a z // Identifies the signal processing module
+System:Version matrix SignalProcessingVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-02-13T21:25:22Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // SignalProcessing version information (noedit)(readonly)
+System:Configuration matrix SignalProcessingFilterChain= 2 { Filter%20Name Position%20String } SpatialFilter 2.B PythonSigFilter 2.C // SignalProcessing filter chain (noedit)(readonly)
+Visualize:Processing%20Stages int VisualizeSpatialFilter= 0 0 0 1 // Visualize SpatialFilter output (boolean)
+Visualize:Processing%20Stages int VisualizePythonSigFilter= 0 0 0 1 // Visualize PythonSigFilter output (boolean)
+System:Core%20Connections string SignalSourceIP= 127.0.0.1 // (readonly)(noedit)
+System:Core%20Connections string SignalSourcePort= 50221 // (readonly)(noedit)
+Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
+Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
+Application:Human%20Interface%20Devices:KeystrokeFilter string KeystrokeStateName= % // State to be translated into keystrokes (0-F), empty for off
+Application:Human%20Interface%20Devices:KeystrokeFilter string KeystrokeExpression= % // Expression that evaluates to a virtual keycode, empty for off
+Application:Human%20Interface%20Devices:KeystrokeFilter string KeystrokeExpressionOnStartRun= % // Expression that initializes expression variables on StartRun
+Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20321 % % // one or more IP:Port combinations, e.g. localhost:20321
+System:Command%20Line%20Arguments variant PythonAppShell= 0 0 0 0 
+System:Command%20Line%20Arguments variant PythonAppLog= Applogger.txt Applogger.txt Applogger.txt Applogger.txt 
+System:Core%20Connections string ApplicationIP= 127.0.0.1 // (readonly)(noedit)
+System:Core%20Connections string ApplicationPort= 50262 // (readonly)(noedit)
+PythonApp string ApplicationDescription= I%20bet%20you%20won't%20bother%20to%20change%20this%20to%20reflect%20what%20the%20application%20is%20actually%20doing % a z // Identifies the stimulus presentation module
+PythonApp int ShowSignalTime= 0 0 0 1 // show a timestamp based on the number of processed samples (boolean)
+PythonApp:Design int TrialsPerBlock= 20 20 1 % // number of trials in one block
+PythonApp:Design int BlocksPerRun= 1 20 1 % // number of sub-blocks in one run
+System:Version matrix ApplicationVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-02-13T21:25:22Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // Application version information (noedit)(readonly)
+System:Configuration matrix ApplicationFilterChain= 4 { Filter%20Name Position%20String } ConnectorInput 2.9999 PythonAppFilter 3 KeystrokeFilter 3.1 ConnectorOutput 3.9999 // Application filter chain (noedit)(readonly)
+Visualize:Processing%20Stages int VisualizePythonAppFilter= 0 0 0 1 // Visualize PythonAppFilter output (boolean)
+System:Randomization int RandomSeed= 7923 0 % % // seed for the BCI2000 pseudo random number generator (readonly)
+System:Randomization int RandomizationWarning= 1 1 0 1 // warn if subsequent Runs have identical RandomSeed value (boolean)
+System:State%20Vector int StateVectorLength= 12 16 % % // length of the state vector in bytes (noedit)(readonly)
+
+ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿ó5¿˜  xD €   ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿ÑI¿˜  xD €   ”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿”[¿˜  xD €   §	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿§	j¿˜  xD €   út¿út¿út¿út¿út¿út¿út¿út¿út¿út¿út¿út¿út¿út¿út¿út¿˜  xD €   (;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿(;|¿˜  xD €   ±¿±¿±¿±¿±¿±¿±¿±¿±¿±¿±¿±¿±¿±¿±¿±¿˜  xD €   mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿mN¿˜  xD €   ¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿¾{¿˜  xD €   Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿Gs¿˜  xD €   Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿Økg¿˜  xD €   SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿SHX¿˜  xD €   äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿äE¿˜  xD €   »…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿»…0¿˜  xD €   À¿À¿À¿À¿À¿À¿À¿À¿À¿À¿À¿À¿À¿À¿À¿À¿˜  xD €   ']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾']ü¾˜  xD €   ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾ïÃ¾˜  xD €   “Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾“Žˆ¾˜  xD €   ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾ƒ@¾˜  xD €   °
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼°
+É¼˜  xD €   6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=6½È=˜  xD €   \`>\`>\`>\`>\`>\`>\`>\`>\`>\`>\`>\`>\`>\`>\`>\`>˜  xD €   Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>Ô|¬>˜  xD €   u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>u3æ>˜  xD €   Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?Ú9?˜  xD €   V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?V6'?˜  xD €   ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?ù®=?˜  xD €   =MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?=MQ?˜  xD €   ˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜Åa?˜  xD €   žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?žØn?˜  xD €   øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?øSx?˜  xD €   $~?$~?$~?$~?$~?$~?$~?$~?$~?$~?$~?$~?$~?$~?$~?$~?˜  xD €   

@@ -1,0 +1,72 @@
+﻿  Generating BCI2000CertAnalysis/Init.bciscript.res.cpp
+  Generating BCI2000CertAnalysis/DefaultInput.bciscript.res.cpp
+  Generating BCI2000CertAnalysis/LatencyAnalysis.bciscript.res.cpp
+  Generating BCI2000CertAnalysis/LatencyRequirements.bcireq.res.cpp
+  Generating BCI2000CertAnalysis/VideoFrameAnalysis.bciscript.res.cpp
+  Generating BCI2000CertAnalysis/VideoFrameRequirements.bcireq.res.cpp
+  Generating moc_AnalysisGui.cpp
+  Generating Gui/moc_ScriptEditor.cpp
+  Generating __/__/__/__/shared/utils/moc_QtSignalConnector.cpp
+  Building Custom Rule C:/BCI2000.python3/src/core/Tools/BCI2000Certification/BCI2000CertificationAnalysis/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/core/Tools/BCI2000Certification/BCI2000CertificationAnalysis/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  main.cpp
+  AnalysisGui.cpp
+  Analyzer.cpp
+  ResultsTreeModel.cpp
+  ScriptEditor.cpp
+  CollapsibleGroup.cpp
+  TaskType.cpp
+  Property.cpp
+  AnalysisEngine.cpp
+  BasicStatistics.cpp
+  Histogram.cpp
+  Separability.cpp
+  Dataplot.cpp
+  AnalysisDataObject.cpp
+  SampleDataObject.cpp
+  TimeSeriesDataObject.cpp
+  SampleClock.cpp
+  Timestamp.cpp
+  ThresholdAnalysis.cpp
+  InputData.cpp
+  Generating Code...
+  Compiling...
+  ComputedTimeSeries.cpp
+  Event.cpp
+  Interval.cpp
+  Statistics.cpp
+  FrameStatistics.cpp
+  Group.cpp
+  BCIStream_guiapp.cpp
+  AboutBox.cpp
+  ExecutableHelp.cpp
+  Settings.cpp
+  ColorListChooser.cpp
+  QtMain.cpp
+  QtMessageHandler.cpp
+  Init.bciscript.res.cpp
+  DefaultInput.bciscript.res.cpp
+  LatencyAnalysis.bciscript.res.cpp
+  LatencyRequirements.bcireq.res.cpp
+  VideoFrameAnalysis.bciscript.res.cpp
+  VideoFrameRequirements.bcireq.res.cpp
+  moc_AnalysisGui.cpp
+  Generating Code...
+  Compiling...
+  moc_ScriptEditor.cpp
+  moc_QtSignalConnector.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  BCI2000CertAnalysis.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Release\BCI2000CertAnalysis.exe
+  	Deploying executable
+  copying files:
+  Copying BCI2000CertAnalysis.exe ...
+  Copying Qt5Gui.dll ...
+  Copying Qt5Widgets.dll ...
+  Copying Qt5Core.dll ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Copying qwindows.dll ...
+  Done.

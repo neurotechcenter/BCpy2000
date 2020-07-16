@@ -1,0 +1,98 @@
+Source:Signal%20Properties int SourceCh= 16 16 1 % // number of digitized and stored channels
+Source:Signal%20Properties int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
+Source:Signal%20Properties int SamplingRate= 256 256Hz 1 % // sample rate
+Source:Signal%20Properties list ChannelNames= 0 // list of channel names
+Source:Signal%20Properties floatlist SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 % % // Offset for channels in A/D units
+Source:Signal%20Properties floatlist SourceChGain= 16 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.003 % % // gain for each channel (A/D units -> muV)
+Storage:Data%20Location string DataDirectory= ../data ../data % % // path to top level data directory (directory)
+Storage:Session string SubjectName= test Name % % // subject alias
+Storage:Session string SubjectSession= 001 001 % % // three-digit session number
+Storage:Session string SubjectRun= 00 00 % % // two-digit run number
+Storage:Documentation string ID_System= % // BCI2000 System Code
+Storage:Documentation string ID_Amp= % // BCI2000 Amp Code
+Storage:Documentation string ID_Montage= % // BCI2000 Cap Montage Code
+Visualize:Timing int VisualizeTiming= 1 1 0 1 // visualize system timing (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSourceDecimation= 1 1 0 % // decimation factor for raw brain signal
+Visualize:Source%20Signal int VisualizeSourceTime= 2s 2 0 % // how much time in Source visualization
+Source:SignalGeneratorADC int ModulateAmplitude= 1 0 0 1 // Modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source:SignalGeneratorADC int SineChannelX= 0 0 0 % // Channel number of sinewave controlled by mouse x position
+Source:SignalGeneratorADC int SineChannelY= 0 0 0 % // Channel number of sinewave controlled by mouse y position (0 for all)
+Source:SignalGeneratorADC int SineChannelZ= 0 0 0 % // Channel number of sinewave controlled by mouse key state
+Source:SignalGeneratorADC float SineFrequency= 0 10Hz % % // Frequency of sine wave
+Source:SignalGeneratorADC int SineAmplitude= 0 100muV % % // Amplitude of sine wave
+Source:SignalGeneratorADC int NoiseAmplitude= 30muV 30muV % % // Amplitude of white noise (common to all channels)
+Source:SignalGeneratorADC int DCOffset= 60muV 0muV % % // DC offset (common to all channels)
+Source:SignalGeneratorADC string OffsetMultiplier= StimulusType StimulusType % % // Expression to multiply offset by
+Source:SignalGeneratorADC int RandomSeed= 0 0 0 1 // Initialization value for random number generator (initialize from time if 0)
+Source:SignalGeneratorADC int SignalType= 0 0 0 2 // numeric type of output signal:  0: int16, 1: float32, 2: int32 (enumeration)
+Storage:BCI2000FileWriter int SavePrmFile= 0 1 0 1 // save additional parameter file (0=no, 1=yes) (boolean)
+Storage:BCI2000FileWriter string StorageTime= % // time of beginning of data storage
+Source:Alignment int AlignChannels= 1 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Source:Online%20Processing stringlist TransmitChList= 4 1 2 3 4 1 1 128 // list of transmitted channels
+Visualize:Processing%20Stages int VisualizeAlignmentFilter= 0 0 0 1 // Visualize AlignmentFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeTransmissionFilter= 0 0 0 1 // Visualize TransmissionFilter output (boolean)
+Filtering:SpatialFilter matrix SpatialFilter= 4 4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 % % // columns represent input channels, rows represent output channels
+Filtering:P3TemporalFilter int EpochLength= 400ms 500ms 0 % // Length of data epoch from stimulus onset
+Filtering:P3TemporalFilter int EpochsToAverage= 2 1 0 % // Number of epochs to average
+Visualize:P3TemporalFilter int VisualizeP3TemporalFiltering= 1 0 0 1 // visualize Temporal filtered signals (0=no 1=yes) (boolean)
+Visualize:P3TemporalFilter int TargetERPChannel= 1 1 0 128 // input channel for which to display ERP data
+Filtering:LinearClassifier matrix Classifier= 2 { input%20channel input%20element%20(bin) output%20channel weight } 1 4 1 1 1 6 2 1 // Linear classification matrix in sparse representation
+Filtering:Normalizer floatlist NormalizerOffsets= 2 0 0 0 % % // normalizer offsets
+Filtering:Normalizer floatlist NormalizerGains= 2 1 1 0 % % // normalizer gain values
+Filtering:Normalizer intlist Adaptation= 2 0 0 0 0 2 // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer matrix BufferConditions= 2 1 (Feedback)&&(TargetCode==1) (Feedback)&&(TargetCode==2) // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+Filtering:Normalizer float BufferLength= 9s 9s % % // time window of past data per buffer that enters into statistic
+Filtering:Normalizer string UpdateTrigger= (Feedback==0) // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)
+Visualize:Processing%20Stages int VisualizeSpatialFilter= 0 0 0 1 // Visualize SpatialFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeLinearClassifier= 0 0 0 1 // Visualize LinearClassifier output (boolean)
+Visualize:Processing%20Stages int VisualizeNormalizer= 0 0 0 1 // Visualize Normalizer output (boolean)
+Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
+Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
+Application:Window int WindowWidth= 640 640 0 % // width of application window
+Application:Window int WindowHeight= 480 480 0 % // height of application window
+Application:Window int WindowLeft= 0 0 % % // screen coordinate of application window's left edge
+Application:Window int WindowTop= 0 0 % % // screen coordinate of application window's top edge
+Application:Window string WindowBackgroundColor= 0x000000 0x505050 % % // background color (color)
+Application:Sequencing float PreRunDuration= 2s 0 0 % // pause preceding first sequence
+Application:Sequencing float PostRunDuration= 2s 0 0 % // pause following last sequence
+Application:Sequencing float PreSequenceDuration= 1/2s 2s 0 % // pause preceding sequences/sets of intensifications
+Application:Sequencing float PostSequenceDuration= 3/4s 2s 0 % // pause following sequences/sets of intensifications
+Application:Sequencing float StimulusDuration= 31.25ms 40ms 0 % // stimulus duration
+Application:Sequencing float ISIMinDuration= 62.5ms 80ms 0 % // minimum duration of inter-stimulus interval
+Application:Sequencing float ISIMaxDuration= 62.5ms 80ms 0 % // maximum duration of inter-stimulus interval
+Application:Result%20Processing int InterpretMode= 2 0 0 2 // interpretation of results: 0 none, 1 online free mode, 2 copy mode (enumeration)
+Application:Result%20Processing int DisplayResults= 1 1 0 1 // display results of copy/free spelling (boolean)
+Application:Sequencing int NumberOfSequences= 2 15 1 % // number of sequences in a set of intensifications
+Application:Speller%20Targets matrix TargetDefinitions= 36 { Display Enter Display%20Size Icon%20File Sound%20File } A A 1 % % B B 1 % % C C 1 % % D D 1 % % E E 1 % % F F 1 % % G G 1 % % H H 1 % % I I 1 % % J J 1 % % K K 1 % % L L 1 % % M M 1 % % N N 1 % % O O 1 % % P P 1 % % Q Q 1 % % R R 1 % % S S 1 % % T T 1 % % U U 1 % % V V 1 % % W W 1 % % X X 1 % % Y Y 1 % % Z Z 1 % % 1 1 1 % % 2 2 1 % % 3 3 1 % % 4 4 1 % % 5 5 1 % % 6 6 1 % % 7 7 1 % % 8 8 1 % % 9 9 1 % % _ %20 1 % % // speller target properties
+Application:Speller%20Targets intlist NumMatrixColumns= 1 6 6 1 % // display matrices' column number(s)
+Application:Speller%20Targets intlist NumMatrixRows= 1 6 6 0 % // display matrices' row number(s)
+Application:Audio%20Stimuli int AudioStimuliOn= 0 0 0 1 // Audio Stimuli Mode (0=no, 1=yes) (boolean)
+Application:Audio%20Stimuli matrix AudioStimuliRowsFiles= 6 { filename } sounds/1.wav sounds/2.wav sounds/3.wav sounds/4.wav sounds/5.wav sounds/6.wav // audio stimuli rows files 
+Application:Audio%20Stimuli matrix AudioStimuliColsFiles= 6 { filename } sounds/a.wav sounds/b.wav sounds/c.wav sounds/d.wav sounds/e.wav sounds/f.wav // audio stimuli column files 
+Application:Speller%20Targets floatlist TargetWidth= 1 16 0 0 100 // target width in percent of screen width
+Application:Speller%20Targets floatlist TargetHeight= 1 14 0 0 100 // target height in percent of screen height
+Application:Speller%20Targets floatlist TargetTextHeight= 1 12 0 0 100 // height of target labels in percent of screen height
+Application:Speller%20Targets stringlist BackgroundColor= 1 0x00000000 0x505050 % % // target background color (color)
+Application:Speller%20Targets stringlist TextColor= 1 0x00555555 0x505050 % % // text color (color)
+Application:Speller%20Targets stringlist TextColorIntensified= 1 0x00FFFFFF 0x505050 % % // intensified text color (color)
+Application:Speller%20Targets intlist IconHighlightMode= 1 1 1 0 2 // icon highlight method 0: Show/Hide, 1: Intensify, 2: Grayscale, 3: Invert, 4: Dim    (enumeration)
+Application:Speller%20Targets floatlist IconHighlightFactor= 1 0.5 0.5 0 % // scale factor for highlighted icon pixel values
+Application:Speller int FirstActiveMenu= 1 1 1 % // Index of first active menu
+Application:Speller float StatusBarSize= 10 0 0 100 // size of status bar in percent of screen height
+Application:Speller float StatusBarTextHeight= 4 0 0 100 // size of status bar text in percent of screen height
+Application:Speller string TextToSpell= SPELLING%20IN%20THE%20RAIN // character or string to spell in offline copy mode
+Application:Speller string TextResult= % // user spelling result
+Application:Speller int TestMode= 1 0 0 1 // select targets by clicking on their associated stimuli (0=no, 1=yes) (boolean)
+Application:Speller string DestinationAddress= % // network address for speller output in IP:port format
+Application:Text%20Window int TextWindowEnabled= 0 0 0 1 // Show Text Window (0=no, 1=yes) (boolean)
+Application:Text%20Window int TextWindowLeft= 600 0 0 % // Text Window X location
+Application:Text%20Window int TextWindowTop= 5 0 0 % // Text Window Y location
+Application:Text%20Window int TextWindowWidth= 512 512 0 % // Text Window Width
+Application:Text%20Window int TextWindowHeight= 512 512 0 % // Text Window Height
+Application:Text%20Window string TextWindowFontName= Courier // Text Window Font Name
+Application:Text%20Window int TextWindowFontSize= 10 4 1 % // Text Window Font Size
+Application:Text%20Window string TextWindowFilePath= % // Path for Saved Text File (directory)
+Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20320 % % // IP address/port to write to, e.g. localhost:20320
+Application:Localization string Language= Default Default % % // Language for user messages

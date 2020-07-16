@@ -1,0 +1,25 @@
+Source:Signal%20Properties int SourceCh= 8 16 1 % // number of digitized and stored channels
+Source:Signal%20Properties int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
+Source:Signal%20Properties int SamplingRate= 256 256Hz 1 % // sample rate
+Source:Signal%20Properties floatlist SourceChOffset= 1 auto % % % // Offset for channels in A/D units
+Source:Signal%20Properties floatlist SourceChGain= 1 auto % % % // gain for each channel (A/D units -> muV)
+Source:Signal%20Properties list ChannelNames= 0 // list of channel names
+Visualize:DataIOFilter int VisualizeRoundtrip= 1 1 0 1 // visualize roundtrip time (0=no, 1=yes) (boolean)
+Visualize:DataIOFilter int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:DataIOFilter int VisualizeSourceDecimation= 1 1 0 % // decimation factor for raw brain signal
+Visualize:DataIOFilter int VisualizeSourceTime= 2s 2 0 % // how much time in Source visualization
+Source:RandomNumberADC int ModulateAmplitude= 1 0 0 1 // Modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source:RandomNumberADC int SineChannelX= 1 0 0 % // Channel number of sinewave controlled by mouse x position
+Source:RandomNumberADC int SineChannelY= 2 0 0 % // Channel number of sinewave controlled by mouse y position (0 for all)
+Source:RandomNumberADC float SineFrequency= 9Hz 10Hz % % // Frequency of sine wave
+Source:RandomNumberADC int SineAmplitude= 100muV 100muV % % // Amplitude of sine wave
+Source:RandomNumberADC int NoiseAmplitude= 30muV 30muV % % // Amplitude of white noise (common to all channels)
+Source:RandomNumberADC int DCOffset= 0 0muV % % // DC offset (common to all channels)
+Source:RandomNumberADC string OffsetMultiplier= % StimulusType % % // Expression to multiply offset by
+Source:RandomNumberADC int RandomSeed= 0 0 0 1 // Initialization value for random number generator (initialize from time if 0)
+Source:RandomNumberADC int SignalType= 0 0 0 2 // numeric type of output signal:  0: int16, 1: float32, 2: int32 (enumeration)
+Source:Source%20Filter int NotchFilter= 0 0 0 2 // Power line notch filter: 0: disabled, 1: at 50Hz, 2: at 60Hz (enumeration)
+Source:Source%20Filter int HighPassFilter= 0 0 0 1 // Source high pass filter: 0: disabled, 1: at 0.1Hz (enumeration)
+Source:Alignment int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Visualize:AlignmentFilter int VisualizeAlignment= 0 0 0 1 // visualize aligned channels (0=no, 1=yes) (boolean)

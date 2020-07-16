@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:Normalizer - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:Normalizer,BCI2000 Glossary,Technical Reference:States of Operation,User Reference:CursorTask,User Reference:Expression Syntax,User Reference:LinearClassifier" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Normalizer</h1><p class="subtitle">User Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253ANormalizer.html#Function"><span class="tocnumber">1</span> <span class="toctext">Function</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Normalizing_Transform"><span class="tocnumber">1.1</span> <span class="toctext">Normalizing Transform</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Adaptation"><span class="tocnumber">1.2</span> <span class="toctext">Adaptation</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Adaptation_Delay"><span class="tocnumber">1.3</span> <span class="toctext">Adaptation Delay</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Adaptation_Rationale"><span class="tocnumber">1.4</span> <span class="toctext">Adaptation Rationale</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Typical_Use"><span class="tocnumber">1.5</span> <span class="toctext">Typical Use</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ANormalizer.html#Parameters"><span class="tocnumber">2</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#NormalizerOffsets.2C_NormalizerGains"><span class="tocnumber">2.1</span> <span class="toctext">NormalizerOffsets, NormalizerGains</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Adaptation_2"><span class="tocnumber">2.2</span> <span class="toctext">Adaptation</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#BufferConditions"><span class="tocnumber">2.3</span> <span class="toctext">BufferConditions</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#BufferLength"><span class="tocnumber">2.4</span> <span class="toctext">BufferLength</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#UpdateTrigger"><span class="tocnumber">2.5</span> <span class="toctext">UpdateTrigger</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ANormalizer.html#States"><span class="tocnumber">3</span> <span class="toctext">States</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ANormalizer.html#Examples"><span class="tocnumber">4</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Trial-based_1D_Feedback_Task_with_3_Targets"><span class="tocnumber">4.1</span> <span class="toctext">Trial-based 1D Feedback Task with 3 Targets</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Trial-based_2D_Feedback_Task_with_4_Targets"><span class="tocnumber">4.2</span> <span class="toctext">Trial-based 2D Feedback Task with 4 Targets</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ANormalizer.html#Continuous_1D_Control_without_pre-defined_Targets"><span class="tocnumber">4.3</span> <span class="toctext">Continuous 1D Control without pre-defined Targets</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ANormalizer.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Function"></a><h2>Function</h2>
+<a name="Normalizing_Transform"></a><h3>Normalizing Transform</h3>
+<p>The Normalizer applies a linear transformation to its input signal.
+For each channel (index denoted with <span class="texhtml"><i>i</i></span>), an offset value is subtracted, and the result multiplied with a gain value:
+</p><p><img class='tex' src="../images/math/d/d/f/ddf8ebd69e1f0c37658be23991090382.png" alt="\textrm{output}_i=(\textrm{input}_i-\textrm{NormalizerOffset}_i)\times \textrm{NormalizerGain}_i" />
+</p>
+<a name="Adaptation"></a><h3>Adaptation</h3>
+<p>From the past statistics of its input, the Normalizer estimates offset and gain values adaptively to make its output signal
+</p>
+<ul><li>zero mean, and
+</li><li>unit variance.
+</li></ul>
+<p>The Normalizer uses <i>data buffers</i> to accumulate its past input according to user-defined rules.
+These rules are called <i>buffer conditions</i> because they are given in terms of boolean expressions.
+Each data buffer is associated with such a boolean expression. Whenever an expression evaluates to <i>true</i>, the current input will be appended to the associated buffer.
+Whenever it comes to updating offset and gain values, the Normalizer will use the content of its buffers to estimate data mean and variance. The offset will then be set to the data mean, and the gain to the inverse square root of the data variance, i.e., the inverse of the data standard deviation.
+</p>
+<a name="Adaptation_Delay"></a><h3>Adaptation Delay</h3>
+<p>One may suggest that the adaptation time may affect the accuracy of the cursor movement in mu rhythm experiments. However, the reference below shows that computing the normalization parameters either during or at the end of the trials leaded to similar results. Hence, in the current version of BCI2000, adaptation of the signal mean is accomplished at the end of each trial and using a Moving Average Algorithm.
+</p><p>Ramoser H, Wolpaw JR, Pfurtscheller G, "EEG-based communication: evaluation of alternative signal prediction methods". Biomed Tech (Berl); 42(9)&nbsp;: 226-33,  Sep, 1997.
+</p>
+<dl><dd><b>From the article abstract</b>-Individuals can learn to control the amplitude of EEG activity in specific frequency bands over sensorimotor cortex and use it to move a cursor to a target on a computer screen. For one-dimensional (i.e., vertical) cursor movement, a linear equation translates the EEG activity into cursor movement. To translate an individual's EEG control into cursor control as effectively as possible, the intercept in this equation, which determines whether upward or downward movement occurs, should be set so that top and bottom targets are equally accessible. The present study compares alternative methods for using an individual's previous performance to select the intercept for subsequent trials. In offline analyses, five different intercept selection methods were applied to EEG data collected while trained subjects were moving the cursor to targets at the top or bottom edge of the screen. ... Due to its consistent performance and its computational simplicity, the moving average method, using the five most recent pairs of top and bottom trials, appears to be the method of choice.
+</dd></dl>
+<a name="Adaptation_Rationale"></a><h3>Adaptation Rationale</h3>
+<p>It may appear crude to use the total data variance for the adaptation -- why not use linear regression on data labels (target codes) to separate into user controlled (task determined) and noise variance? User controlled variance would then correspond to target separation on the feedback screen, which is what we want to normalize in the first place.
+</p><p>However, a closer look reveals that the <i>relative size</i> of user controlled variance, and noise variance is crucial. When that "signal" variance is small compared to noise variance, we would be ill advised to use it in normalization -- this would only lead to enlarged noise, and an erratically moving cursor on the feedback screen.
+In this case, we rather want to normalize by noise variance, to keep the cursor well-behaved. At the same time, total variance approaches noise variance in this limit because signal variance is small.
+</p><p>On the other end of the spectrum, we have a signal variance that is large compared to noise variance. Here, we clearly want normalization by signal variance. However, the total variance will be dominated by signal variance. Thus, in the limit of high signal-to-noise ratio, total variance again is the quantity by which we want to normalize.
+</p><p>Thus, no matter whether signal-to-noise ratio is high or low, total data variance is a good choice for normalization.
+</p>
+<a name="Typical_Use"></a><h3>Typical Use</h3>
+<p>Typically, the Normalizer's input is the output of a classifier, which it transforms into a zero mean/unit variance control signal which is then transmitted to an application module.
+Using the zero mean/unit variance property, an application module can then relate quantities such as window size, screen update rate, cursor speed, and trial duration.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<p>For each channel of the Normalizer's input signal, adaptation is treated independently.
+Offsets, Gains, and Adaptation kind are represented as list parameters, with each entry in the list corresponding to a signal channel.
+Buffer configuration is done in matrix form, with columns corresponding to signal channels, and rows corresponding to multiple buffers.
+</p>
+<a name="NormalizerOffsets.2C_NormalizerGains"></a><h3>NormalizerOffsets, NormalizerGains</h3>
+<p>Lists of offset and gain values, with entries corresponding to signal channels. These values will be updated depending on the channel's adaptation configuration in the <i>Adaptation</i> parameter.
+</p>
+<a name="Adaptation_2"></a><h3>Adaptation</h3>
+<p>A list of values that determines adaptation strategy individually for each channel. Possible values are
+</p>
+<ul><li>0 for no adaptation,
+</li><li>1 for adjusting offsets to zero mean,
+</li><li>2 for additionally adjusting gains to unit variance.
+</li></ul>
+<a name="BufferConditions"></a><h3>BufferConditions</h3>
+<p>A matrix consisting of <a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">boolean expressions</a>.
+Expressions may involve <a href="BCI2000_Glossary.html#State" title="BCI2000 Glossary">state variables</a> and the components of the Normalizer's input signal.
+</p>
+<ul><li>Each matrix entry represents a data buffer which is a ring buffer of length <i>BufferLength.</i> Whenever a buffer's expression evaluates to <i>true,</i> the current value of the input signal will be put into the buffer (overwriting its oldest data once the buffer is filled).
+</li><li>Columns correspond to control signal channels. Buffers in a certain column will buffer data from the corresponding signal channel, and will be used in adaptation of that channel only.
+</li><li>Within columns, the order of buffers does not affect computation.
+</li><li>Empty expressions do not have any effect on the computation. Thus, it is possible to have a different number of buffers for different channels.
+</li><li>A buffer to store data for the first target, and during feedback only, should have an expression such as <code>(Feedback)&amp;&amp;(TargetCode==1)</code>.
+</li></ul>
+<a name="BufferLength"></a><h3>BufferLength</h3>
+<p>The maximum length of each data buffer.
+</p>
+<ul><li>The length is specified in data blocks if given as a raw number, and in seconds if given as a number followed by the character "s".
+</li><li>All data buffers have the same capacity.
+</li><li>Once a data buffer is filled, its older entries will be replaced with new data (ring buffer).
+</li><li>In previous versions of BCI2000, buffer lengths were specified in terms of "past trials". However, this would enforce the notion of a "trial", and not generalize to continuous adaptation.
+</li></ul>
+<a name="UpdateTrigger"></a><h3>UpdateTrigger</h3>
+<p>A <a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">boolean expression</a> that triggers adaptation when changing to <i>true</i> from <i>false</i>.
+Generally, continuous adaptation within trials is not desired. Rather, one wants adaptation to occur at the end of a trial. This is achieved with <i>UpdateTrigger</i> expressions such as <code>Feedback==0</code> or <code>TargetCode==0</code>.
+</p><p>For continuous adaptation, specify an empty string in the <i>UpdateTrigger</i> parameter.
+</p>
+<a name="States"></a><h2>States</h2>
+<p>Buffer condition expressions, and the UpdateTrigger expression may involve any <a href="BCI2000_Glossary.html#State" title="BCI2000 Glossary">state</a> present in the system. Expressions are checked for syntactical correctness and whether referred-to states are present during the <a href="Technical_Reference%253AStates_of_Operation.html" title="Technical Reference:States of Operation">Preflight Phase</a>.
+</p>
+<a name="Examples"></a><h2>Examples</h2>
+<a name="Trial-based_1D_Feedback_Task_with_3_Targets"></a><h3>Trial-based 1D Feedback Task with 3 Targets</h3>
+<ul><li>Only data from the feedback phase should enter into the adaptation.
+</li><li>To make sure that targets contribute equally to the adaptation, we use a single buffer for each target. We use a 3-rows-by-1-column <i>BufferConditions</i> matrix (see below).  Depending on which control signal should be adapted on, all of these conditions need to be entered in the first, second, or third column of the matrix (corresponding to x, y, and z direction when used with the <a href="User_Reference%253ACursorTask.html" title="User Reference:CursorTask">CursorTask</a> application module).
+</li></ul>
+<pre>(Feedback)&amp;&amp;(TargetCode==1)
+(Feedback)&amp;&amp;(TargetCode==2)
+(Feedback)&amp;&amp;(TargetCode==3)
+</pre>
+<ul><li>We want to use data from three previous trials of each target. 
+</li><li>Feedback duration is 2 seconds. We set the buffer length to the equivalent of three feedback durations:
+</li></ul>
+<pre> BufferLength= 6s
+</pre>
+<ul><li>Adaptation should happen at the end of each trial, when feedback is finished. <p />We set UpdateTrigger to an expression that changes to <i>true</i> when feedback ends:
+</li></ul>
+<pre> UpdateTrigger= (Feedback==0)
+</pre>
+<ul><li>To achieve continuous movement in, say, the x direction we need a constant normalizer output on that channel. To be consistent with the <a href="User_Reference%253ACursorTask.html#FeedbackDuration" title="User Reference:CursorTask">task module's FeedbackDuration parameter</a>, this output should be constant +2 in order for the cursor to cross the entire screen during a trial, and +1 when cursor movement begins at the screen's center. This corresponds to the following settings for the channel in question:
+</li></ul>
+<pre>Adaptation= 0
+NormalizerOffset= -1
+NormalizerGain= 2 or 1, respectively.
+</pre>
+<a name="Trial-based_2D_Feedback_Task_with_4_Targets"></a><h3>Trial-based 2D Feedback Task with 4 Targets</h3>
+<ul><li>Leaving everything else as in the previous example, we now have two dimensions corresponding to left-right (channel 1) and up-down (channel 2).
+</li></ul>
+<dl><dd>Target positions are as indicated below:
+</dd></dl>
+<pre> ---------------------------
+ |          ##1##          |
+ |#                       #|
+ |2                       3|
+ |#                       #|
+ |          ##4##          |
+ ---------------------------
+</pre>
+<dl><dd>We use data from targets 1 and 4 to adjust channel 2, and targets 2 and 3 to adjust channel 1. Accordingly, the BufferConditions matrix is
+</dd></dl>
+<pre>(Feedback)&amp;&amp;(TargetCode==2) (Feedback)&amp;&amp;(TargetCode==1)
+(Feedback)&amp;&amp;(TargetCode==3) (Feedback)&amp;&amp;(TargetCode==4)
+</pre>
+<a name="Continuous_1D_Control_without_pre-defined_Targets"></a><h3>Continuous 1D Control without pre-defined Targets</h3>
+<ul><li>For this example, we know that, over a period of 10 minutes, all output values will occur with approximately equal frequency, or at least have a symmetric distribution around zero. This matches the combination of BCI2000 and Dasher or other "devices" expecting statistically balanced input.
+</li></ul>
+<dl><dd>The BufferConditions matrix will have a single entry containing a constant expression:
+</dd></dl>
+<pre>1
+</pre>
+<dl><dd>This way, data will always be buffered.
+</dd></dl>
+<ul><li>There are no trials. We want a continuous adaptation to the values of the last 10 minutes.
+</li></ul>
+<dl><dd>We set the BufferLength parameter to <code>600s</code>, or <code>(10*60)s</code>.
+</dd><dd>For continuous adaptation, we enter an <i>empty string</i> (not a constant 0 expression) for UpdateTrigger.
+</dd></dl>
+<a name="See_also"></a><h2>See also</h2>
+<a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">User Reference:Expression Syntax</a>, <a href="BCI2000_Glossary.html#Control_Signal" title="BCI2000 Glossary">BCI2000 Glossary#Control Signal</a>, <a href="User_Reference%253ALinearClassifier.html" title="User Reference:LinearClassifier">User Reference:LinearClassifier</a></p>
+
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+</ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

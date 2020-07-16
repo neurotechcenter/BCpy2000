@@ -1,0 +1,82 @@
+As of February 2011, BCI2000 is distributed under the GNU General Public License
+(GPL), version 3.0. You should have received a copy of the GPL along with this
+software in LICENSE-GPL.TXT . If not, see http://www.gnu.org/licenses/
+
+CLARIFICATION OF SCOPE:
+
+For the convenience of the user, some third-party SDK files (headers, libraries
+and DLLs) have been included in the same directory tree as our source release.
+Please be aware that the BCI2000 License, and hence the GPL, applies to all files
+in which "This file is part of BCI2000" appears in the comments near the top, but
+not necessarily to other files. Almost everything in the src/core section of the
+distribution is considered to be part of BCI2000, whereas almost everything in
+the src/extlib section is not. The rest may be quite a mixed bag. If you
+redistribute programs or source code based based on or involving BCI2000, please
+take note of the licensing conditions for all the individual files involved.
+
+The BCI2000 license hereby includes permission to redistribute BCI2000 code together
+with third party source code, here called an SDK, in cases where the BCI2000 code
+in question depends on the SDK, but where the SDK does not depend on BCI2000 code
+to perform the functions for which the SDK is provided, and the SDK in no way
+specifically adapted to work with BCI2000. This permission applies to the BCI2000
+code itself, irrespective of the license conditions of the various SDKs. However,
+where an SDK file itself is redistributed, the specific license conditions of the
+SDK must also be obeyed. Such SDK code should be considered explicitly excluded
+from the "Corresponding Source" of BCI2000 as defined in the GPL section 1.
+
+
+PLAIN-ENGLISH (OR AS CLOSE AS POSSIBLE) INTERPRETATION OF THE GPL
+
+The GPL is designed with the intention of maximizing the benefit that a piece of
+software has for society. Since its language necessarily tends to become more
+legalistic over time, and since software license agreements in general seem
+increasingly to push the boundaries of legal "unconscionability" as they
+get more complicated and more pervasive, here is our informal reading of the
+GPL's main implications. This informal guide does not capture all of the
+conditions in the GPL, and while we think it should not conflict with the
+official wording of the GPL, please treat it as FYI only: the official GPL
+should be considered definitive.
+
+1. The "free" bit: you may redistribute BCI2000 code, but only if all GPL
+stipulations (including this conditional permission to redistribute) remain
+intact.  Though charging money for your distribution is permitted, you may not
+impose restrictions on the recipients' freedom to redistribute what you give
+them. The same stipulations must apply to any modified version of the BCI2000
+code, or any binaries built from modified BCI2000 code.
+
+2. The "open" bit: wherever you distribute binaries that contain GPL'd code, you
+must also supply the corresponding source code and documentation, at no extra
+charge. (If you currently have a BCI2000 distribution that does not include
+source code and documentation, these can be obtained from
+http://bci2000.org/BCI2000/Download.html )
+
+3. The "viral" bit: you must also apply the GPL when distributing any code that
+you have written which uses GPL'd code. When we say your code uses BCI2000, we
+mean that your code will not perform its intended function successfully unless
+BCI2000 or BCI2000-derived source code or binaries are present. One obvious
+example might be that you have written something which makes calls to the
+BCI2000 C++ API. If you want to release your code, or binaries built from it,
+you must release it under the GPL: if not, your permission to distribute
+BCI2000 sources, and any binaries which contain object code built from BCI2000
+sources, is withdrawn.  Note the viral spread cannot be expected to flow
+"upstream" along a chain of dependencies.  Parts of BCI2000 may depend on
+components of Windows, of Matlab or of various amplifier manufacturers' SDKs.
+These were all written without consideration of BCI2000 and without exploiting
+BCI2000 code, and are therefore not covered.
+
+4. The "as is" bit:  BCI2000 has been useful to some people, and its use has not
+resulted in injuries or comparably serious problems as far as we know. It is
+distributed to you in the hope that the same will be true when you use it, but
+this cannot be guaranteed. It comes WITHOUT ANY WARRANTY. Some legislations have
+the concept of an "implied warranty", such as "merchantability" and "fitness for
+a particular purpose" which apply unless explicitly disclaimed, but we
+explicitly disclaim them: NO IMPLIED WARRANTIES APPLY TO BCI2000. If you choose
+to use this software, it is up to you to identify and undertake all the
+necessary steps to ensure and verify the software's fitness for the purposes you
+intend. You use it at your own risk.  For further details, see the GNU General
+Public License.
+
+Finally, it should be remembered that licensing software one way does not
+preclude an author from supplying it under another license under different
+conditions. If you wish to license BCI2000 code in non-GPL ways, please
+contact info@bci2000.org

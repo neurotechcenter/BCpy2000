@@ -1,0 +1,17 @@
+set(dir ${CMAKE_CURRENT_LIST_DIR})
+set(BCI2000_PARAMETER_GUI
+  ${dir}/PrefDialog.ui
+  ${dir}/ConfigWindow.ui
+  ${dir}/EditMatrix.ui
+  ${dir}/ShowParameters.ui
+  ${dir}/PrefDialog.cpp
+  ${dir}/ConfigWindow.cpp
+  ${dir}/EditMatrix.cpp
+  ${dir}/ShowParameters.cpp
+  ${dir}/Preferences.cpp
+  ${dir}/OperatorUtils.cpp
+  ${dir}/ParsedComment.cpp
+  ${dir}/ParamDisplay.cpp
+  ${PROJECT_SRC_DIR}/shared/gui/ExecutableHelp.cpp
+)
+

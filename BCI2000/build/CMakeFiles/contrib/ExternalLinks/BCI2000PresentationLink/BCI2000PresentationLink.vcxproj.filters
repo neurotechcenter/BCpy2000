@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PresentationLink.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000DataPortExtension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000DataPort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000ActiveDataPort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PCLLibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000ControllerType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000Controller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PresentationLink_i.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\config\VersionInfo.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\config</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Remote.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\BCI2000Remote</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Connection.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\BCI2000Remote</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\nbs\DataPortExtension\interfaces\DataPortExtension_i.c">
+      <Filter>Source Files\External Libraries\nbs\DataPortExtension\interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\nbs\PCLExtension\interface\PCLExtension_i.c">
+      <Filter>Source Files\External Libraries\nbs\PCLExtension\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComModule.cpp">
+      <Filter>Source Files\BCI2000 Framework\com</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComClassFactory.cpp">
+      <Filter>Source Files\BCI2000 Framework\com</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComRegistrar.cpp">
+      <Filter>Source Files\BCI2000 Framework\com</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComStrings.cpp">
+      <Filter>Source Files\BCI2000 Framework\com</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.cpp">
+      <Filter>Generated\Version</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000DataPortExtension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000DataPort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000ActiveDataPort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PCLLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000ControllerType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000Controller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PresentationLink_i.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\VersionInfo.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Remote.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\BCI2000Remote</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Connection.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\BCI2000Remote</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\nbs\DataPortExtension\interfaces\DataPortExtension.h">
+      <Filter>Header Files\External Libraries\nbs\DataPortExtension\interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\nbs\PCLExtension\interface\PCLExtension.h">
+      <Filter>Header Files\External Libraries\nbs\PCLExtension\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComModule.h">
+      <Filter>Header Files\BCI2000 Framework\com</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComClassFactory.h">
+      <Filter>Header Files\BCI2000 Framework\com</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComRegistrar.h">
+      <Filter>Header Files\BCI2000 Framework\com</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComStrings.h">
+      <Filter>Header Files\BCI2000 Framework\com</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComCoClass.h">
+      <Filter>Header Files\BCI2000 Framework\com</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComPtr.h">
+      <Filter>Header Files\BCI2000 Framework\com</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\src\extlib\com\ComModule.def">
+      <Filter>Resources\BCI2000 Framework\com</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PresentationLink\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\puzzlepiece.ico">
+      <Filter>Generated\AppIcon</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000PresentationLink\BCI2000PresentationLink.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000PresentationLink\appicon.rc">
+      <Filter>Generated\AppIcon</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc">
+      <Filter>Generated\Version</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\AppIcon">
+      <UniqueIdentifier>{7B6861FE-6AD2-353B-914A-C15FCD201E9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Version">
+      <UniqueIdentifier>{79EF525C-6BF6-3B2D-86D9-96258C1C83CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\com">
+      <UniqueIdentifier>{E76A484D-F621-3FC9-BEE1-3C78DEE66D03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core">
+      <UniqueIdentifier>{BA7FED92-0296-337A-84C7-F2798F240B14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core\Operator">
+      <UniqueIdentifier>{02665D9B-10FB-3639-8BFA-EB1BC62BD4DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core\Operator\BCI2000Remote">
+      <UniqueIdentifier>{4820A6AD-90CF-3CE4-B4D9-7CCCB6C1FA4C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries">
+      <UniqueIdentifier>{13E01BCE-4291-3895-9816-1F1365FD135D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\nbs">
+      <UniqueIdentifier>{3954E951-10EF-3152-9028-9CB0A72BE618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\nbs\DataPortExtension">
+      <UniqueIdentifier>{9CF99DBC-40F7-3162-BFFE-DEB86268D81D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\nbs\DataPortExtension\interfaces">
+      <UniqueIdentifier>{412DCC9E-B905-3A4F-B2B5-2B45B95936D9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\nbs\PCLExtension">
+      <UniqueIdentifier>{77117BB0-C5A8-3451-9689-2FCDE80D3F5B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\nbs\PCLExtension\interface">
+      <UniqueIdentifier>{3C60D271-658D-3D1D-92AF-B372E64C14F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{A4981D77-1A5D-3619-A77C-F586F512390E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\BCI2000 Framework">
+      <UniqueIdentifier>{F1A26605-27CB-3C6F-AAEB-1803F341A610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\BCI2000 Framework\com">
+      <UniqueIdentifier>{A00A6C25-CA03-328B-B675-408A4F47DED1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\com">
+      <UniqueIdentifier>{AF21E4F5-0D10-3779-8CFC-B01C5706DF13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core">
+      <UniqueIdentifier>{AAB0B3AB-DC53-3674-BBA8-2ED3A769DBBF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core\Operator">
+      <UniqueIdentifier>{50F7317F-5189-3DFE-9AF1-208CDFEF8AE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core\Operator\BCI2000Remote">
+      <UniqueIdentifier>{A2894CFE-364A-3558-9F31-BEEC6A577EFC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{4D96E3E7-F808-3EE6-8A19-6A344C637392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries">
+      <UniqueIdentifier>{77F4A8FF-D7C7-331E-84AF-C255B38094F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\nbs">
+      <UniqueIdentifier>{600972FF-317C-3897-8B20-A00C254FDA96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\nbs\DataPortExtension">
+      <UniqueIdentifier>{98D92BA5-EF1B-32F0-911F-9FCFE3A26B78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\nbs\DataPortExtension\interfaces">
+      <UniqueIdentifier>{57F08814-FB03-3764-B0D3-030E9468FC22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\nbs\PCLExtension">
+      <UniqueIdentifier>{4EF3D0B1-A9C3-36DA-8BFD-A8E941EDFB14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\nbs\PCLExtension\interface">
+      <UniqueIdentifier>{44FD2036-FACE-3A6D-AE7C-EE10B679D327}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

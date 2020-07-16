@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:GenerateCalibration - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:GenerateCalibration,Contributions:Tools" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">GenerateCalibration</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253AGenerateCalibration.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AGenerateCalibration.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AGenerateCalibration.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AGenerateCalibration.html#Author"><span class="tocnumber">3.1</span> <span class="toctext">Author</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AGenerateCalibration.html#Source_Code_Revisions"><span class="tocnumber">3.2</span> <span class="toctext">Source Code Revisions</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AGenerateCalibration.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AGenerateCalibration.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p><i>GenerateCalibration</i> is a GUI application that determines amplifier calibration parameters from a recorded data file.
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/tags/BCI2000.v2.1/src/contrib/Tools/GenerateCalibration" class='external free' title="http://www.bci2000.org/svn/tags/BCI2000.v2.1/src/contrib/Tools/GenerateCalibration" rel="nofollow">http://www.bci2000.org/svn/tags/BCI2000.v2.1/src/contrib/Tools/GenerateCalibration</a>
+</p>
+<a name="Versioning"></a><h2>Versioning</h2>
+<a name="Author"></a><h3>Author</h3>
+<p>Gerwin Schalk, Wadsworth Center, NYSDOH.
+</p>
+<a name="Source_Code_Revisions"></a><h3>Source Code Revisions</h3>
+<ul><li>Initial development: 96
+</li><li>Tested under: 412
+</li><li>Known to compile under: 1528
+</li><li>Broken since: --
+</li></ul>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<p>The Calibgen program takes as input a BCI2000 data file containing a calibration signal.
+The user selects the desired channels. The output is a BCI2000 parameter file fragment.
+Click on the SelectInput button and the next window appears.
+Next select the output file.
+Then click on go. 
+</p><p>The selected file name will contain a BCI2000 parameter file
+fragment similar to the following:
+</p>
+<pre>Filtering floatlist SourceChOffset= 5 245 -202 -86 -155 17 0 -500 500 // offset for channels in A/D units
+Filtering floatlist SourceChGain= 5 0.00802 0.00806 0.00797 0.00805 0.00807 0.033 -500 500 // gain for each channel
+</pre>
+<p>This file can now be read into BCI2000 with the Load Parameters option.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Contributions%253ATools.html" title="Contributions:Tools">Contributions:Tools</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

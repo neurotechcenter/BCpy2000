@@ -1,0 +1,11 @@
+// Init script for BCI2000 Certification Analysis.
+// Defines user-settable named preferences accessible from within other scripts,
+// and global functions.
+// Functions inherit a copy of their parent scope's variables, and are not able
+// to do assignments in the parent scope.
+preference("videoFrameDurationMs", 16.67, "video frame duration in ms");
+preference("thresholdRsq", 0.9, "threshold analysis minimum r² value");
+preference("ignoreBlocksAtBegin", 12, "number of data blocks to ignore at the beginning");
+preference("ignoreBlocksAtEnd", 1, "number of data blocks to ignore at the end");
+
+function('VideoFrameDuration', "time(print(preference('videoFrameDurationMs'), 'ms'))");

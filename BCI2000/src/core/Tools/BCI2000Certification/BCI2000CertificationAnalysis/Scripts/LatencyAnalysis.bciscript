@@ -1,0 +1,128 @@
+// Analysis script applied to each individual data file after execution of init and input scripts,
+// and before execution of the requirement script.
+// A requirement script contains function calls of the form
+//   require(condition);
+// Any requirements are applied after execution of the analysis script
+// to each individual input file, and to cumulated statistics when
+// analysis has been finished.
+// Objects appearing within condition expressions must appear within
+// report() function calls of the form
+//   report(object, "the object's description");
+// prior to a require() function call that references them.
+
+AmpResponse := AmpStream.valid() ? AmpStream : threshold_analysis(AmpChannel, preference("thresholdRsq"));
+AudResponse := AudStream.valid() ? AudStream : threshold_analysis(AudChannel, preference("thresholdRsq"));
+VidResponse := VidStream.valid() ? VidStream : threshold_analysis(VidChannel, preference("thresholdRsq"));
+
+AmpTrigResp := group("Amp trigger/response", AmpTrigger.normalized(), AmpResponse.normalized());
+AudTrigResp := group("Audio trigger/response", AudTrigger.normalized(), AudResponse.normalized());
+VidTrigResp := group("Video trigger/response", VidTrigger.normalized(), VidResponse.normalized());
+TriggersResponses := group("Triggers/responses", AmpTrigResp, AudTrigResp, VidTrigResp);
+report(TriggersResponses, "Trigger and response data");
+
+SourceTime := timestamp('SourceTime');
+PreStimulusTime := timestamp('PreStimulusTime');
+PreStimulusTime := PreStimulusTime.valid() ? PreStimulusTime : timestamp('StimulusTime');
+PresentationTime := timestamp('PresentationTime');
+AudioBufferTime := timestamp('AudioBufferTime');
+AudioPresentationTime := timestamp('AudioPresentationTime');
+Timestamps := group("Time Stamps", SampleClock, SourceTime, PreStimulusTime, PresentationTime);
+report(Timestamps, "Time stamp data");
+
+firstValidPosition := preference("ignoreBlocksAtBegin")*SampleClock.blockDuration();
+lastValidPosition := SampleClock.FileDuration() - preference("ignoreBlocksAtEnd")*SampleClock.blockDuration();
+Remove := computed_time_series(SampleClock.position()<=firstValidPosition || SampleClock.position()>lastValidPosition);
+
+AmpTrigger := event(!Remove() && diff(AmpTrigger())>0, SampleClock());
+AmpDetected := event(!Remove() && diff(AmpResponse())>0, SampleClock());
+AmpLatency := interval(AmpTrigger, AmpDetected);
+
+BlockBegin := computed_time_series(!Remove() && diff(SourceTime())>0);
+BlockBegin_sc := event(BlockBegin(), SampleClock());
+BlockBegin_ts := event(BlockBegin(), SourceTime());
+
+TimestampLatency := interval(BlockBegin_sc, BlockBegin_ts);
+TimestampLatency := TimestampLatency.translated(-SampleClock.blockDuration());
+
+AudioBeginBlock := event(!Remove() && diff(AudTrigger())>0, SampleClock());
+AudioStimulusBegin := event(!Remove() && diff(AudTrigger())>0, PreStimulusTime());
+AudioBeginDetected := event(!Remove() && diff(AudResponse())>0, SampleClock());
+AudioSystemLatency := interval(AudioBeginBlock, AudioBeginDetected);
+AudioLatency := interval(AudioStimulusBegin, AudioBeginDetected);
+
+VideoBeginBlock := event(!Remove() && diff(VidTrigger())>0, SampleClock());
+VideoStimulusBegin := event(!Remove() && diff(VidTrigger())>0, PreStimulusTime());
+VideoBeginDetected := event(!Remove() && diff(VidResponse())>0, SampleClock());
+VideoBeginSystemLatency := interval(VideoBeginBlock, VideoBeginDetected);
+VideoBeginLatency := interval(VideoStimulusBegin, VideoBeginDetected);
+
+VideoEndBlock := event(!Remove() && diff(VidTrigger())<0, SampleClock());
+VideoStimulusEnd := event(!Remove() && diff(VidTrigger())<0, PreStimulusTime());
+VideoEndDetected := event(!Remove() && diff(VidResponse())<0, SampleClock());
+VideoEndSystemLatency := interval(VideoEndBlock, VideoEndDetected);
+VideoEndLatency := interval(VideoStimulusEnd, VideoEndDetected);
+
+StimTrigger := computed_time_series(AudTrigger()+VidTrigger());
+StimBeginBlock := event(!Remove() && diff(StimTrigger())>0, SampleClock());
+StimBegin_ts := event(!Remove() && diff(StimTrigger())>0, PreStimulusTime());
+ProcessingLatency := interval(StimBeginBlock, StimBegin_ts);
+
+PresentationTime_ts := event(!Remove() && diff(PresentationTime()), PresentationTime());
+PresentationSystemLatency := interval(StimBeginBlock, PresentationTime_ts);
+PresentationLatency := interval(StimBegin_ts, PresentationTime_ts);
+AudioBufferTime_ts := event(!Remove() && diff(AudioBufferTime()), AudioBufferTime());
+AudioPresentationTime_ts := event(!Remove() && diff(AudioPresentationTime()), AudioPresentationTime());
+AudioPresentationLatency := interval(AudioStimulusBegin, AudioPresentationTime_ts);
+
+InputLatencies := group("Input latencies", TimestampLatency, AmpLatency);
+SystemLatencies := group("System latencies", ProcessingLatency, VideoBeginSystemLatency, VideoEndSystemLatency, AudioSystemLatency, PresentationSystemLatency);
+LatencyObservations := group("Latency observations", InputLatencies, SystemLatencies);
+report(LatencyObservations, "Latency observation data");
+
+ProcessingLatency := statistics(ProcessingLatency);
+validate(ProcessingLatency, ProcessingLatency.min() >= 0);
+
+AudioSystemLatency := statistics(AudioSystemLatency);
+validate(AudioSystemLatency, AudioSystemLatency.min() > 0);
+AudioLatency := statistics(AudioLatency);
+validate(AudioLatency, AudioLatency.min() > 0);
+validate(AudioLatency, abs(AudioSystemLatency.mean()-AudioLatency.mean()-ProcessingLatency.mean())<1);
+
+VideoBeginSystemLatency := statistics(VideoBeginSystemLatency);
+validate(VideoBeginSystemLatency, VideoBeginSystemLatency.min() > 0);
+VideoEndSystemLatency := statistics(VideoEndSystemLatency);
+validate(VideoEndSystemLatency, VideoEndSystemLatency.min() > 0);
+VideoSystemLatency := VideoBeginSystemLatency.joined(VideoEndSystemLatency);
+
+VideoBeginLatency := statistics(VideoBeginLatency);
+validate(VideoBeginLatency, VideoBeginLatency.min() > 0);
+VideoEndLatency := statistics(VideoEndLatency);
+validate(VideoEndLatency, VideoEndLatency.min() > 0);
+VideoLatency := VideoBeginLatency.joined(VideoEndLatency);
+validate(VideoLatency, abs(VideoSystemLatency.mean()-VideoLatency.mean()-ProcessingLatency.mean())<1);
+
+PresentationSystemLatency := statistics(PresentationSystemLatency);
+PresentationLatency := statistics(PresentationLatency);
+validate(PresentationLatency, abs(PresentationSystemLatency.mean()-PresentationLatency.mean()-ProcessingLatency.mean()) < 1);
+
+AudioPresentationLatency := statistics(AudioPresentationLatency);
+
+AmpLatency := statistics(AmpLatency);
+TimestampLatency := statistics(TimestampLatency);
+
+validate(AmpLatency, AmpLatency.min() >= 0);
+validate(AmpLatency, AmpLatency.max() < 3*SampleClock.blockDuration()/4);
+validate(TimestampLatency, TimestampLatency.max() < SampleClock.blockDuration()/2);
+
+InputLatencies := group("Input latencies", TimestampLatency, AmpLatency);
+SystemLatencies := group("System latencies", ProcessingLatency, VideoBeginSystemLatency, VideoEndSystemLatency, AudioSystemLatency, PresentationSystemLatency);
+LatencyHistograms := group("Latency histograms", InputLatencies, SystemLatencies);
+report(LatencyHistograms, "Latency histogram data");
+
+report(AmpLatency, "interval between block begin, and amp digital out signal change");
+report(TimestampLatency, "clock skew between sample clock, and SourceTime time stamp");
+report(ProcessingLatency, "time interval between block received, and stimulus triggered");
+report(PresentationLatency, "time interval between stimulus trigger, and video memory change");
+report(AudioPresentationLatency, "time interval between audio buffering, and estimated audio output");
+report(VideoLatency, "time interval between stimulus trigger, and video signal change detected");
+report(AudioLatency, "time interval between stimulus trigger, and audio signal detected");

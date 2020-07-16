@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Tutorial:Designing an Eloc File - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Tutorial:Designing an Eloc File,User Reference:Eloc Helper,User Tutorial:Performing an Offline Analysis" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Designing an Eloc File</h1><p class="subtitle">User Tutorial</p><hr class="sep" /><p>The BCI2000 Offline Analysis tool generates up to three different types of plots to aid you in determining the best features in a given dataset.  One of these plot types - the topographic plot - provides a spatial representation of the subjects response to a given stimulus.  So, when generating such a plot, the electrode layout must be taken into account.  To communicate this layout to the BCI2000 Offline Analysis tool, we use a montage file.  This section of the tutorial will show you how to use the Eloc Helper tool to create and modify montage files.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Tutorial%253ADesigning_an_Eloc_File.html#Creating_a_new_montage_file"><span class="tocnumber">1</span> <span class="toctext">Creating a new montage file</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ADesigning_an_Eloc_File.html#Modifying_an_existing_montage_file"><span class="tocnumber">2</span> <span class="toctext">Modifying an existing montage file</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ADesigning_an_Eloc_File.html#Exporting_your_montage_file_for_use_with_BCI2000_Offline_Analysis"><span class="tocnumber">3</span> <span class="toctext">Exporting your montage file for use with BCI2000 Offline Analysis</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ADesigning_an_Eloc_File.html#Exporting_your_montage_file_for_use_with_BCI2000"><span class="tocnumber">4</span> <span class="toctext">Exporting your montage file for use with BCI2000</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ADesigning_an_Eloc_File.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Creating_a_new_montage_file"></a><h2> Creating a new montage file </h2>
+<p>First, let's create a new ECoG montage file:
+</p>
+<ol><li> Open the <i>Eloc Helper</i> tool.  If this is your first time using the tool, you may want to briefly review <a href="User_Reference%253AEloc_Helper.html" title="User Reference:Eloc Helper">User Reference:Eloc Helper</a> for instructions on how to install and run this application.
+</li><li> Click File>New>ECoG Montage File to start working on a new ECoG montage file.  Since ECoGs are taken using an electrode grid, you will be given a square electrode map.
+</li><li> Create your first electrode:
+<ol><li> Click the "Create New" button.
+</li><li> Set the coordinates by clicking the "Use Grid" button and then clicking on the blank electrode map.
+</li><li> Click the "Update" button after which you should see an electrode marker appear in the location you clicked on in the previous step.  Notice that the marker is labeled with the number "1" (i.e., the value that was set automatically for the number property of the electrode) and that the electrode list has a new item "1: elec" consisting of the electrode number and label.  Try changing the number and label to something else and clicking "Update."  Keep in mind that the number must be a strictly positive integer (i.e., 1, 2, 3...) and that the label must be no more than 4 characters. <a href="../images/5/5f/ElocHelperTutorial1.png" class="image" title="Image:elocHelperTutorial1.png"><img src="../images/5/5f/ElocHelperTutorial1.png" alt="Image:elocHelperTutorial1.png" width="638" height="443" longdesc="/wiki/index.php/Image:ElocHelperTutorial1.png" /></a>
+</li></ol>
+</li></ol>
+<p>For the montage files we need to create to work with the data in this tutorial, it is much more convenient to start from an existing file.
+</p>
+<a name="Modifying_an_existing_montage_file"></a><h2> Modifying an existing montage file </h2>
+<ol><li> Click File>Import>EEG Montage File.
+</li><li> Since we added a new electrode in the previous section, you will be asked if it's okay to overwrite all the current entries.  Click "Yes".
+</li><li> In the "Choose a montage file" file browser, navigate to <tt>data/samplefiles</tt> and double-click or otherwise open the "eeg58.loc" file.  
+</li></ol>
+<p>"eeg58.loc" is a montage file for an electrode cap with 58 electrodes.  The electrode layout for the data we'll be analyzing later is very similar, but it has 6 more electrodes which are marked in the diagram below.  So, to create the 64 electrode montage file, we can simply modify the 58 electrode montage file that we've already imported.  When we do this, we must make sure that the numbers in the new montage file are the same as in the diagram below as these numbers correspond to channels on an amplifier.
+<a href="../images/b/bc/ElocHelperTutorialEloc64.png" class="image" title="Image:elocHelperTutorialEloc64.png"><img src="../images/b/bc/ElocHelperTutorialEloc64.png" alt="Image:elocHelperTutorialEloc64.png" width="397" height="352" longdesc="/wiki/index.php/Image:ElocHelperTutorialEloc64.png" /></a>
+</p><p>In <i>Eloc Helper</i>, when an electrode is added with a number that is already taken by another electrode, the old electrodes are displaced in order to make room for the new electrode.  This is also the case if an electrode is edited to have the same number as another electrode in the list.  So, the easiest way for us to build the 64 electrode montage file from the 58 electrode montage file is to add the highest number electrodes first.  So, we begin by adding electrode 62 (as labeled in the diagram above):
+</p>
+<ol><li> Click "Create New" to add a new electrode.  By default, this electrode takes on the number 59, the next available number.
+</li><li> Change the number to 62, the electrode we want to add.
+</li><li> Check the checkbox labeled "Lock".  This prevents the number from being automatically changed as explained above.
+</li><li> Change the label to "Oz", the 10-20 pneumonic for the location.
+</li><li> To set the X and Y coordinates, click "Use Grid" and then click on the electrode map where the missing electrode should go.  
+</li><li> Click "Update" to insert the new electrode.  Just as before, the new electrode appears on the electrode map and on the electrode list.  This time, however, the text in the electrode list appears as "62*:Oz".  The "*", in this case, is to indicate that this item is locked.
+</li></ol>
+<p>Now, repeat the same process in the order specified for the electrodes and their respective labels summarized below.  As you add each electrode, notice how the electrodes already in the list move only enough to make way for the new electrode.  Also notice that the electrodes you've locked will not move at all.
+</p>
+<table cellspacing="0" border="1">
+<tr>
+<td>Number
+</td><td>10-20 Label
+</td></tr>
+<tr>
+<td>34
+</td><td>Fz
+</td></tr>
+<tr>
+<td>19
+</td><td>Cp2
+</td></tr>
+<tr>
+<td>17
+</td><td>Cp1
+</td></tr>
+<tr>
+<td>7
+</td><td>Fc6
+</td></tr>
+<tr>
+<td>1
+</td><td>Fc5
+</td></tr></table>
+<p>Now that you've finished creating your electrode file, you'll want to export it so that it can be used with the <i>BCI2000 Offline Analysis</i> tool.  You may also wish to export to the montage file format supported by <i>BCI2000</i>.  Note that Eloc Helper is not capable of importing <i>BCI2000</i>-formatted montage files.  Therefore, it is recommended that you always export to an <i>Offline Analysis</i>-formatted montage file and then export to a <i>BCI2000</i>-formatted montage file if necessary.  So, let's begin by exporting to an <i>Offline Analysis</i>-formatted montage file as is recommended:
+</p>
+<a name="Exporting_your_montage_file_for_use_with_BCI2000_Offline_Analysis"></a><h2> Exporting your montage file for use with BCI2000 Offline Analysis </h2>
+<p>Follow these steps to export your new montage file for use with <i>BCI2000 Offline Analysis</i>:
+</p>
+<ol><li> Click File&gt;Export to&gt;Offline Analysis Montage File.
+</li><li> Navigate to <tt>files/samplefile</tt>.
+</li><li> Enter the filename "myeeg64.loc" and save.
+</li></ol>
+<a name="Exporting_your_montage_file_for_use_with_BCI2000"></a><h2> Exporting your montage file for use with BCI2000 </h2>
+<p>Although this step is unnecessary for the purposes of the tutorial, you can follow these steps to export your new montage file for use with <i>BCI2000</i>:
+</p>
+<ol><li> Click File&gt;Export to&gt;BCI2000 Montage File.
+</li><li> Navigate to <tt>files/samplefile</tt>.
+</li><li> Enter the filename "myeeg64.csv" and save.  Please take note of the "csv" extension as opposed to the "loc" extension used previously.  Although the extension does not matter, we will want to avoid overwriting the file we created in the previous section.
+</li></ol>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Tutorial%253APerforming_an_Offline_Analysis.html" title="User Tutorial:Performing an Offline Analysis">User Tutorial:Performing an Offline Analysis</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<ul><li><a href="User_Tutorial%253ABCI2000_Tour.html">Tour</a></li>
+<li><a href="User_Tutorial%253AMu_Rhythm_BCI_Tutorial.html">Mu Tutorial</a></li>
+<li><a href="User_Tutorial%253AP300_BCI_Tutorial.html">P300 Tutorial</a></li>
+</ul><a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

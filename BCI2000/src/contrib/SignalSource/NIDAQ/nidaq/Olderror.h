@@ -1,0 +1,463 @@
+#if !defined (___olderror_h___)
+#define ___olderror_h___
+
+/*
+   olderror.h--header file for IBM PC backwards compatibility
+
+   Note:
+   Error mappings included for backwards compatibility. References to errors
+   defined in this file should be replaced with the errors they map to in
+   nidaqerr.h
+*/
+
+#include "nidaqerr.h"
+
+/*  warnings...   */
+
+#define dupIOaddrRange                  -(dupAddressError)
+#define dupIntLevels                    -(dupIntError)
+#define dupDMALevels                    -(dupDMAError)
+#define readOutputPort                  -(badChanDirError)
+#define calibrationErr                  -(calibrationError)
+#define noPreTrigUnwrap                 -(memFullError)
+#define relatedPortBusy                 -(relatedLCGBusyError)
+#define readOutputLine                  -(badDirOnSomeLinesError)
+#define outOnSomeInLines                -(badDirOnSomeLinesError)
+#define inOnSomeOutLines                -(badDirOnSomeLinesError)
+#define simulOpAcrossChips              -(invalidOpModeError)
+#define overWriteBeforeCopy             -(overWriteError)
+#define pageBreakinWFbuf                -(memPageError)
+#define wrongNumConfigBytes             -(noSetupError)
+#define DMAReprogramming                -(memPageError)
+#define SCXImoduleTypeConflict          -(SCXIModuleTypeConflictError)
+#define notEnoughExtMem                 -(memFullError)
+#define inputModeConflict               -(invalidOpModeError)
+#define SCXIConfigWarning               -(SCXIConfigError)
+#define messageIntervalTooLong          -(badDAQEventError)
+#define logicalDeviceWarning            -(badDeviceError)
+#define calConstPolarityConflict        -(calConstPolarityConflictError)
+#define irqConflict                     -(dupIntError)
+#define dmaConflict                     -(dupDMAError)
+#define jumperlessBoardWarning          -(jumperlessBoardError)
+#define gpctrDataLossWarning            -(gpctrDataLossError)
+
+/*  errors...     */
+#define notOurBrdErr                    unknownDeviceError
+#define badBrdNumErr                    badDeviceError
+#define badGainErr                      badGainError
+#define badChanErr                      badChanError
+#define noSupportErr                    deviceSupportError
+#define badPortErr                      badChanError
+#define badOutPortErr                   badChanDirError
+#define noLatchModeErr                  noHandshakeModeError
+#define noGroupAssign                   noGroupAssignError
+#define badInputValErr                  invalidValueError
+#define timeOutErr                      timeOutError
+#define outOfRangeErr                   badRangeError
+#define daqInProgErr                    transferInProgError
+#define counterInUseErr                 counterBusyError
+#define noDAQErr                        noTransferInProgError
+#define overFlowErr                     overFlowError
+#define overRunErr                      overRunError
+#define badCntErr                       badCountError
+#define brdTypeErr                      deviceSupportError
+#define noCountOpErr                    noEventCtrError
+#define ctrReservedErr                  sysOwnedRsrcError
+#define portAssignToGrp                 groupAssignError
+#define noPortAssignErr                 noGroupAssignError
+#define badGrpDirErr                    badGroupDirError
+#define noGrpBlockInProg                noTransferInProgError
+#define grpBlockInProg                  transferInProgError
+#define setLatchWGrpCall                invalidValueError
+#define laterIntUpdateNotSet            noLaterUpdateError
+#define wfInProgErr                     transferInProgError
+#define noWfLoadErr                     noWriteError
+#define noWfInProgErr                   noTransferInProgError
+#define badPreTrigCntErr                badPretrigCountError
+#define buffNotFullErr                  earlyTrigError
+#define prePostTrigErr                  prePostTriggerError
+#define extConvErr                      extConvRestrictionError
+#define badSigDirErr                    badLineDirError
+#define noDbDaqErr                      noContTransferInProgError
+#define overWriteErr                    overWriteError
+#define memErr                          memFullError
+#define noConfigFile                    configFileError
+#define badGrpSize                      badGroupError
+#define intLevelInUse                   intInUseError
+#define DMAChanInUse                    DMAInUseError
+#define multSourceInputErr              multConnectError
+#define lowScanIntervalErr              lowScanIntervalError
+#define noConnectionErr                 noConnectError
+#define noPGInProg                      noTransferInProgError
+#define PGInProg                        transferInProgError
+#define grpRateErr                      counterBusyError
+#define extGateErr                      invalidOpModeError
+#define openFileErr                     openFileError
+#define writeFileErr                    writeFileError
+#define noDbWvfmErr                     noTransferInProgError
+#define oldDataErr                      transferStoppedError
+#define dataNotAvailErr                 dataNotAvailError
+#define DMATransferCntNotAvail          noDMACountAvailError
+#define noLabScanErr                    noTransferInProgError
+#define dbOpErr                         noContWithSynchError
+#define DMADisabledErr                  noDMAAvailError
+#define invalidConfigErr                cmosConfigError
+#define brdIsArmedErr                   armedError
+#define clockSourceErr                  multClkSrcError
+#define noSetupErr                      noSetupError
+#define extConvDrvErr                   multClkSrcError
+#define triggerSourceErr                badTrigError
+#define noArmErr                        notArmedError
+#define intDisabledErr                  noIntAvailError
+#define keyNotFoundErr                  configFileError
+#define noTrigEnabledErr                noTrigEnabledError
+#define digPortReserved                 sysOwnedRsrcError
+#define RTSIlineInUseErr                sysOwnedRsrcError
+#define dacUpdateRTSIinUseErr           sysOwnedRsrcError
+#define noRTSIlineAvailErr              noLineAvailError
+#define preTrigScansErr                 badPretrigCountError
+#define postTrigScansErr                badPosttrigCountError
+#define scanRateErr                     badIntervalError
+#define invalidGetErr                   invalidReadError
+#define calInputOutOfRange              badExtRefError
+#define EEPROMaddrErr                   EEPROMreadError
+#define EEPROMresponseErr               EEPROMreadError
+#define EEPROMreadErr                   EEPROMreadError
+#define EEPROMwriteErr                  EEPROMwriteError
+#define calResponseErr                  calibrationError
+#define calConvergeErr                  calibrationError
+#define calDACerr                       calibrationError
+#define externalCalRefErr               badExtRefError
+#define internalCalRefErr               hardwareError
+#define badOutLineErr                   badLineDirError
+#define relatedPortAssignToGrpBusy      relatedLCGBusyError
+#define dacUpdateErr                    underFlowError
+#define muxMemFullErr                   muxMemFullError
+#define interlvdDataAlignErr            memAlignmentError
+#define cannotAlignBufErr               memAlignmentError
+#define cannotLockBufErr                memLockError
+#define cannotPageLockErr               memPageLockError
+#define invalidChassisIDErr             badChassisIDError
+#define invalidModuleSlotErr            badModuleSlotError
+#define configFileErr                   configFileError
+#define outdatedVDMADErr                oldDriverError
+#define ctrRTSINotAvailErr              lineBusyError
+#define dacUpdateRTSINotAvailErr        lineBusyError
+#define SCXIConfigErr                   SCXIConfigError
+#define noDbDigErr                      noTransferInProgError
+#define DbDigPartialComplete            transferStoppedError
+#define SCXITrackHoldErr                SCXITrackHoldError
+#define wvfmGrpAssignErr                groupAssignError
+#define chanNotAssignedGrpErr           noGroupAssignError
+#define grpLoadErr                      groupWriteError
+#define loadAfterStartErr               activeWriteError
+#define noUpdateRateErr                 noClkSrcError
+#define chanPauseErr                    transferPauseError
+#define DSPInitFailure                  DSPInitError
+#define DSPDataPathInUse                DSPDataPathBusyError
+#define DSPDAQErr                       internalKernelError
+#define DSPreserved3                    badErrorCodeError
+#define DSPreserved4                    badErrorCodeError
+#define DSPreserved5                    badErrorCodeError
+#define SCXICommErr                     communicationsError
+#define invalidOpModeErr                invalidOpModeError
+#define moduleNotSupported              SCXIModuleNotSupportedError
+#define DAQboardNotSupported            deviceSupportError
+#define noNIDAQLibErr                   noDriverError
+#define noNIDAQFuncErr                  functionNotFoundError
+#define incompatibleVISRDErr            oldDriverError
+#define port1InLatchedModeErr           relatedLCGBusyError
+#define invalidMemRegionErr             memLockError
+#define fifoModeErr                     fifoModeError
+#define cannotFreeMemErr                memConfigError
+#define memNotLockedErr                 memConfigError
+#define invalidWinHandleErr             invalidWinHandleError
+#define trigEventNotAvailErr            DMANotAllowedError
+#define memTypeNotSupportedErr          memConfigError
+#define badChanStrErr                   syntaxError
+#define parseErr                        syntaxError
+#define noSuchMessageErr                noSuchMessageError
+#define badChanTypeErr                  badChanError
+#define badTrigValErr                   badDAQEventError
+#define notOurDSPHandleErr              invalidDSPHandleError
+#define NIDAQInternalErr                internalDriverError
+#define preTrigReorderErr               pretrigReorderError
+#define badCtrErr                       badCounterError
+#define invalidCtrErr                   badCounterError
+#define timedMsgInUseErr                counterBusyError
+#define invDAQModeTimedMsgErr           DMANotAllowedError
+#define lptCommunicationErr             LPTcommunicationError
+#define multiRateAMUXErr                multiRateModeError
+#define multiRatePreTrigErr             multiRateModeError
+#define functionNotLinkedErr            internalDriverError
+#define scanIntervalTooLongErr          badIntervalError
+#define sampleIntervalTooLongErr        badIntervalError
+#define updateIntervalTooLongErr        badIntervalError
+#define gpctrBadApplicationErr          gpctrBadApplicationError
+#define gpctrBadCounterNumberErr        gpctrBadCounterNumberError
+#define gpctrBadCounterNumberError      gpctrBadCtrNumberError
+#define gpctrBadParamValueErr           gpctrBadParamValueError
+#define gpctrBadParamIdErr              gpctrBadParamIdError
+#define gpctrBadParamIdError            gpctrBadParamIDError
+#define gpctrBadEntityIdErr             gpctrBadEntityIdError
+#define gpctrBadEntityIdError           gpctrBadEntityIDError
+#define gpctrBadActionErr               gpctrBadActionError
+#define gpctrBadGateSignalErr           gateSignalError
+#define gpctrNotArmedErr                noSetupError
+#define gpctrNotResetErr                counterBusyError
+#define gpctrNotProgrammedErr           noSetupError
+#define gpctrApplicationNotSetErr       noSetupError
+#define gpctrBufferNotConfiguredErr     bufferInvalidError
+#define gpctrCantChangeParameterErr     counterBusyError
+#define lptProtocolNotSupported         LPTcommunicationError
+#define rateNotSupportedErr             rateNotSupportedError
+#define timebaseConflictErr             timebaseConflictError
+#define polarityConflictErr             polarityConflictError
+#define signalConflictErr               signalConflictError
+#define baseAddressErr                  baseAddressError
+#define interruptLevel1Err              badErrorCodeError
+#define interruptLevel2Err              badErrorCodeError
+#define dmaChannel1Err                  dmaChannel1Error
+#define dmaChannel2Err                  dmaChannel2Error
+#define openSCManagerErr                badErrorCodeError
+#define openNIDAQServiceErr             badErrorCodeError
+#define startNIDAQServiceErr            badErrorCodeError
+#define criticalResourceConflictErr     badErrorCodeError
+#define jumperlessBoardErr              jumperlessBoardError
+#define reservedPinErr                  reservedPinError
+#define bufferNotInterleavedErr         bufferNotInterleavedError
+#define gpctrInUseErr                   counterBusyError
+#define gpctrDataLossErr                gpctrDataLossError
+#define updateRateChangeErr             updateRateChangeError
+#define gpctrBufferConfiguredErr        bufferAlreadyConfigError
+#define gpctrBufOprnNotInProgErr        noTransferInProgError
+#define badFilterFreqErr                badFilterCutoffError
+#define sc2040HoldModeErr               sc2040HoldModeError
+#define sc2040InputModeErr              sc2040InputModeError
+#define noSC2040ConfigErr               noSetupError
+#define DAQCardConfigErr                DAQCardConfigError
+#define partialTransferCompleteErr      partialTransferCompleteError
+#define DMABufferAlignmentErr           memAlignmentError
+#define outputTypeMustBeVoltageErr      outputTypeMustBeVoltageError
+#define osUnsupportedErr                osUnsupportedError
+#define osErr                           osError
+
+// these are errors that were defined by the old easyio library prior to NI-DAQ 6.5.0
+
+
+enum oldEasyioErrors
+{
+    syntaxErr                    = -10001,
+    semanticsErr                 = -10002,
+    invalidValueErr              = -10003,
+    valueConflictErr             = -10004,
+    badDeviceErr                 = -10005,
+    badLineErr                   = -10006,
+    badGroupErr                  = -10008,
+    badCounterErr                = -10009,
+    badCountErr                  = -10010,
+    badIntervalErr               = -10011,
+    badRangeErr                  = -10012,
+    badRangeWarn                 =  10012,
+    badErrorCodeErr              = -10013,
+    groupTooLargeErr             = -10014,
+    badTimeLimitErr              = -10015,
+    badReadCountErr              = -10016,
+    badReadModeErr               = -10017,
+    badReadOffsetErr             = -10018,
+    badClkFrequencyErr           = -10019,
+    badTimebaseErr               = -10020,
+    badLimitsErr                 = -10021,
+    badWriteCountErr             = -10022,
+    badWriteModeErr              = -10023,
+    badWriteOffsetErr            = -10024,
+    limitsOutOfRangeWarn         =  10025,
+    limitsOutOfRangeErr          = -10025,
+    badInputBufferSpecification  = -10026,
+    badDAQEventErr               = -10027,
+    badFilterCutoffErr           = -10028,
+    obsoleteFunctionErr          = -10029,
+    badBaudRateErr               = -10030,
+    badChassisIDErr              = -10031,
+    badModuleSlotErr             = -10032,
+
+    badPretrigCountErr           = -10081,
+    badPosttrigCountErr          = -10082,
+    badTrigModeErr               = -10083,
+    badTrigCountErr              = -10084,
+    badTrigRangeErr              = -10085,
+    badExtRefErr                 = -10086,
+    badTrigTypeErr               = -10087,
+    badTrigLevelErr              = -10088,
+    badTotalCountErr             = -10089,
+    badRPGErr                    = -10090,
+    badIterationsErr             = -10091,
+
+    badPortWidthErr              = -10100,
+
+    noDriverErr                  = -10240,
+    oldDriverErr                 = -10241,
+    functionNotFoundErr          = -10242,
+    deviceInitErr                = -10244,
+    osInitErr                    = -10245,
+    communicationsErr            = -10246,
+    cmosConfigErr                = -10247,
+    dupAddressErr                = -10248,
+    intConfigErr                 = -10249,
+    dupIntErr                    = -10250,
+    dmaConfigErr                 = -10251,
+    dupDMAErr                    = -10252,
+    switchlessBoardErr           = -10253,
+    DAQCardConfigErr             = -10254,
+    remoteChassisDriverInitErr   = -10255,
+    comPortOpenErr               = -10256,
+
+    noConnectErr                 = -10340,
+    badConnectErr                = -10341,
+    multConnectErr               = -10342,
+    chassisNotSynchedErr         = -10344,
+    chassisMemAllocErr           = -10345,
+    badPacketErr                 = -10346,
+    chassisCommunicationErr      = -10347,
+    waitingForReprogErr          = -10348,
+    SCXIModuleTypeConflictErr    = -10349,
+
+    DSPInitErr                   = -10360,
+    badScanListErr               = -10370,
+    userOwnedRsrcErr             = -10400,
+    unknownDeviceErr             = -10401,
+    unknownDeviceErrOld        = -60,
+    deviceNotFoundErr            = -10402,
+    deviceSupportErr             = -10403,
+    noLineAvailErr               = -10404,
+    noChanAvailErr               = -10405,
+    noGroupAvailErr              = -10406,
+    lineBusyErr                  = -10407,
+    chanBusyErr                  = -10408,
+    groupBusyErr                 = -10409,
+    relatedLCGBusyErr            = -10410,
+    counterBusyErr               = -10411,
+    noGroupAssignErr             = -10412,
+    groupAssignErr               = -10413,
+    externalMuxSupportErr        = -10415,
+    DSPDataPathBusyErr           = -10416,
+    SCXIModuleNotSupportedErr    = -10417,
+
+    sysOwnedRsrcErr              = -10440,
+    memConfigErr                 = -10441,
+    memDisabledErr               = -10442,
+    memAlignmentErr              = -10443,
+    memFullErr                   = -10444,
+    memLockErr                   = -10445,
+    memPageErr                   = -10446,
+    memPageLockErr               = -10447,
+    stackMemErr                  = -10448,
+    cacheMemErr                  = -10449,
+    physicalMemErr               = -10450,
+    virtualMemErr                = -10451,
+    noIntAvailErr                = -10452,
+    intInUseErr                  = -10453,
+    noDMACErr                    = -10454,
+    noDMAAvailErr                = -10455,
+    DMAInUseErr                  = -10456,
+    badDMAGroupErr               = -10457,
+    diskFullErr                  = -10458,
+    DLLInterfaceErr              = -10459,
+    interfaceInteractionErr      = -10460,
+
+    invalidDSPhandleErr          = -10560,
+    multSetupErr                 = -10601,
+    noWriteErr                   = -10602,
+    groupWriteErr                = -10603,
+    activeWriteErr               = -10604,
+    endWriteErr                  = -10605,
+    notArmedErr                  = -10606,
+    armedErr                     = -10607,
+    noTransferInProgWarn         =  10608,
+    noTransferInProgErr          = -10608,
+    transferInProgErr            = -10609,
+    transferPauseErr             = -10610,
+    badDirOnSomeLinesErr         = -10611,
+    badLineDirErr                = -10612,
+    badChanDirErr                = -10613,
+    badGroupDirErr               = -10614,
+    masterClkErr                 = -10615,
+    slaveClkErr                  = -10616,
+    noClkSrcErr                  = -10617,
+    badClkSrcErr                 = -10618,
+    multClkSrcErr                = -10619,
+    noTrigErr                    = -10620,
+    badTrigErr                   = -10621,
+    preTrigErr                   = -10622,
+    postTrigErr                  = -10623,
+    delayTrigErr                 = -10624,
+    masterTrigErr                = -10625,
+    slaveTrigErr                 = -10626,
+    noTrigDrvErr                 = -10627,
+    multTrigDrvErr               = -10628,
+    invalidReadErr               = -10630,
+    noInfiniteModeErr            = -10631,
+    someInputsIgnoredErr         = -10632,
+    invalidRegenModeErr          = -10633,
+    noContTransferInProgErr      = -10634,
+    invalidSCXIOpModeErr         = -10635,
+    noContWithSynchErr           = -10636,
+    bufferAlreadyConfigErr       = -10637,
+    badChanGainErr               = -10680,
+    badChanRangeErr              = -10681,
+    badChanPolarityErr           = -10682,
+    badChanCouplingErr           = -10683,
+    badChanInputModeErr          = -10684,
+    clkExceedsBrdsMaxConvRate    = -10685,
+    scanListInvalidErr           = -10686,
+    bufferInvalidErr             = -10687,
+    digitalTrigBErr              = -10689,
+    digitalTrigAandBErr          = -10690,
+    extConvRestrictionErr        = -10691,
+    chanClockDisabledErr         = -10692,
+    extScanClockErr              = -10693,
+    unsafeSamplingFreqErr        = -10694,
+    DMAnotAllowedErr             = -10695,
+    multiRateModeErr             = -10696,
+    noLaterUpdateErr             = -10701,
+    prePostTriggerErr            = -10702,
+
+    noHandshakeModeErr           = -10710,
+
+    noEventCtrErr                = -10720,
+
+    calConstPolarityConflictErr  = -10783,
+
+    timeOutWarn                  =  10800,
+    transferStoppedErr           = -10803,
+    earlyStopErr                 = -10804,
+    noTrigFoundErr               = -10806,
+    earlyTrigErr                 = -10807,
+    LPTCommunicationErr          = -10808,
+    gateSignalErr                = -10809,
+    internalDriverErr            = -10810,
+    internalKernelErr            = -10811,
+
+    softwareErr                  = -10840,
+    firmwareErr                  = -10841,
+    hardwareErr                  = -10842,
+    underFlowErr                 = -10843,
+    underWriteErr                = -10844,
+    dmaChainingErr               = -10847,
+    noDMACountAvailErr           = -10848,
+    openFileErr                  = -10849,
+    closeFileErr                 = -10850,
+    fileSeekErr                  = -10851,
+    readFileErr                  = -10852,
+    miscFileErr                  = -10854,
+
+    daqPollDataLossErr           = -10882,
+    wfmPollDataLossErr           = -10883,
+    pretrigReorderErr            = -10884,
+
+    chassisResponseTimeoutErr    = -10940,
+    reprogrammingFailedErr       = -10941,
+    invalidResetSignatureErr     = -10942,
+};
+
+#endif /* ___olderror_h___ */

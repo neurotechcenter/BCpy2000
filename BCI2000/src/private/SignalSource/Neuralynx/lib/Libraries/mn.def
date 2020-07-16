@@ -1,0 +1,26 @@
+; dlltool --base-file C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/cca03056.base --output-exp MatlabNetComClient.exp --dllname MatlabNetComClient.dll --output-def mn.def --exclude-symbol=DllMainCRTStartup@12 --def C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/cca03056.def
+EXPORTS
+
+AreWeConnected  
+CloseStream
+ConnectToServer
+DisconnectFromServer
+GetCheetahObjectsAndTypes
+GetMaxCSCSamples
+GetMaxEventStringLength
+GetMaxSpikeFeatures
+GetNewCSCData
+GetNewEventData
+GetNewSEData
+GetNewSTData
+GetNewTTData
+GetNewVTData
+GetRecordBufferSize
+GetServerApplicationName
+GetServerIPAddress
+GetServerPCName
+GetSpikeSampleWindowSize
+OpenStream
+SendCommand
+SetApplicationName
+SetRecordBufferSize

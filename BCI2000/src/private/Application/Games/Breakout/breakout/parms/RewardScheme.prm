@@ -1,0 +1,4 @@
+Application:Game                        int       PointsRequiredForReward= 3        // Number of eligible points required for a reward (gold coin)
+Application:Game                        int       MaxPointsPerStroke=      2        // Maximum number of points that can be earned from striking the ball once
+
+Application:Game%20Rewards              matrix    RewardStrings=      7 2  0 Better%20luck%20next%20time 1 Not%20bad... 2 Pretty%20good! 3 Great!! 4 Excellent!! 5 Amazing!! 6 Fantastic!!!   % % % // Mapping from number-of-rewards to feedback strings

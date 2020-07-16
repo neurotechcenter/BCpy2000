@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:ConnectorFilters - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:ConnectorFilters,User Reference:ConnectorInput,Technical Reference:App Connector,Technical Reference:Core Modules,User Reference:ConnectorOutput" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">ConnectorFilters</h1><p class="subtitle">User Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253AConnectorInput.html#Function"><span class="tocnumber">1</span> <span class="toctext">Function</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253AConnectorInput.html#Filter_Placement"><span class="tocnumber">1.1</span> <span class="toctext">Filter Placement</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AConnectorInput.html#Detailed_Description"><span class="tocnumber">1.2</span> <span class="toctext">Detailed Description</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253AConnectorInput.html#Parameters"><span class="tocnumber">2</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253AConnectorInput.html#ConnectorInputAddress"><span class="tocnumber">2.1</span> <span class="toctext">ConnectorInputAddress</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AConnectorInput.html#ConnectorInputFilter"><span class="tocnumber">2.2</span> <span class="toctext">ConnectorInputFilter</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AConnectorInput.html#ConnectorOutputAddress"><span class="tocnumber">2.3</span> <span class="toctext">ConnectorOutputAddress</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253AConnectorInput.html#States"><span class="tocnumber">3</span> <span class="toctext">States</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AConnectorInput.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Function"></a><h2>Function</h2>
+<p>The <b>ConnectorFilters</b> provide an implementation of the BCI2000 <a href="Technical_Reference%253AApp_Connector.html" title="Technical Reference:App Connector">App Connector</a> protocol.
+</p>
+<a name="Filter_Placement"></a><h3>Filter Placement</h3>
+<p>Typically, the <a href="User_Reference%253AConnectorInput.html" title="User Reference:ConnectorInput">ConnectorInput</a> filter is the first filter in the <a href="Technical_Reference%253ACore_Modules.html" title="Technical Reference:Core Modules">Application Module</a>, which allows external changes to BCI2000 state to affect the application module's behavior immediately. 
+Similarly, the <a href="User_Reference%253AConnectorOutput.html" title="User Reference:ConnectorOutput">ConnectorOutput</a> filter is placed last in the application module, such that state information read over the protocol will immediately reflect the application module's state changes.
+</p>
+<a name="Detailed_Description"></a><h3>Detailed Description</h3>
+<p>A description of the connector protocol, along with client example code, and configuration examples, is provided on a separate <a href="Technical_Reference%253AApp_Connector.html" title="Technical Reference:App Connector">App Connector</a> page.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<a name="ConnectorInputAddress"></a><h3>ConnectorInputAddress</h3>
+<p>An address:port combination that specifies a local UDP socket. Addresses may be host names, or numerical IP addresses. 
+Incoming data is read from this socket.
+</p>
+<a name="ConnectorInputFilter"></a><h3>ConnectorInputFilter</h3>
+<p>For incoming values, messages are filtered by state name using a list of allowed names present in this parameter. To allow signal messages, allowed signal elements must be specified including their indices. To allow all names, enter an asterisk (*) as the only list entry.
+</p>
+<a name="ConnectorOutputAddress"></a><h3>ConnectorOutputAddress</h3>
+<p>Ad address:port combination that specifies a local or remote UDP socket. Addresses may be host names, or numerical IP addresses. For each data block, values of all state variables and the control signal are written out to this socket, using the <a href="Technical_Reference%253AApp_Connector.html" title="Technical Reference:App Connector">App Connector Protocol</a>.
+</p>
+<a name="States"></a><h2>States</h2>
+<p>All states present in the system are transmitted over the App Connector protocol.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Technical_Reference%253AApp_Connector.html" title="Technical Reference:App Connector">Technical Reference:App Connector</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+</ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

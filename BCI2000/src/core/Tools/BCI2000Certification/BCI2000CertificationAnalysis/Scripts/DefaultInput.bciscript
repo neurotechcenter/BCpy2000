@@ -1,0 +1,12 @@
+AmpState := state('SourceTime');
+AmpTrigger := computed_time_series(diff(AmpState())!=0);
+AudState := state('StimulusCode');
+AudTrigger := computed_time_series(diff(AudState())!=0);
+VidState := state('StimulusCode');
+VidTrigger := computed_time_series(diff(VidState())!=0);
+AmpChannel := channel('AmpChannel');
+AudChannel := channel('AudChannel');
+VidChannel := channel('VidChannel');
+AmpStream := stream("");
+AudStream := stream("");
+VidStream := stream("");

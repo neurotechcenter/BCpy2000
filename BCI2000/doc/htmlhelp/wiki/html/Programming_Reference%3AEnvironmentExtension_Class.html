@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:EnvironmentExtension Class - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:EnvironmentExtension Class,BCI2000 Glossary,Programming Reference:Environment Class,Programming Reference:Error Handling,Programming Reference:GenericFilter Class,Technical Reference:Parameter Definition,Technical Reference:State Definition,Technical Reference:States of Operation" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">EnvironmentExtension Class</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Location"><span class="tocnumber">1</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Synopsis"><span class="tocnumber">2</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Events"><span class="tocnumber">3</span> <span class="toctext">Events</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Publish"><span class="tocnumber">3.1</span> <span class="toctext">Publish</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Preflight"><span class="tocnumber">3.2</span> <span class="toctext">Preflight</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Initialize"><span class="tocnumber">3.3</span> <span class="toctext">Initialize</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#PostInitialize"><span class="tocnumber">3.4</span> <span class="toctext">PostInitialize</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#StartRun"><span class="tocnumber">3.5</span> <span class="toctext">StartRun</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#PostStartRun"><span class="tocnumber">3.6</span> <span class="toctext">PostStartRun</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#StopRun"><span class="tocnumber">3.7</span> <span class="toctext">StopRun</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#PostStopRun"><span class="tocnumber">3.8</span> <span class="toctext">PostStopRun</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Process"><span class="tocnumber">3.9</span> <span class="toctext">Process</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#PostProcess"><span class="tocnumber">3.10</span> <span class="toctext">PostProcess</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Resting"><span class="tocnumber">3.11</span> <span class="toctext">Resting</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Methods"><span class="tocnumber">4</span> <span class="toctext">Methods</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#ParamRef_Parameter.28string_Name.29"><span class="tocnumber">4.1</span> <span class="toctext">ParamRef Parameter(string Name)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#ParamRef_OptionalParameter.28string_Name.2C_value_Default.29"><span class="tocnumber">4.2</span> <span class="toctext">ParamRef OptionalParameter(string Name, value Default)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#StateRef_State.28string_Name.29"><span class="tocnumber">4.3</span> <span class="toctext">StateRef State(string Name)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#StateRef_OptionalState.28string_Name.29"><span class="tocnumber">4.4</span> <span class="toctext">StateRef OptionalState(string Name)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#Instantiation"><span class="tocnumber">5</span> <span class="toctext">Instantiation</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEnvironmentExtension_Class.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Location"></a><h2>Location</h2>
+<p><tt>BCI200/src/shared/accessors</tt>
+</p>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>The EnvironmentExtension class defines an interface for BCI2000 components (<i>"extensions"</i>) that are not <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">filters</a>. Such extensions do not process signals but still have access to <a href="BCI2000_Glossary.html#Parameter" title="BCI2000 Glossary">BCI2000 parameters</a> and <a href="BCI2000_Glossary.html#State" title="BCI2000 Glossary">state variables</a>, and are notified of system events such as <i>Preflight</i>, <i>Initialize</i>, and <i>StartRun</i>.
+</p><p>Components that don't need to handle system events may inherit from the <a href="Programming_Reference%253AEnvironment_Class.html" title="Programming Reference:Environment Class">Environment class</a> directly rather than indirectly via EnvironmentExtension.
+</p>
+<a name="Events"></a><h2>Events</h2>
+<a name="Publish"></a><h3>Publish</h3>
+<p>This event handler is called during the BCI2000 <a href="Technical_Reference%253AStates_of_Operation.html#Publishing_Phase" title="Technical Reference:States of Operation">publishing phase</a>. Its purpose is to request parameters and states from the system.
+To simplify requesting parameters and states, and to provide markers that allow to find and extract parameter and states requests, a number of BEGIN/END macros is defined that allow writing
+</p>
+<pre>
+BEGIN_PARAMETER_DEFINITIONS
+ &quot;section int param1= 0 % % % // comment&quot;,
+ ... // any number of parameter definition lines may follow here
+END_PARAMETER_DEFINITIONS
+
+BEGIN_STATE_DEFINITIONS
+ &quot;&quot;,
+... // any number of state definition lines may follow here
+END_STATE_DEFINITIONS
+</pre>
+<p>There, BEGIN/END macros enclose lists of comma-separated C strings representing <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">parameter</a> or <a href="Technical_Reference%253AState_Definition.html" title="Technical Reference:State Definition">state definition lines</a>, respectively.
+</p>
+<a name="Preflight"></a><h3>Preflight</h3>
+<p>Called during the <a href="Technical_Reference%253AStates_of_Operation.html#Initialization_Phase" title="Technical Reference:States of Operation">system initialization phase</a>. In this event handler, the extension component is supposed to test parameter values for consistency, and to report errors by writing into the <tt>bcierr</tt> stream. When no error is reported, it is assumed that the component's operation is safe.
+</p>
+<a name="Initialize"></a><h3>Initialize</h3>
+<p>Called during the <a href="Technical_Reference%253AStates_of_Operation.html#Initialization_Phase" title="Technical Reference:States of Operation">system initialization phase</a>. In the <tt>Initialize()</tt> event handler, a component should initialize itself from parameter values. Ideally, the component's state should not depend on the component's past history prior to the last call to <tt>Initialize()</tt>.
+</p>
+<a name="PostInitialize"></a><h3>PostInitialize</h3>
+<p>Called after the <a href="Technical_Reference%253AStates_of_Operation.html#Initialization_Phase" title="Technical Reference:States of Operation">system initialization phase</a> has been completed for all <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a> components.
+</p>
+<a name="StartRun"></a><h3>StartRun</h3>
+<p>Called when a new <a href="BCI2000_Glossary.html#Run" title="BCI2000 Glossary">run</a> begins. Extension components' <i>StartRun</i> handler is called prior to calling <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a> component's <i>StartRun</i> handlers.
+</p>
+<a name="PostStartRun"></a><h3>PostStartRun</h3>
+<p>Called after <i>StartRun</i> has been called for all <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a> components.
+</p>
+<a name="StopRun"></a><h3>StopRun</h3>
+<p>Called at the end of a <a href="BCI2000_Glossary.html#Run" title="BCI2000 Glossary">run</a>, before <i>StopRun</i> is called for any <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a> component.
+</p>
+<a name="PostStopRun"></a><h3>PostStopRun</h3>
+<p>Called after <i>StopRun</i> has been called for all <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a> components.
+</p>
+<a name="Process"></a><h3>Process</h3>
+<p>Called while the system is running, once for each data block, prior to <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a> components.
+</p>
+<a name="PostProcess"></a><h3>PostProcess</h3>
+<p>Called while the system is running, once for each data block, after all <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter</a> components have completed processing.
+</p>
+<a name="Resting"></a><h3>Resting</h3>
+<p>Called while the system is suspended. Typically, <tt>Resting</tt> is called repeatedly inside source modules; in the remaining modules, <tt>Resting</tt> is called once when the system enters suspended state. Except that it is called at least once in suspended state, you should not make any assumption how often <tt>Resting</tt> is called.
+</p><p><br />
+</p>
+<a name="Methods"></a><h2>Methods</h2>
+<a name="ParamRef_Parameter.28string_Name.29"></a><h3>ParamRef Parameter(string Name)</h3>
+<p>The <tt>Parameter()</tt> method returns a reference to a parameter that may be used for reading and writing parameters. When there is no parameter with the specified name available in the system, or when it has not been accessed from the component's <tt>Preflight()</tt> handler, an error message is displayed.
+For details, see <a href="Programming_Reference%253AError_Handling.html#Accessing_Environment_Objects" title="Programming Reference:Error Handling">Accessing Environment Objects</a>.
+</p>
+<a name="ParamRef_OptionalParameter.28string_Name.2C_value_Default.29"></a><h3>ParamRef OptionalParameter(string Name, value Default)</h3>
+<p>The <tt>OptionalParameter()</tt> method is identical to the <tt>Parameter()</tt> method except that it does not generate an error message for an unavailable parameter; rather, a reference to a temporary parameter object is returned, initialized to a default value. The default value may be specified as a number or a string, and itself defaults to "0".
+</p>
+<a name="StateRef_State.28string_Name.29"></a><h3>StateRef State(string Name)</h3>
+<p>The <tt>State()</tt> method returns a reference to a state variable that may be used for reading and writing states. When there is no state variable with the specified name available in the system, an error message is displayed. For details, see <a href="Programming_Reference%253AError_Handling.html#Accessing_Environment_Objects" title="Programming Reference:Error Handling">Accessing Environment Objects</a>.
+</p>
+<a name="StateRef_OptionalState.28string_Name.29"></a><h3>StateRef OptionalState(string Name)</h3>
+<p>The <tt>OptionalState()</tt> method is identical to the <tt>State()</tt> method except that it does not generate an error message for an unavailable state; rather, a reference to a temporary state object is returned, initialized to a default value. The default value may be specified as a number or a string, and itself defaults to "0".
+</p>
+<a name="Instantiation"></a><h2>Instantiation</h2>
+<p><tt>EnvironmentExtension</tt> components may be used freely as members or ancestors of any other class in a BCI2000 module. When writing an extension component that is independent of existing classes, it may be instantiated from its own source code file by putting a
+</p>
+<pre>Extension( ClassName );
+</pre>
+<p>statement at the top of that file.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">Programming Reference:GenericFilter Class</a>, <a href="Technical_Reference%253AStates_of_Operation.html" title="Technical Reference:States of Operation">Technical Reference:States of Operation</a>, <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">Technical Reference:Parameter Definition</a>, <a href="Technical_Reference%253AState_Definition.html" title="Technical Reference:State Definition">Technical Reference:State Definition</a>, <a href="Programming_Reference%253AError_Handling.html#Accessing_Environment_Objects" title="Programming Reference:Error Handling">Programming Reference:Error Handling#Accessing Environment Objects</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li><a href="Programming_Reference%253AGenericFilter_Class.html">GenericFilter</a></li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li><a href="Programming_Reference%253AStimulusTask_Class.html">StimulusTask</a></li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

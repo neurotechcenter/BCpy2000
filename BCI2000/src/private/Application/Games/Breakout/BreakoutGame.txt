@@ -1,0 +1,274 @@
+Breakout
+
+BCIGame : public ApplicationBase
+{
+private:
+	GameThread* mpGame;
+}
+
+GameThread : public OSThread;
+{
+	void SendInput( GenericSignal ) // Called only from the main thread for state access - Mutex locked
+	void PreflightStage( SignalProperties ); const // Called only from the main thread for state access
+	void Execute();
+}
+
+
+Game needs to run in separate thread; in fact, all games should be run in a separate thread to ensure quick rendering - independent from the system speed.
+
+QGLWindow must be created in the same thread and updated from a separate thread
+
+Pass in the QGLWindow into the thread object
+QGLWindow->Lock();
+Painting functions
+QGLWindow->Unlock();
+
+Game logic should be done in Process, Rendering should be done in Execute
+
+Signal and State Input comes in from process once every sample block, is sent into a mutex locked SendInput function.  Because SendInput is only called from the main thread, states can be accessed in it.
+
+
+// The RenderObject class defines a renderable object
+// We request the number of vertices in construction so that memory can be managed by
+// the base class and the Java garbage collector doesn't get in our face.
+// RenderObject does not use VBOs due to the volitile nature of the RenderObject.
+// Perhaps a future class will be implemented which uses VBO based rendering, but
+// for now, the overhead used in creating new buffers kills perfrormance.
+class RenderObject
+{
+public:
+	// Constructor/Deconstructor
+	explicit RenderObject( unsigned int NumVerts );
+	virtual ~RenderObject();
+
+	// Calls Construct and Draw
+	void Update();
+
+	// Gets
+	GLuint TextureHandle() { return mTexture; }
+	float Alpha() { return mAlpha; }
+	bool Visible() { return mVisible; }
+
+	// Sets
+	virtual void SetTexture( RGBColor color );
+	virtual void SetAlpha( float alpha );
+	virtual void Show() { mVisible = true; }
+	virtual void Hide() { mVisible = false; }
+
+protected:
+	// Virtual Draw and Construct methods which MUST be implemented
+	virtual void Draw() = 0;
+	virtual void Construct() = 0;
+
+	// All children can modify these variables
+	float mAlpha;
+	unsigned int mNumVertices;
+	float* mVertices;
+	float* mUVs;
+	bool mChanged;
+	GLuint mTexture;
+	bool mVisible;
+};
+
+class Rectangle : public RenderObject
+{
+public:
+	Rectangle() : RenderObject( 4 )
+
+	// Sets
+	void SetPosition( float Left, float Top ) { SetExtent( Left, Top, mWidth, mHeight ); }
+	void SetWidth( float Width ) { SetExtent( mX, mY, Width, mHeight ); }
+	void SetHeight( float Height ) { SetExtent( mX, mY, mWidth, Height ); }
+	void SetSize( float Width, float Height ) { SetExtent( mX, mY, Width, Height ); }
+	void SetExtent( float Left, float Top, float Width, float Height );
+
+	// Gets
+	void Position( float &X, float &Y );
+	float Width() { return mWidth; }
+	float Height() { return mHeight; }
+	float X() { return mX };
+	float Y() { return mY };
+
+protected:	
+	// Virtual Interface
+	virtual void Construct();
+	virtual void Draw();
+
+private:
+	GLfloat mX, mY, mWidth, mHeight; // Default to 0
+	
+}
+
+#define CIRCLE_RESOLUTION 16
+
+class Circle : public RenderObject
+{
+public:
+	Circle() : RenderObject( CIRCLE_RESOLUTION + 2 )
+
+	// Public Interface
+	void SetPosition( float Left, float Top );
+	void SetRadius( float Width );
+
+	// Gets
+	void Position( float &X, float &y );
+	float Radius() { return mRadius; }
+	float X() { return mX; }
+	float Y() { return mY; }
+
+protected:
+	// Virtual Interface
+	virtual void Construct();
+	virtual void Draw();
+
+private:
+	GLfloat mX, mY, mRadius; // Default to 0
+
+}
+
+class BlockArray
+{
+public:
+	BlockArray();
+	void LoadLevel( filename );
+	int Collide( const Ball &ball ); // Returns the number of blocks the ball collided with
+
+	void Update( int dt );
+
+private:
+	vector<Rectangle> mBlockArray;
+}
+
+class Ball
+{
+public:
+	Ball();
+	
+	void SetPosition( float X, float Y );
+	void SetDirection( float dX, float dY );
+	void SetSpeed( float speed ); // units per second
+	
+	void Position( float &X, float &Y );
+	void Direction( float &dX, float &dY );
+	float Speed() { return mSpeed };
+
+	void Update( int dt );
+
+private:
+	GLfloat mX, mY, mRadius;
+	float mDX, mDY; // Unit vector direction
+	float mSpeed; // Scalar magnitude
+	Circle mCircle;
+}
+
+class Paddle
+{
+public:
+	Paddle();
+
+	// Positioning of paddle
+	void SetPosition( float X, float Y );
+	void Position( float &X, float &Y );
+	
+	// Called when rendering/updating needs to happen
+	void Update( int dt );
+private:
+	GLfloat mX, mY;
+	float mWidth;
+	Rectangle mPaddle;
+}
+
+class ThemeManager // Singleton
+{
+private:
+	// The singleton instance
+	static ThemeManager _instance;
+
+	ThemeManager() {}
+	~ThemeManager() {}
+	ThemeManager( const ThemeManager & );             // intentionally undefined
+	ThemeManager & operator=( const ThemeManager & ); // intentionally undefined
+
+	// Private member variables
+	std::vector< std::pair< RenderObject*, std::string type > > mObjects;
+
+public:
+	// Accessor
+	static ThemeManager &Instance();
+
+	// This just adds an object to the manager, it doesn't change anything about the object
+	void AddObject( RenderObject* obj, std::string Type );
+	void SetTheme( std::string themeFilename ); // This actually sets a theme
+	void Flush() { mObjects.clear(); }
+}
+
+Game Description:
+
+The game described is a breakout clone which requires a player to move a paddle at the bottom of the screen in one (or two) dimensions to bounce a ball upward on the screen to collide with blocks.  The player's score increments when he/she destroys blocks.  Should the player miss the ball with the paddle and the ball travel below the visible screen space, the player loses the ball and is restarted with another ball.  The player is alloted a limited number of balls.  Once the player uses all of his/her balls and the ball travels below the bottom of the screen, the game has ended.  Player performance is evaluated with the score once the game ends.
+
+On SetConfig a window appears with the current theme and current level loaded.  On "StartRun" the game starts a countdown - the ball is stuck to the center of the paddle and the player has full control over it.  Once the countdown is complete, the ball starts moving straight upward from its current location and the game has begun.  Each time the ball destroys a brick, the score is incremented by an amount detailed below.  Each time the ball bounces off the paddle, the speed is incremented by ~0.05 (Parameterized).
+
+When the ball goes below the visible screen area (audio/)visual feedback occurs which lets the player know he failed, the "lives" counter decrements, and the ball is started at the player's paddle the same way it starts.  Upon usage of all lives and failure, the "Game Over" screen is presented.  Immediately after the game over screen is presented, the run stops and the system goes into the "Halted" state.
+
+Scoring is calculated by: "Score += int( 10 * Speed );" whenever a brick is destroyed.  Speed increments only when the ball bounces off the paddle.  Doing scoring this way ensures that scores are directly related to player performance.  If the player gets lucky and gets the ball above the bricks, no score multiplier is implemented which would put the player's score much higher than other runs.  The scoring system does however give more points if the ball is moving faster and the player is still managing to play the game.
+
+Given the current scoring and paddle angle design, the game is not random in any way, yet plays out in a non-deterministic way based entirely on the performance of the player.  Replaying the session with a different theme is then possible and the game plays out in a deterministic way - exactly the same as how the player played it initially.
+	
+
+Game logic:
+
+Every Process loop:
+Save old ball velocity
+Move paddle to new position
+Test Move Y first
+{
+	if intersection with any block occurs, destroy blocks - then invert Y part of velocity
+	if intersection with the paddle occurs and dY is negative
+		Increment speed a little bit,
+		calculate new angle based on x value of intersection (See paddle calculation)
+		Set dY positive (See paddle calculation)
+}
+Test Move X second, if intersection with any block occurs, then invert X part of velocity
+{
+	if intersection with any block occurs, destroy blocks - then invert X part of velocity
+	if intersection with the paddle occurs and dY is negative
+		Invert dX
+		Set dY positive
+}
+Move Ball using old velocity and render
+
+** Paddle Calculation
+The normalized offset from the center of the paddle is used to create an angle of departure from PI/6 to 5PI/6. 
+dX = cos( angle ) * speed, dY = sin( angle ) * speed.
+Speed dictates the amount of movement per second.  A Speed of 1.0 will cover one screen height in one second.  Typical speeds will range from 0.2 to 2.0
+
+At BCI2000 system timing:
+Set Paddle position based on expression for X Position
+
+
+Level File Structure:
+
+XXXXXXXXXXXXXXXX (newline)
+XXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXX
+
+Parameters:
+InputFile Level - Filename for a formatted text file which represents a breakout level
+InputFile Theme - Filename for a formatted theme which dictates the texturing of render objects.
+int NumberOfLives - Number of "balls" the player gets throughout gameplay
+float StartingSpeed - Floating point number which indicates the starting speed for the ball.
+float SpeedIncrement - Floating point increment applied whenever the ball bounces off the paddle
+Expression PaddleX - Expression which defines the movement of the paddle in the x axis
+Expression PaddleY - Expression which defines the movement of the paddle in the y axis (will likely be set to 0 but can be changed to put two-dimensional control into the breakout game)
+
+States:
+CurrentScore - An unsigned integer which represents the player's current score
+PaddlePositionX / PaddlePositionY - Current position of the paddle
+BallPositionX / BallPositionY - Current position of the ball
+
+
+
+
+

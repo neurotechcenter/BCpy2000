@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4190DE96-2405-3256-9691-3C4EF05C03A5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>BCI2000Automation</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BCI2000Automation.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BCI2000Automation</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">BCI2000Automation.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">BCI2000Automation</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BCI2000Automation.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BCI2000Automation</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;TARGET_NAME="BCI2000Automation";TARGET_FILE_NAME="BCI2000Automation.dll";TARGET_IS_DYLIB=1;TARGET_DESCRIPTION="BCI2000Automation";UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Release";BCI2000Automation_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;TARGET_NAME=\"BCI2000Automation\";TARGET_FILE_NAME=\"BCI2000Automation.dll\";TARGET_IS_DYLIB=1;TARGET_DESCRIPTION=\"BCI2000Automation\";UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Release\";BCI2000Automation_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	Copy to destination	</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/BCI2000.python3/build/CMakeFiles/version/VersionCheck
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Release/BCI2000Automation.dll C:/BCI2000.python3/prog || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Release/BCI2000Automation.dll &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\InstallAutomation.cmd C:/BCI2000.python3/prog/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Release/BCI2000Automation.lib</ImportLibrary>
+      <ModuleDefinitionFile>C:/BCI2000.python3/src/extlib/com/ComModule.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Release/BCI2000Automation.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;TARGET_NAME="BCI2000Automation";TARGET_FILE_NAME="BCI2000Automation.dll";TARGET_IS_DYLIB=1;TARGET_DESCRIPTION="BCI2000Automation";UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="RelWithDebInfo";BCI2000Automation_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;TARGET_NAME=\"BCI2000Automation\";TARGET_FILE_NAME=\"BCI2000Automation.dll\";TARGET_IS_DYLIB=1;TARGET_DESCRIPTION=\"BCI2000Automation\";UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"RelWithDebInfo\";BCI2000Automation_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	Copy to destination	</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/BCI2000.python3/build/CMakeFiles/version/VersionCheck
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/RelWithDebInfo/BCI2000Automation.dll C:/BCI2000.python3/prog || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/RelWithDebInfo/BCI2000Automation.dll &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\InstallAutomation.cmd C:/BCI2000.python3/prog/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/RelWithDebInfo/BCI2000Automation.lib</ImportLibrary>
+      <ModuleDefinitionFile>C:/BCI2000.python3/src/extlib/com/ComModule.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/RelWithDebInfo/BCI2000Automation.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;TARGET_NAME="BCI2000Automation";TARGET_FILE_NAME="BCI2000Automation.dll";TARGET_IS_DYLIB=1;TARGET_DESCRIPTION="BCI2000Automation";UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Debug";BCI2000Automation_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;TARGET_NAME=\"BCI2000Automation\";TARGET_FILE_NAME=\"BCI2000Automation.dll\";TARGET_IS_DYLIB=1;TARGET_DESCRIPTION=\"BCI2000Automation\";UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Debug\";BCI2000Automation_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\com;C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\core\Operator\BCI2000Remote;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	Copy to destination	</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/BCI2000.python3/build/CMakeFiles/version/VersionCheck
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Debug/BCI2000Automation.dll C:/BCI2000.python3/prog || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Debug/BCI2000Automation.dll &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/prog
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\InstallAutomation.cmd C:/BCI2000.python3/prog/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>shlwapi.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Debug/BCI2000Automation.lib</ImportLibrary>
+      <ModuleDefinitionFile>C:/BCI2000.python3/src/extlib/com/ComModule.def</ModuleDefinitionFile>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/Debug/BCI2000Automation.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Automation/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Automation/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\COM.cmake;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CMakeLists.txt;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Automation/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Automation/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\COM.cmake;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CMakeLists.txt;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Automation/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/contrib/ExternalLinks/BCI2000Automation/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/src/contrib/ExternalLinks/BCI2000Automation/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\COM.cmake;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CMakeLists.txt;C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation.cpp" />
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation_i.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation.rc" />
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CBCI2000Remote.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\CBCI2000Remote.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\ExternalLinks\BCI2000Automation\Resource.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\sockstream.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\sockstream.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Remote.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Remote.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Connection.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\BCI2000Remote\BCI2000Connection.cpp" />
+    <None Include="C:\BCI2000.python3\src\extlib\com\ComModule.def" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComModule.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComModule.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComClassFactory.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComClassFactory.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComRegistrar.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComRegistrar.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComStrings.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\com\ComStrings.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComCoClass.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\com\ComPtr.h" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\BCI2000Automation\Resources.inc" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h" />
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\contrib\ExternalLinks\BCI2000Automation\appicon.rc" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\puzzlepiece.ico" />
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\VersionCheck.vcxproj">
+      <Project>{B923BAA8-43E1-3A4D-B8D8-D51615F97C40}</Project>
+      <Name>VersionCheck</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorLib\icon-puzzlepiece.vcxproj">
+      <Project>{14E9C2FA-A2EE-3ADC-A4EC-8458374E8F95}</Project>
+      <Name>icon-puzzlepiece</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

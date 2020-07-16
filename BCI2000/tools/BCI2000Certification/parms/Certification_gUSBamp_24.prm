@@ -1,0 +1,12 @@
+Source:gUSBampADC int SourceCh= 24 16 1 128 // number of digitized channels total
+Source:gUSBampADC int FilterEnabled= 0 1 0 1 // Enable pass band filter (0=no, 1=yes)
+Source:gUSBampADC int NotchEnabled= 0 1 0 1 // Enable notch (0=no, 1=yes)
+Source:gUSBampADC int SignalType= 1 0 0 1 // numeric type of output signal:  0: int16, 1: float32 (enumeration)
+Source:gUSBampADC int EnableDigitalOutput= 2 0 0 1 // enable digital output on block acquisition (boolean)
+Source:gUSBampADC int EnableDigitalInput= 1 0 0 1 // enable digital output on block acquisition (boolean)
+Source:Signal%20Properties floatlist SourceChOffset= 24 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0  % % // Offset for channels in A/D units
+Source:Signal%20Properties floatlist SourceChGain= 24 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 % % // gain for each channel (A/D units -> muV)
+Source:gUSBampADC intlist SourceChDevices= 2 16 8 16 16 // number of digitized channels per device
+Source:gUSBampADC string DeviceIDMaster= UA-2007.04.12 // deviceID for the device whose SYNC goes to the slaves
+Source:gUSBampADC list DeviceIDs= 2 UA-2007.04.12 UA-2006.10.13 // list of USBamps to be used (or auto)
+Source:gUSBampADC int NumBuffers= 5 1 2 32 // number of software buffers to use

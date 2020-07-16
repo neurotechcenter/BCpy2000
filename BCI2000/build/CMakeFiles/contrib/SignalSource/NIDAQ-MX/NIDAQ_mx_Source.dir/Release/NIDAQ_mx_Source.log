@@ -1,0 +1,20 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/NIDAQ-MX/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/NIDAQ-MX/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  NIADC.cpp
+  NIDAQFilter.cpp
+  NIDAQLogger.cpp
+  NIDAQmx.imports.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  NIDAQ_mx_Source.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\NIDAQ-MX\Release\NIDAQ_mx_Source.exe
+  	Deploying executable
+  copying files:
+  Copying NIDAQ_mx_Source.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

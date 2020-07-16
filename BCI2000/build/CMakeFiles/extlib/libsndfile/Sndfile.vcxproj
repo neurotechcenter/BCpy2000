@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B8C9EA52-1703-39EF-BC75-1ACA2290ED35}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>Sndfile</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Sndfile.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Sndfile</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Sndfile.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Sndfile</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Sndfile.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Sndfile</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838;4244;4267;4305</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <ForcedIncludeFiles>C99Defs.h;POSIXDefs.h</ForcedIncludeFiles>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";PACKAGE="libsndfile";VERSION="1.0.25";PACKAGE_NAME="libsndfile";PACKAGE_VERSION="1.0.25";HAVE_EXTERNAL_LIBS=0;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";PACKAGE=\"libsndfile\";VERSION=\"1.0.25\";PACKAGE_NAME=\"libsndfile\";PACKAGE_VERSION=\"1.0.25\";HAVE_EXTERNAL_LIBS=0;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838;4244;4267;4305</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <ForcedIncludeFiles>C99Defs.h;POSIXDefs.h</ForcedIncludeFiles>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";PACKAGE="libsndfile";VERSION="1.0.25";PACKAGE_NAME="libsndfile";PACKAGE_VERSION="1.0.25";HAVE_EXTERNAL_LIBS=0;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";PACKAGE=\"libsndfile\";VERSION=\"1.0.25\";PACKAGE_NAME=\"libsndfile\";PACKAGE_VERSION=\"1.0.25\";HAVE_EXTERNAL_LIBS=0;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838;4244;4267;4305</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <ForcedIncludeFiles>C99Defs.h;POSIXDefs.h</ForcedIncludeFiles>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";PACKAGE="libsndfile";VERSION="1.0.25";PACKAGE_NAME="libsndfile";PACKAGE_VERSION="1.0.25";HAVE_EXTERNAL_LIBS=0;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";PACKAGE=\"libsndfile\";VERSION=\"1.0.25\";PACKAGE_NAME=\"libsndfile\";PACKAGE_VERSION=\"1.0.25\";HAVE_EXTERNAL_LIBS=0;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile;C:\BCI2000.python3\src\extlib\libsndfile;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\extlib\libsndfile\include;C:\BCI2000.python3\src\extlib\libsndfile\config;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x;C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\extlib\libsndfile\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/src/extlib/libsndfile/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/extlib/libsndfile/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/src/extlib/libsndfile/CMakeLists.txt;C:\BCI2000.python3\src\extlib\libsndfile\CMakeLists.txt;C:\BCI2000.python3\src\extlib\libsndfile\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/src/extlib/libsndfile/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/extlib/libsndfile/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/src/extlib/libsndfile/CMakeLists.txt;C:\BCI2000.python3\src\extlib\libsndfile\CMakeLists.txt;C:\BCI2000.python3\src\extlib\libsndfile\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/src/extlib/libsndfile/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/extlib/libsndfile/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/src/extlib/libsndfile/CMakeLists.txt;C:\BCI2000.python3\src\extlib\libsndfile\CMakeLists.txt;C:\BCI2000.python3\src\extlib\libsndfile\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\extlib\libsndfile\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\libsndfile\include\sndfile.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\libsndfile\config\config.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\sndfile.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\aiff.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\au.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\avr.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\caf.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\dwd.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\flac.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\g72x.c">
+      <ObjectFileName>$(IntDir)/libsndfile-1.0.25/src/g72x.c.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\htk.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ircam.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\macbinary3.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\macos.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\mat4.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\mat5.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\nist.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\paf.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\pvf.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\raw.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\rx2.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\sd2.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\sds.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\svx.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\txw.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\voc.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\wve.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\w64.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\wav_w64.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\wav.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\xi.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\mpc2k.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\rf64.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ogg_vorbis.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ogg_speex.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ogg_pcm.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\common.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\file_io.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\command.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\pcm.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ulaw.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\alaw.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\float32.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\double64.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ima_adpcm.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ms_adpcm.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\gsm610.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\dwvw.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\vox_adpcm.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\interleave.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\strings.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\dither.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\broadcast.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\audio_detect.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ima_oki_adpcm.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\chunk.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\ogg.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\chanmap.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\windows.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\id3.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x\g721.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x\g723_16.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x\g723_24.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x\g723_40.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\G72x\g72x.c">
+      <ObjectFileName>$(IntDir)/libsndfile-1.0.25/src/G72x/g72x.c.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\add.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\code.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\decode.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\gsm_create.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\gsm_decode.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\gsm_destroy.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\gsm_encode.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\gsm_option.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\long_term.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\lpc.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\preprocess.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\rpe.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\short_term.c" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\libsndfile\libsndfile-1.0.25\src\GSM610\table.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

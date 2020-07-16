@@ -1,0 +1,26 @@
+﻿  Generating SigSrcRegistry.inc
+  Building Custom Rule C:/BCI2000.python3/build/cmake/frameworks/SigSrcModuleLib/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/frameworks/SigSrcModuleLib/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  FileWriterBase.cpp
+  GenericFileWriter.cpp
+  NullFileWriter.cpp
+  BCI2000FileWriter.cpp
+  BCI2000OutputFormat.cpp
+  EDFHeader.cpp
+  EDFFileWriter.cpp
+  EDFOutputBase.cpp
+  EDFOutputFormat.cpp
+  GDF.cpp
+  GDFFileWriter.cpp
+  GDFOutputFormat.cpp
+  BufferedADC.cpp
+  AlignmentFilter.cpp
+  DataIOFilter.cpp
+  TransmissionFilter.cpp
+  EventLink.cpp
+  JoystickLogger.cpp
+  KeyLogger.cpp
+  BCIRegistry.cpp
+  Generating Code...
+  BCI2000FrameworkSigSrcModule.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\frameworks\SigSrcModuleLib\Release\BCI2000FrameworkSigSrcModule.lib

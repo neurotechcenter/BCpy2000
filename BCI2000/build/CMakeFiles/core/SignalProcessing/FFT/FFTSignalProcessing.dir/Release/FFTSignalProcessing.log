@@ -1,0 +1,22 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/core/SignalProcessing/FFT/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/core/SignalProcessing/FFT/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  PipeDefinition.cpp
+  FFTFilter.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  FFTLibWrap.cpp
+  fftw3.imports.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  FFTSignalProcessing.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\SignalProcessing\FFT\Release\FFTSignalProcessing.exe
+  	Deploying executable
+  copying files:
+  Copying FFTSignalProcessing.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Copying vcomp140.dll ...
+  Copying libfftw3-3.dll ...
+  Done.

@@ -1,0 +1,8 @@
+Application:Calibration                 matrix    Prompts= 2  { TargetCode String }  1  <-%20Relax     2 Shake%20->  // calibration prompt strings and corresponding TargetCode values
+Filtering:SpatialFilter                       int       SpatialFilterType=              0       // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
+Filtering:Hijacking                           int       Hijack=                         1       // Turn on Hijacking? (boolean)
+Filtering:Hijacking:HijackFilter              float     HijackNoise=                    0.005   // baseline noise level 
+Filtering:Hijacking                           matrix    ControlSignal= 6 { State%20name Take%20Derivative?  Offset Gain  Take%20RMS?  Output%20Channel }                                                                                                        Wiimote1AccelX 1 0.0 1.0 1 Left      Wiimote1AccelY 1 0.0 1.0 1 Left      Wiimote1AccelZ 1 0.0 1.0 1 Left                 Wiimote1AccelX 1 0.0 1.0 1 Right     Wiimote1AccelY 1 0.0 1.0 1 Right     Wiimote1AccelZ 1 0.0 1.0 1 Right                           // Hijack controller matrix
+Filtering:LinearClassifier                    matrix    Classifier=    2 { input%20channel input%20element%20(bin) output%20channel weight }             Left 1 1 1    Right 1 2 1    CH053 1 3 1    CH032 1 4 1 // Linear classification matrix in sparse representation
+
+Source:Log%20Input                            int       WiimoteDeriv=                   0       // measure changes in accelerometer readings?: 0: no - measure raw, 1:yes - measure changes (enumeration)

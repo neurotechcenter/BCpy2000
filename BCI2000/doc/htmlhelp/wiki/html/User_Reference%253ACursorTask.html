@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:CursorTask - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:CursorTask,BCI2000 Glossary,Programming Reference:3D API,Programming Reference:FeedbackTask Class,Technical Reference:Core Modules,User Reference:Normalizer" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">CursorTask</h1><p class="subtitle">User Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253ACursorTask.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ACursorTask.html#Functional_Description"><span class="tocnumber">2</span> <span class="toctext">Functional Description</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Timeline"><span class="tocnumber">2.1</span> <span class="toctext">Timeline</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Introduction"><span class="tocnumber">2.2</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Visual_Representation"><span class="tocnumber">2.3</span> <span class="toctext">Visual Representation</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Control_Signal"><span class="tocnumber">2.4</span> <span class="toctext">Control Signal</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ACursorTask.html#Parameters"><span class="tocnumber">3</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Sequencing"><span class="tocnumber">3.1</span> <span class="toctext">Sequencing</span></a>
+<ul>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#PreRunDuration"><span class="tocnumber">3.1.1</span> <span class="toctext">PreRunDuration</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#PreFeedbackDuration"><span class="tocnumber">3.1.2</span> <span class="toctext">PreFeedbackDuration</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#FeedbackDuration"><span class="tocnumber">3.1.3</span> <span class="toctext">FeedbackDuration</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#PostFeedbackDuration"><span class="tocnumber">3.1.4</span> <span class="toctext">PostFeedbackDuration</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#ITIDuration"><span class="tocnumber">3.1.5</span> <span class="toctext">ITIDuration</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#NumberOfTrials"><span class="tocnumber">3.1.6</span> <span class="toctext">NumberOfTrials</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#MinRunLength"><span class="tocnumber">3.1.7</span> <span class="toctext">MinRunLength</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#NumberTargets"><span class="tocnumber">3.1.8</span> <span class="toctext">NumberTargets</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#TargetSequence"><span class="tocnumber">3.1.9</span> <span class="toctext">TargetSequence</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#MaxFeedbackDuration"><span class="tocnumber">3.1.10</span> <span class="toctext">MaxFeedbackDuration</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Visual_Appearance"><span class="tocnumber">3.2</span> <span class="toctext">Visual Appearance</span></a>
+<ul>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#CameraPos"><span class="tocnumber">3.2.1</span> <span class="toctext">CameraPos</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#CameraAim"><span class="tocnumber">3.2.2</span> <span class="toctext">CameraAim</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#CameraProjection"><span class="tocnumber">3.2.3</span> <span class="toctext">CameraProjection</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#LightSourcePos"><span class="tocnumber">3.2.4</span> <span class="toctext">LightSourcePos</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#LightSourceColor"><span class="tocnumber">3.2.5</span> <span class="toctext">LightSourceColor</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#WorkspaceBoundaryColor"><span class="tocnumber">3.2.6</span> <span class="toctext">WorkspaceBoundaryColor</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#WorkspaceBoundaryTexture"><span class="tocnumber">3.2.7</span> <span class="toctext">WorkspaceBoundaryTexture</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#CursorWidth"><span class="tocnumber">3.2.8</span> <span class="toctext">CursorWidth</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#CursorColorFront.2C_CursorColorBack"><span class="tocnumber">3.2.9</span> <span class="toctext">CursorColorFront, CursorColorBack</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#CursorTexture"><span class="tocnumber">3.2.10</span> <span class="toctext">CursorTexture</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#CursorPos"><span class="tocnumber">3.2.11</span> <span class="toctext">CursorPos</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#Targets"><span class="tocnumber">3.2.12</span> <span class="toctext">Targets</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#TargetColor"><span class="tocnumber">3.2.13</span> <span class="toctext">TargetColor</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#TargetTexture"><span class="tocnumber">3.2.14</span> <span class="toctext">TargetTexture</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#TestAllTargets"><span class="tocnumber">3.2.15</span> <span class="toctext">TestAllTargets</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Window_Properties"><span class="tocnumber">3.3</span> <span class="toctext">Window Properties</span></a>
+<ul>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#WindowWidth.2C_WindowHeight"><span class="tocnumber">3.3.1</span> <span class="toctext">WindowWidth, WindowHeight</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#WindowLeft.2C_WindowTop"><span class="tocnumber">3.3.2</span> <span class="toctext">WindowLeft, WindowTop</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACursorTask.html#RenderingQuality"><span class="tocnumber">3.3.3</span> <span class="toctext">RenderingQuality</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ACursorTask.html#States"><span class="tocnumber">4</span> <span class="toctext">States</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#StimulusTime"><span class="tocnumber">4.1</span> <span class="toctext">StimulusTime</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#TargetCode"><span class="tocnumber">4.2</span> <span class="toctext">TargetCode</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#ResultCode"><span class="tocnumber">4.3</span> <span class="toctext">ResultCode</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#Feedback"><span class="tocnumber">4.4</span> <span class="toctext">Feedback</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#PauseApplication"><span class="tocnumber">4.5</span> <span class="toctext">PauseApplication</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACursorTask.html#CursorPosX.2C_CursorPosY.2C_CursorPosZ"><span class="tocnumber">4.6</span> <span class="toctext">CursorPosX, CursorPosY, CursorPosZ</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ACursorTask.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>The purpose of the <i>CursorTask</i> is to provide a BCI2000 User Application module 
+that can realize 1D, 2D, or 3D cursor movement tasks.
+It displays a box-shaped scene in which a ball-shaped cursor moves, controlled by the output of the <a href="Technical_Reference%253ACore_Modules.html" title="Technical Reference:Core Modules">Signal Processing Module</a>.
+In this scene, targets appear as cuboids or rectangles.
+Box, cursor, and targets may be texturized.
+</p>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<a name="Timeline"></a><h3>Timeline</h3>
+<p><a href="../images/thumb/b/b3/CursorTask_Timeline.png/640px-CursorTask_Timeline.png" class="image" title="frameless"><img src="../images/thumb/b/b3/CursorTask_Timeline.png/640px-CursorTask_Timeline.png" alt="frameless" width="640" height="251" longdesc="/wiki/index.php/Image:CursorTask_Timeline.png" /></a>
+</p>
+<a name="Introduction"></a><h3>Introduction</h3>
+<p>The <i>CursorTask</i> implements a cursor movement task based on a 3-dimensional 
+control signal communicated to it by an appropriate BCI2000 Signal Processing 
+module. This task progresses through five subsequent stages (as illustrated in the <a href="User_Reference%253ACursorTask.html#Timeline" title="">Timeline</a>): 
+In stage 1, the screen shows an 
+empty workspace. This period is called <i>Inter-Trial Interval</i>. 
+Subsequently, a target (that is represented as a cuboid) appears in one out of 
+<i>n</i> possible locations. This period is called <i>Pre-Trial Pause</i>. 
+After the pre-trial pause, the cursor appears in stage 3. It immediately starts to 
+move as determined by the 3-dimensional control signal. During stages 3 and 4,
+the user's task is to move the cursor towards and into the target. This period
+of cursor movement is called the <i>Feedback Period</i> or <i>Trial Period</i>.
+Period 4 can end in one of three ways: Either the cursor hits the correct target, 
+it misses by hitting any other of the defined targets, or the feedback period takes
+too long and times out. Stage 5, the <i>Reward Period</i>, follows stage 4.
+The cursor disappears and the target changes its color to indicate completion
+of the trial period. After a defined duration, the target disappears and the
+next trial starts with an Inter-Trial Interval.
+</p>
+<a name="Visual_Representation"></a><h3>Visual Representation</h3>
+<p><a href="../images/thumb/1/16/CursorTask_Screen.png/512px-CursorTask_Screen.png" class="image" title=""><img src="../images/thumb/1/16/CursorTask_Screen.png/512px-CursorTask_Screen.png" alt="" width="512" height="385" longdesc="/wiki/index.php/Image:CursorTask_Screen.png" /></a>
+</p><p>The visual representation of the <i>CursorTask</i> consists of a 3-dimensional workspace that can 
+(if selected) be indicated by five bounding rectangles. These rectangles can have a 
+user-selectable texture, which is the same for each rectangle. Targets are 
+represented by cuboids, whose edges can also have a particular texture. 
+Finally, the cursor is represented by a sphere. It also may have a user-defined 
+texture. To facilitate depth perception, the cursor's color provides an 
+additional cue about the cursor's Z position as follows. The operator specifies 
+the cursor's color at the topmost and at the bottomleast Z positions. 
+For any color between these extremes, the cursor's color will be linearly 
+interpolated between the two colors. (Specifically, each of the three color 
+components (i.e., red, green, and blue) will be interpolated to result in the 
+cursor's color for a given Z position.)
+</p>
+<a name="Control_Signal"></a><h3>Control Signal</h3>
+<p>Cursor movement is controlled by the output of the <a href="Technical_Reference%253ACore_Modules.html" title="Technical Reference:Core Modules">Signal Processing Module</a>.
+In this signal, channels 1, 2, and 3 correspond to dimensions X, Y, and Z, and there is a single value (element) 
+present in each channel, defining cursor speed in the respective dimension.
+</p><p>Additional channels or elements that might be present in the control signal will be ignored by the <i>CursorTask</i>
+application module.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<a name="Sequencing"></a><h3>Sequencing</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=1" title="Template:FeedbackTaskParams">edit</a>]</div><a name="PreRunDuration"></a><h4>PreRunDuration</h4>
+<p>The duration of the pause preceding the first trial.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=2" title="Template:FeedbackTaskParams">edit</a>]</div><a name="PreFeedbackDuration"></a><h4>PreFeedbackDuration</h4>
+<p>The duration of target display before feedback begins.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=3" title="Template:FeedbackTaskParams">edit</a>]</div><a name="FeedbackDuration"></a><h4>FeedbackDuration</h4>
+<p>Typical duration of feedback. 
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p><p>This parameter is not a hard limit to feedback duration but determines cursor speed such that, for a normalized control signal, cursor movement will take the specified time from the cursor's starting point to the screen's edge.
+Feedback trials will typically have this duration, provided that the cursor starts at the center of the screen, targets are located at the screen's edges, and ignoring cursor and target width (for further details, see <a href="User_Reference%253ANormalizer.html" title="User Reference:Normalizer">User Reference:Normalizer</a>).
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=4" title="Template:FeedbackTaskParams">edit</a>]</div><a name="PostFeedbackDuration"></a><h4>PostFeedbackDuration</h4>
+<p>The duration of result display after feedback.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=5" title="Template:FeedbackTaskParams">edit</a>]</div><a name="ITIDuration"></a><h4>ITIDuration</h4>
+<p>The duration of the inter-trial interval.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=6" title="Template:FeedbackTaskParams">edit</a>]</div><a name="NumberOfTrials"></a><h4>NumberOfTrials</h4>
+<p>The number of trials in a run. If this parameter is set, then MinRunLength should be blank, and vice-versa.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=7" title="Template:FeedbackTaskParams">edit</a>]</div><a name="MinRunLength"></a><h4>MinRunLength</h4>
+<p>The duration of a run, i.e. the time corresponding to a continuously recorded data file.
+A run will not stop during a trial, so its actual length may be larger than this value by the length of a trial.
+If this parameter is set, then NumberOfTrials should be blank, and vice-versa.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=8" title="Template:FeedbackTaskParams">edit</a>]</div><a name="NumberTargets"></a><h4>NumberTargets</h4>
+<p>The number of targets on the feedback screen.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskParams&amp;action=edit&amp;section=9" title="Template:FeedbackTaskParams">edit</a>]</div><a name="TargetSequence"></a><h4>TargetSequence</h4>
+<p>A list of indices, each one being from 1 to NumberTargets.  This list specifies an optional fixed sequence of stimuli, through which the presentation will cycle.   Leave this parameter blank if you want the default behavior, which is for stimuli to be selected randomly.
+</p>
+<a name="MaxFeedbackDuration"></a><h4>MaxFeedbackDuration</h4>
+<p>Abort a trial after this amount of feedback time has expired.
+Unlike the <i>FeedbackDuration</i> parameter, this is a hard limit.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<a name="Visual_Appearance"></a><h3>Visual Appearance</h3>
+<p>Positions and sizes are given in a <b>percent coordinate system</b>.
+There, [0 0 0] corresponds to the bottom left corner of the workspace, and its diagonal counterpart has [100 100 100] as its coordinates.
+</p>
+<a name="CameraPos"></a><h4>CameraPos</h4>
+<p>Camera position vector in percent coordinates of the 3D area.
+</p>
+<a name="CameraAim"></a><h4>CameraAim</h4>
+<p>Camera aim point in percent coordinates.
+</p>
+<a name="CameraProjection"></a><h4>CameraProjection</h4>
+<p>An enumerated value specifying one of the following camera projections:
+</p>
+<ul><li>0: flat, 
+</li><li>1: wide angle perspective, 
+</li><li>2: narrow angle perspective.
+</li></ul>
+<a name="LightSourcePos"></a><h4>LightSourcePos</h4>
+<p>Light source position in percent coordinates.
+</p>
+<a name="LightSourceColor"></a><h4>LightSourceColor</h4>
+<p>The light source's color in RGB encoding.
+</p>
+<a name="WorkspaceBoundaryColor"></a><h4>WorkspaceBoundaryColor</h4>
+<p>The workspace boundary color in RGB encoding. 
+The special value of <tt>0xff000000</tt> hides the workspace boundary.
+</p>
+<a name="WorkspaceBoundaryTexture"></a><h4>WorkspaceBoundaryTexture</h4>
+<p>The path to a workspace boundary texture, or empty.
+Currently, Windows BMP files are accepted as textures.
+Paths may be absolute, or relative to the executable's working directory at startup, which usually matches the executable's location.
+</p>
+<a name="CursorWidth"></a><h4>CursorWidth</h4>
+<p>The feedback cursor's width, given in percent of screen width.
+</p>
+<a name="CursorColorFront.2C_CursorColorBack"></a><h4>CursorColorFront, CursorColorBack</h4>
+<p>The cursor's color when it is in the front resp. back of the workspace, given as an RGB value.
+When different colors are specified for front and back, the cursor's z coordinate will be used to linearly interpolate between the two color values.
+</p>
+<a name="CursorTexture"></a><h4>CursorTexture</h4>
+<p>The path to a texture file to be used for the cursor.
+</p>
+<a name="CursorPos"></a><h4>CursorPos</h4>
+<p>The cursor's starting position, given as a vector in percent coordinates.
+</p>
+<a name="Targets"></a><h4>Targets</h4>
+<p>A matrix with 6 columns, and rows corresponding to individual targets.
+The first three columns define the position coordinates of the target's center, given in percent coordinates;
+the last three columns define the target's three-dimensional extent.
+Targets are always cuboids aligned with the three coordinate axes.
+</p>
+<a name="TargetColor"></a><h4>TargetColor</h4>
+<p>Target color in RGB encoding.
+</p>
+<a name="TargetTexture"></a><h4>TargetTexture</h4>
+<p>Path to a texture file to be used for targets, or empty for none.
+Currently, Windows BMP files are accepted as textures.
+Paths may be absolute, or relative to the executable's working directory at startup, which usually matches the executable's location.
+</p>
+<a name="TestAllTargets"></a><h4>TestAllTargets</h4>
+<p>An enumerated value that determines collision test behavior:
+</p>
+<ul><li>0 to test only the visible current target,
+</li><li>1 to test all targets.
+</li></ul>
+<a name="Window_Properties"></a><h3>Window Properties</h3>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ApplicationWindowParams&amp;action=edit&amp;section=1" title="Template:ApplicationWindowParams">edit</a>]</div><a name="WindowWidth.2C_WindowHeight"></a><h4>WindowWidth, WindowHeight</h4>
+<p>The width and height of the subject-visible application window, in pixels.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ApplicationWindowParams&amp;action=edit&amp;section=2" title="Template:ApplicationWindowParams">edit</a>]</div><a name="WindowLeft.2C_WindowTop"></a><h4>WindowLeft, WindowTop</h4>
+<p>The screen position of the application window's top left corner, in pixels.
+</p>
+<a name="RenderingQuality"></a><h4>RenderingQuality</h4>
+<p>An enumerated value specifying one of the following:
+</p>
+<ul><li>0: low<br />2D rendering. Lighting, shading, and textures are switched off, even if specified otherwise for individual objects. Also, collision detection ignores objects' z positions. On machines without OpenGL compatible 3D hardware, 2D rendering is considerably faster than 3D rendering.
+</li><li>1: high<br />3D rendering. Lighting, shading, and textures are applied as specified.
+</li></ul>
+<a name="States"></a><h2>States</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ApplicationBaseStates&amp;action=edit&amp;section=1" title="Template:ApplicationBaseStates">edit</a>]</div><a name="StimulusTime"></a><h3>StimulusTime</h3>
+<p>A 16-bit time stamp in the same format as the <i>SourceTime</i> state. 
+This time stamp is set immediately after the application module has updated the stimulus/feedback display.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskStates&amp;action=edit&amp;section=1" title="Template:FeedbackTaskStates">edit</a>]</div><a name="TargetCode"></a><h3>TargetCode</h3>
+<p>During a feedback trial, this state indicates the user's task, i.e. the target the cursor is supposed to hit.
+A <i>TargetCode</i> value of zero indicates that there is no target specified; <i>TargetCode</i> switching from zero to nonzero indicates the beginning of a trial.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskStates&amp;action=edit&amp;section=2" title="Template:FeedbackTaskStates">edit</a>]</div><a name="ResultCode"></a><h3>ResultCode</h3>
+<p>At the end of a feedback trial, <i>ResultCode</i> is set to the target code of the outcome, i.e. the target that was hit by the cursor.
+When a time of <i>PostTrialDuration</i> has passed, <i>ResultCode</i> is reset to zero.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskStates&amp;action=edit&amp;section=3" title="Template:FeedbackTaskStates">edit</a>]</div><a name="Feedback"></a><h3>Feedback</h3>
+<p>This state's value is 1 when the cursor is displayed on the feedback screen.
+Typically, this also implies that the cursor moves according to the <a href="BCI2000_Glossary.html#Control_Signal" title="BCI2000 Glossary">control signal</a>.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:FeedbackTaskStates&amp;action=edit&amp;section=4" title="Template:FeedbackTaskStates">edit</a>]</div><a name="PauseApplication"></a><h3>PauseApplication</h3>
+<p>While this state is set to 1, no task processing occurs, i.e. the task is paused, and may be resumed by setting PauseApplication to 0.
+</p>
+<a name="CursorPosX.2C_CursorPosY.2C_CursorPosZ"></a><h3>CursorPosX, CursorPosY, CursorPosZ</h3>
+<p>These states record the cursor's position, translated into the <tt>0..4095</tt> range such that the 3D scene's left, down, and top planes all correspond to 0, and the right, up, and bottom planes correspond to <tt>4095</tt>.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Programming_Reference%253A3D_API.html" title="Programming Reference:3D API">Programming Reference:3D API</a>, <a href="Programming_Reference%253AFeedbackTask_Class.html" title="Programming Reference:FeedbackTask Class">Programming Reference:FeedbackTask Class</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<ul><li>Cursor Task</li>
+<li><a href="User_Reference%253AP3SpellerTask.html">P3Speller Task</a></li>
+<li><a href="User_Reference%253AStimulusPresentationTask.html">Stimulus Presentation</a></li>
+</ul><li>Tools</li>
+</ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

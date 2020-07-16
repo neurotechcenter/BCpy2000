@@ -1,0 +1,149 @@
+\section{AppConnector Development}
+\label{sec:appdev}
+To start creating an AppConnector program, some BCI2000 source files must be included: the TCPStream.cpp and TCPStream.h files. This program includes these file in the src directory, but your program must include them manually, either by adding them to your includes and depends path (see the Qt4 qmake documentation), or by copying them to a local folder. These files contain the class definitions for the UDP socket and stream objects, which are used to read and write states with BCI2000. Create these objects as follows:\\
+
+\begin{verbatim}
+#include "TCPStream.h"
+...
+receiving_udpsocket recSocket;
+tcpstream recConnection;
+sending_udpsocket sendSocket;
+tcpstream sendConnection;
+\end{verbatim}
+
+To setup the connection, you first open the socket connection to an IP address and port using a string:\\\\
+\texttt{recSocket.open(``localhost:20320'');}\\
+
+The stream is initialized using the socket object created:\\\\
+\texttt{recConnection.open(recSocket);}\\\\
+
+Check if the connection is open:\\
+
+\begin{verbatim}
+if (!recConnection.is_open())
+    //some error message...
+\end{verbatim}
+
+The sending connection is setup the same way:
+
+\begin{verbatim}
+sendSocket.open("localhost:20321");
+sendConnection.open(sendSocket);
+if (!sendConnection.is_open())
+    //error...
+\end{verbatim}
+
+Note that you will not likely want to hard-code the IP and port. Providing a text box for these options in your program and using the text field to set the address is more functional.\\
+To setup BCI2000 to work with your program, in the Config menu, go to the ConnectorFilter tab. Under ConnectorOutputAddress, use the IP and Port used in the \textbf{Receving} address in the external program. So, if the receiving port and IP in the AppConnector program are \texttt{localhost:20320}, then the ConnectorOutputAddress in BCI2000 should be \texttt{localhost:20320}. Similarly, if the sending port and ip in the AppConnector program are \texttt{localhost:20321}, then the ConnectorInputAddress in the BCI2000 config should be \texttt{localhost:20321}.\\
+Since a network protocol is used for communication, the AppConnector program does not have to be on the same machine that is running BCI2000. For example, your desktop could be running BCI2000 on Windows, and your laptop running linux can run the AppConnector and connect to BCI2000. To do this, use the actual machine IP addresses for each computer. For example, if the PC with BCI2000 has an IP of 192.168.0.100 and the laptop has an IP of 192.168.0.101, then on the BCI2000 PC, the ConnectorOutputAddress should be set to 192.168.0.101:20320, the ConnectorInputAddress to 192.168.0.100:20321; on the laptop, the sending address should be 192.168.0.100:20321, and the receiving address should be 192.168.0.101:20320 (Table \ref{tab:connect}) 
+
+\begin{table}
+ \begin{center}
+% use packages: array
+\begin{tabular}{l | l |l}
+\hline
+ & BCI2000 & AppConnector \\ 
+\hline
+IP Address & 192.168.0.100 & 192.168.0.101 \\ 
+ConnectorOutputAddress & 192.168.0.101:20230 & 192.168.0.100:20231 \\ 
+ConnectorInputAddress & 192.168.0.100:20231 & 192.168.0.101:20230\\
+\hline
+\end{tabular}
+
+\end{center}
+
+\caption{Connections}
+\label{tab:connect}
+\end{table} 
+
+Once your connection is setup, using the tcpstream objects is simple. A function that reads data from the stream and stores the states and associated values in a map might look like this:
+
+\begin{verbatim}
+ bool readData(map<string, float> &map, tcpstream &recConnection)
+ {
+    int count = 0;
+
+    //while there is data available in the buffer, read it
+    while (recConnection.rdbuf()->in_avail())
+    {
+        string name;
+        float value;
+    	
+        //read the data using the stream format (i.e. >> operator)
+        recConnection >> name >> value;
+        recConnection.ignore();
+
+        //check if there is some kind of error, and ignore it
+        if (!recConnection)
+            recConnection.ignore();
+
+        map[name] = value;
+        count++;
+    }
+
+    //if we read and recorded data, return true
+    if (count > 0)
+        return true;
+    else
+        return false;
+ }
+\end{verbatim}
+
+After this function is called, the map contains the names and values of all of the states. To access the state value, use its name as the input to the [] operator, like:\\
+\texttt{float value = map[``Feedback''];}\\
+
+Writing data is even simpler using the stream format. Here is a short example:\\
+
+\begin{verbatim}
+ string name = "Feedback";
+ short value = 0;
+ sendConnection << name << ' ' << value << endl;
+\end{verbatim}
+
+That's it! BCI2000 handles all of the checks for whether the state exists and if it was a valid value.\\
+To finish, here is a simple example that reads a state value, modifies it, and sends it back to BCI2000:
+
+\begin{verbatim}
+ #include <map>
+ #include <string>
+ #include "TCPStream.h"
+
+ using namespace std;
+ int main() {
+    receiving_udpsocket recSocket;
+    tcpstream recConnection;
+    sending_udpsocket sendSocket;
+    tcpstream sendConnection;
+
+    //open the sockets and streams (error checking as been removed)
+    sendSocket.open("localhost:20321");
+    sendConnection.open(sendSocket);
+
+    recSocket.open("localhost:20320");
+    recConnection.open(sendSocket);
+
+    map<string, float> states;
+    while (true) {
+        //try to read the states into the map
+        if (readData(&states, &recConnection))  {
+            if (states["Feedback"] == 0)
+                continue;
+
+            //exit if BCI2000 has stopped
+            if (states["Running"] == 0)
+                return 0;
+
+            float value = states["CursorPosX"];
+            //change the value by 100, then write it to the output
+            value += 100;
+            sendConnection << "CursorPosX " << value << endl;
+
+            //note that this actually requires a slight 
+            //modification of the d2box program in the task.cpp file
+            //the ReadStates() function must be updated to include 
+            //x_pos = State("CursorPosX");
+            //y_pos = State("CursorPosY"); 
+        }
+    }
+ }
+\end{verbatim}

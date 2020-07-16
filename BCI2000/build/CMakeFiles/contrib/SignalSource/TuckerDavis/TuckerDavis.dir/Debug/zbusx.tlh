@@ -1,0 +1,100 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.14.26433.0 (0e134aad).
+//
+// c:\bci2000.python3\build\cmakefiles\contrib\signalsource\tuckerdavis\tuckerdavis.dir\debug\zbusx.tlh
+//
+// C++ source equivalent of Win32 type library zBUSx.ocx
+// compiler-generated file created 01/15/19 at 12:36:37 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace ZBUSXLib {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("10055d3e-3938-4652-b6a2-6a6a4184d18d"))
+/* LIBID */ __ZBUSXLib;
+struct __declspec(uuid("9f05a891-d2b9-41af-8c8e-3f4245261483"))
+/* dispinterface */ _DZBUSx;
+struct __declspec(uuid("575833d5-0b5e-4759-b370-40fa23d409e5"))
+/* dispinterface */ _DZBUSxEvents;
+struct /* coclass */ ZBUSx;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_DZBUSx, __uuidof(_DZBUSx));
+_COM_SMARTPTR_TYPEDEF(_DZBUSxEvents, __uuidof(_DZBUSxEvents));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("9f05a891-d2b9-41af-8c8e-3f4245261483"))
+_DZBUSx : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    long Connect (
+        long Interface );
+    long GetDeviceAddr (
+        long DevType,
+        long DevNum );
+    long GetDeviceVersion (
+        long DevType,
+        long DevNum );
+    long HardwareReset (
+        long RackNum );
+    long FlushIO (
+        long RackNum );
+    long zBusTrigA (
+        long RackNum,
+        long zTrgMode,
+        long Delay );
+    long zBusTrigB (
+        long RackNum,
+        long zTrgMode,
+        long Delay );
+    long zBusSync (
+        long RackMask );
+    long KillCode (
+        long DevType,
+        long DevNum,
+        long MagicCode );
+    _bstr_t GetError ( );
+    _bstr_t GetDeviceAt (
+        long RackNum,
+        long PosNum,
+        long * DevID,
+        long * DevNum );
+    long ConnectZBUS (
+        _bstr_t IntName );
+    HRESULT AboutBox ( );
+};
+
+struct __declspec(uuid("575833d5-0b5e-4759-b370-40fa23d409e5"))
+_DZBUSxEvents : IDispatch
+{};
+
+struct __declspec(uuid("79734a6c-8e6e-4998-b834-3e4e481232b0"))
+ZBUSx;
+    // [ default ] dispinterface _DZBUSx
+    // [ default, source ] dispinterface _DZBUSxEvents
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\bci2000.python3\build\cmakefiles\contrib\signalsource\tuckerdavis\tuckerdavis.dir\debug\zbusx.tli"
+
+} // namespace ZBUSXLib
+
+#pragma pack(pop)

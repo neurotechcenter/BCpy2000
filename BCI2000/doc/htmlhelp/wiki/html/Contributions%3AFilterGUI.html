@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:FilterGUI - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:FilterGUI,Contributions:Tools" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">FilterGUI</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253AFilterGUI.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AFilterGUI.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AFilterGUI.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AFilterGUI.html#Author"><span class="tocnumber">3.1</span> <span class="toctext">Author</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AFilterGUI.html#Version_History"><span class="tocnumber">3.2</span> <span class="toctext">Version History</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AFilterGUI.html#Source_Code_Revisions"><span class="tocnumber">3.3</span> <span class="toctext">Source Code Revisions</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AFilterGUI.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AFilterGUI.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>FilterGUI is a Matlab-based GUI application that allows to apply high pass/low pass/notch filtering to existing BCI2000 data files.
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/trunk/src/contrib/Tools/FilterGUI" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/Tools/FilterGUI" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/Tools/FilterGUI</a>
+</p>
+<a name="Versioning"></a><h2>Versioning</h2>
+<a name="Author"></a><h3>Author</h3>
+<p>juergen.mellinger@uni-tuebingen.de
+</p>
+<a name="Version_History"></a><h3>Version History</h3>
+<p>Initial version.
+</p>
+<a name="Source_Code_Revisions"></a><h3>Source Code Revisions</h3>
+<ul><li>Initial development: 2815
+</li><li>Tested under: 2815
+</li><li>Known to compile under: N/A
+</li><li>Broken since: N/A
+</li></ul>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<p><a href="../images/5/56/FilterGUI.png" class="image" title="Image:FilterGUI.png"><img src="../images/5/56/FilterGUI.png" alt="Image:FilterGUI.png" width="248" height="346" longdesc="/wiki/index.php/Image:FilterGUI.png" /></a>
+</p><p>The FilterGUI application will apply high pass, low pass, and notch filter settings to existing data files. To use it, make sure that the <tt>BCI2000/tools/mex</tt> directory is in the Matlab path. Then, change directory to the FilterGUI directory, and execute <tt>FilterGUI.m</tt>.
+Filter settings are selected from the GUI, and applied to a set of files by clicking the <i>Apply to files...</i> button. Resulting files will exist in the original files' location, and will have "filtered" appended to their filename before the <tt>.dat</tt> extension.
+</p><p>For high pass filtering, the FilterGUI application uses a 1st order Butterworth filter. It uses a 2nd order Butterworth filter for low pass filtering, and a 2x2nd order Chebychev bandstop filter for notch filtering between 0.9 and 1.1 times the notch filter frequency.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Contributions%253ATools.html" title="Contributions:Tools">Contributions:Tools</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

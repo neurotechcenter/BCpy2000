@@ -1,0 +1,22 @@
+Source:Log%20Input:KeyLogger int LogMouse= 1 0 0 1 // record mouse to states (boolean)
+System:Command%20Line%20Arguments variant EvaluateTiming= 0 0 0 0 
+Application:Targets:FeedbackTask int NumberTargets= 2 2 0 255 // number of targets
+Application:Targets:FeedbackTask intlist TargetSequence= 0 1 % % // fixed sequence in which targets should be presented (leave empty for random)
+Application:Targets:CursorFeedbackTask matrix Targets= 2 { pos%20x pos%20y pos%20z width%20x width%20y width%20z } 50 96 50 50 8 8 50 4 50 50 8 8 // target positions and widths in percentage coordinates
+Application:Targets:CursorFeedbackTask int TargetColor= 0xff0000 // target color (color)
+Application:Targets:CursorFeedbackTask string TargetTexture= % // path of target texture (inputfile)
+Application:Targets:CursorFeedbackTask int TestAllTargets= 1 0 0 1 // test all targets for cursor collision? 0: test only the visible current target, 1: test all targets (enumeration)
+Statistics:StatisticsFilter matrix ChannelSets= { AllChannels } 1 : // Rows represent channel sets, defined as space-separated lists of channel names.  Use row labels to name channel sets. Channel names may include * and ? wildcards,  and character ranges enclosed in [], optionally negated by an exclamation mark.  Ranges of channels may be specified using : or - to separate begin from end.
+Statistics:StatisticsFilter matrix Observers= { Target1 Target2 Baseline Continuous Mouse } { Observe%20what Observe%20when Observe%20over Observe%20weighted%20(boolean) Reset%20when } AllChannels TargetCode==1 30s % % AllChannels TargetCode==2 30s % % AllChannels TargetCode==0 30s % % TargetCode%20MousePosY%20AllChannels true 30s % % TargetCode%20MousePosY true 30s % % // Rows represent observers. In the first column, you may specify channel sets, views, or expressions.  Specify multiple entries in the first column in order to do multivariate statistics.
+Statistics:StatisticsFilter matrix Views= { Target1%20Baseline Target2%20Baseline Target1%20Target2 TargetCode%20Determination Mouse%20Determination TargetCode%20Mouse%20Correlation } { Output1 } RSquared(Target1,Baseline) RSquared(Target2,Baseline) RSquared(Target1,Target2) Continuous.Correlation(1,3)^2 Continuous.Correlation(2,3)^2 Mouse.Correlation() // Rows represent views. Views are defined by arithmetic expressions that may contain  statistical functions, and properties of observers. Data from multiple  columns will be concatenated in the output.
+Statistics:StatisticsFilter string OutputView= % // Specify a view to be copied into the filter's output signal. When empty,  the filter's input will be used as an output.
+Statistics:StatisticsFilter stringlist VisualizeViews= 1 * // Wildcard expressions matching views to be displayed. Enter a "*" to display all views
+Statistics:StatisticsFilter matrix EventScripts= { OnStartRun OnStopRun OnInitialize OnProcess } 1 Count:=0; % % Count:=Count+1; // Specify statements to be executed during StartRun, StopRun, Initialize, or Process.
+Filtering:Normalizer floatlist NormalizerOffsets= 3 0 57.9928 0 0 % % // normalizer offsets
+Filtering:Normalizer floatlist NormalizerGains= 3 0 0.0870575 0 0 % % // normalizer gain values
+Filtering:Normalizer intlist Adaptation= 3 0 2 0 0 0 2 // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer matrix BufferConditions= 2 2 % (Feedback)&&(TargetCode==1) % (Feedback)&&(TargetCode==2) // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+Filtering:Normalizer float BufferLength= 4s 9s % % // time window of past data per buffer that enters into statistic
+Filtering:Normalizer string UpdateTrigger= (Feedback==0) // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)
+Visualize:Processing%20Stages int VisualizeStatisticsFilter= 0 0 0 1 // Visualize StatisticsFilter output (boolean)
+section int SpatialFilterType= 0

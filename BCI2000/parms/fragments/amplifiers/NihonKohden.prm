@@ -1,0 +1,18 @@
+Visualize:Timing:DataIOFilter int VisualizeTiming= 1 1 0 1 // visualize system timing (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal:DataIOFilter int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal:DataIOFilter int VisualizeSourceDecimation= auto auto % % // decimation factor for raw brain signal
+Visualize:Source%20Signal:DataIOFilter int VisualizeSourceBufferSize= auto auto % % // number of blocks to aggregate before sending to operator
+Visualize:Source%20Signal:DataIOFilter int VisualizeSourceTime= 8s 2s 0 % // how much time in Source visualization
+Visualize:Source%20Signal:DataIOFilter int SourceMin= auto // raw signal vis Min Value
+Visualize:Source%20Signal:DataIOFilter int SourceMax= auto // raw signal vis Max Value
+Source:Buffering:BufferedADC int SourceBufferSize= 2s 2s % % // size of data acquisition ring buffer (in blocks or seconds)
+Source:Signal%20Properties:NihonKohdenADC string DeviceAddress= auto // Device IP address
+Source:Signal%20Properties:NihonKohdenADC int SourceCh= auto auto 1 % // number of digitized and stored channels
+Source:Signal%20Properties:NihonKohdenADC int SampleBlockSize= auto auto 1 % // number of samples transmitted at a time
+Source:Signal%20Properties:NihonKohdenADC float SamplingRate= auto auto 0.0 % // sample rate
+Source:Signal%20Properties:NihonKohdenADC list SourceChGain= 1 auto // physical units per raw A/D unit
+Source:Signal%20Properties:NihonKohdenADC list SourceChOffset= 1 auto // raw A/D offset to subtract, typically 0
+Source:Signal%20Properties:NihonKohdenADC list ChannelNames= 1 auto // names of amplifier channels
+Source:Alignment:AlignmentFilter int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Source:Online%20Processing:TransmissionFilter list TransmitChList= 1 1 // list of transmitted channels: Channel names may contain * and ? wildcards,  and character ranges enclosed in []; wildcard patterns may be negated by prepending an exclamation mark.  Ranges of channels may be specified using : or - to separate begin from end.

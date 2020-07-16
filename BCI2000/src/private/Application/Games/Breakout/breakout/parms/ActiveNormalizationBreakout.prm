@@ -1,0 +1,8 @@
+
+Filtering:Normalizer                    intlist   Adaptation=                1   3           // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer                    float     BufferLength=                 60s          // time window of past data per buffer that enters into statistic
+Filtering:Normalizer                    string    UpdateTrigger=                 (Hits==8)||(Hits==12)||(Hits==16)||(Hits==20)||(Hits==24)           // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)
+
+
+Filtering:Normalizer                    matrix    BufferConditions=       2  1   (FutureBounces==0)&&(LeftMotionRequiredTimes10000>(PaddleWidthTimes10000*1.0))   (FutureBounces==0)&&(RightMotionRequiredTimes10000>(PaddleWidthTimes10000*1.0))         // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+Filtering:Normalizer                    matrix    BufferConditions=       1  1   1         // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)

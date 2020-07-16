@@ -1,0 +1,104 @@
+\section{Qt4 Development}
+
+\subsection{Signals/Slots}Making the move to Qt4 can be a little confusing at first if you are used to how Borland or Microsoft handle things in C++, or Visual Basic/C\#. In Borland C++ and MSVB or C\#, GUI events directly trigger a callback function, which executes code and returns (i.e. you press a button, the code in the button callback is executed). Qt4 handles things a little differently. Qt4 implements what is called a SIGNAL/SLOT system, in which an object (button, list, any GUI element) emits a SIGNAL when a particular event occurs. This SIGNAL is connected to the SLOT of another object. All Qt4 objects have a number of predefined SIGNALS and SLOTS for the standard actions associated with such an object; for example, the most-commonly used SIGNAL for a button object is probably clicked(). To connect a SIGNAL and SLOT, use the \texttt{connect} command. Here is an example using two Qt objects:\\\\
+\texttt{QPushButton *button(``Quit'');
+\\QApplication *app;
+\\connect(button, SIGNAL(clicked()), app, SLOT(quit()));}\\\\
+
+In this example, a button pointer with the caption ``Quit'' is created, and the Qt4 Application is created. The button clicked() event is then tied to the quit() SLOT function for that app. So when the button is clicked, it calls the quit() function, which closes the window and application. As a result, many of the common tasks for an object are already defined, and you do not need to code them. An entire simple application might look like: \\
+
+\begin{verbatim}
+#include <QApplication>
+#include <QPushbutton>
+
+int main(int argc, char *argv[])
+{
+   QApplication app(argc, argv);
+   QPushButton button(``Quit'');
+   connect(&button, SIGNAL(clicked()), &app, SLOT(quit()));
+   button.show();
+   return app.exec();
+}
+\end{verbatim}
+
+\subsection{Extending Widgets}
+Even though there are many useful predefined SLOTS, you will eventually need to create your own functions to handle events. This is done through subclassing. In Qt (and C++), it is important to divide components into their own classes. This includes the GUI. Therefore, when creating a form, you will want to create a class that inherits from a Qt object, most likely either a QWidget or QMainApplication. (QWidget is basically a completely blank form, while QMainApplication comes with a menu bar, a status bar, and other common features of an application). This class will then handle creating and setting up all of hte the GUI components. Importantly, inheriting from a QWidget (or QObject if it is not necessarily a user interface) allows us to create our own SIGNALS and SLOTS. So, here is a simple example class that inherits from QWidget, contains a button, and creates a custom SLOT.\\
+
+\begin{verbatim}
+//mainUI.h-------------
+
+//include the components necessary to create a Qt GUI
+#include <QtGui>
+
+class QPushButton;
+
+//create our form's class, inheriting from the QWidget class
+class mainUI : public QWidget
+{
+    //the Q_OBJECT macro is necessary for creating SIGNALS/SLOTS,
+    // and must be declared at the start of the class
+    Q_OBJECT
+
+    //SLOTS are created using the private slots: 
+    //declaration in the class definition
+    //slot functions are declared and implemented 
+    //just as normal class methods
+    private slots:
+        void customButtonCallback();
+
+    private:
+        //our button
+        QPushButton *button;
+        //this layout arranges the object vertically, see Qt docs for more
+        QVBoxLayout *mainLayout;
+
+    public:
+        //our class constructor
+        mainUI();
+};
+
+//mainUI.cpp-------------------------------
+//here is our implementation
+mainUI::main()
+{
+    button = new QPushButton("Push Me");
+    mainLayout = new QVBoxLayout;
+
+    //connect our button signal to our custom slot
+    //since it is defined within this object, use the this keyword 
+    // for the SLOT target
+    connect(button, SIGNAL(clicked()), this, SLOT(customButtonCallback()));
+
+    //setup the layout
+    mainLayout->addWidget(button);
+    setLayout(mainLayout);
+}
+
+void mainUI::customButtonCallback()
+{
+    //this function is called whenever the button is pressed
+    //do what you want here
+}
+
+//main.cpp---------------------------------
+//this file starts the app
+#include <QApplication>
+#include "mainUI.h"
+
+int main(int argc, char *argv[])
+{
+    //create the QT application
+    QApplication app(argc, argv);
+
+    //create our custom widget class
+    mainUI mainWin;
+    //show it
+    mainWin.show();
+    //execute the program
+    return app.exec();
+}
+\end{verbatim}
+
+
+
+

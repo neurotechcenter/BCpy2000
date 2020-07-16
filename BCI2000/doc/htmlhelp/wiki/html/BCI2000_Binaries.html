@@ -1,0 +1,804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>BCI2000 Binaries - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="BCI2000 Binaries,Contributions:ADCs,Contributions:BCPy2000,Contributions:Contents,Contributions:NIDAQFilter,Contributions:NIDAQLogger,Creating a User Account,Programming Reference:Building BCI2000 for Win64,Programming Reference:GenericFilter Class,User Reference:BCI2000 Offline Analysis,User Reference:CursorTask" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">BCI2000 Binaries</h1><p class="subtitle"></p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="BCI2000_Binaries.html#Access"><span class="tocnumber">1</span> <span class="toctext">Access</span></a></li>
+<li class='toclevel-1'><a href="BCI2000_Binaries.html#Latest_Released_Build"><span class="tocnumber">2</span> <span class="toctext">Latest Released Build</span></a></li>
+<li class='toclevel-1'><a href="BCI2000_Binaries.html#Contributed_Code"><span class="tocnumber">3</span> <span class="toctext">Contributed Code</span></a></li>
+<li class='toclevel-1'><a href="BCI2000_Binaries.html#BCPy2000_Contribution"><span class="tocnumber">4</span> <span class="toctext">BCPy2000 Contribution</span></a></li>
+<li class='toclevel-1'><a href="BCI2000_Binaries.html#Win64_Support"><span class="tocnumber">5</span> <span class="toctext">Win64 Support</span></a></li>
+<li class='toclevel-1'><a href="BCI2000_Binaries.html#Version_History"><span class="tocnumber">6</span> <span class="toctext">Version History</span></a>
+<ul>
+<li class='toclevel-2'><a href="BCI2000_Binaries.html#Version_3_Builds"><span class="tocnumber">6.1</span> <span class="toctext">Version 3 Builds</span></a>
+<ul>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#July_2012_Version_3.0.5"><span class="tocnumber">6.1.1</span> <span class="toctext">July 2012 Version 3.0.5</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#February_2012_Version_3.0.4"><span class="tocnumber">6.1.2</span> <span class="toctext">February 2012 Version 3.0.4</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#October_2011_Version_3.0.3"><span class="tocnumber">6.1.3</span> <span class="toctext">October 2011 Version 3.0.3</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#June_2011_Version_3.0.2"><span class="tocnumber">6.1.4</span> <span class="toctext">June 2011 Version 3.0.2</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#May_2011_Version_3.0.1"><span class="tocnumber">6.1.5</span> <span class="toctext">May 2011 Version 3.0.1</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#February_2011_Version_3_Release_Build"><span class="tocnumber">6.1.6</span> <span class="toctext">February 2011 Version 3 Release Build</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="BCI2000_Binaries.html#Version_2_Builds"><span class="tocnumber">6.2</span> <span class="toctext">Version 2 Builds</span></a>
+<ul>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#November_2010_Build"><span class="tocnumber">6.2.1</span> <span class="toctext">November 2010 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#August_2010_Build"><span class="tocnumber">6.2.2</span> <span class="toctext">August 2010 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#June_2010_Build"><span class="tocnumber">6.2.3</span> <span class="toctext">June 2010 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#April_2010_Version_2.1_Release_Build"><span class="tocnumber">6.2.4</span> <span class="toctext">April 2010 Version 2.1 Release Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#February_2010_Build"><span class="tocnumber">6.2.5</span> <span class="toctext">February 2010 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#December_2009_Build"><span class="tocnumber">6.2.6</span> <span class="toctext">December 2009 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#November_2009_Build"><span class="tocnumber">6.2.7</span> <span class="toctext">November 2009 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#August_2009_Build"><span class="tocnumber">6.2.8</span> <span class="toctext">August 2009 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#June_2009_Build"><span class="tocnumber">6.2.9</span> <span class="toctext">June 2009 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#May_2009_Build"><span class="tocnumber">6.2.10</span> <span class="toctext">May 2009 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#April_2009_Build"><span class="tocnumber">6.2.11</span> <span class="toctext">April 2009 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#February_2009_Build"><span class="tocnumber">6.2.12</span> <span class="toctext">February 2009 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#December_2008_Build"><span class="tocnumber">6.2.13</span> <span class="toctext">December 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#November_2008_Build"><span class="tocnumber">6.2.14</span> <span class="toctext">November 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#October_2008_Build"><span class="tocnumber">6.2.15</span> <span class="toctext">October 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#August_2008_Build"><span class="tocnumber">6.2.16</span> <span class="toctext">August 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#May_2008_Build"><span class="tocnumber">6.2.17</span> <span class="toctext">May 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#Apr_2008_Build"><span class="tocnumber">6.2.18</span> <span class="toctext">Apr 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#Mar_2008_Build"><span class="tocnumber">6.2.19</span> <span class="toctext">Mar 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#Feb_2008_Build"><span class="tocnumber">6.2.20</span> <span class="toctext">Feb 2008 Build</span></a></li>
+<li class='toclevel-3'><a href="BCI2000_Binaries.html#Jan_2008_Version_2_Release_Build"><span class="tocnumber">6.2.21</span> <span class="toctext">Jan 2008 Version 2 Release Build</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="BCI2000_Binaries.html#Version_2_Preview_Builds"><span class="tocnumber">6.3</span> <span class="toctext">Version 2 Preview Builds</span></a></li>
+<li class='toclevel-2'><a href="BCI2000_Binaries.html#Version_1_Builds"><span class="tocnumber">6.4</span> <span class="toctext">Version 1 Builds</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<a name="Access"></a><h2>Access</h2>
+<p>Access to BCI2000 is provided to users who have agreed to the terms of the GNU General Public License (GPL). Thus, you need a <a href="Creating_a_User_Account.html" title="Creating a User Account">user account</a> to download the binary version of BCI2000.
+</p>
+<a name="Latest_Released_Build"></a><h2>Latest Released Build</h2>
+<p>The latest binary release of BCI2000 is always available at
+</p><p><a href="http://bci2000.org/downloads/bin/BCI2000Setup.exe" class='external free' title="http://bci2000.org/downloads/bin/BCI2000Setup.exe" rel="nofollow">http://bci2000.org/downloads/bin/BCI2000Setup.exe</a>
+</p>
+<a name="Contributed_Code"></a><h2>Contributed Code</h2>
+<p>BCI2000 modules from the <a href="Contributions%253AContents.html" title="Contributions:Contents">contribution section</a> are not part of the BCI2000 core distribution.
+Especially, this is the case for a number of <a href="Contributions%253AADCs.html" title="Contributions:ADCs">source modules</a>.
+For convenience, we provide an extended binary distribution that includes binary versions of BCI2000 contributions. This extended distribution is always built from the same source code version as the most recent core distribution, and is available at
+</p><p><a href="http://bci2000.org/downloads/bin/BCI2000Contrib.exe" class='external free' title="http://bci2000.org/downloads/bin/BCI2000Contrib.exe" rel="nofollow">http://bci2000.org/downloads/bin/BCI2000Contrib.exe</a>
+</p><p><b>NOTE: </b> While we do our best to maintain contributed code, we cannot promise that it is functional, nor provide extensive support. This is especially true in case of contributed source modules which we cannot test for functionality in the absence of the respective hardware. When you experience problems with contributed code, please contact the contributor indicated on the contribution's reference page (accessible through <a href="Contributions%253AContents.html" title="Contributions:Contents">Contributions:Contents</a>).
+</p>
+<a name="BCPy2000_Contribution"></a><h2>BCPy2000 Contribution</h2>
+<p>The extended distribution does not contain the <a href="Contributions%253ABCPy2000.html" title="Contributions:BCPy2000">BCPy2000 contribution</a>. Rather, all required executables may be downloaded <a href="http://www.bci2000.org/downloads/BCPy2000" class='external text' title="http://www.bci2000.org/downloads/BCPy2000" rel="nofollow">here</a>.
+</p>
+<a name="Win64_Support"></a><h2>Win64 Support</h2>
+<p>Currently, the BCI2000 binary distribution is 32-bit only. It is possible to run these 32-bit executables on 64-bit Windows systems as well. In addition, BCI2000 may be compiled into native 64-bit executables from its source code as described <a href="Programming_Reference%253ABuilding_BCI2000_for_Win64.html" title="Programming Reference:Building BCI2000 for Win64">on this page</a>.
+</p>
+<a name="Version_History"></a><h2>Version History</h2>
+<a name="Version_3_Builds"></a><h3>Version 3 Builds</h3>
+<a name="July_2012_Version_3.0.5"></a><h4>July 2012 Version 3.0.5</h4>
+<p><b>New in this version:</b>
+</p>
+<ul><li><b>Extended Operator Scripting:</b> Operator scripting has been extended to provide a basis for cross-platform scripting and testing of BCI2000.
+<ul><li>Script commands may now modify parameters and states, and send real-time events to be recorded by the source module.
+</li><li>IF, WHILE, UNTIL, FOR control constructs are available to write complex scripts.
+</li><li>Scripts may be executed as functions with arguments, and a return value. 
+</li><li>Operator modules may now receive state and signal information from the Application module. This information may be queried by a script.
+</li></ul>
+</li></ul>
+<ul><li><b>Operator Remote Control</b>
+<ul><li>A telnet server component inside the OperatorLib accepts connections, and executes script commands when activated.
+</li><li>A BCI2000Shell program starts up the Operator module, and executes Operator scripts from the command line.
+</li><li>Added a BCI2000 remote control interface that wraps up a telnet connection to the Operator module. This is exported by a BCI2000RemoteLib, and used by a number of contibuted components that wrap it up in form of a COM/ActiveX Automation object (BCI2000Automation), a command line tool (BCI2000Command), and a Python module (BCI2000PythonBindings).
+</li></ul>
+</li></ul>
+<ul><li><b>Cross-platform Support</b>
+<ul><li>Batch files and testing scripts have been updated to be Operator Scripts executed through BCI2000Shell. This way, they run on all target platforms.
+</li><li>Linux is now fully supported as a target platform (tested with Debian Squeeeze and Wheezy on both x86 and amd64 platforms).
+</li><li>OSX is now fully supported as a target platform (tested on 10.5.8 and 10.7).
+</li></ul>
+</li></ul>
+<ul><li><b>Operator UI</b>
+<ul><li>Main window is now resizeable.
+</li><li>Function buttons may be triggered by keyboard function keys.
+</li><li>Improved appearance on non-Windows systems.
+</li><li>Introduced an AutoScale option for visualization displays.
+</li></ul>
+</li></ul>
+<ul><li><b>AppConnector Protocol</b>
+<ul><li>Stability and functionality improvements to the AppConnector interface.
+</li><li>A new PauseApplication allows external applications to indefinitely interrupt a task by setting the PauseApplication state to 1.
+</li><li>A new ShowAppLog parameter allows to suppress display of the application log.
+</li><li>A SpellerMenu state records the current speller menu, and allows switching speller menus via the AppConnector protocol.
+</li></ul>
+</li></ul>
+<ul><li><b>Random Number Generation</b>
+<ul><li>RandomSeed parameter is now managed by Operator module unless specified on the command line, or published by a core module.
+</li><li>RandomGenerator instances now have IDs that enter into the random seed in order to avoid correlated random numbers from multiple RandomGenerators.
+</li></ul>
+</li></ul>
+<ul><li><b>Core Module behavior</b>
+<ul><li>Avoiding firewall messages by option to listen on localhost address only.
+</li><li>Core modules now display error dialog boxes asynchronously to avoid blocking of Operator scripts.
+</li><li>Core modules now wait for any previous instances to terminate, with a timeout of 5s.
+</li></ul>
+</li></ul>
+<ul><li><b>Timing and Speed Improvements</b>
+<ul><li>SSE2 configuration option for creation of faster code.
+</li><li>g.USBamp source module is now based on BufferedADC.
+</li><li>Profiling-guided speed improvements in FFTSpectrum filter.
+</li><li>Speeded up OfflineAnalysis by using the mem mex file's ability to compute multiple spectra.
+</li></ul>
+</li></ul>
+<ul><li>More options, and easier application of <b>BCI2000CHAIN</b> to data existing in Matlab (J. Hill).
+</li><li>New <b>SpectralEstimation</b> filter and SpectralSignalProcessing provide unified parameterization for FFT and AR spectral estimators to facilitate comparison.
+</li></ul>
+<p><b>BCI2000 framework:</b>
+</p>
+<ul><li>Target grouping for better overview and partial builds in Visual Studio (non-Express) (G. Milsap).
+</li><li>NewBCI2000FilterTool does the cmake fiddling for making a command-line filter-tool target out of a custom Filter previously created with NewBCI2000Filter (J. Hill).
+</li></ul>
+<ul><li>Improvements in thread and exception safety.
+</li><li>Signal and parameter labels are now case-insensitive.
+</li><li>StandaloneFilter and StandaloneChain classes support use of existing filters outside the main processing chain.
+</li><li>GenericFilter now has a separate Publish() member function, while parameters and states may still be defined from a filter's constructor.
+</li><li>FFTLibWrapper supports complex-valued DFTs, dynamic loading of FFTW3 library on non-Windows platforms.
+</li><li>A minimal COM library simplifies creation of DLLs with COM objects with MSVC Express and MinGW, removing the need for ATL or MFC components.
+</li><li>Borland/CodeGear/Embarcadero C++ Builder project files have been moved into a separate build directory, and are auto-created for easier maintenance.
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>StimulusTask now declares the PreRunDuration parameter with a minimum value to fix a problem with FilePlayback.
+</li><li>Fixed data type and sign when interpreting the SampleOffset visconfig in the Operator module.
+</li><li>Fixed std::inner_product end iterator bug in FIRFilter.
+</li><li>Fixed an event-related error message when using certain loggers.
+</li><li>Removed inadequate warning about stimulus duration for durations specified as zero.
+</li><li>CoreModule class now calls StopRun() when an error occurs during processing.
+</li><li>Fixed CAR filtering matrix in OfflineAnalysis tool.
+</li><li>Fixed deadlocking issue in mem mex file.
+</li></ul>
+<p><b>New Contributions in this version:</b>
+</p>
+<ul><li>HilbertSignalProcessing contribution (C.M. Potes, J. Hill).
+</li><li>AudioExtension allows both real-time creation and co-registration of audio (G. Milsap).
+</li><li>BCI2000PresentationLink allows to present stimuli and feedback using the NBS Presentation software, while using BCI2000 for recording and computation.
+</li></ul>
+<p><b>Changes/bug fixes to contributed code:</b>
+</p>
+<ul><li>Allowing for gHIamp configurations with less than 256 channels.
+</li><li>FilePlayback issues warning when SampleBlockSize mismatch might affect played-back states (J. Hill).
+</li><li>GazeMonitorFilter:  add a parameter so that we don't *have* to see the fixation-zone ring (J. Hill).
+</li><li>Neuroscanget tool no longer activates AlignChannels.
+</li><li>RDAgetparams now reads BrainVision channel names into ChannelNames parameter.
+</li></ul>
+<p><b>Python-related changes:</b>
+</p>
+<ul><li>Fixed BCPy2000 bug whereby Suspend-then-Resume caused immediate StopRun and/or modules to hang (J. Hill).
+</li><li>Added Pyff link contribution.
+</li><li>Python related modules (BCPy2000, Pyff filter) now support Python 2.7.
+</li><li>Added Python bindings to BCI2000RemoteLib.
+</li><li>Python related modules will now link on non-Windows systems.
+</li><li>Removed broken support for Python 2.4 library.
+</li></ul>
+<a name="February_2012_Version_3.0.4"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_120201.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_120201.exe" rel="nofollow">February 2012 Version 3.0.4</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/3798" class='external text' title="http://bci2000.org/tracproj/changeset/3798" rel="nofollow">Source code revision: 3798</a>
+</p><p><b>New in this version:</b>
+</p>
+<ul><li>Native Win64 support in g.USBamp source module. 
+</li><li>Batch files now load a parameter file from parms/examples when starting up a configuration.
+</li><li>Parameter fragments don't define TransmitChList any more, so they are compatible with example parameter files. 
+</li><li>Updated ParamList::Load() so that command line parameters can be loaded from parameter files, unlike other SYSTEM-section parameters. (A. Wilson)
+</li><li>Time-valued parameters may now be specified in sexagesimal notation (e.g., "1:00" rather than "60s").
+</li><li>DummySignalProcessing now includes ExpressionFilter. Module still defaults to pass-through behaviour since Expressions defaults to empty. (J. Hill)
+</li></ul>
+<p><b>Expressions</b>
+</p>
+<ul><li>Standard math functions added (such as sqrt(), sin(), floor()).
+</li><li>Introduced variables and assignment, constants, and C++-style comments.
+</li><li>State values may now be assigned from expressions.
+</li><li>For greater efficiency, expressions are now compiled prior to evaluation. 
+</li></ul>
+<p><b>Signal Processing</b>
+</p>
+<ul><li>Removed some bottlenecks from AR spectrum computation.
+</li><li>SpatialFilter and ARFilter reuse threads rather than spawning on each data block.
+</li><li>SpatialFilter uses threading with all filter types.
+</li><li>Provided Small and Large Laplacian configurations to parms/fragments/spatial_filters. 
+</li></ul>
+<p><b>Tools</b>
+</p>
+<ul><li>Command line tools now have --input, --output, and --buffer options to allow optimizing execution speed.
+</li><li>bci_dat2stream, and the BCI2000CHAIN.m wrapper, accept --start=TTT and --duration=TTT flags to specify a portion of the data file to stream (J. Hill)
+</li><li>Command line tools that output text will now use the DOS/Windows line ending convention when executed under Windows.
+</li><li>BCI2000CHAIN is made more robust to old/new compiled versions of the command-line tools.  Also it has expanded documentation, new input flags allowing explicit specification of whether the output  should be 2D or 3D, better detection of the appropriate dimensionality when this is left unspecified,  and new output fields supplying appropriate timebases for both 2D and 3D versions (J. Hill)
+</li><li>RENAME_BCIDAT has a "dry-run" mode and support for custom datestamp formats 
+</li></ul>
+<p><b>BCI2000 framework</b>
+</p>
+<ul><li>New BufferedADC class provides buffered, multi-threaded data acquisition transparently to its descendants.
+</li><li>A new StatisticalObserver library in extlib/math allows to do multivariate statistics on streams of data.
+</li><li>A glob-like WildcardMatch() function is now available.
+</li></ul>
+<p><b> Bug fixes in this version:</b>
+</p>
+<ul><li>Removed some performance bottlenecks in GraphDisplay and ImageStimulus classes. 
+</li><li>Fixed problems with displaying transparent stimulus images, and highlighting. 
+</li><li>Fixed a problem with losing OpenGL context when unhiding a DisplayWindow. This would make textures unavailable in CursorTask after a second click on "SetConfig".
+</li><li>Restored backward compatibility with modules pre r3521. 
+</li><li>Audio stimulus volume setting via parameters is functional again.
+</li><li>Fixed broken test mode in P3Speller. 
+</li><li>Memo visualization in Operator module should now correctly handle Shift-JIS characters. 
+</li><li>More consistent core module behavior when "Running" state is set from inside any of the modules, especially on the first block of data. 
+</li><li>ParamList::Load() now uses a parameter's section from the target list, rather than the list of loaded parameters, to determine which parameters are unwanted. 
+</li></ul>
+<p><b>Tools</b>
+</p>
+<ul><li>Fixed P300Classifier crash that would occur for data recorded with PreSequenceDuration=0. 
+</li><li>BCI2000FileReader now properly closes its file handle from the destructor (fixes a file handle leak in load_bcidat()).
+</li><li>BCI2000FileInfo now again opens files specified on the command line. 
+</li><li>bci_stream2table now properly deals with all kind of input (with or without parameters, states without signal). 
+</li><li>Removed command-line tools' dependency on libeng and libmex.
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>Added B-Alert source module (G. Raphael).
+</li><li>More informative error handling in Biosemi2Client; added Sourcefilter. 
+</li><li>Fixed a few potential bugs in Emotiv source module. 
+</li><li>A number of small bug fixes in gHIampSource (G. Milsap).
+</li><li>Added Neuralynx source module (G. Dimitriadis).
+</li><li>Updated NeuroSky module to version 4.2, fixed a small bug where devices wouldn't connect because preflight and initialize try to connect to the device too quickly in succession (G. Milsap) 
+</li><li>vAmp source module is now starting up properly (was broken in 3.0.3). 
+</li><li>WiimoteLogger makes sure that no unintended connect/disconnect occurs during runs (J. Hill).
+</li><li>Added StatisticsSignalProcessing contribution, which allows freely configurable statistics over data passing through a StatisticsFilter.
+</li><li>Fixed a computation bug in CoherenceFilter; added a Matlab function that compares CoherenceFilter output against MSCohere.
+</li></ul>
+<a name="October_2011_Version_3.0.3"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_111014.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_111014.exe" rel="nofollow">October 2011 Version 3.0.3</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/3604" class='external text' title="http://bci2000.org/tracproj/changeset/3604" rel="nofollow">Source code revision: 3604</a>
+</p><p><b>New features in this version:</b>
+</p>
+<ul><li>Startup batch files in the batch directory are now loading amplifier configuration automatically. 
+</li><li>Operator module
+<ul><li>displays the batch file's name in its title bar,
+</li><li>displays last save/load operation in configuration dialog's window title,
+</li><li>"Configure Save/Load" dialogs display parameters in a hierarchical fashion.
+</li></ul>
+</li><li>gUSBampADC impedance-check output made more human-readable. (J. Hill)
+</li><li>The KeystrokeFilter is now present in all Application modules by default. 
+</li><li>EEGLAB plugin: Start over with a redesigned plugin. It is now a pop_function, and more fields are imported into the EEGLAB data structure. (C. Brunner)
+</li><li>BCI2000Chain is smarter about how it parses options, and has a -k option for keeping the temporary files. (J. Hill)
+</li><li>More useful error message displays BCI2000 download information when a mex file cannot be found for the current platform. 
+</li><li>P300Classifier now uses the TargetDefinition matrix' Enter column when the Display column is empty (affects the "Predicted" column in the Details pane).
+</li><li>The OfflineAnalysis elocHelper tool now runs on 64 bit Windows systems.
+</li><li>load_bcidat reports file sizes in an additional output parameter.
+</li><li>New SimpleCert tool efficiently displays timing information in a graph. (G. Milsap, J. Hill)
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>Preflight could not be completed a second time once an error had occurred. 
+</li><li>In core modules, state information would be reset between the first and second data block of a run. 
+</li><li>SourceFilter would always report invalid filter frequencies when activated.
+</li><li>StimulusPresentationTask now correctly determines attended targets when EpochsToAverage is set to 0. 
+</li><li>P3Speller bug displaying a message about "No RTTI available" under certain conditions.
+</li><li>Fixed font size issue when running CursorTask in low resolution.
+</li><li>Fixed possibility of infinite loop in shared/modules/application/gui/StatusBar class.
+</li><li>In release builds, miniature Application windows in Operator were sometimes non-functional, or would result in out_of_memory exceptions in the Operator module. 
+</li><li>Fixed "sticking color" behavior in Operator log. Also, messages should no longer be inserted in the middle of the log window.
+</li><li>In Operator module, keyboard control for visualization windows is working again.
+</li><li>Fixed unwanted enlargement of status bar in Operator when displaying messages containing newlines. 
+</li><li>Catching unhandled exceptions in all command line tools. 
+</li><li>bci_dat2stream now sends all state information rather than ignoring multiple state vector samples per block. 
+</li></ul>
+<p><b>Enhancements to the BCI2000 programming framework:</b>
+</p>
+<ul><li>Minor documentation tweaks and minor changes to bootstrapping utility and templates. (J. Hill)
+</li><li>Incorporated Linux compatibility patches by N. Urii.
+</li><li>Added Layering scheme to Operator visualizations; visualizations may now be displayed on top of each other (G. Milsap)
+</li><li>Introduced BufferedADC as a base class for ADCs that transparently handles buffering of acquired data.
+</li><li>Ported 3DAPI demo/test program to Qt.
+</li></ul>
+<p> *Drawing of GUI elements is now faster because it occurs directly on a widget rather than an offscreen bitmap. 
+</p>
+<ul><li>When a 3D scene is present, all drawing now uses OpenGL via QGLWidget. This allows for GUI::GraphObjects such as text messages to appear on top of the Scene. 
+</li><li>GraphObjects now have OnMove() and OnResize() event handlers to avoid triggering OnChange() for each call to GraphObject::SetDisplayRect(). Thus, ImageStimulus objects may be efficiently moved around in a scene.
+</li></ul>
+<p> *FilterCombination template classes allow serial and parallel combination of filters.
+</p>
+<ul><li>IdentityFilter to be used in a ParallelCombination, or in a dummy signal processing module.
+</li><li>New ApplicationWindow base class for application windows allows multiple filters to maintain GraphObjects in a common application window.
+</li><li>Reentrancy and exception safety for ArithmeticExpression and Expression classes. 
+</li><li>Thread-safety for bcierr, bciout, and bcidbg streams.
+</li><li>CfgID class to hold configuration option IDs and their string representation in one place.  *Added VisID as a data type under shared/types. 
+</li><li>Introduced Uncopyable and Lockable utility mixin classes.  *Added a Runnable class, along with FunctionCall/MemberCall templates that create Runnables from function calls.  *Added a RunnerThread class that runs Runnables in a separate thread.
+</li><li>Various improvements related to catching and reporting of unhandled exceptions. 
+</li><li>bciexception macro provides a convenient way to construct exception messages using stream inserter syntax. *bciassert macro to send information about failed assertions to the Operator log. 
+</li><li>Introduced static libraries for all types of core modules to improve build speed.
+</li><li>Generalized SETUP_EXTLIB_DEPENDENCIES macro to simplify addition of extlib CMake include files.
+</li><li>Introduced a CMake-created module inventory such that BCI2000Launcher is built with information about all existing modules.
+</li></ul>
+<p> 
+<b>Bug fixes and enhancements to contributed code:</b>
+</p>
+<ul><li>Fixed mod 0 bug in DataGloveLogger. (J. Hill)
+</li><li>Added a GazeMonitorFilter which greatly eases using the EyetrackerLogger. (G. Milsap)
+</li><li>Fixed a bug in WebcamLogger regarding asynchronous state logging. (G. Milsap)
+</li><li>FilePlaybackADC: added an option to play the biosignal data backwards. (J. Hill)
+</li><li>Added gHIampSource module. (G. Milsap)
+</li><li>Emotiv source module no longer sends warnings for debugging purposes. (J. Hill)
+</li><li>EyetrackerLogger would crash due to dereferencing an uninitialized pointer. 
+</li><li>NIDAQ-mx source module would crash on "Suspend" or "Quit" due to deleting an uninitialized pointer.
+</li><li>Reintroducing workaround for reinitialization problem in the Biosemi source module. (G. Schalk)
+</li></ul>
+<a name="June_2011_Version_3.0.2"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_110627.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_110627.exe" rel="nofollow">June 2011 Version 3.0.2</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/3359" class='external text' title="http://bci2000.org/tracproj/changeset/3359" rel="nofollow">Source code revision: 3359</a>
+</p><p><b>New features in this version:</b>
+</p>
+<ul><li>Added a Matlab wrapper to simplify using BCI2000 command line tools for offline analysis (tools/matlab/bci2000chain.m) (J. Hill)
+</li><li>Added mex file binaries for 64-bit Intel Mac (J. Hill)
+</li><li>Added TargetSequence parameter to FeedbackTask to allow deterministic sequences in feedback-based application modules (J. Hill)
+</li><li>Added a "show numeric values" option to standard polyline operator visualizations (J. Hill)
+</li><li>Re-introduced Shift-JIS compatibility into application modules. 
+</li><li>Normalizer optionally writes its updated Offsets and Gains parameters into a parameter file, so they don't get lost when quitting BCI2000 (J. Hill)
+</li><li>Introduced new "P3Speller compatible" sequence type into StimulusPresentation module and P300Classifier tool (J. Mellinger)
+</li><li>Removed detailed message statistics from the Operator's "connection info" overview (J. Mellinger)
+</li><li>Updates to application windows are now handled much more efficiently, improving overall timing on slower systems, and systems with large displays (J. Mellinger)
+</li><li>LinearClassifier now uses its weights to guess the range of its output signal, improving appearance of its output in visualizations (J. Mellinger)
+</li><li>Removed use of GraphObject::CompareByZOrder as a comparator for the GraphDisplay object set. Now, GraphObjects are sorted on demand rather than in their container, allowing ZOrder to be a writable property of GraphObjects (J. Mellinger)
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>OfflineAnalysis now runs even if current working dir is outside its directory (J. Hill)
+</li><li>Some fixes related to signal sampling rates (J. Mellinger)
+</li><li>No more "Unexpected Param message" error when a filter in a source module would set the Running state to 0 (J. Mellinger)
+</li><li>Buildmex script now works again in OSX (J. Mellinger)
+</li><li>Fixed initialization bug in SignalGeneratorADC: Signal amplitude would not be reset to user setting in Initialize() when previously modulated with the mouse (reported by ynakajima)
+</li><li>Fixed a bug in gUSBamp source module that would cause irregular timing, and even bluescreens (J. Mellinger)
+</li><li>gUSBampSource works with multiple amps again (J. Hill)
+</li><li>P3Speller: Corrected next target computation in copy spelling mode; there was a problem when multiple characters were entered by a target (J. Mellinger)
+</li><li>Fixed filter instantiation bug (filters could appear twice in the filter chain) introduced in r3226 (J. Mellinger)
+</li><li>Adapted load_bcimat to the latest version of bci_stream2mat (J. Mellinger)
+</li><li>Fixed Borland/RAD Studio project files and compilation issues (J. Mellinger)
+</li><li>Fixed a bug that would crash the P3Speller module when the TextWindowEnabled parameter had been switched on, and then switched off again (J. Mellinger)
+</li><li>Added SourceFilter (HP, LP and Notch filtering) back to gMOBIlab and gMOBIlabPlus source modules which had been missing from v3 (J. Mellinger) 
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>Fixed a failed assertion bug in MFCdemo application (J. Mellinger)
+</li><li>vAmp source module was broken in v3, works again now (M. Schatt)
+</li><li>Suppressed unnecessary warnings, added slightly-smoother support for legacy parameters in FilePlayback module (J. Hill)
+</li><li>Support for logging Tobii Eyetracker and Wiimote state into BCI2000 data files (G. Milsap)
+</li><li>New CoherenceFilter contribution computes magnitude squared coherence between spatially filtered input signals (J. Mellinger)
+</li></ul>
+<a name="May_2011_Version_3.0.1"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_110506.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_110506.exe" rel="nofollow">May 2011 Version 3.0.1</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/3261" class='external text' title="http://bci2000.org/tracproj/changeset/3261" rel="nofollow">Source code revision: 3261</a>
+</p><p><b>New features in this version:</b>
+</p>
+<ul><li>SignalGenerator, FilePlayback and PythonSource all now have the option of *not* checking realtime operation,  since they may be used to play artificial signals in non-real time.  (J. Hill)
+</li><li>Visualization windows now have a status bar; keyboard shortcuts to toggle filters between on and off (h, l, and n); keyboard shortcuts cycle through available filter settings (H, L, N). 
+</li><li>Operator and tools now use application-local ini files rather than the registry to store settings. 
+</li><li>bci_stream2mat now outputs ChannelLabels, ElementLabels, ElementValues, and ElementUnit in Matlab format (J. Hill)
+</li><li>bci_dat2stream now has a -p option: parameters are optionally read from a parameter file, overshadowing the ones previously read from the dat file   (J. Hill)
+</li><li>bci_stream2mat now outputs a string containing all the parameters found at the *beginning* of the stream (J. Hill)
+</li><li>Custom-development bootstrapping for new source, sigproc and application modules (J. Hill)
+</li><li>Source modules now use a separate thread for writing data, avoiding data loss when the file is locked by another process (A. Wilson)
+</li><li>A change in the filter registration mechanism: Rather than being restricted to signal processing modules, Filter() statements (as well as PipeDefinition.cpp files) may now appear in any type of module, and will override all RegisterFilter() statements present in the module. 
+</li><li>FFTFilter now displays frequency labels in its visualization windows. 
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>Updated buildmex to repair missing linker symbols, and to work with Matlab 2010b. (A. Wilson)
+</li><li>Fixed Preflight in gUSBampADC: Now SourceChList is checked properly when multiple amplifiers are connected. 
+</li><li>P300Classifier is now able to deal with files recorded with StimulusPresentation. 
+</li><li>ARFilter now allows a single frequency bin. (J. Hilll)
+</li><li>Fixed a bug in bci_filtertool: parameter properties would be read from the input stream rather than from the filter present in the tool. 
+</li><li>Fixed compilation of mex files using Qt.
+</li><li>Made filter registration mechanism more stable when compiling with gcc.
+</li><li>Removed mex files from OfflineAnalysis directory; OfflineAnalysis now adds the BCI2000 mex file directory to its path. This is to avoid "function not found"-errors on non-win32 systems. 
+</li><li>Visualization displays now show labels in field2d visualizations. 
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>ModularEEG is now present in v3 (J. Hill)
+</li><li>Changed executable name for NeuroscanAccessSDK source module from "Neuroscan.exe" to "NeuroscanAccess.exe" in order to avoid confusion with the Neuroscan Acquire client source module (which is called NeuroscanClient.exe). 
+</li><li>NIDAQ-MX source module now includes NIDAQ logging components written by J. Renga: <a href="Contributions%253ANIDAQLogger.html" title="Contributions:NIDAQLogger">Contributions:NIDAQLogger</a> and <a href="Contributions%253ANIDAQFilter.html" title="Contributions:NIDAQFilter">Contributions:NIDAQFilter</a>
+</li></ul>
+<a name="February_2011_Version_3_Release_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_110216.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_110216.exe" rel="nofollow">February 2011 Version 3 Release Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/3113" class='external text' title="http://bci2000.org/tracproj/changeset/3113" rel="nofollow">Source code revision: 3113</a>
+</p><p>This version 3 release build requires VisualC++ runtime libraries to run. An installer for the runtime libraries may be downloaded from here:
+<a href="http://bci2000.org/downloads/bin/vcredist_x86.exe" class='external free' title="http://bci2000.org/downloads/bin/vcredist_x86.exe" rel="nofollow">http://bci2000.org/downloads/bin/vcredist_x86.exe</a> Other builds of BCI2000 don't have this dependency.
+</p>
+<a name="Version_2_Builds"></a><h3>Version 2 Builds</h3>
+<a name="November_2010_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_101124.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_101124.exe" rel="nofollow">November 2010 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2990" class='external text' title="http://bci2000.org/tracproj/changeset/2990" rel="nofollow">Source code revision: 2990</a>
+</p><p><b>Changes in this version:</b>
+</p>
+<ul><li>Removed upper/lower bounds of 0 and 1 for the RandomSeed parameter, allowing for any parameter value.
+</li><li>Neuroscan Acquire client now translates event channel into states on a sample-by-sample basis rather than block-by-block.
+</li><li>Fixed "TestMode" parameter naming conflict between gMOBILab source and P3Speller (A. Wilson)
+</li><li>ARSignalProcessing module would use wrong bin when frequency was specified in Hz in the classifier, and first bin center was nonzero.
+</li><li>LinearClassifier now properly rounds channel and element indices when not exactly meeting an index.
+</li><li>save_bcidat now uses signal dimensions to infer the value of the SourceCh parameter rather than the SourceCh parameter in the parameter struct.
+</li></ul>
+<a name="August_2010_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_100805.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_100805.exe" rel="nofollow">August 2010 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2932" class='external text' title="http://bci2000.org/tracproj/changeset/2932" rel="nofollow">Source code revision: 2932</a>
+</p><p><b>Changes in this version:</b>
+</p>
+<ul><li>SoundStimulus and SpeechStimulus objects now finish playback even when deleted (fixes some muted sound conditions in P3Speller and StimulusPresentation application modules).
+</li><li>Removed additional 1-block latency from state changes recorded via bcievents.
+</li><li>Update to P300Classifier (C.M. Potes)
+</li></ul>
+<a name="June_2010_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_100623.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_100623.exe" rel="nofollow">June 2010 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2860" class='external text' title="http://bci2000.org/tracproj/changeset/2860" rel="nofollow">Source code revision: 2860</a>
+</p><p><b>New features in this version:</b>
+</p>
+<ul><li>Added lowpass option to SourceFilter which is present in a number of source modules (e.g. gMOBIlab source module).
+</li><li>P3TemporalFilter now uses the NumberOfSequences parameter when available to determine the number of epochs to average.
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>bci_dat2stream now uses float32 format when providing calibrated output signal.
+</li><li>Fixed a bug in TransmissionFilter and SpatialFilter which would lead to channel numbers being forwarded as channel labels. 
+</li><li>P300Classifier does not crash any more when it is unable to generate feature weights. (C.M. Potes)
+</li><li>Operator modules' "Load Matrix" button now works correctly with values containing escape characters.
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>vAmp source module: 
+<ul><li>Impedance mode now works with vAmp8; better stability in impedance mode. (J Mellinger)
+</li><li>Impedances are now shown on the amplifier's display rather than a window. (J Mellinger)
+</li><li>Code concerning multi-amp use mostly removed (vAmp doesn´t support multi-Amp use) (M. Schatt)
+</li><li>Parameters that make only sense when using several amps have been removed ("DeviceIds", "SourceChDevices") (M. Schatt)
+</li><li>Improvements to Impedance view: Update the vAmp-Display less frequently.  (M. Schatt)
+</li><li>Use return values of Impedance API functions to improve error handling and prevent crashes. (M. Schatt)
+</li></ul>
+</li></ul>
+<a name="April_2010_Version_2.1_Release_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_100401.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_100401.exe" rel="nofollow">April 2010 Version 2.1 Release Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2770" class='external text' title="http://bci2000.org/tracproj/changeset/2770" rel="nofollow">Source code revision: 2770</a>
+</p><p><b>New features in this version:</b>
+</p>
+<ul><li>Operator module now allows for saving of matrices in parameter format, and allows to specify empty matrices in the GUI. 
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>Fixed usability issues in BCI2000Viewer (arrow keys should now work as expected).
+</li><li>Fixed a bug that could lead to enabled start button even when an initialization error occurred.
+</li><li>INSERT STATE operator script command is now consistent with documentation: name, bit width, and initial value are sufficient to specify a state.
+</li><li>Pre-run duration in StimulusPresentation and P3Speller applications was one block longer than defined by the user.
+</li><li>Floating point exceptions are now masked in all modules. This should result in more stable behavior during recording.
+</li><li>P3Speller no longer crashes when text-to-speech output is configured for matrix elements.
+</li><li>buildmex Matlab script now works on Win64 systems.
+</li><li>OfflineAnalysis now runs on Win64 systems.
+</li><li>MEM mex file usage info now contains correct input signal dimensions.
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>Fixed a potential problem with the DASSource when initializing an unknown board. 
+</li><li>Fixed a reinitialization bug in the Biosemi source module. Now, pressing SetConfig more than once works (G Schalk).
+</li><li>Amp Server Pro now works with GM version 1 release (R Bell).
+</li><li>Fixed anti-aliasing filter and high pass configuration in vAmp source module (A Wilson).
+</li><li>Tucker-Davis source module now uses threading (A Wilson).
+</li></ul>
+<a name="February_2010_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_100217.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_100217.exe" rel="nofollow">February 2010 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2671" class='external text' title="http://bci2000.org/tracproj/changeset/2671" rel="nofollow">Source code revision: 2671</a>
+</p><p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>Operator scripts now correctly report failure when an invalid state line is given. 
+</li><li>Drag-and-drop batch files in the command line directory will now work more reliably.
+</li><li>Image stimuli are now displayed correctly for an AspectRatioMode of AdjustBoth.
+</li><li>Win32 mex files now have a mexw32 extension.
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>RDAClient works more reliable for higher sampling rates and larger numbers of channels.
+</li></ul>
+<a name="December_2009_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_091203.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_091203.exe" rel="nofollow">December 2009 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2630" class='external text' title="http://bci2000.org/tracproj/changeset/2630" rel="nofollow">Source code revision: 2630</a>
+</p><p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>Fixed broken EEGLabImport contribution.
+</li></ul>
+<a name="November_2009_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_091110.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_091110.exe" rel="nofollow">November 2009 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2606" class='external text' title="http://bci2000.org/tracproj/changeset/2606" rel="nofollow">Source code revision: 2606</a>
+</p><p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>Mouse and joystick logging will now correctly record initial position at the beginning of a run.
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>A number of bugfixes and improvements to the TMSi source module (J. Hill).
+</li></ul>
+<a name="August_2009_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_090827.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_090827.exe" rel="nofollow">August 2009 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2514" class='external text' title="http://bci2000.org/tracproj/changeset/2514" rel="nofollow">Source code revision: 2514</a>
+</p><p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>Fixed treatment of state names beginning with "Signal" in ConnectorInput filter. 
+</li><li>Fixed computation of SelectedRow/SelectedColumn states in P3SpellerTask. 
+</li><li>Fixed BCI2000 Export tool which was broken in the previous bindist.
+</li><li>Improved robustness against undocumented data packets in RDAClient.
+</li><li>Fixed a number of issues in user tutorials.
+</li></ul>
+<p><b>New features in this version:</b>
+</p>
+<ul><li>New split_bcidat contribution allows splitting large dat files into smaller ones to work around 2GB file size limit when loading dat files.
+</li><li>Matlab-independent P300 classifier tool replaces P300GUI contribution.
+</li></ul>
+<a name="June_2009_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_090629.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_090629.exe" rel="nofollow">June 2009 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2421" class='external text' title="http://bci2000.org/tracproj/changeset/2421" rel="nofollow">Source code revision: 2421</a>
+</p><p><b>Bug fixes in this version</b>
+</p>
+<ul><li>P3Speller application log now correctly counts the number of intensifications.
+</li><li>Inconsistent parameters no longer cause ARFilter::Preflight to hang.
+</li><li>P3Speller sleep mode now works as documented (requires two "SLEEP" selections in a row to unsleep).
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>Biosemi: Fixed bugged trigger masks and added functionality for "downsampling" the trigger signal  (for each bit, all samples over the decimation period are logical-ORred together) (J. Hill)
+</li><li>Biosemi: Added the option to specify the TriggerChList? as a single '0', which means "read all triggers as a 16-bit integer" (J. Hill)
+</li></ul>
+<a name="May_2009_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_090514.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_090514.exe" rel="nofollow">May 2009 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2355" class='external text' title="http://bci2000.org/tracproj/changeset/2355" rel="nofollow">Source code revision: 2355</a>
+</p><p><b>Changes in this version:</b>
+</p>
+<ul><li>Added an offset of 32768 to mouse coordinates recorded by the KeyLogger component.
+</li></ul>
+<p><b>Bug fixes in this version</b>
+</p>
+<ul><li>Fixed AlignChannels parameter in gUSBamp.prm parameter fragment.
+</li><li>A number of minor bug fixes related to ERP visualization in the P3TemporalFilter.
+</li><li>P3TemporalFilter no longer crashes when an invalid channel is specified in TargetERPChannel parameter.
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>Renamed getparams tool to RDAgetparams
+</li><li>Contrib distribution now contains neurogetparams tool. 
+</li></ul>
+<a name="April_2009_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_090422.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_090422.exe" rel="nofollow">April 2009 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2342" class='external text' title="http://bci2000.org/tracproj/changeset/2342" rel="nofollow">Source code revision: 2342</a>
+</p><p><b>Changes in this version:</b>
+</p>
+<ul><li>Updated load_bcidat copies in tools directories to latest version.
+</li><li>Various improvements to gUSBamp source module (JA Wilson).
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>Renamed load_bcidat in EEGlabImport to avoid version conflicts.
+</li><li>P300GUI is now more robust in case the system was suspended before a run was complete (J Temprano).
+</li></ul>
+<a name="February_2009_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_090203.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_090203.exe" rel="nofollow">February 2009 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2245" class='external text' title="http://bci2000.org/tracproj/changeset/2245" rel="nofollow">Source code revision: 2245</a>
+</p><p><b>Changes in this version:</b>
+</p>
+<ul><li>Improvements to gUSBamp source (A Wilson).
+</li><li>Operator Module: Improved timing behavior when clicking window titles.
+</li><li>CursorTask: TargetCode and ResultCode states are now 8 bits wide, allowing for a maximum of 255 targets.
+</li><li>Asynchronous events recorded into <tt>bcievent</tt> are now available for online processing.
+</li></ul>
+<p><b>Changes to contributed code:</b>
+</p>
+<ul><li>RDAClient and Biosemi2 source modules now compile under cygwin gcc 3 in mingw mode (J Hill).
+</li><li>DateGlove5DTUFilter now supports the 5DT Data Glove 14 Ultra as well (P Brunner).
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>The Normalizer filter would ignore BufferCondition entries under certain circumstances.
+</li><li>load_bcidat mex file would perform conversion of nested matrices into Matlab structs incorrectly.
+</li><li>Recording of cursor position by CursorTask into state variables did not match specification.
+</li><li>StimulusPresentationTask did not handle empty image and sound file entries correctly.
+</li></ul>
+<a name="December_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_081201.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_081201.exe" rel="nofollow">December 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2209" class='external text' title="http://bci2000.org/tracproj/changeset/2209" rel="nofollow">Source code revision: 2209</a>
+</p><p><b>Changes in this version:</b>
+</p>
+<ul><li>Some issues in runtime/component deployment have been fixed in the Offline Analysis tool (J Fialkoff).
+</li><li>Choosing Help-&gt;BCI2000 Help should be more reliable now.
+</li><li>FIRFilter has been rewritten to simplify configuration.
+</li><li>RDAClient (BrainVision) source module now issues a notification rather than a runtime error when blocks are out-of-sequence.
+</li></ul>
+<a name="November_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_081117.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_081117.exe" rel="nofollow">November 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2200" class='external text' title="http://bci2000.org/tracproj/changeset/2200" rel="nofollow">Source code revision: 2200</a>
+</p><p><b>Enhancements in this version:</b>
+</p>
+<ul><li>P300 and Mu rhythm examples and tutorials use new SpatialFilter options.
+</li></ul>
+<p><b>Enhancements to contributed code:</b>
+</p>
+<ul><li>Biosemi source module:
+<ul><li>Support for an auxiliary Analog Input Box (AIB),
+</li><li>Simplified/more consistent parameterization,
+</li><li>Subsampling now uses averaging (J Hill).
+</li></ul>
+</li><li>P300 GUI has been updated to use a current version of load_bcidat (S Halder).
+</li><li>A number of enhancements and bug fixes to BCPy2000 (J Hill). (Note: BCPy2000 is not part of the BCI2000 binary distribution.)
+</li></ul>
+<p><b>Bug fixes in this version:</b>
+</p>
+<ul><li>AmpServerPro source module: Data could be scrambled due to an endianness issue.
+</li><li>Biosemi source module:
+<ul><li>Fixed bug with determination of battery status (J Hill),
+</li><li>Fixed "mode changed from 4 to 0" error; fixed battery warning (ML Blefari).
+</li></ul>
+</li><li>Source display now avoids artifacts induced by reduced numeric resolution for signals with large DC offsets.
+</li><li>Application modules: Worked around a window positioning issue with recent versions of the Borland VCL (reported by A Wilson and G Sudre).
+</li><li>Various issues with the OfflineAnalysis tool (J Fialkoff).
+</li><li>Improvements to configuration consistency and stability of the FFTFilter.
+</li><li>Fixed a potiential CursorTask crash on program exit.
+</li><li>Microsoft compilers no longer link mex files against debug libraries (J Roland).
+</li><li>Fixed a bug in a LinearClassifier::Preflight() range check; improved LinearClassifier configuration error messages.
+</li><li>Application modules' run statistics are now reset when starting a new run.
+</li><li>When logging mouse position, initial mouse position at the beginning of a run will be recorded.
+</li><li>Events recorded during the first data block are no longer reset at the beginning of the second block.
+</li><li>Event recording no longer stops on SourceTime state wraparound (reported by G Milsap). 
+</li><li>gUSBamp source module uses modified buffering scheme to avoid losing data (A Wilson).
+</li></ul>
+<a name="October_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_081006.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_081006.exe" rel="nofollow">October 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2152" class='external text' title="http://bci2000.org/tracproj/changeset/2152" rel="nofollow">Source code revision: 2152</a>
+</p><p>Enhancements in this version:
+</p>
+<ul><li>Example files are now more consistent with state names in BCI2000 v2 (J Fialkoff).
+</li><li>Binary mex files for 64-bit Windows XP (D Krusienski).
+</li></ul>
+<p>Newly contributed code in this version:
+</p>
+<ul><li>Source module for BrainProducts V-Amp (A Wilson).
+</li><li>BCPy2000: write BCI2000 modules in the Python scripting language (J Hill, Th Schreiner, C Puzicha, J Farquhar).
+</li></ul>
+<p>Bug fixes in this version:
+</p>
+<ul><li>AmpServerPro source module now uses float32 data type for output (J Fialkoff).
+</li><li>A parameter would be treated as changed when read from the StopRun function (reported by J Hill).
+</li><li>The FilterDesign class would mistakenly report an error for valid corner frequencies in Butterworth and Chebyshev filters (reported by A Wilson).
+</li><li>Activating the ConnectorInput filer with an empty input filter list would cause an exception (reported by aloplop).
+</li><li>Ill-formed input would cause ConnectorInput to hang.
+</li><li>P300GUI &gt; r2142 would incorrectly treat the case of a single input file.
+</li><li>Audio stimuli for matrix rows/columns would be incorrectly associated with row/column flashes in P300 speller (reported by ariel).
+</li></ul>
+<a name="August_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_080819.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_080819.exe" rel="nofollow">August 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/2104" class='external text' title="http://bci2000.org/tracproj/changeset/2104" rel="nofollow">Source code revision: 2104</a>
+</p><p>New features in this version:
+</p>
+<ul><li>Operator visualization windows now have a zoom function in their context menus ("More Samples"/"Fewer Samples").
+</li><li>A number of additional keyboard shortcuts in the Operator Module's visualization windows, and in BCI2000Viewer (contributed by Jeremy Hill).
+</li><li>The CursorTask application module now allows to specify the number of trials rather than a run's duration (Adam Wilson).
+</li><li>Updated SpatialFilter to include a CAR, sparse, and empty matrix options (Adam Wilson).
+</li><li>Updated support of GDF file format to version 2.10 of the GDF specification. BCI2000 parameters are now documented inside GDF files.
+</li><li>A. Wilson's EEGLabImport tool is now present in the binary distribution (formerly, it was part of the source distribution).
+</li><li>Added a DebugLog option to direct bcidbg messages into log files.
+</li></ul>
+<p>Bug fixes in this version:
+</p>
+<ul><li>Fixed a number of issues in the save_bcidat mex file.
+</li><li>Examples in BCI2000/data/samplefiles now follow Parameter and State naming conventions from BCI2000 Version 2.
+</li><li>Fixed a one-off error in the source signal display (reported by Jeremy Hill).
+</li><li>The ARFilter would hang for certain data triggering an infinite loop in <tt>extlib/math/Ratpoly::Evaluate()</tt>.
+</li><li>Fixed an additional artifact/channel permutation problem in gMOBIlab and gMOBIlabPlus ADCs (thanks to Peter Brunner for testing).
+</li><li>Some bug fixes to the P300Analysis tool (Peter Brunner).
+</li><li>Some bug fixes to the OfflineAnalysis tool (Josh Fialkoff).
+</li><li>Sometimes, BCI2000 could block when pressing Start after SetConfig (reported by Peter Brunner)
+</li></ul>
+<p>New in the Contributions section:
+</p>
+<ul><li>Created a FieldTripBuffer filter, connecting BCI2000 to FieldTrip Realtime Agents (Robert Oostenveld, Jürgen Mellinger)
+</li><li>A source module acquiring data from EGI's AmpServerPro (Josh Fialkoff).
+</li><li>Micromed Source module update: support for digital trigger packets, priority, note output to textfile; improved error handling (Erik Aarnoutse)
+</li></ul>
+<a name="May_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_080529.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_080529.exe" rel="nofollow">May 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/1987" class='external text' title="http://bci2000.org/tracproj/changeset/1987" rel="nofollow">Source code revision: 1987</a>
+</p><p>New features in this version:
+</p>
+<ul><li>State variables may now be set and read for individual samples rather than entire sample blocks.
+</li><li>Threads within BCI2000 modules may now record asynchronous events into state variables at single-sample time resolution.
+</li><li>Mouse, Keyboard, and Joystick events are now recorded at single-sample time resolution by the source module <a href="User_Reference%253ALogging_Input.html" title="User Reference:Logging Input">when requested from the command line</a>.
+</li><li>Added a <i>NumericValue</i> field to the Matlab parameter struct returned by load_bcidat.
+</li></ul>
+<p>Bug fixes in this version:
+</p>
+<ul><li>Fixed occasional channel swapping in gMOBIlab source modules (fix contributed by George Townsend).
+</li><li>Fixed "TransmitChList out of range" message when specifying channels by labels in TransmitChList.
+</li></ul>
+<a name="Apr_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_080421.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_080421.exe" rel="nofollow">Apr 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/1921" class='external text' title="http://bci2000.org/tracproj/changeset/1921" rel="nofollow">Source code revision: 1921</a>
+</p><p>New features in this version:
+</p>
+<ul><li>Support for the gMOBIlab+ amplifier.
+</li><li>The MatlabFilter now allows choosing Matlab's working directory at startup, and has an option to leave the Matlab window open when quitting BCI2000.
+</li><li>Added JoystickFilter to the CursorTask application module's default configuration.
+</li><li>Introduced the ExpressionFilter into the ARSignalProcessing module's default configuration.
+</li><li>Modified Expression class to handle 1-based offsets, physical units and labels in expressions.
+</li><li>Added an option to invert the background in the operator module's signal display windows, and in BCI2000Viewer.
+</li></ul>
+<p>Bug fixes in this version:
+</p>
+<ul><li>Adding parameters and states from filter constructors will not overwrite existing parameter values any more (mostly affects command line tools).
+</li><li>Fixed error in convert_bciprm that would change the type of list parameters to "matrix" when converting into parameter strings. 
+</li><li>A number of minor bug fixes and modifications to the OfflineAnalysis tool.
+</li><li>EEGlabImport tool now makes sure that the imported signal is of "single" data type.
+</li></ul>
+<a name="Mar_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_080312.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_080312.exe" rel="nofollow">Mar 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/1828" class='external text' title="http://bci2000.org/tracproj/changeset/1828" rel="nofollow">Source code revision: 1828</a>
+</p><p>New features in this version:
+</p>
+<ul><li>The operator module's <a href="User_Reference%253AOperator_Module.html#Parameter_Configuration_Window" title="User Reference:Operator Module">parameter configuration window</a> now has a help button. Clicking on the help button, and then on a parameter's name, will open the corresponding help file in a browser window.
+</li><li>There is now an 8 channel CAR filter parameter fragment provided in <tt>parms/fragments/spatial_filters</tt>.
+</li><li>The application log window has been re-introduced into the <a href="User_Reference%253AP3SpellerTask.html" title="User Reference:P3SpellerTask">P3SpellerTask</a>.
+</li></ul>
+<p>Bug fixes in this version:
+</p>
+<ul><li>The <tt>load_bcimat</tt> Matlab function would scramble 3-dimensional data.
+</li><li>Under rare conditions, visualization windows would move across the screen by themselves.
+</li><li>The <a href="User_Reference%253AP3TemporalFilter.html" title="User Reference:P3TemporalFilter">P3TemporalFilter's</a> visualization display would always display zero data.
+</li></ul>
+<a name="Feb_2008_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_080215.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_080215.exe" rel="nofollow">Feb 2008 Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/1790" class='external text' title="http://bci2000.org/tracproj/changeset/1790" rel="nofollow">Source code revision: 1790</a>
+</p><p>New features in this version:
+</p>
+<ul><li>The <a href="User_Reference%253ACursorTask.html" title="User Reference:CursorTask">CursorTask</a> application module now uses fast 2D drawing when <i>RenderingQuality</i> is set to "low", and only uses OpenGL rendering when quality is set to "high".
+</li><li>It is now possible to display a downsized copy of the subject's application window in an operator visualization window.
+</li><li>Command line tools have been updated to support propagation of signal units as introduced in Version 2.
+</li></ul>
+<p>Bug fixes in this version:
+</p>
+<ul><li>Parameters updated in the <tt><a href="Programming_Reference%253AGenericFilter_Class.html#StopRun" title="Programming Reference:GenericFilter Class">GenericFilter::StopRun()</a></tt> function would not be propagated to the operator module. Most notably, the <a href="User_Reference%253ANormalizer.html" title="User Reference:Normalizer">Normalizer's</a> adapted offsets and gains would not be reflected in the operator module's parameter dialog. This has been fixed.
+</li><li>A number of minor fixes in the <a href="User_Reference%253ABCI2000_Offline_Analysis.html" title="User Reference:BCI2000 Offline Analysis">OfflineAnalysis</a> tool.
+</li></ul>
+<a name="Jan_2008_Version_2_Release_Build"></a><h4><a href="http://bci2000.org/downloads/bin/BCI2000Setup_080124.exe" class='external text' title="http://bci2000.org/downloads/bin/BCI2000Setup_080124.exe" rel="nofollow">Jan 2008 Version 2 Release Build</a></h4>
+<p><a href="http://bci2000.org/tracproj/changeset/1746" class='external text' title="http://bci2000.org/tracproj/changeset/1746" rel="nofollow">Source code revision: 1746</a>
+</p>
+<hr />
+<a name="Version_2_Preview_Builds"></a><h3>Version 2 Preview Builds</h3>
+<p><a href="http://bci2000.org/downloads/bin/archive/BCI2000v2Preview_071123.exe" class='external text' title="http://bci2000.org/downloads/bin/archive/BCI2000v2Preview_071123.exe" rel="nofollow">Nov 2007 Build</a> (<a href="http://bci2000.org/tracproj/changeset/1646" class='external text' title="http://bci2000.org/tracproj/changeset/1646" rel="nofollow">changeset 1646</a>)
+</p><p><a href="http://bci2000.org/downloads/bin/archive/BCI2000v2Preview_071026.exe" class='external text' title="http://bci2000.org/downloads/bin/archive/BCI2000v2Preview_071026.exe" rel="nofollow">Oct 2007 Build</a> (<a href="http://bci2000.org/tracproj/changeset/1577" class='external text' title="http://bci2000.org/tracproj/changeset/1577" rel="nofollow">changeset 1577</a>)
+</p>
+<hr />
+<a name="Version_1_Builds"></a><h3>Version 1 Builds</h3>
+<p><a href="http://bci2000.org/downloads/bin/archive/BCI2000Setup_070706.exe" class='external text' title="http://bci2000.org/downloads/bin/archive/BCI2000Setup_070706.exe" rel="nofollow">Jul 2007 Build</a> (<a href="http://bci2000.org/tracproj/changeset/1401" class='external text' title="http://bci2000.org/tracproj/changeset/1401" rel="nofollow">changeset 1401</a>)
+</p><p><a href="http://bci2000.org/downloads/bin/archive/BCI2000Setup_070405.exe" class='external text' title="http://bci2000.org/downloads/bin/archive/BCI2000Setup_070405.exe" rel="nofollow">Apr 2007 Build</a> (<a href="http://bci2000.org/tracproj/changeset/1299" class='external text' title="http://bci2000.org/tracproj/changeset/1299" rel="nofollow">changeset 1299</a>)
+</p><p><a href="http://bci2000.org/downloads/bin/archive/BCI2000Setup_070130.exe" class='external text' title="http://bci2000.org/downloads/bin/archive/BCI2000Setup_070130.exe" rel="nofollow">Jan 2007 Build</a> (<a href="http://bci2000.org/tracproj/changeset/1255" class='external text' title="http://bci2000.org/tracproj/changeset/1255" rel="nofollow">changeset 1255</a>)
+</p><p><a href="http://bci2000.org/downloads/bin/archive/BCI2000Setup_061219.exe" class='external text' title="http://bci2000.org/downloads/bin/archive/BCI2000Setup_061219.exe" rel="nofollow">Dec 2006 Build</a> (<a href="http://bci2000.org/tracproj/changeset/1183" class='external text' title="http://bci2000.org/tracproj/changeset/1183" rel="nofollow">changeset 1183</a>)
+</p><p><a href="http://bci2000.org/downloads/bin/archive/BCI2000Setup_060630.exe" class='external text' title="http://bci2000.org/downloads/bin/archive/BCI2000Setup_060630.exe" rel="nofollow">Jun 2006 Build</a> (<a href="http://bci2000.org/tracproj/changeset/1135" class='external text' title="http://bci2000.org/tracproj/changeset/1135" rel="nofollow">changeset 1135</a>)
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

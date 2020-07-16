@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:Class Hierarchies - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:Class Hierarchies,Programming Reference:ApplicationBase Class,Programming Reference:ApplicationWindowClient Class,Programming Reference:BufferedADC Class,Programming Reference:Contents,Programming Reference:Environment Class,Programming Reference:Filter Chain,Programming Reference:GenericADC Class,Programming Reference:GenericFilter Class,Programming Reference:GraphObject Class,Programming Reference:Parameters" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Class Hierarchies</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><p>BCI2000 consists of a large number of classes, which interact in complicated ways, and are difficult to oversee. Most of these classes are of little importance to the overall picture of BCI2000. In fact, knowledge of a small number of BCI2000 classes, and their inheritance relationships, is sufficient to understand how BCI2000 works, and how to write your own BCI2000 filters and modules.
+</p><p>This page gives an overview over the class hierarchies which matter to you when doing programming work in BCI2000. It does not describe individual self-contained classes such as the <a href="Programming_Reference%253ASignals.html#SignalProperties_Class" title="Programming Reference:Signals"><i>SignalProperties</i></a> or <a href="Programming_Reference%253ASignals.html#GenericSignal_Class" title="Programming Reference:Signals"><i>GenericSignal</i></a>; rather, it explains classes that are part of hierarchies, each playing a certain role in its hierarchy.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253AClass_Hierarchies.html#Types_of_Classes"><span class="tocnumber">1</span> <span class="toctext">Types of Classes</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#Interface_Classes"><span class="tocnumber">1.1</span> <span class="toctext">Interface Classes</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#Mix-in_Classes"><span class="tocnumber">1.2</span> <span class="toctext">Mix-in Classes</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#Client_Classes"><span class="tocnumber">1.3</span> <span class="toctext">Client Classes</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AClass_Hierarchies.html#Class_Hierarchies"><span class="tocnumber">2</span> <span class="toctext">Class Hierarchies</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#GenericFilter"><span class="tocnumber">2.1</span> <span class="toctext">GenericFilter</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#EnvironmentExtension"><span class="tocnumber">2.2</span> <span class="toctext">EnvironmentExtension</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#ApplicationBase"><span class="tocnumber">2.3</span> <span class="toctext">ApplicationBase</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#GraphObject_and_GraphDisplay"><span class="tocnumber">2.4</span> <span class="toctext">GraphObject and GraphDisplay</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#Stimulus"><span class="tocnumber">2.5</span> <span class="toctext">Stimulus</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AClass_Hierarchies.html#Target.2C_SpellerTarget_and_Speller"><span class="tocnumber">2.6</span> <span class="toctext">Target, SpellerTarget and Speller</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AClass_Hierarchies.html#See_Also"><span class="tocnumber">3</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Types_of_Classes"></a><h2>Types of Classes</h2>
+<p>In BCI2000, class hierarchies consist of three types of classes: Interface class, mix-in classes, and client classes.
+</p>
+<a name="Interface_Classes"></a><h3>Interface Classes</h3>
+<p>Interface classes, which provide an abstract interface for functionality that is then implemented by classes derived from those interface classes. Due to the common interface, the BCI2000 framework can deal with a great number of derived classes, serving their needs without even knowing which derived classes exist and what they do.
+</p><p>Interface classes typically declare a number of so-called virtual functions. In the interface class, these virtual functions do nothing specific; in most cases, they are not even defined, such that a derived class is forced to implement its own version of that function. An interface class' virtual functions provide an interface to their derived classes. In addition to virtual functions, an interface class also has plain member functions; these provide an interface to classes that use objects of the interface class, rather than inheriting from it.
+</p><p>In BCI2000, there are a large number of interface classes that represent programming interfaces for filters, data acquisition interfaces, file writers, application modules, and graphic objects. The most important interface class is the <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class"><i>GenericFilter</i></a> class, which defines the programming interface for all BCI2000 filter components that are part of the <a href="Programming_Reference%253AFilter_Chain.html" title="Programming Reference:Filter Chain">filter chain</a>.
+</p><p>Most often, interfaces are built around the notion of an "event". When an event happens, it requires an action. Actions are defined by client classes that implement an interface. Each virtual function in the interface corresponds to an event, and derived classes implement those functions, thus providing event "handlers". As an example, the <a href="Programming_Reference%253AGraphObject_Class.html" title="Programming Reference:GraphObject Class"><i>GraphObject</i></a> interface class declares a virtual function called <i>OnPaint()</i>. Individual graphic objects inherit from the <i>GraphObject</i> class, and implement the associated interface by providing their own <i>OnPaint()</i> function. Whenever a window needs redrawing, graphic objects are asked to handle the <i>Paint</i> event, i.e. for all graphic objects tied to the respective window, the <i>OnPaint()</i> event handler is called. In its <i>OnPaint()</i> function, a <i>GraphObject</i> descendant class that represents a circle will provide code that draws a circle, while a <i>GraphObject</i> descendant representing a text field will implement an <i>OnPaint()</i> event handler that draws text.
+</p><p>Most often, classes directly inherit from a single interface class only, e.g. when you write a BCI2000 filter component, it inherits from the <i>GenericFilter</i> interface class. However, it is not uncommon that there is a hierarchy of interface classes which all build upon each other, where the line of inheritage represents increasing specialization. As an example, all BCI2000 filters inherit from the <i>GenericFilter</i> interface class. However, data acquisition filters do not inherit from <i>GenericFilter</i> directly; rather, they inherit from a class called <a href="Programming_Reference%253AGenericADC_Class.html" title="Programming Reference:GenericADC Class"><i>GenericADC</i></a>, which in turn inherits from <i>GenericFilter</i>, i.e. it specializes the <i>GenericFilter</i> interface for data acquisition components. In addition, there exists an interface class called <a href="Programming_Reference%253ABufferedADC_Class.html" title="Programming Reference:BufferedADC Class"><i>BufferedADC</i></a> which provides buffering, and an interface for data acquisition components that write their acquired data into a ring buffer. A class that inherits the <i>BufferedADC</i> interface thus implements an interface that has been specialized all the way down from <i>GenericADC</i> and <i>GenericFilter</i> to <i>BufferedADC</i>. 
+</p>
+<a name="Mix-in_Classes"></a><h3>Mix-in Classes</h3>
+<p>Unlike interface classes, which provide a more-or-less empty framework to be filled in by descendant classes, mix-in classes do actually implement functionality. This functionality is contained in non-virtual functions which may be declared "protected" to make them accessible only to classes that inherit from the mix-in class. An example of such a mix-in class in BCI2000, is the <a href="Programming_Reference%253AEnvironment_Class.html" title="Programming Reference:Environment Class"><i>Environment</i></a> class, which provides access to the <a href="Programming_Reference%253AParameters.html" title="Programming Reference:Parameters">Parameters</a> and <a href="Programming_Reference%253AStates.html" title="Programming Reference:States">States</a> that exist in the system. As <i>GenericFilter</i> inherits from <i>Environment</i>, most BCI2000 components inherit from <i>Environment</i> without explicitly asking for it. However, any class that wants to access parameters or states may inherit from the <i>Environment</i> class.
+Another example of a mix-in class is the <a href="Programming_Reference%253AApplicationWindowClient_Class.html" title="Programming Reference:ApplicationWindowClient Class"><i>ApplicationWindowClient</i></a> class. To its inheritants, it provides access to application windows, taking care of window creation and deletion, and allowing filters in the application module to share windows for drawing.
+</p>
+<a name="Client_Classes"></a><h3>Client Classes</h3>
+<p>Client classes are at the bottom of the inheritance hierarchy. They implement inherited interfaces, and use the functionality provided by mix-in classes, to actually get something done. E.g., the <a href="User_Reference%253ALinearClassifier.html" title="User Reference:LinearClassifier"><i>LinearClassifier</i></a> class implements the <i>GenericFilter</i> interface, using the mix-in functionality of the <i>Environment</i> class, resulting in a BCI2000 component that applies a linear classifier to a stream of data.
+The <a href="User_Reference%253AStimulusPresentationTask.html" title="User Reference:StimulusPresentationTask"><i>StimulusPresentationTask</i></a> class implements the <a href="Programming_Reference%253AStimulusTask_Class.html" title="Programming Reference:StimulusTask Class"><i>StimulusTask</i></a> interface, which in turn is a specialization of the <i>GenericFilter</i> interface, and inherits functionality from the <a href="Programming_Reference%253AApplicationBase_Class.html" title="Programming Reference:ApplicationBase Class"><i>ApplicationBase</i></a> base class.
+</p>
+<a name="Class_Hierarchies"></a><h2>Class Hierarchies</h2>
+<a name="GenericFilter"></a><h3>GenericFilter</h3>
+<p>GenericFilter is an interface class that serves as a base class for all BCI2000 filter components, i.e. components that process signals in the filter chain.
+GenericFilter also inherits from the Environment class, and thus provides the ability to access parameters and states to its descendants.
+Specializations to GenericFilter comprise GenericADC, and BufferedADC.
+</p>
+<a name="EnvironmentExtension"></a><h3>EnvironmentExtension</h3>
+<p>EnvironmentExtension is an interface class for BCI2000 components that do not process signals, and are not part of the filter chain, but need to be notified of BCI2000 events such as Preflight, Initialize, or StartRun. Typical descendants of EnvironmentExtension are utility classes such as LogFile or RandomGenerator.
+</p>
+<a name="ApplicationBase"></a><h3>ApplicationBase</h3>
+<p>This class inherits from GenericFilter, and serves as a base class for application task filters in application modules. To these, it provides a logging facility in form of the AppLog member object, and a random number generator in its RandomNumberGenerator member object.
+Two specializations of ApplicationBase exist that provide specialized interfaces to certain types of task filters: FeedbackTask, and StimulusTask. These two interface classes define events that are specific to task filters proving feedback, and doing stimulus presentation, respectively. E.g., the FeedbackTask defines an event FeedbackBegin which should be handled by displaying, say, a feedback cursor on a feedback screen, while the StimulusTask defines an event StimulusBegin, which is triggered when a stimulus is being displayed.
+</p>
+<a name="GraphObject_and_GraphDisplay"></a><h3>GraphObject and GraphDisplay</h3>
+<p>The GraphObject class defines an interface for classes that represent objects displayed on a GraphDisplay. GraphObjects are attached to GraphDisplays, and have a rectangle that defines their position and extent. GraphObject descendants implement handlers of the Paint event.
+The VisualStimulus class inherits from both GraphObject and Stimulus base classes, providing a stimulus that draws itself on a GraphDisplay when presented.
+</p>
+<a name="Stimulus"></a><h3>Stimulus</h3>
+<p>In stimulus-based application modules, an interface is needed for classes that represent stimuli. The interface defines that stimuli may be presented, or hidden. A Stimulus descendant implements this interface by providing appropriate code to present itself (showing an image on a display, or playing a sound).
+</p>
+<a name="Target.2C_SpellerTarget_and_Speller"></a><h3>Target, SpellerTarget and Speller</h3>
+<p>For application modules that implement spellers, such as the P3Speller, there is a general Target interface class for objects that can be selected by brain signals, and a specialized interface classes called SpellerTarget. A SpellerTarget is linked to a on object that implements the Speller interface, and its action is to enter text into the Speller from its Select event handler.
+</p>
+<a name="See_Also"></a><h2>See Also</h2>
+<p><a href="Programming_Reference%253AContents.html" title="Programming Reference:Contents">Programming Reference:Contents</a>, <a href="Programming_Tutorial%253AImplementing_a_Data_Acquisition_Module.html" title="Programming Tutorial:Implementing a Data Acquisition Module">Programming Tutorial:Implementing a Data Acquisition Module</a>, 
+<a href="Programming_Tutorial%253AImplementing_a_Signal_Processing_Filter.html" title="Programming Tutorial:Implementing a Signal Processing Filter">Programming Tutorial:Implementing a Signal Processing Filter</a>, 
+<a href="Programming_Tutorial%253AImplementing_an_Input_Logger.html" title="Programming Tutorial:Implementing an Input Logger">Programming Tutorial:Implementing an Input Logger</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li><a href="Programming_Reference%253AGenericFilter_Class.html">GenericFilter</a></li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li><a href="Programming_Reference%253AStimulusTask_Class.html">StimulusTask</a></li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

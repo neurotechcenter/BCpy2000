@@ -1,0 +1,21 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/extlib/portaudio/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/extlib/portaudio/CMakeFiles/generate.stamp is up-to-date.
+  pa_allocation.c
+  pa_converters.c
+  pa_cpuload.c
+  pa_debugprint.c
+  pa_dither.c
+  pa_front.c
+  pa_process.c
+  pa_ringbuffer.c
+  pa_stream.c
+  pa_trace.c
+  pa_win_ds.c
+  pa_win_ds_dynlink.c
+  pa_win_hostapis.c
+  pa_win_util.c
+  pa_win_waveformat.c
+  pa_win_wdmks_utils.c
+  pa_win_coinitialize.c
+  Generating Code...
+  PortAudio.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\extlib\portaudio\Release\PortAudio.lib

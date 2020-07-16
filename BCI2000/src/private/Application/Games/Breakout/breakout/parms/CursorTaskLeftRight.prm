@@ -1,0 +1,30 @@
+Application:Sequencing:FeedbackTask          float     PreRunDuration=                2s         // duration of pause preceding first trial
+Application:Sequencing:FeedbackTask          float     PreFeedbackDuration=           2s         // duration of target display prior to feedback
+Application:Sequencing:CursorFeedbackTask    float     MaxFeedbackDuration=          10s         // abort a trial after this amount of feedback time has expired
+Application:Sequencing:FeedbackTask          float     FeedbackDuration=              2s         // (??? seems to affect gain, but not duration...)
+Application:Sequencing:FeedbackTask          float     PostFeedbackDuration=          1s         // duration of result display after feedback
+Application:Sequencing:FeedbackTask          float     ITIDuration=                   1s         // duration of inter-trial interval
+Application:Sequencing:FeedbackTask          float     MinRunLength=                120s         // minimum duration of a run; if blank, NumberOfTrials is used
+Application:Sequencing:FeedbackTask          int       NumberOfTrials=                %          // number of trials; if blank, MinRunLength is used
+
+Application:Cursor:CursorFeedbackTask        floatlist CursorPos=             3      50 50 50    // cursor starting position
+Application:Cursor:CursorFeedbackTask        float     CursorWidth=          10                  // feedback cursor width in percent of screen width
+
+Application:Targets:FeedbackTask             int       NumberTargets=                 2          // number of targets
+Application:Targets:CursorFeedbackTask       int       TestAllTargets=                0          // test all targets for cursor collision? 0: test only the visible current target, 1: test all targets (enumeration)
+Application:Targets:CursorFeedbackTask       matrix    Targets=           2  { pos%20x pos%20y pos%20z width%20x width%20y width%20z }    5 50 50 8 8 8    95 50 50 8 8 8 // target positions and widths in percentage coordinates
+
+Application:Window:CursorFeedbackTask        int       RenderingQuality=              1          // rendering quality: 0: low, 1: high (enumeration)
+Application:Window:CursorFeedbackTask        int       WindowBitDepth=               16          // color bit depth of feedback window
+Application:3DEnvironment:CursorFeedbackTask floatlist CameraPos=             3      50 50 150   // camera position vector in percent coordinates of 3D area
+Application:3DEnvironment:CursorFeedbackTask floatlist CameraAim=             3      50 50 50    // camera aim point in percent coordinates
+Application:3DEnvironment:CursorFeedbackTask floatlist LightSourcePos=        3      50 50 100   // light source position in percent coordinates
+Application:3DEnvironment:CursorFeedbackTask int       CameraProjection=              0          // projection type: 0: flat, 1: wide angle perspective, 2: narrow angle perspective (enumeration)
+Application:3DEnvironment:CursorFeedbackTask int       LightSourceColor=              0x808080   // light source RGB color (color)
+Application:3DEnvironment:CursorFeedbackTask int       WorkspaceBoundaryColor=        0xffffff   // workspace boundary color (0xff000000 for invisible) (color)
+Application:Cursor:CursorFeedbackTask        int       CursorColorFront=              0xff0000   // cursor color when it is at the front of the workspace (color)
+Application:Cursor:CursorFeedbackTask        int       CursorColorBack=               0xffff00   // cursor color when it is in the back of the workspace (color)
+Application:Targets:CursorFeedbackTask       int       TargetColor=                   0x808080   // target color (color)
+Application:3DEnvironment:CursorFeedbackTask string    WorkspaceBoundaryTexture= images/grid.bmp // path of workspace boundary texture (inputfile)
+Application:Cursor:CursorFeedbackTask        string    CursorTexture=                 %          // path of cursor texture (inputfile)
+Application:Targets:CursorFeedbackTask       string    TargetTexture=                 %          // path of target texture (inputfile)

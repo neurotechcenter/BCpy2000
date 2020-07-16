@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{734DA984-4085-331C-A653-1778B4A3C5A2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>png2bmp</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">png2bmp.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">png2bmp</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">png2bmp.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">png2bmp</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">png2bmp.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">png2bmp</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF";HAVE_LIB_TINY;HAVE_CORELIB;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";HAVE_LIB_TINY;HAVE_CORELIB;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copy to destination</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/buildutils/Release/png2bmp.exe C:/BCI2000.python3/build/buildutils || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/buildutils/Release/png2bmp.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;..\frameworks\LibTiny\StaticCrt\Release\LibTiny_StaticCrt.lib;..\frameworks\LibTiny\StaticCrt\Release\LibTiny_StaticCrt.lib;ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt;msvcrtd;msvcprt;msvcprtd;msvcrt;msvcrtd;msvcprt;msvcprtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/buildutils/Release/png2bmp.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/buildutils/Release/png2bmp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF";HAVE_LIB_TINY;HAVE_CORELIB;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";HAVE_LIB_TINY;HAVE_CORELIB;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copy to destination</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/buildutils/RelWithDebInfo/png2bmp.exe C:/BCI2000.python3/build/buildutils || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/buildutils/RelWithDebInfo/png2bmp.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;..\frameworks\LibTiny\StaticCrt\RelWithDebInfo\LibTiny_StaticCrt.lib;..\frameworks\LibTiny\StaticCrt\RelWithDebInfo\LibTiny_StaticCrt.lib;ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt;msvcrtd;msvcprt;msvcprtd;msvcrt;msvcrtd;msvcprt;msvcprtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/buildutils/RelWithDebInfo/png2bmp.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/buildutils/RelWithDebInfo/png2bmp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF";HAVE_LIB_TINY;HAVE_CORELIB;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";HAVE_LIB_TINY;HAVE_CORELIB;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils;C:\BCI2000.python3\build\buildutils;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\BinaryDataIO;C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp;C:\BCI2000.python3\src\extlib\lodepng;C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copy to destination</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/buildutils/Debug/png2bmp.exe C:/BCI2000.python3/build/buildutils || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/buildutils/Debug/png2bmp.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;..\frameworks\LibTiny\StaticCrt\Debug\LibTiny_StaticCrt.lib;..\frameworks\LibTiny\StaticCrt\Debug\LibTiny_StaticCrt.lib;ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt;msvcrtd;msvcprt;msvcprtd;msvcrt;msvcrtd;msvcprt;msvcprtd;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/buildutils/Debug/png2bmp.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/buildutils/Debug/png2bmp.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\buildutils\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/build/buildutils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/buildutils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/buildutils/CMakeLists.txt;C:\BCI2000.python3\build\buildutils\CMakeLists.txt;C:\BCI2000.python3\build\buildutils\buildenv.h.in;C:\BCI2000.python3\build\buildutils\deploy_app.bat;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\buildutils\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/build/buildutils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/buildutils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/buildutils/CMakeLists.txt;C:\BCI2000.python3\build\buildutils\CMakeLists.txt;C:\BCI2000.python3\build\buildutils\buildenv.h.in;C:\BCI2000.python3\build\buildutils\deploy_app.bat;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\buildutils\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/build/buildutils/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/buildutils/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/buildutils/CMakeLists.txt;C:\BCI2000.python3\build\buildutils\CMakeLists.txt;C:\BCI2000.python3\build\buildutils\buildenv.h.in;C:\BCI2000.python3\build\buildutils\deploy_app.bat;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\buildutils\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\build\buildutils\png2bmp.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\BinaryDataIO\Win32BmpFormat.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\BinaryDataIO\Win32BmpFormat.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\lodepng\lodepng.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\lodepng\lodepng.cpp" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp\Resources.inc" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt.vcxproj">
+      <Project>{7C2D4AB7-2D73-32F1-BC91-E08B94AD9117}</Project>
+      <Name>LibTiny_StaticCrt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

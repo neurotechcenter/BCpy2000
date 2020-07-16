@@ -1,0 +1,21 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/core/SignalSource/g.MOBIlabPlus/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/core/SignalSource/g.MOBIlabPlus/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  gMOBIlabADC.cpp
+  gMOBIlabplus.imports.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  SourceFilter.cpp
+  IIRFilterBase.cpp
+  FilterDesign.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  gMOBIlabPlus.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\SignalSource\g.MOBIlabPlus\Release\gMOBIlabPlus.exe
+  	Deploying executable
+  Copying gMOBIlabPlus.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  copying files:
+  Done.

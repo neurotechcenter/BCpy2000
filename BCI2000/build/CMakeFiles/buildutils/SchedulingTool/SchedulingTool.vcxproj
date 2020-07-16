@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3A96BA95-F8B3-34F5-A5D6-929FFF782F2A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>SchedulingTool</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SchedulingTool.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SchedulingTool</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">SchedulingTool.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">SchedulingTool</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SchedulingTool.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SchedulingTool</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;USE_QT;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF Qt:5.12.0:C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/qmake.exe";QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;USE_QT;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF Qt:5.12.0:C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/qmake.exe\";QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copy to destination				</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Release/SchedulingTool.exe C:/BCI2000.python3/build/buildutils || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Release/SchedulingTool.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\plugins\platforms\qwindows.dll C:/BCI2000.python3/build/buildutils/qtplugins\platforms\qwindows.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Gui.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Widgets.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Core.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;ws2_32.lib;avrt.lib;imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;pdh.lib;..\..\frameworks\LibTiny\DynamicCrt\Release\LibTiny_DynamicCrt.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Widgets.lib;imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Gui.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Core.lib;pdh.lib;ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin;C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Release/SchedulingTool.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Release/SchedulingTool.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;USE_QT;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF Qt:5.12.0:C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/qmake.exe";QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;USE_QT;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF Qt:5.12.0:C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/qmake.exe\";QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;QT_WIDGETS_LIB;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copy to destination				</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/RelWithDebInfo/SchedulingTool.exe C:/BCI2000.python3/build/buildutils || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/RelWithDebInfo/SchedulingTool.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\plugins\platforms\qwindows.dll C:/BCI2000.python3/build/buildutils/qtplugins\platforms\qwindows.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Gui.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Widgets.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Core.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;ws2_32.lib;avrt.lib;imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;pdh.lib;..\..\frameworks\LibTiny\DynamicCrt\RelWithDebInfo\LibTiny_DynamicCrt.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Widgets.lib;imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Gui.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Core.lib;pdh.lib;ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin;C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/RelWithDebInfo/SchedulingTool.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/RelWithDebInfo/SchedulingTool.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;USE_QT;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF Qt:5.12.0:C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/qmake.exe";QT_GUI_LIB;QT_CORE_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;USE_QT;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:OFF USE_ASSERTS_IN_RELEASE_BUILDS:OFF Qt:5.12.0:C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/qmake.exe\";QT_GUI_LIB;QT_CORE_LIB;QT_WIDGETS_LIB;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool;C:\BCI2000.python3\build\buildutils\SchedulingTool;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtANGLE;C:\Qt\Qt5.12.0\5.12.0\msvc2017\.\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copy to destination				</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Debug/SchedulingTool.exe C:/BCI2000.python3/build/buildutils || "C:/Program Files/CMake/bin/cmake.exe" -E remove C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Debug/SchedulingTool.exe &amp;&amp; "C:/Program Files/CMake/bin/cmake.exe" -E touch_nocreate .notexist
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\plugins\platforms\qwindowsd.dll C:/BCI2000.python3/build/buildutils/qtplugins\platforms\qwindowsd.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Guid.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Widgetsd.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/BCI2000.python3/build/buildutils
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\Qt5Cored.dll C:/BCI2000.python3/build/buildutils/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;ws2_32.lib;avrt.lib;imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;pdh.lib;..\..\frameworks\LibTiny\DynamicCrt\Debug\LibTiny_DynamicCrt.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Widgetsd.lib;imm32.lib;opengl32.lib;glu32.lib;ws2_32.lib;winmm.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Guid.lib;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\Qt5Cored.lib;pdh.lib;ws2_32.lib;avrt.lib;ws2_32.lib;avrt.lib;winmm.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin;C:/Qt/Qt5.12.0/5.12.0/msvc2017/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Debug/SchedulingTool.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/Debug/SchedulingTool.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\55012fa090f6e800cfe3c2406559283e\moc_QtSignalConnector.cpp.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating __/__/__/src/shared/utils/moc_QtSignalConnector.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\moc.exe @C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/__/__/__/src/shared/utils/moc_QtSignalConnector.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/CMakeFiles/55012fa090f6e800cfe3c2406559283e/moc_QtSignalConnector.cpp.rule;C:\BCI2000.python3\src\shared\utils\QtSignalConnector.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils\moc_QtSignalConnector.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating __/__/__/src/shared/utils/moc_QtSignalConnector.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\moc.exe @C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/__/__/__/src/shared/utils/moc_QtSignalConnector.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/CMakeFiles/55012fa090f6e800cfe3c2406559283e/moc_QtSignalConnector.cpp.rule;C:\BCI2000.python3\src\shared\utils\QtSignalConnector.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils\moc_QtSignalConnector.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating __/__/__/src/shared/utils/moc_QtSignalConnector.cpp</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Qt5.12.0\5.12.0\msvc2017\bin\moc.exe @C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/__/__/__/src/shared/utils/moc_QtSignalConnector.cpp_parameters
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/CMakeFiles/55012fa090f6e800cfe3c2406559283e/moc_QtSignalConnector.cpp.rule;C:\BCI2000.python3\src\shared\utils\QtSignalConnector.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils\moc_QtSignalConnector.cpp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\buildutils\SchedulingTool\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/build/buildutils/SchedulingTool/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/buildutils/SchedulingTool/CMakeLists.txt;C:\BCI2000.python3\build\buildutils\SchedulingTool\CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\QT.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5Config.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ModuleLocation.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebGLIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QXdgDesktopPortalThemePlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5Widgets_QWindowsVistaStylePlugin.cmake;C:\BCI2000.python3\build\buildutils\SchedulingTool\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/build/buildutils/SchedulingTool/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/buildutils/SchedulingTool/CMakeLists.txt;C:\BCI2000.python3\build\buildutils\SchedulingTool\CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\QT.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5Config.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ModuleLocation.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebGLIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QXdgDesktopPortalThemePlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5Widgets_QWindowsVistaStylePlugin.cmake;C:\BCI2000.python3\build\buildutils\SchedulingTool\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/build/buildutils/SchedulingTool/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/buildutils/SchedulingTool/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/buildutils/SchedulingTool/CMakeLists.txt;C:\BCI2000.python3\build\buildutils\SchedulingTool\CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\QT.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5Config.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ModuleLocation.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebGLIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QXdgDesktopPortalThemePlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5Widgets_QWindowsVistaStylePlugin.cmake;C:\BCI2000.python3\build\buildutils\SchedulingTool\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\build\buildutils\SchedulingTool\SchedulingTool.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\QtSignalConnector.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtMessageHandler.cpp" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\SchedulingTool\Resources.inc" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h" />
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\SchedulingTool\__\__\__\src\shared\utils\moc_QtSignalConnector.cpp" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\compat\WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\DynamicCrt\LibTiny_DynamicCrt.vcxproj">
+      <Project>{CD62784C-7E91-3957-84FA-0036EC57BBE2}</Project>
+      <Name>LibTiny_DynamicCrt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

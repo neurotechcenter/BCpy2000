@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="..\..\..\..\prog\CursorTask.exe"/>
+    <OBJFILES value="obj\CursorTask.obj obj\CursorFeedbackTask.obj obj\MessageHandler.obj 
+      obj\CoreModule.obj obj\CoreModuleVCL.obj obj\ParamRef.obj 
+      obj\Environment.obj obj\SysCommand.obj obj\Brackets.obj obj\Color.obj 
+      obj\EncodedString.obj obj\GenericSignal.obj obj\GenericVisualization.obj 
+      obj\HierarchicalLabel.obj obj\Label.obj obj\LabelIndex.obj obj\Param.obj 
+      obj\ParamList.obj obj\PhysicalUnit.obj obj\SignalProperties.obj 
+      obj\SignalType.obj obj\State.obj obj\StateList.obj obj\StateVector.obj 
+      obj\Status.obj obj\BCIError_module.obj obj\BCIError.obj 
+      obj\VersionInfo.obj obj\ClassName.obj obj\LogFile.obj 
+      obj\MeasurementUnits.obj obj\PrecisionTime.obj obj\SockStream.obj 
+      obj\ApplicationBase.obj obj\ConnectorFilters.obj obj\FeedbackTask.obj 
+      obj\TrialStatistics.obj obj\BlockRandSeq.obj obj\Localization.obj 
+      obj\GenericFilter.obj obj\buffers.obj obj\cameraNlight.obj obj\cuboids.obj 
+      obj\geomObj.obj obj\halfSpace.obj obj\Load3DS.obj obj\model3D.obj 
+      obj\primObj.obj obj\Scene.obj obj\sphere.obj obj\threeDText.obj 
+      obj\twoDCursor.obj obj\twoDOverlay.obj obj\twoDText.obj 
+      obj\GraphObject.obj obj\DisplayWindow.obj obj\GraphDisplay.obj 
+      obj\ExpressionParser.obj obj\Expression.obj obj\BCIDirectory.obj obj\ExpressionNodes.obj 
+      obj\TextField.obj obj\OSError.obj obj\RandomGenerator.obj 
+      obj\BitmapImage.obj obj\Shapes.obj obj\FeedbackScene3D.obj 
+      obj\FeedbackScene2D.obj obj\ArithmeticExpression.obj 
+      obj\StateVectorSample.obj obj\EventQueue.obj obj\BCIEvent.obj"/>
+    <RESFILES value=""/>
+    <IDLFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="vclx.lib vcl.lib rtl.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib vclx.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi vcljpg.bpi"/>
+    <PATHCPP value=".;..\..\..\shared\modules;..\..\..\shared\modules;..\..\..\shared\modules;..\..\..\shared\accessors;..\..\..\shared\accessors;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\types;..\..\..\shared\bcistream;..\..\..\shared\bcistream;..\..\..\shared\utils;..\..\..\shared\utils;..\..\..\shared\utils;..\..\..\shared\utils;..\..\..\shared\utils;..\..\..\shared\utils;..\..\..\shared\modules\application;..\..\..\shared\modules\application;..\..\..\shared\modules\application;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application\utils;..\..\..\shared\modules;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\extlib\3DAPI;..\..\..\shared\gui;..\..\..\shared\gui;..\..\..\shared\gui;..\..\..\shared\utils\Expression;..\..\..\shared\utils\Expression;..\..\..\shared\fileio;..\..\..\shared\gui;..\..\..\shared\utils;..\..\..\shared\utils;..\..\..\shared\types;..\..\..\shared\gui;..\..\..\shared\utils\Expression;..\..\..\shared\types;..\..\..\shared\utils;..\..\..\shared\accessors"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="MODTYPE=3"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="CursorTask.cpp"/>
+    <INCLUDEPATH value="..\..\..\shared\modules\application\human_interface_devices;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="..\..\..\shared\modules\application\human_interface_devices;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;..\shared\gui;$(BCB)\lib;$(BCB)\lib\obj;$(BDS)\lib\psdk"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-O2 -H=..\..\..\shared\obj\bci2000.csm -Hc -Vx -Ve -X- -a8 -5 -b- -k- -vi 
+      -c -tW -tWM"/>
+    <PFLAGS value="-N2obj -N0obj -$Y- -$L- -$D- -$A8 -v -JPHNE"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-Iobj -D&quot;&quot; -aa -Tpe -x -Gn"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="CursorTask.cpp" FORMNAME="" UNITNAME="CursorTask" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="CursorFeedbackTask.cpp" FORMNAME="" UNITNAME="CursorFeedbackTask" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\MessageHandler.cpp" FORMNAME="" UNITNAME="MessageHandler" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\CoreModule.cpp" FORMNAME="" UNITNAME="CoreModule" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\CoreModuleVCL.cpp" FORMNAME="" UNITNAME="CoreModuleVCL" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\accessors\ParamRef.cpp" FORMNAME="" UNITNAME="ParamRef" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\accessors\Environment.cpp" FORMNAME="" UNITNAME="Environment" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\SysCommand.cpp" FORMNAME="" UNITNAME="SysCommand" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\Brackets.cpp" FORMNAME="" UNITNAME="Brackets" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\Color.cpp" FORMNAME="" UNITNAME="Color" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\EncodedString.cpp" FORMNAME="" UNITNAME="EncodedString" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\GenericSignal.cpp" FORMNAME="" UNITNAME="GenericSignal" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\GenericVisualization.cpp" FORMNAME="" UNITNAME="GenericVisualization" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\HierarchicalLabel.cpp" FORMNAME="" UNITNAME="HierarchicalLabel" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\Label.cpp" FORMNAME="" UNITNAME="Label" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\LabelIndex.cpp" FORMNAME="" UNITNAME="LabelIndex" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\Param.cpp" FORMNAME="" UNITNAME="Param" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\ParamList.cpp" FORMNAME="" UNITNAME="ParamList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\PhysicalUnit.cpp" FORMNAME="" UNITNAME="PhysicalUnit" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\SignalProperties.cpp" FORMNAME="" UNITNAME="SignalProperties" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\SignalType.cpp" FORMNAME="" UNITNAME="SignalType" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\State.cpp" FORMNAME="" UNITNAME="State" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\StateList.cpp" FORMNAME="" UNITNAME="StateList" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\StateVector.cpp" FORMNAME="" UNITNAME="StateVector" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\Status.cpp" FORMNAME="" UNITNAME="Status" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\bcistream\BCIError_module.cpp" FORMNAME="" UNITNAME="BCIError_module" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\bcistream\BCIError.cpp" FORMNAME="" UNITNAME="BCIError" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\VersionInfo.cpp" FORMNAME="" UNITNAME="VersionInfo" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\ClassName.cpp" FORMNAME="" UNITNAME="ClassName" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\LogFile.cpp" FORMNAME="" UNITNAME="LogFile" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\MeasurementUnits.cpp" FORMNAME="" UNITNAME="MeasurementUnits" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\PrecisionTime.cpp" FORMNAME="" UNITNAME="PrecisionTime" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\SockStream.cpp" FORMNAME="" UNITNAME="SockStream" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\application\ApplicationBase.cpp" FORMNAME="" UNITNAME="ApplicationBase" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\application\ConnectorFilters.cpp" FORMNAME="" UNITNAME="ConnectorFilters" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\application\FeedbackTask.cpp" FORMNAME="" UNITNAME="FeedbackTask" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\application\utils\TrialStatistics.cpp" FORMNAME="" UNITNAME="TrialStatistics" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\application\utils\BlockRandSeq.cpp" FORMNAME="" UNITNAME="BlockRandSeq" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\application\utils\Localization.cpp" FORMNAME="" UNITNAME="Localization" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\modules\GenericFilter.cpp" FORMNAME="" UNITNAME="GenericFilter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\buffers.cpp" FORMNAME="" UNITNAME="buffers" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\cameraNlight.cpp" FORMNAME="" UNITNAME="cameraNlight" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\cuboids.cpp" FORMNAME="" UNITNAME="cuboids" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\geomObj.cpp" FORMNAME="" UNITNAME="geomObj" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\halfSpace.cpp" FORMNAME="" UNITNAME="halfSpace" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\Load3DS.cpp" FORMNAME="" UNITNAME="Load3DS" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\model3D.cpp" FORMNAME="" UNITNAME="model3D" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\primObj.cpp" FORMNAME="" UNITNAME="primObj" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\Scene.cpp" FORMNAME="" UNITNAME="Scene" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\sphere.cpp" FORMNAME="" UNITNAME="sphere" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\threeDText.cpp" FORMNAME="" UNITNAME="threeDText" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\twoDCursor.cpp" FORMNAME="" UNITNAME="twoDCursor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\twoDOverlay.cpp" FORMNAME="" UNITNAME="twoDOverlay" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\extlib\3DAPI\twoDText.cpp" FORMNAME="" UNITNAME="twoDText" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\gui\GraphObject.cpp" FORMNAME="" UNITNAME="GraphObject" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\gui\DisplayWindow.cpp" FORMNAME="" UNITNAME="DisplayWindow" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\gui\GraphDisplay.cpp" FORMNAME="" UNITNAME="GraphDisplay" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\Expression\ExpressionParser.cpp" FORMNAME="" UNITNAME="ExpressionParser" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\Expression\Expression.cpp" FORMNAME="" UNITNAME="Expression" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\Expression\ExpressionNodes.cpp" FORMNAME="" UNITNAME="ExpressionNodes" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\fileio\BCIDirectory.cpp" FORMNAME="" UNITNAME="BCIDirectory" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\gui\TextField.cpp" FORMNAME="" UNITNAME="TextField" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\OSError.cpp" FORMNAME="" UNITNAME="OSError" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\RandomGenerator.cpp" FORMNAME="" UNITNAME="RandomGenerator" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\BitmapImage.cpp" FORMNAME="" UNITNAME="BitmapImage" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\gui\Shapes.cpp" FORMNAME="" UNITNAME="Shapes" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FeedbackScene3D.cpp" FORMNAME="" UNITNAME="FeedbackScene3D" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="FeedbackScene2D.cpp" FORMNAME="" UNITNAME="FeedbackScene2D" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\Expression\ArithmeticExpression.cpp" FORMNAME="" UNITNAME="ArithmeticExpression" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\types\StateVectorSample.cpp" FORMNAME="" UNITNAME="StateVectorSample" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\utils\EventQueue.cpp" FORMNAME="" UNITNAME="EventQueue" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\..\shared\accessors\BCIEvent.cpp" FORMNAME="" UNITNAME="BCIEvent" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+c:\programme\borland\cbuilder6\Bin\dclite60.bpl=Borland Integrated Translation Environment
+
+[HistoryLists\hlIncludePath]
+Count=9
+Item0=..\..\..\shared\modules\application\human_interface_devices;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl
+Item1=..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl
+Item2=..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl
+Item3=..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl
+Item4=..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl
+Item5=..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl
+Item6=..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl
+Item7=..;$(BCB)\include;$(BCB)\include\vcl;..\shared\gui
+Item8=..\shared\gui;..\shared\utils;..\shared\filters;..\..\shared\gui;..\shared\3DAPI;..\..\shared\utils\Expression;..\..\shared\modules;..\..\shared\config;..\..\shared\fileio;..\..\shared\utils;..\..\shared\bcistream;..\..\shared\types;..\..\shared\accessors;..;DataGlove;..\..\shared;..\shared;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=..\..\..\shared\modules\application\human_interface_devices;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;..\shared\gui;$(BCB)\lib;$(BCB)\lib\obj;$(BDS)\lib\psdk
+Item1=..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;..\shared\gui;$(BCB)\lib;$(BCB)\lib\obj;$(BDS)\lib\psdk
+Item2=..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;$(BCB)\lib\obj;$(BCB)\lib;..\shared\gui
+Item3=..\..\..\shared\accessors;..\..\..\shared\modules;..;$(BCB)\lib\obj;$(BCB)\lib;..\shared\gui
+Item4=..;$(BCB)\lib\obj;$(BCB)\lib;..\shared\gui
+Item5=..\shared\gui;..\shared\utils;..\shared\filters;..\..\shared\gui;..\shared\3DAPI;..\..\shared\utils\Expression;..\..\shared\modules;..\..\shared\fileio;..\..\shared\utils;..\..\shared\bcistream;..\..\shared\types;..\..\shared\accessors;..;DataGlove;..\..\shared;..\shared;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=3
+Item0=MODTYPE=3
+Item1=MODTYPE=3;_DEBUG
+Item2=_DEBUG;MODTYPE=3
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=obj
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=..\..\..\..\prog\
+Item1=..\..\..\prog\
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+  </IDEOPTIONS>
+</PROJECT>

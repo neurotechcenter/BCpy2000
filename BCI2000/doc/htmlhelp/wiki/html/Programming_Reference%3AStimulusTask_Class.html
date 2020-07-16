@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:StimulusTask Class - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:StimulusTask Class,BCI2000 Glossary,Programming Reference:ApplicationBase Class,Programming Reference:AssociationMap Class,Programming Reference:Filter Chain,Programming Reference:GenericFilter Class,Programming Reference:GraphDisplay Class,Programming Reference:RandomGenerator Class,Programming Reference:Stimulus Class,Programming Reference:Target Class,Programming Reference:TextField Class" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">StimulusTask Class</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#Location"><span class="tocnumber">1</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#Synopsis"><span class="tocnumber">2</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#Events"><span class="tocnumber">3</span> <span class="toctext">Events</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#Events_Summary"><span class="tocnumber">3.1</span> <span class="toctext">Events Summary</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#Stimulus_Code_Event"><span class="tocnumber">3.2</span> <span class="toctext">Stimulus Code Event</span></a>
+<ul>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#int_OnNextStimulusCode"><span class="tocnumber">3.2.1</span> <span class="toctext">int OnNextStimulusCode</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#Events_forwarded_from_the_GenericFilter_interface"><span class="tocnumber">3.3</span> <span class="toctext">Events forwarded from the GenericFilter interface</span></a>
+<ul>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnPreflight.28SignalProperties_.28r.29.29"><span class="tocnumber">3.3.1</span> <span class="toctext">OnPreflight(SignalProperties (r))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnInitialize.28SignalProperties_.28r.29.29"><span class="tocnumber">3.3.2</span> <span class="toctext">OnInitialize(SignalProperties (r))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnStartRun"><span class="tocnumber">3.3.3</span> <span class="toctext">OnStartRun</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnStopRun"><span class="tocnumber">3.3.4</span> <span class="toctext">OnStopRun</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnHalt"><span class="tocnumber">3.3.5</span> <span class="toctext">OnHalt</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#Phase_transition_Events"><span class="tocnumber">3.4</span> <span class="toctext">Phase transition Events</span></a>
+<ul>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnPreSequence"><span class="tocnumber">3.4.1</span> <span class="toctext">OnPreSequence</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnSequenceBegin"><span class="tocnumber">3.4.2</span> <span class="toctext">OnSequenceBegin</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnSequenceEnd"><span class="tocnumber">3.4.3</span> <span class="toctext">OnSequenceEnd</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnStimulusBegin.28int_stimulusCode_.28r.29.29"><span class="tocnumber">3.4.4</span> <span class="toctext">OnStimulusBegin(int stimulusCode (r))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnStimulusEnd.28int_stimulusCode_.28r.29.29"><span class="tocnumber">3.4.5</span> <span class="toctext">OnStimulusEnd(int stimulusCode (r))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnPostRun"><span class="tocnumber">3.4.6</span> <span class="toctext">OnPostRun</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#Input_Events"><span class="tocnumber">3.5</span> <span class="toctext">Input Events</span></a>
+<ul>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#DoPreRun.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"><span class="tocnumber">3.5.1</span> <span class="toctext">DoPreRun(GenericSignal (r), bool doProgress (rw))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#DoPreSequence.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"><span class="tocnumber">3.5.2</span> <span class="toctext">DoPreSequence(GenericSignal (r), bool doProgress (rw))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#DoStimulus.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"><span class="tocnumber">3.5.3</span> <span class="toctext">DoStimulus(GenericSignal (r), bool doProgress (rw))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#DoISI.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"><span class="tocnumber">3.5.4</span> <span class="toctext">DoISI(GenericSignal (r), bool doProgress (rw))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#DoPostSequence.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"><span class="tocnumber">3.5.5</span> <span class="toctext">DoPostSequence(GenericSignal (r), bool doProgress (rw))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#DoPostRun.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"><span class="tocnumber">3.5.6</span> <span class="toctext">DoPostRun(GenericSignal (r), bool doProgress (rw))</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#Classification_Events"><span class="tocnumber">3.6</span> <span class="toctext">Classification Events</span></a>
+<ul>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#OnClassInput.28stimulusCode_.28r.29.2C_GenericSignal_.28r.29.29"><span class="tocnumber">3.6.1</span> <span class="toctext">OnClassInput(stimulusCode (r), GenericSignal (r))</span></a></li>
+<li class='toclevel-3'><a href="Programming_Reference%253AStimulusTask_Class.html#Target.2A_OnClassResult.28ClassResult_.28r.29.29"><span class="tocnumber">3.6.2</span> <span class="toctext">Target* OnClassResult(ClassResult (r))</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#Properties"><span class="tocnumber">4</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#AssociationMap_Associations_.28rw.29"><span class="tocnumber">4.1</span> <span class="toctext">AssociationMap Associations (rw)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#Target.2A_AttendedTarget_.28rw.29"><span class="tocnumber">4.2</span> <span class="toctext">Target* AttendedTarget (rw)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#GUI::GraphDisplay_Display_.28r.29"><span class="tocnumber">4.3</span> <span class="toctext">GUI::GraphDisplay Display (r)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#ostream_AppLog.2C_AppLog.File.2C_AppLog.Screen_.28w.29"><span class="tocnumber">4.4</span> <span class="toctext">ostream AppLog, AppLog.File, AppLog.Screen (w)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#RandomGenerator_RandomNumberGenerator_.28rw.29"><span class="tocnumber">4.5</span> <span class="toctext">RandomGenerator RandomNumberGenerator (rw)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#Methods"><span class="tocnumber">5</span> <span class="toctext">Methods</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#DisplayMessage.28string.29"><span class="tocnumber">5.1</span> <span class="toctext">DisplayMessage(string)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#Parameters"><span class="tocnumber">6</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#WindowBackgroundColor"><span class="tocnumber">6.1</span> <span class="toctext">WindowBackgroundColor</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#PreRunDuration"><span class="tocnumber">6.2</span> <span class="toctext">PreRunDuration</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#PostRunDuration"><span class="tocnumber">6.3</span> <span class="toctext">PostRunDuration</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#PreSequenceDuration"><span class="tocnumber">6.4</span> <span class="toctext">PreSequenceDuration</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#PostSequenceDuration"><span class="tocnumber">6.5</span> <span class="toctext">PostSequenceDuration</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#StimulusDuration"><span class="tocnumber">6.6</span> <span class="toctext">StimulusDuration</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#ISIMinDuration.2C_ISIMaxDuration"><span class="tocnumber">6.7</span> <span class="toctext">ISIMinDuration, ISIMaxDuration</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#InterpretMode"><span class="tocnumber">6.8</span> <span class="toctext">InterpretMode</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#DisplayResults"><span class="tocnumber">6.9</span> <span class="toctext">DisplayResults</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#States"><span class="tocnumber">7</span> <span class="toctext">States</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#StimulusCode"><span class="tocnumber">7.1</span> <span class="toctext">StimulusCode</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#StimulusType"><span class="tocnumber">7.2</span> <span class="toctext">StimulusType</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#StimulusBegin"><span class="tocnumber">7.3</span> <span class="toctext">StimulusBegin</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#PhaseInSequence"><span class="tocnumber">7.4</span> <span class="toctext">PhaseInSequence</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AStimulusTask_Class.html#PauseApplication"><span class="tocnumber">7.5</span> <span class="toctext">PauseApplication</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#Timeline"><span class="tocnumber">8</span> <span class="toctext">Timeline</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AStimulusTask_Class.html#See_also"><span class="tocnumber">9</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Location"></a><h2>Location</h2>
+<p><tt>BCI2000/src/shared/modules/application</tt>
+</p>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>The <tt>StimulusTask</tt> class is a base class for <a href="Technical_Reference%253ACore_Modules.html#Application_Module" title="Technical Reference:Core Modules">application modules</a> that present a sequence of stimuli. You do not use objects of type <tt>StimulusTask</tt> directly; rather, you implement your own class that inherits from it, and implements specialized behavior building on the base functionality provided by the <tt>StimulusTask</tt> class.
+</p><p>The <tt>StimulusTask</tt> class performs sequencing, and dispatches <a href="Programming_Reference%253AGenericFilter_Class.html#Process" title="Programming Reference:GenericFilter Class"><tt>GenericFilter::Process()</tt></a>
+calls to its virtual member functions.
+Child classes (descendants) of <tt>StimulusTask</tt> implement event
+handlers by overriding its virtual functions, and populate the <a href="Programming_Reference%253AStimulusTask_Class.html#Associations" title="">stimulus-target association
+map</a>, thereby associating stimulus codes with sets of stimuli, and possible selection targets.
+</p><p>In the BCI2000 core distribution, both the <a href="User_Reference%253AP3SpellerTask.html" title="User Reference:P3SpellerTask">P3SpellerTask</a> and the <a href="User_Reference%253AStimulusPresentationTask.html" title="User Reference:StimulusPresentationTask">StimulusPresentationTask</a> are based on the <tt>StimulusTask</tt> base class, and implement their own specialized behavior on top of it.
+</p>
+<a name="Events"></a><h2>Events</h2>
+<a name="Events_Summary"></a><h3>Events Summary</h3>
+<p>The following table indicates which events exist, and the temporal sequence in which they occur. Stimulus presentation proceeds in "phases", which are distinct parts of the stimulus presentation: Each presentation sequence is preceded by a "PreSequence" interval; the sequence itself consists of alternating "Stimulus" and "Inter Stimulus Intervals (ISIs)"; a "PostSequence" follows after the sequence.
+</p><p>Events marked with * may occur multiple times in a row.
+Events given in square brackets depend on the <a href="Technical_Reference%253ACore_Modules.html#Signal_Processing_Module" title="Technical Reference:Core Modules">signal processing module</a>, and may not occur at all; however, when they occur, their place in the temporal sequence will be as specified in the table.
+</p><p>Progress from one application state to the next will occur according to the <a href="Programming_Reference%253AStimulusTask_Class.html#Parameters" title="">sequencing
+parameters</a>, or if requested by a handler via its <tt>doProgress</tt> output argument (see <a href="Programming_Reference%253AStimulusTask_Class.html#Input_events" title="">Input events</a> below).
+</p>
+<table border="0">
+<tr>
+<th align="left"> Sequence of events
+</th><th> &nbsp;&nbsp;
+</th><th align="left"> Phase
+</th><th> &nbsp;&nbsp;&nbsp;
+</th><th align="left"> Typical application behavior
+</th></tr>
+<tr>
+<td> OnPreflight </td><td> &nbsp;
+</td></tr>
+<tr>
+<td> OnInitialize </td><td> &nbsp;
+</td></tr>
+<tr>
+<td>  OnStartRun </td><td> &nbsp; </td><td>&nbsp; </td><td> &nbsp; </td><td> display initial message
+</td></tr>
+<tr>
+<td> DoPreRun* </td><td> &nbsp; </td><td> PreRun
+</td></tr>
+<tr>
+<td> Loop {
+</td></tr>
+<tr>
+<td> &nbsp; &nbsp;  OnNextStimulusCode  </td><td> &nbsp;  </td><td>  &nbsp; </td><td>  &nbsp; </td><td> provide a stimulus code, or 0 to finish run
+</td></tr>
+<tr>
+<td> &nbsp; &nbsp; OnPreSequence   </td><td>     &nbsp; </td><td> &nbsp; </td><td>    &nbsp; </td><td> determine attended target
+</td></tr>
+<tr>
+<td> &nbsp; &nbsp; DoPreSequence* </td><td> &nbsp; </td><td> PreSequence
+</td></tr>
+<tr>
+<td> &nbsp; &nbsp; OnSequenceBegin
+</td></tr>
+<tr>
+<td>   &nbsp; &nbsp; Loop {
+</td></tr>
+<tr>
+<td>  &nbsp; &nbsp; &nbsp; &nbsp; OnStimulusBegin     </td><td>  &nbsp; </td><td>  &nbsp;   </td><td>   &nbsp; </td><td> present stimulus
+</td></tr>
+<tr>
+<td>  &nbsp; &nbsp; &nbsp; &nbsp;   DoStimulus* </td><td> &nbsp; </td><td> Stimulus
+</td></tr>
+<tr>
+<td>  &nbsp; &nbsp; &nbsp; &nbsp;  OnStimulusEnd     </td><td>  &nbsp;   </td><td>  &nbsp; </td><td>   &nbsp; </td><td>  hide visual stimulus
+</td></tr>
+<tr>
+<td>  &nbsp; &nbsp; &nbsp; &nbsp;   OnNextStimulusCode    </td><td>  &nbsp; </td><td>  &nbsp; </td><td>  &nbsp; </td><td> provide a stimulus code, or 0 to finish sequence
+</td></tr>
+<tr>
+<td>   &nbsp; &nbsp; &nbsp; &nbsp;   DoISI* </td><td> &nbsp; </td><td> ISI
+</td></tr>
+<tr>
+<td>  &nbsp; &nbsp; &nbsp; &nbsp;  [OnClassInput]*   </td><td>   &nbsp;  </td><td>  &nbsp; </td><td>  &nbsp; </td><td> store classification input (copy/free modes only)<br /> -- this event may occur any time during the<br /> sequence, and during the post sequence phase
+</td></tr>
+<tr>
+<td>  &nbsp; &nbsp;  }
+</td></tr>
+<tr>
+<td>  &nbsp;  &nbsp;   OnSequenceEnd
+</td></tr>
+<tr>
+<td>  &nbsp;  &nbsp;  DoPostSequence* </td><td> &nbsp; </td><td> PostSequence
+</td></tr>
+<tr>
+<td>  &nbsp; &nbsp;   [OnClassResult]    </td><td>    &nbsp; </td><td> &nbsp;   </td><td>  &nbsp; </td><td>   determine selected target (copy/free modes only)
+</td></tr>
+<tr>
+<td>  }
+</td></tr>
+<tr>
+<td>  OnPostRun
+</td></tr>
+<tr>
+<td>   DoPostRun* </td><td> &nbsp; </td><td> PostRun
+</td></tr>
+<tr>
+<td>  OnStopRun        </td><td>  &nbsp;  </td><td>  &nbsp; </td><td>  &nbsp; </td><td> display final message
+</td></tr>
+<tr>
+<td>  OnHalt
+</td></tr></table>
+<a name="Stimulus_Code_Event"></a><h3>Stimulus Code Event</h3>
+<a name="int_OnNextStimulusCode"></a><h4>int OnNextStimulusCode</h4>
+<p>This event handler is called immediately before stimulus presentation, and determines the sequence in which stimuli (or associations thereof) are presented.
+This handler should return the next element of the current sequence of stimulus codes, or zero to indicate the end of the sequence.
+A null sequence indicates the end of a <a href="BCI2000_Glossary.html#Run" title="BCI2000 Glossary">run</a>, i.e. the current run will end when <i>OnNextStimulusCode</i> returns two zeros in a row.
+</p><p>The <i>OnNextStimulusCode</i> event handler is mandatory for a <tt>StimulusPresentation</tt> descendant to implement.
+Thus, a minimal stimulus presentation application consists of a <tt>StimulusPresentation</tt> descendant that
+</p>
+<ul><li> declares its own additional parameters from its <i>constructor</i>,
+</li><li> checks those parameters for consistency in its <i>OnPreflight</i> handler,
+</li><li> populates the <a href="Programming_Reference%253AStimulusTask_Class.html#Association_Map" title=""><i>Association Map</i></a> in its <i>OnInitialize</i> handler, and
+</li><li> provides a sequence of stimulus codes in its <i>OnNextStimulusCode</i> event handler.
+</li></ul>
+<a name="Events_forwarded_from_the_GenericFilter_interface"></a><h3>Events forwarded from the GenericFilter interface</h3>
+<a name="OnPreflight.28SignalProperties_.28r.29.29"></a><h4>OnPreflight(SignalProperties (r))</h4>
+<a name="OnInitialize.28SignalProperties_.28r.29.29"></a><h4>OnInitialize(SignalProperties (r))</h4>
+<p>These events are forwarded from the inherited <a href="Programming_Reference%253AGenericFilter_Class.html#Preflight" title="Programming Reference:GenericFilter Class"><tt>GenericFilter::Preflight</tt></a> and <a href="Programming_Reference%253AGenericFilter_Class.html#Initialize" title="Programming Reference:GenericFilter Class"><tt>GenericFilter::Initialize</tt></a> events, with input signal properties as an argument. Within the <a href="Programming_Reference%253AFilter_Chain.html" title="Programming Reference:Filter Chain">BCI2000 filter chain</a>, the <tt>StimulusTask</tt> class always writes its input signal through to its output signal, so no output signal properties are provided to these event handlers.
+</p>
+<a name="OnStartRun"></a><h4>OnStartRun</h4>
+<a name="OnStopRun"></a><h4>OnStopRun</h4>
+<a name="OnHalt"></a><h4>OnHalt</h4>
+<p>These events are forwarded from <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class"><tt>GenericFilter</tt>'s</a> <i>StartRun</i>, <i>StopRun</i>, and <i>Halt</i> events.
+</p>
+<a name="Phase_transition_Events"></a><h3>Phase transition Events </h3>
+<a name="OnPreSequence"></a><h4>OnPreSequence</h4>
+<a name="OnSequenceBegin"></a><h4>OnSequenceBegin</h4>
+<a name="OnSequenceEnd"></a><h4>OnSequenceEnd</h4>
+<a name="OnStimulusBegin.28int_stimulusCode_.28r.29.29"></a><h4>OnStimulusBegin(int stimulusCode (r))</h4>
+<a name="OnStimulusEnd.28int_stimulusCode_.28r.29.29"></a><h4>OnStimulusEnd(int stimulusCode (r))</h4>
+<a name="OnPostRun"></a><h4>OnPostRun</h4>
+<p>These events are triggered by phase transitions during a run, e.g., the <i>OnPreSequence</i> event handler is called whenever the phase changes from <i>PreRun</i> to <i>PreSequence</i>.
+</p><p>The <i>stimulusCode</i> arguments to the <i>OnStimulusBegin</i> and <i>OnStimulusEnd</i> event handlers contain the stimulus code present in the <a href="Programming_Reference%253AStimulusTask_Class.html#StimulusCode" title=""><i>StimulusCode</i> state variable</a>; the default behavior of these handlers is to present and conceal the respective stimuli.
+For the remaining event handlers of this category, the default behavior is to do nothing.
+</p>
+<a name="Input_Events"></a><h3>Input Events</h3>
+<a name="DoPreRun.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"></a><h4>DoPreRun(GenericSignal (r), bool doProgress (rw))</h4>
+<a name="DoPreSequence.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"></a><h4>DoPreSequence(GenericSignal (r), bool doProgress (rw))</h4>
+<a name="DoStimulus.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"></a><h4>DoStimulus(GenericSignal (r), bool doProgress (rw))</h4>
+<a name="DoISI.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"></a><h4>DoISI(GenericSignal (r), bool doProgress (rw))</h4>
+<a name="DoPostSequence.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"></a><h4>DoPostSequence(GenericSignal (r), bool doProgress (rw))</h4>
+<a name="DoPostRun.28GenericSignal_.28r.29.2C_bool_doProgress_.28rw.29.29"></a><h4>DoPostRun(GenericSignal (r), bool doProgress (rw))</h4>
+<p>Each call to <a href="Programming_Reference%253AGenericFilter_Class.html#Process" title="Programming Reference:GenericFilter Class"><tt>GenericFilter::Process()</tt></a> is dispatched to one of these
+event handlers, depending on the phase in the sequence, with each handler function corresponding to a phase.
+</p><p>These event handlers will typically not be used by a task class that inherits from <tt>StimulusTask</tt>, unless it needs to modify the standard sequencing behavior, such that it progresses faster or slower from one phase to the next, or subdivides a phase into two or more sub-phases.
+</p><p>Modifying sequencing behavior is possible through the handlers' <i>doProgress</i> argument. <i>doProgress</i> will typically be set to <i>false</i>, except for the last call to the handler during the current phase in the sequence.
+A handler may modify the application's sequencing behavior by setting the <i>doProgress</i> argument: setting it from <i>false</i> to <i>true</i> will proceed to the next phase earlier than prescribed by the <a href="Programming_Reference%253AStimulusTask_Class.html#Parameters" title="">sequencing parameters</a>, and setting it to <i>false</i> from <i>true</i> will defer progressing, such that the handler will be called again, until its <i>doProgress</i> argument is actually <i>true</i> on exit.
+</p>
+<a name="Classification_Events"></a><h3>Classification Events</h3>
+<p>Target classification is based on the behavior of the <a href="User_Reference%253AP3TemporalFilter.html" title="User Reference:P3TemporalFilter">P3TemporalFilter</a> signal processing filter. This filter performs per-stimulus averaging over EEG epochs; once it has acquired the desired amount of epochs, it sets its output to the average wave form, and the <a href="User_Reference%253AP3TemporalFilter.html#StimulusCodeRes" title="User Reference:P3TemporalFilter"><i>StimulusCodeRes</i></a> state to the respective stimulus code. In conjunction with the <a href="User_Reference%253ALinearClassifier.html" title="User Reference:LinearClassifier">LinearClassifier</a> (or  other classification filter), this implies that the application module receives, in its input signal, a single classification value for stimulus <span class="texhtml"><i>k</i></span> whenever <i>StimulusCodeRes</i> equals <span class="texhtml"><i>k</i></span>.
+</p>
+<a name="OnClassInput.28stimulusCode_.28r.29.2C_GenericSignal_.28r.29.29"></a><h4>OnClassInput(stimulusCode (r), GenericSignal (r))</h4>
+<p>The <i>OnClassInput</i> event handler is called each time a classification value has been received from the <a href="Technical_Reference%253ACore_Modules.html#Signal_Processing_Module" title="Technical Reference:Core Modules">signal processing module</a>.
+Classification values are stored in a <a href="Programming_Reference%253AAssociationMap_Class.html#ClassResult_Class" title="Programming Reference:AssociationMap Class"><tt>ClassResult</tt></a> object.
+A <tt>StimulusPresentation</tt> descendant class may take additional action by implementing its own <tt>OnClassInput</tt> event handler.
+</p>
+<a name="Target.2A_OnClassResult.28ClassResult_.28r.29.29"></a><h4>Target* OnClassResult(ClassResult (r))</h4>
+<p>The <tt>StimulusPresentationTask</tt>' accumulates classification values in a <a href="Programming_Reference%253AAssociationMap_Class.html#ClassResult_Class" title="Programming Reference:AssociationMap Class"><tt>ClassResult</tt></a> class, and then calls the <i>OnClassResult</i> event handler once classification input has been received for all stimulus codes.
+</p><p>The <i>OnClassResult</i> event handler is supposed to determine a <a href="Programming_Reference%253ATarget_Class.html" title="Programming Reference:Target Class">selection target</a> from  these classification values. Classification values are provided in a <a href="Programming_Reference%253AAssociationMap_Class.html#ClassResult_Class" title="Programming Reference:AssociationMap Class"><tt>ClassResult</tt></a> object; the <i>OnClassResult</i> handler returns a pointer to a <a href="Programming_Reference%253ATarget_Class.html" title="Programming Reference:Target Class">Target</a> object representing the chosen selection target, or a null pointer to indicate that no target has been chosen. On return from the <i>OnClassResult</i> event handler, and in case of a non-null pointer, the target object's <tt>Select()</tt> method is then called, which typically results in some action associated with the target object in question, such as entering a letter into a speller.
+</p><p>The default <i>OnClassResult</i> handler calls <a href="Programming_Reference%253AAssociationMap_Class.html#ClassifyTargets" title="Programming Reference:AssociationMap Class"><tt>AssociationMap::ClassifyTargets()</tt></a> to translate classification values into selection targets; you may override this behavior by providing your own handler.
+</p>
+<a name="Properties"></a><h2>Properties</h2>
+<p>All properties are protected, i.e. intended for use from descendant classes only.
+</p>
+<a name="AssociationMap_Associations_.28rw.29"></a><h3>AssociationMap Associations (rw)</h3>
+<p>An object of type <a href="Programming_Reference%253AAssociationMap_Class.html" title="Programming Reference:AssociationMap Class">AssociationMap</a>, representing sets of stimuli and selection targets associated with a given stimulus code.
+</p><p>Typically, a stimulus presentation application populates the <i>Associations</i> object with stimuli and targets in its <i>OnInitialize</i> event handler, and relies on the <tt>StimulusPresentationTask</tt> default mechanisms for stimulus presentation, and target classification.
+</p><p>Often, but not always, there is a 1-to-1-to-1 correspondence between stimuli, stimulus codes, and selection targets; for a detailed discussion of these terms, and how to use the related objects in your own application, refer to <a href="Programming_Reference%253AAssociationMap_Class.html" title="Programming Reference:AssociationMap Class">Programming Reference:AssociationMap Class</a>.
+</p>
+<a name="Target.2A_AttendedTarget_.28rw.29"></a><h3>Target* AttendedTarget (rw)</h3>
+<p>A pointer that refers to a <a href="Programming_Reference%253ATarget_Class.html" title="Programming Reference:Target Class">selection target object</a>, or a null pointer. When non-null, the <a href="Programming_Reference%253AStimulusTask_Class.html#StimulusType" title="">StimulusType</a> state variable is set based on the <i>AttendedTarget</i> property such that <i>StimulusType</i> is set to 1 whenever the current <i>StimulusCode</i> state variable refers to an <a href="Programming_Reference%253AAssociationMap_Class.html#Association_Class" title="Programming Reference:AssociationMap Class">Association</a> that contains the specified target.
+</p><p>For a discussion of how stimuli, stimulus codes, and selection targets are related to each other via <a href="Programming_Reference%253AAssociationMap_Class.html#Association_Class" title="Programming Reference:AssociationMap Class">Association</a> objects, refer to <a href="Programming_Reference%253AAssociationMap_Class.html#AssociationMap_Class" title="Programming Reference:AssociationMap Class">Programming Reference:AssociationMap Class#AssociationMap Class</a>.
+</p>
+<a name="GUI::GraphDisplay_Display_.28r.29"></a><h3>GUI::GraphDisplay Display (r)</h3>
+<p>The <i>Display</i> property provides access to the <a href="Programming_Reference%253AGraphDisplay_Class.html" title="Programming Reference:GraphDisplay Class">GUI::GraphDisplay</a> object representing the application module's output window.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ApplicationBaseProperties&amp;action=edit&amp;section=1" title="Template:ApplicationBaseProperties">edit</a>]</div><a name="ostream_AppLog.2C_AppLog.File.2C_AppLog.Screen_.28w.29"></a><h3>ostream AppLog, AppLog.File, AppLog.Screen (w)</h3>
+<p>Inheriting from <a href="Programming_Reference%253AApplicationBase_Class.html" title="Programming Reference:ApplicationBase Class"><tt>ApplicationBase</tt></a>, descendants of <tt>StimulusTask</tt> have access
+to the <a href="Programming_Reference%253AApplicationBase_Class.html#Application_Log" title="Programming Reference:ApplicationBase Class"><tt>AppLog</tt></a>, <a href="Programming_Reference%253AApplicationBase_Class.html#Application_Log" title="Programming Reference:ApplicationBase Class"><tt>AppLog.File</tt></a>, and <a href="Programming_Reference%253AApplicationBase_Class.html#Application_Log" title="Programming Reference:ApplicationBase Class"><tt>AppLog.Screen</tt></a> streams which are members of <tt>ApplicationBase</tt>.
+These streams allow convenient output into an application log file (<tt>AppLog.File</tt>), an application log window (<tt>AppLog.Screen</tt>), and both simultaneously (<tt>AppLog</tt>).
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ApplicationBaseProperties&amp;action=edit&amp;section=2" title="Template:ApplicationBaseProperties">edit</a>]</div><a name="RandomGenerator_RandomNumberGenerator_.28rw.29"></a><h3>RandomGenerator RandomNumberGenerator (rw)</h3>
+<p>An object of type <a href="Programming_Reference%253ARandomGenerator_Class.html" title="Programming Reference:RandomGenerator Class"><tt>RandomGenerator</tt></a> which behaves according to the user setting in the <a href="Programming_Reference%253ARandomGenerator_Class.html" title="Programming Reference:RandomGenerator Class"><i>RandomSeed</i> parameter</a>.
+</p>
+<a name="Methods"></a><h2>Methods</h2>
+<p>Methods are declared protected, i.e. for use by descendants only.
+</p>
+<a name="DisplayMessage.28string.29"></a><h3>DisplayMessage(string)</h3>
+<p>Displays a text message in the application window. This function is provided for convenience and consistency of appearance; for detailed control over appearance of text messages, add your own <a href="Programming_Reference%253ATextField_Class.html" title="Programming Reference:TextField Class">TextField</a> object to the <a href="Programming_Reference%253AGraphDisplay_Class.html" title="Programming Reference:GraphDisplay Class">GUI::GraphDisplay</a> represented by the <i>Display</i> property.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=1" title="Template:StimulusTaskParams">edit</a>]</div><a name="WindowBackgroundColor"></a><h4>WindowBackgroundColor</h4>
+<p>The window's background color, given as an RGB value.
+For convenience, RGB values may be entered in hexadecimal notation, e.g. <tt>0xff0000</tt> for red.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=2" title="Template:StimulusTaskParams">edit</a>]</div><a name="PreRunDuration"></a><h4>PreRunDuration</h4>
+<p>The duration of the pause preceding the first sequence.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=3" title="Template:StimulusTaskParams">edit</a>]</div><a name="PostRunDuration"></a><h4>PostRunDuration</h4>
+<p>Duration of the pause following last sequence.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=4" title="Template:StimulusTaskParams">edit</a>]</div><a name="PreSequenceDuration"></a><h4>PreSequenceDuration</h4>
+<p>Duration of the pause preceding sequences (or sets of intensifications).
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p><p>In <a href="Programming_Reference%253AStimulusTask_Class.html#InterpretMode" title="">free or copy mode</a>, the <i>PreSequenceDuration</i> and <i>PostSequenceDuration</i> parameters may not go below twice the value of the <a href="Programming_Reference%253AStimulusTask_Class.html#StimulusDuration" title="">StimulusDuration</a> parameters, in order to allow for presentation of <a href="Programming_Reference%253AStimulusTask_Class.html#FocusOn" title="">FocusOn</a> and <a href="Programming_Reference%253AStimulusTask_Class.html#Result" title="">Result</a> announcement stimuli.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=5" title="Template:StimulusTaskParams">edit</a>]</div><a name="PostSequenceDuration"></a><h4>PostSequenceDuration</h4>
+<p>Duration of the pause following sequences (or sets of intensifications).
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p><p>When used in conjunction with the <a href="User_Reference%253AP3TemporalFilter.html" title="User Reference:P3TemporalFilter">P3TemporalFilter</a>, this value needs to be larger than the <a href="User_Reference%253AP3TemporalFilter.html#EpochLength" title="User Reference:P3TemporalFilter">EpochLength</a> parameter. This allows classification to complete before the next sequence of stimuli is presented.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=6" title="Template:StimulusTaskParams">edit</a>]</div><a name="StimulusDuration"></a><h4>StimulusDuration</h4>
+<p>For visual stimuli, the duration of stimulus presentation.
+For auditory stimuli, the maximum duration, i.e. playback of audio extending above the specified duration will be muted.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=7" title="Template:StimulusTaskParams">edit</a>]</div><a name="ISIMinDuration.2C_ISIMaxDuration"></a><h4>ISIMinDuration, ISIMaxDuration</h4>
+<p>Minimum and maximum duration of the inter-stimulus interval.
+During the inter-stimulus interval, the screen is blank, and audio is muted.
+</p><p>Actual inter-stimulus intervals vary randomly between minimum and maximum value, with uniform probability for all intermediate values.
+Given in <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample blocks</a>, or in time units when immediately followed with 's', 'ms', or similar.
+Note that temporal resolution is limited to a single <a href="BCI2000_Glossary.html#Sample_Block" title="BCI2000 Glossary">sample block</a>.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=8" title="Template:StimulusTaskParams">edit</a>]</div><a name="InterpretMode"></a><h4>InterpretMode</h4>
+<p>An enumerated value selecting on-line classification of evoked responses:
+</p>
+<ul><li>0: no target is announced "attended", and no classification is performed;
+</li><li>1: <b>online</b> or <b>free mode</b>: classification is performed, but no "attended target" is defined;
+</li><li>2: <b>copy mode</b>: "attended" targets are defined, classification is performed.
+</li></ul>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskParams&amp;action=edit&amp;section=9" title="Template:StimulusTaskParams">edit</a>]</div><a name="DisplayResults"></a><h4>DisplayResults</h4>
+<p>Switches result display of copy/free spelling on or off.
+In the P3Speller, setting <i>DisplayResults</i> to 'off' will disable execution of all speller commands (such as switching matrices) as well.
+</p>
+<a name="States"></a><h2>States</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskStates&amp;action=edit&amp;section=1" title="Template:StimulusTaskStates">edit</a>]</div><a name="StimulusCode"></a><h3>StimulusCode</h3>
+<p>The numerical ID of the stimulus being presented (16 bit).
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskStates&amp;action=edit&amp;section=2" title="Template:StimulusTaskStates">edit</a>]</div><a name="StimulusType"></a><h3>StimulusType</h3>
+<p>This state is 1 during presentation of an attended stimulus, and 0 otherwise.
+The notion of an "attended" stimulus requires data recording in <a href="Programming_Reference%253AStimulusTask_Class.html#InterpretMode" title="">copy mode</a>.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskStates&amp;action=edit&amp;section=3" title="Template:StimulusTaskStates">edit</a>]</div><a name="StimulusBegin"></a><h3>StimulusBegin</h3>
+<p>This state is 1 during the first block of stimulus presentation, and 0 otherwise.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskStates&amp;action=edit&amp;section=4" title="Template:StimulusTaskStates">edit</a>]</div><a name="PhaseInSequence"></a><h3>PhaseInSequence</h3>
+<p>This state is 1 during pre-sequence, 2 during sequence and 3 during post-sequence (see <a href="Programming_Reference%253AStimulusTask_Class.html#Timeline" title="">Timeline</a>).
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:StimulusTaskStates&amp;action=edit&amp;section=5" title="Template:StimulusTaskStates">edit</a>]</div><a name="PauseApplication"></a><h3>PauseApplication</h3>
+<p>While this state is set to 1, no task processing occurs, i.e. the task is paused, and may be resumed by setting PauseApplication to 0.
+</p>
+<a name="Timeline"></a><h2>Timeline</h2>
+<p><a href="../images/thumb/2/22/StimulusTask_Timeline.png/676px-StimulusTask_Timeline.png" class="image" title=""><img src="../images/thumb/2/22/StimulusTask_Timeline.png/676px-StimulusTask_Timeline.png" alt="" width="676" height="206" longdesc="/wiki/index.php/Image:StimulusTask_Timeline.png" /></a>
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AP3TemporalFilter.html" title="User Reference:P3TemporalFilter">User Reference:P3TemporalFilter</a>, <a href="User_Reference%253AP3SpellerTask.html" title="User Reference:P3SpellerTask">User Reference:P3SpellerTask</a>, <a href="User_Reference%253AStimulusPresentationTask.html" title="User Reference:StimulusPresentationTask">User Reference:StimulusPresentationTask</a>;
+</p><p><a href="Programming_Reference%253AAssociationMap_Class.html" title="Programming Reference:AssociationMap Class">Programming Reference:AssociationMap Class</a>, <a href="Programming_Reference%253AStimulus_Class.html" title="Programming Reference:Stimulus Class">Programming Reference:Stimulus Class</a>, <a href="Programming_Reference%253ATarget_Class.html" title="Programming Reference:Target Class">Programming Reference:Target Class</a>
+</p><p><a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">Programming Reference:GenericFilter Class</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li><a href="Programming_Reference%253AGenericFilter_Class.html">GenericFilter</a></li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li>StimulusTask</li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

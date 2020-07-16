@@ -1,0 +1,4 @@
+Application:Window int WindowWidth= 640 640 0 % // width of application window
+Application:Window int WindowHeight= 480 480 0 % // height of application window
+Application:Window int WindowLeft= 1024 0 % % // screen coordinate of application window's left edge
+Application:Window int WindowTop= 0 0 % % // screen coordinate of application window's top edge

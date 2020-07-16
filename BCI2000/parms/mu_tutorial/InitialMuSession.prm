@@ -1,0 +1,74 @@
+System:Configuration matrix OperatorVersion= { Framework Revision Build } 1 2.x ,%20 Dec%2014%202007 // operator module version information
+Storage:Data%20Location string DataDirectory= ../data/mu ../data % % // path to top level data directory (directory)
+Storage:Session string SubjectSession= 001 001 % % // three-digit session number
+Storage:Session string SubjectRun= 01 00 % % // two-digit run number
+Visualize:Timing int VisualizeTiming= 1 1 0 1 // visualize system timing (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSourceTime= 2s 2 0 % // how much time in Source visualization
+Visualize:Source%20Signal int SourceMin= -100muV -100muV % % // raw signal vis Min Value
+Visualize:Source%20Signal int SourceMax= 100muV 100muV % % // raw signal vis Max Value
+Source:SignalGeneratorADC int ModulateAmplitude= 1 0 0 1 // Modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source:SignalGeneratorADC int SineChannelX= 1 0 0 % // Channel number of sinewave controlled by mouse x position
+Source:SignalGeneratorADC int SineChannelY= 2 0 0 % // Channel number of sinewave controlled by mouse y position (0 for all)
+Source:SignalGeneratorADC int SineChannelZ= 3 0 0 % // Channel number of sinewave controlled by mouse key state
+Source:SignalGeneratorADC float SineFrequency= 10Hz 10Hz % % // Frequency of sine wave
+Source:SignalGeneratorADC int SineAmplitude= 50muV 100muV % % // Amplitude of sine wave
+Source:SignalGeneratorADC int NoiseAmplitude= 30muV 30muV % % // Amplitude of white noise (common to all channels)
+Source:SignalGeneratorADC int DCOffset= 0 0muV % % // DC offset (common to all channels)
+Source:SignalGeneratorADC string OffsetMultiplier= % StimulusType % % // Expression to multiply offset by
+Source:SignalGeneratorADC int RandomSeed= 0 0 0 1 // Initialization value for random number generator (initialize from time if 0)
+Source:SignalGeneratorADC int SignalType= 0 0 0 2 // numeric type of output signal:  0: int16, 1: float32, 2: int32 (enumeration)
+Storage:BCI2000FileWriter int SavePrmFile= 0 1 0 1 // save additional parameter file (0=no, 1=yes) (boolean)
+Storage:BCI2000FileWriter string StorageTime= % // time of beginning of data storage
+Source:Alignment int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+System:Core%20Connections string SignalSourcePort= 4068 4200 1024 65535 // the SignalSource module's listening port
+System:Core%20Connections string SignalSourceIP= 134.2.123.129 127.0.0.1 % % // the SignalSource module's listening IP
+System:Configuration matrix SignalSourceVersion= { Framework Revision Build } 1 2.x ,%20 Dec%2017%202007 // SignalSource version information
+System:Configuration matrix SignalSourceFilterChain= 8 { Filter%20Name Position%20String } DataIOFilter 0 SignalGeneratorADC 1 NullFileWriter 1 BCI2000FileWriter 1 EDFFileWriter 1 GDFFileWriter 1 AlignmentFilter 1.1 TransmissionFilter 1.2 // SignalSource filter chain
+Visualize:Processing%20Stages int VisualizeAlignmentFilter= 0 0 0 1 // Visualize AlignmentFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeTransmissionFilter= 0 0 0 1 // Visualize TransmissionFilter output (boolean)
+System:Core%20Connections string SignalProcessingPort= 4067 4200 1024 65535 // the SignalProcessing module's listening port
+System:Core%20Connections string SignalProcessingIP= 134.2.123.129 127.0.0.1 % % // the SignalProcessing module's listening IP
+System:Configuration matrix SignalProcessingVersion= { Framework Revision Build } 1 2.x ,%20 Dec%2014%202007 // SignalProcessing version information
+System:Configuration matrix SignalProcessingFilterChain= 0 { Filter%20Name Position%20String } // SignalProcessing filter chain
+Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
+Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
+Application:Window int WindowWidth= 640 640 0 % // width of application window
+Application:Window int WindowHeight= 480 480 0 % // height of application window
+Application:Window int WindowLeft= 0 0 % % // screen coordinate of application window's left edge
+Application:Window int WindowTop= 0 0 % % // screen coordinate of application window's top edge
+Application:Window string WindowBackgroundColor= 0xffffff 0x505050 % % // background color (color)
+Application:Sequencing float PreRunDuration= 1s 0 0 % // pause preceding first sequence
+Application:Sequencing float PostRunDuration= 1s 0 0 % // pause following last sequence
+Application:Sequencing float PreSequenceDuration= 0s 2s 0 % // pause preceding sequences/sets of intensifications
+Application:Sequencing float PostSequenceDuration= 0s 2s 0 % // pause following sequences/sets of intensifications
+Application:Sequencing float StimulusDuration= 2s 40ms 0 % // stimulus duration
+Application:Sequencing float ISIMinDuration= 1s 80ms 0 % // minimum duration of inter-stimulus interval
+Application:Sequencing float ISIMaxDuration= 1.5s 80ms 0 % // maximum duration of inter-stimulus interval
+Application:Result%20Processing int InterpretMode= 0 0 0 2 // interpretation of results: 0 none, 1 online free mode, 2 copy mode (enumeration)
+Application:Result%20Processing int DisplayResults= 0 1 0 1 // display results of copy/free spelling (boolean)
+Application:Sequencing:StimulusPresentationTask intlist Sequence= 4 1 1 1 1 // Sequence in which stimuli are presented (deterministic mode)/ Stimulus frequencies for each stimulus (random mode)
+Application:Sequencing:StimulusPresentationTask int SequenceType= 1 0 0 1 // Sequence of stimuli is 0 deterministic, 1 random (enumeration)
+Application:Sequencing:StimulusPresentationTask int NumberOfSequences= 5 1 0 % // number of sequence repetitions in a run
+Application:Sequencing intlist ToBeCopied= 4 1 2 3 4 1 1 % // Sequence in which stimuli need to be copied (only used in copy mode)
+Application:Sequencing string UserComment= Mu%20Rhythm%20Screening%20Tutorial // User comments for a specific run
+Application:Stimuli matrix Stimuli= { caption icon audio } { stimulus1 stimulus2 stimulus3 stimulus4 } Left Right Up Down images/left.bmp images/right.bmp images/up.bmp images/down.bmp % % % % // captions and icons to be displayed, sounds to be played for different stimuli
+Application:Stimuli matrix FocusOn= { caption icon audio } { focuson } % % % // initial announcement what to focus on
+Application:Stimuli matrix Result= { caption icon audio } { result } % % % // final result announcement 
+Application:Stimuli int StimulusWidth= 0 0 0 100 // StimulusWidth in percent of screen width (zero for original pixel size)
+Application:Stimuli int CaptionHeight= 10 0 0 100 // Height of stimulus caption text in percent of screen height
+Application:Stimuli string CaptionColor= 0x004040 0x00FFFFFF 0x00000000 0x00000000 // Color of stimulus caption text (color)
+Application:Stimuli string BackgroundColor= 0x80FF00 0x00FFFF00 0x00000000 0x00000000 // Color of stimulus background (color)
+Application:Stimuli int CaptionSwitch= 0 1 0 1 // Present captions (boolean)
+Application:Stimuli int IconSwitch= 1 1 0 1 // Present icon files (boolean)
+Application:Stimuli int AudioSwitch= 0 1 0 1 // Present audio files (boolean)
+Application:Stimuli float AudioVolume= 100 100 0 100 // Volume for audio playback in percent
+Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20320 % % // IP address/port to write to, e.g. localhost:20320
+Application:Localization string Language= Default Default % % // Language for user messages
+System:Core%20Connections string ApplicationPort= 4069 4200 1024 65535 // the Application module's listening port
+System:Core%20Connections string ApplicationIP= 134.2.123.129 127.0.0.1 % % // the Application module's listening IP
+System:Configuration matrix ApplicationVersion= { Framework Revision Build } 1 2.x ,%20 Dec%2014%202007 // Application version information
+System:Configuration matrix ApplicationFilterChain= 3 { Filter%20Name Position%20String } ConnectorInput 2.9999 StimulusPresentationTask 3 ConnectorOutput 3.9999 // Application filter chain
+Filtering:SpatialFilter int SpatialFilterType= 0 2 0 3 // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
+Visualize:P3TemporalFilter int VisualizeP3TemporalFiltering= 0 0 0 1 // Visualize averaged epochs (0=no 1=yes) (boolean)

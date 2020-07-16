@@ -1,0 +1,30 @@
+﻿  Generating ui_MainWindow.h
+  Generating moc_MainWindow.cpp
+  Building Custom Rule C:/BCI2000.python3/src/core/Tools/BCI2000LauncherQt/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/core/Tools/BCI2000LauncherQt/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  main.cpp
+  MainWindow.cpp
+  ModuleInventory.cpp
+  BCIStream_guiapp.cpp
+  AboutBox.cpp
+  ExecutableHelp.cpp
+  Settings.cpp
+  ColorListChooser.cpp
+  QtMain.cpp
+  QtMessageHandler.cpp
+  moc_MainWindow.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  BCI2000Launcher.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000LauncherQt\Release\BCI2000Launcher.exe
+  	Deploying executable
+  copying files:
+  Copying BCI2000Launcher.exe ...
+  Copying Qt5Gui.dll ...
+  Copying Qt5Widgets.dll ...
+  Copying Qt5Core.dll ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Copying qwindows.dll ...
+  Done.

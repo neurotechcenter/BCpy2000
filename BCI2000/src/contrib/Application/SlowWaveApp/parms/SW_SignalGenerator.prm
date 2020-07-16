@@ -1,0 +1,147 @@
+Filtering int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
+System string ApplicationIP= 134.2.102.184 127.0.0.1 127.0.0.1 127.0.0.1 // the Application module's listening IP
+System string ApplicationPort= 3055 4200 1024 32768 // the Application module's listening port
+Filtering intlist ArteChList= 2 2 0 2 0 0 // Association of artefact channels with signal channels, 0 for no artefact channel
+Filtering floatlist ArteFactorList= 2 0.15 0 0 0 0 // Influence of artefact channel on input channel, -1: no artifact channel
+Filtering int ArteMode= 0 1 0 3 // Artefact correction mode: 0 off, 1 linear subtraction, 2 subtraction if supporting, 3 subtraction w/abort (enumeration)
+UsrTask_Feedback int AudFBMode= 1 1 0 1 // 0 no acoustic FB, 1 MIDI(enumeration)
+UsrTask_Views int AudInvalid= 1 1 0 1 // 0 no auditory invalid indicator, 1 MIDI(enumeration)
+UsrTask_Views floatlist AudMarkers= 2 TaskBegin FeedbackBegin 0 0 0 // Time offsets for auditory markers (values or parameter names)
+UsrTask_Views int AudReinforcement= 1 1 0 2 // 0 no auditory reinforcement, 1 MIDI, 2 WAV(enumeration)
+UsrTask_Targets matrix AudResultMode= { no%20target:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) target%201:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) target%202:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) target%203:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) target%204:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) target%205:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) target%206:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) target%207:%200%20no%20auditory%20result,%201%20MIDI,%202%20WAV(enumeration) } { % } 0 0 0 0 0 0 0 0 0 0 2 // target N: 0 no auditory result, 1 MIDI, 2 WAV(enumeration)
+UsrTask_Targets matrix AudTaskMode= { no%20target:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) target%201:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) target%202:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) target%203:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) target%204:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) target%205:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) target%206:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) target%207:%200%20no%20auditory%20task,%201%20MIDI,%202%20WAV(enumeration) } { % } 0 0 0 0 0 0 0 0 0 0 2 // target N: 0 no auditory task, 1 MIDI, 2 WAV(enumeration)
+Visualize matrix AvgDisplayCh= 2 2 1 Channel%201 2 Channel%202 0 0 0 // Channels and display names for average display
+Visualize matrix AvgDisplayMarkers= 5 1 TaskBegin FeedbackBegin FeedbackEnd BaseBegin BaseEnd % % % // Time-valued parameters that will be indicated by markers
+Visualize float AvgDisplayMax= -50 0 0 0 // Maximum value for average display
+Visualize float AvgDisplayMin= 50 0 0 0 // Minimum value for average display
+UsrTask float BaseBegin= 1.9s 1.9s 0 0 // Begin of Baseline
+Filtering intlist BaseChList= 2 1 1 0 0 1 // 1 to mark that BL is subtracted
+UsrTask float BaseEnd= 2.0s 2.0s 0 0 // End of Baseline in s
+Connector string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
+Connector list ConnectorInputFilter= 0 % % % // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
+Connector string ConnectorOutputAddress= % localhost:20320 % % // IP address/port to write to, e.g. localhost:20320
+UsrTask_Targets int ContinuousAudResult= 0 0 0 1 // repeat file C<result.wav> continuously during feedback: 0: no, 1: yes(boolean)
+Source int DCoffset= 0 0 -32767 32767 // DC offset (common to all channels)
+Source int DoTrueRandom= 0 0 0 1 // Generate truly random sequence (0=no, 1=yes) (boolean)
+System string EEGSourceIP= 134.2.102.184 127.0.0.1 127.0.0.1 127.0.0.1 // the EEGSource module's listening IP
+System string EEGSourcePort= 3053 4200 1024 32768 // the EEGSource module's listening port
+UsrTask_Feedback int FBAlwaysOn= 0 0 0 1 // 0 no feedback display outside feedback interval, 1 always show feedback cursor/play feedback sound(enumeration)
+UsrTask_Feedback int FBBrightnessChannel= -1 -1 -1 100 // signal channel for cursor brightness (-1 for none)
+UsrTask_Feedback floatlist FBCh0L= 2 -101 -101 0 -101 101 // Lower target bounds for feedback channel 0
+UsrTask_Feedback floatlist FBCh0U= 2 101 101 0 -101 101 // Upper target bounds for feedback channel 0
+UsrTask_Feedback floatlist FBCh1L= 2 -101 5 0 -101 101 // Lower target bounds for feedback channel 1
+UsrTask_Feedback floatlist FBCh1U= 2 -5 101 0 -101 101 // Upper target bounds for feedback channel 1
+UsrTask_Feedback intlist FBCoordChannels= 2 0 1 0 -1 100 // signal channels for cursor x and y coordinates (-1 for none, 0 is timebase)
+UsrTask_Feedback string FBCursorImg= Ball.bmp % % % // name of cursor image file (inputfile)
+UsrTask int FeedbackBegin= 2.0s 0 0 0 // Begin of Feedback Interval relative to trial begin
+UsrTask int FeedbackEnd= 6.5s 0 0 0 // End of Feedback Interval relative to trial begin
+Filtering intlist FFTInputChannels= 1 1 0 0 0 // Input Channels the FFT is performed on
+Visualize float FFTMaxValue= 4000 4000 0 0 // FFT visualization max value
+Filtering int FFTOutputSignal= 0 0 0 2 // Signal provided to the next filter: 0: Input Signal, 1: Power Spectra of selected Channels 2: Complex Amplitudes of selected Channels (enumeration)
+Filtering int FFTSize= 256 0 0 0 // Number of Samples over which the FFT is computed
+Filtering int FFTWindow= 3 0 0 3 // Type of Sidelobe Suppression Window 1: Hamming, 2: Hann, 3: Blackman (enumeration)
+Storage string FileInitials= ..\data a z 0 // path to top level data directory (directory)
+UsrTask_Feedback int GMFBCenterNote= 69 69 0 128 // MIDI note at zero position for acoustic FB (69: 440Hz a')
+UsrTask_Feedback int GMFBInstrument= 1 1 1 128 // GM instrument for acoustic FB
+UsrTask_Feedback float GMFBInterval= 3 3 0.1 6 // acoustic FB range in octaves
+UsrTask_Feedback int GMFBScale= 1 1 0 6 // 0 no scale, 1 chromatic, 2 major, 3 melodic minor, 4 harmonic minor, 5 pentatonic, 6 whole tone(enumeration)
+UsrTask_Feedback int GMFBVolume= 70 70 0 128 // MIDI volume for acoustic FB
+UsrTask_Views int GMIVInstrument= 57 57 1 128 // GM instrument for acoustic invalid indicator
+UsrTask_Views int GMIVNote= 36 36 0 128 // MIDI note for acoustic invalid indicator
+UsrTask_Views int GMIVVolume= 100 100 0 128 // MIDI volume for acoustic invalid indicator
+UsrTask_Views intlist GMMarkerInstruments= 2 14 14 14 1 128 // GM instruments for auditory markers
+UsrTask_Views intlist GMMarkerNotes= 2 88 72 88 0 128 // MIDI notes for auditory markers
+UsrTask_Views intlist GMMarkerVolumes= 2 100 100 100 0 128 // MIDI volume for auditory markers
+UsrTask_Targets matrix GMResultInstrument= { GM%20instrument%20for%20target%200 GM%20instrument%20for%20target%201 GM%20instrument%20for%20target%202 GM%20instrument%20for%20target%203 GM%20instrument%20for%20target%204 GM%20instrument%20for%20target%205 GM%20instrument%20for%20target%206 GM%20instrument%20for%20target%207 } { % } 1 1 1 1 1 1 1 1 1 1 128 // GM instrument for target N
+UsrTask_Targets matrix GMResultNote= { MIDI%20note%20for%20target%200 MIDI%20note%20for%20target%201 MIDI%20note%20for%20target%202 MIDI%20note%20for%20target%203 MIDI%20note%20for%20target%204 MIDI%20note%20for%20target%205 MIDI%20note%20for%20target%206 MIDI%20note%20for%20target%207 } { % } 60 60 60 60 60 60 60 60 60 0 128 // MIDI note for target N
+UsrTask_Targets matrix GMResultVolume= { MIDI%20volume%20for%20target%200 MIDI%20volume%20for%20target%201 MIDI%20volume%20for%20target%202 MIDI%20volume%20for%20target%203 MIDI%20volume%20for%20target%204 MIDI%20volume%20for%20target%205 MIDI%20volume%20for%20target%206 MIDI%20volume%20for%20target%207 } { % } 70 70 70 70 70 70 70 70 70 0 128 // MIDI volume for target N
+UsrTask_Views int GMRIInstrument= 10 10 1 128 // GM instrument for acoustic reinforcement
+UsrTask_Views int GMRIVolume= 70 70 0 128 // MIDI volume for acoustic reinforcement
+UsrTask_Targets matrix GMTaskInstrument= { GM%20instrument%20for%20target%200 GM%20instrument%20for%20target%201 GM%20instrument%20for%20target%202 GM%20instrument%20for%20target%203 GM%20instrument%20for%20target%204 GM%20instrument%20for%20target%205 GM%20instrument%20for%20target%206 GM%20instrument%20for%20target%207 } { % } 1 1 1 1 1 1 1 1 1 1 128 // GM instrument for target N
+UsrTask_Targets matrix GMTaskNote= { MIDI%20note%20for%20target%200 MIDI%20note%20for%20target%201 MIDI%20note%20for%20target%202 MIDI%20note%20for%20target%203 MIDI%20note%20for%20target%204 MIDI%20note%20for%20target%205 MIDI%20note%20for%20target%206 MIDI%20note%20for%20target%207 } { % } 60 60 60 60 60 60 60 60 60 0 128 // MIDI note for target N
+UsrTask_Targets matrix GMTaskVolume= { MIDI%20volume%20for%20target%200 MIDI%20volume%20for%20target%201 MIDI%20volume%20for%20target%202 MIDI%20volume%20for%20target%203 MIDI%20volume%20for%20target%204 MIDI%20volume%20for%20target%205 MIDI%20volume%20for%20target%206 MIDI%20volume%20for%20target%207 } { % } 70 70 70 70 70 70 70 70 70 0 128 // MIDI volume for target N
+UsrTask int ItiDuration= 1s 0 0 0 // Duration of Intertrial Interval
+Source int ModulateAmplitude= 1 0 0 1 // modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source int NoiseMaxAmplitude= 3000 3000 -32767 32767 // the maximum output value for noise
+Source int NoiseMinAmplitude= -3000 0 -32767 32767 // the minimal output value for noise
+UsrTask int NumberTargets= 2 2 0 7 // number of target codes
+Filtering int NumControlSignals= 2 1 1 128 // the number of transmitted control signals
+UsrTask int PreRunInterval= 1s 0 0 0 // Pause prior to starting a run
+UsrTask_Targets matrix ResultSound= { % % % % % % % % } { % } sounds sounds sounds sounds sounds sounds sounds sounds 0 0 0 // 
+UsrTask int RewardDuration= 1s 0 0 0 // Duration of PostTrial Feedback
+UsrTask_Views intlist RIFrequency= 2 1 1 1 1 10000 // reinforce only if at least n trials and m correct trials
+UsrTask_Views string RISoundFile= soundswelldone.wav % % % // sound file for acoustic reinforcement (inputfile)
+Source float RotateMouseBy= 180 0 0 0 // angle of rotation for mouse direction in degrees
+Source int SampleBlockSize= 32 5 1 128 // the number of samples transmitted at a time
+Source int SamplingRate= 256 128 1 4000 // the sample rate
+Storage int SavePrmFile= 0 1 0 1 // save additional parameter file (0=no, 1=yes) (boolean)
+UsrTask_Views string ScoreFont= Arial Arial a z // font name for score view
+UsrTask_Views floatlist ScoreRect= 4 -96 -96 -94 -36 0 -101 101 // rectangle for score display
+UsrTask_Views int ScoreViewMode= 1 1 0 1 // score view: 0: off, 1: on(enumeration)
+UsrTask string SequenceFile= default.seq default.seq a z // file name of sequence file(inputfile)
+UsrTask int SequenceType= 3 3 0 3 // 0 no task, 1 sequence file, 2 random, 3 explicit(enumeration)
+System string SignalProcessingIP= 134.2.102.184 127.0.0.1 127.0.0.1 127.0.0.1 // the SignalProcessing module's listening IP
+System string SignalProcessingPort= 3054 4200 1024 32768 // the SignalProcessing module's listening port
+Source int SignalType= 0 0 0 3 // numeric type of output signal:  0: int16, 1: float24, 2: float32, 3: int32 (enumeration)
+Source int SineChannel= 0 0 0 128 // channel number of sinewave for y (0=all)
+Source int SineChannelX= 0 0 0 128 // channel number of sinewave for x
+Source float SineFrequency= 0 10 0 100 // frequency of the sine wave
+Source int SineMaxAmplitude= 100muV 20000 -32767 32767 // the maximum output value for sine
+Source int SineMinAmplitude= -100muV 0 -32767 32767 // the minimal output value for sine
+Source int SoftwareCh= 16 16 1 128 // the number of digitized and stored channels
+Filtering floatlist SourceChGain= 16 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 -500 500 // gain for each channel (A/D units -> muV)
+Filtering floatlist SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -500 500 // offset for channels in A/D units
+Filtering floatlist SourceChTimeOffset= 1 -1 0 0 1 // time offset for all source channels (not used if -1)
+Visualize int SourceMax= 100muV 100muV 0 0 // raw signal vis Max Value
+Visualize int SourceMin= -100muV -100muV 0 0 // raw signal vis Min Value
+Filtering int SpatialFilteredChannels= 2 2 1 64 // Number of Spatially Filtered Channels
+Filtering matrix SpatialFilterKernal= 2 4 1 0 0 0 0 1 0 0 64 -100 100 // Spatial Filter Kernal Weights
+System int StateVectorLength= 7 16 1 30 // length of the state vector in bytes
+Storage string StorageTime= 16:15 Time a z // time of beginning of data storage
+Storage string SubjectName= Name Name a z // subject alias
+Storage string SubjectRun= 00 00 0 0 // two-digit run number
+Storage string SubjectSession= 001 001 0 0 // three-digit session number
+Filtering float SWAvgSpan= 0.5s 0.5s 0 0 // Duration of averaging window
+Filtering intlist SWInChList= 2 1 2 0 0 0 // Channel number of input signal (include artifact channel!)
+Filtering intlist SWOutChList= 2 1 2 0 0 0 // Channel number of output signal (include artifact channel!)
+UsrTask_Targets matrix TargetFont= { text%20properties%20for%20target%200 text%20properties%20for%20target%201 text%20properties%20for%20target%202 text%20properties%20for%20target%203 text%20properties%20for%20target%204 text%20properties%20for%20target%205 text%20properties%20for%20target%206 text%20properties%20for%20target%207 } { % } CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter CourierNew_10_bold_center_vcenter a z // text properties for target N
+UsrTask stringlist TargetNames= 3 null neg pos % % % // Display names for targets including null target
+UsrTask floatlist TargetProbabilities= 2 0.5 0.5 0 0 0 // probabilities for target codes
+UsrTask int TaskBegin= 0 0 0 0 // Pause prior to displaying the target
+UsrTask intlist TaskSequence= 16 1 2 1 2 2 1 2 2 1 1 1 2 1 1 2 2 0 0 7 // explicit task sequence
+UsrTask_Targets matrix TaskSound= { WAV%20file%20for%20target%200 WAV%20file%20for%20target%201 WAV%20file%20for%20target%202 WAV%20file%20for%20target%203 WAV%20file%20for%20target%204 WAV%20file%20for%20target%205 WAV%20file%20for%20target%206 WAV%20file%20for%20target%207 } { % } sounds sounds sounds sounds sounds sounds sounds sounds arget__RS__.wav % % // WAV file for target N
+Filtering float Tc= 0 0 0 0 // Time constant, 0 for no correction
+Filtering floatlist ThresholdAmp= 2 200 800 200 -2000 2000 // Threshold for invalid Trial in uV
+UsrTask int TimeLimit= 180s 0 0 0 // Time Limit for Runs
+Source int TransmitCh= 4 4 1 128 // the number of transmitted channels
+Source intlist TransmitChList= 4 1 2 3 4 1 1 128 // list of transmitted channels
+UsrTask_Feedback string ViewStyle= marine marine a z // style name for feedback window colors
+UsrTask_Feedback int VisFBMode= 2 1 0 3 // 0 no FB, 1 cursor from file, 2 ball, 3 brightness(enumeration)
+UsrTask_Views int VisInvalid= 1 1 0 1 // 0 no visual invalid indicator, 1 cross(enumeration)
+UsrTask_Views int VisMarker= 1 1 0 2 // 0 no visual marker, 1: Zero Bar, 2: Fixation Cross(enumeration)
+UsrTask_Views int VisReinforcement= 1 1 0 1 // 0 no visual reinforcement, 1 smiley(enumeration)
+UsrTask_Targets matrix VisResultMode= { no%20target:%200%20no%20visual%20result,%201%20blink%20background(enumeration) target%201:%200%20no%20visual%20result,%201%20blink%20goal(enumeration) target%202:%200%20no%20visual%20result,%201%20blink%20goal(enumeration) target%203:%200%20no%20visual%20result,%201%20blink%20goal(enumeration) target%204:%200%20no%20visual%20result,%201%20blink%20goal(enumeration) target%205:%200%20no%20visual%20result,%201%20blink%20goal(enumeration) target%206:%200%20no%20visual%20result,%201%20blink%20goal(enumeration) target%207:%200%20no%20visual%20result,%201%20blink%20goal(enumeration) } { % } 0 1 1 1 1 1 1 1 1 0 1 // target N: 0 no visual result, 1 blink goal(enumeration)
+UsrTask_Views int VisStimDuration= 1000 1000 0 67108864 // duration of visual stimuli in ms
+UsrTask_Targets matrix VisTaskMode= { no%20target:%200%20no%20visual%20task%20representation,%201%20light%20background(enumeration) target%201:%200%20no%20visual%20task%20representation,%201%20light%20goal(enumeration) target%202:%200%20no%20visual%20task%20representation,%201%20light%20goal(enumeration) target%203:%200%20no%20visual%20task%20representation,%201%20light%20goal(enumeration) target%204:%200%20no%20visual%20task%20representation,%201%20light%20goal(enumeration) target%205:%200%20no%20visual%20task%20representation,%201%20light%20goal(enumeration) target%206:%200%20no%20visual%20task%20representation,%201%20light%20goal(enumeration) target%207:%200%20no%20visual%20task%20representation,%201%20light%20goal(enumeration) } { % } 0 1 1 1 1 1 1 1 1 0 1 // target N: 0 no visual task representation, 1 light goal(enumeration)
+Visualize int VisualizeBaselineFiltering= 0 0 0 1 // visualize baseline filtered signals (0=no 1=yes) (boolean)
+Visualize int VisualizeCalibration= 1 0 0 1 // visualize calibrated channels (0=no, 1=yes) (boolean)
+Visualize int VisualizeFBArteCorFiltering= 0 0 0 1 // visualize FBArte corrected signals (0=no 1=yes) (boolean)
+Visualize int VisualizeFFT= 0 0 0 1 // Visualize FFT Power Spectra (boolean)
+Visualize int VisualizeNormalFiltering= 1 0 0 1 // visualize Normal filtered signals (0=no 1=yes)
+Visualize int VisualizeRoundtrip= 1 1 0 1 // visualize roundtrip time (0=no, 1=yes) (boolean)
+Visualize int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize int VisualizeSourceDecimation= 1 1 0 1 // decimation factor for raw brain signal
+Visualize int VisualizeSourceTime= 2 2 0 5 // how much time in Source visualization
+Visualize int VisualizeSpatialFiltering= 1 0 0 1 // visualize spatial filtered signals (0=no 1=yes) (boolean)
+Visualize int VisualizeSWFiltering= 1 0 0 1 // visualize SW filtered signals (0=no 1=yes) (boolean)
+UsrTask int WinHeight= 512 0 0 0 // User Window Height
+UsrTask int WinWidth= 512 0 0 0 // User Window Width
+UsrTask int WinXpos= 400 0 0 0 // User Window X location
+UsrTask int WinYpos= 5 0 0 0 // User Window Y location
+Statistics float XGain= 5.0 5.0 0.0 100.0 // Normal Filter Left/Right Slope
+Statistics float XMean= -5.0 -5.0 -100.0 100.0 // Normal Filter Left/Right Intercept
+Statistics float YGain= 327.68 5.0 -100.0 100.0 // Normal Filter Up / Down Slope
+Statistics float YMean= 0 5.0 -100.0 100.0 // Normal Filter Up / Down Intercept
+Filtering int YTrendControl= 0 0 0 0 // introduced by conversion script
+Filtering int XTrendControl= 0 0 0 0 // introduced by conversion script
+Filtering int OutcomeDirection= 1 0 0 0 // introduced by conversion script

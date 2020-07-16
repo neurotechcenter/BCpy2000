@@ -1,0 +1,45 @@
+// MyLibrary.idl : IDL source for MyLibrary
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (MyLibrary.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(IMyInterfaceGUID),
+	dual,
+	oleautomation
+]
+interface IMyInterface: IDispatch
+{
+	[
+	helpstring( "Get value." )
+	]
+	HRESULT _stdcall getValue( [out,retval] BSTR* val );
+	[
+	helpstring( "Set value." )
+	]
+	HRESULT _stdcall setValue( [in] BSTR val );
+};
+
+
+[
+	uuid(MyLibraryGUID),
+	version(1.0),
+	helpstring("MyLibrary 1.0 Type Library")
+]
+library MyLibraryLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(MyCoClassGUID),
+		helpstring("MyCoClass Class")
+	]
+	coclass MyCoClass
+	{
+		[default] interface IMyInterface;
+	};
+};
+

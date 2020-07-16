@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:vAmpADC - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:vAmpADC,Contributions:ADCs,User Reference:DataIOFilter,User Reference:Filters" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">vAmpADC</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253AvAmpADC.html#Function"><span class="tocnumber">1</span> <span class="toctext">Function</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#V-Amp_Hardware"><span class="tocnumber">1.1</span> <span class="toctext">V-Amp Hardware</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AvAmpADC.html#Installation"><span class="tocnumber">2</span> <span class="toctext">Installation</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AvAmpADC.html#Parameters"><span class="tocnumber">3</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#SamplingRate"><span class="tocnumber">3.1</span> <span class="toctext">SamplingRate</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#HPFilterCorner"><span class="tocnumber">3.2</span> <span class="toctext">HPFilterCorner</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#SampleBlockSize"><span class="tocnumber">3.3</span> <span class="toctext">SampleBlockSize</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#SourceCh"><span class="tocnumber">3.4</span> <span class="toctext">SourceCh</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#SourceChList"><span class="tocnumber">3.5</span> <span class="toctext">SourceChList</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#AcquisitionMode"><span class="tocnumber">3.6</span> <span class="toctext">AcquisitionMode</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AvAmpADC.html#Additional_Information"><span class="tocnumber">4</span> <span class="toctext">Additional Information</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#Data_Storage"><span class="tocnumber">4.1</span> <span class="toctext">Data Storage</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AvAmpADC.html#Known_Issues"><span class="tocnumber">4.2</span> <span class="toctext">Known Issues</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AvAmpADC.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Function"></a><h2>Function</h2>
+<p>The <i>vAmpADC</i> filter acquires data from a <i>V-Amp</i> or <i>FirstAmp</i> EEG amplifier. 
+The <i>V-Amp</i> is an amplifier/digitizer combination from Brain Products.
+Support for this device in BCI2000 consists of a BCI2000-compatible Source Module (<i>vAmpSource.exe</i>).
+</p>
+<a name="V-Amp_Hardware"></a><h3>V-Amp Hardware</h3>
+<p>The V-Amp consists of 16 independent 24-bit A/D converters that can sample at 
+up to 2 kHz per channel (16 channels, plus 2 auxiliary) or 20kHz per channel (4 channels).
+</p>
+<a name="Installation"></a><h2>Installation</h2>
+<p>The necessary system drivers are located in the BCI2000\src\extlib\brainproducts\vamp\ folder. To install the driver, follow these steps:
+</p>
+<ol><li> Plug in the V-Amp to a USB port. Windows should recognize it, and start to install drivers.
+</li><li> Depending on the version of Windows being used, a Found New Hardware dialog should appear. Do NOT search online for drivers; instead, select Don't Search Online.
+</li><li> When it asks you to insert the disc that came with the amplifier, select the option that allows you to browse for the driver.
+</li><li> Navigate to BCI2000\src\extlib\brainproducts\vamp\. It should find the driver files, and installed the necessary software.
+</li><li> For the last step, copy the files DiBpGmbH.dll and FirstAmp.dll to the BCI2000\prog\ folder.
+</li><li> You should now be able to run the vAmpSource.exe module in BCI2000.
+</li></ol>
+<a name="Parameters"></a><h2>Parameters</h2>
+<p>Parameters common to all source modules are described under <a href="User_Reference%253ADataIOFilter.html" title="User Reference:DataIOFilter">User Reference:DataIOFilter</a>.
+In addition, the <i>vAmpADC</i> provides the following parameters:
+</p>
+<a name="SamplingRate"></a><h3>SamplingRate</h3>
+<p>The sample rate of the system. All data is either acquired at 2000 Hz or 20 kHz, and then decimated to the desired rate. Therefore, only rates that are integer divisors of the base rates are accepted. In 2000 Hz mode, the valid rates are:
+</p>
+<ul><li>2000
+</li><li>1000
+</li><li>666.6
+</li><li>500
+</li><li>400
+</li><li>333.3
+</li><li>285.7
+</li><li>250
+</li><li>222.22
+</li><li>200
+</li></ul>
+<p>In 20 kHz mode, 10 times the above rates are valid.
+Prior to decimation, a 2nd-order anti-aliasing Butterworth filter with a corner frequency of 0.45 times the sample rate is applied to the signal.
+All sampling rates are supported for one or more amplifiers. If you are sampling at high rates, the CPU may be overloaded depending on the speed of your computer and the BCI2000 configuration. In case you are experiencing problems (e.g., data loss, jerky display, etc.), increase the SampleBlockSize so that you are updating the system less frequently (usually, updating the system 20-30 times per second is sufficient for most applications), and increase Visualize->VisualizeSourceDecimation. This parameter will decrease the number of samples per second that are actually drawn in the Source display.
+</p>
+<a name="HPFilterCorner"></a><h3>HPFilterCorner</h3>
+<p>A high-pass digital filter for removing DC offsets. This occurs after data has been read into BCI2000.
+</p>
+<a name="SampleBlockSize"></a><h3>SampleBlockSize</h3>
+<p>Samples per channel per digitized block. 
+Together with the sampling rate, this parameter determines how often per second data are collected, processed, and feedback is updated. For example, at 600 Hz sampling and a SampleBlockSize of 20, the system (e.g., source signal display, signal processing, and stimulus presentation) will be updated 30 times per second.
+</p>
+<a name="SourceCh"></a><h3>SourceCh</h3>
+<p>The total number of channels. In high-speed mode, this number may not be higher than 5 (4 channels + digital).
+</p>
+<a name="SourceChList"></a><h3>SourceChList</h3>
+<p>The list of channels that should be acquired from the vAmp device.
+The total number of channels listed should correspond to <i>SourceCh</i>. 
+The order of channels does not matter; i.e., '1 2 3 4' is the same as '2 3 1 4'. The channels are always in ascending order.
+Channels may not be listed twice; e.g., entering '1 2 3 4 5 6 7 1' if <i>SourceCh</i> = '8' will result in an error.
+If this parameter is left blank (the default), then all channels are acquired.
+For the V-Amp 16, channels 1-16 are EEG channels, 17-18 are Auxiliary channels, and 19 are the 8 digital channels stored in bits.
+For the V-Amp 8, channels 1-8 are EEG channels, 9-10 are Auxiliary channels and 11 is the digital channel.
+</p>
+<a name="AcquisitionMode"></a><h3>AcquisitionMode</h3>
+<ul><li>If set to <i>analog signal acquisition</i>, the V-Amp records analog signal voltages (default). 
+</li><li>If set to <i>high-speed acquisition</i>, the V-Amp records analog signals at 20 kHz instead of 2000 Hz.
+</li><li>If set to <i>Calibration</i>, the signal output is a square wave test signal generated by the V-Amp (which can be used to verify correct system calibration). 
+</li><li>If set to <i>Impedance</i>, impedance data is recorded instead of the signal. The impedance values are showm in the V-Amp display. Values are currently updated 3 times per second. 
+</li><li>If set to <i>high-speed calibration</i>, a square wave is generated at 20 kHz.
+</li></ul>
+<a name="Additional_Information"></a><h2>Additional Information</h2>
+<a name="Data_Storage"></a><h3>Data Storage</h3>
+<ul><li>The signal is originally recorded from the V-Amp as 32-bit integers, and converted into <span class="texhtml">&mu;<i>V</i></span>. 
+</li><li>The auxiliary input units are in volts.
+</li><li>(<i>SourceChOffset</i> is assumed (and required) to be zero for all channels.) 
+</li></ul>
+<p>BCI2000 Signal Processing or any offline analysis routine can derive, as with any other BCI2000 source module, sample values in <span class="texhtml">&mu;<i>V</i></span> by subtracting, from each stored sample, <i>SourceChOffset</i> (i.e., zero), and multiplying it with <i>SourceChGain</i> for each channel. If <i>SignalType</i> is set to float32, data samples are stored in units of <span class="texhtml">&mu;<i>V</i></span>. In this case, <i>SourceChGain</i> should be a list of 1's (because the conversion factor between data samples into <span class="texhtml">&mu;<i>V</i></span> is 1.0 for each channel). Still, when values other than 0 and 1 are specified, a consistent data file will be produced, i.e. values will be transformed before they are written to the file, such that applying SourceChOffset and SourceChGain will reproduce the original values in <span class="texhtml">&mu;<i>V</i></span>.
+</p>
+<a name="Known_Issues"></a><h3>Known Issues</h3>
+<p>Please note that when BrainVision Recorder was running on the computer before you are using BCI2000 there might be some errors ("VampADC::Initialize error opening device" or even a complete crash of BCI2000). There is a daemon process called "VAmpService.exe" running on the computer everytime you start BrainVision Recorder until the next reboot. If you encounter such an error just reboot the computer without running BrainVision Recorder after that again or simply kill the process "VampService.exe" in the task manager.
+</p><p>A more convenient way to solve this problem is to edit the *.bat-file for your experiment like described below, especially if you are using BCI2000 and BrainVision Recorder alternately. This avoids problems with BrainVision Recorder that you might encounter when killing the "VampService.exe" process.
+</p>
+<pre><b>start C:\Vision\Recorder\VAmpService.exe -Uninstall</b>
+cd ..\prog
+start <b>vAmpSource.exe</b> 127.0.0.1
+start ARSignalProcessing 127.0.0.1
+start CursorTask.exe 127.0.0.1
+<b>operator.exe</b>
+<b>start C:\Vision\Recorder\VAmpService.exe -Install</b>
+cd ..
+</pre>
+<p>Make sure that the path to "VAmpService.exe" is correct on your system.
+Please keep in mind that you have to customize the *.bat-file shown above regarding your experiment. For using the V-Amp in the way described, the highlightened parts are important.
+Please note that the commandline-window will stay open during the usage of BCI2000 (unlike when using the other *.bat-files) because of the operator.exe is started without the "start"-parameter. This is necessary to make sure that the VAmpService.exe process is started again just when BCI2000 is closed.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AFilters.html" title="User Reference:Filters">User Reference:Filters</a>, <a href="Contributions%253AADCs.html" title="Contributions:ADCs">Contributions:ADCs</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

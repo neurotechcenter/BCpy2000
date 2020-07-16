@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\0782d4bb8c44a00599f49d4a44824222\gui-screen256.png.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\4b7049ad90c71a58fcf162e9d819a420\icon-gui-screen.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\icon-gui-screen" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{110FD9AA-8569-3FE5-A68E-6802E5F295ED}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

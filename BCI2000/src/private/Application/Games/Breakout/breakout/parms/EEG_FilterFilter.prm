@@ -1,0 +1,4 @@
+Filtering:IIR%20Filter                        float     HighPassCorner=           3Hz   // non-destructive post-hijack filter
+Filtering:IIR%20Filter                        float     LowPassCorner=            0     // non-destructive post-hijack filter
+Filtering:IIR%20Filter                        float     NotchCenter=             60Hz   // non-destructive post-hijack filter
+Filtering:IIR%20Filter                        float     FilterGain=          500000     //

@@ -1,0 +1,62 @@
+Source:Alignment floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Source:Signal%20Properties int SourceCh= 16 16 1 % // number of digitized and stored channels
+Source:Signal%20Properties int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
+Source:Signal%20Properties int SamplingRate= 256 256Hz 1 % // sample rate
+Source:Signal%20Properties list ChannelNames= 16 Ch1 Ch2 Ch3 Ch4 Ch5 Ch6 Ch7 Ch8 Ch9 Ch10 Ch11 Ch12 Ch13 Ch14 Ch15 Ch16 // list of channel names
+Source:Signal%20Properties floatlist SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 % % // Offset for channels in A/D units
+Source:Signal%20Properties floatlist SourceChGain= 16 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 % % // gain for each channel (A/D units -> muV)
+Storage:Data%20Location string DataDirectory= ../data ../data % % // path to top level data directory (directory)
+Storage:Session string SubjectName= Name Name % % // subject alias
+Storage:Session string SubjectSession= 001 001 % % // three-digit session number
+Storage:Session string SubjectRun= 00 00 % % // two-digit run number
+Storage:Documentation string ID_System= % // BCI2000 System Code
+Storage:Documentation string ID_Amp= % // BCI2000 Amp Code
+Storage:Documentation string ID_Montage= % // BCI2000 Cap Montage Code
+Visualize:Timing int VisualizeTiming= 1 1 0 1 // visualize system timing (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Source%20Signal int VisualizeSourceDecimation= 1 1 0 % // decimation factor for raw brain signal
+Visualize:Source%20Signal int VisualizeSourceTime= 2s 2 0 % // how much time in Source visualization
+Source:SignalGeneratorADC int ModulateAmplitude= 1 0 0 1 // Modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source:SignalGeneratorADC int SineChannelX= 0 0 0 % // Channel number of sinewave controlled by mouse x position
+Source:SignalGeneratorADC int SineChannelY= 0 0 0 % // Channel number of sinewave controlled by mouse y position (0 for all)
+Source:SignalGeneratorADC int SineChannelZ= 0 0 0 % // Channel number of sinewave controlled by mouse key state
+Source:SignalGeneratorADC float SineFrequency= 0 10Hz % % // Frequency of sine wave
+Source:SignalGeneratorADC int SineAmplitude= 50muV 100muV % % // Amplitude of sine wave
+Source:SignalGeneratorADC int NoiseAmplitude= 10muV 30muV % % // Amplitude of white noise (common to all channels)
+Source:SignalGeneratorADC int DCOffset= 0muV 0muV % % // DC offset (common to all channels)
+Source:SignalGeneratorADC string OffsetMultiplier= % StimulusType % % // Expression to multiply offset by
+Source:SignalGeneratorADC int RandomSeed= 0 0 0 1 // Initialization value for random number generator (initialize from time if 0)
+Source:SignalGeneratorADC int SignalType= 0 0 0 2 // numeric type of output signal:  0: int16, 1: float32, 2: int32 (enumeration)
+Storage:BCI2000FileWriter int SavePrmFile= 0 1 0 1 // save additional parameter file (0=no, 1=yes) (boolean)
+Storage:BCI2000FileWriter string StorageTime= % // time of beginning of data storage
+Source:Alignment int AlignChannels= 1 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Online%20Processing stringlist TransmitChList= 4 1 2 3 4 1 1 128 // list of transmitted channels
+Visualize:Processing%20Stages int VisualizeAlignmentFilter= 0 0 0 1 // Visualize AlignmentFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeTransmissionFilter= 0 0 0 1 // Visualize TransmissionFilter output (boolean)
+Filtering:SpatialFilter matrix SpatialFilter= { Sf1 Sf2 } 4 1 0 0 0 0 1 0 0 0 % % // columns represent input channels, rows represent output channels
+MatlabDemo list MyFilterOffsets= 3 -2 0 0 0 0 0 // A list of offsets added to the signal
+MatlabDemo matrix MyFilterMatrix= 3 2 0.08 0 0 0.08 0.04 0.04 0 0 0 // A demo filter matrix
+MatlabDemo int MyRunCount= 9 0 0 0 // A parameter modified by Matlab
+MatlabDemo int MyReportBogusError= 0 // Report a bogus error (boolean)
+Visualize:Processing%20Stages int VisualizeSpatialFilter= 1 0 0 1 // Visualize SpatialFilter output (boolean)
+Visualize:Processing%20Stages int VisualizeMatlabFilter= 0 0 0 1 // Visualize MatlabFilter output (boolean)
+Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
+Application:Window int WindowWidth= 640 640 0 % // width of application window
+Application:Window int WindowHeight= 480 480 0 % // height of application window
+Application:Window int WindowLeft= 0 0 % % // screen coordinate of application window's left edge
+Application:Window int WindowTop= 0 0 % % // screen coordinate of application window's top edge
+Application:Sequencing float PreRunDuration= 2s 2s 0 % // duration of pause preceding first trial
+Application:Sequencing float PreFeedbackDuration= 2s 2s 0 % // duration of target display prior to feedback
+Application:Sequencing float FeedbackDuration= 3s 3s 0 % // duration of feedback
+Application:Sequencing float PostFeedbackDuration= 1s 1s 0 % // duration of result display after feedback
+Application:Sequencing float ITIDuration= 1s 1s 0 % // duration of inter-trial interval
+Application:Sequencing float MinRunLength= 120s 120s 0 % // minimum duration of a run
+Application:Targets int NumberTargets= 2 2 0 15 // number of targets
+Application:Cursor int CursorColor= 0xFF0000 0xFF0000 % % // feedback cursor color (color)
+Application:Cursor float CursorWidth= 5 5 0.0 % // feedback cursor width in percent of screen width
+Application:Human%20Interface%20Devices int JoystickEnable= 0 0 0 1 // enable recording from the joystick (0=no, 1=yes) (boolean)
+Application:Human%20Interface%20Devices int LogKeyPresses= 0 0 0 1 // log key presses into the PressedKey state (boolean)
+Application:Human%20Interface%20Devices string KeystrokeStateName= % // State to be translated into keystrokes, empty for off
+Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20320 % % // IP address/port to write to, e.g. localhost:20320
+Application:Localization string Language= Default Default % % // Language for user messages
+Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"

@@ -1,0 +1,26 @@
+﻿  Generating NewBCI2000Module/CMakeLists-Application.txt.in.res.cpp
+  Generating NewBCI2000Module/CMakeLists-SignalProcessing.txt.in.res.cpp
+  Generating NewBCI2000Module/CMakeLists-SignalSource.txt.in.res.cpp
+  Generating NewBCI2000Module/PipeDefinition.cpp.in.res.cpp
+  Generating NewBCI2000Module/TemplateApplication.cpp.in.res.cpp
+  Generating NewBCI2000Module/TemplateApplication.h.in.res.cpp
+  Generating NewBCI2000Module/TemplateBufferedADC.cpp.in.res.cpp
+  Generating NewBCI2000Module/TemplateBufferedADC.h.in.res.cpp
+  Generating NewBCI2000Module/TemplateFilter.cpp.in.res.cpp
+  Generating NewBCI2000Module/TemplateFilter.h.in.res.cpp
+  Building Custom Rule C:/BCI2000.python3/build/buildutils/BootstrapCustomProjects/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/buildutils/BootstrapCustomProjects/CMakeFiles/generate.stamp is up-to-date.
+  BootstrapCustomProjects.cpp
+  CMakeLists-Application.txt.in.res.cpp
+  CMakeLists-SignalProcessing.txt.in.res.cpp
+  CMakeLists-SignalSource.txt.in.res.cpp
+  PipeDefinition.cpp.in.res.cpp
+  TemplateApplication.cpp.in.res.cpp
+  TemplateApplication.h.in.res.cpp
+  TemplateBufferedADC.cpp.in.res.cpp
+  TemplateBufferedADC.h.in.res.cpp
+  TemplateFilter.cpp.in.res.cpp
+  TemplateFilter.h.in.res.cpp
+  Generating Code...
+  NewBCI2000Module.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\BootstrapCustomProjects\Release\NewBCI2000Module.exe
+  Copy to destination

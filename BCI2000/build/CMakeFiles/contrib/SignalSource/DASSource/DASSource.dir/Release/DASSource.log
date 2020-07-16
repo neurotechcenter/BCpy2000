@@ -1,0 +1,20 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/DASSource/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/DASSource/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  DASUtils.cpp
+  cbw32_imports.cpp
+  DAS_ADC.cpp
+  DASQueue.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  DASSource.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\DASSource\Release\DASSource.exe
+  	Deploying executable
+  copying files:
+  Copying DASSource.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

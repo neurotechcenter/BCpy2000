@@ -1,0 +1,26 @@
+Source:Signal%20Properties:RDAClientADC int        SampleBlockSize=  10        // the number of samples transmitted at a time, incoming blocks are always 40ms
+Source:Signal%20Properties:RDAClientADC int        SamplingRate=              250Hz    // the sample rate                                        
+Source:Signal%20Properties:DataIOFilter int        SourceCh=                    3      // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter list       ChannelNames=      3         R G B  // list of channel names
+Source:Signal%20Properties:DataIOFilter floatlist  SourceChOffset=    3         0 0 0  // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter floatlist  SourceChGain=      3         1 1 1  // gain for each channel (A/D units -> muV)
+Source:Online%20Processing:TransmissionFilter list TransmitChList=    3         1 2 3  // list of transmitted channels
+
+Storage:Data%20Location:DataIOFilter    string     DataDirectory=         ..\data      // path to top level data directory (directory)
+Storage:Session:DataIOFilter            string     SubjectSession=            001      // three-digit session number
+Storage:Session:DataIOFilter            string     SubjectRun=                 00      // two-digit run number
+Storage:Session:DataIOFilter            string     SubjectName=         TRIANGLE_      // subject alias
+
+Visualize:Source%20Signal:DataIOFilter  int        SourceMin=                  -2muV   // raw signal vis Min Value
+Visualize:Source%20Signal:DataIOFilter  int        SourceMax=                   2muV   // raw signal vis Max Value
+Visualize:Source%20Signal:DataIOFilter  int        VisualizeSourceTime=        10s     // how much time in Source visualization
+Visualize:Source%20Signal:DataIOFilter  int        VisualizeSourceDecimation=   1      // decimation factor for raw brain signal
+Visualize:Source%20Signal:DataIOFilter  int        VisualizeSource=             0      // visualize raw brain signal (0=no, 1=yes) (boolean)
+Visualize:Processing%20Stages           int        VisualizeSpatialFilter=      0      // Visualize SpatialFilter output (boolean)
+Visualize:Processing%20Stages           int        VisualizeMatlabFilter=       0      // Visualize MatlabFilter output (boolean)
+Visualize:Processing%20Stages           int        VisualizePythonFilter=       0      // Visualize PythonFilter output (boolean)
+Visualize:Processing%20Stages           int        VisualizeAlignmentFilter=    0      // Visualize AlignmentFilter output (boolean)
+Visualize:Processing%20Stages           int        VisualizeTransmissionFilter= 0      // Visualize TransmissionFilter output (boolean)
+Visualize:Timing:DataIOFilter           int        VisualizeTiming=             0      // visualize system timing (0=no, 1=yes) (boolean)
+                                                   
+PythonApp                               int        ShowSignalTime=              1      // show a timestamp based on the number of processed samples (boolean)

@@ -1,0 +1,26 @@
+HKCR
+{
+	MyModule.MyCoClass.1 = s 'MyCoClass Class'
+	{
+		CLSID = s '{CoClassGUID as defined in MIDL file}'
+	}
+	MyModule.MyCoClass = s 'MyCoClass Class'
+	{
+		CLSID = s '{CoClassGUID}'
+		CurVer = s 'MyModule.MyCoClass.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {CoClassGUID} = s 'MyCoClass Class'
+		{
+			ProgID = s 'MyModule.MyCoClass.1'
+			VersionIndependentProgID = s 'MyModule.MyCoClass'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{LibraryGUID as defined in MIDL file}'
+		}
+	}
+}

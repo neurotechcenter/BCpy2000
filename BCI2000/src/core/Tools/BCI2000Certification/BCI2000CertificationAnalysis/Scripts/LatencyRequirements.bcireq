@@ -1,0 +1,10 @@
+require(AmpLatency.mean() < time("7ms"));
+require(AmpLatency.sdev() < time("2ms"));
+require(TimestampLatency.mean() < time("1ms"));
+require(TimestampLatency.sdev() < time("1ms"));
+require(ProcessingLatency.mean() < time("10ms"));
+require(ProcessingLatency.sdev() < time("10ms"));
+require(VideoLatency.mean() < time("50ms"));
+require(VideoLatency.sdev() < time("50ms"));
+require(AudioLatency.mean() < time("50ms"));
+require(AudioLatency.sdev() < time("50ms"));

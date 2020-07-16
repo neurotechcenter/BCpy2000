@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3bdd5eb9-7888-461f-9a05-8ee7f6f75e50}</ProjectGuid>
+    <ProjectType>CppVCLApplication</ProjectType>
+    <MainSource>CursorTaskWithGauges.cpp</MainSource>
+    <Config Condition="'$(Config)'==''">Release Build</Config>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+    <Base>true</Base>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Debug Build' or '$(Cfg_1)'!=''">
+    <Base>true</Base>
+    <Cfg_1>true</Cfg_1>
+    <CfgParent>Base</CfgParent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Release Build' or '$(Cfg_2)'!=''">
+    <Base>true</Base>
+    <Cfg_2>true</Cfg_2>
+    <CfgParent>Base</CfgParent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Base)'!=''">
+    <DCC_Optimize>false</DCC_Optimize>
+    <OutputExt>exe</OutputExt>
+    <ILINK_IntermediateOutputPath>obj</ILINK_IntermediateOutputPath>
+    <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+    <BCC_OutputDir>obj\</BCC_OutputDir>
+    <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+    <BCC_InstructionSet>5</BCC_InstructionSet>
+    <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+    <BRCC_OutputDir>obj\</BRCC_OutputDir>
+    <BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+    <ILINK_AppType>Windows</ILINK_AppType>
+    <ILINK_ObjectSearchPath>..\..\..\shared\utils\Expression;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application\human_interface_devices;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules;..\..\..\shared\accessors;..\..\..\shared\modules\application\stimuli;..\..\..\shared\utils;..\..\..\shared\types;..\..\..\shared\modules\application\speller;..\..\..\shared\bcistream;..\..\..\shared\modules\application\audio;..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\gui;..\..\..\shared\fileio;..\..\..\shared\modules\application</ILINK_ObjectSearchPath>
+    <BCC_GenerateWindowsApp>true</BCC_GenerateWindowsApp>
+    <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+    <BCC_ZeroLengthEmptyMemberFuncs>true</BCC_ZeroLengthEmptyMemberFuncs>
+    <FinalOutputDir>..\..\..\..\prog\</FinalOutputDir>
+    <TASM_AdditionalSwitches> /w2 obj\</TASM_AdditionalSwitches>
+    <PackageImports>rtl.bpi;vcl.bpi;vclx.bpi;vcljpg.bpi</PackageImports>
+    <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_UnitSearchPath>
+    <BCC_GenerateMultithreaded>true</BCC_GenerateMultithreaded>
+    <BCC_StackFrames>true</BCC_StackFrames>
+    <BRCC_UserSuppliedOptions> -I..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_UserSuppliedOptions>
+    <IncludePath>..\..\..\shared\utils\Expression;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application\human_interface_devices;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules;..\..\..\shared\accessors;..\..\..\shared\modules\application\stimuli;..\..\..\shared\utils;..\..\..\shared\types;..\..\..\shared\modules\application\speller;..\..\..\shared\bcistream;..\..\..\shared\modules\application\audio;..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\gui;..\..\..\shared\fileio;..\..\..\shared\modules\application</IncludePath>
+    <BCC_PCHCache>true</BCC_PCHCache>
+    <DCC_DcuOutput>obj\</DCC_DcuOutput>
+    <BCC_IntegerSizedEnums>false</BCC_IntegerSizedEnums>
+    <BCC_IncludePath>..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BCC_IncludePath>
+    <TASM_IncludePath>..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</TASM_IncludePath>
+    <AllPackageLibs>rtl.lib;vcl.lib;vclx.lib</AllPackageLibs>
+    <BRCC_IncludePath>..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_IncludePath>
+    <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_IncludePath>
+    <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+    <BCC_ZeroLengthEmptyBaseClass>true</BCC_ZeroLengthEmptyBaseClass>
+    <ILINK_LibraryPath>..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;..\shared\gui;$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk</ILINK_LibraryPath>
+    <BCC_Defines>NO_STRICT;MODTYPE=3</BCC_Defines>
+    <DCC_ObjOutput>obj\</DCC_ObjOutput>
+    <BRCC_Defines>MODTYPE=3;_DEBUG</BRCC_Defines>
+    <TASM_Defines>MODTYPE=3 _DEBUG</TASM_Defines>
+    <Multithreaded>true</Multithreaded>
+    <TASM_Debugging>Full</TASM_Debugging>
+    <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+    <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Cfg_1)'!=''">
+    <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+    <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+    <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    <IntermediateOutputDir>Debug_Build</IntermediateOutputDir>
+    <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+    <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+    <BCC_Defines>_DEBUG;$(BCC_Defines)</BCC_Defines>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Cfg_2)'!=''">
+    <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+    <DCC_Optimize>true</DCC_Optimize>
+    <BCC_InlineFunctionExpansion>true</BCC_InlineFunctionExpansion>
+    <BCC_UseRegisterVariables>Always</BCC_UseRegisterVariables>
+    <DCC_DebugInformation>false</DCC_DebugInformation>
+    <IntermediateOutputDir>Release_Build</IntermediateOutputDir>
+    <BCC_StackFrames>false</BCC_StackFrames>
+    <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+    <BCC_Defines>NDEBUG;$(BCC_Defines)</BCC_Defines>
+    <TASM_Debugging>None</TASM_Debugging>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>CPlusPlusBuilder.Personality</Borland.Personality>
+    <Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject> <CPlusPlusBuilder.Personality>   <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">0</VersionInfo>
+      <VersionInfo Name="Release">0</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1033</VersionInfo>
+      <VersionInfo Name="CodePage">1252</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Count">10</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item0">..\..\..\shared\utils\Expression;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application\human_interface_devices;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules;..\..\..\shared\accessors;..\..\..\shared\modules\application\stimuli;..\..\..\shared\utils;..\..\..\shared\types;..\..\..\shared\modules\application\speller;..\..\..\shared\bcistream;..\..\..\shared\modules\application\audio;..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\gui;..\..\..\shared\fileio;..\..\..\shared\modules\application</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item1">..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item2">..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item3">..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item4">..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item5">..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item6">..\..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item7">..\..\shared\config;..;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item8">..;$(BCB)\include;$(BCB)\include\vcl;..\shared\gui</HistoryLists_hlIncludePath>
+      <HistoryLists_hlIncludePath Name="Item9">..\shared\gui;..\shared\utils;..\shared\filters;..\..\shared\gui;..\shared\3DAPI;..\..\shared\utils\Expression;..\..\shared\modules;..\..\shared\config;..\..\shared\fileio;..\..\shared\utils;..\..\shared\bcistream;..\..\shared\types;..\..\shared\accessors;..;DataGlove;..\..\shared;..\shared;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+    </HistoryLists_hlIncludePath>
+    <HistoryLists_hlLibraryPath>
+      <HistoryLists_hlLibraryPath Name="Count">6</HistoryLists_hlLibraryPath>
+      <HistoryLists_hlLibraryPath Name="Item0">..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;..\shared\gui;$(BCB)\lib;$(BCB)\lib\obj;$(BDS)\lib\psdk</HistoryLists_hlLibraryPath>
+      <HistoryLists_hlLibraryPath Name="Item1">..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;..\shared\gui;$(BCB)\lib;$(BCB)\lib\obj;$(BDS)\lib\psdk</HistoryLists_hlLibraryPath>
+      <HistoryLists_hlLibraryPath Name="Item2">..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\extlib\3DAPI;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;$(BCB)\lib\obj;$(BCB)\lib;..\shared\gui</HistoryLists_hlLibraryPath>
+      <HistoryLists_hlLibraryPath Name="Item3">..\..\..\shared\accessors;..\..\..\shared\modules;..;$(BCB)\lib\obj;$(BCB)\lib;..\shared\gui</HistoryLists_hlLibraryPath>
+      <HistoryLists_hlLibraryPath Name="Item4">..;$(BCB)\lib\obj;$(BCB)\lib;..\shared\gui</HistoryLists_hlLibraryPath>
+      <HistoryLists_hlLibraryPath Name="Item5">..\shared\gui;..\shared\utils;..\shared\filters;..\..\shared\gui;..\shared\3DAPI;..\..\shared\utils\Expression;..\..\shared\modules;..\..\shared\fileio;..\..\shared\utils;..\..\shared\bcistream;..\..\shared\types;..\..\shared\accessors;..;DataGlove;..\..\shared;..\shared;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+    </HistoryLists_hlLibraryPath>
+    <HistoryLists_hlDebugSourcePath>
+      <HistoryLists_hlDebugSourcePath Name="Count">1</HistoryLists_hlDebugSourcePath>
+      <HistoryLists_hlDebugSourcePath Name="Item0">$(BCB)\source\vcl</HistoryLists_hlDebugSourcePath>
+    </HistoryLists_hlDebugSourcePath>
+    <HistoryLists_hlConditionals>
+      <HistoryLists_hlConditionals Name="Count">3</HistoryLists_hlConditionals>
+      <HistoryLists_hlConditionals Name="Item0">MODTYPE=3;_DEBUG</HistoryLists_hlConditionals>
+      <HistoryLists_hlConditionals Name="Item1">MODTYPE=3</HistoryLists_hlConditionals>
+      <HistoryLists_hlConditionals Name="Item2">_DEBUG;MODTYPE=3</HistoryLists_hlConditionals>
+    </HistoryLists_hlConditionals>
+    <HistoryLists_hlIntOutputDir>
+      <HistoryLists_hlIntOutputDir Name="Count">1</HistoryLists_hlIntOutputDir>
+      <HistoryLists_hlIntOutputDir Name="Item0">obj</HistoryLists_hlIntOutputDir>
+    </HistoryLists_hlIntOutputDir>
+    <HistoryLists_hlFinalOutputDir>
+      <HistoryLists_hlFinalOutputDir Name="Count">2</HistoryLists_hlFinalOutputDir>
+      <HistoryLists_hlFinalOutputDir Name="Item0">..\..\..\..\prog\</HistoryLists_hlFinalOutputDir>
+      <HistoryLists_hlFinalOutputDir Name="Item1">..\..\..\prog\</HistoryLists_hlFinalOutputDir>
+    </HistoryLists_hlFinalOutputDir>
+    <Debugging>
+      <Debugging Name="DebugSourceDirs">$(BCB)\source\vcl</Debugging>
+    </Debugging>
+    <Parameters>
+      <Parameters Name="RunParams">--LogMouse=1</Parameters>
+      <Parameters Name="Launcher"></Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="DebugCWD"></Parameters>
+      <Parameters Name="HostApplication"></Parameters>
+      <Parameters Name="RemoteHost"></Parameters>
+      <Parameters Name="RemotePath"></Parameters>
+      <Parameters Name="RemoteLauncher"></Parameters>
+      <Parameters Name="RemoteCWD"></Parameters>
+      <Parameters Name="RemoteDebug">False</Parameters>
+      <Parameters Name="RemoteParams"></Parameters>
+      <Parameters Name="UseRemoteLauncher">False</Parameters>
+      <Parameters Name="Debug Symbols Search Path"></Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Compiler>
+      <Compiler Name="ShowInfoMsgs">0</Compiler>
+      <Compiler Name="LinkDebugVcl">0</Compiler>
+      <Compiler Name="LinkCGLIB">0</Compiler>
+    </Compiler>
+    <CORBA>
+      <CORBA Name="AddServerUnit">1</CORBA>
+      <CORBA Name="AddClientUnit">1</CORBA>
+      <CORBA Name="PrecompiledHeaders">1</CORBA>
+    </CORBA>
+    <Linker>
+      <Linker Name="LibPrefix"></Linker>
+      <Linker Name="LibSuffix"></Linker>
+      <Linker Name="LibVersion"></Linker>
+    </Linker>
+    <ProjectProperties>
+      <ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+      <ProjectProperties Name="ManagePaths">True</ProjectProperties>
+      <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+    </ProjectProperties>
+    <Source>
+      <Source Name="MainSource">CursorTaskWithGauges.cpp</Source>
+    </Source>
+    <HistoryLists_hlILINK_LibraryPath>
+      <HistoryLists_hlILINK_LibraryPath Name="Count">1</HistoryLists_hlILINK_LibraryPath>
+      <HistoryLists_hlILINK_LibraryPath Name="Item0">$(BDS)\lib\debug;..\..\..\shared\modules\application\human_interface_devices;..\..\..\extlib\SAPILib;..\..\..\extlib\3DAPI;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..;..\shared\gui;$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk</HistoryLists_hlILINK_LibraryPath>
+    </HistoryLists_hlILINK_LibraryPath>
+    <HistoryLists_hlIntermediateOutputDir>
+      <HistoryLists_hlIntermediateOutputDir Name="Count">1</HistoryLists_hlIntermediateOutputDir>
+      <HistoryLists_hlIntermediateOutputDir Name="Item0">Debug_Build</HistoryLists_hlIntermediateOutputDir>
+    </HistoryLists_hlIntermediateOutputDir>
+  </CPlusPlusBuilder.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Cpp.Targets" />
+  <ItemGroup>
+    <CppCompile Include="..\..\..\extlib\3DAPI\buffers.cpp">
+      <BuildOrder>68</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\cameraNlight.cpp">
+      <BuildOrder>69</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\cuboids.cpp">
+      <BuildOrder>70</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\geomObj.cpp">
+      <BuildOrder>71</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\halfSpace.cpp">
+      <BuildOrder>72</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\Load3DS.cpp">
+      <BuildOrder>73</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\model3D.cpp">
+      <BuildOrder>74</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\primObj.cpp">
+      <BuildOrder>75</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\Scene.cpp">
+      <BuildOrder>76</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\sphere.cpp">
+      <BuildOrder>77</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\threeDText.cpp">
+      <BuildOrder>78</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\twoDCursor.cpp">
+      <BuildOrder>79</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\twoDOverlay.cpp">
+      <BuildOrder>80</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\3DAPI\twoDText.cpp">
+      <BuildOrder>81</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\extlib\SAPILib\sapi.cpp">
+      <BuildOrder>83</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\accessors\BCIEvent.cpp">
+      <BuildOrder>27</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\accessors\Environment.cpp">
+      <BuildOrder>26</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\accessors\ParamRef.cpp">
+      <BuildOrder>25</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\bcistream\BCIError.cpp">
+      <BuildOrder>49</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\bcistream\BCIError_module.cpp">
+      <BuildOrder>48</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\fileio\BCIDirectory.cpp">
+      <BuildOrder>67</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\gui\DisplayWindow.cpp">
+      <BuildOrder>64</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\gui\GraphDisplay.cpp">
+      <BuildOrder>65</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\gui\GraphObject.cpp">
+      <BuildOrder>63</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\gui\Shapes.cpp">
+      <BuildOrder>62</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\gui\TextField.cpp">
+      <BuildOrder>66</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\ApplicationBase.cpp">
+      <BuildOrder>5</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\audio\TextToSpeech.cpp">
+      <BuildOrder>21</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\audio\WavePlayer.cpp">
+      <BuildOrder>20</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\ConnectorFilters.cpp">
+      <BuildOrder>6</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\FeedbackTask.cpp">
+      <BuildOrder>10</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\gui\StatusBar.cpp">
+      <BuildOrder>19</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\gui\TextWindow.cpp">
+      <BuildOrder>18</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\human_interface_devices\MouseFilter.cpp">
+      <BuildOrder>23</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\speller\Speller.cpp">
+      <BuildOrder>17</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\speller\SpellerCommand.cpp">
+      <BuildOrder>16</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\stimuli\Association.cpp">
+      <BuildOrder>11</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\stimuli\AudioStimulus.cpp">
+      <BuildOrder>12</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\stimuli\ImageStimulus.cpp">
+      <BuildOrder>13</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\stimuli\TextStimulus.cpp">
+      <BuildOrder>14</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\stimuli\VisualStimulus.cpp">
+      <BuildOrder>15</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\StimulusTask.cpp">
+      <BuildOrder>22</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\utils\BlockRandSeq.cpp">
+      <BuildOrder>8</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\utils\Localization.cpp">
+      <BuildOrder>9</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\application\utils\TrialStatistics.cpp">
+      <BuildOrder>7</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\CoreModule.cpp">
+      <BuildOrder>3</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\CoreModuleVCL.cpp">
+      <BuildOrder>4</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\GenericFilter.cpp">
+      <BuildOrder>24</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\modules\MessageHandler.cpp">
+      <BuildOrder>2</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\BitmapImage.cpp">
+      <BuildOrder>46</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\Brackets.cpp">
+      <BuildOrder>29</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\Color.cpp">
+      <BuildOrder>30</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\EncodedString.cpp">
+      <BuildOrder>31</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\GenericSignal.cpp">
+      <BuildOrder>32</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\GenericVisualization.cpp">
+      <BuildOrder>33</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\HierarchicalLabel.cpp">
+      <BuildOrder>34</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\Label.cpp">
+      <BuildOrder>35</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\LabelIndex.cpp">
+      <BuildOrder>36</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\Param.cpp">
+      <BuildOrder>37</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\ParamList.cpp">
+      <BuildOrder>38</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\PhysicalUnit.cpp">
+      <BuildOrder>39</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\SignalProperties.cpp">
+      <BuildOrder>40</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\SignalType.cpp">
+      <BuildOrder>41</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\State.cpp">
+      <BuildOrder>42</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\StateList.cpp">
+      <BuildOrder>43</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\StateVector.cpp">
+      <BuildOrder>44</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\StateVectorSample.cpp">
+      <BuildOrder>47</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\Status.cpp">
+      <BuildOrder>45</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\types\SysCommand.cpp">
+      <BuildOrder>28</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\ClassName.cpp">
+      <BuildOrder>51</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\EventQueue.cpp">
+      <BuildOrder>61</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\Expression\ArithmeticExpression.cpp">
+      <BuildOrder>59</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\Expression\Expression.cpp">
+      <BuildOrder>58</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\Expression\ExpressionParser.cpp">
+      <BuildOrder>57</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\LogFile.cpp">
+      <BuildOrder>52</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\MeasurementUnits.cpp">
+      <BuildOrder>53</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\OSError.cpp">
+      <BuildOrder>56</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\PrecisionTime.cpp">
+      <BuildOrder>54</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\RandomGenerator.cpp">
+      <BuildOrder>60</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\SockStream.cpp">
+      <BuildOrder>55</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="..\..\..\shared\utils\VersionInfo.cpp">
+      <BuildOrder>50</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="AnalogGauge.cpp">
+      <BuildOrder>92</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="BarGauge.cpp">
+      <BuildOrder>93</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="BarPlotGauge.cpp">
+      <BuildOrder>94</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="CursorFeedbackTaskMod.cpp">
+      <BuildOrder>89</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="CursorTaskWithGauges.cpp">
+      <BuildOrder>0</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="FeedbackScene2D.cpp">
+      <BuildOrder>84</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="FeedbackScene3D.cpp">
+      <BuildOrder>86</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="Gauge.cpp">
+      <BuildOrder>91</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="GaugeAppMain.cpp">
+      <BuildOrder>90</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="GenericStimulusTask.cpp">
+      <BuildOrder>1</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="HistoryGauge.cpp">
+      <BuildOrder>96</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="Scale.cpp">
+      <BuildOrder>97</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="ScrollingHistoryGauge.cpp">
+      <BuildOrder>98</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="XYGauge.cpp">
+      <BuildOrder>95</BuildOrder>
+    </CppCompile>
+    <LibFiles Include="..\..\..\extlib\SAPILib\sapi.lib">
+      <BuildOrder>82</BuildOrder>
+    </LibFiles>
+    <None Include="FeedbackScene.h">
+      <BuildOrder>88</BuildOrder>
+    </None>
+    <None Include="FeedbackScene2D.h">
+      <BuildOrder>85</BuildOrder>
+    </None>
+    <None Include="FeedbackScene3D.h">
+      <BuildOrder>87</BuildOrder>
+    </None>
+    <BuildConfiguration Include="Debug Build">
+      <Key>Cfg_1</Key>
+    </BuildConfiguration>
+    <BuildConfiguration Include="Release Build">
+      <Key>Cfg_2</Key>
+    </BuildConfiguration>
+  </ItemGroup>
+</Project>

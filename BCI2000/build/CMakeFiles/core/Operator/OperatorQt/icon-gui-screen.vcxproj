@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CE23531C-0D8E-324F-A0FE-820D60513F2D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>icon-gui-screen</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt;C:\BCI2000.python3\src\core\Operator\OperatorQt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\core\Operator\OperatorLib\include;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\extlib\math;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\Operator;C:\BCI2000.python3\src\shared\gui;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\utils\DisplayFiltering;C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\__\__\__\shared\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt;C:\BCI2000.python3\src\core\Operator\OperatorQt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\core\Operator\OperatorLib\include;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\extlib\math;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\Operator;C:\BCI2000.python3\src\shared\gui;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\utils\DisplayFiltering;C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\__\__\__\shared\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt;C:\BCI2000.python3\src\core\Operator\OperatorQt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\core\Operator\OperatorLib\include;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\accessors;C:\BCI2000.python3\src\shared\bcistream;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\modules;C:\BCI2000.python3\src\shared\filters;C:\BCI2000.python3\src\shared\types;C:\BCI2000.python3\src\shared\utils;C:\BCI2000.python3\src\shared\utils\Expression;C:\BCI2000.python3\src\shared\utils\Scripting;C:\BCI2000.python3\src\shared\fileio;C:\BCI2000.python3\src\shared\fileio\dat;C:\BCI2000.python3\src\extlib\math;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtCore;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtGui;C:\Qt\Qt5.12.0\5.12.0\msvc2017\include\QtWidgets;C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\Operator;C:\BCI2000.python3\src\shared\gui;C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser;C:\BCI2000.python3\src\shared\utils\DisplayFiltering;C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\__\__\__\shared\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\0782d4bb8c44a00599f49d4a44824222\gui-screen256.png.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating ../../../icons/gui-screen256.png</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILDUTILS_DIR=C:/BCI2000.python3/build/buildutils -DPROJECT_ICON_TEMPLATE=C:/BCI2000.python3/src/shared/gui/images/brain-outline -DSTYLE= -DICON=gui-screen -DOUTPUT=C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png -P C:/BCI2000.python3/build/cmake/MakeIcon.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/CMakeFiles/0782d4bb8c44a00599f49d4a44824222/gui-screen256.png.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\combine_png.exe;C:\BCI2000.python3\build\cmake\MakeIcon.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\icons\gui-screen256.png</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating ../../../icons/gui-screen256.png</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILDUTILS_DIR=C:/BCI2000.python3/build/buildutils -DPROJECT_ICON_TEMPLATE=C:/BCI2000.python3/src/shared/gui/images/brain-outline -DSTYLE= -DICON=gui-screen -DOUTPUT=C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png -P C:/BCI2000.python3/build/cmake/MakeIcon.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/CMakeFiles/0782d4bb8c44a00599f49d4a44824222/gui-screen256.png.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\combine_png.exe;C:\BCI2000.python3\build\cmake\MakeIcon.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\icons\gui-screen256.png</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating ../../../icons/gui-screen256.png</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DBUILDUTILS_DIR=C:/BCI2000.python3/build/buildutils -DPROJECT_ICON_TEMPLATE=C:/BCI2000.python3/src/shared/gui/images/brain-outline -DSTYLE= -DICON=gui-screen -DOUTPUT=C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png -P C:/BCI2000.python3/build/cmake/MakeIcon.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/CMakeFiles/0782d4bb8c44a00599f49d4a44824222/gui-screen256.png.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\combine_png.exe;C:\BCI2000.python3\build\cmake\MakeIcon.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\icons\gui-screen256.png</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\4b7049ad90c71a58fcf162e9d819a420\icon-gui-screen.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=16 --height=16 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen16.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen16.png &gt; gui-screen16.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=32 --height=32 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen32.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen32.png &gt; gui-screen32.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=48 --height=48 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen48.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen48.png &gt; gui-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\make_win32ico gui-screen16.bmp gui-screen32.bmp gui-screen48.bmp C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png &gt; C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen.ico
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E remove gui-screen16.png gui-screen32.png gui-screen48.png gui-screen16.bmp gui-screen32.bmp gui-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/CMakeFiles/4b7049ad90c71a58fcf162e9d819a420/icon-gui-screen.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\make_win32ico.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\png2bmp.exe;C:\BCI2000.python3\build\CMakeFiles\icons\gui-screen256.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\icon-gui-screen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=16 --height=16 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen16.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen16.png &gt; gui-screen16.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=32 --height=32 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen32.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen32.png &gt; gui-screen32.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=48 --height=48 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen48.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen48.png &gt; gui-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\make_win32ico gui-screen16.bmp gui-screen32.bmp gui-screen48.bmp C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png &gt; C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen.ico
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E remove gui-screen16.png gui-screen32.png gui-screen48.png gui-screen16.bmp gui-screen32.bmp gui-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/CMakeFiles/4b7049ad90c71a58fcf162e9d819a420/icon-gui-screen.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\make_win32ico.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\RelWithDebInfo\png2bmp.exe;C:\BCI2000.python3\build\CMakeFiles\icons\gui-screen256.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\icon-gui-screen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd C:\BCI2000.python3\build\CMakeFiles\icons
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=16 --height=16 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen16.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen16.png &gt; gui-screen16.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=32 --height=32 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen32.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen32.png &gt; gui-screen32.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\transform_png --width=48 --height=48 C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png gui-screen48.png
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\png2bmp gui-screen48.png &gt; gui-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+C:\BCI2000.python3\build\buildutils\make_win32ico gui-screen16.bmp gui-screen32.bmp gui-screen48.bmp C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen256.png &gt; C:/BCI2000.python3/build/CMakeFiles/icons/gui-screen.ico
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E remove gui-screen16.png gui-screen32.png gui-screen48.png gui-screen16.bmp gui-screen32.bmp gui-screen48.bmp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/CMakeFiles/4b7049ad90c71a58fcf162e9d819a420/icon-gui-screen.rule;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\make_win32ico.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\transform_png.exe;C:\BCI2000.python3\build\CMakeFiles\buildutils\Debug\png2bmp.exe;C:\BCI2000.python3\build\CMakeFiles\icons\gui-screen256.png;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\icon-gui-screen</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/src/core/Operator/OperatorQt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/core/Operator/OperatorQt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/src/core/Operator/OperatorQt/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\MATH.cmake;C:\BCI2000.python3\build\cmake\extlib\QT.cmake;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5Config.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ModuleLocation.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebGLIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QXdgDesktopPortalThemePlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5Widgets_QWindowsVistaStylePlugin.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/src/core/Operator/OperatorQt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/core/Operator/OperatorQt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/src/core/Operator/OperatorQt/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\MATH.cmake;C:\BCI2000.python3\build\cmake\extlib\QT.cmake;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5Config.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ModuleLocation.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebGLIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QXdgDesktopPortalThemePlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5Widgets_QWindowsVistaStylePlugin.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/src/core/Operator/OperatorQt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/core/Operator/OperatorQt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/src/core/Operator/OperatorQt/CMakeLists.txt;C:\BCI2000.python3\build\cmake\extlib\MATH.cmake;C:\BCI2000.python3\build\cmake\extlib\QT.cmake;C:\BCI2000.python3\build\cmake\frameworks\Core.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.12\Modules\CMakeParseArguments.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5Config.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5\Qt5ModuleLocation.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigExtrasMkspecDir.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Core\Qt5CoreMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5GuiConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QGifPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICNSPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QICOPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QJpegPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QMinimalIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QOffscreenIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTgaPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTiffPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QTuioTouchPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QVirtualKeyboardPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWbmpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebGLIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWebpPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QWindowsIntegrationPlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Gui\Qt5Gui_QXdgDesktopPortalThemePlugin.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfig.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigExtras.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsConfigVersion.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5WidgetsMacros.cmake;C:\Qt\Qt5.12.0\5.12.0\msvc2017\lib\cmake\Qt5Widgets\Qt5Widgets_QWindowsVistaStylePlugin.cmake;C:\BCI2000.python3\src\core\Operator\OperatorQt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\CMakeFiles\icon-gui-screen" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\combine_png.vcxproj">
+      <Project>{E6A4420D-66D6-3535-AC72-EFA4C5C469B1}</Project>
+      <Name>combine_png</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\make_win32ico.vcxproj">
+      <Project>{AC6D685B-A144-3579-BCC0-CDA8FD932982}</Project>
+      <Name>make_win32ico</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\png2bmp.vcxproj">
+      <Project>{734DA984-4085-331C-A653-1778B4A3C5A2}</Project>
+      <Name>png2bmp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\BCI2000.python3\build\CMakeFiles\buildutils\transform_png.vcxproj">
+      <Project>{9CFB6D8B-5A60-394B-AD87-E6024CF7F4E6}</Project>
+      <Name>transform_png</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\SignalProcessing\FieldTripBuffer\FieldTripBufferFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\contrib\SignalProcessing\FieldTripBuffer\PipeDefinition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\FieldTripBuffer\CorePCH.cpp">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\CoreMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\CoreModule.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\bcistream\BCIStream_module.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\bcistream</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\cleanup.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\clientrequest.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\dmarequest.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\endianutil.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\extern.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\printstruct.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\swapbytes.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\tcprequest.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\tcpserver.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\tcpsocket.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\util.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\win32\gettimeofday.c">
+      <Filter>Source Files\External Libraries\fieldtrip\buffer\src\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.cpp">
+      <Filter>Generated\Version</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\compat\WinMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\compat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\contrib\SignalProcessing\FieldTripBuffer\FieldTripBufferFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\CoreModule.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\extern.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\swapbytes.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\win32\gettimeofday.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\buffer.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\compiler.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\message.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\platform.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\buffer\src\platform_includes.h">
+      <Filter>Header Files\External Libraries\fieldtrip\buffer\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\pthreads-win32\include\pthread.h">
+      <Filter>Header Files\External Libraries\fieldtrip\pthreads-win32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\pthreads-win32\include\sched.h">
+      <Filter>Header Files\External Libraries\fieldtrip\pthreads-win32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fieldtrip\pthreads-win32\include\semaphore.h">
+      <Filter>Header Files\External Libraries\fieldtrip\pthreads-win32\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\contrib\SignalProcessing\FieldTripBuffer\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\FieldTripBuffer\FieldTripBuffer\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\cogwheel-screen.ico">
+      <Filter>Generated\AppIcon</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\FieldTripBuffer\appicon.rc">
+      <Filter>Generated\AppIcon</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc">
+      <Filter>Generated\Version</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\AppIcon">
+      <UniqueIdentifier>{7B6861FE-6AD2-353B-914A-C15FCD201E9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\BCI2000 Framework">
+      <UniqueIdentifier>{5F667A99-7CE6-3DA4-96A4-82A7D98398CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Version">
+      <UniqueIdentifier>{79EF525C-6BF6-3B2D-86D9-96258C1C83CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{D333AF79-ED40-369D-8F3A-9E5D16CCF51B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries">
+      <UniqueIdentifier>{13E01BCE-4291-3895-9816-1F1365FD135D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\fieldtrip">
+      <UniqueIdentifier>{BA06241C-27F7-3D01-A00B-8FB53084F21C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\fieldtrip\buffer">
+      <UniqueIdentifier>{6B5541E3-5E04-38E2-85B2-A2DF29EF0850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\fieldtrip\buffer\src">
+      <UniqueIdentifier>{1E1F73E8-167F-3FD6-8B76-D68699E28093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\fieldtrip\buffer\src\win32">
+      <UniqueIdentifier>{88A2EDD9-4239-36C7-81DA-0FD9FD1F2903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\fieldtrip\pthreads-win32">
+      <UniqueIdentifier>{FF24CC1A-2ABD-375D-9FB4-327CD6D6F73F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External Libraries\fieldtrip\pthreads-win32\include">
+      <UniqueIdentifier>{CDFA920B-F49A-380D-9B02-216BAEB01CC8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\bcistream">
+      <UniqueIdentifier>{FBCA4655-BB91-309E-8A89-1B02E7786D7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\compat">
+      <UniqueIdentifier>{2B2B0696-82DA-3F6F-B029-174E1C314E07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{76E86A67-18EF-35F1-B46E-D09E9B955FFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries">
+      <UniqueIdentifier>{77F4A8FF-D7C7-331E-84AF-C255B38094F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\fieldtrip">
+      <UniqueIdentifier>{4E6DB518-9328-38D5-A486-C52CA4B423DB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\fieldtrip\buffer">
+      <UniqueIdentifier>{530617A2-8794-3E01-9252-258D368EFBD7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\fieldtrip\buffer\src">
+      <UniqueIdentifier>{86662533-4C7C-361C-AEA5-8D26B20DE321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External Libraries\fieldtrip\buffer\src\win32">
+      <UniqueIdentifier>{B588B618-12F7-32F2-8D91-5E0D880CEF26}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

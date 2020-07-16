@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2008/12/26 16:42:06.812.cbproj,D:\Documents\RAD Studio\Projects\Project1.cbproj=D:\Documents\RAD Studio\Projects\TickerTask.cbproj</Transaction>
+    <Transaction>2008/12/26 16:42:37.531.cpp,D:\bci2000\src\core\Application\TickerTask\Ticker.cpp=</Transaction>
+    <Transaction>2008/12/26 16:43:35.375.cpp,D:\Documents\RAD Studio\Projects\Unit2.cpp=D:\bci2000\src\core\Application\TickerTask\Ticker.cpp</Transaction>
+    <Transaction>2008/12/26 16:43:35.375.h,D:\Documents\RAD Studio\Projects\Unit2.h=D:\bci2000\src\core\Application\TickerTask\Ticker.h</Transaction>
+    <Transaction>2008/12/26 16:43:40.468.cbproj,D:\Documents\RAD Studio\Projects\TickerTask.cbproj=D:\bci2000\src\core\Application\TickerTask\TickerTask.cbproj</Transaction>
+    <Transaction>2008/12/26 16:44:11.046.cpp,D:\bci2000\src\core\Application\TickerTask\Ticker.cpp=</Transaction>
+    <Transaction>2008/12/26 16:44:37.796.cpp,D:\bci2000\src\core\Application\TickerTask\File1.cpp=D:\bci2000\src\core\Application\TickerTask\Ticker.cpp</Transaction>
+    <Transaction>2008/12/26 16:45:32.609.cpp,D:\bci2000\src\core\Application\TickerTask\File1.cpp=D:\bci2000\src\core\Application\TickerTask\TickerTask.cpp</Transaction>
+    <Transaction>2008/12/30 15:20:07.515.cpp,D:\bci2000\src\shared\gui\TextField.cpp=</Transaction>
+    <Transaction>2009/01/01 15:43:16.171.cpp,D:\bci2000\src\contrib\Application\TickerTask\TextFieldMod.cpp=</Transaction>
+    <Transaction>2009/01/12 21:09:18.972.cpp,D:\bci2000\src\shared\gui\TextField.cpp=</Transaction>
+  </Transactions>
+</BorlandProject>

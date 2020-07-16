@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:EllipticShape Class - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:EllipticShape Class,Programming Reference:GraphDisplay Class,Programming Reference:GraphObject Class,Programming Reference:Shape Class" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">EllipticShape Class</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253AEllipticShape_Class.html#Location"><span class="tocnumber">1</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEllipticShape_Class.html#Synopsis"><span class="tocnumber">2</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEllipticShape_Class.html#Methods"><span class="tocnumber">3</span> <span class="toctext">Methods</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#Show.28.29"><span class="tocnumber">3.1</span> <span class="toctext">Show()</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#Hide.28.29"><span class="tocnumber">3.2</span> <span class="toctext">Hide()</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#Invalidate.28.29"><span class="tocnumber">3.3</span> <span class="toctext">Invalidate()</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#Paint.28.29"><span class="tocnumber">3.4</span> <span class="toctext">Paint()</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#Change.28.29"><span class="tocnumber">3.5</span> <span class="toctext">Change()</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#bool_Click.28GUI::Point.29"><span class="tocnumber">3.6</span> <span class="toctext">bool Click(GUI::Point)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEllipticShape_Class.html#Properties"><span class="tocnumber">4</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#GUI::Point_Center"><span class="tocnumber">4.1</span> <span class="toctext">GUI::Point Center</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#float_LineWidth"><span class="tocnumber">4.2</span> <span class="toctext">float LineWidth</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#RGBColor_FillColor"><span class="tocnumber">4.3</span> <span class="toctext">RGBColor FillColor</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#RGBColor_Color"><span class="tocnumber">4.4</span> <span class="toctext">RGBColor Color</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#GraphDisplay_Display_.28r.29"><span class="tocnumber">4.5</span> <span class="toctext">GraphDisplay Display (r)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#bool_Visible_.28r.29"><span class="tocnumber">4.6</span> <span class="toctext">bool Visible (r)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#float_ZOrder_.28rw.29"><span class="tocnumber">4.7</span> <span class="toctext">float ZOrder (rw)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#enum_AspectRatioMode_.28rw.29"><span class="tocnumber">4.8</span> <span class="toctext">enum AspectRatioMode (rw)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AEllipticShape_Class.html#GUI::Rect_DisplayRect_.28rw.29"><span class="tocnumber">4.9</span> <span class="toctext">GUI::Rect DisplayRect (rw)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AEllipticShape_Class.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Location"></a><h2>Location</h2>
+<p><tt>src/shared/gui/Shapes</tt>
+</p>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>The <tt>EllipticShape</tt> class represents an ellipse drawn onto a <a href="Programming_Reference%253AGraphDisplay_Class.html" title="Programming Reference:GraphDisplay Class"><tt>GraphDisplay</tt></a>. Typically, it is used to represent a 2D feedback cursor or target.
+</p>
+<a name="Methods"></a><h2>Methods</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectMethods&amp;action=edit&amp;section=1" title="Template:GraphObjectMethods">edit</a>]</div><a name="Show.28.29"></a><h3>Show()</h3>
+<p>Makes the object visible. Initially, objects are created in visible state.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectMethods&amp;action=edit&amp;section=2" title="Template:GraphObjectMethods">edit</a>]</div><a name="Hide.28.29"></a><h3>Hide()</h3>
+<p>Makes the object invisible.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectMethods&amp;action=edit&amp;section=3" title="Template:GraphObjectMethods">edit</a>]</div><a name="Invalidate.28.29"></a><h3>Invalidate()</h3>
+<p>Invalidates the object's bounding rectangle, i.e. marks it as needing to be repainted. Typically, this function is called from a derived class, indicating that a change in object properties has occurred that requires a repaint.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectMethods&amp;action=edit&amp;section=4" title="Template:GraphObjectMethods">edit</a>]</div><a name="Paint.28.29"></a><h3>Paint()</h3>
+<p>Asks an object to paint itself by calling its <tt>OnPaint</tt> event handler.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectMethods&amp;action=edit&amp;section=5" title="Template:GraphObjectMethods">edit</a>]</div><a name="Change.28.29"></a><h3>Change()</h3>
+<p>Notifies an object of a change in display properties by calling its <tt>OnChange</tt> event handler.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectMethods&amp;action=edit&amp;section=6" title="Template:GraphObjectMethods">edit</a>]</div><a name="bool_Click.28GUI::Point.29"></a><h3>bool Click(GUI::Point)</h3>
+<p>Tests whether the specified point is inside an object's bounding rectangle, and calls its <tt>OnClick</tt> event handler if this is the case.
+</p>
+<a name="Properties"></a><h2>Properties</h2>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ShapeProperties&amp;action=edit&amp;section=1" title="Template:ShapeProperties">edit</a>]</div><a name="GUI::Point_Center"></a><h3>GUI::Point Center</h3>
+<p>The shape's center of mass, i.e. what would be considered its "position". For simple shapes, this coincides with the center of the shape's bounding rectangle.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ShapeProperties&amp;action=edit&amp;section=2" title="Template:ShapeProperties">edit</a>]</div><a name="float_LineWidth"></a><h3>float LineWidth</h3>
+<p>The shape border's line width, in pixels.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ShapeProperties&amp;action=edit&amp;section=3" title="Template:ShapeProperties">edit</a>]</div><a name="RGBColor_FillColor"></a><h3>RGBColor FillColor</h3>
+<p>The shape's filling color.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:ShapeProperties&amp;action=edit&amp;section=4" title="Template:ShapeProperties">edit</a>]</div><a name="RGBColor_Color"></a><h3>RGBColor Color</h3>
+<p>The color of the shape's border.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectProperties&amp;action=edit&amp;section=1" title="Template:GraphObjectProperties">edit</a>]</div><a name="GraphDisplay_Display_.28r.29"></a><h3>GraphDisplay Display (r)</h3>
+<p>The <tt>GraphDisplay</tt> object that was specified when the object was created.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectProperties&amp;action=edit&amp;section=2" title="Template:GraphObjectProperties">edit</a>]</div><a name="bool_Visible_.28r.29"></a><h3>bool Visible (r)</h3>
+<p><i>True</i> if the object is visible, <i>false</i> if it is hidden. Use the <i>Hide()</i> and <i>Show()</i> methods to set this property.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectProperties&amp;action=edit&amp;section=3" title="Template:GraphObjectProperties">edit</a>]</div><a name="float_ZOrder_.28rw.29"></a><h3>float ZOrder (rw)</h3>
+<p>Determines the order in which GraphObjects are drawn. GraphObjects with smaller values of ZOrder are drawn on top of those with larger values, hiding these.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectProperties&amp;action=edit&amp;section=4" title="Template:GraphObjectProperties">edit</a>]</div><a name="enum_AspectRatioMode_.28rw.29"></a><h3>enum AspectRatioMode (rw)</h3>
+<p>One of the following options:
+</p>
+<dl><dt>AdjustNone
+</dt><dd>No adjustment is made.
+</dd><dt>AdjustWidth
+</dt><dd>The object's width is adapted to its contents, while keeping its height constant.
+</dd><dt>AdjustHeight
+</dt><dd>The object's height is adapted to its contents, keeping its width constant.
+</dd><dt>AdjustBoth
+</dt><dd>Both the object's height and width are adjusted to its content.
+</dd></dl>
+<p>The exact behavior of aspect ratio adjustment depends on the object's type. E.g., for bitmap images, <i>AdjustBoth</i> will size the image such that one image pixel corresponds to one screen pixel; <i>AdjustHeight</i> and <i>AdjustWidth</i> will adjust such that the original aspect ratio is preserved.
+</p>
+<div class="editsection" style="float:right;margin-left:5px;">[<a href="http://www.bci2000.org/wiki/index.php?title=Template:GraphObjectProperties&amp;action=edit&amp;section=5" title="Template:GraphObjectProperties">edit</a>]</div><a name="GUI::Rect_DisplayRect_.28rw.29"></a><h3>GUI::Rect DisplayRect (rw)</h3>
+<p>The bounding rectangle of the space that is occupied by the object. This is given in coordinates relative to the size of the object's <tt>GraphDisplay</tt>; there, the upper left corner corresponds to (0,0), the lower right corner to (1,1).
+When a <tt>GraphObject</tt> is created, its display rectangle is empty.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Programming_Reference%253AShape_Class.html" title="Programming Reference:Shape Class">Programming Reference:Shape Class</a>, <a href="Programming_Reference%253AGraphObject_Class.html" title="Programming Reference:GraphObject Class">Programming Reference:GraphObject Class</a>, <a href="Programming_Reference%253AGraphDisplay_Class.html" title="Programming Reference:GraphDisplay Class">Programming Reference:GraphDisplay Class</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li><a href="Programming_Reference%253AGenericFilter_Class.html">GenericFilter</a></li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li><a href="Programming_Reference%253AStimulusTask_Class.html">StimulusTask</a></li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

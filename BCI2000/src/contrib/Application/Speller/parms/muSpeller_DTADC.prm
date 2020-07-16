@@ -1,0 +1,96 @@
+Filtering int AlignChannels= 0 0 0 1 // align channels in time (0=no, 1=yes)
+Speller int AlternateBackup= 0 0 0 1 // Alternate position of BACK UP (0=no, 1=yes)
+System string ApplicationIP= 127.0.0.1 127.0.0.1 127.0.0.1 127.0.0. // this module's listening IP
+System string ApplicationPort= 1261 4200 1024 32768 // this module's listening port
+Storage int AutoIncrementRunNo= 1 1 0 1 // 0: no auto increment 1: auto increment at initialize
+Speller string BackgroundColor= 0x00585858 0x00505050 0x00000000 0x00000000 // Background Color in hex (0x00BBGGRR)
+Statistics matrix BaselineCfg= 4 2 TargetCode 1 TargetCode 2 TargetCode 3 TargetCode 4 0 0 0 // states to watch for baseline
+Statistics matrix BaselineHits= 2 2 1 0.50 2 0.50 0 0 0 // proportion correct for each target
+Source string BoardName= BCI_IN 0 0 0 // this is the name of the AD board
+Source string BoardName2= none 0 0 0 // the name of the 2nd AD board or 'none' if not present
+Filtering int ClassMode= 1 0 1 2 // Classifier mode 1= simple 2= interaction
+Speller int CursorSize= 5 25 0 100 // Cursor Size in percent of screen
+MEMFilter float deltaMem= 0.2 0.2 0.02 2.00 // Resolution (line density)
+Statistics float YPixelsPerSec= 20.00 70 0 400 // Desired pixels per second
+Speller string DictionaryFile= odgenswords.voc 0 0 100 // Dictionary file for word prediction
+System string EEGsourceIP= 127.0.0.1 127.0.0.1 127.0.0.1 127.0.0.1 // this module's listening IP
+System string EEGsourcePort= 1259 4200 1024 32768 // this module's listening port
+Speller int EnablePrediction= 0 0 0 1 // Enable word prediction (0=no, 1=yes)
+SpellerSequence int FeedbackTime= 30 30 0 5000 // Duration of feedback in units of SampleBlocks
+Storage string FileInitials= ..\data a z 0 // Initials of file name
+Speller string Goal= SEND_MONEY 0 0 100 // Text to copy
+Speller int HighlightTarget= 0 0 0 1 // Highlight the correct target (0=no, 1=yes)
+Statistics float XMeanProportion= 1.0 0.0 0.0 2.0 // Proportion of horizontal signal intercept
+Statistics int SignalWinLth= 3 0 0 1000 // Length of time for running average
+Statistics float YMeanProportion= 0.9842 0.0 0.0 2.0 // Proportion of signal mean for intercept
+SpellerSequence int ITITime= 10 10 0 5000 // Duration of ITI in units of SampleBlocks
+Localization string Language= Default Default % % // Language for user messages
+Statistics float TrendControlRate= -0.001 0 0.000 0.010 // Learning Rate for Linear Trend Control
+Statistics float XPixelsPerSec= 20 70 0 400 // Horizontal Pixel Rate
+Filtering float XMean= -5.00 -5.0 -100.0 100.0 // Normal Filter Left/Right Intercept
+Filtering float XGain= 5.00 5.0 0.0 100.0 // Normal Filter Left/Right Slope
+Filtering int MaxChannels= 256 10 1 256 // maximum number of channels in signals B,C
+Filtering int MaxElements= 256 10 1 256 // maximum number of elements in signals B,C
+MEMFilter float MemBandWidth= 3.0 3.0 0.5 32.0 // Spectral Bandwidth in Hz
+MEMFilter int MemDetrend= 0 0 0 2 // Detrend data?  0=no 1=mean 2= linear
+MEMFilter int MemModelOrder= 10 10 2 32 // AR model order
+MEMFilter int MemWindows= 4 2 1 8 // AR- number of input blocks
+Filtering matrix MLR= 1 3 1 1 0 64 0 100 // Class Filter Left / Right Weights
+Filtering matrix MUD= 5 3 1 2 1 1 4 1 1 6 1 1 8 1 1 10 1 64 0 100 // Class Filter Additive Up / Down Weights
+Speller int NumberTargets= 4 4 0 100 // Number of Targets ... NOT USED YET
+Filtering int NumControlSignals= 2 1 1 128 // the number of transmitted control signals
+SpellerSequence int OutcomeTime= 15 15 0 5000 // Duration of outcome in units of SampleBlocks
+SpellerSequence int PTPTime= 10 10 0 5000 // Duration of pre-trial period in units of SampleBlocks
+Source int SampleBlockSize= 16 5 1 128 // this is the number of samples transmitted at a time
+Source int SamplingRate= 256 128 1 4000 // this is the sample rate
+Storage int SavePrmFile= 0 1 0 1 // 0: don't save additional parameter file 1: save additional parameter file
+System string SignalProcessingIP= 127.0.0.1 127.0.0.1 127.0.0.1 127.0.0.1 // this module's listening IP
+System string SignalProcessingPort= 1257 4200 1024 32768 // this module's listening port
+Source int SoftwareCh= 16 64 1 128 // this is the number of digitized channels
+Source int SoftwareChBoard1= 64 64 1 128 // # channels board1 (ignored when only one board)
+Source int SoftwareChBoard2= 64 64 1 128 // # channels board2 (ignored when only one board)
+Filtering floatlist SourceChGain= 16 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.0033 0.003 -500 500 // gain for each channel (A/D units -> muV)
+Filtering floatlist SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -500 500 // offset for channels in A/D units
+Filtering floatlist SourceChTimeOffset= 1 -1 0 0 1 // time offset for all source channels (not used if -1)
+Visualize int SourceMax= 8092 8092 0 16386 // raw signal vsi Max Value
+Visualize int SourceMin= 0 0 -8092 0 // raw signal vis Min Value
+Filtering int SpatialFilteredChannels= 4 2 1 64 // Number of Spatially Filtered Channels
+Filtering matrix SpatialFilterKernal= 4 4 .3 0 0 0 0 .3 0 0 0 0 .3 0 0 0 0 .3 64 -100 100 // Spatial Filter Kernal Weights
+MEMFilter float StartMem= 0.0 0.0 0.0 512.0 // Start of Spectrum in Hz
+System int StateVectorLength= 19 16 1 30 // length of the state vector in bytes
+Speller int StatusBarSize= 10 0 0 100 // Size of status bar in percent of screen height
+Speller int StatusBarTextHeight= 4 0 0 100 // Height of status bar labels in percent of screen height
+MEMFilter float StopMem= 60.0 30.0 0.0 512.0 // End of Spectrum in Hz
+Storage string StorageTime= 16:15 Time a z // time of beginning of data storage
+Storage string SubjectName= test Name a z // subject alias
+Storage string SubjectRun= 01 00 0 99 // digit run number (max. 3 characters)
+Storage string SubjectSession= 001 001 0 999 // session number (max. 3 characters)
+Speller string TargetDefinitionFile= config\targets.cfg 0 0 100 // Target definition file
+Speller int TargetTextHeight= 5 0 0 100 // Height of target labels in percent of screen height
+Speller int TargetWidth= 30 0 0 100 // TargetWidth in percent of screen width
+Source int TransmitCh= 4 5 1 128 // this is the number of transmitted channels
+Source intlist TransmitChList= 4 1 2 3 4 1 1 128 // list of transmitted channels (# of channels MUST equal TransmitCh)
+Speller string TreeDefinitionFile= config\tree.cfg 0 0 100 // Tree definition file
+Statistics int TargetWinLth= 20 0 0 100 // Length of % Correct Window
+Filtering float YMean= 0 5.0 -100.0 100.0 // Normal Filter Up / Down Intercept
+Filtering float YGain= 20 5.0 -100.0 100.0 // Normal Filter Up / Down Slope
+Visualize int VisualizeCalibration= 0 0 0 1 // visualize calibrated channels (0=no, 1=yes)
+Visualize int VisualizeClassFiltering= 0 0 0 1 // visualize Class filtered signals (0=no 1=yes)
+Visualize int VisualizeNormalFiltering= 0 0 0 1 // visualize Normal filtered signals (0=no 1=yes)
+Visualize int VisualizeRoundtrip= 1 1 0 1 // visualize roundtrip time (0=no, 1=yes)
+Visualize int VisualizeSource= 1 1 0 1 // visualize raw brain signal (0=no, 1=yes)
+Visualize int VisualizeSourceDecimation= 1 1 0 1 // decimation factor for raw brain signal
+Visualize int VisualizeSourceTime= 2 2 0 5 // how much time in Source visualization
+Visualize int VisualizeSpatialFiltering= 0 0 0 1 // visualize spatial filtered signals (0=no 1=yes)
+Visualize int VisualizeStatFiltering= 0 0 0 1 // visualize Stat filtered signals (0=no 1=yes)
+Visualize int VisualizeTemporalFiltering= 1 0 0 1 // visualize Temporal filtered signals (0=no 1=yes)
+Statistics matrix WeightControl= 1 1 0 0 0 0 // State Names controlling Classifier Adaptation
+Statistics int WeightUse= 0 0 0 2 // Use of weights 0 = not 1= compute 2= use 
+Speller int WinHeight= 512 512 0 2000 // User Window Height
+Speller int WinWidth= 512 512 0 2000 // User Window Width
+Speller int WinXpos= 400 0 0 5000 // User Window X location
+Speller int WinYpos= 5 0 0 5000 // User Window Y location
+Statistics float WtLrnRt= 0.001 0 0.000 0.010 // Rate of Learning for Classifier 
+Filtering int YTrendControl= 2 0 0 0 // introduced by conversion script
+Filtering int XTrendControl= 0 0 0 0 // introduced by conversion script
+Filtering int OutcomeDirection= 1 0 0 0 // introduced by conversion script

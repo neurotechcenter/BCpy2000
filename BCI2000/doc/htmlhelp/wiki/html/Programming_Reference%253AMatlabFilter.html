@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:MatlabFilter - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:MatlabFilter,Contributions:FieldTripBuffer,Programming Reference:BCI2000 Source Code,Programming Reference:Filter Chain,Programming Reference:GenericFilter Class,Programming Tutorial:Implementing a Matlab-based Filter,Programming Tutorial:Implementing another Matlab-based Filter,Technical Reference:Core Modules,Technical Reference:Parameter Definition,Technical Reference:State Definition,User Reference:Filters" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">MatlabFilter</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#Parameters_and_States"><span class="tocnumber">2</span> <span class="toctext">Parameters and States</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#Input_and_Output_Signal_Format"><span class="tocnumber">3</span> <span class="toctext">Input and Output Signal Format</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#Error_Reporting"><span class="tocnumber">4</span> <span class="toctext">Error Reporting</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#Combining_the_MatlabFilter_with_other_Signal_Processing_Filters"><span class="tocnumber">5</span> <span class="toctext">Combining the MatlabFilter with other Signal Processing Filters</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#Command_Line_Options"><span class="tocnumber">6</span> <span class="toctext">Command Line Options</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#MatlabWD"><span class="tocnumber">6.1</span> <span class="toctext">MatlabWD</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#MatlabStayOpen"><span class="tocnumber">6.2</span> <span class="toctext">MatlabStayOpen</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#Troubleshooting"><span class="tocnumber">7</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#Debugging_Matlab_functions"><span class="tocnumber">7.1</span> <span class="toctext">Debugging Matlab functions</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#Matlab_doesn.27t_find_your_functions"><span class="tocnumber">7.2</span> <span class="toctext">Matlab doesn't find your functions</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#There_is_no_Matlab_engine_started_up"><span class="tocnumber">7.3</span> <span class="toctext">There is no Matlab engine started up</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#Changes_to_M-files_appear_to_have_no_effect"><span class="tocnumber">7.4</span> <span class="toctext">Changes to M-files appear to have no effect</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#You_get_linker_errors_when_rebuilding_MatlabSignalProcessing"><span class="tocnumber">7.5</span> <span class="toctext">You get linker errors when rebuilding MatlabSignalProcessing</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#You_get_a_message_window_with_a_.22Library_not_found.22_message"><span class="tocnumber">7.6</span> <span class="toctext">You get a message window with a "Library not found" message</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253AMatlabFilter.html#You_get_a_message_window_with_an_.22Entry_Point_Not_Found.22_message"><span class="tocnumber">7.7</span> <span class="toctext">You get a message window with an "Entry Point Not Found" message</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253AMatlabFilter.html#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Overview"></a><h2>Overview</h2>
+<p>The MatlabFilter implements a mechanism for using the Matlab engine within the BCI2000 pipeline. The <i>MatlabFilter</i> calls the Matlab engine to act upon signals, parameters, and states. It provides the full BCI2000 <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">filter interface</a> to a Matlab filter implementation.
+</p><p>While BCI2000 is running, each block of data is pushed to the Matlab engine and a well-specified Matlab function (i.e. *.m file) is executed. As explained in more detail in the Programming reference for the  <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">GenericFilter Class</a>, all BCI2000 filters consist of a set of functions. The MatlabFilter will, upon execution of each of these functions, contact the Matlab engine and execure the corresponding Matlab function equivalent. Furthermore, the MatlabFilter copies the input signal and the states to the Matlab engine, and copies the output signal and states from the engine after processing the signal.
+</p>
+<table style="color:black;background-color:#ffffcc;" cellpadding="5" cellspacing="0" border="2">
+<tr>
+<th>BCI2000 function
+</th><th>Matlab equivalent
+</th></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#Constructor" title="Programming Reference:GenericFilter Class">Constructor()</a>
+</td><td>bci_Construct
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#Preflight" title="Programming Reference:GenericFilter Class">Preflight()</a>
+</td><td>bci_Preflight
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#Initialize" title="Programming Reference:GenericFilter Class">Initialize()</a>
+</td><td>bci_Initialize
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#StartRun" title="Programming Reference:GenericFilter Class">StartRun()</a>
+</td><td>bci_StartRun
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#Process" title="Programming Reference:GenericFilter Class">Process()</a>
+</td><td>bci_Process
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#StopRun" title="Programming Reference:GenericFilter Class">StopRun()</a>
+</td><td>bci_StopRun
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#Resting" title="Programming Reference:GenericFilter Class">Resting()</a>
+</td><td>bci_Resting
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#Halt" title="Programming Reference:GenericFilter Class">Halt()</a>
+</td><td>bci_Halt
+</td></tr>
+<tr>
+<td><a href="Programming_Reference%253AGenericFilter_Class.html#Destructor" title="Programming Reference:GenericFilter Class">Destructor()</a>
+</td><td>bci_Destruct
+</td></tr></table>
+<p>Existence of the above-listed Matlab functions is not mandatory, the Matlab 'exist' command will be used to determine whether a given function is available, and will not call the Matlab engine when this is not the case. If either of the bci_Preflight, bci_Initialize, or bci_Process functions is not available, a warning will be displayed to the user.
+</p><p>Most of these Matlab functions do not take input arguments, except for
+</p>
+<pre> function [parameters, states] = bci_Construct;
+ 
+ function [out_signal_dim] = bci_Preflight( in_signal_dim );
+ 
+ function bci_Initialize( in_signal_dim, out_signal_dim );
+ 
+ function [out_signal] = bci_Process( in_signal );
+</pre>
+<p>The most important functions is <tt>bci_Process</tt>, which is executed every time a new block of data is passed through the pipeline. The <tt>bci_Construct</tt> function is executed at the beginning and determines the parameters and states. The <tt>bci_Initialize</tt> function determines whether all requirements are met. The <tt>bci_StartRun</tt> function prepares the computation that is done during processing (e.g. computing filter parameters). Communication between these Matlab functions is done using global variables.
+</p>
+<a name="Parameters_and_States"></a><h2>Parameters and States</h2>
+<p>Parameters and states are accessible via global Matlab structs called  'bci_Parameters' and 'bci_States'. Parameters may be changed from <tt>bci_StopRun</tt> and <tt>bci_Resting</tt>, and will automatically be propagated to the other modules. State values may be modified from the <tt>bci_Process</tt> function. 
+</p><p>To add parameters and states to the BCI2000 list of states, the <tt>bci_Construct</tt> function may return non-empty cell arrays of strings in its parameters  and states return values. The strings constituting these cell arrays are <a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">parameter</a> and <a href="Technical_Reference%253AState_Definition.html" title="Technical Reference:State Definition">state definitions</a>.
+</p><p>Your added parameters will appear in the <a href="User_Reference%253AOperator_Module.html" title="User Reference:Operator Module">operator module's</a> parameter configuration dialog. Your parameter definition's section name will be used to direct its position in the configuration dialog's register cards:
+</p>
+<pre>MyFilter int MyParam= 2 0 0 2 // ...
+</pre>
+<p>will display the <i>MyParam</i> parameter on separate register card named <i>MyFilter</i>.
+</p>
+<pre>Filtering:MyFilter int MyParam= 2 0 0 2 // ...
+</pre>
+<p>will display the parameter on the <i>Filtering</i> register card, inside a group called <i>MyFilter</i>.
+</p>
+<a name="Input_and_Output_Signal_Format"></a><h2>Input and Output Signal Format</h2>
+<p>BCI2000 signals are mapped to Matlab matrices with channel index first, and sample (element) index second. The signal dimension arguments of <tt>bci_Preflight</tt> and <tt>bci_Initialize</tt> are integer vectors  of size 1x2 with <tt>[n_channels n_elements]</tt>.
+</p>
+<a name="Error_Reporting"></a><h2>Error Reporting</h2>
+<p>To report errors from Matlab functions, use Matlab's <tt>error</tt> command.
+Your error messages will be displayed to the user from the <a href="User_Reference%253AOperator_Module.html" title="User Reference:Operator Module">operator module</a>.
+</p>
+<a name="Combining_the_MatlabFilter_with_other_Signal_Processing_Filters"></a><h2>Combining the MatlabFilter with other Signal Processing Filters</h2>
+<p>In the BCI2000 binary distribution, the <i>MatlabFilter</i> is shipped inside the <i>MatlabSignalProcessing</i> executable. There, the signal processing chain consists of the <a href="User_Reference%253ASpatialFilter.html" title="User Reference:SpatialFilter">SpatialFilter</a> and the <i>MatlabFilter</i>. However, by editing <tt>src/core/SignalProcessing/Matlab/PipeDefinition.cpp</tt>, you may add as many <a href="User_Reference%253AFilters.html" title="User Reference:Filters">signal processing filters</a> as you wish.
+</p><p>See <a href="Programming_Reference%253AFilter_Chain.html" title="Programming Reference:Filter Chain">Programming Reference:Filter Chain</a> for information about defining a filter chain. Modification of the filter chain requires access to the <a href="Programming_Reference%253ABCI2000_Source_Code.html" title="Programming Reference:BCI2000 Source Code">BCI2000 source code</a>. You will need to rebuild the <i>MatlabSignalProcessing</i> executable.
+</p>
+<a name="Command_Line_Options"></a><h2>Command Line Options</h2>
+<a name="MatlabWD"></a><h3>MatlabWD</h3>
+<p>By default, the Matlab engine's working directory is set to the signal processing module's working directory at startup. When using the Matlab filter for signal processing, your filter's code will be contained in the <tt>bci_Process</tt> and associated Matlab functions, which will typically be located inside a dedicated directory. Thus, you may switch between Matlab-based filter implementations by selecting a Matlab working directory at startup.
+This may be done by specifying the <tt>MatlabWD</tt> parameter from the command line when starting the MatlabSignalProcessing module:
+</p>
+<pre>start MatlabSignalProcessing.exe --MatlabWD=&quot;./matlab&quot; 127.0.0.1</pre>
+<p>will change Matlab's working directory to a directory called "matlab" inside the BCI2000 "prog" directory at startup, and execute <tt>bci_Process</tt> and associated functions from there.
+</p><p>This parameter must be set from the command line; later changes will have no effect.
+</p><p>Using the <tt>--MatlabWD</tt> command line option, you may easily switch between multiple Matlab-based BCI2000 configurations.
+Simply create a separate startup batch file for each configuration, and specify the respective configuration's path on the command line that starts up the MatlabFilter.
+</p>
+<a name="MatlabStayOpen"></a><h3>MatlabStayOpen</h3>
+<p>By default, the Matlab instance associated with the Matlab engine will be closed when BCI2000 quits.
+Generally, this behavior is desired to ensure a well-defined BCI2000 system state after each startup.
+For debugging purposes, though, it is sometimes useful to have the engine's command window available even after BCI2000 has been quit.
+This behavior is controlled by another command-line parameter, <tt>MatlabStayOpen</tt>, which may take the following values:
+</p>
+<ul><li>0 is the default (no change in behavior),
+</li><li>1 keeps the Matlab engine's command window open but clears variables used to transmit information forth and back between BCI2000 and Matlab,
+</li><li>2 also preserves intermediate variables (such as bci_Parameters and bci_States) in the Matlab engine's workspace.
+</li></ul>
+<p>To set this parameter to 2, use this command line to start up the signal processing module:
+</p>
+<pre>start MatlabSignalProcessing.exe --MatlabStayOpen=2 127.0.0.1</pre>
+<p>Once the <tt>MatlabStayOpen</tt> parameter has been set from the command line, it will be listed on the Operator Module's parameter configuration dialog's "system" tab, and may be modified from there. The change will be applied when clicking <i>Set Config</i>.
+</p>
+<a name="Troubleshooting"></a><h2>Troubleshooting</h2>
+<a name="Debugging_Matlab_functions"></a><h3>Debugging Matlab functions</h3>
+<ol><li>Start BCI2000. The <i>MatlabFilter</i> will open a Matlab instance in its own window in minimized state.
+</li><li>Switch to the minimized Matlab instance.
+</li><li>Type, e.g.,<br /><code>edit bci_Process.m</code><br />to open a Matlab editor window connected to the Matlab interactive window.
+</li><li>In the editor window, set breakpoints as you would normally.
+</li><li>Execution will be paused, and you may examine variables hovering the mouse over them.
+</li></ol>
+<p>Unfortunately, recent versions of Matlab do not allow interactive debugging of functions executed in the Matlab engine, so the above steps will not work any more. Instead, MathWorks <a href="http://www.mathworks.com/support/solutions/en/data/1-2CEUK6/index.html?product=ML&amp;solution=1-2CEUK6" class='external text' title="http://www.mathworks.com/support/solutions/en/data/1-2CEUK6/index.html?product=ML&amp;solution=1-2CEUK6" rel="nofollow">suggests a rather crude approach</a>.
+</p>
+<a name="Matlab_doesn.27t_find_your_functions"></a><h3>Matlab doesn't find your functions</h3>
+<p>Make sure to
+</p>
+<ul><li>either set Matlab's working directory to the directory containing your functions, using the <tt>--MatlabWD</tt> command line option described above,
+</li><li>or add the respective directory to your Matlab path.
+</li></ul>
+<p>Generally, the first option is recommended over the second one.
+</p>
+<a name="There_is_no_Matlab_engine_started_up"></a><h3>There is no Matlab engine started up</h3>
+<p>Execute<br /><code>matlab /regserver</code><br />from the command line when logged in with administrative privileges.
+</p>
+<a name="Changes_to_M-files_appear_to_have_no_effect"></a><h3>Changes to M-files appear to have no effect</h3>
+<p>Switch to the Matlab engine's command window, and enter<br /><code>clear;</code><br /> or <br /><code>clear functionname;</code><br />each time you change a Matlab function.
+</p>
+<a name="You_get_linker_errors_when_rebuilding_MatlabSignalProcessing"></a><h3>You get linker errors when rebuilding <i>MatlabSignalProcessing</i></h3>
+<p>If you get linker errors after editing <tt>PipeDefinition.cpp</tt>, make sure that all filters' cpp files are part of the <i>MatlabSignalProcessing</i> project.
+</p>
+<a name="You_get_a_message_window_with_a_.22Library_not_found.22_message"></a><h3>You get a message window with a "Library not found" message</h3>
+<p>Make sure that your Windows "%PATH%" variable contains the bin/win32 directory of your Matlab installation.
+</p>
+<a name="You_get_a_message_window_with_an_.22Entry_Point_Not_Found.22_message"></a><h3>You get a message window with an "Entry Point Not Found" message</h3>
+<p>This error is likely to indicate confusion of multiple installations of Matlab on your machine.
+Check your Windows <i>%PATH%</i> environment variable, e.g. by opening a command console window and typing
+</p>
+<pre>echo %PATH%
+</pre>
+<p>When it contains references to more than a single Matlab installation, remove all apart from the reference to the installation you are going to use with BCI2000. Also, make sure to execute
+</p>
+<pre>matlab /regserver
+</pre>
+<p>for the Matlab installation you intend to use.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Technical_Reference%253ACore_Modules.html#Signal_Processing_Module" title="Technical Reference:Core Modules">Technical Reference:Core Modules#Signal Processing Module</a>, 
+<a href="Technical_Reference%253AParameter_Definition.html" title="Technical Reference:Parameter Definition">Technical Reference:Parameter Definition</a>, 
+<a href="Technical_Reference%253AState_Definition.html" title="Technical Reference:State Definition">Technical Reference:State Definition</a>, 
+<a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">Programming Reference:GenericFilter Class</a>, 
+<a href="Programming_Reference%253AFilter_Chain.html" title="Programming Reference:Filter Chain">Programming Reference:Filter Chain</a>, 
+<a href="Contributions%253AFieldTripBuffer.html" title="Contributions:FieldTripBuffer">Contributions:FieldTripBuffer</a>
+</p>
+<ul><li> Matlab tutorial for <a href="Programming_Tutorial%253AImplementing_a_Matlab-based_Filter.html" title="Programming Tutorial:Implementing a Matlab-based Filter">IIR bandpass filtering, followed with RMS envelope computation, and linear classification</a>
+</li><li> Matlab tutorial for <a href="Programming_Tutorial%253AImplementing_another_Matlab-based_Filter.html" title="Programming Tutorial:Implementing another Matlab-based Filter">adaptive spatial filtering using a beamformer, power computation and normalization</a>
+</li></ul>
+
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li><a href="Programming_Reference%253AGenericFilter_Class.html">GenericFilter</a></li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li><a href="Programming_Reference%253AStimulusTask_Class.html">StimulusTask</a></li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

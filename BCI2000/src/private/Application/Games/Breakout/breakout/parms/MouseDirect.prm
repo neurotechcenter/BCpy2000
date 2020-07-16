@@ -1,0 +1,3 @@
+Application:Game                        string    PaddleExpressionX=      ((MousePosX-32767)/320)-1 // Expression for X position of the paddle (-1:1) 
+Application:Game                        int       IntegratePaddleX=        0        // 
+

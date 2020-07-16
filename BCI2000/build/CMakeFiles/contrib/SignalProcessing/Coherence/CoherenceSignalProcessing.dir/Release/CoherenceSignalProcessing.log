@@ -1,0 +1,20 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalProcessing/Coherence/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalProcessing/Coherence/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  PipeDefinition.cpp
+  CoherenceFilter.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  CoherenceSignalProcessing.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalProcessing\Coherence\Release\CoherenceSignalProcessing.exe
+  	Deploying executable
+  copying files:
+  Copying CoherenceSignalProcessing.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Copying vcomp140.dll ...
+  Copying libfftw3-3.dll ...
+  Done.

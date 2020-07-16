@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{url}
+\begin{document}
+People often forget that licensing software {\em one} way to the public does not prevent us from entering into agreements with particular people in the future, to license it to them in additional or alternative ways.  It will be worth reminding ourselves of this fact throughout the transition, as well as any potential commercially interested parties (via the website). 
+
+The public license we apply has the purpose of setting the ``default'' permissions in the absence of additional agreements,  but does not limit our freedom to enter into such agreements.  The only thing we should avoid here is making the defaults {\em too} permissive: if our public license says that absolutely anything is allowed, it is futile to attempt to impose additional conditions afterwards. Companies will only make deals in order to remove restrictions.
+
+The Gnu Public Licenses, GPL and LGPL, are two potentially attractive options for the public defaults.  Note that neither of them distinguishes between ``commercial'' and ``non-commercial'' use, and they do not prohibit someone who downloads BCI2000 (let's call him Bob) from charging money in exchange for redistributing it. Instead they stipulate, in two slightly different ways, that Bob may not impose additional restrictions to {\em his} clients when he redistributes. In particular the ``viral'' nature of the full GPL is a natural deterrent, and hence an incentive to buy a different license, for many commercially-minded clients.
+
+The GPL and LGPL would boil down to:
+
+\subsection*{GPL}
+\begin{itemize}
+   \item[] G1:  Bob may redistribute BCI2000 code, but only if all GPL stipulations (including this permission) remain attached to it.
+   \item[] G2:  Wherever Bob distributes binaries, he must also (offer to) supply the complete source code and documentation too (for no extra charge, except the cost of the medium it is transported on).
+   \item[] G3:  Bob must also apply the GPL when distributing his own {\em modifications} to the BCI2000 code (``derivative works'').
+   \item[] G4:  ``Derivative work'' has a very broad definition, encompassing anything that uses (or ``links to'') BCI2000 code.
+\end{itemize}
+
+\subsection*{LGPL}
+The two main differences relative to the GPL are:
+\begin{itemize}
+    \item[] L1: The definition of a ``derivative work'' is narrower, such that code that merely uses or ``links to'' it is exempt.
+    \item[] L2: Bob has the choice whether to apply the LGPL or the full GPL to modified/redistributed BCI2000 code.
+\end{itemize}
+
+Essentially, G1 thru G3 still apply, but only to the BCI2000 subset of what Bob is redistributing. The LGPL would therefore allow Bob (and his company BobCo) to use and redistribute BCI2000 code while keeping his own code proprietary, without asking our permission.  Bearing in mind that Bob still has the {\em option} of asking permission (and making a deal with us for a different license) are there any cases that would motivate us to choose LGPL instead of GPL?  Richard Stallman's argues \cite{stallman} that there is only a very limited set of circumstances where the LGPL is at all desirable. It was chosen for the Gnu C Library because there are other less-restricted C libraries available: so if it were GPL'd, and Bob saw that he could get what he wants from an alternative source with fewer restrictions, he would do so, and the Gnu C Library would remain unused. By contrast, the LGPL is not preferred for Gnu libraries where there is little or no ``competition'' such as Gnu Readline: in this case, there is no incentive for the library authors to use LGPL because the full GPL gets them more of what they consider desirable (either the release of Bob's own source code into the community, or a special deal with Bob).  BCI2000 probably falls into this latter category, for most conceivable re-use cases.  The only disadvantage I can see to the GPL, relative to LGPL, would be if BCI2000 generates a huge number of requests for proprietary licensing, which do not interest us, and which we do not consider worth our while to process. This is unlikely to happen.  Therefore I would advocate using the full GPL.
+
+\subsection*{Definitions}
+
+The GPL and LGPL depend on the definitions of certain terms ``derivative work'' and ``linking to''.  Since they were written in the context of C source files, ``linking to'' has a very specific meaning.  For other languages (Python, Matlab, \ldots) it is less clear.
+
+The full GPL takes a very broad definition:  A links to B if A cannot do its (complete) job without B.  Thus, BCI2000 links to FFTW because BCI2000 can only perform 99.9\% of its advertised functions without FFTW, whereas FFTW can of course do the job it is intended to do without BCI2000. This naturally allows GPL'd code to be built on top of proprietary platforms: you can release a Matlab toolbox under the GPL because Matlab can still do what its authors intended it to do without your toolbox.\footnote{One way of seeing BCI2000 contribs under the current license is that they are built ``on top of'' the platform of BCI2000 in this sense. However, if they are distributed with BCI2000 and their functionality is described on the BCI2000 wiki, I imagine this could not be defended:  BCPy2000 was not just built on top of BCI2000 in the sense it would be if I had distributed it entirely separately from the BCI2000 project;  rather, it could persuasively be argued that BCI2000 was now claiming to be able to support Python and was linking to BCPy2000 in order do so:  this is why I chose LGPL for the C code in BCPy2000 rather than GPL, since the LGPL still allows the {\tt Python*.exe} binaries and source to be distributed together with BCI2000.  Whether it was strictly kosher for me to then use the full GPL for the components written in {\em Python}, is another question (the C code is currently rather dependent on the specific way the Python components are written, although this dependency can easily be reduced, and indeed I would like to do this so that other Python frameworks like PyFF might be supported).}
+
+It is possible, and worthwhile, to define exactly what is meant by ``linking to'' and ``derivative work'' in the context of one's own specific code.  For BCI2000 we should definitely do this if we go with the LGPL, to make things clear.  For example, under the LGPL, Bob's implementation of a new ADC for new hardware would presumably not be considered a derivative work, even if he patterned it on an existing one.  Bob's implementation of some arbitrary filter would also not be considered a derivative work unless it is very similar to an existing filter.  Both of these things would merely ``link to'' the BCI2000 framework, and under the LGPL Bob could then do whatever he wanted with his own code. Note that this is the case even though the rest of BCI2000 framework is not a ``library'' in the strict C-compiler sense---that doesn't matter from the point of view of the LGPL, despite what the first ``L'' used to stand for.  By contrast, changes in, additions to, and copies of substantial portions of existing BCI2000 files {\em would} create a derivative work, covered by the LGPL.
+
+\subsection*{License compatibility}
+
+This is another difference between the GPL and LGPL.  Putting BCI2000 under the full GPL would allow us to include GPL'd dependencies (such us FFTW) in our distribution (provided we also make the source code available) whereas we would not be allowed to redistribute FFTW in this way if we used the LGPL.
+
+Our dependency on Qt means that we can {\em only} choose the GPL or LGPL if we want to redistribute the Qt code (though it does not force us to choose either particular one).
+
+It {\em does} mean that we cannot redistribute Qt (or FFTW, or anything else under LGPL or GPL) as part of a non-GPL'd deal with BobCo. If and when BobCo require Qt-reliant BCI2000 components for their purposes, we would have to make it clear that they need to buy a commercial Qt license from Nokia in addition to buying a license from us. If they require the FFTW-dependent components, they would have to negotiate with MIT, or hack their own FFTW.dll workalike. 
+
+
+\begin{thebibliography}{10}
+\bibitem{stallman}
+	Richard Stallman:
+	\newblock Why you shouldn't use the Lesser GPL for your next library.
+	\newblock \url{http://www.gnu.org/philosophy/why-not-lgpl.html}
+\end{thebibliography}
+
+\end{document}

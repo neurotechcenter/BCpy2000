@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_allocation.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_converters.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_cpuload.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_debugprint.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_dither.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_front.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_process.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_ringbuffer.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_stream.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_trace.c">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\hostapi\dsound\pa_win_ds.c">
+      <Filter>hostapi\dsound</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\hostapi\dsound\pa_win_ds_dynlink.c">
+      <Filter>hostapi\dsound</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\os\win\pa_win_hostapis.c">
+      <Filter>os\win</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\os\win\pa_win_util.c">
+      <Filter>os\win</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\os\win\pa_win_waveformat.c">
+      <Filter>os\win</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\os\win\pa_win_wdmks_utils.c">
+      <Filter>os\win</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\os\win\pa_win_coinitialize.c">
+      <Filter>os\win</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\include\portaudio.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\include\pa_asio.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\include\pa_win_ds.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\include\pa_win_wasapi.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\include\pa_win_wmme.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\include\pa_win_wdmks.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_allocation.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_converters.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_cpuload.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_debugprint.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_dither.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_endianness.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_hostapi.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_memorybarrier.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_process.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_ringbuffer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_stream.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_trace.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_types.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\portaudio\portaudio\src\common\pa_util.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\build\CMakeFiles\extlib\portaudio\options_cmake.h">
+      <Filter>cmake_generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\extlib\portaudio\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="cmake_generated">
+      <UniqueIdentifier>{C1174D63-BE59-3271-89C2-7924069F78AB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{9918C8B0-52FF-3BEA-8224-AB98186F28F7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hostapi">
+      <UniqueIdentifier>{B1262CFC-0EB9-303D-B74A-26F602BF0C05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hostapi\dsound">
+      <UniqueIdentifier>{9209D71C-B38F-3F14-8D86-3C0830920B4B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{D1A85A90-29D6-3033-94B4-063DDCA28BF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os">
+      <UniqueIdentifier>{06845CA4-D9EB-388F-88D9-EA6C84010534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="os\win">
+      <UniqueIdentifier>{0DD225E9-9047-3F9F-95AD-23B527331BEA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

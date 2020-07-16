@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="..\..\..\prog\NIDAQmx.exe"/>
+    <OBJFILES value="obj\NIDAQmx.obj obj\UBCItime.obj obj\UBitRate.obj obj\UGenericSignal.obj 
+      obj\UGenericVisualization.obj obj\UParameter.obj obj\UState.obj 
+      obj\UStatus.obj obj\USysCommand.obj obj\BCIDirectry.obj 
+      obj\UGenericFilter.obj obj\UEnvironment.obj obj\UBCIError.obj 
+      obj\TCPStream.obj obj\MessageHandler.obj obj\DataIOFilter.obj 
+      obj\TransmissionFilter.obj obj\MeasurementUnits.obj obj\UCoreMain.obj 
+      obj\BCIDatFileWriter.obj obj\EncodedString.obj obj\ParamRef.obj 
+      obj\ExpressionParser.obj obj\Expression.obj obj\EDFFileWriter.obj obj\ExpressionNodes.obj 
+      obj\EDFFileWriterBase.obj obj\FileWriterBase.obj obj\GDF.obj 
+      obj\GDFFileWriter.obj obj\NullFileWriter.obj obj\ClassName.obj 
+      obj\NIDAQmxADC.obj"/>
+    <RESFILES value=""/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) ..\..\shared\UCoreMain.dfm"/>
+    <LIBFILES value="nidaq\NIDAQmx.lib"/>
+    <LIBRARIES value="vclx.lib bcbsmp.lib tee.lib vcl.lib rtl.lib"/>
+    <SPARELIBS value="rtl.lib vcl.lib tee.lib bcbsmp.lib vclx.lib"/>
+    <PACKAGES value="rtl.bpi vcl.bpi vclx.bpi vcljpg.bpi bcbsmp.bpi qrpt.bpi dbrtl.bpi 
+      vcldb.bpi bdertl.bpi ibsmp.bpi vcldbx.bpi nmfast.bpi dclocx.bpi Tee4C.bpi 
+      TeeDB4C.bpi TeeUI4C.bpi TeePro4C.bpi TeeGL4C.bpi TeeQR4C.bpi"/>
+    <PATHCPP value=".;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..\..\shared;..;..;..\..\shared;..\..\shared;..;..\..\shared;..\..\shared;..\..\shared\Expression;..\..\shared\Expression;..;..;..;..;..;..;..\..\shared"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="ilink32"/>
+    <USERDEFINES value="_DEBUG;MODTYPE=1"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="NIDAQmx.cpp"/>
+    <INCLUDEPATH value="..\;..\..\shared\Expression;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;nidaq"/>
+    <LIBPATH value="..\;..\..\shared\Expression;..;..\..\shared;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par -w-8027 -w-8026"/>
+    <WARNOPTSTR value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-Od -H=..\..\shared\obj\bci2000.csm -Hc -Vx -Ve -X- -r- -a8 -5 -b- -k -y 
+      -v -vi- -c -tW -tWM"/>
+    <PFLAGS value="-N2obj -N0obj -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-Iobj -D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="NIDAQmx.cpp" FORMNAME="" UNITNAME="NIDAQmx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UBCItime.cpp" FORMNAME="" UNITNAME="UBCItime" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UBitRate.cpp" FORMNAME="" UNITNAME="UBitRate" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UGenericSignal.cpp" FORMNAME="" UNITNAME="UGenericSignal" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UGenericVisualization.cpp" FORMNAME="" UNITNAME="UGenericVisualization" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UParameter.cpp" FORMNAME="" UNITNAME="UParameter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UState.cpp" FORMNAME="" UNITNAME="UState" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UStatus.cpp" FORMNAME="" UNITNAME="UStatus" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\USysCommand.cpp" FORMNAME="" UNITNAME="USysCommand" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\BCIDirectry.cpp" FORMNAME="" UNITNAME="BCIDirectry" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UGenericFilter.cpp" FORMNAME="" UNITNAME="UGenericFilter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UEnvironment.cpp" FORMNAME="" UNITNAME="UEnvironment" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UBCIError.cpp" FORMNAME="" UNITNAME="UBCIError" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\TCPStream.cpp" FORMNAME="" UNITNAME="TCPStream" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\MessageHandler.cpp" FORMNAME="" UNITNAME="MessageHandler" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\DataIOFilter.cpp" FORMNAME="" UNITNAME="DataIOFilter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\TransmissionFilter.cpp" FORMNAME="" UNITNAME="TransmissionFilter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\MeasurementUnits.cpp" FORMNAME="" UNITNAME="MeasurementUnits" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\UCoreMain.cpp" FORMNAME="fMain" UNITNAME="UCoreMain" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\BCIDatFileWriter.cpp" FORMNAME="" UNITNAME="BCIDatFileWriter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\EncodedString.cpp" FORMNAME="" UNITNAME="EncodedString" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\ParamRef.cpp" FORMNAME="" UNITNAME="ParamRef" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\Expression\ExpressionParser.cpp" FORMNAME="" UNITNAME="ExpressionParser" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\utils\Expression\ExpressionNodes.cpp" FORMNAME="" UNITNAME="ExpressionNodes" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\Expression\Expression.cpp" FORMNAME="" UNITNAME="Expression" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\EDFFileWriter.cpp" FORMNAME="" UNITNAME="EDFFileWriter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\EDFFileWriterBase.cpp" FORMNAME="" UNITNAME="EDFFileWriterBase" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\FileWriterBase.cpp" FORMNAME="" UNITNAME="FileWriterBase" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GDF.cpp" FORMNAME="" UNITNAME="GDF" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\GDFFileWriter.cpp" FORMNAME="" UNITNAME="GDFFileWriter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\NullFileWriter.cpp" FORMNAME="" UNITNAME="NullFileWriter" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\..\shared\ClassName.cpp" FORMNAME="" UNITNAME="ClassName" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="nidaq\NIDAQmx.lib" FORMNAME="" UNITNAME="NIDAQmx.lib" CONTAINERID="LibTool" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="NIDAQmxADC.cpp" FORMNAME="" UNITNAME="NIDAQmxADC" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[Excluded Packages]
+c:\programme\borland\cbuilder6\Bin\dclite60.bpl=Borland Integrated Translation Environment
+
+[HistoryLists\hlIncludePath]
+Count=30
+Item0=..\..\shared\Expression;..\;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;nidaq
+Item1=..\..\shared\Expression;..\;..;..\..\Modules;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;nidaq
+Item2=..\;..;..\..\Modules;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;nidaq
+Item3=..\;..\..\Modules;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;nidaq
+Item4=..\..\Modules;..\;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;nidaq
+Item5=..\;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;nidaq
+Item6=..\;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;C:\Program Files\National Instruments\NI-DAQ\Include
+Item7=..\;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl
+Item8=..\;..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include
+Item9=..;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include
+Item10=..\;..\..\shared;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include
+Item11=..\;..;..\..\shared;C:\Program Files\Borland\CBuilder5\Bin;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include
+Item12=..\;..;..\..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item13=..\;..;..\..\shared;..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item14=..\;..\..\shared;..;..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item15=..\..\shared;..\;..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item16=..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item17=..\..\shared;..\;..\shared;..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item18=..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item19=..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include
+Item20=..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;D:\da_sdk\Include\
+Item21=..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;D:\da_sdk\Include
+Item22=..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item23=..\..\shared\V0.17;..\..\shared\V0.16;C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item24=..\..\shared\V0.16;C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item25=C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item26=C:\Program Files\Borland\CBuilder5\Bin;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item27=..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item28=..\..\shared\V0.14;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+Item29=..\..\shared\V0.14;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;C:\da_sdk\Include\
+
+[HistoryLists\hlLibraryPath]
+Count=30
+Item0=..\..\shared\Expression;..\;..;..\..\shared;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\..\shared\Expression;..\;..;..\..\Modules;..\..\shared;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\;..;..\..\Modules;..\..\shared;$(BCB)\lib\obj;$(BCB)\lib
+Item3=..\;..\..\Modules;..;..\..\shared;$(BCB)\lib\obj;$(BCB)\lib
+Item4=..\..\Modules;..\;..;..\..\shared;$(BCB)\lib\obj;$(BCB)\lib
+Item5=..\;..;..\..\shared;$(BCB)\lib\obj;$(BCB)\lib
+Item6=..\;..;..\shared;..\..\shared;C:\da_sdk\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item7=..;..\shared;..\..\shared;C:\da_sdk\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item8=..\;..\shared;..\..\shared;C:\da_sdk\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item9=..\;..;..\..\shared;C:\Program Files\Borland\CBuilder5\Bin;C:\da_sdk\Lib;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\lib\obj;$(BCB)\lib;..\shared
+Item10=..\;..;..\..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib;..\shared
+Item11=..\;..;..\..\shared;..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item12=..\;..\..\shared;..;..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item13=..\..\shared;..\;..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item14=..\shared;C:\Program Files\Borland\CBuilder5\Bin\;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item15=..\..\shared;..\;..\shared;..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item16=..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item17=..\..\shared\V0.17;C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item18=..\..\shared\V0.17;..\..\shared\V0.16;C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item19=..\..\shared\V0.16;C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item20=C:\Program Files\Borland\CBuilder5\Bin\;..\..\shared\V0.15;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item21=C:\Program Files\Borland\CBuilder5\Bin;..\..\shared\V0.15;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item22=..\..\shared\V0.15;C:\da_sdk\Lib\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item23=..\..\shared\V0.15;C:\da_sdk\Lib\;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item24=..\..\shared\V0.14;C:\da_sdk\Lib\;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item25=C:\da_sdk\Lib\;..\..\shared\V0.15;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item26=C:\da_sdk\Lib\;..\..\shared\V0.14;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item27=..\..\shared\V0.14;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib;C:\da_sdk\Lib\
+Item28=..\..\shared\V0.14;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib;C:\da_sdk\Lib
+Item29=..\..\shared\V0.14;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=_DEBUG;MODTYPE=1
+Item1=_DEBUG;DONT_CATCH_ALL;MODTYPE=1
+Item2=_DEBUG
+Item3=_DEBUG;SIGNAL_BACK_COMPAT
+Item4=_DEBUG;ADC_DTADC;SIGNAL_BACK_COMPAT
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=obj
+
+[HistoryLists\hlFinalOutputDir]
+Count=1
+Item0=..\..\..\prog\
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+  </IDEOPTIONS>
+</PROJECT>

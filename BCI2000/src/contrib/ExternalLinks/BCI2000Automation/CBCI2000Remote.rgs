@@ -1,0 +1,26 @@
+HKCR
+{
+	BCI2000Automation.BCI2000Remote.1 = s 'BCI2000Remote Class'
+	{
+		CLSID = s '{F880B1BC-3511-4b06-8A79-895477300608}'
+	}
+	BCI2000Automation.BCI2000Remote = s 'BCI2000Remote Class'
+	{
+		CLSID = s '{F880B1BC-3511-4b06-8A79-895477300608}'
+		CurVer = s 'BCI2000Automation.BCI2000Remote.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F880B1BC-3511-4b06-8A79-895477300608} = s 'BCI2000Remote Class'
+		{
+			ProgID = s 'BCI2000Automation.BCI2000Remote.1'
+			VersionIndependentProgID = s 'BCI2000Automation.BCI2000Remote'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{363D672D-41EC-4b3e-AE58-50B49A83D530}'
+		}
+	}
+}

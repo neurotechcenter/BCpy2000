@@ -1,0 +1,7 @@
+﻿  CorePCH.cpp
+  main.cpp
+  BCI2000Connection.cpp
+  Version.cpp
+  Generating Code...
+  BCI2000Shell.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\Operator\BCI2000Shell\Release\BCI2000Shell.exe
+  	Copy to destination

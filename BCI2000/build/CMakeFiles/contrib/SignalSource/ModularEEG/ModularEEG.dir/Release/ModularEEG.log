@@ -1,0 +1,18 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/ModularEEG/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/ModularEEG/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  ModularEEGADC.cpp
+  modular_eeg_parser.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  ModularEEG.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\ModularEEG\Release\ModularEEG.exe
+  	Deploying executable
+  copying files:
+  Copying ModularEEG.exe ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

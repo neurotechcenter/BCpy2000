@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:BufferedADC Class - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:BufferedADC Class,Programming Reference:GenericADC Class,Programming Reference:GenericFilter Class,Programming Tutorial:Implementing a Data Acquisition Module" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">BufferedADC Class</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><p><tt>BufferedADC</tt> is a base class for signal source components (ADCs).
+Unlike the more <tt>GenericADC</tt> class, it provides buffering for data packets read from the ADC.
+This helps avoiding data loss during intervals in which BCI2000 processing time exceeds the physical duration of a data block.
+</p><p>In addition to the main thread, <tt>BufferedADC</tt> maintains a separate thread in which data acquisition is running, and internally uses synchronizers to avoid race conditions between these two threads. In most cases, descendants of <tt>BufferedADC</tt> need not be aware of this multithreading because <tt>BufferedADC</tt> interface functions are not executed concurrently. An exception to this is when <tt>BufferedADC::OnProcess()</tt> is implemented, and accesses resources common to both threads.
+</p><p>To interface with an ADC device, a descendant of <tt>BufferedADC</tt> provides implementations of the following functions:
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#Constructor"><span class="tocnumber">1</span> <span class="toctext">Constructor</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#OnPreflight.28_SignalProperties.26_output_.29_const"><span class="tocnumber">2</span> <span class="toctext">OnPreflight( SignalProperties&amp; output ) const</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#OnInitialize.28_const_SignalProperties.26_output_.29"><span class="tocnumber">3</span> <span class="toctext">OnInitialize( const SignalProperties&amp; output )</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#OnProcess.28.29"><span class="tocnumber">4</span> <span class="toctext">OnProcess()</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#OnStartAcquisition.28.29"><span class="tocnumber">5</span> <span class="toctext">OnStartAcquisition()</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#OnStopAcquisition.28.29"><span class="tocnumber">6</span> <span class="toctext">OnStopAcquisition()</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#DoAcquire.28_GenericSignal.26_output_.29"><span class="tocnumber">7</span> <span class="toctext">DoAcquire( GenericSignal&amp; output )</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#Parameters"><span class="tocnumber">8</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253ABufferedADC_Class.html#SourceBufferSize"><span class="tocnumber">8.1</span> <span class="toctext">SourceBufferSize</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#States"><span class="tocnumber">9</span> <span class="toctext">States</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253ABufferedADC_Class.html#SourceTime"><span class="tocnumber">9.1</span> <span class="toctext">SourceTime</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253ABufferedADC_Class.html#See_also"><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Constructor"></a><h2>Constructor</h2>
+<p>As is common for BCI2000 filters, the constructor defines configuration parameters.
+</p>
+<a name="OnPreflight.28_SignalProperties.26_output_.29_const"></a><h2>OnPreflight( SignalProperties&amp; output ) const</h2>
+<p>This is a forward of the standard <tt>Preflight()</tt> function as documented for BCI2000 filters, except that it takes a single output signal properties argument, and none for input. The output argument should be modified to match the ADC's number of channels by calling <tt>output.SetChannels()</tt>, and the sample block size by calling <tt>output.SetElements()</tt>.
+Also, <tt>Preflight()</tt> should check whether the device will be able to acquire data using the current parameter configuration in conjunction with its current physical state (e.g., physically connected, switched on, etc.). Ideally, this is done by configuring the device, and acquiring a few samples.
+</p>
+<a name="OnInitialize.28_const_SignalProperties.26_output_.29"></a><h2>OnInitialize( const SignalProperties&amp; output )</h2>
+<p>This is a forward of the standard <tt>Initialize()</tt> function, except that it only takes a single output properties argument.
+From here, do all initialization except actually starting data acquisition.
+</p>
+<a name="OnProcess.28.29"></a><h2>OnProcess()</h2>
+<p>This function is called when the main thread enters the GenericADC::Process() function, before the main thread waits for the acquisition thread to deliver data. In most cases, you will not implement this function. A notable exception is when your code needs to read from state variables, e.g. to set the amplifier's digital output.
+</p><p>This function may run concurrently with <tt>DoAcquire()</tt>, so you may need to serialize access to common resources with a synchronizer to avoid race conditions. Note that improper synchronization may force both threads into synchrony, such that the benefit of the multi-threaded buffering approach will be lost. Modern amplifier APIs allow for concurrent writing to an amplifier's output while acquiring data, so you will likely not need an additional synchronizer.
+</p>
+<a name="OnStartAcquisition.28.29"></a><h2>OnStartAcquisition()</h2>
+<p>This function is called when the acquisition thread is started, and should put the ADC device into acquisition mode.
+</p>
+<a name="OnStopAcquisition.28.29"></a><h2>OnStopAcquisition()</h2>
+<p>This function is called before the acquisition thread is terminated, and should put the ADC device into idling mode.
+</p>
+<a name="DoAcquire.28_GenericSignal.26_output_.29"></a><h2>DoAcquire( GenericSignal&amp; output )</h2>
+<p>This function is called repeatedly while the acquisition thread is running. It should block until data becomes available, and then copy data from the ADC device API's buffer into the GenericSignal object provided that is proviced as an argument.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<a name="SourceBufferSize"></a><h3>SourceBufferSize</h3>
+<p>Allows to choose the size of the buffer, in sample blocks when no unit is given, or in seconds when followed with an "s". Not that the minimum buffer size corresponds to the duration of two sample blocks.
+</p>
+<a name="States"></a><h2>States</h2>
+<a name="SourceTime"></a><h3>SourceTime</h3>
+<p>This is the system-wide acquisition time stamp associated with each data block. After <tt>DoAcquire()</tt> has finished, <tt>BufferedADC</tt> obtains a system time stamp with millisecond accuracy, and stores it in the sample buffer. As soon as a buffered data block is released into the main processing thread, the SourceTime state is assigned the block's associated time stamp from the buffer. This ensures that a data block's time stamp always matches the time of its physical acquisition, rather than its release into the processing chain.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Programming_Tutorial%253AImplementing_a_Data_Acquisition_Module.html" title="Programming Tutorial:Implementing a Data Acquisition Module">Programming Tutorial:Implementing a Data Acquisition Module</a>, <a href="Programming_Reference%253AGenericFilter_Class.html" title="Programming Reference:GenericFilter Class">Programming Reference:GenericFilter Class</a>,  <a href="Programming_Reference%253AGenericADC_Class.html" title="Programming Reference:GenericADC Class">Programming Reference:GenericADC Class</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li><a href="Programming_Reference%253AGenericFilter_Class.html">GenericFilter</a></li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li><a href="Programming_Reference%253AStimulusTask_Class.html">StimulusTask</a></li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

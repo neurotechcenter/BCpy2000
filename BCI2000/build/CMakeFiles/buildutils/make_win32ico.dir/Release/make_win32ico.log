@@ -1,0 +1,7 @@
+﻿  Building Custom Rule C:/BCI2000.python3/build/buildutils/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/buildutils/CMakeFiles/generate.stamp is up-to-date.
+  make_win32ico.cpp
+  Win32BmpFormat.cpp
+  Generating Code...
+  make_win32ico.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\make_win32ico.exe
+  Copy to destination

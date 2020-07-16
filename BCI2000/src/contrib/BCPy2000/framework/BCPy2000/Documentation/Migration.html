@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>BCPy2000: Migration</title>
+<link type="text/css" rel="stylesheet" href="styles/gears/style.css" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div class="header"><span class="gotobar bar"><a class="local" href="Home.html">Home</a> <a class="local" href="About.html">About</a> <a class="local" href="Download.html">Download</a> <a class="local" href="Structure.html">Structure</a> <a class="local" href="Demo.html">Demo</a> <a class="local" href="Hooks.html">Hooks</a> <a class="local" href="API.html">API</a> <a class="local" href="Contact.html">Contact</a> <a class="local" href="Credits.html">Credits</a> <a class="local" href="License.html">License</a> </span><h1>Migration</h1></div><div class="content"><p>This is a rough list of tips and resources for migrating from Matlab to Python-based systems using <a class="url http outside" href="http://numpy.scipy.org/">NumPy</a> and <a class="url http outside" href="http://scipy.org/">SciPy</a>. Thanks to Thomas Wiecki and Thomas Tanner for contributions.</p><p>See also Thomas Loredo's page, "<a class="url http outside" href="http://www.astro.cornell.edu/staff/loredo/statpy/">statistical computing with Python</a>".</p><div class="toc"><h2>Contents</h2><ol><li><a href="#Heading1">Using Python interactively</a></li><li><a href="#Heading2">NumPy Reference</a></li><li><a href="#Heading3">Loading and saving Matlab data files in Python</a></li><li><a href="#Heading4">Binary extensions to Python</a></li><li><a href="#Heading5">Interpreting Matlab code directly in Python</a></li><li><a href="#Heading6">Communicating between Python and Matlab (and other environments)</a></li><li><a href="#Heading7">Plotting figures in Python</a><ol><li><a href="#Heading8">Matplotlib and pylab</a></li><li><a href="#Heading9">PyX (2D/3D)</a></li><li><a href="#Heading10">Chaco (2D)</a></li><li><a href="#Heading11">Mayavi (3D)</a></li></ol></li><li><a href="#Heading12">Python software suites for scientific applications</a><ol><li><a href="#Heading13">ETS</a></li><li><a href="#Heading14">Sage</a></li></ol></li><li><a href="#Heading15">Scientific toolboxes for Python</a></li><li><a href="#Heading16">Machine-learning toolboxes for Python</a></li><li><a href="#Heading17">Stimulus presentation and user interaction in Python</a></li><li><a href="#Heading18">Python development tools</a></li></ol></div><hr /><h1 id="Heading1">Using Python interactively</h1><p>In contrast to the default Python command-prompt, the third-party <a class="url http outside" href="http://ipython.scipy.org/">IPython</a> package provides colour syntax, tab completion, command history, <code>ans</code>-like variables, and many other useful tricks.</p><p>In particular, it helps you to explore new systems: </p><ul><li>Use the tab key to list the members of a given package, class or instance.</li><li>Append <code>?</code> to anything to get its documentation (or at least the function prototype).</li><li>Append <code>??</code> to anything to get its complete source listing.</li></ul><hr /><h1 id="Heading2">NumPy Reference</h1><ul><li>A <a class="url http outside" href="http://www.scipy.org/NumPy_for_Matlab_Users#head-0c3c49ec7eef424bd3d361e5d8e2955f533750d6">Matlab-to-NumPy phrasebook</a>.</li><li>An indexed collection of <a class="url http outside" href="http://www.scipy.org/Numpy_Example_List_With_Doc/">docstrings with examples</a>.</li><li>The <a class="url http outside" href="http://numpy.scipy.org/numpybook.pdf">NumPy book</a> (pdf).</li><li>The <a class="url http outside" href="http://docs.scipy.org/doc/numpy/numpy-ref.pdf">NumPy reference manual</a> (pdf).</li></ul><hr /><h1 id="Heading3">Loading and saving Matlab data files in Python</h1><p>Here is one possibility:</p><pre class="real">from scipy.io import loadmat, savemat
+
+d = loadmat('blah.mat')
+d['X'] = d['X'].T         # transpose variable X
+savemat('blah.mat', d)
+</pre><p>And here is another, requiring Matlab 7.3+ (thanks to Soeren Sonnenburg for pointing this out): </p><pre class="real">Subject: Loading matlab 7.3 files from python
+Date: Thu, 19 Nov 2009 10:23:21 +0100
+From: Soeren Sonnenburg &lt;xxxxxxx&gt;
+
+Dear all,
+
+I just recognized (well the octave author told me) that matlab version
+7.3 and later are capable of writing out a so called matlab 7.3 file
+format - which in fact seems to be *the standard file format* hdf5.
+
+So you can do all sorts of neat things:
+
+1. Lets create some matrix in matlab first and save it:
+
+        x=[[1,2,3];[4,5,6];[7,8,9]]
+
+
+x =
+
+   1     2     3
+   4     5     6
+   7     8     9
+
+        save -v7.3 x.mat x    
+
+
+2. Lets investigate that file from the shell:
+
+$ h5ls x.mat x                        Dataset {3, 3}
+
+$ h5dump x.mat HDF5 "x.mat" {
+GROUP "/" {
+ DATASET "x" {
+    DATATYPE  H5T_IEEE_F64LE
+    DATASPACE  SIMPLE { ( 3, 3 ) / ( 3, 3 ) }
+    DATA {
+    (0,0): 1, 4, 7,
+    (1,0): 2, 5, 8,
+    (2,0): 3, 6, 9
+    }
+    ATTRIBUTE "MATLAB_class" {
+       DATATYPE  H5T_STRING {
+             STRSIZE 6;
+             STRPAD H5T_STR_NULLTERM;
+             CSET H5T_CSET_ASCII;
+             CTYPE H5T_C_S1;
+          }
+       DATASPACE  SCALAR
+       DATA {
+       (0): "double"
+       }
+    }
+ }
+}
+}
+
+3. And load it from python
+
+            import h5py
+            import numpy
+
+
+            f = h5py.File('x.mat')
+            x=f["x"]
+            x
+
+&lt;HDF5 dataset "x": shape (3, 3), type "&lt;f8"&gt;
+
+            numpy.array(x)
+
+array([[ 1.,  4.,  7.],
+     [ 2.,  5.,  8.],
+     [ 3.,  6.,  9.]])
+
+So it seems actually to be a good idea to use matlab's 7.3 format
+for interoperability.
+
+
+Gruss,
+Soeren
+
+</pre><hr /><h1 id="Heading4">Binary extensions to Python</h1><ul><li>Compile C/C++ sources into <code>.pyd</code> files (binary extensions for python) using Python's builtin <a class="url http outside" href="http://docs.python.org/distutils/index.html#distutils-index">distutils</a> package;</li><li>...or write them in a convenient third-party Python/C hybrid called <a class="url http outside" href="http://www.cython.org/">Cython</a> (based on an older system known as <a class="url http outside" href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/">Pyrex</a>);</li><li>...or use <a class="url http outside" href="https://launchpad.net/pybindgen">PyBindGen</a>, another third-party package for binding C/C++ and Python;</li><li>...or use Python's builtin <a class="url http outside" href="http://python.net/crew/theller/ctypes/">ctypes</a> package to hook into C functions in any existing shared library (including Matlab mex files). Here is a Windows example, using a third-party DLL to access the parallel port: </li></ul><pre class="real">import ctypes
+
+WriteLPT = ctypes.windll.inpout32.Out32  # finds inpout32.dll
+LPT1 = ctypes.c_int16( 0x3BC )
+val  = ctypes.c_int16( 255 )
+
+WriteLPT( LPT1, val )
+</pre><p>Write your Matlab mex files in two layers: matlab-API-specific wrapper functions, calling matlab-API-free C functions to do the actual work. <code>ctypes</code> can break into the latter very easily, so the same compiled mex file can be used by both Python and Matlab.</p><hr /><h1 id="Heading5">Interpreting Matlab code directly in Python</h1><p><a class="url http outside" href="http://ompc.juricap.com/">OMPC</a> translates Matlab m-files into Python using a compatibility layer. You can translate, compile and load from your old matlab functions in one step: </p><pre class="real">import ompc
+
+import blah  # where blah.m is matlab function on the python path
+blah(1,2,3)
+</pre><hr /><h1 id="Heading6">Communicating between Python and Matlab (and other environments)</h1><ul><li>The <a class="url http outside" href="http://www.shogun-toolbox.org">Shogun</a> toolbox contains a useful generic helper utility called <a class="url http outside" href="http://www.shogun-toolbox.org/doc/elwmsinterface.html">ELWMS</a> which allows you to mix code across platforms. With it you can call Python, R or Octave functions from, and receive the results back into, Python, R, Octave or Matlab.</li><li>The <a class="url http outside" href="http://mlabwrap.sourceforge.net/">mlabwrap</a> project provides a simple high-level interface for calling Matlab from Python, using Matlab's engine functionality. It is based on a lower-level interface called <a class="url http outside" href="http://claymore.engineer.gvsu.edu/~steriana/Python/pymat.html">PyMat</a>.</li></ul><hr /><h1 id="Heading7">Plotting figures in Python</h1><h2 id="Heading8">Matplotlib and pylab</h2><p><a class="url http outside" href="http://matplotlib.sourceforge.net/">matplotlib</a> is a 2-D (and, since v. 0.99, also 3-D) graphical plotting package by John D. Hunter.</p><ul><li>The <a class="url http outside" href="http://matplotlib.sourceforge.net/gallery.html">gallery</a> is a useful reference.</li><li>The 45-minute <a class="url http outside" href="http://videolectures.net/mloss08_hunter_mat/">talk</a> by the author at NIPS 2008 is recommended.</li></ul><p>pylab is simply a repackaged interface containing a selection of NumPy functions, NumPy-like extensions (from <code>matplotlib.mlab</code>) and plotting routines (from <code>matplotlib.pyplot</code>) such that <code>from pylab import *</code> gives you functions that replicate some of the feel and syntax of Matlab.</p><p>Currently pylab is delivered as part of matplotlib although there seem to be <a class="url http outside" href="http://scipy.org/PyLab">proposals</a> to make it more general.</p><p>See the <a class="url http outside" href="http://matplotlib.sourceforge.net/">matplotlib home-page</a> for a  quick-reference list of pylab functions.</p><h2 id="Heading9">PyX (2D/3D)</h2><p><a class="url http outside" href="http://pyx.sourceforge.net/index.html">PyX</a> is a Python package for the creation of PostScript and PDF files, combing an abstraction of the PostScript drawing model with a TeX/LaTeX interface.</p><h2 id="Heading10">Chaco (2D)</h2><p>One of its components of the Enthought Tool Suite, <a class="url http outside" href="http://code.enthought.com/projects/chaco/">Chaco</a>, is another 2-D drawing/plotting package: </p><ul><li><a class="url http outside" href="http://code.enthought.com/projects/chaco/docs/html/user_manual/faq.html#what-are-the-pros-and-cons-of-chaco-vs-matplotlib">comparison with matplotlib</a> (from one side at least)</li><li><a class="url http outside" href="http://code.enthought.com/projects/chaco/gallery.php">gallery</a></li></ul><h2 id="Heading11">Mayavi (3D)</h2><p><a class="url http outside" href="http://code.enthought.com/projects/mayavi/">Mayavi</a>, another part of the Enthough Tool Suite, can be used either from the IPython prompt or as a standalone application, for 3-D visualization of scientific data.</p><hr /><h1 id="Heading12">Python software suites for scientific applications</h1><h2 id="Heading13">ETS</h2><p>Moving up to a higher level, the <a class="url http outside" href="http://code.enthought.com/projects/">Enthought Tool Suite</a> is a commerical suite (free for academic use) which provides various tools for rapid development of scientific applications in Python, including the visualization toolboxes Chaco and Mayavi mentioned above.</p><h2 id="Heading14">Sage</h2><p><a class="url http outside" href="http://sagemath.org/">Sage</a> is another suite, constructed more along the lines of Mathematica than Matlab. It is based on IPython + NumPy together with <a class="url http outside" href="http://sympy.org">sympy</a> for symbolic math.</p><p>A web-browser can be used as a front-end instead of IPython: </p><ul><li><a class="url http outside" href="http://farm3.static.flickr.com/2294/2132057406_d22b516fa0_b.jpg">simple example</a></li><li><a class="url http outside" href="http://wiki.sagemath.org/interact">example using LaTeX rendering and interaction via dynamic html</a></li><li>online demo at <a class="url http outside" href="http://sagenb.com">http://sagenb.com</a></li></ul><hr /><h1 id="Heading15">Scientific toolboxes for Python</h1><ul><li>The <a class="url http outside" href="http://www.scipy.org/SciPyPackages/Stats">scipy.stats</a> module, delivered as part of the scipy installation, and <a class="url http outside" href="http://code.google.com/p/python-statlib/">python-statlib</a>, are good for statistics.</li><li>scipy.signal for signal-processing.</li><li><a class="url http outside" href="http://www.pythonware.com/products/pil/">PIL</a>, for image processing.</li><li><a class="url http outside" href="http://www.pybytes.com/pywavelets/">PyWavelets</a> for 1D and 2D discrete wavelet transforms, decomposition and reconstruction.</li><li><a class="url http outside" href="http://code.google.com/p/sympy/">SymPy</a> for symbolic math.</li></ul><hr /><h1 id="Heading16">Machine-learning toolboxes for Python</h1><ul><li><a class="url http outside" href="http://pymvpa.org/">PyMVPA</a></li><li><a class="url http outside" href="http://mdp-toolkit.sourceforge.net/">MDP</a> (<a class="url http outside" href="http://videolectures.net/mloss08_zito_mdp/">talk</a>)</li><li><a class="url http outside" href="http://mlpy.fbk.eu/">mlpy</a> (<a class="url http outside" href="http://videolectures.net/mloss08_albanese_mlp/">talk</a>)</li><li><a class="url http outside" href="http://www.shogun-toolbox.org/">Shogun</a></li><li><a class="url http outside" href="http://www.ailab.si/Orange/">Orange</a></li><li><a class="url http outside" href="http://elefant.developer.nicta.com.au/">Elefant</a></li><li><a class="url http outside" href="http://code.google.com/p/pymc/">PyMC</a> for Markov-chain Monte-Carlo</li><li>...?</li></ul><hr /><h1 id="Heading17">Stimulus presentation and user interaction in Python</h1><ul><li><a class="url http outside" href="http://www.pygame.org/">pygame</a> based on SDL (and avoiding OpenGL)</li><li><a class="url http outside" href="http://pyglet.org/">pyglet</a> based on OpenGL</li></ul><p>And specifically from the vision science community:</p><ul><li><a class="url http outside" href="http://www.psychopy.org/">PychoPy</a> based on pyglet and wxPython</li><li><a class="url http outside" href="http://www.visionegg.org/">VisionEgg</a> based on pygame  and PyOpenGL</li></ul><hr /><h1 id="Heading18">Python development tools</h1><ul><li>Package installation and management: <a class="url http outside" href="http://pypi.python.org/pypi/setuptools">setuptools</a>. Here's how to install the installer installer: <br /><code>curl -o ez_setup.py http://peak.telecommunity.com/dist/ez_setup.py</code> <br /><code>sudo /path/to/desired/version/of/python ez_setup.py</code> <br /></li><li>Version control: <a class="url http outside" href="http://www.selenic.com/mercurial/">Mercurial</a> (hg)</li><li>IDEs: <a class="url http outside" href="http://pythonide.blogspot.com/">SPE</a>, <a class="url http outside" href="http://eric-ide.python-projects.org/">Eric</a>, <a class="url http outside" href="http://pida.co.uk/">PIDA</a>, ...</li></ul><hr /></div><div class="footer"><hr /> <span class="gotobar bar"><a class="local" href="Home.html">Home</a> <a class="local" href="About.html">About</a> <a class="local" href="Download.html">Download</a> <a class="local" href="Structure.html">Structure</a> <a class="local" href="Demo.html">Demo</a> <a class="local" href="Hooks.html">Hooks</a> <a class="local" href="API.html">API</a> <a class="local" href="Contact.html">Contact</a> <a class="local" href="Credits.html">Credits</a> <a class="local" href="License.html">License</a> </span> <span class="edit"></span> <span class="time"><span class="time"><br /> Last edited 2009-11-19 11:51 UTC by musi.kyb.local <a class="diff">(diff)</a></span></span></div></body></html>

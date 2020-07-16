@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:WiimoteLogger - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:WiimoteLogger,Contributions:Extensions,User Reference:Logging Input,User Reference:Operator Module Scripting" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">WiimoteLogger</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Authors"><span class="tocnumber">3.1</span> <span class="toctext">Authors</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Version_History"><span class="tocnumber">3.2</span> <span class="toctext">Version History</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Source_Code_Revisions"><span class="tocnumber">3.3</span> <span class="toctext">Source Code Revisions</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Todo"><span class="tocnumber">3.4</span> <span class="toctext">Todo</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#On_the_Wii_MotionPlus"><span class="tocnumber">4.1</span> <span class="toctext">On the Wii MotionPlus</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Integration_into_BCI2000"><span class="tocnumber">5</span> <span class="toctext">Integration into BCI2000</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Connecting_the_Wiimotes"><span class="tocnumber">6</span> <span class="toctext">Connecting the Wiimotes</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#MSAutoConnectWiimotes"><span class="tocnumber">6.1</span> <span class="toctext">MSAutoConnectWiimotes</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Connecting_with_BlueSoleil"><span class="tocnumber">6.2</span> <span class="toctext">Connecting with BlueSoleil</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Connecting_with_Toshiba_Stack"><span class="tocnumber">6.3</span> <span class="toctext">Connecting with Toshiba Stack</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Connecting_with_WIDCOMM_Stack"><span class="tocnumber">6.4</span> <span class="toctext">Connecting with WIDCOMM Stack</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Parameters"><span class="tocnumber">7</span> <span class="toctext">Parameters</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#State_Variables"><span class="tocnumber">8</span> <span class="toctext">State Variables</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#AccelX.2C_AccelY.2C_AccelZ"><span class="tocnumber">8.1</span> <span class="toctext">AccelX, AccelY, AccelZ</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#IRX.2C_IRY"><span class="tocnumber">8.2</span> <span class="toctext">IRX, IRY</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AWiimoteLogger.html#Buttons"><span class="tocnumber">8.3</span> <span class="toctext">Buttons</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#Special_Note_on_Licensing"><span class="tocnumber">9</span> <span class="toctext">Special Note on Licensing</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AWiimoteLogger.html#See_also"><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>A filter that records state information from <i>Nintendo Wii Remotes</i> into state variables.
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/trunk/src/contrib/Extensions/WiimoteLogger" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/Extensions/WiimoteLogger" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/Extensions/WiimoteLogger</a>
+</p>
+<a name="Versioning"></a><h2>Versioning</h2>
+<a name="Authors"></a><h3>Authors</h3>
+<p>Griffin Milsap (griffin.milsap@gmail.com), Jeremy Hill (jezhill@gmail.com).
+</p>
+<a name="Version_History"></a><h3>Version History</h3>
+<p>06/09/2011: Initial public release; 
+</p>
+<a name="Source_Code_Revisions"></a><h3>Source Code Revisions</h3>
+<ul><li>Initial development: 3318
+</li><li>Tested under: 3318
+</li><li>Known to compile under: 3318
+</li><li>Broken since: --
+</li></ul>
+<a name="Todo"></a><h3>Todo</h3>
+<ul><li>Wii MotionPlus Integration
+</li><li>Testing with new Wii Remote Plus controllers
+</li><li>Integration of other peripherals such as balance board or guitar
+</li></ul>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<p>This extension enables up to four Nintendo Wii Remotes to be used with BCI2000.  In order to collect state data from the Wii Remote (Wiimote), it must be on and connected before BCI2000 is started (see Connecting the Wiimotes below).  Wiimotes may not be connected while in the vicinity of a running Nintendo Wii Game Console.  The Wiimote is polled at a maximum of 100 Hz and a maximum of four Wiimotes can be connected at a time.  The Wiimote updates asynchronously from the BCI2000 system clock.  Wiimote numbers can be determined via the LEDs at the bottom of the Wiimote.  In order to record infrared values, the black window on the front of the remote must be pointed at a source of IR light (IR LEDs, candles, remote controllers, etc).  The infrared camera viewing angle is about 45 degrees.  Currently, BCI2000 does not support extensions such as the Nintendo Wii Remote Nunchuck extension or the Nintendo Wii Remote Classic Controller Extension.  Support is planned for the MotionPlus extension.  The module has not been tested with the new Nintendo Wii Remote Plus controller with integrated MotionPlus capabilities.
+</p>
+<a name="On_the_Wii_MotionPlus"></a><h3>On the Wii MotionPlus</h3>
+<p>The Wii MotionPlus is a device which contains three gyroscopes and can be plugged into the bottom of the Wiimote.  The output from the gyroscopes report the orientation of the Wiiremote very accurately and when used in combination with the accelerometer values, the three-space position of the remote can be quite accurately tracked.  When the MotionPlus is integrated into the module, three more states will be added corresponding to these gyroscope values.
+</p>
+<a name="Integration_into_BCI2000"></a><h2>Integration into BCI2000</h2>
+<p>Compile the extension into your source module by enabling contributed extensions in your CMake configuration.  You can do this by going into your root build folder and deleting <code>CMakeCache.txt</code> and re-running the project batch file, or by running <code>cmake -i</code> and enabling <b>BUILD_WIIMOTELOGGER</b>.
+</p><p>Once the extension is built into the source module, enable it by starting the source module with the <code>--LogWiimote=1</code> command line argument.  The module will attempt to use the connected Wiimotes at <code>Publish()</code> time.  States for Wiimotes will start with <code>Wiimote#</code> where# indicates the number of the Wiimote, starting at 1 and going up to 4.  The LED lights at the bottom of the Wiimote indicate Wiimote numbering.
+</p>
+<a name="Connecting_the_Wiimotes"></a><h2>Connecting the Wiimotes</h2>
+<p>The process to connect the Wiimotes varies depending on what stack is currently installed.  The recommended stack is BlueSoleil, but BCI2000 is confirmed to work with the WIDCOMM stack, and the default MS stack as well.
+</p><p>As far as Bluetooth Hardware/Stack configurations, there is no sure bet.  Certain combinations of hardware and software have worked reliably, but some hardware/software configurations simply will not work.  This is due to Nintendo's half-adoption of the Bluetooth standard.  If you have any questions about what dongle or stack to use, reference this page: <a href="http://wiibrew.org/wiki/List_of_Working_Bluetooth_Devices" class='external free' title="http://wiibrew.org/wiki/List_of_Working_Bluetooth_Devices" rel="nofollow">http://wiibrew.org/wiki/List_of_Working_Bluetooth_Devices</a>
+</p><p>For ease in identifying remotes, record the unique Bluetooth address of each Wiimote and write it on the inside of the battery cover.  The Bluetooth address can be found by right clicking the device within "Bluetooth Places" and selecting "Properties".  The Bluetooth address is in hex format: <code>##:##:##:##:##:##</code>.  If you're using Bluesoleil, you can locate the device you're looking for by hovering over the icon to reveal the tool tip and match up the Bluetooth device addresses.
+</p><p>In order to connect the Wiimotes with some other Bluetooth stack not documented here, refer to the documentation provided with your stack software on how to connect new devices.  In order to put the Wiimote into "discoverable mode", press the buttons labelled "1" and "2" simultaneously.  Unless the buttons are held, the device will only remain discoverable for 20 seconds, so the connecting process must take less than 20 seconds or the buttons will need to be held during the process.  Wiimotes cannot be paired with a computer.  If your stack requires pairing to occur, your stack is incompatible with connecting to the Wiimotes.  In order to connect, consider installing the BlueSoleil stack as it is compatible with most Bluetooth devices and has the easiest interface.
+</p><p>To turn off the Wiimotes, hold the power button in the upper corner of the front face of the Wiimote for a few seconds.  In order to tell if the Wiimote is off, press the A or B button.  If the lights at the bottom of the remote light up for a short time, you have successfully turned off the remote.  If the remote is left connected to the PC, it will consume battery power until the batteries are dead, or the device is disconnected.
+</p>
+<a name="MSAutoConnectWiimotes"></a><h3>MSAutoConnectWiimotes</h3>
+<p>This is a command-line tool which can auto connect Wiimotes to the MS Stack.  This tool can only be used with the standard MS Stack.  It is added to your CMake project when you enable building of the Wiimote extension into your source modules with the <code>BUILD_WIIMOTELOGGER</code> CMake variable enabled.  Once built, the tool resides in the <code>tools/</code> directory as <code>MSAutoConnectWiimotes</code>.  This program is not needed to connect Wiimotes using the MS Stack, but does simplify the process and enables auto-connecting when BCI2000 starts through use of the <a href="User_Reference%253AOperator_Module_Scripting.html#2" title="User Reference:Operator Module Scripting">operator scripting engine</a>.
+</p><p>To use the program, enable your bluetooth connection, and run the application.  Hit the "1" and "2" buttons simultaneously in order for each Wiimote you want to connect.  Close the application once you've connected as many Wiimotes as you want.
+</p>
+<a name="Connecting_with_BlueSoleil"></a><h3>Connecting with BlueSoleil</h3>
+<p>To connect the Wiimote(s) for the first time with BlueSoleil:
+</p>
+<ol><li>Ensure your Bluetooth radio is on or your Bluetooth dongle is plugged into the USB port, and drivers are installed and functional.
+</li><li>Right click the Bluetooth icon in the task bar near the system clock.
+</li><li>Select "Explore Bluetooth Places"
+</li><li>Double click "Search Devices"
+</li><li>Press buttons labelled "1" and "2" on the Wiimote simultaneously (you need not hold the buttons).  The Wiimote's LEDs will flash and the Wiimote will be in "discoverable mode" for 20 seconds.  Make sure that any Nintendo Wii game consoles in the area are turned off or the Wiimote will preferentially pair with the console.
+</li><li>When the "HID Device" is found (icon shows up as a joystick), double click the icon and the software will automatically connect with the device. 
+</li><li>If the process has been performed successfully, the Wiimote's LEDs will continue to blink and will not stop blinking until BCI2000 has been started.
+</li><li>Repeat for as many Wiimotes as desired (up to four)
+</li></ol>
+<p>To connect the Wiimotes later with BlueSoleil:
+</p>
+<ol><li>Repeat steps 2-5 above
+</li><li>Click the Wiimote icon which corresponds to the Wiimote you are trying to connect.  If there are more than one, you'll just have to try them all until one works
+</li></ol>
+<a name="Connecting_with_Toshiba_Stack"></a><h3>Connecting with Toshiba Stack</h3>
+<ol><li>Ensure your Bluetooth radio is on or your Bluetooth dongle is plugged into the USB port, and drivers are installed and functional.
+</li><li>Open Bluetooth Settings
+</li><li>Click on Bluetooth-&gt;Add a new connection.  Choose Express Mode
+</li><li>Press the buttons labelled "1" and "2" on the Wiimote at the same time to put it into "discoverable mode".  If it recognizes the Wiimote, it'll be named <b>NINTENDO-RVL-CNT-01</b>.
+</li><li>Follow remaining steps to finish the "Add New Connection Wizard."
+</li><li>Right click on the Wiimote's icon and click "Connect".
+</li></ol>
+<a name="Connecting_with_WIDCOMM_Stack"></a><h3>Connecting with WIDCOMM Stack</h3>
+<ol><li>Ensure your Bluetooth radio is on or your Bluetooth dongle is plugged into the USB port, and drivers are installed and functional.
+</li><li>Right click the Bluetooth icon in your System Tray and click "Bluetooth Setup Wizard"
+</li><li>Select the second option, "I want to find a specific Bluetooth Device and configure how this computer will use its services" and click next.
+</li><li>Press the buttons labelled "1" and "2" on the Wiimote at the same time to put it into "discoverable mode". (You may want to wait a few seconds before doing this, as the wizard takes a while to complete and the Wiimote must be discoverable for the entire setup.)
+</li><li>When the Wiimote appears in the discovered devices list select it and click next.  Already connected devices show a green icon in the bottom left of the device icon.
+</li><li>Click "Skip Pairing"
+</li><li>Wait for the wizard to get available services from the device, and once the "HID Device" service appears, click "Finish" 
+</li></ol>
+<a name="Parameters"></a><h2>Parameters</h2>
+<p>The Wiimote is configured in the Source tab within the WiimoteLogger section.  The configurable parameters are:
+</p>
+<ul><li><code>LogWiimote</code>   = checked/unchecked, enables logging of Wiimote states
+</li><li><code>LogWiimoteIR</code> = checked/unchecked, enables logging of IR specific Wiimote states
+</li><li><code>WiimoteDeriv</code> = checked/unchecked, Check to measure changes in accelerometer readings and uncheck to report raw acceleromter values.
+</li></ul>
+<a name="State_Variables"></a><h2>State Variables</h2>
+<p>All states are prefixed with a <code>Wiimote#</code> where # corresponds to the Wiimote which the state was polled from.
+</p>
+<a name="AccelX.2C_AccelY.2C_AccelZ"></a><h3>AccelX, AccelY, AccelZ</h3>
+<p>These are the raw acceleration values from the Wiimote.  These values do not take acceleration due to gravity into account - as such, when the remote is resting on a table, there will be a downward acceleration of 9.8 <span class="texhtml"><i>m</i> / <i>s</i><sup>2</sup></span>.  If <code>WiimoteDeriv</code> is checked, these values become the change in acceleration.  In this case, a resting Wiimote should read 0 for all of these states.  Each value is 16 bit and ranges from 0 to 65535.  The Wiimote only outputs 8 bits of resolution for each of these states, so there are 255 discrete values of acceleration for each of these states which are then scaled to 0-65535.
+</p>
+<a name="IRX.2C_IRY"></a><h3>IRX, IRY</h3>
+<p>These are IR values from 0 to 65535.  These values are acquired only if <code>LogWiimoteIR</code> is enabled and the black window on the front of the Wiimote (IR camera) is pointed at a source of IR light.  Pictured as looking at the scene from the position of the camera looking the same direction as the camera, (65535,65535) is the farthest upper left corner of the field of view and (0,0) is the farthest lower right of the field of view.  NOTE: If IR leaves the camera view, the state will hold the current value until found again.  The IR looks at up to 4 dots at a time, so the states report the averaged center of the found dots.
+</p>
+<a name="Buttons"></a><h3>Buttons</h3>
+<p>There are individual states for each button on the controller.  They are set equal to "1" if the button is currently pushed down, otherwise they remain "0".  The buttons available through BCI2000 are named according to the labelling on the controller and are listed below:
+</p>
+<ul><li><code>ButtonA</code>
+</li><li><code>ButtonB</code>
+</li><li><code>ButtonMinus</code>
+</li><li><code>ButtonPlus</code>
+</li><li><code>ButtonHome</code>
+</li><li><code>Button1</code>
+</li><li><code>Button2</code>
+</li><li><code>ButtonUp</code>
+</li><li><code>ButtonDown</code>
+</li><li><code>ButtonLeft</code>
+</li><li><code>ButtonRight</code>
+</li></ul>
+<a name="Special_Note_on_Licensing"></a><h2>Special Note on Licensing</h2>
+<p>The WiimoteLogger extension uses a library called "WiiYourself" - <a href="http://wiiyourself.gl.tter.org/" class='external free' title="http://wiiyourself.gl.tter.org/" rel="nofollow">http://wiiyourself.gl.tter.org/</a>.  The author of the library released it openly, but not under any standard open source license.  Instead, he wrote his own license file located in our distribution at <a href="http://www.bci2000.org/svn/trunk/src/contrib/Extensions/WiimoteLogger/extlib/WiiYourself/License.txt" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/Extensions/WiimoteLogger/extlib/WiiYourself/License.txt" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/Extensions/WiimoteLogger/extlib/WiiYourself/License.txt</a>.  One thing to note is that he explicitly forbids use of the library for either direct or indirect military research.  If you've got any questions or concerns about his terms, you can email him at gl.tter - at - r-i-l.net, (Remove the - at -, replace with @).  He's a pretty reasonable guy.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253ALogging_Input.html" title="User Reference:Logging Input">User Reference:Logging Input</a>, <a href="Contributions%253AExtensions.html" title="Contributions:Extensions">Contributions:Extensions</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

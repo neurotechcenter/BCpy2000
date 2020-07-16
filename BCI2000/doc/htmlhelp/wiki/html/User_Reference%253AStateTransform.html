@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:StateTransform - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:StateTransform,BCI2000 Glossary,User Reference:ConditionalIntegrator,User Reference:Expression Syntax" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">StateTransform</h1><p class="subtitle">User Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253AStateTransform.html#Function"><span class="tocnumber">1</span> <span class="toctext">Function</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AStateTransform.html#Parameters"><span class="tocnumber">2</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253AStateTransform.html#StateTransforms"><span class="tocnumber">2.1</span> <span class="toctext">StateTransforms</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253AStateTransform.html#States"><span class="tocnumber">3</span> <span class="toctext">States</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AStateTransform.html#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AStateTransform.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Function"></a><h2>Function</h2>
+<p>The <i>StateTransform</i> filter replaces state values with values of an <a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">arithmetic expression</a>.
+</p><p>Typically, the <i>StateTransform</i> filter is used as a functional equivalent for cursor hit detection in off-line data analysis, using the output of the <a href="User_Reference%253AConditionalIntegrator.html" title="User Reference:ConditionalIntegrator">ConditionalIntegrator</a> filter to determine cursor position.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<a name="StateTransforms"></a><h3>StateTransforms</h3>
+<p>Any number of transforms, specified in form of an (N x 2) matrix.
+Each row corresponds to a transform.
+Within a row, the first column gives the name of the state to be transformed, and the second column gives the expression replacing that state's value.
+The expression may also involve the value of the state it replaces.
+</p>
+<a name="States"></a><h2>States</h2>
+<p>Any state may be replaced, and any state may occur in the replacement expression.
+</p>
+<a name="Example"></a><h2>Example</h2>
+<p>When the cursor hits a target, a typical cursor movement task sets the <i>ResultCode</i> state to the number of the target that was hit.
+For the case of 1D feedback with two targets, and when the filter's input is the integrated control signal as output by the <a href="User_Reference%253AConditionalIntegrator.html" title="User Reference:ConditionalIntegrator">ConditionalIntegrator</a>, the following <i>StateTransforms</i> matrix achieves this behavior: 
+</p>
+<table border="1">
+<tr>
+<th>State </th><th> Expression
+</th></tr>
+<tr>
+<td>ResultCode </td><td> (ResultCode>0)*(1+(Signal(1,1)>0))
+</td></tr></table>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">User Reference:Expression Syntax</a>, <a href="User_Reference%253AConditionalIntegrator.html" title="User Reference:ConditionalIntegrator">User Reference:ConditionalIntegrator</a>, <a href="BCI2000_Glossary.html#Control_Signal" title="BCI2000 Glossary">BCI2000 Glossary#Control Signal</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+</ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

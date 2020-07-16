@@ -1,0 +1,62 @@
+[CONFIG]
+MainWindow\Size=@Size(903 320)
+SysLog\Size=@Size(1843 774)
+WatchesWindow\Size=@Size(891 418)
+WorkingDirectory=
+MainWindow\Pos=@Point(2836 261)
+SysLog\Pos=@Point(1475 1215)
+Various\GlobalUserLevel=3
+WatchesWindow\Pos=@Point(111 144)
+Scripts\AfterModulesConnected=
+WatchesWindow\State=@ByteArray(\0\0\0\0\0\0\x34@\x96\0\0\0K\0\0\0K\0\0\0M\x2\0\0)
+Scripts\OnExit=
+Scripts\OnSetConfig=
+Scripts\OnResume=
+Scripts\OnSuspend=
+Scripts\OnStart=
+Scripts\OnShutdown=
+Buttons\Button1Name=
+Buttons\Button1Cmd=
+Buttons\Button2Name=
+Buttons\Button2Cmd=
+Buttons\Button3Name=
+Buttons\Button3Cmd=
+Buttons\Button4Name=
+Buttons\Button4Cmd=
+ConfigWindow\Size=@Size(1462 797)
+ConfigWindow\Pos=@Point(1029 810)
+
+[VISUALIZATION]
+RNDT\Title=Timing
+RNDT\Width=1196
+RNDT\Height=484
+SRCD\Title=Source Signal
+SRCD\Width=2713
+SRCD\Height=895
+RNDT\Top=1457
+RNDT\Left=2678
+SRCD\Top=623
+SRCD\Left=395
+SRCD%3A\Title=Source Signal
+SRCD%3A\AutoScale=10
+2.C\Title=PythonSigFilter
+2.C\Top=74
+2.C\Left=390
+2.C\Width=2582
+2.C\Height=498
+2.C%3A\Title=PythonSigFilter
+2.C%3A\AutoScale=10
+
+[PARAMETERS]
+AmplitudeMultiplier\UserLevel=2
+NoiseAmplitude\UserLevel=3
+VisualizeSource\UserLevel=3
+VisualizeTiming\UserLevel=3
+VisualizePythonSigFilter\UserLevel=3
+AudioFeedback\UserLevel=1
+ShowFixation\UserLevel=3
+CircleRadius\UserLevel=2
+ColorFeedback\UserLevel=1
+CursorFeedback\UserLevel=1
+InnerTriangleSize\UserLevel=1
+OuterTriangleSize\UserLevel=2

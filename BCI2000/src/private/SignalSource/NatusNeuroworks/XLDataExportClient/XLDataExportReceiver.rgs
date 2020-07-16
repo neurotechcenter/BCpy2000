@@ -1,0 +1,25 @@
+HKCR
+{
+	XLDataExportClient.XLDataExportReceiver.1 = s 'XLDataExportReceiver Class'
+	{
+		CLSID = s '{301D67B5-E7CA-46AD-AAEB-48FDE538CBF4}'
+	}
+	XLDataExportClient.XLDataExportReceiver = s 'XLDataExportReceiver Class'
+	{
+		CLSID = s '{301D67B5-E7CA-46AD-AAEB-48FDE538CBF4}'
+		CurVer = s 'XLDataExportClient.XLDataExportReceiver.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {301D67B5-E7CA-46AD-AAEB-48FDE538CBF4} = s 'XLDataExportReceiver Class'
+		{
+			ProgID = s 'XLDataExportClient.XLDataExportReceiver.1'
+			VersionIndependentProgID = s 'XLDataExportClient.XLDataExportReceiver'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{B7B249CB-1CDC-49D1-83B6-37F7EEF57741}'
+		}
+	}
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Programming Reference:PhysicalUnit Class - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Programming Reference:PhysicalUnit Class,Programming Reference:GenericVisualization Class,Programming Reference:LabelIndex Class,Programming Reference:Signals,User Reference:DataIOFilter" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">PhysicalUnit Class</h1><p class="subtitle">Programming Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Programming_Reference%253APhysicalUnit_Class.html#Location"><span class="tocnumber">1</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253APhysicalUnit_Class.html#Synopsis"><span class="tocnumber">2</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253APhysicalUnit_Class.html#Methods"><span class="tocnumber">3</span> <span class="toctext">Methods</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#PhysicalUnit.28.29"><span class="tocnumber">3.1</span> <span class="toctext">PhysicalUnit()</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#Clear.28.29"><span class="tocnumber">3.2</span> <span class="toctext">Clear()</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#bool_IsPhysical.28string.29"><span class="tocnumber">3.3</span> <span class="toctext">bool IsPhysical(string)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#number_PhysicalToRaw.28string.29"><span class="tocnumber">3.4</span> <span class="toctext">number PhysicalToRaw(string)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#string_RawToPhysical.28number.29"><span class="tocnumber">3.5</span> <span class="toctext">string RawToPhysical(number)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#WriteToStream.28ostream.29.2C_ReadFromStream.28istream.29"><span class="tocnumber">3.6</span> <span class="toctext">WriteToStream(ostream), ReadFromStream(istream)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253APhysicalUnit_Class.html#Properties"><span class="tocnumber">4</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#number_Offset_.28rw.29.2C_Gain_.28rw.29"><span class="tocnumber">4.1</span> <span class="toctext">number Offset (rw), Gain (rw)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#string_Symbol_.28rw.29"><span class="tocnumber">4.2</span> <span class="toctext">string Symbol (rw)</span></a></li>
+<li class='toclevel-2'><a href="Programming_Reference%253APhysicalUnit_Class.html#number_RawMin.2C_RawMax_.28rw.29"><span class="tocnumber">4.3</span> <span class="toctext">number RawMin, RawMax (rw)</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Programming_Reference%253APhysicalUnit_Class.html#Magnitude_Prefixes"><span class="tocnumber">5</span> <span class="toctext">Magnitude Prefixes</span></a></li>
+<li class='toclevel-1'><a href="Programming_Reference%253APhysicalUnit_Class.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Location"></a><h2>Location</h2>
+<p><tt>src/shared/types</tt>
+</p>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>An object of type <tt>PhysicalUnit</tt> represents a linear mapping from physical units to raw numbers, and an expected range of values.
+Apart from its use in conjunction with signal values, this class is also used for element or channel indexing when appropriate, e.g. to map a frequency value to a spectral bin (element index).
+</p>
+<a name="Methods"></a><h2>Methods</h2>
+<a name="PhysicalUnit.28.29"></a><h3>PhysicalUnit()</h3>
+<p>The constructor initializes a <tt>PhysicalUnit</tt> object to the identity mapping.
+</p>
+<a name="Clear.28.29"></a><h3>Clear()</h3>
+<p>Resets the <tt>PhysicalUnit</tt> object to identity mapping.
+</p>
+<a name="bool_IsPhysical.28string.29"></a><h3>bool IsPhysical(string)</h3>
+<p>Tests whether a string is valid as a physical value. This is the case if the string represents
+</p>
+<ul><li>a plain number,
+</li><li>a plain number followed with an optional magnitude prefix, and the physical unit's symbol, without separating white space, such as "10.3ms",
+</li><li>an arithmetic expression involving numbers and arithmetic operators, optionally followed with a unit string, such as "(5/4)muV".
+</li></ul>
+<a name="number_PhysicalToRaw.28string.29"></a><h3>number PhysicalToRaw(string)</h3>
+<p>Transforms a physical value into a raw number as defined by the object's offset, gain, and symbol properties.
+</p>
+<a name="string_RawToPhysical.28number.29"></a><h3>string RawToPhysical(number)</h3>
+<p>Transforms a raw number into a physical value as defined by the object's offset, gain, and symbol properties.
+</p>
+<a name="WriteToStream.28ostream.29.2C_ReadFromStream.28istream.29"></a><h3>WriteToStream(ostream), ReadFromStream(istream)</h3>
+<p>Writes/reads offset, gain, and symbol properties into/from the specified <tt>std::iostream</tt> objects, enclosed into braces, and separated with space characters.
+</p>
+<a name="Properties"></a><h2>Properties</h2>
+<a name="number_Offset_.28rw.29.2C_Gain_.28rw.29"></a><h3>number Offset (rw), Gain (rw)</h3>
+<p>Offset and gain value defining the linear relation between raw and physical values.
+Consistently with the definition of the <a href="User_Reference%253ADataIOFilter.html#SourceChOffset.2C_SourceChGain" title="User Reference:DataIOFilter">SourceChOffset and SourceChGain
+parameters</a>, the relation between raw and physical value is
+</p>
+<pre>PhysicalValue = ( RawValue - Offset ) * Gain
+</pre>
+<a name="string_Symbol_.28rw.29"></a><h3>string Symbol (rw)</h3>
+<p>The symbol of the physical unit, such as "s" for seconds, "V" for Volts, etc., without magnitude prefix. For signal visualizations, units are displayed in the visualization window.
+</p>
+<a name="number_RawMin.2C_RawMax_.28rw.29"></a><h3>number RawMin, RawMax (rw)</h3>
+<p>Minimum and maximum of an expected range of values. For <a href="Programming_Reference%253ASignals.html" title="Programming Reference:Signals">signals</a>, this is used to adapt ranges in <a href="Programming_Reference%253AGenericVisualization_Class.html" title="Programming Reference:GenericVisualization Class">visualization windows</a>, with the <tt>ValueUnit</tt>'s range determining signal scaling, and the <tt>ElementUnit</tt>'s range determining the number of elements displayed in the visualization window.
+</p>
+<a name="Magnitude_Prefixes"></a><h2>Magnitude Prefixes</h2>
+<p>The <tt>PhysicalUnit</tt> class recognizes the following magnitude prefixes:
+</p>
+<table>
+<tr>
+<th>Recognized Prefix</th><th>Name</th><th>Value
+</th></tr>
+<tr>
+<td>p</td><td>pico</td><td>1e-12
+</td></tr>
+<tr>
+<td>n</td><td>nano</td><td>1e-9
+</td></tr>
+<tr>
+<td>u, mu</td><td>micro</td><td>1e-6
+</td></tr>
+<tr>
+<td>m</td><td>milli</td><td>1e-3
+</td></tr>
+<tr>
+<td>k</td><td>kilo</td><td>1e3
+</td></tr>
+<tr>
+<td>M</td><td>mega</td><td>1e6
+</td></tr>
+<tr>
+<td>G</td><td>giga</td><td>1e9
+</td></tr>
+<tr>
+<td>T</td><td>tera</td><td>1e12
+</td></tr></table>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Programming_Reference%253ASignals.html" title="Programming Reference:Signals">Programming Reference:Signals</a>, <a href="Programming_Reference%253AGenericVisualization_Class.html" title="Programming Reference:GenericVisualization Class">Programming Reference:GenericVisualization Class</a>, <a href="Programming_Reference%253ALabelIndex_Class.html" title="Programming Reference:LabelIndex Class">Programming Reference:LabelIndex Class</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<ul><li>Concepts</li>
+<ul><li><a href="Programming_Reference%253AFilter_Chain.html">Filter Chain</a></li>
+<li><a href="Programming_Reference%253ASignals.html">Signals</a></li>
+<li><a href="Programming_Reference%253AError_Handling.html">Error Handling</a></li>
+<li><a href="Programming_Reference%253ALocalization.html">Localization</a></li>
+<li><a href="Programming_Reference%253ARapid_Development.html">Rapid Development</a></li>
+</ul><li>Reference</li>
+<ul><li><a href="Programming_Reference%253AGenericFilter_Class.html">GenericFilter</a></li>
+<li><a href="Programming_Reference%253AEnvironment_Class.html">Environment</a></li>
+<li><a href="Programming_Reference%253AGenericVisualization_Class.html">GenericVisuali-zation</a></li>
+<li><a href="Programming_Reference%253AErrors_and_Warnings.html">Errors and Warnings</a></li>
+<li><a href="Programming_Reference%253ADebug_Output.html">Debug Output</a></li>
+</ul><li>Data Acquisition</li>
+<ul><li><a href="Programming_Reference%253AGenericADC_Class.html">GenericADC</a></li>
+</ul><li>Data Storage</li>
+<ul><li><a href="Programming_Reference%253AGenericFileWriter_Class.html">GenericFileWriter</a></li>
+<li><a href="Programming_Reference%253ABCI2000FileReader_Class.html">BCI2000FileReader</a></li>
+</ul><li>Signal Processing</li>
+<ul><li><a href="Programming_Reference%253AIIRFilter_Class.html">IIR Filters</a></li>
+</ul><li>Application Modules</li>
+<ul><li><a href="Programming_Reference%253AApplicationBase_Class.html">ApplicationBase</a></li>
+<li><a href="Programming_Reference%253AFeedbackTask_Class.html">FeedbackTask</a></li>
+<li><a href="Programming_Reference%253AStimulusTask_Class.html">StimulusTask</a></li>
+<li><a href="Programming_Reference%253A3D_API.html">3D API</a></li>
+</ul><li>Howtos</li>
+<li><a href="Programming_FAQ.html">FAQ</a></li>
+<li>Tutorials</li>
+</ul><a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

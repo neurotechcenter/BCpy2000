@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>SVN V3 Suggestions - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="SVN V3 Suggestions" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">SVN V3 Suggestions</h1><p class="subtitle"></p><hr class="sep" /><p>If you obtained BCI2000 via SVN (rather than by just downloading one
+package with all the binaries pre-built) then you should be aware of
+the changes that will happen when you perform svn updates after Feb
+16.  If you have added your own custom code to your svn working-copy,
+or if you are using your svn working-copy for active experiments, you
+should take steps to avoid large-scale changes and conflicts when you
+use svn.
+</p><p><br />
+With the release of v3 on Feb. 16, we will move the current 3.0 branch on SVN to the trunk, and the current trunk to tags/BCI2000.v2.1. Thus, when you update your source repository after that date, you will receive v3 by default.
+</p><p>Depending on your situation, upgrading your own source tree to v3 may or may not be advisable.
+</p>
+<a name="When_you_are_in_the_midst_of_performing_experiments"></a><h2>When you are in the midst of performing experiments</h2>
+<p>using your own module(s), you should not upgrade to v3 until the experiments are finished.
+Also, when you want to use a contribution (e.g. source module) that comes with v3 but not v2, together with your own module(s), there is no need to upgrade. Modules may be mixed between v2 and v3.
+</p><p>If you want to preserve your version 2 working-copy for now,  and
+keep it under version control, you should perform a "switch" from
+your existing 'trunk' directory:
+</p>
+<pre>svn switch <a href="http://www.bci2000.org/svn/tags/BCI2000.v2.1" class='external free' title="http://www.bci2000.org/svn/tags/BCI2000.v2.1" rel="nofollow">http://www.bci2000.org/svn/tags/BCI2000.v2.1</a>
+</pre>
+<p>In TortoiseSVN, choose the "switch" option from the sub-menu, and enter <a href="http://www.bci2000.org/svn/tags/BCI2000.v2.1" class='external free' title="http://www.bci2000.org/svn/tags/BCI2000.v2.1" rel="nofollow">http://www.bci2000.org/svn/tags/BCI2000.v2.1</a>
+</p>
+<a name="If_you_already_have_a_pre-release_working-copy_of_version_3.0.2C"></a><h2>If you already have a pre-release working-copy of version 3.0,</h2>
+<p>that is
+moving from /branches/3.0 to /trunk, so you would relocate as follows,
+starting in your existing '3.0' directory:
+</p>
+<pre>svn switch <a href="http://www.bci2000.org/svn/trunk" class='external free' title="http://www.bci2000.org/svn/trunk" rel="nofollow">http://www.bci2000.org/svn/trunk</a>
+</pre>
+<p>Again, in TortoiseSVN, choose the "switch" option
+from the sub-menu, and enter <a href="http://www.bci2000.org/svn/trunk" class='external free' title="http://www.bci2000.org/svn/trunk" rel="nofollow">http://www.bci2000.org/svn/trunk</a>
+</p>
+<a name="When_you_want_to_upgrade_your_existing_v2_source_directory_to_v3.2C"></a><h2>When you want to upgrade your existing v2 source directory to v3,</h2>
+<p>you should do one of the following:
+</p><p>a. If you want to stick with the Borland compiler, make a backup copy of your code, and use “SVN update” to update your BCI2000 directory to v3.
+When recompiling your module, you might get "unresolved external" messages. If this happens to you, please post on the BCI2000 forum (<a href="http://www.bci2000.org/phpbb" class='external free' title="http://www.bci2000.org/phpbb" rel="nofollow">http://www.bci2000.org/phpbb</a>) to get help in resolving these.
+</p><p>b. If you want to change compilers to use MSVC or MinGW rather than Borland, please do the following:
+</p>
+<ul><li>Make a backup copy of your code.
+</li><li>Use “SVN update” to update your BCI2000 directory to v3.
+</li><li>Copy a CMakeLists.txt file from a similar module to your module's directory.
+</li><li>Edit the copy with a text editor.
+</li><li>At the top of the file, change the executable name to your module's name.
+</li><li>At the bottom of the file, go to the list of source files, and modify it to contain your module's proper source files.
+</li><li>In the directory above your module's source directory, edit the CMakeLists.txt file, and add a line: 
+</li></ul>
+<pre>ADD_DIRECTORY(name_of_your_module_directory)
+</pre>
+<ul><li>For the compiler/IDE of your choice, execute the "Create project files" batch file from the BCI2000 build directory.
+</li><li>Open the resulting solution/project file, and locate your module's project to work on it.
+</li></ul>
+
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

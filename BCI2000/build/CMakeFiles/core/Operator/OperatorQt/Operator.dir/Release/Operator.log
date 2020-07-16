@@ -1,0 +1,95 @@
+﻿  Generating ui_MainWindow.h
+  Generating ui_PrefDialog.h
+  Generating ui_ConfigWindow.h
+  Generating ui_EditMatrix.h
+  Generating ui_ShowParameters.h
+  Generating moc_MainWindow.cpp
+  Generating moc_ConnectionInfo.cpp
+  Generating moc_ShowStates.cpp
+  Generating moc_WatchesWindow.cpp
+  Generating moc_SysLog.cpp
+  Generating moc_PrefDialog.cpp
+  Generating moc_ConfigWindow.cpp
+  Generating moc_EditMatrix.cpp
+  Generating moc_ShowParameters.cpp
+  Generating moc_ParamDisplay.cpp
+  Generating moc_VisDisplay.cpp
+  Generating moc_VisDisplayWindow.cpp
+  Generating moc_VisDisplayLayer.cpp
+  Generating moc_VisDisplayBase.cpp
+  Generating moc_VisDisplayMemo.cpp
+  Generating moc_VisDisplayGraph.cpp
+  Generating moc_VisDisplayBitmap.cpp
+  Generating __/__/__/shared/utils/moc_QtSignalConnector.cpp
+  CorePCH.cpp
+  main.cpp
+  MainWindow.cpp
+  ConnectionInfo.cpp
+  ShowStates.cpp
+  WatchesWindow.cpp
+  SysLog.cpp
+  PrefDialog.cpp
+  ConfigWindow.cpp
+  EditMatrix.cpp
+  ShowParameters.cpp
+  Preferences.cpp
+  OperatorUtils.cpp
+  ParsedComment.cpp
+  ParamDisplay.cpp
+  ExecutableHelp.cpp
+  ParserToken.cpp
+  VisDisplay.cpp
+  VisDisplayWindow.cpp
+  VisDisplayLayer.cpp
+  VisDisplayBase.cpp
+  Generating Code...
+  Compiling...
+  VisDisplayMemo.cpp
+  VisDisplayGraph.cpp
+  VisDisplayBitmap.cpp
+  DisplayFilter.cpp
+  DecimationFilter.cpp
+  ScaleObservationFilter.cpp
+  BCIStream_guiapp.cpp
+  SignalDisplay.cpp
+  AboutBox.cpp
+  ColorListChooser.cpp
+  Settings.cpp
+  QtMain.cpp
+  FilterDesign.cpp
+  QtMessageHandler.cpp
+  moc_MainWindow.cpp
+  moc_ConnectionInfo.cpp
+  moc_ShowStates.cpp
+  moc_WatchesWindow.cpp
+  moc_SysLog.cpp
+  moc_PrefDialog.cpp
+  Generating Code...
+  Compiling...
+  moc_ConfigWindow.cpp
+  moc_EditMatrix.cpp
+  moc_ShowParameters.cpp
+  moc_ParamDisplay.cpp
+  moc_VisDisplay.cpp
+  moc_VisDisplayWindow.cpp
+  moc_VisDisplayLayer.cpp
+  moc_VisDisplayBase.cpp
+  moc_VisDisplayMemo.cpp
+  moc_VisDisplayGraph.cpp
+  moc_VisDisplayBitmap.cpp
+  moc_QtSignalConnector.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  Operator.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorQt\Release\Operator.exe
+  	Deploying executable
+  copying files:
+  Cannot list dependencies, executable depends on modules that failed to load:
+   OperatorLib.dll
+  Executable may fail to run when moved to a different machine.
+  Copying Operator.exe ...
+  Copying Qt5Gui.dll ...
+  Copying Qt5Widgets.dll ...
+  Copying Qt5Core.dll ...
+  Copying qwindows.dll ...
+  Done.

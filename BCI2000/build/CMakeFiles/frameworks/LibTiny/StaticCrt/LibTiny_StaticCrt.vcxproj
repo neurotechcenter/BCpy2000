@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7C2D4AB7-2D73-32F1-BC91-E08B94AD9117}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>LibTiny_StaticCrt</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">LibTiny_StaticCrt.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">LibTiny_StaticCrt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">LibTiny_StaticCrt.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">LibTiny_StaticCrt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">LibTiny_StaticCrt.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">LibTiny_StaticCrt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;_SECURE_SCL=0;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NDEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /J</AdditionalOptions>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4250;4290;4297;4355;4800;4838</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <OpenMPSupport>true</OpenMPSupport>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level1</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH="ÜŤƑȢ";PROJECT_NAME="BCI2000";PROJECT_TIMESPAN="2000-2019";PROJECT_DOMAIN="bci2000.org";PROJECT_VERSION="3.05";WEBSEARCH_DOMAIN="www.google.com";BUILD_USER="user@user-PC";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME="MSVC-19.14.26433.0-x86";HAVE_LIB_TINY;BUILD_CONFIG=" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF";CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;BCIDEBUG=1;DEBUG_BUILD=1;TINY_DEBUG=1;UTF8_SHIBBOLETH=\"ÜŤƑȢ\";PROJECT_NAME=\"BCI2000\";PROJECT_TIMESPAN=\"2000-2019\";PROJECT_DOMAIN=\"bci2000.org\";PROJECT_VERSION=\"3.05\";WEBSEARCH_DOMAIN=\"www.google.com\";BUILD_USER=\"user@user-PC\";DISABLE_UNITTEST;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;TINY_DEBUG_LOCKS=0;COMPILER_NAME=\"MSVC-19.14.26433.0-x86\";HAVE_LIB_TINY;BUILD_CONFIG=\" USE_DYNAMIC_CRT:TRUE USE_OPENMP:ON USE_PRECOMPILED_HEADERS:ON USE_ASSERTS_IN_RELEASE_BUILDS:OFF\";CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt;C:\BCI2000.python3\src\shared\compat;C:\BCI2000.python3\src\shared\utils\Lib;C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt;C:\BCI2000.python3\src\shared;C:\BCI2000.python3\src\shared\config;C:\BCI2000.python3\src\shared\bcistream;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/BCI2000.python3/build/cmake/frameworks/LibTiny/StaticCrt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/frameworks/LibTiny/StaticCrt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/BCI2000.python3/build/cmake/frameworks/LibTiny/StaticCrt/CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt\CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/BCI2000.python3/build/cmake/frameworks/LibTiny/StaticCrt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/frameworks/LibTiny/StaticCrt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/BCI2000.python3/build/cmake/frameworks/LibTiny/StaticCrt/CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt\CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/BCI2000.python3/build/cmake/frameworks/LibTiny/StaticCrt/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/BCI2000.python3/build -BC:/BCI2000.python3/build --check-stamp-file C:/BCI2000.python3/build/CMakeFiles/frameworks/LibTiny/StaticCrt/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/BCI2000.python3/build/cmake/frameworks/LibTiny/StaticCrt/CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny.cmake;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt\CMakeLists.txt;C:\BCI2000.python3\build\cmake\frameworks\LibTiny\StaticCrt\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Uncopyable.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Lockable.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Lockable.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Runnable.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\SharedPointer.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ObjectPool.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\StaticObject.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\LazyArray.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Broadcaster.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Broadcaster.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Atomic.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Synchronized.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\SynchronizedQueue.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\SpinLock.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Mutex.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Mutex.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\SelfPipe.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\SelfPipe.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\SelfPipeQueue.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Waitable.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Waitable.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\WaitableEvent.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\WaitableEvent.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Semaphore.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Semaphore.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\WaitableImplementation.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\WaitableImplementation.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Thread.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Thread.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ReusableThread.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\ReusableThread.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ThreadLocal.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\ThreadLocal.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ThreadUtils.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\ThreadUtils.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ChildProcess.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\ChildProcess.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ProcessUtils.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\ProcessUtils.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\FilePath.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\FilePath.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\FileUtils.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\FileUtils.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\DylibImports.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\DylibImports.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\SysError.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\SysError.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\SharedMemory.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\SharedMemory.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\StringUtils.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\StringUtils.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\EscapedString.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\EscapedString.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ClassName.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\ClassName.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\WildcardMatch.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\WildcardMatch.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\EnvVariable.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\EnvVariable.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\TimeUtils.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\TimeUtils.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Clock.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Clock.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\StopWatch.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\IOObjects.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\IOObjects.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Streambuf.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Streambuf.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\sockstream.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\sockstream.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\MemoryBuffer.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\MemoryBuffer.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\FdObject.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\FdObject.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Sockets.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Sockets.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Files.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Files.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\FileMapping.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\FileMapping.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\NullStream.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\ExceptionCatcher.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\ExceptionCatcher.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Exception.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Exception.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Debugging.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Debugging.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\LCRandomGenerator.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\LCRandomGenerator.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Uuid.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\BinaryData.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\BinaryData.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Numeric.h" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\Ratio.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\Ratio.cpp" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\compat\msvc_stdlib.cpp" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Lib\PEHeader.h" />
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Lib\PEHeader.cpp" />
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\LibTiny\StaticCrt\LibTiny_StaticCrt\Resources.inc" />
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\BCI2000.python3\build\ZERO_CHECK.vcxproj">
+      <Project>{2375B81A-7810-3EC7-B324-C626ED993627}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

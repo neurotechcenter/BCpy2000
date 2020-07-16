@@ -1,0 +1,10 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/core/Operator/BCI2000Remote/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/core/Operator/BCI2000Remote/CMakeFiles/generate.stamp is up-to-date.
+  BCI2000RemoteLib.cpp
+  BCI2000Connection.cpp
+  BCI2000Remote.cpp
+  sockstream.cpp
+  Generating Code...
+     Creating library C:/BCI2000.python3/build/CMakeFiles/core/Operator/BCI2000Remote/Release/BCI2000RemoteLib.lib and object C:/BCI2000.python3/build/CMakeFiles/core/Operator/BCI2000Remote/Release/BCI2000RemoteLib.exp
+  BCI2000RemoteLib.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\Operator\BCI2000Remote\Release\BCI2000RemoteLib.dll
+  	Copy to destination

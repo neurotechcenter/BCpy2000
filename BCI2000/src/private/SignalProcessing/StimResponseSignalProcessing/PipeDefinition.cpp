@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////
+// Authors:Zhiyang xu
+// Description: Pipe definition for the StimResponseFilter module.
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+#include "StimResponseFilter.h"
+
+#include "StimResponseVis.h"
+
+Filter( StimResponseFilter, 2.B );
+
+Filter(StimResponseVis, 2.Z);
+

@@ -1,0 +1,22 @@
+Source:Signal%20Properties:DataIOFilter int       SourceCh=                4    // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter int       SamplingRate=         1000    // sample rate
+Source:Signal%20Properties:DataIOFilter int       SampleBlockSize=        40    // 
+Source:Signal%20Properties:DataIOFilter list      ChannelNames=       0         // list of channel names
+Source:Signal%20Properties:DataIOFilter floatlist SourceChOffset=     4    0     0     0     0     // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter floatlist SourceChGain=       4    0.008 0.008 0.008 0.008 // gain for each channel (A/D units -> muV)
+
+Source:SignalGeneratorADC               int       ModulateAmplitude=       0             // Modulate the amplitude with the mouse (0=no, 1=yes) (boolean)
+Source:SignalGeneratorADC               int       SineChannelX=            1             // Channel number of sinewave controlled by mouse x position
+Source:SignalGeneratorADC               int       SineChannelY=            0             // Channel number of sinewave controlled by mouse y position (0 for all)
+Source:SignalGeneratorADC               int       SineChannelZ=            0             // Channel number of sinewave controlled by mouse key state
+Source:SignalGeneratorADC               float     SineFrequency=           0.5Hz         // Frequency of sine wave
+Source:SignalGeneratorADC               int       SineAmplitude=           0muV          // Amplitude of sine wave
+Source:SignalGeneratorADC               int       NoiseAmplitude=         10muV          // Amplitude of white noise (common to all channels)
+Source:SignalGeneratorADC               int       DCOffset=                0muV          // DC offset (common to all channels)
+Source:SignalGeneratorADC               string    OffsetMultiplier=        %             // Expression to multiply offset by
+Source:SignalGeneratorADC               int       RandomSeed=              0             // Initialization value for random number generator (initialize from time if 0)
+
+Source:SignalGeneratorADC               int       SignalType=              0             // numeric type of output signal:  0: int16, 1: float32, 2: int32 (enumeration)
+Source:Alignment:AlignmentFilter        int       AlignChannels=           0             // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter        floatlist SourceChTimeOffset= 0                  // time offsets for all source channels (may be empty)
+Source:Online%20Processing              list      TransmitChList=     4    1 2 3 4       // list of transmitted channels

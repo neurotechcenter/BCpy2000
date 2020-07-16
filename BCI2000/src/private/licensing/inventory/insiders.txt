@@ -1,0 +1,130 @@
+Peter Brunner
+    ==> ./src/contrib/Tools/Sigfried/*
+        Author: Peter Brunner
+    ==> ./src/shared/modules/signalsource/JoystickLogger.cpp
+    ==> ./src/shared/modules/signalsource/JoystickLogger.h
+        // Authors: pbrunner@wadsworth.org, juergen.mellinger@uni-tuebingen.de
+    
+    ==> ./src/core/Application/P3Speller/P3SpellerTask.cpp
+    ==> ./src/core/Application/P3Speller/P3SpellerTask.h
+        // Authors: schalk@wadsworth.org, vkamat@cambridgeconsultants.com, pbrunner@wadsworth.org, shzeng, juergen.mellinger@uni-tuebingen.de
+
+Joshua Fialkoff
+    ==> ./src/contrib/SignalSource/AmpServerPro/AmpServerProADC.cpp
+        * Author:    Joshua Fialkoff, Robert Bell (EGI)                              *
+    ==> ./tools/OfflineAnalysis/*
+        %% Author: Joshua Fialkoff <fialkj@rpi.edu>, Gerwin Schalk <schalk@wadsworth.org>
+    
+Jeremy Hill
+
+    ==> ./src/contrib/BCPy2000/*
+        //   Copyright (C) 2007-10  Jeremy Hill, Thomas Schreiner, Christian Puzicha, Jason Farquhar
+    
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.h
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.h
+         * Copyright (C) 2005 Samuel A. Inverso (samuel.inverso@gmail.com), Yang Zhen
+         Contributions/revisions by Maria Laura Blefari, Jeremy Hill
+         Already GPL
+
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.cpp
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.h
+         * Author:    M.M.Span                                                        *
+         * Copyright: (C) RUG University of Groningen                                 *
+         * Revision 2.0: Jeremy Hill, Christian Puzicha, Bernd Battes
+
+    ==> ./src/core/SignalProcessing/Matlab/MatlabFilter.cpp
+    ==> ./src/core/SignalProcessing/Matlab/MatlabWrapper.cpp
+        // Author: juergen.mellinger@uni-tuebingen.de, jeremy.hill@tuebingen.mpg.de
+        
+    ==> ./src/contrib/SignalSource/RDAClient/RDAClientADC.cpp
+    ==> ./src/contrib/SignalSource/RDAClient/RDAQueue.cpp
+        // Author: juergen.mellinger@uni-tuebingen.de, thomas.schreiner@tuebingen.mpg.de, jeremy.hill@tuebingen.mpg.de
+
+Jenny Hizver
+    ==> ./src/core/Application/StimulusPresentation/StimulusPresentationTask.cpp
+    ==> ./src/core/Application/StimulusPresentation/StimulusPresentationTask.h
+        // Authors: jhizver@wadsworth.org, schalk@wadsworth.org, juergen.mellinger@uni-tuebingen.de
+
+Yvan Pearson Lecours
+    ==> ./src/contrib/SignalSource/BioRadio/BR150.cpp
+    ==> ./src/contrib/SignalSource/BioRadio/BR_defines.h
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadioADC.cpp
+    ==> ./src/contrib/SignalSource/BioRadio/bioutils.cpp
+         * Author:    Yvan Pearson Lecours                                            *
+         * Copyright: (C) Wadsworth Center, NYSDOH                                    *
+
+Dennis McFarland    
+    ==> ./src/core/Tools/mex/mem.cpp
+        // Authors: mcfarlan@wadsworth.org, schalk@wadsworth.org, juergen.mellinger@uni-tuebingen.de
+    ==> ./src/extlib/math/Detrend.h
+    ==> ./src/extlib/math/FilterDesign.h
+    ==> ./src/extlib/math/MEMPredictor.h
+        // Authors: mcfarlan@wadsworth.org, juergen.mellinger@uni-tuebingen.de
+    ==> ./src/shared/modules/signalprocessing/ARFilter.cpp
+    ==> ./src/shared/modules/signalprocessing/ARFilter.h
+        // Authors: mcfarlan@wadsworth.org, juergen.mellinger@uni-tuebingen.de, Adam Wilson
+    ==> ./src/shared/modules/signalprocessing/LinearClassifier.cpp
+    ==> ./src/shared/modules/signalprocessing/LinearClassifier.h
+    ==> ./src/shared/utils/RandomGenerator.cpp
+    ==> ./src/shared/utils/RandomGenerator.h
+        // Authors: mcfarlan@wadsworth.org, juergen.mellinger@uni-tuebingen.de
+
+    ==> ./src/contrib/SignalSource/DTADC/DTADC.cpp
+         * Author:    Gerwin Schalk & Dennis McFarland                                *
+
+Griffin Milsap   (AMC)
+    ==> */CMakeLists.txt
+    ==> ./src/contrib/SignalSource/Emotiv/*
+    ==> ./src/contrib/SignalSource/NeuroSky/*
+    ==> ./src/contrib/SignalSource/NicoletOne/*
+        // Author: griffin.milsap@gmail.com
+
+Cristhian Potes    
+    ==> ./src/core/Tools/P300Classifier/*
+    ==> ./src/extlib/alglib/stepcalc.cpp
+        /// \author Cristhian Potes
+
+Justin Renga       (AMC)
+    ==> ./src/shared/modules/signalsource/NIDAQFilter.cpp
+    ==> ./src/shared/modules/signalsource/NIDAQFilter.h
+    ==> ./src/shared/modules/signalsource/NIDAQLogger.cpp
+    ==> ./src/shared/modules/signalsource/NIDAQLogger.h
+        // Author: justin.renga@gmail.com                                          //
+    
+Adam Wilson
+    ==> ./src/contrib/AppConnectorApplications/AppConnectorExample/*    # (already GPL)
+    ==> ./src/contrib/SignalSource/vAmp/*
+    ==> ./src/core/SignalSource/g.MOBIlabPlus/*
+    ==> ./src/core/Tools/BCI2000Certification/*
+    ==> ./src/shared/modules/signalprocessing/ARChannel.cpp
+    ==> ./src/shared/modules/signalprocessing/ARChannel.h
+    ==> ./src/shared/modules/signalprocessing/ARGroup.cpp
+    ==> ./src/shared/modules/signalprocessing/ARGroup.h
+    ==> ./src/shared/modules/signalprocessing/SpatialFilterCell.cpp
+    ==> ./src/shared/modules/signalprocessing/SpatialFilterCell.h
+    ==> ./src/shared/modules/signalprocessing/SpatialFilterGroup.cpp
+    ==> ./src/shared/modules/signalprocessing/SpatialFilterGroup.h
+    ==> ./tools/EEGlabImport/*
+        // Author: Adam Wilson
+
+    ==> ./src/contrib/SignalSource/TuckerDavis/*    
+        // Authors: jadamwilson2@gmail.com, juergen.mellinger@uni-tuebingen.de
+
+    ==> ./src/shared/modules/signalprocessing/ARFilter.cpp
+    ==> ./src/shared/modules/signalprocessing/ARFilter.h
+        // Authors: mcfarlan@wadsworth.org, juergen.mellinger@uni-tuebingen.de, Adam Wilson
+
+    ==> ./src/shared/modules/signalprocessing/SpatialFilter.cpp
+    ==> ./src/shared/modules/signalprocessing/SpatialFilter.h
+        // Authors: schalk@wadsworth.org, juergen.mellinger@uni-tuebingen.de, Adam Wilson
+
+Shi-Dong Zeng  (Georgia State U)
+    ==> ./src/extlib/3DAPI/*
+        // Authors: shzeng, schalk@wadsworth.org, juergen.mellinger@uni-tuebingen.de
+
+    ==> ./src/core/Application/P3Speller/P3SpellerTask.cpp
+    ==> ./src/core/Application/P3Speller/P3SpellerTask.h
+        // Authors: schalk@wadsworth.org, vkamat@cambridgeconsultants.com, pbrunner@wadsworth.org, shzeng, juergen.mellinger@uni-tuebingen.de
+

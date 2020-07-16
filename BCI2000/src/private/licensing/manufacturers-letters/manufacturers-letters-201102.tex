@@ -1,0 +1,379 @@
+\documentclass{wcletter}
+\usepackage{wcletter-jez}
+ 
+\renewcommand{\today}{February 4th, 2011}
+\renewcommand{\sig}{Jeremy Hill}
+\newcommand{\SirMadam}{Sir/Madam}
+\newcommand{\YoursFaithfully}{Yours faithfully}
+\newcommand{\XYZtec}{XYZtec}
+\newcommand{\XYZtecDevices}{\XYZtec{} devices}
+\newcommand{\SDKFiles}{%
+	xyz.h \\
+	xyz.lib \\
+	xyz.dll
+}
+\textheight     22.0cm
+
+\newcommand{\writeletter}[4][-]{
+\renewcommand{\XYZtec}{#2}
+\ifx-#1
+\renewcommand{\XYZtecDevices}{\XYZtec{} devices}
+\else
+\renewcommand{\XYZtecDevices}{#1}
+\fi
+\renewcommand{\SDKFiles}{#4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{wcletter}
+\letterto{#3}
+Dear \SirMadam,
+
+\re{SDK software licensing request by the BCI2000 project}
+
+As you may know, the BCI2000 software project (~{\tt http://bci2000.org}~) has become a widely-used platform for research involving real-time biosignal analysis. BCI2000 is now providing the basis for research in over 600 labs worldwide;  over 150 peer-reviewed journal papers have used it for real-time experiments;  and the initial article on BCI2000 (Schalk et al., 2004, IEEE Transactions on Biomedical Engineering) has received more than 300 citations.
+
+Among the reasons for BCI2000's popularity are its modularity and support for a wide range of hardware devices, \XYZtecDevices{} among them. Since BCI2000 contains a flexible and fully-documented C++ API, many users have built source acquisition modules for different devices;  some of these users have contributed their modules back to the BCI2000 project.  We are now maintaining and distributing binary acquisition modules for \XYZtec{} as well as for a variety of systems by 18 other manufacturers. These modules typically work out-of-the-box for our users.
+
+BCI2000 has always been, and will remain, available for free to researchers and educational institutions. At the same time, we have received criticism that BCI2000 is not distributed under a common open-source license.  In response, we will soon begin to distribute BCI2000 under the Gnu Public License (GPL), version 3.0.  We expect that this will further accelerate the process by which researchers can adapt and optimize BCI2000 for their needs---and hence, also, optimize the way in which some of them use \XYZtecDevices{}.  Since we have always tried to make BCI2000 a ``one-stop'' solution for our users, we are making efforts to include all the third-party dependencies in the C++ distribution.  Thus, we would like to ask your permission to distribute some \XYZtec{} SDK files along with our source distribution.  This includes the following files:
+
+\parbox{0.1\textwidth}{~}\parbox{0.5\textwidth}{\small \tt \SDKFiles}
+
+Note that a GPL project may easily have dependencies that are non-GPL, so we are not asking you to {\em re-license\/} your files under the GPL unless you particularly wish to do so. We are asking only for permission to distribute them together with BCI2000, the recipients then being bound by whatever conditions are stated in the files. On request, I would be happy to e-mail you the exact versions of the files we are using.  
+
+I hope that you will share our view that this step can be of great benefit to \XYZtec{}, in supporting the use of your devices in the research community. If you have any other questions, please do not hesitate to contact me by e-mail or otherwise (details above).
+
+\YoursFaithfully,
+
+
+
+
+\signature
+\end{wcletter}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	5DT%
+}{%
+	5DT Inc. \\
+	15375 Barranca Parkway, G-103 \\
+	Irvine, CA 92618 \\
+	USA \\
+%	5DT (Fifth Dimension Technologies)
+%	25 De Havilland Crescent Crescent, P.O. Box 5
+%	Persequor Technopark, 0020
+%	Pretoria,
+%	SOUTH AFRICA
+}{%
+    fglove.dll \\
+    fglove.h
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	Biosemi%
+}{%
+	BioSemi B.V. \\ 
+	WG-Plein 129 \\ 
+	1054SC Amsterdam \\ 	 
+	NETHERLANDS \\
+}{%
+    LABVIEW\_DLL.h \\
+    LABVIEW\_DLL.dll
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	BrainProducts%
+}{%
+	BrainProducts GmbH \\
+	Zeppelinstra\ss{}e 7 \\
+	82205 Gilching \\
+	GERMANY
+}{%
+    RecorderRDA.h \\
+    DiBpGmbH.dll \\
+    FirstAmp.dll \\
+    FirstAmp.h \\
+    FirstAmp.inf \\
+    FirstAmp.lib \\
+    FirstAmp.sys \\
+    coff/FirstAmp.lib \\
+    mingw/FirstAmp.def \\
+    mingw/libFirstAmp.a
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter[Cleveland Medical Devices' BioRadio amplifiers]{%
+	Cleveland Medical Devices%
+}{%
+	Cleveland Medical Devices Inc.\\
+	Suite 400, 4415 Euclid Avenue \\
+	Cleveland, OH 44103 \\
+	USA
+}{%
+	BioRadio150DLL.dll \\
+	BioRadio150DLL.h \\
+	BioRadio150DLL\_Borland.lib \\
+	BioRadio150DLL\_MSVC.lib \\
+	BioRadioConfig.h \\
+	Documentation.html \\
+	docs\_html/*   \# (48 files)
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	Data  Translation%
+}{%
+	Data Translation, Inc. \\
+	100 Locke Drive \\
+	Marlboro, MA 01752-1192 \\
+	USA
+}{%
+	OLMEM32.lib \\
+	OLTYPES.h \\
+	oldaapi.h \\
+	oldaapi32.lib \\
+	olmem.h
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	Emotiv%
+}{%
+	Emotiv Systems, Inc. \\
+	Room 606, Fook Cheong Building \\
+	63 Hoi Yuen Road \\
+	Kwun Tong \\
+	HONG KONG
+}{%
+	edk.dll     \\
+	edk\_utils.dll \\
+	edk.lib \\
+    EmoStateDLL.h \\
+	edk.h \\
+    edkErrorCode.h \\
+    edk.lib
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	g.tec%
+}{%
+	g.tec medical engineering GmbH \\
+	Sierningstrasse 14 \\
+	4521 Schiedlberg \\
+	AUSTRIA
+}{%
+	gMOBIlab/coff/Symbols.txt \\
+	gMOBIlab/coff/spa20a.def \\
+	gMOBIlab/coff/spa20a.lib \\
+	gMOBIlab/mingw/libspa20a.a \\
+	gMOBIlab/mingw/spa20a.def \\
+	gMOBIlab/spa20a.h \\
+	gMOBIlab/spa20a.lib \\
+	gMOBIlabPlus/coff/gMOBIlabplus.lib \\
+	gMOBIlabPlus/gMOBIlabplus.h \\
+	gMOBIlabPlus/gMOBIlabplus.lib \\
+	gMOBIlabPlus/mingw/gMOBIlabPlus.def \\
+	gMOBIlabPlus/mingw/libgMOBIlabPlus.a \\
+	gUSBamp/coff/gUSBamp.lib \\
+	gUSBamp/gUSBamp.h
+	gUSBamp/gUSBamp.lib \\
+	gUSBamp/mingw/gUSBamp.def \\
+	gUSBamp/mingw/libgUSBamp.a \\
+    gUSBamp.dll
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	Measurement Computing%
+}{%
+	Measurement Computing Corporation \\
+	10 Commerce Way \\
+	Norton, MA 02766 \\
+	USA
+}{%
+    cbw.h
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	National Instruments%
+}{%
+	National Instruments Corporation \\
+	11500 N Mopac Expwy \\
+	Austin, TX 78759-3504 \\
+	USA
+}{%
+    NIDAQmx.h \\
+	NIDAQmx.lib \\
+    NIDAQmx\_orig.lib \\
+    Convert.h \\
+    Olderror.h \\
+    convert.c \\
+    nidaq.h \\
+    nidaq.pas \\
+    nidaq32.lib \\
+    nidaqcns.h \\
+    nidaqcns.pas \\
+    nidaqerr.h \\
+    nidaqex.h \\
+    nidex32.lib \\
+    regdefs.h \\
+    regdefs.pas
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{%
+	NeuroSky%
+}{%
+	NeuroSky, Inc. \\
+	125 South Market Street, \#900 \\
+	San Jose, CA, 95113 \\
+	USA
+}{%
+    thinkgear.lib \\
+    thinkgear.dll \\
+    thinkgear.h
+}
+\writeletter{%
+	Neuroscan%
+}{%
+	Compumedics Neuroscan \\
+	6605 West W.T. Harris Blvd, Suite F \\
+	Charlotte, NC 28269 \\
+	USA
+}{%
+    NSDevice.dll \\
+    NSDevice.h
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter[Starlab's Enobio amplifiers]{%
+	Starlab%
+}{%
+	Starlab \\
+	C/ Teodor Roviralta, 45 \\
+	08022 - Barcelona \\
+	SPAIN
+}{%
+    EnobioDLL.lib \\
+    EnobioDLL.dll \\
+    CEnobioCtrl.h
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{
+	TMSi%
+}{%
+	TMS International B.V. \\
+	P.O. Box 6044 \\
+	7503 GA Enschede \\
+	NETHERLANDS
+}{%
+    Feature.cpp \\
+    Feature.h \\
+    RTDevice.cpp \\
+    RTDevice.h \\
+    Sadio.h
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter{
+	Tucker Davis%
+}{%
+	Tucker-Davis Technologies \\
+	11930 Research Circle \\
+	Alachua, FL 32615 \\
+	USA
+}{%
+	chAcquire16.rco \\
+	chAcquire16.rpx \\
+	chAcquire64.rco \\
+	chAcquire64.rpx \\
+	chAcquire64\_RZ2.rcx \\
+	chAcquire64sineTest.rco \\
+	chAcquire64sineTest.rpx \\
+	zBUSx.ocx \\
+	PA5x.ocx \\
+	RPcoX.ocx \\
+	zBUSx.ocx
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\writeletter[CareFusion's NicoletOne amplifiers]{%
+	CareFusion%
+}{%
+	CareFusion \\
+	3750 Torrey View Court \\
+	San Diego, CA 92130 \\
+	USA
+}{%
+	./src/contrib/SignalSource/NicoletOne/lib/Include/EventArray.h \\
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NGuid.h \\
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NrvErrorMacros.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/RemoteBuilder.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SignalInfoImpl.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/nrvtime.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/DLLs/AddInIFSDK33.dll \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/DLLs/DataStorageSDK33.dll \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/DLLs/FileAccessSDK33.dll \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/DLLs/RegisterDll.bat \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/DLLs/XStorageSDK33.dll \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/AddinIf.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/AtlantisEventStructs.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/AtlantisEvents.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/ChannelInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/CommonDecl.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/DataPacket.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/DbInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/DerivedSignalHelper.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/DerivedSignalInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/EegFileWrapper.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/EventArray.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/EventMarker.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/EventTypeInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/FileAccess3.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/FileAccess3\_i.c \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/HcSensorTypes.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/ImpedanceMarker.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/InfoPacket.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/InfoPacketDef.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/InfoPacketGUIDs.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/InfoStructureSizes.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/InfoStructures.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/InputInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/InputSettingsInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/MatlabSDK.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NGuid.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NPacket.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NotifyGUIDs.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NotifyPacket.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NotifyPacketDef.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/NrvErrorMacros.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/PacketDef.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/RCEvent.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/RecordingHelper.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/RemoteBuilder.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SeizureEvent.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SensorInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SharedThreadStuff.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SignalInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SignalInfoImpl.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SignalLookupCache.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SignalName.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/Sniffer.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SocketStuff.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/SpikeEvent.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/TSInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/TextInfoBase.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/VSyncInfo.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/datastructures.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/hcEventTypes.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/mapptr.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/nrvdate.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/nrvtime.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/sockwnd.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Include/tgcopy.h \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDK.lib \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDK6.lib \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKd.lib \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKd6.lib \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKu.lib \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKu6.lib \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKud.lib \\ 
+	./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKud6.lib
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

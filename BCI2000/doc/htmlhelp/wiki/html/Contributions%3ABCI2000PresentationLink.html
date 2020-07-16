@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:BCI2000PresentationLink - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:BCI2000PresentationLink,Contributions:Applications,Contributions:BCI2000Automation,Contributions:BCI2000Command,Contributions:BCI2000PythonBindings,Programming Reference:BCI2000Remote Class,User Reference:DataIOFilter,User Reference:Operator Module Scripting" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">BCI2000PresentationLink</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Author"><span class="tocnumber">3.1</span> <span class="toctext">Author</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Sponsors"><span class="tocnumber">3.2</span> <span class="toctext">Sponsors</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Source_Code_Revisions"><span class="tocnumber">3.3</span> <span class="toctext">Source Code Revisions</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Data_Port_Extension"><span class="tocnumber">4.1</span> <span class="toctext">Data Port Extension</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#Recording_Events"><span class="tocnumber">4.1.1</span> <span class="toctext">Recording Events</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#Timing_Precision"><span class="tocnumber">4.1.2</span> <span class="toctext">Timing Precision</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#Controlling_BCI2000"><span class="tocnumber">4.1.3</span> <span class="toctext">Controlling BCI2000</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#PCL_Extension"><span class="tocnumber">4.2</span> <span class="toctext">PCL Extension</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#Installation"><span class="tocnumber">5</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Installation_Steps"><span class="tocnumber">5.1</span> <span class="toctext">Installation Steps</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Troubleshooting"><span class="tocnumber">5.2</span> <span class="toctext">Troubleshooting</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Deinstallation"><span class="tocnumber">5.3</span> <span class="toctext">Deinstallation</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Windows_installation_options"><span class="tocnumber">5.4</span> <span class="toctext">Windows installation options</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#BCI2000PCLLibrary_Reference"><span class="tocnumber">6</span> <span class="toctext">BCI2000PCLLibrary Reference</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Constructors"><span class="tocnumber">6.1</span> <span class="toctext">Constructors</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#controller.28.29"><span class="tocnumber">6.1.1</span> <span class="toctext">controller()</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#controller.28_string_location_.29"><span class="tocnumber">6.1.2</span> <span class="toctext">controller( string location )</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Properties"><span class="tocnumber">6.2</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#hide_window.28.29"><span class="tocnumber">6.2.1</span> <span class="toctext">hide_window()</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#show_window.28.29"><span class="tocnumber">6.2.2</span> <span class="toctext">show_window()</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_window_title.28_string_window_title_.29"><span class="tocnumber">6.2.3</span> <span class="toctext">set_window_title( string window_title )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_subject.28_string_subject_id_.29"><span class="tocnumber">6.2.4</span> <span class="toctext">set_subject( string subject_id )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_session.28_string_session_id_.29"><span class="tocnumber">6.2.5</span> <span class="toctext">set_session( string session_id )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_data_directory.28_string_data_directory_.29"><span class="tocnumber">6.2.6</span> <span class="toctext">set_data_directory( string data_directory )</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Control_of_operation"><span class="tocnumber">6.3</span> <span class="toctext">Control of operation</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#startup_modules.28_array.28_string_.29_list_of_modules_.29"><span class="tocnumber">6.3.1</span> <span class="toctext">startup_modules( array( string ) list_of_modules )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_config.28.29"><span class="tocnumber">6.3.2</span> <span class="toctext">set_config()</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#start.28.29"><span class="tocnumber">6.3.3</span> <span class="toctext">start()</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#stop.28.29"><span class="tocnumber">6.3.4</span> <span class="toctext">stop()</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Parameter_access"><span class="tocnumber">6.4</span> <span class="toctext">Parameter access</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#string_get_parameter.28_string_name_.29"><span class="tocnumber">6.4.1</span> <span class="toctext">string get_parameter( string name )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_parameter.28_string_name.2C_string_value_.29"><span class="tocnumber">6.4.2</span> <span class="toctext">set_parameter( string name, string value )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#load_parameters_local.28_string_parameter_file_.29"><span class="tocnumber">6.4.3</span> <span class="toctext">load_parameters_local( string parameter_file )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#load_parameters_remote.28_string_parameter_file_.29"><span class="tocnumber">6.4.4</span> <span class="toctext">load_parameters_remote( string parameter_file )</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#State_variable_access"><span class="tocnumber">6.5</span> <span class="toctext">State variable access</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#add_state_variable.28_string_name.2C_int_bit_width.2C_int_initial_value_.29"><span class="tocnumber">6.5.1</span> <span class="toctext">add_state_variable( string name, int bit_width, int initial_value )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#double_get_state_variable.28_string_name_.29"><span class="tocnumber">6.5.2</span> <span class="toctext">double get_state_variable( string name )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_state_variable.28_string_name.2C_double_value_.29"><span class="tocnumber">6.5.3</span> <span class="toctext">set_state_variable( string name, double value )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#double_get_control_signal.28_int_channel.2C_int_element_.29"><span class="tocnumber">6.5.4</span> <span class="toctext">double get_control_signal( int channel, int element )</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="Contributions%253ABCI2000PresentationLink.html#Operator_scripting"><span class="tocnumber">6.6</span> <span class="toctext">Operator scripting</span></a>
+<ul>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#int_execute.28_string_command.2C_string_byRef_output_.29"><span class="tocnumber">6.6.1</span> <span class="toctext">int execute( string command, string byRef output )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#set_script.28_string_handler.2C_string_script_.29"><span class="tocnumber">6.6.2</span> <span class="toctext">set_script( string handler, string script )</span></a></li>
+<li class='toclevel-3'><a href="Contributions%253ABCI2000PresentationLink.html#string_get_script.28_string_event_.29"><span class="tocnumber">6.6.3</span> <span class="toctext">string get_script( string event )</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#Examples"><span class="tocnumber">7</span> <span class="toctext">Examples</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253ABCI2000PresentationLink.html#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>BCI2000PresentationLink contains two plug-ins for the <a href="http://www.nbs.com/" class='external text' title="http://www.nbs.com/" rel="nofollow">NBS Presentation</a> stimulus delivery software, a so-called <i>DataPort Extension</i> which allows to record Presentation events into BCI2000 state variables, and a <i>PCL Language Extension</i> that allows to control BCI2000 from Presentation scripts written in the PCL language.
+</p><p>Before you can use it, BCI2000PresentationLink must be installed on your system, and must be registered with the Presentation software. This is possible even if your user account has no administrative privileges. For details, see the <a href="Contributions%253ABCI2000PresentationLink.html#Installation" title="">Installation</a> section below.
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/trunk/src/contrib/ExternalLinks/BCI2000PresentationLink" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/ExternalLinks/BCI2000PresentationLink" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/ExternalLinks/BCI2000PresentationLink</a>
+</p>
+<a name="Versioning"></a><h2>Versioning</h2>
+<a name="Author"></a><h3>Author</h3>
+<p>juergen.mellinger@uni-tuebingen.de
+</p>
+<a name="Sponsors"></a><h3>Sponsors</h3>
+<p>Sergio Ruiz and Ranga Sitaram
+</p>
+<a name="Source_Code_Revisions"></a><h3>Source Code Revisions</h3>
+<ul><li>Initial development: BCI2000 r3918; Presentation Version 15 Build 11.15.11
+</li><li>Tested under: BCI2000 r3967; Presentation Version 15 Build 11.15.11
+</li></ul>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<a name="Data_Port_Extension"></a><h3>Data Port Extension</h3>
+<p>The BCI2000PresentationLink DataPort extension provides a BCI2000 specific kind of Data Port in Presentation. In Presentation, Data Ports are objects that receive information about Presentation Events, which are triggered on Stimulus display, or from PCL scripts.
+</p>
+<a name="Recording_Events"></a><h4>Recording Events</h4>
+<p>When receiving notification about an event from Presentation, a BCI2000 Data Port transmits it to BCI2000, such that it gets recorded in the BCI2000 data file. By default, events of the following types are recorded: Picture Sound Video Nothing Response. Other Presentation event types are ignored, unless added to the Event Types list in the Data Port's settings dialog. In BCI2000 data files, events are represented as numeric values of state variables that have names matching the corresponding Presentation event type. Thus, events are best represented when their Presentation event code is an integer number in the range between 0 and 2^32; in this case, the BCI2000 state value matches the Presentation event code at the point in time when the event was received. When the Presentation event code is a string, or does not fit into the above range, its first four characters are translated into their ASCII values, and concatenated to form a 32-bit integer. While this preserves as much information as possible about events, it may make it impossible for you to distinguish events whose event codes agree in their first four characters.
+</p>
+<a name="Timing_Precision"></a><h4>Timing Precision</h4>
+<p>Presentation achieves millisecond-accuracy when measuring the time at which an event has occurred. Unfortunately, this precision does not carry over to BCI2000 because, as stated in the Presentation documentation,  the time when Presentation actually reports an event may be delayed by up to 50ms with regard to the time when it occurred. Although a Data Port object is provided with the time stamp of the event's occurrence, this information can not be utilized by BCI2000 because events cannot be dated back in time due to the way they are recorded in BCI2000. Thus, event information in a BCI2000 data file reflects the time when that event was reported to the Data Port object, not the time when its occurrence was detected. Presentation guarantees that the difference between these two time points, i.e. the delay, is below 50ms. Beyond that, they do not make any statement about how delay varies between events (timing jitter). However, in practice, one may assume that timing jitter is low, and that the delay is significantly less than the guaranteed value of 50ms.
+</p><p>On a typical LCD display, frame duration is 1/(60Hz) = 16.7ms. When presenting stimuli on such a display, the delay jitter between Presentation's detection of the stimulus, and BCI2000's recording of the associated event, will be less than the duration of a single display frame, and the absolute value of the delay will correspond to about a single frame. This may be a problem when you need to measure detect features in evoked activity on a time scale below 1/60s, or a frequency scale above 60Hz, which is not the case in most experiments. Also note that the temporal resolution of evoked activity is only affected by jitter, not by the absolute value of the delay. When doing exact latency measurements, you should perform measurements with a light or audio sensor in order to establish an estimate for the delay, so you can correct latency measurements for the delay, as well as for its jitter, to obtain an upper limit for temporal resolution.
+</p>
+<a name="Controlling_BCI2000"></a><h4>Controlling BCI2000</h4>
+<p>Presentation provides "Resume" and "Pause" event types. By default, when a "Resume" event is received, the BCI2000 Data Port starts a BCI2000 recording (a "Run"), and when a "Pause" event is received, it stops recording. It is possible to set a subject ID, session ID, and data directory by providing this information in the "Resume" event's event code, separated by white space, where session ID and data directory may also be omitted. E.g., when sending a "Resume" event with an event code of "SUB 001 C:\my data", the recording will be stored as "C:\my data\SUB001\SUBS001R01.dat". For more information about the naming and location of data files, see the <a href="User_Reference%253ADataIOFilter.html#Common_Data_Storage_Parameters" title="User Reference:DataIOFilter">data storage parameters reference</a>.
+</p>
+<a name="PCL_Extension"></a><h3>PCL Extension</h3>
+<p>The BCI2000PresentationLink PCL extension is a PCL Library that contains a single class called BCI2000Controller. This is an interface to the BCI2000 Operator module, and allows to start up, configure, and run BCI2000 from PCL scripts.
+</p><p>To use it, instantiate an object of type "bci2000::controller" by writing
+</p>
+<pre>bci2000::controller bci = new bci2000::controller;
+</pre>
+<p>This will start up the Operator module residing in the same directory as BCI2000PresentationLink. You may then use the startup_modules() method in order to start up BCI2000 core modules.
+In case you have configured a BCI2000 DataPort for your experiment, the controller object's default properties are taken from the settings of the DataPort object.
+</p><p>Alternatively, you may specify the path to a BCI2000 batch file in the BCI2000/batch directory as an argument to the bci2000::controller operator. The path will be interpreted relative to Presentation's working directory:
+</p>
+<pre>bci2000::controller bci = new bci2000::controller( "path\to\bci2000\batch\CursorTask_SignalGenerator.bat" );
+</pre>
+<p>An appropriate batch file should start up Operator and core modules, and needs to forward its command line arguments to the Operator module. All batch files coming with BCI2000 fulfil this condition. When a batch file is specified, there is no need to call the startup_modules() method.
+</p><p>As yet another option, you may connect to an Operator module that is already running, e.g., on a remote machine on the network. In this case, call the controller's constructor with an appropriate network address and port, i.e. the telnet address the remote Operator module is listening on, i.e. the remote machine's IP address, followed with a colon, and the port specified when starting up the remote Operator module:
+</p>
+<pre>bci2000::controller bci = new bci2000::controller( "134.2.131.129:3999" );
+</pre>
+<p>The remote Operator module must have been started with the --Telnet command line option, followed with an external address to listen on. On the remote machine, this would typically be "*:3999". Don't use any of the ports between 4000 and 4002, as this will interfere with the communication between the Operator module, and BCI2000 core modules. Depending on whether the remote Operator module has been started up together with its core modules, or not, you may then call the startup_modules() method in order to start up BCI2000 core modules on the remote machine.
+</p><p>Once all BCI2000 modules are running, you may load parameter files locally or remotely using the load_parameters_local() and load_parameters_remote() methods. Subject ID, Session ID, and data directory are set using the respective bci2000::controller methods.
+</p><p>A recording may then be started by calling the start() method. Depending on configuration, the recording will terminate automatically, or needs to be terminated by a call to the stop() method.
+</p><p>To run BCI2000 in a different configuration (i.e., with different core modules), it is not necessary to terminate the Operator module. Rather, you may execute startup_modules() multiple times in order to terminate currently running core modules, and start different ones.
+</p><p>The bci2000::controller object will be deleted once its last reference goes out of scope in a PCL script. Depending on whether the Operator module was started up by the object's constructor, this will terminate the Operator module as well. Thus, you should declare that reference in the outermost scope of your PCL script. When connection was made to an already running Operator module, local or remote, the connection will be closed but the Operator module will remain running. The same applies when connection was made to an Operator module associated with a BCI2000 DataPort; then, the connection's life time corresponds to the life time of the DataPort object, i.e. the duration of the experiment.
+</p>
+<a name="Installation"></a><h2>Installation</h2>
+<a name="Installation_Steps"></a><h3>Installation Steps</h3>
+<p>Before you can use BCI2000PresentationLink, it must be made known to your Windows system, and to Presentation. Each time when you are using BCI2000 on a new machine, under a different user account, or when you moved BCI2000 from its original installation location, you will need to manually install BCI2000PresentationLink in the system. This can be done by double-clicking the InstallPresentationLink.cmd batch file located in BCI2000/prog.
+</p><p>As a second step, BCI2000PresentationLink must be registered with Presentation. You will need to repeat this step each time you are using Presentation on a new machine, or under a different user account.
+</p>
+<ul><li>In the Presentation main window, choose "Extension Manager" from the "Tools" menu.
+</li><li>In the Extension Manager window, click the "Select Extension File" button, and select your BCI2000 installation's BCI2000/prog/BCI2000PresentationLink.dll file. When you have more than one BCI2000 installation, then select the BCI2000PresentationLink file from the installation you want to be used by default.
+</li><li>After clicking "OK", you will see two extensions listed under "Available Extensions", one that is a "PCL Extension", and one that is a "Data Port". Click the first entry in the list of available extensions, and enter its name into the "Register As:" field.
+</li><li>Make sure the "Dont 't register server with Windows" checkbox is checked. Then, click "Register Extension".
+</li><li>When you get an error message, make sure you are not trying to register an extension twice, and make sure that you performed installation into Windows as described above.
+</li><li>Again, click the "Select Extension File" button, and select your BCI2000PresentationLink file.
+</li><li>This time, click the second entry in the "Available Extensions" list, enter its name into the "Register As:" field, make sure the "Don't register ..." checkbox is checked, and click "Register Extension".
+</li><li>Both the BCI2000DataPortExtension, and the BCI2000PCLLibrary should now appear in the "Registered Extensions" list at the top of the Extension Manager window.
+</li></ul>
+<p>As a third step, you will need to create a BCI2000 Data Port in your experiment. You will need to do this each time you are creating a new experiment that uses BCI2000.
+</p>
+<ul><li>In the Presentation window, go to the "Settings" tab.
+</li><li>In the icon band on the left, click "Port".
+</li><li>Click "Add" under "Data Ports" to the right.
+</li><li>From the "Type" drop-down menu, choose "BCI2000PresentationLink Data Port".
+</li><li>Right to that drop-down menu, a "Properties" button appears. Click it.
+</li><li>Read the description of the dialog elements in order to get an idea of your more advanced options.
+</li><li>BCI2000 must be started up in a certain configuration defined by the core module executables which to run. Such a configuration may be chosen in the Data Port properties, by clicking "Choose ..." and selecting an appropriate batch file from BCI2000/batch. Alternatively, you may start up a selection of core modules from a PCL script by instantiating a bci2000::controller object, and calling its startup_modules() method.
+</li><li>Click "OK".
+</li></ul>
+<p>You may now record events into BCI2000 from your own experiments. For examples how to do this from both scenarios written in SDL, and PCL scripts, see the <a href="Contributions%253ABCI2000PresentationLink.html#Examples" title="">examples section</a> below.
+</p>
+<a name="Troubleshooting"></a><h3>Troubleshooting</h3>
+<ul><li>Presentation displays an error message "An attempt was made to create a COM object for a class that is not registered":
+</li></ul>
+<dl><dt>Execute <i>BCI2000/prog/InstallPresentationLink.cmd</i> under the user account that is going to run the Presentation program.
+</dt></dl>
+<ul><li>When trying to register an extension, Presentation displays an error message "DLL registration failed ...":
+</li></ul>
+<dl><dt>Make sure the "Don't register server with Windows" check box is checked when clicking "Register Extension". You may need to follow the advice of the previous troubleshooting entry as well.
+</dt></dl>
+<a name="Deinstallation"></a><h3>Deinstallation</h3>
+<p>BCI2000Presentation installation adds a few registry keys to the current user's, or the machine's, "Software/Classes" key. When these keys remain on your machine after removing BCI2000, they will not do any harm, so you need not bother removing them. To remove those keys anyway, log in as the user for whom installation was performed, and execute
+</p>
+<pre>InstallPresentationLink /u
+</pre>
+<p>from a command prompt inside the BCI2000/prog directory.
+</p>
+<a name="Windows_installation_options"></a><h3>Windows installation options</h3>
+<p>BCI2000PresentationLink may be installed or deinstalled for all users of a machine, or only for the user who runs the installation script. Selection between the two is done automatically, by determining whether the user has administrator rights. If so, installation is performed per-machine; if not, installation is done per-user. To manually choose the type of installation, you will need to execute the following command from the command prompt, inside the BCI2000/prog directory:
+</p>
+<pre>regsvr32 /n /i:&lt;option&gt; BCI2000PresentationLink.dll
+</pre>
+<p>There, &lt;option&gt; may be one of the following:
+</p>
+<ul><li><i>user</i> to install for the current user only,
+</li><li><i>system</i> to install for all users,
+</li><li><i>any</i> to try installation for all users, and switch to per-user installation when that fails,
+</li><li><i>both</i> to install both for all users, and the current user (this option only makes sense for deinstallation).
+</li></ul>
+<p>Note that per-user installation overrides system-wide installation. This may lead to confusing behavior of BCI2000PresentationLink when switching between multiple users, and executing the installation program for those users, or when granting a certain user administrative privileges at one time, and later removing those privileges. To completely remove all references to BCI2000PresentationLink from your machine under such circumstances, execute
+</p>
+<pre>rgsvr32 /n /u /s /i:both BCI2000PresentationLink.dll
+</pre>
+<p>under all user accounts that may have executed the installation script, and make sure that at least one of those accounts has administrative privileges.
+</p>
+<a name="BCI2000PCLLibrary_Reference"></a><h2>BCI2000PCLLibrary Reference</h2>
+<p>The BCI2000 PCL Extension contains a single class type called <i>bci2000::controller</i>. To use it, instantiate a controller object by writing
+</p>
+<pre>bci2000::controller bci = new bci2000::controller();
+</pre>
+<p>This type has the following methods:
+</p>
+<a name="Constructors"></a><h3>Constructors</h3>
+<a name="controller.28.29"></a><h4>controller()</h4>
+<p>Creates a controller connecting to the first BCI2000 data port, or to the BCI2000 installation in which BCI2000PresentationLink resides.
+</p>
+<a name="controller.28_string_location_.29"></a><h4>controller( string location )</h4>
+<p>Creates a controller connecting to a BCI2000 Operator module, or to a network address. In the "location" argument, provide a path to a BCI2000 Operator module, or network address in form &lt;ip&gt;:&lt;port&gt;.
+</p>
+<a name="Properties"></a><h3>Properties</h3>
+<a name="hide_window.28.29"></a><h4>hide_window()</h4>
+<p>Hides the BCI2000 Operator main window.
+</p>
+<a name="show_window.28.29"></a><h4>show_window()</h4>
+<p>Shows the BCI2000 Operator main window.
+</p>
+<a name="set_window_title.28_string_window_title_.29"></a><h4>set_window_title( string window_title )</h4>
+<p>Sets the title of the BCI2000 Operator main window.
+</p>
+<a name="set_subject.28_string_subject_id_.29"></a><h4>set_subject( string subject_id )</h4>
+<p>Sets a subject ID for the BCI2000 recording.
+</p>
+<a name="set_session.28_string_session_id_.29"></a><h4>set_session( string session_id )</h4>
+<p>Sets a session ID for the BCI2000 recording.
+</p>
+<a name="set_data_directory.28_string_data_directory_.29"></a><h4>set_data_directory( string data_directory )</h4>
+<p>Sets a data directory for the BCI2000 recording, relative to the BCI2000 prog directory.
+Data files will be placed into a subject and session specific directory below the data directory.
+</p>
+<a name="Control_of_operation"></a><h3>Control of operation</h3>
+<a name="startup_modules.28_array.28_string_.29_list_of_modules_.29"></a><h4>startup_modules( array( string ) list_of_modules )</h4>
+<p>Starts up a given set of core modules (typically, a Source, SignalProcessing, and Application module). In the argument, provide a list of module executables, optionally with their command line options.
+</p>
+<a name="set_config.28.29"></a><h4>set_config()</h4>
+<p>Applies current set of parameters to the BCI2000 system.
+</p>
+<a name="start.28.29"></a><h4>start()</h4>
+<p>Starts operation.
+</p>
+<a name="stop.28.29"></a><h4>stop()</h4>
+<p>Suspends operation.
+</p>
+<a name="Parameter_access"></a><h3>Parameter access</h3>
+<a name="string_get_parameter.28_string_name_.29"></a><h4>string get_parameter( string name )</h4>
+<p>Returns the value of the specified parameter.
+</p>
+<a name="set_parameter.28_string_name.2C_string_value_.29"></a><h4>set_parameter( string name, string value )</h4>
+<p>Sets the value of the specified parameter.
+</p>
+<a name="load_parameters_local.28_string_parameter_file_.29"></a><h4>load_parameters_local( string parameter_file )</h4>
+<p>Loads a parameter file relative to Presentation's working directory.
+</p>
+<a name="load_parameters_remote.28_string_parameter_file_.29"></a><h4>load_parameters_remote( string parameter_file )</h4>
+<p>Loads a parameter file relative to the BCI2000/prog directory.
+</p>
+<a name="State_variable_access"></a><h3>State variable access</h3>
+<a name="add_state_variable.28_string_name.2C_int_bit_width.2C_int_initial_value_.29"></a><h4>add_state_variable( string name, int bit_width, int initial_value )</h4>
+<p>Adds a state variable to the system. This is only possible before core modules have connected to the Operator module.
+</p>
+<a name="double_get_state_variable.28_string_name_.29"></a><h4>double get_state_variable( string name )</h4>
+<p>Returns the value of a BCI2000 state variable.
+</p>
+<a name="set_state_variable.28_string_name.2C_double_value_.29"></a><h4>set_state_variable( string name, double value )</h4>
+<p>Sets the value of a BCI2000 state variable.
+</p>
+<a name="double_get_control_signal.28_int_channel.2C_int_element_.29"></a><h4>double get_control_signal( int channel, int element )</h4>
+<p>Returns the value of an element in the control signal. Indices are 1-based.
+</p>
+<a name="Operator_scripting"></a><h3>Operator scripting</h3>
+<a name="int_execute.28_string_command.2C_string_byRef_output_.29"></a><h4>int execute( string command, string byRef output )</h4>
+<p>Executes a BCI2000 Operator scripting command. Output is copied into the string variable given as a second argument. If the command is "system prog.exe", returns the return value of the execution of prog.exe. In most cases, the return value of execute() is 0, independently of whether the command was successful or not.
+</p>
+<a name="set_script.28_string_handler.2C_string_script_.29"></a><h4>set_script( string handler, string script )</h4>
+<p>Associates BCI2000 Operator scripting commands, given in "script", with a handler whose name is given in the "handler" argument. See <a href="User_Reference%253AOperator_Module_Scripting.html#Handlers" title="User Reference:Operator Module Scripting">User Reference:Operator Module Scripting#Handlers</a> for a list of handler names.
+</p>
+<a name="string_get_script.28_string_event_.29"></a><h4>string get_script( string event )</h4>
+<p>Returns BCI2000 Operator scripting commands associated with an event.
+</p>
+<a name="Examples"></a><h2>Examples</h2>
+<p>Full examples for both stimulus presentation and feedback paradigms are available in the <i>Examples</i> subdirectory of the BCI2000PresentationLink directory.
+</p>
+<pre>
+scenario = &quot;Minimal BCI2000 example&quot;;
+
+begin;
+# Trial definitions
+...
+
+begin_pcl;
+
+# Create a BCI2000 controller object.
+bci2000::controller bci = new bci2000::controller;
+
+# Start up modules.
+array&lt;string&gt; modules[3] =
+{ &quot;SignalGenerator&quot;, &quot;DummySignalProcessing&quot;, &quot;DummyApplication&quot; };
+bci.startup_modules( modules );
+
+# Synchronize BCI2000 subject id with Presentation's.
+bci.set_subject( logfile.subject() );
+bci.set_session( &quot;001&quot; );
+
+bci.load_parameters_remote( &quot;myparms.prm&quot; );
+
+# Suppress display of default visualization windows.
+bci.set_parameter( &quot;VisualizeTiming&quot;, &quot;0&quot; );
+bci.set_parameter( &quot;VisualizeSource&quot;, &quot;0&quot; );
+
+bci.set_config();
+bci.start();
+
+# Trial presentation
+...
+
+bci.stop();
+</pre>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Programming_Reference%253ABCI2000Remote_Class.html" title="Programming Reference:BCI2000Remote Class">Programming Reference:BCI2000Remote Class</a>, <a href="Contributions%253ABCI2000Automation.html" title="Contributions:BCI2000Automation">Contributions:BCI2000Automation</a>, <a href="Contributions%253ABCI2000Command.html" title="Contributions:BCI2000Command">Contributions:BCI2000Command</a>, <a href="Contributions%253ABCI2000PythonBindings.html" title="Contributions:BCI2000PythonBindings">Contributions:BCI2000PythonBindings</a>, 
+<a href="Contributions%253AApplications.html" title="Contributions:Applications">Contributions:Applications</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

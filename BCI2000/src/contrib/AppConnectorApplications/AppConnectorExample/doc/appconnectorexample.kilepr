@@ -1,0 +1,32 @@
+[General]
+img_extIsRegExp=false
+img_extensions=.eps .pdf .dvi .ps .fig .gif .jpg .jpeg .png
+kileprversion=1
+kileversion=1.9.3
+lastDocument=AppConnectorExample.tex
+masterDocument=
+name=AppConnectorExample
+pkg_extIsRegExp=false
+pkg_extensions=.cls .sty .dtx
+src_extIsRegExp=false
+src_extensions=.tex .ltx .bib .mp
+
+[Tools]
+MakeIndex=
+QuickBuild=
+
+[item:AppConnectorExample.tex]
+archive=true
+column=21
+encoding=ISO 8859-1
+highlight=LaTeX
+line=20
+open=true
+
+[item:appconnectorexample.kilepr]
+archive=true
+column=7340133
+encoding=
+highlight=
+line=0
+open=false

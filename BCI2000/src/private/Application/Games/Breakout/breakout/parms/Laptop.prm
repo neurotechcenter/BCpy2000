@@ -1,0 +1,6 @@
+Application:Window:ApplicationBase      int       WindowWidth=           640 // width of application window
+Application:Window:ApplicationBase      int       WindowHeight=          640 // height of application window
+Application:Window:ApplicationBase      int       WindowLeft=              0 // screen coordinate of application window's left edge
+Application:Window:ApplicationBase      int       WindowTop=               0 // screen coordinate of application window's top edge
+
+Application:Game                        float     AudioVolume=             0.7      // Game sound volume 

@@ -1,0 +1,6 @@
+﻿  moc_BCI2000Viewer.cpp
+  moc_SignalWidget.cpp
+  Version.cpp
+  BCI2000Viewer.cpp
+c:\bci2000.python3\src\core\tools\bci2000viewerqt\bci2000viewer.cpp(37): fatal error C1083: Cannot open include file: 'AudioSink.h': No such file or directory
+  Generating Code...

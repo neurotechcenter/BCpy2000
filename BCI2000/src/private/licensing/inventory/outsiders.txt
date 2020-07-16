@@ -1,0 +1,167 @@
+Erik Aarnoutse
+    ==> ./src/contrib/SignalSource/Micromed/Micromed.pdf
+    ==> ./src/contrib/SignalSource/Micromed/MicromedADC.cpp
+    ==> ./src/contrib/SignalSource/Micromed/MicromedADC.h
+    ==> ./src/contrib/SignalSource/Micromed/MicromedNetRead.h
+        Gerwin Schalk, Juergen Mellinger, Erik Aarnoutse
+    
+Bernd Battes
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.cpp
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.h
+         * Author:    M.M.Span                                                        *
+         * Copyright: (C) RUG University of Groningen                                 *
+         * Revision 2.0: Jeremy Hill, Christian Puzicha, Bernd Battes
+
+Robert Bell
+    ==> ./src/contrib/SignalSource/AmpServerPro/*
+        * Author:    Joshua Fialkoff, Robert Bell (EGI)                              *
+
+Tim Blakely
+    ==> ./src/contrib/Application/MicRecorder/MicRecorderFilter.cpp
+    ==> ./src/contrib/Application/MicRecorder/MicRecorderFilter.h
+    ==> ./src/contrib/Application/MicRecorder/MicRecorder.cpp
+    ==> ./src/contrib/Application/MicRecorder/MicRecorder.h
+        Author: Tim Blakely
+        /* (C) 2000-2010, BCI2000 Project
+        /* http://www.bci2000.org
+
+Maria Laura Blefari
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.h
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.h
+         * Copyright (C) 2005 Samuel A. Inverso (samuel.inverso@gmail.com), Yang Zhen
+         Contributions/revisions by Maria Laura Blefari, Jeremy Hill
+         Already GPL
+    
+Gaetano Gargiulo
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/NIADC.cpp
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/NIDAQMX_readme.doc
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/for_BCI2000_V1/NIDAQMX_readme.doc
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/for_BCI2000_V1/NIDAQmxADC.cpp
+         * Copyright (C) 2008 Giulio Pasquariello (g.pasqua@inwind.it) & Gaetano Gargiulo
+         DIET Biomedical unit - University of Naples "Federico II"    *
+         GPL already
+    
+Jason Farquhar
+    ==> ./src/contrib/BCPy2000/*
+        //   Copyright (C) 2007-10  Jeremy Hill, Thomas Schreiner, Christian Puzicha, Jason Farquhar
+
+Sebastian Halder
+    ==> ./src/shared/modules/application/audio/WavePlayer.cpp
+    ==> ./src/shared/modules/application/audio/WavePlayer.h
+        // Authors: juergen.mellinger@uni-tuebingen.de, halder@informatik.uni-tuebingen.de
+
+Masayo Haneda
+    ==> ./src/contrib/SignalSource/Enobio/CMakeLists.txt
+    ==> ./src/contrib/SignalSource/Enobio/ENOBIOADC.cpp
+    ==> ./src/contrib/SignalSource/Enobio/ENOBIOADC.h
+        ## Authors: masayo.haneda@starlab.es
+        // (C) 2000-2010, BCI2000 Project
+
+Samuel Inverso
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.h
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.h
+         * Copyright (C) 2005 Samuel A. Inverso (samuel.inverso@gmail.com), Yang Zhen
+         Contributions/revisions by Maria Laura Blefari, Jeremy Hill
+         Already GPL
+
+Vaishali Kamat
+    ==> ./src/extlib/SAPILib/sapi.cpp
+        // Author: Vaishali Kamat @ Cambridge Consultants
+
+    ==> ./src/core/Application/P3Speller/P3SpellerTask.cpp
+    ==> ./src/core/Application/P3Speller/P3SpellerTask.h
+        // Authors: schalk@wadsworth.org, vkamat@cambridgeconsultants.com, pbrunner@wadsworth.org, shzeng, juergen.mellinger@uni-tuebingen.de
+
+Stefan Klanke
+    ==> ./src/contrib/SignalSource/FieldTripBufferSource/FieldTripBufferADC.cpp
+    ==> ./src/contrib/SignalSource/FieldTripBufferSource/FieldTripBufferADC.h
+    ==> ./src/contrib/SignalSource/FieldTripBufferSource/FtBuffer.h
+    ==> ./src/contrib/SignalSource/FieldTripBufferSource/SimpleStorage.h
+         * Copyright (C) 2010, Stefan Klanke
+         * Donders Institute for Donders Institute for Brain, Cognition and Behaviour,
+         * Centre for Cognitive Neuroimaging, Radboud University Nijmegen,
+         * Kapittelweg 29, 6525 EN Nijmegen, The Netherlands
+
+Giulio Pasquariello
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/NIDAQMX_readme.doc
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/for_BCI2000_V1/NIDAQMX_readme.doc
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/for_BCI2000_V1/NIDAQmxADC.cpp
+         * Copyright (C) 2008 Giulio Pasquariello (g.pasqua@inwind.it) & Gaetano Gargiulo
+         DIET Biomedical unit - University of Naples "Federico II"    *
+         GPL already
+
+Christian Puzicha
+    ==> ./src/contrib/BCPy2000/*
+        //   Copyright (C) 2007-10  Jeremy Hill, Thomas Schreiner, Christian Puzicha, Jason Farquhar
+
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.cpp
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.h
+         * Author:    M.M.Span                                                        *
+         * Copyright: (C) RUG University of Groningen                                 *
+         * Revision 2.0: Jeremy Hill, Christian Puzicha, Bernd Battes
+
+Thilo Hinterberger        
+    ==> ./src/contrib/SignalProcessing/SW/FBArteCorrection.cpp    
+    ==> ./src/contrib/SignalProcessing/SW/FBArteCorrection.h
+    ==> ./src/contrib/SignalProcessing/SW/SWFilter.cpp
+    ==> ./src/contrib/SignalProcessing/SW/SWFilter.h
+    ==> ./src/contrib/SignalProcessing/SW/SetBaseline.cpp
+    ==> ./src/contrib/SignalProcessing/SW/SetBaseline.h
+        //              written by Dr. Thilo Hinterberger 2000-2001
+        //              Copyright University of Tuebingen, Germany
+    
+    ==> ./src/contrib/Application/SlowWaveApp/Presentation/Views/TargetView.h
+    ==> ./src/contrib/Application/SlowWaveApp/Presentation/Views/TargetView.cpp
+        // Author: Juergen Mellinger
+        // Changes: Thilo Hinterberger, Aug 21, 2002: Added continuous auditive result.
+    
+    ==> ./src/contrib/SignalSource/DASSource/DAS_ADC.h
+    ==> ./src/contrib/SignalSource/DASSource/DAS_ADC.cpp
+        // Author: juergen.mellinger@uni-tuebingen.de
+        //         original version by thilo.hinterberger@uni-tuebingen.de
+
+Thomas Schreiner
+    ==> ./src/contrib/BCPy2000/*
+        //   Copyright (C) 2007-10  Jeremy Hill, Thomas Schreiner, Christian Puzicha, Jason Farquhar
+
+    ==> ./src/contrib/SignalSource/RDAClient/RDAClientADC.cpp
+    ==> ./src/contrib/SignalSource/RDAClient/RDAQueue.cpp
+        // Author: juergen.mellinger@uni-tuebingen.de, thomas.schreiner@tuebingen.mpg.de, jeremy.hill@tuebingen.mpg.de
+
+Mark Span
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.cpp
+    ==> ./src/contrib/SignalSource/TMSi/TMSiADC.h
+         * Author:    M.M.Span                                                        *
+         * Copyright: (C) RUG University of Groningen                                 *
+         * Revision 2.0: Jeremy Hill
+    
+Christoph Veigl, Joerg Hansmann and Rudi Cilibrasi
+    ==> ./src/contrib/SignalSource/ModularEEG/ModularEEG.cpp
+    ==> ./src/contrib/SignalSource/ModularEEG/ModularEEGADC.cpp
+         * Author:    Gerwin Schalk, Christoph Veigl                                                   *
+    ==> ./src/contrib/SignalSource/ModularEEG/ModularEEG_design.doc
+    ==> ./src/contrib/SignalSource/ModularEEG/modularEEG_design.pdf
+        The following people have contributed to this document
+        Dan Griffiths, Nelo, Jim Peters, Andreas Robinson, Jack Spaar, Yaniv Vilnai and Chris Veigl.
+        This document is copyright (c) 2002, 2003, the authors and is licensed under the 
+        "http://creativecommons.org/licenses/by-sa/2.0/" 
+        Creative Commons Attribution-ShareAlike license, version 2.0    
+    ==> ./src/contrib/SignalSource/ModularEEG/ModularEEG_readme.pdf
+        Christoph Veigl FORTEC-Institute,Technical University Vienna, Austria
+        Gerwin Schalk Brain-Computer Interface Research and Development Program Wadsworth Center, New York State Department of Health
+            ==> ./src/contrib/SignalSource/ModularEEG/modular_eeg_parser.cpp
+    ==> ./src/contrib/SignalSource/ModularEEG/modular_eeg_parser.h
+           written by Chris Veigl, support by Gerwin Schalk, Joerg Hansmann, Rudi Cilibrasi
+    
+Yang Zhen
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2ADC.h
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.cpp
+    ==> ./src/contrib/SignalSource/Biosemi/Biosemi2Client.h
+         * Copyright (C) 2005 Samuel A. Inverso (samuel.inverso@gmail.com), Yang Zhen
+         Contributions/revisions by Maria Laura Blefari, Jeremy Hill
+         Already GPL

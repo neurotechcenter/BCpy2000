@@ -1,0 +1,3 @@
+Filtering:ExpressionFilter              matrix    Expressions=             1 1   (Signal(2,1)-Signal(1,1))  // expressions used to compute the output of the ExpressionFilter (rows are channels; empty matrix for none)
+Application:Game:BreakoutGame           string    PaddleExpressionX=             (2*Signal(1,1))            // Expression for X position of the paddle (-1:1) 
+Application:Game:BreakoutGame           int       IntegratePaddleX=              1 

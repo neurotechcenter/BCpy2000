@@ -1,0 +1,69 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "Resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_OperatorName        "Operator.exe"
+END
+
+#if 0
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "BCI2000 Project"
+            VALUE "FileDescription", "BCI2000 Automation Library"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "LegalCopyright", "(c) BCI2000 Project 2012.  All rights reserved."
+            VALUE "InternalName", "BCI2000Automation.dll"
+            VALUE "OriginalFilename", "BCI2000Automation.dll"
+            VALUE "ProductName", "BCI2000Automation"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+1                       REGISTRY                "BCI2000Automation.rgs"
+2                       REGISTRY                "CBCI2000Remote.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TYPELIB
+//
+
+1                       TYPELIB                 "BCI2000Automation.tlb"
+

@@ -1,0 +1,34 @@
+Index: FilePlaybackADC.cpp
+===================================================================
+--- FilePlaybackADC.cpp	(revision 5712)
++++ FilePlaybackADC.cpp	(working copy)
+@@ -131,9 +131,17 @@
+       stringstream ss;
+       ss << state;
+       string s = ss.str();
+-      BEGIN_STATE_DEFINITIONS
+-        s.c_str(),
+-      END_STATE_DEFINITIONS
++
++	  if (s.compare(0,12,"DigitalInput") == 0)
++	  {
++		  BEGIN_STREAM_DEFINITIONS
++			s.c_str(),
++		  END_STREAM_DEFINITIONS
++	  } else {
++		  BEGIN_STATE_DEFINITIONS
++			s.c_str(),
++		  END_STATE_DEFINITIONS
++	  }
+     }
+   }
+   else // declare the bare minimum of source module parameters
+@@ -360,7 +368,7 @@
+ void
+ FilePlaybackADC::StartRun()
+ {
+-  mCurBlock = 0;
++  //mCurBlock = 0;
+   for( unsigned int i = 0; i < mStateMappings.size(); i++ ) mStateMappings[i].Reset();
+ }
+ 

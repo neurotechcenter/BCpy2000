@@ -1,0 +1,16 @@
+Source     list    TransmitChList=       8       1 2 3 4 5 6 7 8 // list of transmitted channels
+Filtering  int     SpatialFilterType=            0               // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
+
+Filtering  int     WindowLength=               300ms             // Time window for spectrum computation
+Filtering  int     Detrend=                      1               // Detrend data? 0: no, 1: mean, 2: linear (enumeration)
+Filtering  int     WindowFunction=               0               // Window function 0: Rectangular, 1: Hamming, 2: Hann, 3: Blackman (enumeration)
+Filtering  int     SpectralEstimator=            1               // Choice of spectral estimation algorithm, 0: None, 1: AR, 2: FFT (enumeration)
+
+Filtering  int     ModelOrder=                  12               // AR model order
+Filtering  int     EvaluationsPerBin=           15               // Number of uniformly spaced evaluation points entering into a single bin value
+
+Filtering  int     OutputType=                   0               // 0: Spectral Amplitude, 1: Spectral Power, 2: AR Coefficients (enumeration)
+Filtering  float   FirstBinCenter=               0Hz             // Center of first frequency bin (as a fraction of sampling rate or in Hz)
+Filtering  float   LastBinCenter=               40Hz             // Center of last frequency bin (as a fraction of sampling rate or in Hz)
+Filtering  float   BinWidth=                     5Hz             // Width of spectral bins (as a fraction of sampling rate or in Hz)
+

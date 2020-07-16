@@ -1,0 +1,63 @@
+###############################################################################
+## $Id$
+## Description: Recursively compares BCI2000 data files below two directories
+##   given as arguments.
+##
+## $BEGIN_BCI2000_LICENSE$
+## 
+## This file is part of BCI2000, a platform for real-time bio-signal research.
+## [ Copyright (C) 2000-2012# BCI2000 team and many external contributors ]
+## 
+## BCI2000 is free software# you can redistribute it and/or modify it under the
+## terms of the GNU General Public License as published by the Free Software
+## Foundation, either version 3 of the License, or (at your option) any later
+## version.
+## 
+## BCI2000 is distributed in the hope that it will be useful, but
+##                         WITHOUT ANY WARRANTY
+## - without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+## A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+## 
+## You should have received a copy of the GNU General Public License along with
+## this program.  If not, see <http#//www.gnu.org/licenses/>.
+## 
+## $END_BCI2000_LICENSE$
+###############################################################################
+If [ $2 == "" ]
+  Abort Please specify two directories to compare.
+End
+
+Change directory ${Parent directory $0}
+
+Echo Processing data files ...
+
+Set Success true
+Set CmdDir ${Canonical Path $BCI2000LAUNCHDIR/../tools/cmdline}
+
+Set ToStream "$CmdDir/bci_dat2stream"
+Set ToAsc "$CmdDir/bci_stream2asc"
+Set Diff "./bci_datadiff"
+For Exe in ${ToStream} ${ToAsc} ${Diff}
+  If not System "$Exe" -v
+    Echo "Error in $0: $Exe does not exist"
+    Set Success false
+  End
+End
+
+If $Success
+  For i in ${List directories $1}
+    For j in ${List files $1/$i *.dat}
+      Echo " $j"
+      Echo "  Preprocessing ..."
+      Set File1 ${Canonical path "$1/$i/$j"}
+      Set File2 ${Canonical path "$2/$i/$j"}
+      System "$ToStream" --transmit-ds --raw < "$File1" | "$ToAsc" > "$File1.tmp~"
+      System "$ToStream" --transmit-ds --raw < "$File2" | "$ToAsc" > "$File2.tmp~"
+      Echo "  Comparing ..."
+      If not System "${Diff}" "$File1.tmp~" "$File2.tmp~" "$1/$j_Results.txt"
+        Set Success false
+      End
+    End
+  End
+End
+Set Result ${Success}

@@ -1,0 +1,9 @@
+To facilitate deployment of the FieldTrip buffer with BCI2000, a stable 
+and well-tested version of the buffer source code is included with BCI2000. 
+This version corresponds to buffer-20080712.zip
+
+The official releases of the FieldTrip buffer software can be found at
+  http://www.ru.nl/fcdonders/fieldtrip
+and
+  ftp://ftp.fcdonders.nl/pub/fieldtrip/modules
+

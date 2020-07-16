@@ -1,0 +1,14 @@
+﻿  CMakeLists-Application.txt.in.res.cpp
+  CMakeLists-SignalProcessing.txt.in.res.cpp
+  CMakeLists-SignalSource.txt.in.res.cpp
+  PipeDefinition.cpp.in.res.cpp
+  TemplateApplication.cpp.in.res.cpp
+  TemplateApplication.h.in.res.cpp
+  TemplateBufferedADC.cpp.in.res.cpp
+  TemplateBufferedADC.h.in.res.cpp
+  TemplateFilter.cpp.in.res.cpp
+  TemplateFilter.h.in.res.cpp
+  BootstrapCustomProjects.cpp
+  Generating Code...
+  NewBCI2000Module.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\BootstrapCustomProjects\Debug\NewBCI2000Module.exe
+  Copy to destination

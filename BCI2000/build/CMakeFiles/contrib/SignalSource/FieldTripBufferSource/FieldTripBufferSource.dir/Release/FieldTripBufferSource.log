@@ -1,0 +1,30 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/FieldTripBufferSource/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/FieldTripBufferSource/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  FieldTripBufferADC.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  cleanup.c
+  clientrequest.c
+  dmarequest.c
+  endianutil.c
+  extern.c
+  printstruct.c
+  swapbytes.c
+  tcprequest.c
+  tcpserver.c
+  tcpsocket.c
+  util.c
+  gettimeofday.c
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  FieldTripBufferSource.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\FieldTripBufferSource\Release\FieldTripBufferSource.exe
+  	Deploying executable
+  copying files:
+  Copying FieldTripBufferSource.exe ...
+  Copying pthreadVC2.dll ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

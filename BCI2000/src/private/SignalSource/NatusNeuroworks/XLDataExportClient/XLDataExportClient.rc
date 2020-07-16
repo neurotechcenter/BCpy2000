@@ -1,0 +1,18 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "Resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+1                       REGISTRY                "XLDataExportReceiver.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TYPELIB
+//
+
+1                       TYPELIB                 "XLDataExportClient.tlb"
+

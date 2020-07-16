@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:gHIamp - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:gHIamp,Contributions:ADCs,Programming Reference:Build System,User Reference:Filters" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">gHIamp</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253AgHIamp.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AgHIamp.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AgHIamp.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AgHIamp.html#Authors"><span class="tocnumber">3.1</span> <span class="toctext">Authors</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AgHIamp.html#Version_History"><span class="tocnumber">3.2</span> <span class="toctext">Version History</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AgHIamp.html#Source_Code_Revisions"><span class="tocnumber">3.3</span> <span class="toctext">Source Code Revisions</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AgHIamp.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AgHIamp.html#Installation"><span class="tocnumber">5</span> <span class="toctext">Installation</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AgHIamp.html#Parameters"><span class="tocnumber">6</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AgHIamp.html#Valid_Operating_Modes"><span class="tocnumber">6.1</span> <span class="toctext">Valid Operating Modes</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AgHIamp.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>The g.HIamp is a 256 channel amplifier from g.tec.  The contributed source module acquires raw signals from the amplifier in real time for use in BCI2000. 
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/gHIampSource" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/gHIampSource" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/gHIampSource</a>
+</p>
+<a name="Versioning"></a><h2>Versioning</h2>
+<a name="Authors"></a><h3>Authors</h3>
+<p>Griffin Milsap (griffin.milsap@gmail.com)
+Rensselaer Polytechnic Institute
+</p>
+<a name="Version_History"></a><h3>Version History</h3>
+<p>Version 0.9: August 2011
+</p>
+<ul><li> Supports one g.HIamp
+</li><li> Supports Filters
+</li><li> Referencing by any channel
+</li><li> Future compatible with g.HIamp master/slave configurations
+</li><li> Using g.HIamp C API version 1.11.02
+</li></ul>
+<a name="Source_Code_Revisions"></a><h3>Source Code Revisions</h3>
+<ul><li>Initial development: 3472
+</li><li>Tested under: 3763
+</li><li>Known to compile under: 3798
+</li><li>Broken since: --
+</li></ul>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<p>Acquires raw data from the g.HIamp.
+</p>
+<a name="Installation"></a><h2>Installation</h2>
+<p>Compile the gHIampSource module using <a href="Programming_Reference%253ABuild_System.html#How_To_Build_Using_CMake" title="Programming Reference:Build System">CMake and your compiler</a>.  The resulting gHIampSource.exe should be placed in the prog directory automatically.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<ul><li> <b>SourceCh</b> represents the total number of channels to be logged from the source module.
+</li><li> <b>SampleBlockSize</b> should be set equal to the size of the sample block pulled from the device. <br />
+<ul><li> <b>NOTE:</b> <span style="text-decoration: underline;">Only specific combinations of SampleBlockSize and SampleRate are valid!  See <a href="Contributions%253AgHIamp.html#Valid_Operating_Modes" title="">#Valid Operating Modes</a></span>
+</li></ul>
+</li><li> <b>SampleRate</b> determines the rate at which the device samples data. <br />
+<ul><li> <b>NOTE:</b> <span style="text-decoration: underline;">Only specific combinations of SampleBlockSize and SampleRate are valid!  See <a href="Contributions%253AgHIamp.html#Valid_Operating_Modes" title="">#Valid Operating Modes</a></span>
+</li></ul>
+</li><li> <b>ChannelNames</b> is a convenience parameter.  Name channels here and they can be referenced by these names later.
+</li><li> <b>SourceChOffset</b> should be set to a list of "0"s -- one 0 for each channel as indicated by SourceCh, separated by spaces.
+</li><li> <b>SourceChGain</b> should be set to a list of "1"s -- one 0 for each channel as indicated by SourceCh, separated by spaces.
+</li><li> <b>DeviceIDMaster</b> is the serial number identifier of the master g.HIamp device.  This serial can be found on the physical device and is typically in a "<b>HA-20XX.XX.XX</b>" format.  This parameter can also be set to "<b>auto</b>" if there is only one g.HIamp device connected to the machine.
+</li><li> <b>DeviceIDs</b> is a list of device serials (typically in "<b>HA-20XX.XX.XX</b>" format) which corresponds to the devices to record channels from.  One of these serials must be specified as the master device in the "DeviceIDMaster" parameter.  This parameter can also be set to "<b>auto</b>" if there is only one g.HIamp device connected to the machine.  <br />
+<ul><li> <b>NOTE:</b> <span style="text-decoration: underline;">Device slaving is not yet supported by the module OR the g.HIamp C API. -- This parameter only exists for future compatibility. </span>
+</li></ul>
+</li><li> <b>RefChList</b> is a list of channels which can act as "Reference" channels for each amp.  If left blank, no channel will be used as a reference, and the raw signal will be recorded in the output.  <br />
+<ul><li> <b>NOTE:</b> <span style="text-decoration: underline;">If specifying reference channels, there must be one reference channel per device specified in "DeviceIDs" in the same order. </span>
+</li></ul>
+</li><li> <b>SourceChList</b>
+</li><li> <b>FilterEnabled</b>
+</li><li> <b>FilterHighPass</b>
+</li><li> <b>FilterLowPass</b>
+</li><li> <b>FilterModelOrder</b>
+</li><li> <b>FilterType</b>
+</li><li> <b>NotchEnabled</b>
+</li><li> <b>NotchHighPass</b>
+</li><li> <b>NotchLowPass</b>
+</li><li> <b>NotchModelOrder</b>
+</li><li> <b>NotchType</b>
+</li><li> <b>SourceBufferSize</b>
+</li></ul>
+<a name="Valid_Operating_Modes"></a><h3>Valid Operating Modes</h3>
+<p>The gHIamp only accepts specific combinations of sampling rates and sample block sizes.  The following table shows all valid combinations of sample rate and block size.  Operating outside of these modes is untested and could result in problems.
+</p>
+<table border="1">
+<tr>
+<th>Sample Rate
+</th><th>Valid Sample Block Sizes
+</th></tr>
+<tr>
+<td>256 Samples per second
+</td><td>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 32 64 128 256
+</td></tr>
+<tr>
+<td>512 Samples per second
+</td><td>2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 32 64 128 256
+</td></tr>
+<tr>
+<td>600 Samples per second
+</td><td>4 5 6 7 8 9 10 11 12 13 15 16 17 32 64 128 256
+</td></tr>
+<tr>
+<td>1200 Samples per second
+</td><td>8 9 10 11 12 13 14 15 16 32 64 128 256
+</td></tr>
+<tr>
+<td>2400 Samples per second
+</td><td>16 32 64 128 256
+</td></tr>
+<tr>
+<td>4800 Samples per second
+</td><td>32 64 128 256
+</td></tr></table>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AFilters.html" title="User Reference:Filters">User Reference:Filters</a>, <a href="Contributions%253AADCs.html" title="Contributions:ADCs">Contributions:ADCs</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

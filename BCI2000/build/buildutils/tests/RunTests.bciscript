@@ -1,0 +1,57 @@
+#################################################################################
+## $Id: RunTests.bciscript 4973 2015-08-24 18:56:49Z mellinger $
+## Description: BCI2000 testing script. Automatically executes some
+##   BCI2000 configurations, and compares resulting data files to set of
+##   reference files.
+##
+## $BEGIN_BCI2000_LICENSE$
+## 
+## This file is part of BCI2000, a platform for real-time bio-signal research.
+## [ Copyright (C) 2000-2012# BCI2000 team and many external contributors ]
+## 
+## BCI2000 is free software# you can redistribute it and/or modify it under the
+## terms of the GNU General Public License as published by the Free Software
+## Foundation, either version 3 of the License, or (at your option) any later
+## version.
+## 
+## BCI2000 is distributed in the hope that it will be useful, but
+##                         WITHOUT ANY WARRANTY
+## - without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+## A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+## 
+## You should have received a copy of the GNU General Public License along with
+## this program.  If not, see <http#//www.gnu.org/licenses/>.
+## 
+## $END_BCI2000_LICENSE$
+#################################################################################
+Set TestingDir ${Parent directory $0}
+Set DataDir $TestingDir/data
+
+If [ $1 == "" ]
+  Set 1 0
+End
+
+Show Window; Set title ${Extract file base $0}
+
+MaxIdx:=$1
+Echo Testing BCI2000 executables, ${MaxIdx+1} parameter files each.
+
+Set ResultDir $DataDir/test
+If Exists directory $ResultDir
+  Echo Removing existing test results ...
+  ForceRemove directory $ResultDir
+End
+
+Execute script $TestingDir/RunConfiguration SpectralSignalProcessing CursorTask $MaxIdx
+Execute script $TestingDir/RunConfiguration DummySignalProcessing StimulusPresentation $MaxIdx
+Execute script $TestingDir/RunConfiguration P3SignalProcessing P3Speller $MaxIdx
+
+If Execute script $TestingDir/ProcessTestData $ResultDir $DataDir/ref
+  Echo Success.
+  Set Success true
+Else
+  Echo Executable test failed.
+  Echo See the *_Results.txt files in $ResultDir for details.
+  Set Success false
+End
+Exit $Success

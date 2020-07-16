@@ -1,0 +1,23 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/B-Alert/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/B-Alert/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  BAlertADC.cpp
+  BAlert.imports.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  SourceFilter.cpp
+  IIRFilterBase.cpp
+  FilterDesign.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  BAlertSource.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\B-Alert\Release\BAlertSource.exe
+  	Deploying executable
+  copying files:
+  Copying BAlertSource.exe ...
+  Copying BAlert.dll ...
+  Copying SiUSBXp.dll ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisGui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Analyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\ResultsTreeModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Gui\ScriptEditor.cpp">
+      <Filter>Source Files\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Gui\CollapsibleGroup.cpp">
+      <Filter>Source Files\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\TaskType.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Tools\BCI2000Certification</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\Property.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Tools\BCI2000Certification</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\AnalysisEngine.cpp">
+      <Filter>Source Files\AnalysisEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Statistics\BasicStatistics.cpp">
+      <Filter>Source Files\AnalysisEngine\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Statistics\Histogram.cpp">
+      <Filter>Source Files\AnalysisEngine\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Statistics\Separability.cpp">
+      <Filter>Source Files\AnalysisEngine\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Dataplot.cpp">
+      <Filter>Source Files\AnalysisEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\AnalysisDataObject.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\SampleDataObject.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\TimeSeriesDataObject.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\SampleClock.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Timestamp.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\ThresholdAnalysis.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\InputData.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\ComputedTimeSeries.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Event.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Interval.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Statistics.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\FrameStatistics.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Group.cpp">
+      <Filter>Source Files\AnalysisEngine\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\bcistream\BCIStream_guiapp.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\bcistream</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\AboutBox.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\ExecutableHelp.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Settings.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\ColorListChooser.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\CorePCH.cpp">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtMessageHandler.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis\Init.bciscript.res.cpp">
+      <Filter>Generated\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis\DefaultInput.bciscript.res.cpp">
+      <Filter>Generated\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis\LatencyAnalysis.bciscript.res.cpp">
+      <Filter>Generated\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis\LatencyRequirements.bcireq.res.cpp">
+      <Filter>Generated\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis\VideoFrameAnalysis.bciscript.res.cpp">
+      <Filter>Generated\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis\VideoFrameRequirements.bcireq.res.cpp">
+      <Filter>Generated\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\moc_AnalysisGui.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Gui\moc_ScriptEditor.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\__\__\__\__\shared\utils\moc_QtSignalConnector.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.cpp">
+      <Filter>Generated\Version</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\compat\WinMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\compat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisGui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Analyzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\ResultsTreeModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Gui\ScriptEditor.h">
+      <Filter>Header Files\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Gui\CollapsibleGroup.h">
+      <Filter>Header Files\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\TaskType.h">
+      <Filter>Header Files\BCI2000 Framework\core\Tools\BCI2000Certification</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\Property.h">
+      <Filter>Header Files\BCI2000 Framework\core\Tools\BCI2000Certification</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\AnalysisEngine.h">
+      <Filter>Header Files\AnalysisEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Statistics\BasicStatistics.h">
+      <Filter>Header Files\AnalysisEngine\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Statistics\Histogram.h">
+      <Filter>Header Files\AnalysisEngine\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Statistics\Separability.h">
+      <Filter>Header Files\AnalysisEngine\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Dataplot.h">
+      <Filter>Header Files\AnalysisEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\AnalysisDataObject.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\SampleDataObject.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\TimeSeriesDataObject.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\SampleClock.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Timestamp.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\ThresholdAnalysis.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\InputData.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\ComputedTimeSeries.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Event.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Interval.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Statistics.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\FrameStatistics.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\AnalysisEngine\Objects\Group.h">
+      <Filter>Header Files\AnalysisEngine\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\QtSignalConnector.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\AboutBox.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\ExecutableHelp.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Settings.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\ColorListChooser.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\QtMain.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\7d921192cb16c38306d3e4c8c13abd42\Init.bciscript.res.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\7d921192cb16c38306d3e4c8c13abd42\DefaultInput.bciscript.res.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\7d921192cb16c38306d3e4c8c13abd42\LatencyAnalysis.bciscript.res.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\7d921192cb16c38306d3e4c8c13abd42\LatencyRequirements.bcireq.res.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\7d921192cb16c38306d3e4c8c13abd42\VideoFrameAnalysis.bciscript.res.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\7d921192cb16c38306d3e4c8c13abd42\VideoFrameRequirements.bcireq.res.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\0e35c5dd96943a46edde9a09327ee4a1\moc_AnalysisGui.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\a8e6e41f39f0ac30749fc4a9acf3cbca\moc_ScriptEditor.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\459af43ebbb783808802900303536dad\moc_QtSignalConnector.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\BCI2000CertAnalysis\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Scripts\Init.bciscript">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Scripts\DefaultInput.bciscript">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Scripts\LatencyAnalysis.bciscript">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Scripts\LatencyRequirements.bcireq">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Scripts\VideoFrameAnalysis.bciscript">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\src\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\Scripts\VideoFrameRequirements.bcireq">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\wrench.ico">
+      <Filter>Generated\AppIcon</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000Certification\BCI2000CertificationAnalysis\appicon.rc">
+      <Filter>Generated\AppIcon</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc">
+      <Filter>Generated\Version</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{110FD9AA-8569-3FE5-A68E-6802E5F295ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\AppIcon">
+      <UniqueIdentifier>{7B6861FE-6AD2-353B-914A-C15FCD201E9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\BCI2000 Framework">
+      <UniqueIdentifier>{5F667A99-7CE6-3DA4-96A4-82A7D98398CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Qt">
+      <UniqueIdentifier>{97CD897D-0A51-3517-A84A-21A76DDB9EF8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Version">
+      <UniqueIdentifier>{79EF525C-6BF6-3B2D-86D9-96258C1C83CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AnalysisEngine">
+      <UniqueIdentifier>{87A6768F-509E-399B-83C9-05D252FDDCE1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AnalysisEngine\Objects">
+      <UniqueIdentifier>{ED78D6AE-8407-3742-911E-EEF93E245521}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AnalysisEngine\Statistics">
+      <UniqueIdentifier>{0EB4785F-304A-3E39-AC5E-1E5FA84905BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core">
+      <UniqueIdentifier>{BA7FED92-0296-337A-84C7-F2798F240B14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core\Tools">
+      <UniqueIdentifier>{DDC53BC4-7AD8-3F4C-8DE6-B973D9477212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core\Tools\BCI2000Certification">
+      <UniqueIdentifier>{9977D2FB-815E-32A9-AF8E-4E51229958D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\gui">
+      <UniqueIdentifier>{BB8B8D64-507D-37B4-8ECE-2B457DE3279A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{2DBCCB9D-4479-3D5F-9C13-F337F231BB05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Gui">
+      <UniqueIdentifier>{4FC8778A-749C-3AB5-8237-2E79F41D36F4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{A4981D77-1A5D-3619-A77C-F586F512390E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AnalysisEngine">
+      <UniqueIdentifier>{89755938-2DB9-3DC5-BA92-900FAA0C4367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AnalysisEngine\Objects">
+      <UniqueIdentifier>{88F13ABD-8687-31B9-BC13-30D1CF49F6FC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AnalysisEngine\Statistics">
+      <UniqueIdentifier>{956285B7-F2CE-3FA7-B948-941A4D5A915B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core">
+      <UniqueIdentifier>{AAB0B3AB-DC53-3674-BBA8-2ED3A769DBBF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core\Tools">
+      <UniqueIdentifier>{CBF1383F-89AE-3D69-8396-5376D9CE90A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core\Tools\BCI2000Certification">
+      <UniqueIdentifier>{A8A7B0B5-B5E8-33E7-A547-108195FAFBD7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\bcistream">
+      <UniqueIdentifier>{FBCA4655-BB91-309E-8A89-1B02E7786D7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\compat">
+      <UniqueIdentifier>{2B2B0696-82DA-3F6F-B029-174E1C314E07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\gui">
+      <UniqueIdentifier>{EE877380-CCED-3BD3-B5C3-C452300C5A87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{A38F8834-17BA-34DF-8B43-89644E978F8F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Gui">
+      <UniqueIdentifier>{149289FA-D65E-3AFB-906B-8907458B7BDA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

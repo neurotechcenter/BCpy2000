@@ -1,0 +1,32 @@
+// Import definitions for $libname$ library
+// generated $datetime$ by $toolname$
+#ifndef $libname_nu$_IMPORTS_H
+#define $libname_nu$_IMPORTS_H
+
+#include "Win32Defs.h"
+
+#ifndef STATIC_LIB$libname_nu$
+// Disable function declarations in the original header
+// file by #defining function names to point to symbols that
+// are not referenced by any code.
+$@#define $fname$ __$hash$_$fname$
+@$
+#define __declspec(x)
+#endif // STATIC_LIB$libname_nu$
+
+#include "$headername$"
+
+#ifndef STATIC_LIB$libname_nu$
+#undef __declspec
+// Use #undef to restore function names before declaring
+// function pointers with the names originally used to
+// declare imports.
+$@#undef $fname$
+extern decltype(&__$hash$_$fname$) $fname$;
+@$
+#endif // STATIC_LIB$libname_nu$
+
+namespace Dylib { bool $libname$_Loaded(); }
+$@extern void* p_$dname$ = &$dname$;
+@$
+#endif // $libname_nu$_IMPORTS_H

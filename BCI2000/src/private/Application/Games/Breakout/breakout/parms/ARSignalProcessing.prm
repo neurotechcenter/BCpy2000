@@ -1,0 +1,25 @@
+Filtering:ARFilter                      int       WindowLength=                  0.5s          // Time window for spectrum computation
+Filtering:ARFilter                      int       Detrend=                       2             // Detrend data? 0: no, 1: mean, 2: linear (enumeration)
+Filtering:ARFilter                      int       ModelOrder=                  120             // AR model order
+Filtering:ARFilter                      int       OutputType=                    0             // 0: Spectral Amplitude, 1: Spectral Power, 2: AR Coefficients (enumeration)
+Filtering:ARFilter                      float     FirstBinCenter=               90Hz           // Center of first frequency bin (as a fraction of sampling rate or in Hz)
+Filtering:ARFilter                      float     LastBinCenter=                90Hz           // Center of last frequency bin (as a fraction of sampling rate or in Hz)
+Filtering:ARFilter                      float     BinWidth=                     40Hz           // Width of spectral bins (as a fraction of sampling rate or in Hz)
+Filtering:ARFilter                      int       EvaluationsPerBin=            15             // Number of uniformly spaced evaluation points entering into a single bin value
+
+Filtering:LogFilter                     float     LogFilterEps=                  1e-8          // 
+Filtering:LogFilter                     float     LogFilterBase=                10             // 
+Filtering:LogFilter                     float     LogFilterGain=                20             // 
+
+Filtering:LinearClassifier              matrix    Classifier= 2 { input%20channel input%20element%20(bin) output%20channel weight }    CH053 1 1 1    CH032 1 2 1 // Linear classification matrix in sparse representation
+
+Filtering:LPFilter                      float     LPTimeConstant=                0.0s          // time constant for the low pass filter
+
+Filtering:ExpressionFilter              matrix    Expressions=             1 1   Signal(2,1)-Signal(1,1)  // expressions used to compute the output of the ExpressionFilter (rows are channels; empty matrix for none)
+
+Filtering:Normalizer                    floatlist NormalizerOffsets=         1   0             // normalizer offsets
+Filtering:Normalizer                    floatlist NormalizerGains=           1   1             // normalizer gain values
+Filtering:Normalizer                    intlist   Adaptation=                1   2             // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer                    matrix    BufferConditions=       1  1   1             // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+Filtering:Normalizer                    float     BufferLength=                 20s            // time window of past data per buffer that enters into statistic
+Filtering:Normalizer                    string    UpdateTrigger=                 0             // expression to trigger offset/gain update when changing from 0 (use empty string for continuous update)

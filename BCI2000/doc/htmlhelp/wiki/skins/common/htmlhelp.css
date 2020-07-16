@@ -1,0 +1,44 @@
+ body {
+  font-family: sans-serif;
+  font-size: 85%;
+ }
+
+ h1.pagetitle { font-size: 250%; }
+
+ a:link {text-decoration:none;}
+ a:visited {text-decoration:none;}
+ a:hover {text-decoration:underline;}
+ a:active {text-decoration:none;}
+
+ #quickbar {
+  font-family: sans-serif;
+  font-size: 90%;
+  font-weight: bold;
+  line-height: 1.5em;
+  border: 1px solid #bba;
+  background-color: #f7f7f7;
+ }
+
+ #quickbar .image {
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ #quickbar ul {
+   list-style: outside;
+   line-height: 1.2em;
+   margin: 0 0 0 0.4em;
+   padding: 0 0 0.5em 0;
+ }
+ #quickbar ol {
+   list-style: outside;
+   line-height: 1.2em;
+   margin: 0 0 0 0.4em;
+   padding: 0 0 0.5em 0;
+   list-style-image: none;
+ }
+ #quickbar li {
+  text-indent: 0;
+  margin: 0 0 0 1em;
+  padding: 0 0 0 0;
+ }

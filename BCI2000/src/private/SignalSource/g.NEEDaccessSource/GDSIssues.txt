@@ -1,0 +1,11 @@
+<DeviceConfigurationBase class_id="3" tracking_level="1" version="0" object_id="_1" /> needs a proper closing tag
+Page 121: Sampling Rate is 250 Hz, not 256 Hz.
+
+SetDataReadyEventThreshold example XML command is mis-documented.
+Using command as documented crashes server (requiring manual restart)
+
+GetData sometimes returns 0 scans, and when it does, it doesn't respond for a VERY long time.
+
+SetConfiguration can take up to 12 seconds to get a server reply.
+
+Use of gNautilus devices can intefere with WiFi signal

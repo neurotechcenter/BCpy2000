@@ -1,0 +1,45 @@
+// Import declarations for $libname$ library
+// generated $datetime$ by $toolname$
+#if STATIC_LIB$libname_nu$
+
+namespace Dylib { bool $libname_n$_Loaded() { return true; } }
+extern "C" {
+$@void* p_$dname$ = &$dname$;
+@$}
+
+#else
+
+#include "DylibImports.h"
+namespace { extern const Dylib::Import* functionImports; }
+
+// Here you may specify a custom error message to be displayed when the library cannot be found.
+static const char* notFoundMsg = "";
+// Here you may specify an URL to some local or remote help resource.
+static const char* notFoundURL = "";
+RegisterDylibWithAliases( $libname_n$, "$libname$", functionImports, notFoundMsg, notFoundURL );
+
+extern "C" {
+$@void* p_$dname$ = Dylib::$libname_n$.ResolveDataExport( "$dname$" );
+@$
+// NOTE: When loading the library, function bodies will be overwritten with absolute jumps
+// to imported functions, i.e. function bodies must be roughly 2 * sizeof(void*) bytes long.
+// A call to a member function with a pointer argument should be large enough.
+// 
+// In addition, having distinct function bodies for each function stub
+// is important -- that makes it impossible for size optimizers to
+// collapse them into a single definition.
+//
+$@void $fname$() { Dylib::$libname_n$.UninitializedFunctionExport( "$fname$" ); }
+@$}
+
+namespace {
+const Dylib::Import functionImports_[] =
+{
+$@  { "$fname$", (void**)&$fname$, Dylib::Import::functionStub },
+@$  { 0, 0, 0 }
+};
+const Dylib::Import* functionImports = functionImports_;
+}
+
+#endif // STATIC_LIB$libname_nu$
+

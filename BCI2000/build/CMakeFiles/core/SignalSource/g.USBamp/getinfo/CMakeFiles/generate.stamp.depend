@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+C:/BCI2000.python3/build/cmake/frameworks/Core.cmake
+C:/BCI2000.python3/build/cmake/frameworks/LibTiny.cmake
+C:/BCI2000.python3/src/core/SignalSource/g.USBamp/getinfo/CMakeLists.txt

@@ -1,0 +1,25 @@
+Source:Online%20Processing:TransmissionFilter list      TransmitChList=     111  CH001 CH002 CH003 CH004 CH005 CH006 CH007 CH008 CH009 CH010 CH011 CH012 CH013 CH014 CH015 CH016 CH017 CH018 CH019 CH020 CH021 CH022 CH023 CH024 CH025 CH026 CH027 CH028 CH029 CH030 CH031 CH032 CH033 CH034 CH035 CH036 CH037 CH038 CH039 CH040 CH041 CH042 CH043 CH044 CH045 CH046       CH048 CH049 CH050 CH051 CH052 CH053 CH054 CH055 CH056 CH057 CH058 CH059 CH060 CH061 CH062 CH063 CH064 CH065 CH066 CH067 CH068 CH069 CH070 CH071 CH072 CH073 CH074 CH075 CH076 CH077 CH078 CH079 CH080 CH081 CH082 CH083 CH084 CH085 CH086 CH087 CH088 CH089 CH090 CH091 CH092 CH093 CH094 CH095 CH096 CH097 CH098 CH099 CH100 CH101 CH102 CH103 CH104 CH105 CH106 CH107 CH108 CH109 CH110 CH111 CH112 CH113 CH114 CH115 CH116 CH117 CH118 CH119 CH120 CH121 CH122 CH123 CH124 CH125 CH126 CH127 CH128 CH129 CH130 CH131 CH132 CH133 CH134 CH135 CH136 // list of transmitted channels
+// TransmitChList is subject-specific:  currently CH047 and is omitted, as is the final amp (113+)
+
+Filtering:SpatialFilter                 int       SpatialFilterType=             3             // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
+
+Filtering:IIR%20Filter                  float     HighPassCorner=                0             //
+Filtering:IIR%20Filter                  float     LowPassCorner=                 0             //
+Filtering:IIR%20Filter                  float     NotchCenter=                   0             //
+Filtering:IIR%20Filter                  float     FilterGain=                    1.0             //
+
+
+Filtering:ARFilter                      int       WindowLength=                  0.3s          // Time window for spectrum computation
+Filtering:ARFilter                      int       Detrend=                       2             // Detrend data? 0: no, 1: mean, 2: linear (enumeration)
+Filtering:ARFilter                      int       ModelOrder=                  120             // AR model order
+Filtering:ARFilter                      int       OutputType=                    0             // 0: Spectral Amplitude, 1: Spectral Power, 2: AR Coefficients (enumeration)
+Filtering:ARFilter                      float     FirstBinCenter=               90Hz           // Center of first frequency bin (as a fraction of sampling rate or in Hz)
+Filtering:ARFilter                      float     LastBinCenter=               130Hz           // Center of last frequency bin (as a fraction of sampling rate or in Hz)
+Filtering:ARFilter                      float     BinWidth=                     40Hz           // Width of spectral bins (as a fraction of sampling rate or in Hz)
+Filtering:ARFilter                      int       EvaluationsPerBin=            15             // Number of uniformly spaced evaluation points entering into a single bin value
+
+Filtering:LinearClassifier              matrix    Classifier= 3 { input%20channel input%20element%20(bin) output%20channel weight }    CH053 1.0 1 1    CH032 0.5 2 1    CH024 0.5 2 1 // Linear classification matrix in sparse representation
+
+Visualize:Processing%20Stages           int       VisualizeNormalizer=           1
+
+Filtering:LPFilter                      float     LPTimeConstant=                0.0s          // time constant for the low pass filter

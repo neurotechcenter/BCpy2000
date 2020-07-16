@@ -1,0 +1,681 @@
+=================================================================
+=================================================================
+
+Images
+    Example:
+    ==> ./src/doc/figures/800px-Gyrus_sulcus.png
+    ...and others in ./doc and ./src/doc  ?
+
+	Example:
+	==> ./prog/images/Elefant.bmp
+	...and other image/sound resource files?
+
+=================================================================
+
+Microsoft
+    ==> ./src/extlib/SAPILib/lib/sapi.lib
+    ==> ./src/extlib/SAPILib/sapi.lib
+    ==> ./src/extlib/SAPILib/Spddkhlp.h
+    ==> ./src/extlib/SAPILib/spcollec.h
+    ==> ./src/extlib/SAPILib/spdebug.h
+    ==> ./src/extlib/SAPILib/sperror.h
+    ==> ./src/extlib/SAPILib/speventq.h
+    ==> ./src/extlib/SAPILib/sphelper.h
+    ==> ./src/extlib/SAPILib/spuihelp.h
+        All the above headers are:
+        *   Copyright (c) Microsoft Corporation. All rights reserved.
+    
+    ==> ./src/extlib/dxsdk/lib/dsound.lib
+    ==> ./src/extlib/dxsdk/include/dsound.h
+         *  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+=================================================================
+
+The MathWorks, Inc.
+    ==> ./src/extlib/matlab/libeng.lib
+    ==> ./src/extlib/matlab/libmat.lib
+    ==> ./src/extlib/matlab/libmex.lib
+    ==> ./src/extlib/matlab/libmx.lib
+    ==> ./src/extlib/matlab/engine.h
+    ==> ./src/extlib/matlab/mat.h
+    ==> ./src/extlib/matlab/matrix.h
+    ==> ./src/extlib/matlab/mex.h
+    ==> ./src/extlib/matlab/mwdebug.h
+    ==> ./src/extlib/matlab/tmwtypes.h
+         * Copyright 1984-2003 The MathWorks, Inc.
+         * All Rights Reserved.
+
+=================================================================
+=================================================================
+
+Manufacturers of equipment we support
+=====================================
+(NB: for completeness all manufacturers are listed even if the
+associated modules are non-proprietary or require no SDK files
+or are already (c) BCI2000 project)
+
+=================================================================
+
+5DT (Fifth Dimension Technologies) [DataGlove5DTUFilter/5DTDataGloveUltraLogger]
+
+    ==> ./src/contrib/Application/DataGlove5DTU/fglove.dll
+    ==> ./src/contrib/Application/DataGlove5DTU/fglove.h
+    
+        /*--------------------------------------------------------------------------*/
+        // fglove.h
+        //
+        // 5DT Data Glove driver SDK
+        // Version 2.00
+        //
+        // Copyright (C) 2000-2004, 5DT <Fifth Dimension Technologies>
+        // http://www.5dt.com/
+    
+    ==> ./src/contrib/Application/DataGlove5DTU/5DT Data Glove Ultra - Manual.pdf
+    
+        Copyright Â© 2004 5DT (Fifth Dimension Technologies), All rights reserved. No part of this manual, software or hardware may be copied, reproduced, translated or reduced to any electronic medium or machine readable format without the written consent of 5DT (Fifth Dimension Technologies).
+    
+	5DT Inc.
+	15375 Barranca Parkway, G-103
+	Irvine, CA 92618
+	USA	
+		Tel: +1 949 450 9044
+		Fax: +1 949 450 9045
+		e-mail: info.us@5dt.com
+		http://www.5dt.com	
+	
+	5DT (Fifth Dimension Technologies)
+	25 De Havilland Crescent Crescent, P.O. Box 5
+	Persequor Technopark, 0020
+	Pretoria,
+	SOUTH AFRICA
+		Tel: +27 12 349 2690
+		Fax: +27 12 349 1404
+		e-mail: info@5dt.com
+		http://www.5dt.com	
+	
+	
+=================================================================
+
+Biosemi B. V. [Biosemi2]
+    ==> ./src/contrib/SignalSource/Biosemi/LABVIEW_DLL.h
+    ==> ./src/contrib/SignalSource/Biosemi/LABVIEW_DLL.dll
+        No copyright info in file.
+		Are these files actually anything to do with National Instruments' LabVIEW?
+		Do they belong, in fact, to NI rather than Biosemi?
+
+	BioSemi B.V. 	 
+	WG-Plein 129 	 
+	1054SC Amsterdam 	 
+	NETHERLANDS
+		Voice:      +31 20 330 2956
+		Mobile:     +31 65 062 6354
+		Fax:        +31 20 330 2959
+		Chamber of Commerce : 33.26.78.55
+		Vat number: NL.8194.01.705.B.01
+		Sales:      info@biosemi.com
+		Webmaster:  webmaster@biosemi.com
+		http://www.biosemi.com/
+
+=================================================================
+
+BrainProducts GmbH [RDAClient, vAmpSource]
+
+    ==> ./src/contrib/SignalSource/RDAClient/RDA/RecorderRDA.h
+        No copyright info, just:
+        //: written by: Henning Nordholz
+        //+       date: 14-Nov-00
+        //+ Description:
+        //+     Vision Recorder
+        //.         Remote Data Access (RDA) structs and constants
+        
+    ==> ./src/extlib/brainproducts/vamp/DiBpGmbH.dll
+    ==> ./src/extlib/brainproducts/vamp/FirstAmp.dll
+    ==> ./src/extlib/brainproducts/vamp/FirstAmp.h
+        No copyright info in file
+    ==> ./src/extlib/brainproducts/vamp/FirstAmp.inf
+        ; Copyright (c) Brain Products GmbH    
+    ==> ./src/extlib/brainproducts/vamp/FirstAmp.lib
+    ==> ./src/extlib/brainproducts/vamp/FirstAmp.sys
+    ==> ./src/extlib/brainproducts/vamp/coff/FirstAmp.lib
+    ==> ./src/extlib/brainproducts/vamp/mingw/FirstAmp.def
+    ==> ./src/extlib/brainproducts/vamp/mingw/libFirstAmp.a
+	
+	BrainProducts GmbH
+	Zeppelinstraße 7
+	82205 Gilching
+	GERMANY
+		tel: +49 8105 733840
+		chiefs: Erich/Alex Svojanovsky
+		http://www.brainproducts.com/
+    
+=================================================================
+
+CareFusion (formerly VIASYS Healthcare, Inc)  [NicoletOne]
+also involved: Taugagreining hf
+
+    ==> ./src/contrib/SignalSource/NicoletOne/lib/Include/EventArray.h
+        // Copyright 2001 by Taugagreining hf. - All rights reserved.
+        // THIS CODE IS CONFIDENTIAL
+    ==> ./src/contrib/SignalSource/NicoletOne/lib/Include/NGuid.h
+        // Copyright 2003 by Taugagreining hf. - All rights reserved.
+        // THIS CODE IS CONFIDENTIAL
+    ==> ./src/contrib/SignalSource/NicoletOne/lib/Include/NrvErrorMacros.h
+        // Copyright 2000 by Taugagreining hf. - All rights reserved
+        // THIS CODE IS CONFIDENTIAL
+    ==> ./src/contrib/SignalSource/NicoletOne/lib/Include/RemoteBuilder.h
+        //  Copyright (C) 2005 by VIASYS Healthcare, Inc. All Rights Reserved.
+        //                            THIS CODE IS COMPANY CONFIDENTIAL    
+    ==> ./src/contrib/SignalSource/NicoletOne/lib/Include/SignalInfoImpl.h
+        // Copyright 2002 by Taugagreining hf. - All rights reserved
+        // THIS CODE IS CONFIDENTIAL
+    ==> ./src/contrib/SignalSource/NicoletOne/lib/Include/nrvtime.h
+        // Copyright 1998 by Taugagreining hf. - All rights reserved
+        // THIS CODE IS CONFIDENTIAL
+    ==> ./src/contrib/SignalSource/NicoletOne/lib
+        this directory also contains the following, without occurrence of "(c)", "copyright" or "rights" but presumably bound by the same conditions as the others
+        
+        ./src/contrib/SignalSource/NicoletOne/lib/DLLs/AddInIFSDK33.dll
+        ./src/contrib/SignalSource/NicoletOne/lib/DLLs/DataStorageSDK33.dll
+        ./src/contrib/SignalSource/NicoletOne/lib/DLLs/FileAccessSDK33.dll
+        ./src/contrib/SignalSource/NicoletOne/lib/DLLs/RegisterDll.bat
+        ./src/contrib/SignalSource/NicoletOne/lib/DLLs/XStorageSDK33.dll
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/AddinIf.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/AtlantisEventStructs.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/AtlantisEvents.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/ChannelInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/CommonDecl.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/DataPacket.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/DbInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/DerivedSignalHelper.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/DerivedSignalInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/EegFileWrapper.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/EventArray.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/EventMarker.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/EventTypeInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/FileAccess3.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/FileAccess3_i.c
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/HcSensorTypes.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/ImpedanceMarker.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/InfoPacket.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/InfoPacketDef.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/InfoPacketGUIDs.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/InfoStructureSizes.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/InfoStructures.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/InputInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/InputSettingsInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/MatlabSDK.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/NGuid.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/NPacket.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/NotifyGUIDs.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/NotifyPacket.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/NotifyPacketDef.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/NrvErrorMacros.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/PacketDef.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/RCEvent.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/RecordingHelper.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/RemoteBuilder.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SeizureEvent.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SensorInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SharedThreadStuff.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SignalInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SignalInfoImpl.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SignalLookupCache.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SignalName.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/Sniffer.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SocketStuff.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/SpikeEvent.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/TSInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/TextInfoBase.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/VSyncInfo.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/datastructures.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/hcEventTypes.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/mapptr.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/nrvdate.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/nrvtime.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/sockwnd.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Include/tgcopy.h
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDK.lib
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDK6.lib
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKd.lib
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKd6.lib
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKu.lib
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKu6.lib
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKud.lib
+        ./src/contrib/SignalSource/NicoletOne/lib/Libraries/NicoletSDKud6.lib
+
+	CareFusion
+	3750 Torrey View Court
+	San Diego, CA 92130
+	USA
+		858.617.2000
+		888.876.4287 (toll-free)
+		858.617.2900 (fax)
+		
+	Taugagreining hf
+	Ármúla 10
+	IS-108 REYKJAVÍK
+	Höfuðborgarsvæðið
+	ICELAND
+		phone: +354 (0) 580 7500
+		fax: +354 (0) 569 4622
+		
+=================================================================
+
+Cleveland Medical Devices Inc.  [BioRadio]
+
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadio150_SDK/BioRadio150DLL.dll
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadio150_SDK/BioRadio150DLL.h
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadio150_SDK/BioRadio150DLL_Borland.lib
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadio150_SDK/BioRadio150DLL_MSVC.lib
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadio150_SDK/BioRadioConfig.h
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadio150_SDK/Documentation.html
+    ==> ./src/contrib/SignalSource/BioRadio/BioRadio150_SDK/docs_html/*   # (48 files)
+    
+        (c) Cleveland Medical Devices Inc. 1999-2007
+
+	Cleveland Medical Devices Inc.
+	Suite 400, 4415 Euclid Avenue
+	Cleveland, OH 44103
+	USA
+		Phone: 216.791.6720
+		Toll-Free: 877.CleveMed (877.253.8363)
+		Skype: 216.220.0970
+		Fax: 216.791.6739 
+		http://www.clevemed.com/
+
+=================================================================
+
+Data  Translation,  Inc.  [DTADC]
+
+    ==> ./src/contrib/SignalSource/DTADC/da_sdk/OLMEM32.lib
+    ==> ./src/contrib/SignalSource/DTADC/da_sdk/OLTYPES.h
+    ==> ./src/contrib/SignalSource/DTADC/da_sdk/oldaapi.h
+    ==> ./src/contrib/SignalSource/DTADC/da_sdk/oldaapi32.lib
+    ==> ./src/contrib/SignalSource/DTADC/da_sdk/olmem.h
+    
+         Copyright  (C)  1992.   Data  Translation,  Inc.,  100  Locke   Drive,
+         Marlboro Massachusetts 01752-1192.
+        
+         All rights reserved.  This software is furnished to purchaser under  a
+         license  for  use  on a single computer system and can be copied (with
+         the inclusion of DTI's copyright notice) only for use in such  system,
+         except  as  may  be otherwise provided in writing by Data Translation,
+         Inc., 100 Locke Drive, Marlboro, Massachusetts 01752-1192.
+        
+         The information in this document is subject to change  without  notice
+         and  should not be construed as a commitment by Data Translation, Inc.
+         Data Translation, Inc.  assumes no responsibility for any errors  that
+         may appear in this document.
+        
+         Data Translation cannot assume any responsibility for the use  of  any
+         portion  of  this  software  on  any  equipment  not  supplied by Data
+         Translation, Inc.
+		 
+	Data Translation, Inc.
+	100 Locke Drive
+	Marlboro, MA 01752-1192
+	USA
+		Sales: 800-525-8528
+		Fax: 508-481-8620
+		Email: info@datatranslation.com
+		www.datatranslation.com
+
+	Data Translation GmbH
+	Im Weilerlen 10
+	D-74321 Bietigheim-Bissingen
+	GERMANY
+		Sales: +49 (0) 7142-9531–0
+		Fax: +49 (0) 7142-9531–13
+		Email: info@datatranslation.eu
+		www.datatranslation.eu	
+
+=================================================================
+
+Electrical Geodesics, Inc. [AmpServerPro]
+
+	==> ./src/contrib/SignalSource/AmpServerPro/AmpServerProADC.cpp
+	==> ./src/contrib/SignalSource/AmpServerPro/AmpServerProADC.h
+		
+		[contains code developed together with Robert Bell of EGI,
+		but copyright was already stated as being (c) BCI2000 Project]
+		
+	Electrical Geodesics, Inc.
+	Riverfront Research Park,
+	1600 Millrace Drive, Suite 307,
+	Eugene, OR 97403
+	USA
+		Tel.: +1.541.687.7962
+		Fax: +1.541.687.7963
+		http://www.egi.com/
+		
+=================================================================
+
+Emotiv Systems Inc [Emotiv]
+
+    ==> ./src/contrib/SignalSource/Emotiv/dll/edk.dll    
+    ==> ./src/contrib/SignalSource/Emotiv/dll/edk_utils.dll
+    ==> ./src/contrib/SignalSource/Emotiv/lib/coff/edk.lib
+    ==> ./src/contrib/SignalSource/Emotiv/lib/include/EmoStateDLL.h
+    ==> ./src/contrib/SignalSource/Emotiv/lib/include/edk.h
+    ==> ./src/contrib/SignalSource/Emotiv/lib/include/edkErrorCode.h
+    ==> ./src/contrib/SignalSource/Emotiv/lib/omf/edk.lib
+
+         * Emotiv Development Kit API return values
+         * Copyright (c) 2009 Emotiv Systems, Inc.
+	
+	Emotiv Systems Inc
+	Room 606, Fook Cheong Building
+	63 Hoi Yuen Road
+	Kwun Tong
+	HONG KONG
+		Phone: 1-800-538-EMOTIV
+		http://www.emotiv.com
+	
+=================================================================
+
+Guger Technologies OG [gMOBIlab, gMOBIlabPlus, gUSBampSource]
+
+    ==> src/extlib/gtec/gMOBIlab/coff/Symbols.txt
+    ==> src/extlib/gtec/gMOBIlab/coff/spa20a.def
+    ==> src/extlib/gtec/gMOBIlab/coff/spa20a.lib
+    ==> src/extlib/gtec/gMOBIlab/mingw/libspa20a.a
+    ==> src/extlib/gtec/gMOBIlab/mingw/spa20a.def
+    ==> src/extlib/gtec/gMOBIlab/spa20a.h
+        *            Copyright (c) Guger Technologies OEG 1999-2004
+    ==> src/extlib/gtec/gMOBIlab/spa20a.lib
+    ==> src/extlib/gtec/gMOBIlabPlus/coff/gMOBIlabplus.lib
+    ==> src/extlib/gtec/gMOBIlabPlus/gMOBIlabplus.h
+    ==> src/extlib/gtec/gMOBIlabPlus/gMOBIlabplus.lib
+    ==> src/extlib/gtec/gMOBIlabPlus/mingw/gMOBIlabPlus.def
+    ==> src/extlib/gtec/gMOBIlabPlus/mingw/libgMOBIlabPlus.a
+    ==> src/extlib/gtec/gUSBamp/coff/gUSBamp.lib
+    ==> src/extlib/gtec/gUSBamp/gUSBamp.h
+        //    Copyright    (C) Guger Technologies 2004-2005.
+    ==> src/extlib/gtec/gUSBamp/gUSBamp.lib
+    ==> src/extlib/gtec/gUSBamp/mingw/gUSBamp.def
+    ==> src/extlib/gtec/gUSBamp/mingw/libgUSBamp.a
+    ==> src/core/SignalSource/g.USBamp/getinfo/gUSBamp.dll
+
+	g.tec medical engineering GmbH
+	Sierningstrasse 14
+	4521 Schiedlberg
+	AUSTRIA
+		phone +43 7251 22240-0
+		fax +43 7251 22240-39 
+		office@gtec.at 
+		http://www.gtec.at/
+		
+	Guger Technologies OG
+	Herbersteinstrasse 60
+	8020 Graz
+	AUSTRIA
+		phone +43 316 675106-0
+		fax +43 316 675106-39
+		office@gtec.at 
+		http://www.gtec.at/
+
+=================================================================
+
+Measurement Computing Corp. [DASSource]
+
+    ==> ./src/contrib/SignalSource/DASSource/DAS_lib/cbw.h
+         * (c) Copyright 1996-2003, Measurement Computing Corp.
+         * All rights reserved.
+
+	Measurement Computing Corporation
+	10 Commerce Way
+	Norton, MA 02766
+	USA
+		Phone: (508) 946-5100
+		Fax: (508) 946-9500
+		E-Mail: info@mccdaq.com
+		http://www.mccdaq.com/
+
+=================================================================
+Micromed S.p.A. [Micromed]
+
+	[No proprietary files: all seems to be TCP/IP]
+
+	Micromed S.p.A.
+	Via Giotto, 2
+	I-31021 Mogliano Veneto (Treviso)
+	ITALY
+		Tel: +39.041.5937000
+		Fax: +39.041.5937011
+		e-mail: micromed@micromed-it.com
+		Tel: +39.041.5937006 - Technical Service Direct Line
+		Technical Service: tech@micromed-it.com
+		International Sales: export@micromed-it.com
+		http://www.micromed.eu/
+
+=================================================================
+
+National Instruments [NISource, NIDAQ_mx_Source]
+
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/nidaq/NIDAQmx.h
+        /*    Copyright (c) National Instruments 2003.  All Rights Reserved.          */
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/nidaq/NIDAQmx.lib
+    ==> ./src/contrib/SignalSource/NIDAQ-MX/nidaq/NIDAQmx_orig.lib
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/Convert.h
+        No copyright info in file
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/Olderror.h
+        No copyright info in file
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/convert.c
+        No copyright info in file
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidaq.h
+        *    Copyright    (C) National Instruments 1995.
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidaq.pas
+        File unnecessary?
+             NI-DAQ Header file for Borland Delphi (32-bit)
+             Copyright    (C) National Instruments 2002.
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidaq32.lib
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidaqcns.h
+        No copyright info in file
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidaqcns.pas
+        No copyright info in file. File unnecessary?
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidaqerr.h
+        No copyright info in file
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidaqex.h
+         * Copyright (c) 1997, National Instruments Corp.  All rights reserved.
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/nidex32.lib
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/regdefs.h
+        No copyright info in file
+    ==> ./src/contrib/SignalSource/NIDAQ/nidaq/regdefs.pas
+        No copyright info in file. File unnecessary?
+
+	National Instruments Corporation
+	11500 N Mopac Expwy
+	Austin, TX 78759-3504
+	USA
+		http://www.ni.com/
+
+=================================================================
+
+OpenEEG project [ModularEEG]
+
+	Well, duh.
+	
+	http://openeeg.sourceforge.net/
+
+=================================================================
+
+Neuralynx Inc [Neuralynx]
+
+    ==> ./src/contrib/SignalSource/Neuralynx/lib/DLLs/MatlabNetComClient.dll
+    ==> ./src/contrib/SignalSource/Neuralynx/lib/Libraries/MatlabNetComClient.lib
+    ==> ./src/contrib/SignalSource/Neuralynx/lib/Libraries/libMnc.lib
+    ==> ./src/contrib/SignalSource/Neuralynx/lib/Libraries/mn.def
+        No copyright info in files
+
+	Neuralynx, Inc.
+	105 Commercial Drive
+	Bozeman, Montana 59715
+	USA
+		http://www.neuralynx.com/
+
+=================================================================
+
+NeuroSky Inc [NeuroSky]
+
+    ==> ./src/contrib/SignalSource/NeuroSky/lib/coff/thinkgear.lib
+    ==> ./src/contrib/SignalSource/NeuroSky/lib/omf/thinkgear.lib
+    ==> ./src/contrib/SignalSource/NeuroSky/lib/thinkgear.dll
+    ==> ./src/contrib/SignalSource/NeuroSky/lib/thinkgear.h
+         * Copyright (c) 2008-2009 NeuroSky, Inc. All Rights Reserved
+         * NEUROSKY PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+
+	NeuroSky, Inc.
+	125 South Market Street, #900
+	San Jose, CA, 95113
+	USA
+		http://www.neurosky.com/
+		
+    
+=================================================================
+
+Neuroscan [Neuroscan, NeuroscanClient]
+
+    ==> ./src/contrib/SignalSource/NeuroscanAccessSDK/lib/NSDevice.dll
+    ==> ./src/contrib/SignalSource/NeuroscanAccessSDK/lib/NSDevice.h
+        No copyright info in file
+    ==> ./src/contrib/SignalSource/NeuroscanAccessSDK/lib/coff/NSDevice.lib
+    ==> ./src/contrib/SignalSource/NeuroscanAccessSDK/lib/omf/NSDevice.lib
+	
+	Compumedics Neuroscan
+	6605 West W.T. Harris Blvd, Suite F
+	Charlotte, NC 28269
+	USA
+		Free Call: 1-800-814-8890 (Sales)
+		Free Call: 1-800-474-7875 (Tech Support)
+		Tel: 1-704-749-3200
+		Fax: 1-704-749-3299
+		techsup@neuroscan.com
+		sales@neuroscan.com	
+		http://www.neuroscan.com/
+
+=================================================================
+
+Ripple [Grapevine]
+
+    ==> ./src/contrib/SignalSource/Ripple/GrapeVineADC.cpp
+        No copyright info, but:
+        // Author: shane@rppl.com
+    ==> ./src/contrib/SignalSource/Ripple/GrapeVineADC.h
+        No copyright info, but:
+        // Author: shane@rppl.com    
+    ==> ./src/contrib/SignalSource/Ripple/XippLegacy.h
+        originated by Csaba Christian Gyulai, modified by Shane Guillory
+        GPL 3.0, no problem
+	
+		[the other two files make use of XippLegacy, so must also be GPL 3.0+]
+	
+	Ripple
+	2015 South 1100 East
+	Salt Lake City, UT 84106
+	USA
+		toll-free: 866-324-5197
+		local: 801-413-0139
+		fax: 801-413-2874 
+	
+
+=================================================================
+    
+Starlab [Enobio]
+
+    ==> ./src/contrib/SignalSource/Enobio/lib/MSVC/EnobioDLL.lib
+    ==> ./src/contrib/SignalSource/Enobio/lib/EnobioDLL.dll
+    ==> ./src/contrib/SignalSource/Enobio/lib/CEnobioCtrl.h
+    
+        No info in header file.  At least it's short.
+
+	Starlab
+	C/ Teodor Roviralta, 45
+	08022 – Barcelona
+	SPAIN
+		tel. +34 93 254 03 66
+		fax. +34 93 212 64 45
+		http://starlab.es
+		
+=================================================================
+
+TMS International B. V. [TMSi]
+
+    ==> ./src/contrib/SignalSource/TMSi/TMSiSDK/Feature.cpp
+    ==> ./src/contrib/SignalSource/TMSi/TMSiSDK/Feature.h
+    ==> ./src/contrib/SignalSource/TMSi/TMSiSDK/RTDevice.cpp
+    ==> ./src/contrib/SignalSource/TMSi/TMSiSDK/RTDevice.h
+    ==> ./src/contrib/SignalSource/TMSi/TMSiSDK/Sadio.h        
+        All the above files are either 2000 or 2001 and say:
+        Copyright (c) 2001 TMS International
+        Author: Rob Hemstede
+
+	TMS International B. V.
+	P.O. Box 6044
+	7503 GA Enschede
+	NETHERLANDS
+
+	TMS International B. V.
+	Zutphenstraat 57
+	7575 EJ Oldenzaal
+	NETHERLANDS
+		Phone: +31 (0) 541 534603
+		Fax: +31 (0) 541 534628
+		http://www.tmsi.com
+
+=================================================================
+
+Tucker Davis Technologies [TuckerDavis]
+
+    ==> ./src/contrib/SignalSource/TuckerDavis/chAcquire16.rco
+    ==> ./src/contrib/SignalSource/TuckerDavis/chAcquire16.rpx
+    ==> ./src/contrib/SignalSource/TuckerDavis/chAcquire64.rco
+    ==> ./src/contrib/SignalSource/TuckerDavis/chAcquire64.rpx
+    ==> ./src/contrib/SignalSource/TuckerDavis/chAcquire64_RZ2.rcx
+    ==> ./src/contrib/SignalSource/TuckerDavis/chAcquire64sineTest.rco
+    ==> ./src/contrib/SignalSource/TuckerDavis/chAcquire64sineTest.rpx
+    ==> ./src/contrib/SignalSource/TuckerDavis/zBUSx.ocx
+    ==> ./src/contrib/SignalSource/TuckerDavis/PA5x.ocx
+    ==> ./src/contrib/SignalSource/TuckerDavis/RPcoX.ocx
+    ==> ./src/contrib/SignalSource/TuckerDavis/zBUSx.ocx
+        ???
+
+	Tucker-Davis Technologies
+	11930 Research Circle
+	Alachua, FL 32615
+	USA
+		Phone: 386.462.9622
+		Fax: 386.462.5365
+		E-mail: info@tdt.com
+		http://www.tdt.com/
+
+=================================================================
+=================================================================
+
+Others (probably academics, license unclear; probably don't know we're using their code)
+
+    ==> ./src/extlib/math/FilterDesign.cpp
+    ==> ./src/extlib/math/FilterDesign.h
+        //       Based on mkfilter.C written by
+        //         A.J. Fisher, University of York   <fisher@minster.york.ac.uk>
+        //         September 1992
+    
+    
+    ==> ./src/contrib/SignalSource/Neuroscan/relay_server/Server.zip
+        DATAXCHG.DLL
+        SERVER2.BPR
+        SERVER2.EXE
+        SERVER4.CPP
+         * Author:     David J. Weston                                                 *
+         * Copyright:  (C) IACS, University of Warwick, UK                             *
+    
+    
+    ==> ./tools/OfflineAnalysis/topoplot.m
+        No copyright info in file, just this:
+        % Topoplot Version 2.1    
+        % Begun by Andy Spydell, NHRC,  7-23-96
+        % 8-96 Revised by Colin Humphries, CNL / Salk Institute, La Jolla CA
+
+    
+=================================================================
+=================================================================

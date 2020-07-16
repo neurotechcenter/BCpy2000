@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:Command Line Processing - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:Command Line Processing,Programming Howto:Quickstart Guide,Programming Reference:Build System,User Reference:Filters,User Reference:Matlab Tools" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Command Line Processing</h1><p class="subtitle">User Reference</p><hr class="sep" /><p>The purpose of the BCI2000 command-line tools is to recreate exactly, offline, the processing that BCI2000 modules perform in an online session.   This is possible because online BCI2000 modules consist of a chain of <a href="User_Reference%253AFilters.html" title="User Reference:Filters">filters</a>, each filter being implemented in a self-contained source file.  We can therefore take the individual filter implementations and build them singly, as separate executables called "filter tools" that can be called from the system command-line.  Recreating a preprocessing chain offline is then a question of passing a stream of data through a chain of these filter tools, connected by an operating-system "pipe".   Supporting the beginning and end of the filter-tool chain we have additional command-line tools called format converters—for example, a tool that reads a data file to start the chain off,  or tools that save the results in ASCII or Matlab formats to finish the chain. 
+</p><p>This page tells you how to use the command-line tools from a system shell, such as the Windows Command Prompt (you might know it as the "DOS window") or from a <tt>bash</tt>, <tt>tcsh</tt> or similar shell on a Unix-like system (for example, in the Mac OSX Terminal application).
+</p><p>If you are using Matlab, you may wish to examine <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">bci2000chain</a> instead: this uses the command-line tools, but hides the details and presents itself to you as a single Matlab function.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253ACommand_Line_Processing.html#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ACommand_Line_Processing.html#Command_line_interfaces"><span class="tocnumber">2</span> <span class="toctext">Command line interfaces</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ACommand_Line_Processing.html#Building_BCI2000_command_line_tools"><span class="tocnumber">3</span> <span class="toctext">Building BCI2000 command line tools</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ACommand_Line_Processing.html#Stream_format"><span class="tocnumber">4</span> <span class="toctext">Stream format</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Conversion_into_stream_format"><span class="tocnumber">4.1</span> <span class="toctext">Conversion into stream format</span></a>
+<ul>
+<li class='toclevel-3'><a href="User_Reference%253ACommand_Line_Processing.html#bci_dat2stream"><span class="tocnumber">4.1.1</span> <span class="toctext">bci_dat2stream</span></a>
+<ul>
+<li class='toclevel-4'><a href="User_Reference%253ACommand_Line_Processing.html#Input_format"><span class="tocnumber">4.1.1.1</span> <span class="toctext">Input format</span></a></li>
+<li class='toclevel-4'><a href="User_Reference%253ACommand_Line_Processing.html#Options"><span class="tocnumber">4.1.1.2</span> <span class="toctext">Options</span></a></li>
+</ul>
+</li>
+<li class='toclevel-3'><a href="User_Reference%253ACommand_Line_Processing.html#bci_prm2stream"><span class="tocnumber">4.1.2</span> <span class="toctext">bci_prm2stream</span></a></li>
+</ul>
+</li>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Conversion_from_stream_format"><span class="tocnumber">4.2</span> <span class="toctext">Conversion from stream format</span></a>
+<ul>
+<li class='toclevel-3'><a href="User_Reference%253ACommand_Line_Processing.html#bci_stream2prm"><span class="tocnumber">4.2.1</span> <span class="toctext">bci_stream2prm</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACommand_Line_Processing.html#bci_stream2asc"><span class="tocnumber">4.2.2</span> <span class="toctext">bci_stream2asc</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACommand_Line_Processing.html#bci_stream2table"><span class="tocnumber">4.2.3</span> <span class="toctext">bci_stream2table</span></a></li>
+<li class='toclevel-3'><a href="User_Reference%253ACommand_Line_Processing.html#bci_stream2mat"><span class="tocnumber">4.2.4</span> <span class="toctext">bci_stream2mat</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ACommand_Line_Processing.html#Applying_BCI2000_filters_to_streams"><span class="tocnumber">5</span> <span class="toctext">Applying BCI2000 filters to streams</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Compiling_an_existing_filter_as_a_command_line_tool"><span class="tocnumber">5.1</span> <span class="toctext">Compiling an existing filter as a command line tool</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Offline-only_filters"><span class="tocnumber">5.2</span> <span class="toctext">Offline-only filters</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ACommand_Line_Processing.html#Examples"><span class="tocnumber">6</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Extracting_parameters"><span class="tocnumber">6.1</span> <span class="toctext">Extracting parameters</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Processing_data_with_parameters_different_from_the_ones_contained_in_the_file"><span class="tocnumber">6.2</span> <span class="toctext">Processing data with parameters different from the ones contained in the file</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Processing_data_with_BCI2000_filters_and_importing_the_results_into_Matlab"><span class="tocnumber">6.3</span> <span class="toctext">Processing data with BCI2000 filters and importing the results into Matlab</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Exporting_BCI2000_data_into_a_table_suitable_for_import_into_other_applications_.28MS_Excel.2C_SPSS.29"><span class="tocnumber">6.4</span> <span class="toctext">Exporting BCI2000 data into a table suitable for import into other applications (MS Excel, SPSS)</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ACommand_Line_Processing.html#Testing_a_modified_filter_on_existing_data"><span class="tocnumber">6.5</span> <span class="toctext">Testing a modified filter on existing data</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ACommand_Line_Processing.html#Further_information"><span class="tocnumber">7</span> <span class="toctext">Further information</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Introduction"></a><h2>Introduction</h2>
+<p>Command line interfaces are a powerful tool for dynamically combining pieces of software which are typically small programs optimized for performing a very limited functionality. With a command line interface, data processing is usually performed <i>sequentially</i> on a stream of data. This allows the processing of indefinitely large amounts of data while consuming but a finite, and often very small, amount of memory.
+</p><p>Moreover, combining command line programs to perform complex tasks can be done interactively by entering complex commands directly and also in a "scripting" manner, by entering sequences of commands into text files which allow for iteration and branching. That way, automation of complex tasks can be achieved by rather simple means.
+</p><p>With the BCI2000 command line interface, BCI2000 data files can be 
+</p>
+<ul><li><i>converted</i>  into various formats, ready for further processing with available software tools, or for visual inspection in  human readable format; 
+</li><li><i>processed</i>  off-line with literally the same code as used in the on-line system. 
+</li></ul>
+<p>Together, these two concepts provide versatile access to recorded data in all stages of processing.
+The BCI2000 command line interface may prove useful for
+</p>
+<ul><li>automated <i>analysis</i>  of large amounts of recorded data, 
+</li><li><i>development</i>  of new filter classes, 
+</li><li><i>verification</i>  of external off-line analysis methods. 
+</li></ul>
+<p>This document explains the command line tools available for working with BCI2000 files, and how to build BCI2000 filters as single executables that may be combined to form a chain of filters.
+</p>
+<a name="Command_line_interfaces"></a><h2>Command line interfaces</h2>
+<p>Basically, the interface of a command line tool consists of 
+</p>
+<ul><li>an input stream <tt>stdin</tt>, 
+</li><li>an output stream <tt>stdout</tt>, 
+</li><li>an error stream <tt>stderr</tt>, 
+</li><li>optional arguments (switches) controlling details of its behavior. 
+</li></ul>
+<p>The most important feature of a command line interface is its ability to <i>redirect</i>  streams.
+</p>
+<ul><li><tt>stdin</tt> can be redirected to read from a file using the  <tt>&lt;</tt> operator; 
+</li><li><tt>stdout</tt> can be redirected to write to a file using the  <tt>&gt;</tt> operator; 
+</li><li>one program's <tt>stdout</tt> can be plugged into another program's  <tt>stdin</tt> using the <tt>|</tt> operator ("pipe"). 
+</li></ul>
+<p>Because redirection is a feature of the program's execution environment ("shell"), and not a feature of the program itself, programs can be very simple, avoiding all explicit handling of input or output files. 
+</p><p>The following example command line will extract the "sampling rate" parameter from the BCI2000 data file <tt>mydata.dat</tt>, and display the result on the text console:
+</p>
+<pre>bci_dat2stream &lt; mydata.dat | bci_stream2prm | grep SamplingRate
+</pre>
+<a name="Building_BCI2000_command_line_tools"></a><h2>Building BCI2000 command line tools</h2>
+<p>Command line tools are built automatically by the BCI2000 build system if building of BCI2000 tools is enabled.
+</p><p>In order to use the command line tools, you will need to add the full path 
+to the <tt>BCI2000/Tools/cmdline</tt> directory to your system's PATH environment variable. (Please consult your operating system documentation for details on environment variables.)
+</p>
+<a name="Stream_format"></a><h2>Stream format</h2>
+<p>The common format used to exchange data between BCI2000 command line tools is called a "BCI2000 binary stream," or just "stream." Such a "stream" transfers parameters, states, and data in exactly the same binary format as is used for socket communication between the four main modules of the BCI2000 real-time system.
+</p><p>The stream format is different from the BCI2000 <tt>dat</tt> and <tt>prm</tt> file formats, and is not human readable. A number of tools are available to convert data either to or from stream format.
+As the stream format is only used between tools, and generally not of interest to the user, a typical conversion will use <i>two</i>  of the tools provided, one to translate the original file into a "stream," and one to translate the stream into the desired format.
+</p><p>E.g., to display a <tt>dat</tt> file's contents in a human readable format, one would use a tool called <tt>bci_dat2stream</tt> to convert it into a stream, and then use another tool called <tt>bci_stream2asc</tt> to convert the stream into text. If you want the output to appear in the text window as a sequence of pages, you pipe it into the "more" program:
+</p>
+<pre>bci_dat2stream &lt; myfile.dat | bci_stream2asc | more
+</pre>
+<a name="Conversion_into_stream_format"></a><h3>Conversion into stream format</h3>
+<a name="bci_dat2stream"></a><h4><tt>bci_dat2stream</tt></h4>
+<a name="Input_format"></a><h5>Input format</h5>
+<p><tt>bci_dat2stream</tt> converts a BCI2000 data (<tt>dat</tt>) file into a stream.
+</p>
+<a name="Options"></a><h5>Options</h5>
+<p>The <tt>--transmit</tt> option may be used to select states, parameters, and data for transmission, as in
+</p>
+<pre>bci_dat2stream --transmit-sp &lt; myfile.dat
+</pre>
+<p>In the above example, only states and parameters but no data will be contained in the resulting stream. "Data" comprises signal and state vector data.
+Omitting a <tt>--transmit</tt> option corresponds to<tt>--transmit-spd</tt>. This transmits all information contained in the <tt>dat</tt> file.
+</p><p>When the <tt>--raw</tt> option is given, data are transmitted in raw, i.e. uncalibrated, form. By default, data are transmitted in calibrated form, using the calibration information from the <tt>SourceChOffset</tt> and <tt>SourceChGain</tt> parameters.
+</p><p>The <tt>-p</tt> or <tt>--parameters</tt> option allows some or all of the parameter values stored in the data file to be overridden by values from a named parameter file—for example:
+</p>
+<pre>bci_dat2stream -pMyParameters.prm &lt; myfile.dat
+</pre>
+<a name="bci_prm2stream"></a><h4><tt>bci_prm2stream</tt></h4>
+<p><tt>bci_prm2stream</tt> converts a BCI2000 parameter (<tt>prm</tt>) file into a stream.
+</p>
+<a name="Conversion_from_stream_format"></a><h3>Conversion from stream format</h3>
+<a name="bci_stream2prm"></a><h4><tt>bci_stream2prm</tt></h4>
+<p><tt>bci_stream2prm</tt> converts a stream into a BCI2000 parameter (<tt>prm</tt>) file. As a parameter file is just a sequence of parameter lines, this is also a text-only, human readable format.
+</p>
+<a name="bci_stream2asc"></a><h4><tt>bci_stream2asc</tt></h4>
+<p><tt>bci_stream2asc</tt> converts a stream into a human readable format. Each object contained in the stream will appear as its C++ type name, followed by an opening brace, its content, and a closing brace. The content will appear as defined by the stream inserter <tt>operator&gt;&gt;</tt> for the object's type.
+</p><p>In the output of BCI2000 state vector information, each state will appear on its own line, thus values of certain states may be easily extracted using the <tt>grep</tt> program.
+</p>
+<a name="bci_stream2table"></a><h4><tt>bci_stream2table</tt></h4>
+<p><tt>bci_stream2table</tt> converts a stream into a tab-separated table containing state and signal values in ASCII format. Each state, and each signal entry, has its own column. The first line of output begins with a <tt>#</tt> comment character, and contains a tab-separated list of column headers. This format is best suited for data import into applications that use tables.
+</p>
+<a name="bci_stream2mat"></a><h4><tt>bci_stream2mat</tt></h4>
+<p><tt>bci_stream2mat</tt> converts a stream into a Matlab binary file. The output <tt>.mat</tt> file contains two Matlab variables called <tt>Index</tt> and <tt>Data</tt>. Of these, the <tt>Data</tt> variable is a matrix with each column representing a BCI2000 data block (comprising state information and signal data). <tt>Index</tt> is a Matlab structure that contains indices into the <tt>Data</tt> rows, allowing access to BCI2000 states by name, as in:
+</p>
+<pre>myMatlabVariable = squeeze( Data( Index.TargetCode,&nbsp;: ) );
+</pre>
+<p>As each BCI2000 data block contains a signal which is a two-dimensional matrix (channels by elements), the signal index is itself a matrix. To copy the first channel's data into a Matlab variable, write
+</p>
+<pre>myChannel1 = squeeze( Data( Index.Signal( 1,&nbsp;: ),&nbsp;: ) );
+</pre>
+<p>For convenience, there is a Matlab function provided that simplifies reading <tt>bci_stream2mat</tt> output files into Matlab variables:
+</p>
+<pre>[ mySignal, myTargetCode ] = load_bcimat( 'eegdata.mat', 2, 'TargetCode' );
+</pre>
+<p>This function takes the file name as its first argument. In a second argument, specify the number of dimensions your output signal will have -- typically, this will be 2 for EEG-like data (samples by channels), and 3 for spectral data (blocks by bins by channels). Remaining arguments are treated as state names; the associated state data will be written into the variables specified as remaining output arguments. State variables will always be one-dimensional, with their number of entries matching the first dimension of the signal variable.
+</p><p>Note that if you are using Matlab, you may prefer to use <tt>bci2000chain</tt> from the <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">suite of BCI2000 matlab tools</a>, instead of calling the command-line tools plus <tt>load_bcimat</tt> by hand.
+</p>
+<a name="Applying_BCI2000_filters_to_streams"></a><h2>Applying BCI2000 filters to streams</h2>
+<a name="Compiling_an_existing_filter_as_a_command_line_tool"></a><h3>Compiling an existing filter as a command line tool</h3>
+<p>Adding a new command-line filter tool to your BCI2000 solution file or Makefile requires use of CMake as described in the <a href="Programming_Reference%253ABuild_System.html" title="Programming Reference:Build System">build system documentation</a>.  The simplest example is when you have a filter implementation in files <tt>MyFilter.cpp</tt> and <tt>MyFilter.h</tt>, in a directory <tt>MyDir</tt> on their own. Let us assume that this is a subdirectory of <tt>src/custom</tt> since this is an area of the BCI2000 distribution reserved for your own code (if <tt>src/custom</tt> does not already exist, create it—the BCI2000 CMake system will find it automatically).  To add the command-line filter, first ensure that CMake reaches your subdirectory. This is done by appending the appropriate line to <tt>src/custom/CMakeLists.txt</tt>&nbsp;:
+</p>
+<pre>ADD_SUBDIRECTORY(  MyDir  )
+</pre>
+<p>Then you need to create a <tt>CMakeLists.txt</tt> file inside <tt>MyDir</tt>, containing the following line:
+</p>
+<pre>BCI2000_ADD_CMDLINE_FILTER( MyFilter )
+</pre>
+<p>Finally you need to go back to the top-level <tt>build</tt> and run CMake using one of the scripts there (<tt>Make......bat</tt> on Windows,  or <tt>Make Unix Makefiles.sh</tt> on OSX and other unix-like systems).  You need to ensure that your build is configured to include the BCI2000 Tools:  if you have previously run CMake and need to change this setting, you can either delete <tt>CMakeCache.txt</tt> from the <tt>build</tt> directory before running the script,  or run <tt>cmake -i</tt> (decline the offer to see advanced options).
+</p><p>Assuming this is successful, you can re-open your solution file and see MyFilter listed among the targets—or, for Makefile-based builds, you can simply type
+</p>
+<pre>make MyFilter
+</pre>
+<p>The executable <tt>MyFilter</tt> (or <tt>MyFilter.exe</tt>) is built in the <tt>tools/cmdline</tt> directory.  Assuming this directory is on the system path, you can verify that the executable has built successfully by typing
+</p>
+<pre>MyFilter --help
+</pre>
+<p>You should get a message stating that the program applies the "MyFilter" filter to its input.
+</p><p>One potential complication is that the <tt>BCI2000_ADD_CMDLINE_FILTER</tt> macro cannot come in the same <tt>CMakeLists.txt</tt> file as the declaration of a BCI2000 module.   Let us suppose you have followed the <a href="Programming_Howto%253AQuickstart_Guide.html" title="Programming Howto:Quickstart Guide">programmers' quickstart guide</a> to create a custom signal-processing module in <tt>src/custom/MyModule</tt> and add a custom filter <tt>MyFilter</tt> to it.  A safe procedure (which can be automated used the <a href="Programming_Howto%253AQuickstart_Guide.html#Configuring_your_new_filter_for_offline_use" title="Programming Howto:Quickstart Guide">NewBCI2000FilterTool</a> utility) is as follows:
+</p>
+<ol><li> Create a subdirectory <tt>src/custom/MyModule/cmdline</tt>
+</li><li> Insert the line <tt>ADD_SUBDIRECTORY( cmdline )</tt> at the <i>beginning</i> of <tt>src/custom/MyModule/CMakeLists.txt</tt> (it must come <i>before</i> the module declaration).
+</li><li> Create the file <tt>src/custom/MyModule/cmdline/CMakeLists.txt</tt> containing the following line:
+</li></ol>
+<pre>BCI2000_ADD_CMDLINE_FILTER( MyFilter FROM .. )
+</pre>
+<p>Further instructive examples, of what to do when your filter needs to be linked to additional C++ source or external libraries,  can be found in <tt>src/core/Tools/cmdline/CMakeLists.txt</tt>&nbsp;:
+</p>
+<pre>SET( SIGPROC_DIR ${BCI2000_ROOT_DIR}/src/shared/modules/signalprocessing )
+
+BCI2000_ADD_CMDLINE_FILTER( ARFilter              FROM ${SIGPROC_DIR}    # because ARFilter.cpp and ARFilter.h reside there
+                            INCLUDING "MATH"                             # because the "MATH" external library is required
+                            EXTRA_SOURCES ${SIGPROC_DIR}/ARThread.cpp    # because the filter relies on one or more additional source files
+                            EXTRA_HEADERS ${SIGPROC_DIR}/ARThread.h )    # ...and their corresponding headers
+
+BCI2000_ADD_CMDLINE_FILTER( LinearClassifier      FROM ${SIGPROC_DIR} )  # a simpler example
+</pre>
+<a name="Offline-only_filters"></a><h3>Offline-only filters</h3>
+<p>For off-line analysis, data must often be partitioned into "segments" before performing statistics. As there is no notion of "segments" in the on-line data and file format, we suggest using the "Running" state to indicate segments in the following way:
+</p><p>When performing a segmenting task, a filter sets the "Running" state to zero outside segments. A statistics filter will then perform buffering from its <tt>Process()</tt> function, and act on the buffered data from its <tt>StartRun()</tt> and <tt>StopRun()</tt> functions.
+</p><p>Note that setting the "Running" state to zero inside the on-line system will suspend the on-line system, so this kind of segmenting and statistics filtering cannot be used on-line.
+</p>
+<a name="Examples"></a><h2>Examples</h2>
+<p>The following examples work from the Windows NT command prompt. Nevertheless, we would like to point the reader to the free <i>cygwin</i>  collection of GNU tools ported to the Win32 API. <i>Cygwin</i>  provides the power of the <tt>bash</tt> shell, and of programs like the <tt>sed</tt> stream editor. 
+Although the BCI2000 command line tools cannot be <b>compiled</b> from within <i>cygwin</i>, they work fine when <b>called</b> from <i>cygwin</i> .
+</p>
+<a name="Extracting_parameters"></a><h3>Extracting parameters</h3>
+<p>To extract parameters from a data file, convert it into a stream using <tt>bci_dat2stream --transmit-p</tt>, and convert the stream into a parameter file using <tt>bci_stream2prm</tt> as in
+</p>
+<pre>bci_dat2stream &lt; mydata.dat | bci_stream2prm &gt; myprms.prm
+</pre>
+<a name="Processing_data_with_parameters_different_from_the_ones_contained_in_the_file"></a><h3>Processing data with parameters different from the ones contained in the file</h3>
+<p>To combine a data file with parameters other than those contained in it, use <tt>bci_dat2stream</tt>'s <tt>-p</tt> or <tt>--parameters</tt> option:
+</p>
+<pre>bci_dat2stream -pMyParameters.prm &lt; MyData.dat | MyFilter | bci_stream2table &gt; MyTable.txt
+</pre>
+<a name="Processing_data_with_BCI2000_filters_and_importing_the_results_into_Matlab"></a><h3>Processing data with BCI2000 filters and importing the results into Matlab</h3>
+<p>First, consider using the higher-level Matlab interface <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">bci2000chain</a> instead.  But if you decide you want to do it by hand, and you want to process data with the filters used in the mu-training on-line system, saving the AR spectrum as Matlab file, execute 
+</p>
+<pre>bci_dat2stream &lt; mydata.dat | TransmissionFilter | SpatialFilter | ARFilter | bci_stream2mat &gt; myspectra.mat
+</pre>
+<p>Load the data into Matlab using
+</p>
+<pre>[ signal, TargetCode ] = load_bcimat( 'myspectra.mat', 3, 'TargetCode' );
+</pre>
+<p>This requires that the file <tt>load_bcimat.m</tt> is accessible from the Matlab search path.
+</p>
+<a name="Exporting_BCI2000_data_into_a_table_suitable_for_import_into_other_applications_.28MS_Excel.2C_SPSS.29"></a><h3>Exporting BCI2000 data into a table suitable for import into other applications (MS Excel, SPSS)</h3>
+<p>To process data with the filters used in the mu-training on-line system, saving the AR spectrum as a table in ASCII format, execute
+</p>
+<pre>bci_dat2stream &lt; mydata.dat | TransmissionFilter | SpatialFilter | ARFilter | bci_stream2table &gt; mytable.txt
+</pre>
+<a name="Testing_a_modified_filter_on_existing_data"></a><h3>Testing a modified filter on existing data</h3>
+<p>To verify that changes to a filter's code don't change its behavior with respect to existing data, apply both versions to a stream, convert the output stream into human readable format, and have a file comparison program display any differences. For the following example, we will compare a previous version of the ARFilter, renamed <tt>prev_ARFilter</tt>, to the current one.
+</p>
+<ol><li>Create a stream suitable for input to the ARFilter:<br /><code>bci_dat2stream &lt; mydata.dat | TransmissionFilter | SpatialFilter &gt; test.bcistream</code>
+</li><li>Apply both filter versions to the stream, and save the results in human readable format:<br /><code>ARFilter &lt; test.bcistream | bci_stream2asc &gt; ARresult.txt &amp;&amp;  prev_ARFilter &lt; test.bcistream | bci_stream2asc &gt; prev_ARresult.txt</code>
+</li><li>Compare the results (using the Windows NT analog to the <tt>diff</tt> program):<br /><code>comp /a /l prev_ARresult.txt ARresult.txt | more</code>
+</li></ol>
+<a name="Further_information"></a><h2>Further information</h2>
+<ul><li>A comprehensive and up-to-date description of a number of command line shells, and their scripting, is provided at <tt><a href="http://www.ss64.com/" class='external free' title="http://www.ss64.com/" rel="nofollow">http://www.ss64.com/</a></tt>. 
+</li></ul>
+<ul><li>The <i>cygwin</i>  Win32 port of GNU tools can be downloaded at <tt><a href="http://www.cygwin.com/" class='external free' title="http://www.cygwin.com/" rel="nofollow">http://www.cygwin.com/</a></tt>.
+</li></ul>
+
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+<ul><li><a href="User_Reference%253ABCI2000Launcher.html">BCI2000Launcher</a></li>
+<li><a href="User_Reference%253ABCI2000Viewer.html">BCI2000Viewer</a></li>
+<li><a href="User_Reference%253ABCI2000FileInfo.html">BCI2000FileInfo</a></li>
+<li><a href="User_Reference%253ABCI2000Export.html">BCI2000Export</a></li>
+<li><a href="User_Reference%253AEEGLabImport.html">EEGLabImport</a></li>
+<li><a href="User_Reference%253AMatlab_MEX_Files.html">Matlab MEX Files</a></li>
+<li>Command Line Processing</li>
+</ul></ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

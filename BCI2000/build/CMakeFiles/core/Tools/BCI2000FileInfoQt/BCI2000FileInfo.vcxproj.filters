@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000FileInfoQt\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Tools\BCI2000FileInfoQt\bci2000fileinfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\PrefDialog.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ConfigWindow.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\EditMatrix.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ShowParameters.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\Preferences.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\OperatorUtils.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ParsedComment.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ParamDisplay.cpp">
+      <Filter>Source Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\ExecutableHelp.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\bcistream\BCIStream_guiapp.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\bcistream</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\AboutBox.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Settings.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\gui\ColorListChooser.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\CorePCH.cpp">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\QtMessageHandler.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\moc_bci2000fileinfo.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\__\__\Operator\OperatorQt\moc_PrefDialog.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\__\__\Operator\OperatorQt\moc_ConfigWindow.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\__\__\Operator\OperatorQt\moc_EditMatrix.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\__\__\Operator\OperatorQt\moc_ShowParameters.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\__\__\Operator\OperatorQt\moc_ParamDisplay.cpp">
+      <Filter>Generated\Qt</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.cpp">
+      <Filter>Generated\Version</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\compat\WinMain.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\compat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Tools\BCI2000FileInfoQt\bci2000fileinfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\PrefDialog.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ConfigWindow.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\EditMatrix.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ShowParameters.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\Preferences.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\OperatorUtils.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ParsedComment.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ParamDisplay.h">
+      <Filter>Header Files\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\ExecutableHelp.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\AboutBox.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Settings.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\gui\ColorListChooser.h">
+      <Filter>Header Files\BCI2000 Framework\shared\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\QtMain.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\ui_bci2000fileinfo.h">
+      <Filter>Generated\Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\ui_PrefDialog.h">
+      <Filter>Generated\Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\ui_ConfigWindow.h">
+      <Filter>Generated\Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\ui_EditMatrix.h">
+      <Filter>Generated\Qt</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\ui_ShowParameters.h">
+      <Filter>Generated\Qt</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Tools\BCI2000FileInfoQt\bci2000fileinfo.ui">
+      <Filter>Resources</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\PrefDialog.ui">
+      <Filter>Resources\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ConfigWindow.ui">
+      <Filter>Resources\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\EditMatrix.ui">
+      <Filter>Resources\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\src\core\Operator\OperatorQt\ShowParameters.ui">
+      <Filter>Resources\BCI2000 Framework\core\Operator\OperatorQt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\4fc46d1f10f20dc483bfdd4dc9c3e637\moc_bci2000fileinfo.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\487c6e5a7871b11bd09f28b5dfd20054\moc_PrefDialog.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\487c6e5a7871b11bd09f28b5dfd20054\moc_ConfigWindow.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\487c6e5a7871b11bd09f28b5dfd20054\moc_EditMatrix.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\487c6e5a7871b11bd09f28b5dfd20054\moc_ShowParameters.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\487c6e5a7871b11bd09f28b5dfd20054\moc_ParamDisplay.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\BCI2000FileInfo\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\question-mark.ico">
+      <Filter>Generated\AppIcon</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Tools\BCI2000FileInfoQt\appicon.rc">
+      <Filter>Generated\AppIcon</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc">
+      <Filter>Generated\Version</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{110FD9AA-8569-3FE5-A68E-6802E5F295ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\AppIcon">
+      <UniqueIdentifier>{7B6861FE-6AD2-353B-914A-C15FCD201E9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\BCI2000 Framework">
+      <UniqueIdentifier>{5F667A99-7CE6-3DA4-96A4-82A7D98398CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Qt">
+      <UniqueIdentifier>{97CD897D-0A51-3517-A84A-21A76DDB9EF8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Version">
+      <UniqueIdentifier>{79EF525C-6BF6-3B2D-86D9-96258C1C83CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core">
+      <UniqueIdentifier>{BA7FED92-0296-337A-84C7-F2798F240B14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core\Operator">
+      <UniqueIdentifier>{02665D9B-10FB-3639-8BFA-EB1BC62BD4DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\core\Operator\OperatorQt">
+      <UniqueIdentifier>{E5496D7C-78F9-3FF8-8BC2-E6196A836C02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\gui">
+      <UniqueIdentifier>{BB8B8D64-507D-37B4-8ECE-2B457DE3279A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{2DBCCB9D-4479-3D5F-9C13-F337F231BB05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{A4981D77-1A5D-3619-A77C-F586F512390E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\BCI2000 Framework">
+      <UniqueIdentifier>{F1A26605-27CB-3C6F-AAEB-1803F341A610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\BCI2000 Framework\core">
+      <UniqueIdentifier>{5EF34027-BF89-3D3F-B6F9-56E848A9AEEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\BCI2000 Framework\core\Operator">
+      <UniqueIdentifier>{88A8C712-D894-3A07-A60E-66105B1F8E7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\BCI2000 Framework\core\Operator\OperatorQt">
+      <UniqueIdentifier>{C5CF032B-9739-38C6-B70C-88EE02EC12CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core">
+      <UniqueIdentifier>{AAB0B3AB-DC53-3674-BBA8-2ED3A769DBBF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core\Operator">
+      <UniqueIdentifier>{50F7317F-5189-3DFE-9AF1-208CDFEF8AE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\core\Operator\OperatorQt">
+      <UniqueIdentifier>{C07DCBF4-86AE-338E-8119-093BB2FD0AA6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\bcistream">
+      <UniqueIdentifier>{FBCA4655-BB91-309E-8A89-1B02E7786D7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\compat">
+      <UniqueIdentifier>{2B2B0696-82DA-3F6F-B029-174E1C314E07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\gui">
+      <UniqueIdentifier>{EE877380-CCED-3BD3-B5C3-C452300C5A87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{A38F8834-17BA-34DF-8B43-89644E978F8F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

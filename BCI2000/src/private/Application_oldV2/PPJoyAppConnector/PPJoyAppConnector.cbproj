@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{eccd6c6c-2629-4a56-82af-ade90c912303}</ProjectGuid>
+    <Config Condition="'$(Config)'==''">Debug</Config>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+    <Base>true</Base>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+    <Base>true</Base>
+    <Cfg_1>true</Cfg_1>
+    <CfgParent>Base</CfgParent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+    <Base>true</Base>
+    <Cfg_2>true</Cfg_2>
+    <CfgParent>Base</CfgParent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Base)'!=''">
+    <BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+    <OutputExt>exe</OutputExt>
+    <ILINK_IntermediateOutputPath>obj</ILINK_IntermediateOutputPath>
+    <Defines>NO_STRICT</Defines>
+    <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+    <BCC_OutputDir>obj\</BCC_OutputDir>
+    <BCC_InstructionSet>6</BCC_InstructionSet>
+    <BRCC_OutputDir>obj\</BRCC_OutputDir>
+    <DCC_DebugInformation>false</DCC_DebugInformation>
+    <ILINK_ObjectSearchPath>D:\bci2000\src\contrib\Tools\PPJoyAppConnector;..\..\..\shared\utils</ILINK_ObjectSearchPath>
+    <BCC_ZeroLengthEmptyMemberFuncs>true</BCC_ZeroLengthEmptyMemberFuncs>
+    <ProjectType>CppConsoleApplication</ProjectType>
+    <FinalOutputDir>..\..\..\..\prog\</FinalOutputDir>
+    <TASM_AdditionalSwitches> /w2 obj\</TASM_AdditionalSwitches>
+    <PackageImports>vcl.bpi;rtl.bpi;bcbie.bpi;vclx.bpi;vclactnband.bpi;xmlrtl.bpi;bcbsmp.bpi;dbrtl.bpi;vcldb.bpi;vcldbx.bpi;bdertl.bpi;dsnap.bpi;dsnapcon.bpi;teeUI.bpi;teedb.bpi;tee.bpi;adortl.bpi;vclib.bpi;ibxpress.bpi;dbxcds.bpi;dbexpress.bpi;DbxCommonDriver.bpi;IndyCore.bpi;IndySystem.bpi;IndyProtocols.bpi;inet.bpi;IntrawebDB_90_100.bpi;Intraweb_90_100.bpi;vclie.bpi;websnap.bpi;webdsnap.bpi;inetdbbde.bpi;inetdbxpress.bpi;soaprtl.bpi</PackageImports>
+    <DCC_UnitSearchPath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_UnitSearchPath>
+    <BCC_wpar>false</BCC_wpar>
+    <BRCC_UserSuppliedOptions> -I..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_UserSuppliedOptions>
+    <BCC_PCHCache>true</BCC_PCHCache>
+    <DCC_DcuOutput>obj\</DCC_DcuOutput>
+    <IncludePath>$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\vcl;D:\bci2000\src\contrib\Tools\PPJoyAppConnector;..\..\..\shared\utils</IncludePath>
+    <BCC_IntegerSizedEnums>false</BCC_IntegerSizedEnums>
+    <BCC_IncludePath>..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BCC_IncludePath>
+    <TASM_IncludePath>..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</TASM_IncludePath>
+    <BRCC_IncludePath>..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</BRCC_IncludePath>
+    <DCC_IncludePath>.\;$(BDS)\lib;$(BDS)\lib\obj</DCC_IncludePath>
+    <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
+    <BCC_ZeroLengthEmptyBaseClass>true</BCC_ZeroLengthEmptyBaseClass>
+    <ILINK_LibraryPath>$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;D:\bci2000\src\contrib\Tools\PPJoyAppConnector;..\..\..\shared\utils</ILINK_LibraryPath>
+    <BCC_Defines>NO_STRICT;MODTYPE=3</BCC_Defines>
+    <DCC_ObjOutput>obj\</DCC_ObjOutput>
+    <BRCC_Defines>MODTYPE=3</BRCC_Defines>
+    <TASM_Defines>MODTYPE=3</TASM_Defines>
+    <Multithreaded>true</Multithreaded>
+    <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+    <TASM_Debugging>None</TASM_Debugging>
+    <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Cfg_1)'!=''">
+    <DCC_Optimize>false</DCC_Optimize>
+    <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+    <Defines>NO_STRICT,_NO_VCL;$(Defines)</Defines>
+    <ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+    <BCC_InstructionSet>6</BCC_InstructionSet>
+    <BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+    <ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+    <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    <BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+    <IntermediateOutputDir>Debug_Build</IntermediateOutputDir>
+    <TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+    <BCC_StackFrames>true</BCC_StackFrames>
+    <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+    <ILINK_LibraryPath>$(BDS)\lib\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+    <BCC_Defines>_DEBUG;$(BCC_Defines)</BCC_Defines>
+    <TASM_Debugging>Full</TASM_Debugging>
+    <BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Cfg_2)'!=''">
+    <BCC_InstructionSet>6</BCC_InstructionSet>
+    <IntermediateOutputDir>Release_Build</IntermediateOutputDir>
+    <ILINK_LibraryPath>$(BDS)\lib\release;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+    <BCC_Defines>NDEBUG;$(BCC_Defines)</BCC_Defines>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>CPlusPlusBuilder.Personality</Borland.Personality>
+    <Borland.ProjectType>CppConsoleApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><CPlusPlusBuilder.Personality><VersionInfo><VersionInfo Name="IncludeVerInfo">False</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1033</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Debugging><Debugging Name="DebugSourceDirs"></Debugging></Debugging><Parameters><Parameters Name="RunParams"></Parameters><Parameters Name="Launcher"></Parameters><Parameters Name="UseLauncher">True</Parameters><Parameters Name="DebugCWD"></Parameters><Parameters Name="HostApplication"></Parameters><Parameters Name="RemoteHost"></Parameters><Parameters Name="RemotePath"></Parameters><Parameters Name="RemoteParams"></Parameters><Parameters Name="RemoteLauncher"></Parameters><Parameters Name="UseRemoteLauncher">False</Parameters><Parameters Name="RemoteCWD"></Parameters><Parameters Name="RemoteDebug">False</Parameters><Parameters Name="Debug Symbols Search Path"></Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><Linker><Linker Name="LibPrefix"></Linker><Linker Name="LibSuffix"></Linker><Linker Name="LibVersion"></Linker></Linker><ProjectProperties><ProjectProperties Name="AutoShowDeps">False</ProjectProperties><ProjectProperties Name="ManagePaths">True</ProjectProperties><ProjectProperties Name="VerifyPackages">True</ProjectProperties></ProjectProperties><HistoryLists_hlIncludePath><HistoryLists_hlIncludePath Name="Count">1</HistoryLists_hlIncludePath><HistoryLists_hlIncludePath Name="Item0">$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\vcl;D:\bci2000\src\contrib\Tools\PPJoyAppConnector;..\..\..\shared\utils</HistoryLists_hlIncludePath></HistoryLists_hlIncludePath><HistoryLists_hlILINK_LibraryPath><HistoryLists_hlILINK_LibraryPath Name="Count">1</HistoryLists_hlILINK_LibraryPath><HistoryLists_hlILINK_LibraryPath Name="Item0">$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;D:\bci2000\src\contrib\Tools\PPJoyAppConnector;..\..\..\shared\utils</HistoryLists_hlILINK_LibraryPath><HistoryLists_hlILINK_LibraryPath Name="Item1">$(BDS)\lib\release;$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;D:\bci2000\src\contrib\Tools\PPJoyAppConnector;..\..\..\shared\utils</HistoryLists_hlILINK_LibraryPath></HistoryLists_hlILINK_LibraryPath><HistoryLists_hlDefines><HistoryLists_hlDefines Name="Count">1</HistoryLists_hlDefines><HistoryLists_hlDefines Name="Item0">NO_STRICT</HistoryLists_hlDefines></HistoryLists_hlDefines><HistoryLists_hlFinalOutputDir><HistoryLists_hlFinalOutputDir Name="Count">1</HistoryLists_hlFinalOutputDir><HistoryLists_hlFinalOutputDir Name="Item0">..\..\..\..\prog\</HistoryLists_hlFinalOutputDir></HistoryLists_hlFinalOutputDir>  <HistoryLists_hlBCC_MaxIdentifierLength>
+      <HistoryLists_hlBCC_MaxIdentifierLength Name="Count">1</HistoryLists_hlBCC_MaxIdentifierLength>
+      <HistoryLists_hlBCC_MaxIdentifierLength Name="Item0">250</HistoryLists_hlBCC_MaxIdentifierLength>
+    </HistoryLists_hlBCC_MaxIdentifierLength>
+    <HistoryLists_hlBCC_IncludePath>
+      <HistoryLists_hlBCC_IncludePath Name="Count">1</HistoryLists_hlBCC_IncludePath>
+      <HistoryLists_hlBCC_IncludePath Name="Item0">..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</HistoryLists_hlBCC_IncludePath>
+    </HistoryLists_hlBCC_IncludePath>
+    <HistoryLists_hlBCC_Defines>
+      <HistoryLists_hlBCC_Defines Name="Count">1</HistoryLists_hlBCC_Defines>
+      <HistoryLists_hlBCC_Defines Name="Item0">NO_STRICT;MODTYPE=3</HistoryLists_hlBCC_Defines>
+    </HistoryLists_hlBCC_Defines>
+    <HistoryLists_hlBCC_OutputDir>
+      <HistoryLists_hlBCC_OutputDir Name="Count">1</HistoryLists_hlBCC_OutputDir>
+      <HistoryLists_hlBCC_OutputDir Name="Item0">obj\</HistoryLists_hlBCC_OutputDir>
+    </HistoryLists_hlBCC_OutputDir>
+    <HistoryLists_hlILINK_MaxErrors>
+      <HistoryLists_hlILINK_MaxErrors Name="Count">1</HistoryLists_hlILINK_MaxErrors>
+      <HistoryLists_hlILINK_MaxErrors Name="Item0">0</HistoryLists_hlILINK_MaxErrors>
+    </HistoryLists_hlILINK_MaxErrors>
+    <HistoryLists_hlILINK_FileAlignment>
+      <HistoryLists_hlILINK_FileAlignment Name="Count">1</HistoryLists_hlILINK_FileAlignment>
+      <HistoryLists_hlILINK_FileAlignment Name="Item0">0x200</HistoryLists_hlILINK_FileAlignment>
+    </HistoryLists_hlILINK_FileAlignment>
+    <HistoryLists_hlILINK_ObjectAlignment>
+      <HistoryLists_hlILINK_ObjectAlignment Name="Count">1</HistoryLists_hlILINK_ObjectAlignment>
+      <HistoryLists_hlILINK_ObjectAlignment Name="Item0">4096</HistoryLists_hlILINK_ObjectAlignment>
+    </HistoryLists_hlILINK_ObjectAlignment>
+    <HistoryLists_hlILINK_BaseAddress>
+      <HistoryLists_hlILINK_BaseAddress Name="Count">1</HistoryLists_hlILINK_BaseAddress>
+      <HistoryLists_hlILINK_BaseAddress Name="Item0">0x00400000</HistoryLists_hlILINK_BaseAddress>
+    </HistoryLists_hlILINK_BaseAddress>
+    <HistoryLists_hlILINK_HeapCommitSize>
+      <HistoryLists_hlILINK_HeapCommitSize Name="Count">1</HistoryLists_hlILINK_HeapCommitSize>
+      <HistoryLists_hlILINK_HeapCommitSize Name="Item0">0x00001000</HistoryLists_hlILINK_HeapCommitSize>
+    </HistoryLists_hlILINK_HeapCommitSize>
+    <HistoryLists_hlILINK_HeapReserveSize>
+      <HistoryLists_hlILINK_HeapReserveSize Name="Count">1</HistoryLists_hlILINK_HeapReserveSize>
+      <HistoryLists_hlILINK_HeapReserveSize Name="Item0">0x00100000</HistoryLists_hlILINK_HeapReserveSize>
+    </HistoryLists_hlILINK_HeapReserveSize>
+    <HistoryLists_hlILINK_StackCommitSize>
+      <HistoryLists_hlILINK_StackCommitSize Name="Count">1</HistoryLists_hlILINK_StackCommitSize>
+      <HistoryLists_hlILINK_StackCommitSize Name="Item0">0x00002000</HistoryLists_hlILINK_StackCommitSize>
+    </HistoryLists_hlILINK_StackCommitSize>
+    <HistoryLists_hlILINK_StackReserveSize>
+      <HistoryLists_hlILINK_StackReserveSize Name="Count">1</HistoryLists_hlILINK_StackReserveSize>
+      <HistoryLists_hlILINK_StackReserveSize Name="Item0">0x00100000</HistoryLists_hlILINK_StackReserveSize>
+    </HistoryLists_hlILINK_StackReserveSize>
+    <HistoryLists_hlILINK_IntermediateOutputPath>
+      <HistoryLists_hlILINK_IntermediateOutputPath Name="Count">1</HistoryLists_hlILINK_IntermediateOutputPath>
+      <HistoryLists_hlILINK_IntermediateOutputPath Name="Item0">obj</HistoryLists_hlILINK_IntermediateOutputPath>
+    </HistoryLists_hlILINK_IntermediateOutputPath>
+    <HistoryLists_hlBRCC_IncludePath>
+      <HistoryLists_hlBRCC_IncludePath Name="Count">1</HistoryLists_hlBRCC_IncludePath>
+      <HistoryLists_hlBRCC_IncludePath Name="Item0">..\..\..\extlib\SAPILib;..\..\..\shared\modules\application\audio;..\..\..\shared\modules\application\gui;..\..\..\shared\modules\application\speller;..\..\..\shared\modules\application\stimuli;..\..\..\shared\fileio;..\..\..\shared\utils\Expression;..\..\..\shared\gui;..\..\..\extlib\3DAPI;..\..\..\shared;..\..\..\shared\modules\application\utils;..\..\..\shared\modules\application;..\..\..\shared\utils;..\..\..\shared\bcistream;..\..\..\shared\types;..\..\..\shared\accessors;..\..\..\shared\modules;..\..\..\shared\config;..;$(BDS)\include;$(BDS)\include\vcl;$(BDS)\include\dinkumware</HistoryLists_hlBRCC_IncludePath>
+    </HistoryLists_hlBRCC_IncludePath>
+    <HistoryLists_hlBRCC_Defines>
+      <HistoryLists_hlBRCC_Defines Name="Count">1</HistoryLists_hlBRCC_Defines>
+      <HistoryLists_hlBRCC_Defines Name="Item0">MODTYPE=3</HistoryLists_hlBRCC_Defines>
+    </HistoryLists_hlBRCC_Defines>
+    <HistoryLists_hlBRCC_OutputDir>
+      <HistoryLists_hlBRCC_OutputDir Name="Count">1</HistoryLists_hlBRCC_OutputDir>
+      <HistoryLists_hlBRCC_OutputDir Name="Item0">obj\</HistoryLists_hlBRCC_OutputDir>
+    </HistoryLists_hlBRCC_OutputDir>
+    <Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\bcboffice2k100.bpl">CodeGear C++Builder Office 2000 Servers Package</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\bcbofficexp100.bpl">CodeGear C++Builder Office XP Servers Package</Excluded_Packages>
+    </Excluded_Packages>
+  </CPlusPlusBuilder.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Cpp.Targets" />
+  <ItemGroup>
+    <CppCompile Include="..\..\..\shared\utils\SockStream.cpp">
+      <BuildOrder>1</BuildOrder>
+    </CppCompile>
+    <CppCompile Include="main.cpp">
+      <BuildOrder>0</BuildOrder>
+    </CppCompile>
+    <BuildConfiguration Include="Debug">
+      <Key>Cfg_1</Key>
+    </BuildConfiguration>
+    <BuildConfiguration Include="Release">
+      <Key>Cfg_2</Key>
+    </BuildConfiguration>
+  </ItemGroup>
+</Project>

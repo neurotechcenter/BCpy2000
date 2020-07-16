@@ -1,0 +1,8 @@
+﻿  Building Custom Rule C:/BCI2000.python3/build/buildutils/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/buildutils/CMakeFiles/generate.stamp is up-to-date.
+  transform_png.cpp
+  BCIStream_tool.cpp
+  lodepng.cpp
+  Generating Code...
+  transform_png.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\transform_png.exe
+  Copy to destination

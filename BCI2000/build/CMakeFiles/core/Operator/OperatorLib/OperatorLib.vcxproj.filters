@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\BCI_OperatorLib.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\CallbackBase.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\StateMachine.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\CoreClient.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\EventLink.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\TelnetServer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptInterpreter.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\CommandInterpreter.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ObjectType.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ConditionType.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ImpliedType.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\SystemTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\SystemStates.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ParameterTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\StateTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\EventTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\VariableTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\SignalTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\VisPropertyTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\MessageTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ScriptType.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ScriptEvents.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\InterpreterExpression.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\Watches.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\WatchTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ExpressionType.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\FileSystemTypes.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\LineType.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ProcessType.cpp">
+      <Filter>Source Files\src\ObjectTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\Script.cpp">
+      <Filter>Source Files\src\ScriptParser</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ParserToken.cpp">
+      <Filter>Source Files\src\ScriptParser</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ParserNodes.cpp">
+      <Filter>Source Files\src\ScriptParser</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ScriptParser.cpp">
+      <Filter>Source Files\src\ScriptParser</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\bcistream\BCIStream_opdll.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\bcistream</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\Main.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorLib\CorePCH.cpp">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.cpp">
+      <Filter>Generated\Version</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\include\BCI_OperatorLib.h">
+      <Filter>Header Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\CallbackBase.h">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\StateMachine.h">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\CoreClient.h">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\EventLink.h">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\TelnetServer.h">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptInterpreter.h">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\CommandInterpreter.h">
+      <Filter>Header Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ObjectType.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ConditionType.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ImpliedType.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\SystemTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\SystemStates.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ParameterTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\StateTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\EventTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\VariableTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\SignalTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\VisPropertyTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\MessageTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ScriptType.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ScriptEvents.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\InterpreterExpression.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\Watches.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\WatchTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ExpressionType.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\FileSystemTypes.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\LineType.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ObjectTypes\ProcessType.h">
+      <Filter>Header Files\src\ObjectTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\Script.h">
+      <Filter>Header Files\src\ScriptParser</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ParserToken.h">
+      <Filter>Header Files\src\ScriptParser</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ParserNodes.h">
+      <Filter>Header Files\src\ScriptParser</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\core\Operator\OperatorLib\src\ScriptParser\ScriptParser.h">
+      <Filter>Header Files\src\ScriptParser</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorLib\OperatorLib\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\icons\puzzlepiece.ico">
+      <Filter>Generated\AppIcon</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\core\Operator\OperatorLib\appicon.rc">
+      <Filter>Generated\AppIcon</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="C:\BCI2000.python3\build\CMakeFiles\version\Version.rc">
+      <Filter>Generated\Version</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\AppIcon">
+      <UniqueIdentifier>{7B6861FE-6AD2-353B-914A-C15FCD201E9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\BCI2000 Framework">
+      <UniqueIdentifier>{5F667A99-7CE6-3DA4-96A4-82A7D98398CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Version">
+      <UniqueIdentifier>{79EF525C-6BF6-3B2D-86D9-96258C1C83CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include">
+      <UniqueIdentifier>{6BB78711-0EE2-339C-834B-C8BF72E0D56F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src">
+      <UniqueIdentifier>{8FB0E77A-DD89-33CB-925D-476B4077CA49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\ObjectTypes">
+      <UniqueIdentifier>{867E49B4-9FF3-3A27-AD1B-FCDEEEBFA717}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\src\ScriptParser">
+      <UniqueIdentifier>{CF3827C9-08EE-3A75-9F9F-D56004F14936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\bcistream">
+      <UniqueIdentifier>{FBCA4655-BB91-309E-8A89-1B02E7786D7A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src">
+      <UniqueIdentifier>{9552D335-A1BA-3E97-AE45-51B87A8277CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\ObjectTypes">
+      <UniqueIdentifier>{106C2B0A-9D83-3529-961A-D30CAE9B82B2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\src\ScriptParser">
+      <UniqueIdentifier>{C77C8116-C43D-320A-8EBB-2EDEA6456A8E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

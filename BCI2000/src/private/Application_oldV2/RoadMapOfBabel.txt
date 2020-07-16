@@ -1,0 +1,61 @@
+Trying to make sense of the v2 source tangle, to move to v3:
+===========================================================
+
+"Mod" means "show a fixation cross and ensure that the subject keeps fixating it".
+"WithGauges" implies "Mod".
+
+CursorTaskMod.cpp
+CursorTaskWithGauges.cpp
+Just the usual WinMain cruft.
+UPDATE: currently just redirecting to CursorTask.cpp in the core, to reduce the Babel.
+(Borland won't like this, though).
+
+FeedbackScene2D.*
+FeedbackScene.h
+These are identical (up to trivial differences) to the ../../../core/Application/CursorTask/ versions
+of files of the same name: we can redirect to there.
+
+FeedbackScene3D.*
+Relative to ../../../core/Application/CursorTask/FeedbackScene3D.*  there are two kinds of changes:
+Hacks to add a fixation cross, thankfully at least marked with "Fixation" comments.  Note that the hack
+introduces a dependency on ../../../extlib/3DAPI/threeDText.*
+Minor changes (explicit casting of ParamRef, etc) necessary to make 3.0-compatible (we will have to
+reproduce these, if maintaining a separate version for the sake of Modness).
+
+CursorFeedbackTaskMod.*
+These are modified versions of ../../../core/Application/CursorFeedbackTask.*  The changes are analogous
+to those in FeedbackScene3D:  3.0-compatibility (very minor) and fixation-cross-related (flagged by
+comments).  The latter changes require the eyetracker states.
+
+GenericStimulusTask.*
+The piece de resistance of misleading naming.  This superclass abstracts all the stuff necessary for an
+Application-module filter that has its own separate window (like the gauges). As such, it's hard to see
+what it has to do with stimuli or tasks, and in the end it is also not Generic:  since the parameters
+have to be declared with Gauge-specific names at object construction time, the resulting file is hard-
+coded to be Gauge-specific. It does, however, very neatly show what you need to do to get a secondary
+display window, without any other clutter.
+UPDATE: These have become shared/Gauges/GaugeAppBase.cpp  and .h
+
+CursorTaskWithGaugesMain is identical (up to trivial differences) to GaugeAppMain.
+They create a filter called GaugeApp which is a GenericStimulusTask subclass (which it seems can be added
+in modular fashion to whatever task, so there is no need for two separate files).  There is no "main"
+function here, despite the names: these are better conceived of as a "GaugeFilter", or perhaps as GaugeApp.cpp
+since that is the name of the class in both cases.  GaugeApp.exe would then be an application module
+whose PipeDefinition includes this filter and nothing else, although to avoid confusion between its WinMain
+file and the file that defines the GaugeApp class, perhaps the executable name should be changed (e.g.
+GaugesOnly.exe).
+UPDATE: These have become shared/Gauges/GaugeApp.cpp  and .h
+UPDATE: The executable is indeed now called GaugesOnly
+
+
+GaugeApp/*  vs CursorTaskWithGauges/*
+All source files are duplicated, some with different names. Thankfully there is no difference in the
+Gauge suite itself: well, AnalogGauge.cpp has one very minor difference (just pick one, and we may have to
+fix non-recognition of the "sin" function), but all other *Gauge.cpp and *Gauge.h are identical.
+GenericTask.cpp is different in that the parameter names *are* now generic.  However, what is the
+advantage to having the gauges use WindowLeft instead of WindowLeftGauges?
+
+UPDATE:  the gauge sources have been consolidated, moved to a shared directory, ported to V3+CMake+Qt,
+debugged, and given their own (currently very crude) CMake include file.   Legacy Borland support is
+currently *broken* since I actually ripped out the code that had TPoint and TCanvas in it, in three
+places. This could be scavanged from the old code and re-introduced inside an #ifdef BORLAND clause.

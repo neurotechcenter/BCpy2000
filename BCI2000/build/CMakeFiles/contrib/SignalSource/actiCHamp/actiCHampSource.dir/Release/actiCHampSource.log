@@ -1,0 +1,23 @@
+﻿  Building Custom Rule C:/BCI2000.python3/src/contrib/SignalSource/actiCHamp/CMakeLists.txt
+  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/contrib/SignalSource/actiCHamp/CMakeFiles/generate.stamp is up-to-date.
+  CorePCH.cpp
+  actiCHampBufferedADC.cpp
+  actiCHampDevice.cpp
+  ChannelRouter.cpp
+  ActiChamp.imports.cpp
+  CoreMain.cpp
+  CoreModule.cpp
+  BCIStream_module.cpp
+  Version.cpp
+  WinMain.cpp
+  Generating Code...
+  actiCHampSource.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\contrib\SignalSource\actiCHamp\Release\actiCHampSource.exe
+  	Deploying executable
+  copying files:
+  Copying actiCHampSource.exe ...
+  Copying ActiChamp.bit ...
+  Copying ActiChampX.bit ...
+  Copying ActiChamp_x86.dll ...
+  Copying msvcp140.dll ...
+  Copying vcruntime140.dll ...
+  Done.

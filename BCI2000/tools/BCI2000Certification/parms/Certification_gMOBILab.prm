@@ -1,0 +1,15 @@
+Source:Signal%20Properties:DataIOFilter int SourceCh= 16 16 1 % // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter int SampleBlockSize= 8 32 1 % // number of samples transmitted at a time
+Source:Signal%20Properties:DataIOFilter int SamplingRate= 256 256Hz 1 % // sample rate
+Source:Signal%20Properties:DataIOFilter list ChannelNames= 0 // list of channel names
+Source:gMOBIlabPlusADC string COMport= COM1: COM2: a z // COMport for MOBIlab
+Source:gMOBIlabPlusADC int InfoMode= 0 0 0 1 // display information about the g.MOBIlabPlus
+Source:gMOBIlabPlusADC int DigitalEnable= 1 0 0 1 // read digital inputs 1-8 as channels (boolean)
+Source:gMOBIlabPlusADC int DigitalOutBlock= 1 0 0 1 // pulse digital output 7 during data reads (boolean)
+Source:Source%20Filter:SourceFilter int NotchFilter= 0 0 0 2 // Power line notch filter: 0: disabled, 1: at 50Hz, 2: at 60Hz (enumeration)
+Source:Source%20Filter:SourceFilter int HighPassFilter= 0 0 0 1 // Source high pass filter: 0: disabled, 1: at 0.1Hz (enumeration)
+Source:Alignment:AlignmentFilter int AlignChannels= 1 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Source:Signal%20Properties:DataIOFilter floatlist SourceChOffset= 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 % % // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter floatlist SourceChGain= 16 0.003 0.003 0.003 0.003 0.003 0.003 0.003 0.003 1 1 1 1 1 1 1 1 0.003 % % // gain for each channel (A/D units -> muV)
+

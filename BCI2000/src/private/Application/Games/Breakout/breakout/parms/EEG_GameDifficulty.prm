@@ -1,0 +1,2 @@
+Application:Game%20Challenge                  float     InitialGameDifficulty=   -8.0   // Starting point for staircase GameDifficulty
+Application:Game                              float     BallSpeed=                0.5   // Initial ball speed (distance per second) 

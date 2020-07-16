@@ -1,0 +1,10 @@
+Application:Speller%20Targets:ERPSpellerTask matrix TargetDefinitions= 6 { Display Enter Display%20Size Icon%20File Sound%20File } A A 1 % % B B 1 % % C C 1 % % D D 1 % % E E 1 % % F F 1 % % // speller target properties
+Application:Speller%20Targets:ERPSpellerTask intlist NumMatrixColumns= 1 3 6 1 % // display matrices' column number(s)
+Application:Speller%20Targets:ERPSpellerTask intlist NumMatrixRows= 1 2 6 0 % // display matrices' row number(s)
+Application:Speller:ERPSpellerTask int FirstActiveMenu= 1 1 1 % // Index of first active menu
+Application:Speller:ERPSpellerTask string TextToSpell= ABCDEF // character or string to spell in offline copy mode
+Application:Speller:ERPSpellerTask string TextResult= % // user spelling result
+Application:Result%20Processing:StimulusTask int InterpretMode= 2 0 0 2 // interpretation of results: 0 none, 1 online free mode, 2 copy mode (enumeration)
+Application:Result%20Processing:StimulusTask int DisplayResults= 1 1 0 1 // display results of copy/free spelling (boolean)
+Application:Sequencing:ERPSpellerTask int NumberOfSequences= 15 15 1 % // number of sequences in a set of intensifications
+Filtering:P3TemporalFilter int EpochsToAverage= 15 1 0 % // Number of epochs to average

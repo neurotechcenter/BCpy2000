@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Tutorial:Performing a Time-Domain Offline Analysis of EEG Data - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Tutorial:Performing a Time-Domain Offline Analysis of EEG Data,Glossary,User Reference:BCI2000Viewer,User Reference:BCI2000 Offline Analysis,User Tutorial:Designing an Eloc File,User Tutorial:Obtaining P300 Parameters in a Calibration Session,User Tutorial:Performing a Time-Domain Offline Analysis of ECoG Data" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Performing a Time-Domain Offline Analysis of EEG Data</h1><p class="subtitle">User Tutorial</p><hr class="sep" /><p>Although the basic properties of the P300 evoked potential are the same for all individuals, the response's latency, width, and spatial pattern are unique for each individual.  In order to facilitate P300 classification, we must determine the typical values for these properties.  <i>BCI2000 Offline Analysis</i> is a helpful tool for performing analyses of offline data in order to characterize a given subject.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Tutorial%253APerforming_a_Time-Domain_Offline_Analysis_of_EEG_Data.html#Experimental_Design"><span class="tocnumber">1</span> <span class="toctext">Experimental Design</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253APerforming_a_Time-Domain_Offline_Analysis_of_EEG_Data.html#The_Feature_Plot"><span class="tocnumber">2</span> <span class="toctext">The Feature Plot</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253APerforming_a_Time-Domain_Offline_Analysis_of_EEG_Data.html#Waveform_Plots_and_Topographies"><span class="tocnumber">3</span> <span class="toctext">Waveform Plots and Topographies</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253APerforming_a_Time-Domain_Offline_Analysis_of_EEG_Data.html#Next_Step"><span class="tocnumber">4</span> <span class="toctext">Next Step</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253APerforming_a_Time-Domain_Offline_Analysis_of_EEG_Data.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Experimental_Design"></a><h2>Experimental Design</h2>
+<p>This tutorial will make use of the <tt>eeg2_1.dat</tt> and <tt>eeg2_2.dat</tt> sessions that are included with BCI2000 which can be found in <tt>data/samplefiles/</tt>. In these sessions, the subject was placed in front of a monitor displaying a P300 speller matrix.  A test sequence, consisting of a string of letters with a single letter highlighted, was also displayed.  In each run of the experiment, the subject was asked to focus on the symbol in the speller matrix that was currently highlighted in the test sequence.  This way, it was possible to label evoked responses according to whether they occurred for the highlighted symbol or for some other symbol in the matrix.  Such labels can be attached to <i>BCI2000</i> data using state variables.  In the case of the eeg2 data, we've used the state variable StimulusType such that StimulusType is equal to 1 when the letter that flashes is the letter that the subject is focused on (i.e., the letter that is currently highlighted).  When the symbol that flashes is not the symbol of focus, StimulusType will not be equal to 1. If you are relatively new to BCI2000, you may find it helpful to inspect the data files we'll be using with the <i>BCI2000 Viewer</i>. Using this tool, you will be able to see how state variables change with respect to the data over time. For instruction on how to inspect data using the BCI2000 Viewer, please see <a href="User_Reference%253ABCI2000Viewer.html" title="User Reference:BCI2000Viewer">User Reference:BCI2000Viewer</a>.
+</p><p><br />
+</p>
+<a name="The_Feature_Plot"></a><h2>The Feature Plot</h2>
+<p><i>BCI2000 Offline Analysis</i> generates three plots that will aid you in your analyses.  One of these plots, the feature plot, provides an overview of the data.  Let's begin by generating this plot:
+</p>
+<ol><li> Open BCI2000 Offline Analysis. If this is your first time using BCI2000 Offline Analysis, you may want to review the instructions on how to install and run this application: <a href="User_Reference%253ABCI2000_Offline_Analysis.html" title="User Reference:BCI2000 Offline Analysis">User Reference:BCI2000 Offline Analysis</a>.
+</li><li> Set the analysis parameters as follows:
+<ol><li><b>Analysis Domain:</b> Choose "Time (P300)" in order to perform a time-domain analysis
+</li><li><b>Acquisition Type:</b> Choose "EEG" since the data we'll be working with in this section was recorded using an EEG.
+</li><li><b>Data Files:</b> Click the "Add" button and navigate to <tt>data/samplefiles/</tt>. From there, select the files <tt>eeg2_1.dat</tt> and <tt>eeg2_2.dat</tt> and click "Open". To select multiple files, you'll need to first click on any one file and then, while holding down the control button on your keyboard, click the remaining files.
+</li><li><b>Montage File:</b> Leave this blank. The reason for doing so will be explained shortly.
+</li><li><b>Target Condition 1:</b> Enter the MATLAB-syntax statement "(states.StimulusCode &gt; 0) &amp; (states.StimulusType == 1)" which should be the default value after selecting "Time (P300)" as the analysis domain. This statment instructs <i>BCI2000 Offline Analysis</i> that condition 1 should correspond to the data where the symbol that the subject was focused on corresponded to one of the letters that was flashing.
+</li><li><b>Target Condition Label 1:</b> The text entered here will be used to label data that is specific to condition 1. So, we will enter the string "Correct" as in the correct (i.e., highlighted) letter was one of the letters flashing.
+</li><li><b>Target Condition 2:</b> Enter the MATLAB-syntax statement "(states.StimulusCode &gt; 0) &amp; (states.StimulusType == 0)" which should be the default value after selecting "Time (P300)" as the analysis domain. This instructs <i>BCI2000 Offline Analysis</i> that condition 2 should correspond to the data where the symbol the subject was focused on did not corresponded to one of the letters that was flashing.
+</li><li><b>Target Condition Label 2:</b> The text entered here will be used to label data that is specific to condition 2. So, we will enter the string "Incorrect" as in the correct (i.e., highlighted) letter was not one of the letters flashing.
+</li><li><b>Trial Change Condition:</b> Enter the value "states.StimulusBegin == 1". This instructs BCI2000 Offline Analysis that the trial edges correspond to data samples where the state variable StimulusBegin  becomes 1 or is 1 and becomes something else.
+</li><li><b>Waveform Channels:</b> Leave this blank. The reason for doing so will become clear.
+</li><li><b>Topo Times:</b> Leave this blank. The reason for doing so will become clear.
+</li><li><b>Spatial Filter:</b> Choose "None". Because P300 responses are typically detected on a number of channels, CAR filtering is not typically effective.
+</li><li><b>Ignore Warnings:</b> Leave this field unchecked. For more information on this field, please see User Reference:BCI2000 Offline Analysis.
+</li><li><b>Overwrite existing plots:</b> If you have not yet run any analyses, this field should be disabled. If it is enabled, it is best for the purposes of this tutorial to leave it checked. Unchecking this box will instruct BCI2000 Offline Analysis to open new figures whenever it plots. This is useful if you want to compare the results of one analysis against another. 
+</li></ol>
+</li><li>Click "Generate Plots". 
+</li></ol>
+<p>Once the analysis has completed, you should see a feature plot similar to the one below. This plot displays the <a href="Glossary.html" title="Glossary">r-squared (coefficient of determination)</a> values for the two distributions (i.e., the average signal for condition 1 and the average signal for condition 2) as a function of time and channel. 
+</p><p><a href="../images/thumb/1/16/Eeg2Feature.png/600px-Eeg2Feature.png" class="image" title=""><img src="../images/thumb/1/16/Eeg2Feature.png/600px-Eeg2Feature.png" alt="" width="600" height="481" longdesc="/wiki/index.php/Image:Eeg2Feature.png" /></a>
+</p><p>The feature plot is an overview of the possible features. Thus, it is typically the best place to start your analysis. From this plot, we can find the best features by looking for clusters of high <a href="Glossary.html" title="Glossary">r-squared</a> values. In our feature plot, we notice that all of the clusters appear to be aligned at about 503ms.  The biggest of these clusters - with the largest <a href="Glossary.html" title="Glossary">r-squared</a> values - appears to be centered over electrode 51.  We will now use <i>BCI2000 Offline Analysis</i> to produce two additional plots that will help us to take a more detailed look at this time and channel.
+</p>
+<a name="Waveform_Plots_and_Topographies"></a><h2>Waveform Plots and Topographies</h2>
+<p><i>BCI2000 Offline Analysis</i> provides - in addition to the feature plot - waveform plots and topographies.  Waveform plots are useful for investigating specific channels while topographies are useful for investigating specific time windows. In order to generate the topographies we will need to communicate the manner in which the electrodes were arranged.  This is done with a montage file.  While there is a montage file included with <i>BCI2000</i> that is suitable for the data we'll be analyzing here, you will likely need to create or modify montage files for future analyses.  For that reason, we recommend that you take the time now to familiarize yourself with the <i>Eloc Helper</i> if you have not already done so.  In <a href="User_Tutorial%253ADesigning_an_Eloc_File.html" title="User Tutorial:Designing an Eloc File">User Tutorial:Designing an Eloc File</a>, you will learn how to create a new montage file and modify an existing one so that you ultimately have your own montage file to use to complete this analysis.  If you prefer not to complete the <i>Eloc Helper</i> tutorial at this time, you will still be able to complete this tutorial using one of the montage files that comes with <i>BCI2000</i>.
+</p><p>If you have finished designing your montage file or decided to use the one that's provide, please proceed to the steps below.  Note that these steps pick up from the steps outlined in the previous section for generating the feature plot:
+</p>
+<ol><li> Set the analysis parameters as follows:
+<ol><li> Montage File: Click the "Browse" button next to the field labeled "Montage Files" and browse to <tt>data/samplefiles/</tt>. If you completed the Eloc Helper tutorial and would like to use the montage file you created, double-click <tt>myeeg64.loc</tt>. Otherwise, double-click eeg64.loc to use the montage file that comes with <i>BCI2000</i>.
+</li><li> Waveform Channels: In the previous section we found that channel 51 may be an effective classification feature for facilitating online control. To generate the waveform plot for this channel, enter "51" into this field.
+</li><li> Topo Times: In the previous section we found that 503 ms may be an effective classification feature for facilitating online control. To generate a topography for this time, enter "503" into this field. 
+</li></ol>
+</li><li> Click "Generate Plots". 
+</li></ol>
+<p>Once the analysis is complete, you will see the same feature plot as was generated in the previous section. Additionally, you will see a waveform plot and topography similar to those below.  In the waveform plot, we expect to see a peak response at approximately 300 ms. For this particular subject, however, we can see the peak response at approximately 503 ms as indicated by the feature plot which is reasonably close.  In the adjacent <a href="Glossary.html" title="Glossary">r-squared</a> waveform plot we can see that the <a href="Glossary.html" title="Glossary">r-squared</a> values also peak approximately at this time.  P300 topographies can vary significantly.  In the generated topography, we see that the response is located mainly 
+over the parietal and temporal lobes, which is consistent with the P300 
+response found in other studies (Sellers et. al.: A P300 event-related potential brain–computer interface (BCI): The effects of matrix size and inter stimulus interval on performance.  Biological Psychology 70(2006):242-252. April 2006). However, there is significant variance in the spatial distribution of the response across different subjects in P300 experiments.  Regardless, it appears that the (503 ms, Channel 51) feature would indeed serve as an effective recognition feature for facilitating online control. 
+</p><p><a href="../images/thumb/f/fb/Eeg2Waveform.png/600px-Eeg2Waveform.png" class="image" title=""><img src="../images/thumb/f/fb/Eeg2Waveform.png/600px-Eeg2Waveform.png" alt="" width="600" height="234" longdesc="/wiki/index.php/Image:Eeg2Waveform.png" /></a>
+</p><p><a href="../images/thumb/c/cb/Eeg2Topo.png/600px-Eeg2Topo.png" class="image" title=""><img src="../images/thumb/c/cb/Eeg2Topo.png/600px-Eeg2Topo.png" alt="" width="600" height="527" longdesc="/wiki/index.php/Image:Eeg2Topo.png" /></a>
+</p>
+<a name="Next_Step"></a><h2>Next Step</h2>
+<p>At this point you should understand how to use the <i>BCI2000 Offline Analysis</i> plots to help you choose effective P300 features.  You might like to proceed to <a href="User_Tutorial%253APerforming_a_Time-Domain_Offline_Analysis_of_ECoG_Data.html" title="User Tutorial:Performing a Time-Domain Offline Analysis of ECoG Data">User Tutorial:Performing a Time-Domain Offline Analysis of ECoG Data</a> for a similar tutorial using data recorded using an ECoG.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Tutorial%253AObtaining_P300_Parameters_in_a_Calibration_Session.html" title="User Tutorial:Obtaining P300 Parameters in a Calibration Session">User Tutorial:Obtaining P300 Parameters in a Calibration Session</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<ul><li><a href="User_Tutorial%253ABCI2000_Tour.html">Tour</a></li>
+<li><a href="User_Tutorial%253AMu_Rhythm_BCI_Tutorial.html">Mu Tutorial</a></li>
+<li><a href="User_Tutorial%253AP300_BCI_Tutorial.html">P300 Tutorial</a></li>
+</ul><a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

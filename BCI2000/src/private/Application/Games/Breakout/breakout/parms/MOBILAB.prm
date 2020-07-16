@@ -1,0 +1,19 @@
+Source:Signal%20Properties:DataIOFilter       int       SampleBlockSize=          8     // number of samples transmitted at a time
+Source:Signal%20Properties:DataIOFilter       int       SamplingRate=           256     // sample rate
+Source:Signal%20Properties:DataIOFilter       int       SourceCh=           8           // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter       list      ChannelNames=       8     F3    F4    T7    C3    Cz    C4    T8    Pz    // list of channel names
+Source:Signal%20Properties:DataIOFilter       floatlist SourceChOffset=     8     0     0     0     0     0     0     0     0     // Offset for channels in A/D units
+Source:Signal%20Properties:DataIOFilter       floatlist SourceChGain=       8     0.019 0.019 0.019 0.019 0.019 0.019 0.019 0.019 //
+Source:Online%20Processing:TransmissionFilter list      TransmitChList=     8     1     2     3     4     5     6     7     8     // list of transmitted channels
+Visualize:Source%20Signal:DataIOFilter        int       SourceMin=             -100muV  // raw signal vis Min Value
+Visualize:Source%20Signal:DataIOFilter        int       SourceMax=              100muV  // raw signal vis Max Value
+Source:gMOBIlabADC                            string    COMport=              COM9:     // COMport for MOBIlab
+
+Source:Alignment:AlignmentFilter              int       AlignChannels=            0     // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter              floatlist SourceChTimeOffset= 0           // time offsets for all source channels (may be empty)
+
+Source:Source%20Filter:SourceFilter           int       NotchFilter=              0     // Power line notch filter: 0: disabled, 1: at 50Hz, 2: at 60Hz (enumeration)
+Source:Source%20Filter:SourceFilter           int       HighPassFilter=           0     // Source high pass filter: 0: disabled, 1: at 0.1Hz (enumeration)
+
+Filtering:SpatialFilter matrix SpatialFilter= 30 { In Out Wt } F3 F3 1 F3 C3 -0.29963 F3 Cz -0.089571 F4 F4 1 F4 Cz -0.089571 F4 C4 -0.29963 T7 T7 1 T7 C3 -0.34576 C3 F3 -0.74621 C3 T7 -1 C3 C3 1 C3 Cz -0.25847 C3 Pz -0.1297 Cz F3 -0.25379 Cz F4 -0.25379 Cz C3 -0.29406 Cz Cz 1 Cz C4 -0.29406 Cz Pz -0.7406 C4 F4 -0.74621 C4 Cz -0.25847 C4 C4 1 C4 T8 -1 C4 Pz -0.1297 T8 C4 -0.34576 T8 T8 1 Pz C3 -0.060554 Pz Cz -0.30392 Pz C4 -0.060554 Pz Pz 1 // 
+Filtering:SpatialFilter                       int       SpatialFilterType=           2             // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)

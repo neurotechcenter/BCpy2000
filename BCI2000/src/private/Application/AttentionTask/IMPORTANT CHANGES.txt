@@ -1,0 +1,17 @@
+AttentionTask should be compiled with the GazeMonitorFilter now.
+
+AllowedRadius has been removed from AttentionTask.  GazeMonitorFilter's FixationRadius is to be used instead and is now a floating point value between 0.0 and 1.0 instead of 0 to 100.  Fixation radius is still in percentage of Screen Height
+
+FixationCross has been removed from AttentionTask.  GazeMonitorFilter's FixationImage is to be used instead.
+
+In order to run the experiment, GazeMonitorFilter's EnforceFixation must be enabled.  This means that fixation enforcement must be running to use the AttentionTask. (this was default behavior before)
+
+UseEyetracker now does nothing and has been removed
+
+BlinkTime now affects GazeMonitorFilter instead of AttentionTask.
+SaccadeTime can also be tweaked in GazeMonitorFilter.
+If either BlinkTime or SaccadeTime are violated, the fixation has been violated.
+AttentionTask's AllowedTime dictates for how long the fixation can be violated before quitting the trial.
+
+
+

@@ -1,0 +1,12 @@
+Source:Signal%20Properties:DataIOFilter int SourceCh= auto // number of digitized and stored channels
+Source:Signal%20Properties:DataIOFilter int SampleBlockSize= auto // number of samples transmitted at a time
+Source:Signal%20Properties:DataIOFilter int SamplingRate= auto // sampling rate
+Source:Signal%20Properties:DataIOFilter list SourceChGain= 1 auto // gain for each channel (A/D units per physical unit)
+Source:Signal%20Properties:DataIOFilter list ChannelNames= 1 auto // list of channel names
+Source:Signal%20Properties:DataIOFilter list SourceChOffset= 1 auto // Offset for channels in A/D units
+Source:OpenBCIADC string PortName= auto // This software can automatically detect connection
+Source:OpenBCIADC list ChannelsGain= 1 auto 24 1 % // The channel gain can be 1 2 4 6 8 12 24(defult)
+Source:OpenBCIADC intlist SourceChList= 1 auto 16 1 % 
+Source:Alignment:AlignmentFilter int AlignChannels= 1 0 0 1 // align channels in time (0=no, 1=yes)
+Source:Alignment:AlignmentFilter floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
+Source:Online%20Processing:TransmissionFilter list TransmitChList= 1 * // list of transmitted channels: Channel names may contain * and ? wildcards,  and character ranges enclosed in []; wildcard patterns may be negated by prepending an exclamation mark.  Ranges of channels may be specified using : or - to separate begin from end.

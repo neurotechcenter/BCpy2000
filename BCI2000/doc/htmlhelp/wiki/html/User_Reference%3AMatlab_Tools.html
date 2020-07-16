@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:Matlab Tools - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:Matlab Tools,User Reference:BCI2000 Offline Analysis,User Reference:Command Line Processing,User Reference:Filters,User Reference:Matlab MEX Files,User Reference:P300Classifier" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Matlab Tools</h1><p class="subtitle">User Reference</p><hr class="sep" /><p>In the <tt>tools/matlab</tt> directory of your BCI2000 distribution, there are several Matlab functions for offline analysis of recorded data-files, for use on the Matlab command-line or in your own custom scripts. The principal function is <tt>bci2000chain</tt>, which allows you to recreate a BCI2000 processing chain offline, explore the effect of parameter changes, and examine the results in Matlab.
+</p><p>NB: if you prefer clicking the mouse to writing lines of Matlab code, you will probably be happier with the <a href="User_Reference%253ABCI2000_Offline_Analysis.html" title="User Reference:BCI2000 Offline Analysis">Offline Analysis Matlab GUI</a> or the (now non-Matlab-based) <a href="User_Reference%253AP300Classifier.html" title="User Reference:P300Classifier">P300Classifier tool</a>.
+</p><p>Here we provide an overview of the main Matlab functions without going into the details of their calling syntax.  As always, to get full documentation on a particular function you can go to the Matlab prompt and type something like
+</p>
+<pre>&gt;&gt; help bci2000chain
+</pre>
+<p>Note that most of the Matlab functions here require the <a href="User_Reference%253AMatlab_MEX_Files.html" title="User Reference:Matlab MEX Files">BCI2000 mex files</a> as a dependency. In addition, <tt>bci2000chain</tt> requires binaries of the <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">BCI2000 command-line tools</a>.
+</p><p><br />
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#bci2000path"><span class="tocnumber">1</span> <span class="toctext">bci2000path</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#bci2000chain"><span class="tocnumber">2</span> <span class="toctext">bci2000chain</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253AMatlab_Tools.html#Dependencies"><span class="tocnumber">2.1</span> <span class="toctext">Dependencies</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AMatlab_Tools.html#Example"><span class="tocnumber">2.2</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#create_bcidat"><span class="tocnumber">3</span> <span class="toctext">create_bcidat</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#read_bciprm"><span class="tocnumber">4</span> <span class="toctext">read_bciprm</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#make_bciprm"><span class="tocnumber">5</span> <span class="toctext">make_bciprm</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#decode_bcitime"><span class="tocnumber">6</span> <span class="toctext">decode_bcitime</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#read_bcidate"><span class="tocnumber">7</span> <span class="toctext">read_bcidate</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AMatlab_Tools.html#rename_bcidat"><span class="tocnumber">8</span> <span class="toctext">rename_bcidat</span></a></li>
+</ul>
+</td></tr></table>
+<a name="bci2000path"></a><h2>bci2000path</h2>
+<p>This is a bootstrapping utility. Before you do anything, Matlab needs to know where the tools are.   This function uses the generic function <tt>managepath</tt> (also supplied) to allow you to:
+</p>
+<ul><li> tell Matlab where your BCI2000 distribution is;
+</li><li> return the full absolute path to a sub-part of the BCI2000 distribution: for example,  <tt>bci2000path('tools/matlab/bci2000path.m')</tt> would return the full path to this file itself (or at least, to where it should be);
+</li><li> add subdirectories of the BCI2000 distribution to the Matlab path, for the duration of the current Matlab session;
+</li><li> add subdirectories of the BCI2000 distribution to the system shell's path, for the duration of the current Matlab session;
+</li><li> remove directories from the path again,  or even remove everything BCI2000-related from the Matlab and system paths in one go.
+</li></ul>
+<p>Of course, before you can call <tt>bci2000path</tt>, Matlab needs to know where <tt>bci2000path</tt> itself is. This chicken-and-egg problem is typical of Matlab path-juggling.  You could use the graphical <tt>pathtool</tt> to add an absolute reference to the <tt>tools/matlab</tt> directory "permanently" to the Matlab path,  but anyone who has made heavy use of  Matlab for some time, and is in the habit of using more than one third-party toolbox, will know that this leads to problems sooner or later. So we do not recommend the path GUI. One solution is to adapt the following lines and put them either in your <tt>startup.m</tt> file, or in some other handy function in the <tt>My Documents\MATLAB</tt> (or <tt>$HOME/matlab</tt>) directory so that you can call it when needed:
+</p>
+<pre>olddir = pwd;
+cd('C:\BCI2000')   % The absolute path has to be hardcoded somewhere, and here it is.  Watch out, in case this is (or becomes) incorrect 
+cd tools, cd matlab
+bci2000path -AddToMatlabPath tools/matlab
+bci2000path -AddToMatlabPath tools/mex
+bci2000path -AddToSystemPath tools/cmdline   % required so that BCI2000CHAIN can call the command-line tools
+cd(olddir) % change directory back to where we were before
+clear olddir
+</pre>
+<a name="bci2000chain"></a><h2>bci2000chain</h2>
+<p>The <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">BCI2000 command-line tools</a> allow the online processing performed by BCI2000 to be recreated exactly offline. This is possible because online BCI2000 modules consist of a chain of <a href="User_Reference%253AFilters.html" title="User Reference:Filters">filters</a>, each filter being implemented in a self-contained source file. We can therefore take the individual filter implementations and build them singly, as separate executables that can be called from the system command-line. Recreating a preprocessing chain offline is then a question of passing a stream of data through a chain of these filter tools, connected by an operating-system "pipe".
+</p><p>The <tt>bci2000chain</tt> function uses the command-line tools (calling them via Matlab's builtin function <tt>system</tt>), but it hides the details and presents itself to you as a single Matlab function.
+</p>
+<a name="Dependencies"></a><h3>Dependencies</h3>
+<p><tt>bci2000chain</tt> requires the <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">command-line binaries</a>, including <tt>bci_dat2stream</tt> and <tt>bci_stream2mat</tt> as well as any specific filter tools you intend to use, to have been built in <tt>tools/cmdline</tt>. The <tt>tools/cmdline</tt> directory must be on the operating-system path (not to be confused with the Matlab path) for the session.  The <a href="User_Reference%253AMatlab_MEX_Files.html" title="User Reference:Matlab MEX Files">BCI2000 mex files</a> <tt>load_bcidat</tt> and <tt>convert_bciprm</tt>, and the m-files  <tt>make_bciprm.m</tt>, <tt>read_bciprm.m</tt> and <tt>read_bcidate.m</tt>, must be in directories that are on the Matlab path. One way of satisfying these path requirements is shown above, using the <tt>bci2000path</tt> function.
+</p>
+<a name="Example"></a><h3>Example</h3>
+<p>The following example reads and replays a sample data file through the specified filter chain (TransmissionFilter, then SpatialFilter, then ARFilter). The parameters for these filters start out having the same values that they did when the file was recorded. But in this example, we override some of the spectral estimation parameters using the ones in <tt>ExampleParameters.prm</tt>, and then further override the spatial filter setting by switching it to CAR mode:
+</p>
+<pre>fn = bci2000path('data', 'samplefiles', 'eeg3_2.dat');
+
+s = bci2000chain(fn, 'TransmissionFilter|SpatialFilter|ARFilter',  'ExampleParameters.prm', 'SpatialFilterType', 3)
+
+</pre>
+<p>See the help documentation in the Matlab file for more details.
+</p>
+<a name="create_bcidat"></a><h2>create_bcidat</h2>
+<p>This utility allows you to create "toy" BCI2000 <tt>.dat</tt> files easily, perhaps using only a numeric signal array and a scalar sampling rate.  Read the help for this function in order to see how to run a <tt>bci2000chain</tt> on a signal that is stored in a Matlab variable rather than a pre-existing file.
+</p>
+<a name="read_bciprm"></a><h2>read_bciprm</h2>
+<p>This utility allows you to read BCI2000 parameters from a data file, a parameter file, or from a structure, string, or cell array of strings in Matlab. It requires the <a href="User_Reference%253AMatlab_MEX_Files.html" title="User Reference:Matlab MEX Files">mex-files</a> <tt>load_bcidat</tt> and <tt>convert_bciprm</tt>.
+</p>
+<a name="make_bciprm"></a><h2>make_bciprm</h2>
+<p>This utility allows you to read, combine, and write BCI2000 parameters from multiple sources, making use of <tt>read_bciprm</tt>.
+</p>
+<a name="decode_bcitime"></a><h2>decode_bcitime</h2>
+<p>This function takes a BCI2000 parameter value that is supposed to indicate time, and figures out whether it is expressed in seconds/milliseconds/microseconds with an explicit PhysicalUnit, or in sexagesimal notation (e.g. MM:SS),  or whether it is a bare number indicating a number of SampleBlocks. In all cases the value is returned, unambiguously, in seconds.
+</p>
+<a name="read_bcidate"></a><h2>read_bcidate</h2>
+<p>This function uses <tt>read_bciprm</tt> to read one particular parameter, <b>StorageTime</b>, from a data file, from a parameter file, or from some representation of a BCI2000 parameter set in memory.  This datestamp is returned either as a scalar value (i.e. a Matlab <tt>datenum</tt>) or as a string formatted according to your specification.
+</p>
+<a name="rename_bcidat"></a><h2>rename_bcidat</h2>
+<p>Are you involved in a large BCI research program?  Is it difficult to keep track of all the different experiments, subjects and measurements? Do you have a lot of files that are called something like <tt>TestS001R01.dat</tt>, some of them important, some of them not, all threatening to overwrite each other as soon as somebody accidentally drags and drops something in the wrong place?   Do you find that many of your measurements are done with <b>SubjectSession</b> 001 and an uninformative <b>SubjectName</b>, simply because you were "just quickly trying something out" and have no disciplined procedure for determining and setting the correct session numbers (a difficult question in any case, when experimental conditions keep changing)?  
+</p><p>If so, you are not alone.  But help is at hand.  All BCI2000 data files contain a date stamp, in the form of the <b>StorageTime</b> parameter. Wouldn't it be useful if all your data files were named uniquely according to this date stamp, as well as the <b>SubjectName</b>, <b>SubjectSession</b> and <b>SubjectRun</b> that are also stored in the file? Wouldn't it be useful if files from different subjects could be kept together but always appeared in chronological order in the file-system,  and could be quickly checked against your experimental calendar? For more information, type  <tt>help rename_bcidat</tt> at your nearest Matlab prompt, today.
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+<ul><li><a href="User_Reference%253ABCI2000Launcher.html">BCI2000Launcher</a></li>
+<li><a href="User_Reference%253ABCI2000Viewer.html">BCI2000Viewer</a></li>
+<li><a href="User_Reference%253ABCI2000FileInfo.html">BCI2000FileInfo</a></li>
+<li><a href="User_Reference%253ABCI2000Export.html">BCI2000Export</a></li>
+<li><a href="User_Reference%253AEEGLabImport.html">EEGLabImport</a></li>
+<li><a href="User_Reference%253AMatlab_MEX_Files.html">Matlab MEX Files</a></li>
+<li><a href="User_Reference%253ACommand_Line_Processing.html">Command Line Processing</a></li>
+</ul></ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

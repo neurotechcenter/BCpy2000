@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Contributions:FieldTripBufferSource - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Contributions:FieldTripBufferSource" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">FieldTripBufferSource</h1><p class="subtitle">Contributions</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Contributions%253AFieldTripBufferSource.html#Synopsis"><span class="tocnumber">1</span> <span class="toctext">Synopsis</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AFieldTripBufferSource.html#Location"><span class="tocnumber">2</span> <span class="toctext">Location</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AFieldTripBufferSource.html#Versioning"><span class="tocnumber">3</span> <span class="toctext">Versioning</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AFieldTripBufferSource.html#Author"><span class="tocnumber">3.1</span> <span class="toctext">Author</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AFieldTripBufferSource.html#Version_History"><span class="tocnumber">3.2</span> <span class="toctext">Version History</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AFieldTripBufferSource.html#Source_Code_Revisions"><span class="tocnumber">3.3</span> <span class="toctext">Source Code Revisions</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AFieldTripBufferSource.html#Functional_Description"><span class="tocnumber">4</span> <span class="toctext">Functional Description</span></a></li>
+<li class='toclevel-1'><a href="Contributions%253AFieldTripBufferSource.html#Parameters"><span class="tocnumber">5</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="Contributions%253AFieldTripBufferSource.html#HostName"><span class="tocnumber">5.1</span> <span class="toctext">HostName</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AFieldTripBufferSource.html#Port"><span class="tocnumber">5.2</span> <span class="toctext">Port</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AFieldTripBufferSource.html#SampleBlockSize"><span class="tocnumber">5.3</span> <span class="toctext">SampleBlockSize</span></a></li>
+<li class='toclevel-2'><a href="Contributions%253AFieldTripBufferSource.html#EventStates"><span class="tocnumber">5.4</span> <span class="toctext">EventStates</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Contributions%253AFieldTripBufferSource.html#States"><span class="tocnumber">6</span> <span class="toctext">States</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Synopsis"></a><h2>Synopsis</h2>
+<p>Acquires signal data from a FieldTrip buffer. Optionally translates FieldTrip buffer events to BCI2000 states.
+</p>
+<a name="Location"></a><h2>Location</h2>
+<p><a href="http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/FieldTripBufferSource" class='external free' title="http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/FieldTripBufferSource" rel="nofollow">http://www.bci2000.org/svn/trunk/src/contrib/SignalSource/FieldTripBufferSource</a>
+</p>
+<a name="Versioning"></a><h2>Versioning</h2>
+<a name="Author"></a><h3>Author</h3>
+<p>Stefan Klanke (s.klanke@donders.ru.nl),
+Robert Oostenveld (r.oostenveld@donders.ru.nl)
+</p>
+<a name="Version_History"></a><h3>Version History</h3>
+<p>First checked in at r2966.
+</p>
+<a name="Source_Code_Revisions"></a><h3>Source Code Revisions</h3>
+<ul><li>Initial development: r2966
+</li><li>Tested under: r2966
+</li><li>Known to compile under: r2966
+</li></ul>
+<a name="Functional_Description"></a><h2>Functional Description</h2>
+<p>This module acquires signal data from a FieldTrip buffer and optionally translates FieldTrip buffer events to BCI2000 states.
+Currently, the only supported data formats that can be grabbed from the buffer are 16-bit integers, 32-bit integers, and 32-bit floats.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<a name="HostName"></a><h3>HostName</h3>
+<p>The name of the machine that the FieldTrip buffer resides on (e.g., <i>localhost</i>). Please note that this
+ADC will *not* spawn its own buffer server.
+</p>
+<a name="Port"></a><h3>Port</h3>
+<p>The TCP port number on which to reach the FieldTrip buffer (default=1972).
+</p>
+<a name="SampleBlockSize"></a><h3>SampleBlockSize</h3>
+<p>How many samples to grab from the buffer in each acquisition cycle. This should match
+the block size of the agent writing on the other end, if possible.
+</p>
+<a name="EventStates"></a><h3>EventStates</h3>
+<p>A list of BCI2000 states that FieldTrip events with a matching name should be translated to.
+</p>
+<a name="States"></a><h2>States</h2>
+<p>Completely user defined (see above).
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<ul><li><a href="Contributions%253AADCs.html">Data Acquisition</a></li>
+<li><a href="Contributions%253AFileWriters.html">File Formats</a></li>
+<li><a href="Contributions%253ASignalProcessing.html">Signal Processing</a></li>
+<li><a href="Contributions%253AApplications.html">Applications</a></li>
+<li><a href="Contributions%253ATools.html">Tools</a></li>
+</ul><hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

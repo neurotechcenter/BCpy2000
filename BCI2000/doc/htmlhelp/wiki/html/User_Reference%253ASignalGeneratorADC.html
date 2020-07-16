@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:SignalGeneratorADC - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:SignalGeneratorADC,BCI2000 Glossary,Programming Reference:GenericADC Class,User Reference:DataIOFilter,User Reference:Expression Syntax,User Reference:P3SpellerTask" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">SignalGeneratorADC</h1><p class="subtitle">User Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253ASignalGeneratorADC.html#Function"><span class="tocnumber">1</span> <span class="toctext">Function</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ASignalGeneratorADC.html#Parameters"><span class="tocnumber">2</span> <span class="toctext">Parameters</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#ModulateAmplitude"><span class="tocnumber">2.1</span> <span class="toctext">ModulateAmplitude</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#SineChannelX"><span class="tocnumber">2.2</span> <span class="toctext">SineChannelX</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#SineChannelY"><span class="tocnumber">2.3</span> <span class="toctext">SineChannelY</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#SineChannelZ"><span class="tocnumber">2.4</span> <span class="toctext">SineChannelZ</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#SineFrequency"><span class="tocnumber">2.5</span> <span class="toctext">SineFrequency</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#SineAmplitude"><span class="tocnumber">2.6</span> <span class="toctext">SineAmplitude</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#NoiseAmplitude"><span class="tocnumber">2.7</span> <span class="toctext">NoiseAmplitude</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#DCOffset"><span class="tocnumber">2.8</span> <span class="toctext">DCOffset</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#OffsetMultiplier"><span class="tocnumber">2.9</span> <span class="toctext">OffsetMultiplier</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#RandomSeed"><span class="tocnumber">2.10</span> <span class="toctext">RandomSeed</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253ASignalGeneratorADC.html#SignalType"><span class="tocnumber">2.11</span> <span class="toctext">SignalType</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253ASignalGeneratorADC.html#States"><span class="tocnumber">3</span> <span class="toctext">States</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253ASignalGeneratorADC.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Function"></a><h2>Function</h2>
+<p>The <i>SignalGeneratorADC</i> filter generates a test signal suited for BCI purposes.
+The test signal is a sine wave overlayed with white noise and a DC component.
+Test signal amplitude may be controlled using the system's pointing device, which is useful in testing SMR type BCI setups.
+The signal's DC component may reflect the value of a state variable, which is useful in testing ERP type BCI setups.
+</p>
+<a name="Parameters"></a><h2>Parameters</h2>
+<p>Parameters common to all source modules are described under <a href="User_Reference%253ADataIOFilter.html" title="User Reference:DataIOFilter">User Reference:DataIOFilter</a>.
+</p>
+<a name="ModulateAmplitude"></a><h3>ModulateAmplitude</h3>
+<p>Controls whether signal amplitude follows pointer (mouse, trackball, or similar) movement.
+</p>
+<a name="SineChannelX"></a><h3>SineChannelX</h3>
+<p>Index of a channel that receives a test signal controlled by the pointer's horizontal position.
+</p>
+<a name="SineChannelY"></a><h3>SineChannelY</h3>
+<p>Index of a channel that receives a test signal controlled by the pointer's vertical position.
+If the index is zero, then the test signal is given on all channels.
+</p>
+<a name="SineChannelZ"></a><h3>SineChannelZ</h3>
+<p>Index of a channel that receives a test signal controlled by mouse keys.
+For mouse key control, the pattern of pressed keys is translated into its corresponding 2-bit number. Signal amplitude is then proportional to this number.
+</p>
+<a name="SineFrequency"></a><h3>SineFrequency</h3>
+<p>Test signal frequency. When specified as a raw number, the frequency is given in terms of the sampling rate. Absolute frequencies may be given as decimal numbers or fractions when directly followed with <i>Hz</i>.
+Examples:
+</p>
+<ul><li> <i>0.25</i> (half the Nyquist frequency),
+</li><li> <i>10.5Hz</i>,
+</li><li> <i>20/3Hz</i>.
+</li></ul>
+<a name="SineAmplitude"></a><h3>SineAmplitude</h3>
+<p>The test signal's maximum amplitude.
+Modulation will be linear in the range between zero and this maximum amplitude.
+A raw number refers to AD units; when immediately followed with a voltage unit (such as <i>muV</i>, <i>mV</i>, or <i>kV</i>), the number is interpreted according to the <a href="User_Reference%253ADataIOFilter.html#SourceChOffset" title="User Reference:DataIOFilter">SourceChOffset</a> and <a href="User_Reference%253ADataIOFilter.html#SourceChGain" title="User Reference:DataIOFilter">SourceChGain</a> parameters.
+</p>
+<a name="NoiseAmplitude"></a><h3>NoiseAmplitude</h3>
+<p>White noise amplitude for all channels, given in raw or calibrated units.
+The noise itself is independent among channels.
+</p>
+<a name="DCOffset"></a><h3>DCOffset</h3>
+<p>An offset value common to all channels.
+May be positive or negative, and given in raw or calibrated units.
+</p>
+<a name="OffsetMultiplier"></a><h3>OffsetMultiplier</h3>
+<p>An <a href="User_Reference%253AExpression_Syntax.html" title="User Reference:Expression Syntax">arithmetic expression</a> that evaluates to a multiplication factor applied to the DC offset as given by the <i>DCOffset</i> parameter.
+This allows to create a test signal that depends on the value of <a href="BCI2000_Glossary.html#State" title="BCI2000 Glossary">state variables</a>.
+E.g., to create a simulated evoked response in the <a href="User_Reference%253AP3SpellerTask.html" title="User Reference:P3SpellerTask">P300 Speller's</a> copy spelling mode, enter <i>StimulusType</i> as the multiplier expression, and a nonzero value into the <i>DCOffset</i> parameter.
+</p>
+<a name="RandomSeed"></a><h3>RandomSeed</h3>
+<p>An initialization value for the system's random number generator.
+When a nonzero value is specified, the random number generator will always produce the same sequence, leading to identical pseudorandom noise, which is most useful for testng purposes.
+</p><p>If this is zero, the random number generator will be initialized from system time, leading to different noise each time.
+</p>
+<a name="SignalType"></a><h3>SignalType</h3>
+<p>Selects the output signal's numeric type. The following options are provided:
+</p>
+<ul><li> 0: 16-bit signed integer (int16),
+</li><li> 1: 32-bit IEEE floating point (float32),
+</li><li> 2: 32-bit signed integer (int32).
+</li></ul>
+<a name="States"></a><h2>States</h2>
+<p>Any state may occur in the expression given in the <i>OffsetMultiplier</i> parameter.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253ADataIOFilter.html" title="User Reference:DataIOFilter">User Reference:DataIOFilter</a>, <a href="Programming_Reference%253AGenericADC_Class.html" title="Programming Reference:GenericADC Class">Programming Reference:GenericADC Class</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li><a href="User_Reference%253AFilters.html">Configuration Guide</a></li>
+<li>Applications</li>
+<li>Tools</li>
+</ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

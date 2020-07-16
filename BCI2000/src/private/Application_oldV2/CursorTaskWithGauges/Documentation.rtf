@@ -1,0 +1,164 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\fnil\fcharset2 Symbol;}}
+{\*\generator Msftedit 5.41.15.1515;}\viewkind4\uc1\pard\b\f0\fs32 Gauge App\fs20\par
+\par
+Introduction\b0\par
+The gauge application exists to give realtime visual feedback of signals and states in the BCI2000 runtime.  Multiple different types of gauges can be used to represent as many signals and states as the user could possibly want.  The gauges have been optimized to reduce CPU usage, allowing for minimal performance impact during runtime.\b\par
+\par
+Compiling the Code\par
+\b0 Open the .cbproj file in Codegear 2007/BCB 6.  (The program has been tested and written in Codegear 2007).  The program should compile and run.  If your compiler cannot open borland project files, make sure that the following files are compiled:\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720 GaugeApp.cpp\par
+{\pntext\f1\'B7\tab}GaugeAppMain.cpp/.h\par
+{\pntext\f1\'B7\tab}GenericStimulusTask.cpp/.h\par
+{\pntext\f1\'B7\tab}Gauge.cpp/.h\par
+{\pntext\f1\'B7\tab}Scale.cpp/.h\par
+{\pntext\f1\'B7\tab}AnalogGauge.cpp/.h\par
+{\pntext\f1\'B7\tab}BarGauge.cpp/.h\par
+{\pntext\f1\'B7\tab}BarPlotGauge.cpp/.h\par
+{\pntext\f1\'B7\tab}HistoryGauge.cpp/.h\par
+{\pntext\f1\'B7\tab}ScrollingHistoryGauge.cpp/.h\par
+{\pntext\f1\'B7\tab}XYGauge.cpp/.h\b\par
+\pard\par
+Gauges\par
+\b0 The following gauges are available for use.  They can be used in any combination.  Each gauge has a number of common properties, as well as a number of custom extra properties which define how the gauge acts and is displayed.  The following properties are common to all gauges:\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720 caption: Text to be placed under the gauge which describes in one or two words what the gauge displays.\par
+{\pntext\f1\'B7\tab}type: Informs gauge app what type of gauge this is.  Acceptable input here is: analog, bar, historgram, history, shistory, xy\par
+{\pntext\f1\'B7\tab}xpos: The horizontal position in normalized coordinates of the upper left corner of the area the gauge will occupy. ( NOTE: In some cases, the gauge may slightly overflow it's bounding box )\par
+{\pntext\f1\'B7\tab}ypos: The vertical position in normalized coordinates of the upper left corner of the area the gauge will occupy.\par
+{\pntext\f1\'B7\tab}width: The width of the gauge in normalized coordinates.\par
+{\pntext\f1\'B7\tab}height: The height of the gauge in normalized coordinates\par
+\pard Note: Normalized coordinates are floating point numbers between 0 and 1 which represent what locations in percent of the screen - ex. width = 0.5, height = 0.5, gauge will occupy 25% of the screen area.\par
+\par
+\ul\i Analog Gauge - "analog"\ulnone\par
+\i0 The analog gauge is meant to represent an old analog gauge with a circular display and a needle which represents the current value of the incoming signal.  A Horizontal scale is used to give minimum and maximum values of the signal on the left and right sides of the gauge, respectively.  NOTE: This gauge is similar in function to the "Bar" gauge, but is slightly slower in implementation.  Unless aesthetics are a must, in a performance limited situation, a bar gauges is recommended over the analog gauge.\par
+Other Parameters:\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720 signal1: Custom signal/state input for the gauge to represent visually.\par
+{\pntext\f1\'B7\tab}min1: Minimum value for signal1.\par
+{\pntext\f1\'B7\tab}max1: Maximum value for signal1.\par
+{\pntext\f1\'B7\tab}captionsize: If the caption overflows it's bounds, captionsize can be used to decrease the font size of the caption in order to fit.  0 - caption doesn't show, 1 - largest caption.\par
+{\pntext\f1\'B7\tab}showscale: Boolean value which turns the value labels on and off.  1 = show scale, 0 = don't show scale.\par
+\pard\par
+\ul\i Bar Gauge - "bar"\ulnone\par
+\i0 The bar gauge is used to represent one incoming signal/state in a vertical representation.  The min value is placed at the bottom of the gauge, and the max value is placed at the top of the gauge.  The bar will interpolate between the bottom and the top based on the current value of the incoming signal/state.\par
+Other Parameters:  \par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720 signal1: Custom signal/state input for the gauge to represent visually.\par
+{\pntext\f1\'B7\tab}min1: Minimum value for signal1.\par
+{\pntext\f1\'B7\tab}max1: Maximum value for signal1.\par
+{\pntext\f1\'B7\tab}precision: The number of scale deliminations between the minimum and maximum values on the scale.  0 = just min and max, 1 = three deliminations including min and max, 2 = four deliminations, etc.\par
+{\pntext\f1\'B7\tab}captionsize: If the caption overflows it's bounds, captionsize can be used to decrease the font size of the caption in order to fit.  0 - caption doesn't show, 1 - largest caption.\par
+{\pntext\f1\'B7\tab}showscale: Boolean value which turns the value labels on and off.  1 = show scale, 0 = don't show scale.\par
+\pard\par
+\ul\i Histogram - "histogram"\ulnone\par
+\i0 The histogram is used to display the relative frequency of a signal in different, evenly devided, subintervals of the range of acceptable values for the signal/state from min to max.  The gauge becomes more and more stable as time goes on, but as a result, becomes more difficult to change.  The gauge can be reset by clicking on it.  The vertical scale on this graph represents the relative frequency of a given series of values, and the horizontal scale represents the way the values are subdivided.\par
+Other Parameters:\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720 signal1: Custom signal/state input for the gauge to represent visually.\par
+{\pntext\f1\'B7\tab}min1: Minimum value for signal1.\par
+{\pntext\f1\'B7\tab}max1: Maximum value for signal1.\par
+{\pntext\f1\'B7\tab}precision: The number of scale deliminations between the minimum and maximum values on the vertical scale.  0 = just min and max, 1 = three deliminations including min and max, 2 = four deliminations, etc.\par
+{\pntext\f1\'B7\tab}captionsize: If the caption overflows it's bounds, captionsize can be used to decrease the font size of the caption in order to fit.  0 - caption doesn't show, 1 - largest caption.\par
+{\pntext\f1\'B7\tab}showscale: Boolean value which turns the value labels on and off.  1 = show scale, 0 = don't show scale.\par
+{\pntext\f1\'B7\tab}numbars: The number of bins to divide the signal into.  Each the values in bar \i x\i0  corresponds to ((\i max1-min1\i0 )/\i numbars\i0 )*\i x.\i0\par
+\pard\par
+\ul\i History - "history"\ulnone\par
+\i0 The history gauge draws the value of a signal on the vertical axis, and the time that that value was taken on the x axis.  When the histoy gauge reaches its max length, it resets and begins drawing from time 0.  In order to reset the history gauge, simply click on it.  The performance of this gauge depends on how wide it is.  The wider the history gauge, the more of a performance hit is seen.\par
+Other Parameters:\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720 signal1: Custom signal/state input for the gauge to represent visually.\par
+{\pntext\f1\'B7\tab}min1: Minimum value for signal1.\par
+{\pntext\f1\'B7\tab}max1: Maximum value for signal1.\par
+{\pntext\f1\'B7\tab}vprecision: The number of scale deliminations between the minimum and maximum values on the vertical scale.  0 = just min and max, 1 = three deliminations including min and max, 2 = four deliminations, etc.\par
+{\pntext\f1\'B7\tab}hprecision: The number of scale deliminations between the minimum and maximum values on the horizontal scale. 0 = just min and max, 1 = three deliminations including min and max, 2 = four deliminations, etc.\par
+{\pntext\f1\'B7\tab}length: The amount of time in seconds that the history gauge should keep track of.\par
+{\pntext\f1\'B7\tab}captionsize: If the caption overflows it's bounds, captionsize can be used to decrease the font size of the caption in order to fit.  0 - caption doesn't show, 1 - largest caption.\par
+{\pntext\f1\'B7\tab}showscale: Boolean value which turns the value labels on and off.  1 = show scale, 0 = don't show scale.\par
+\pard\par
+\ul\i ScrollingHistory - "shistory"\ulnone\i0\par
+The scrolling history gauge is identitical to the history gauge, but instead of having a static history, this produces a scrolling history moving from the right to the left, with the most recent values updating at the right side of the gauge.  This gauge is slightly slower than the History Gauge, so if performance is sought over aesthetics, the normal history gauge should be used.  Again performance depends on how wide the gauge is.  Other parameters are identical to the history gauge.\par
+\par
+\ul\i XYGauge - "xy"\ulnone\par
+\i0 The xy gauge represents \i two \i0 signals/states in an area, and draws a cursor at a position corresponding to the current value of the signal/states on the horizontal and vertical axis.  It can be useful for showing a visual representation of two related signals/states - eg. JoystickX and JoystickY.\par
+\i Other Parameters:\i0\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720 signal1: Custom signal/state input for the gauge to represent on the horizontal axis.\par
+{\pntext\f1\'B7\tab}min1: Minimum value for signal1.\par
+{\pntext\f1\'B7\tab}max1: Maximum value for signal1.\par
+{\pntext\f1\'B7\tab}signal2: Custom signal/state input for the gauge to represent on the vertical axis.\par
+{\pntext\f1\'B7\tab}min2: Minimum value for signal2.\par
+{\pntext\f1\'B7\tab}max2: Maximum value for signal2.\par
+{\pntext\f1\'B7\tab}vprecision: The number of scale deliminations between the minimum and maximum values on the vertical scale ( signal2 ).  0 = just min and max, 1 = three deliminations including min and max, 2 = four deliminations, etc.\par
+{\pntext\f1\'B7\tab}hprecision: the number of scale deliminations between the minimum and maximum values on the horizontal scale ( signal1 ).  0 = just min and max, 1 = three deliminations including min and max, 2 = four deliminations, etc.\par
+{\pntext\f1\'B7\tab}captionsize: If the caption overflows it's bounds, captionsize can be used to decrease the font size of the caption in order to fit.  0 - caption doesn't show, 1 - largest caption.\par
+{\pntext\f1\'B7\tab}showscale: Boolean value which turns the value labels on and off.  1 = show scale, 0 = don't show scale.\par
+\pard\b\par
+Parameterization\par
+\b0\i Application:Gauges Gauges - \i0 This matrix has a row for every gauge, and columns for caption, type, xpos, ypos, width, and height (see above).  There is also the "other" column (see below)'\par
+\i Application:Gauges UpdateTime\i0  - This value describes how often the gauges should update.  This is a time value and can be 100ms, 1454us, 120s, etc.  In order to have constant updates, set this value to 0.\par
+NOTE: Some gauges may not behave in an expected manner if they are not updated quickly enough - specifically the history gauges.\par
+\par
+Gauges will be created with default values unless told otherwise.  Defaults can be found in the next section.  This may cause your gauge not to behave in the way you want it to.  The other column allows you to set custom variables for the gauges.  Any gauge parameter described in an "Other Parameters" section above needs to be placed in this "other" cell.  In order to create custom variables, right click on the cell in the "other" column, corresponding to the gauge you want to customize, and create a nested matrix in that cell with 2 columns and as many rows as you need for each custom parameter.  The name of the custom parameter will go in the first column, and it's associated value will go in the same row in the second column.  For example, in order to change the incoming signal, a 3X2 submatrix in the "other" cell on the same row as the gauge I want to change.  The submatrix would look like this:\par
+\par
+   1          2\par
+1 signal1 MousePosX\par
+2 min1     0\par
+3 max1    1024\par
+\par
+This would change the incoming state/signal to "MousePosX" (which needs to be availble during preflight phase) and would change the associated range.  In order to change the signal to Signal(1,0), the following "other" matrix would be needed\par
+\par
+   1          2\par
+1 signal1 Signal(1,0)\par
+2 min1     -1\par
+3 max1    1\par
+\par
+Note that min1 and max1 would not need to be changed in this instance, due to the fact that these are the default values for in1 and max1.  In order to feed a signal into a gauge, you need to use the syntax "Signal(X,Y)" where X is the signal channel, and Y is the signal element.  The given signal must exist for the gauge app to pass preflight testing.  \b\par
+\par
+Defaults\par
+\b0 The gauge matrix has been structured such that gauges can be created without any extra parameters in the "other" section.  Any not defined parameters will take on the defaults described below\b\par
+\b0\i\par
+Analog\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720\i0 signal1: Signal(0,0)\par
+{\pntext\f1\'B7\tab}min1: -1\par
+{\pntext\f1\'B7\tab}max1: 1\par
+{\pntext\f1\'B7\tab}captionsize: 0.5\i\par
+\i0{\pntext\f1\'B7\tab}showscale: 1 (true)\i\par
+\pard\par
+Bar\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720\i0 signal1: Signal(0,0)\par
+{\pntext\f1\'B7\tab}min1: -1\par
+{\pntext\f1\'B7\tab}max1: 1\par
+{\pntext\f1\'B7\tab}captionsize: 0.5\i\par
+\i0{\pntext\f1\'B7\tab}precision: 0\i\par
+\i0{\pntext\f1\'B7\tab}showscale: 1 (true)\i\par
+\pard\par
+Histogram\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720\i0 signal1: Signal(0,0)\par
+{\pntext\f1\'B7\tab}min1: -1\par
+{\pntext\f1\'B7\tab}max1: 1\par
+{\pntext\f1\'B7\tab}precision: 0\par
+{\pntext\f1\'B7\tab}numbars: 5\par
+{\pntext\f1\'B7\tab}captionsize: 0.5\par
+{\pntext\f1\'B7\tab}showscale: 1 (true)\b\par
+\pard\b0\i\par
+History, Scrolling History\b\i0\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720\b0 signal1: Signal(0,0)\par
+{\pntext\f1\'B7\tab}min1: -1\par
+{\pntext\f1\'B7\tab}max1: 1\par
+{\pntext\f1\'B7\tab}vprecision: 0\par
+{\pntext\f1\'B7\tab}hprecision: 0\par
+{\pntext\f1\'B7\tab}length: 10\b\par
+\b0{\pntext\f1\'B7\tab}captionsize: 0.5\b\par
+\b0{\pntext\f1\'B7\tab}showscale: 1 (true)\b\par
+\pard\b0\i\par
+XY Gauge\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720\i0 signal1: Signal(0,0)\par
+{\pntext\f1\'B7\tab}min1: -1\par
+{\pntext\f1\'B7\tab}max1: 1\par
+{\pntext\f1\'B7\tab}signal2: Signal(1,0)\par
+{\pntext\f1\'B7\tab}min2: -1\par
+{\pntext\f1\'B7\tab}max2: 1\par
+{\pntext\f1\'B7\tab}vprecision: 0\par
+{\pntext\f1\'B7\tab}hprecision: 0\par
+{\pntext\f1\'B7\tab}captionsize: 0.5\i\par
+\i0{\pntext\f1\'B7\tab}showscale: 1 \b\par
+\pard\b0\par
+\b Questions, Comments, Bug-reports, Free Stuff:\b0\par
+Email Griffin Milsap - griffin.milsap@gmail.com \par
+(Put "BCI2000" somewhere in the subject line)\par
+}
+ 

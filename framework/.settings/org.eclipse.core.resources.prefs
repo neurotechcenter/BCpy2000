@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//BCPy2000/AppTools/Boxes.py=utf-8
+encoding//BCPy2000/AppTools/Coords.py=utf-8
+encoding//BCPy2000/AppTools/Displays.py=utf-8
+encoding//BCPy2000/AppTools/Shapes.py=utf-8
+encoding//BCPy2000/AppTools/StateMonitors.py=utf-8
+encoding//BCPy2000/AppTools/__init__.py=utf-8
+encoding//BCPy2000/DummyRenderer.py=utf-8
+encoding//BCPy2000/Generic.py=utf-8
+encoding//BCPy2000/GenericApplication.py=utf-8
+encoding//BCPy2000/GenericSource.py=utf-8
+encoding//BCPy2000/PygameRenderer.py=utf-8
+encoding//BCPy2000/VisionEggRenderer.py=utf-8
+encoding//BCPy2000/__init__.py=utf-8

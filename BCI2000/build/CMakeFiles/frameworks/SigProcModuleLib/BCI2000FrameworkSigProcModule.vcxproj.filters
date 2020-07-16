@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\SpatialFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\IIRFilterBase.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\IIRBandpass.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ThreadedFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\WindowingFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\Spectrum.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ARSpectrum.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\FFTSpectrum.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\SpectralEstimator.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ARFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\P3TemporalFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\LinearClassifier.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\LPFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ExpressionFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\Normalizer.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\FrequencyEstimator.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\AverageDisplay.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\RandomFilter.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\utils\Multithreading.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigProcModuleLib\CorePCH.cpp">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\shared\config\BCIRegistry.cpp">
+      <Filter>Source Files\BCI2000 Framework\shared\config</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\math\FilterDesign.cpp">
+      <Filter>Source Files\BCI2000 Framework\math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fftlib\FFTLibWrap.cpp">
+      <Filter>Source Files\BCI2000 Framework\fftlib</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\BCI2000.python3\src\extlib\fftlib\fftw3\include\fftw3.imports.cpp">
+      <Filter>Source Files\BCI2000 Framework\fftlib\fftw3\include</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\SpatialFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\IIRFilterBase.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\IIRBandpass.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ThreadedFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\WindowingFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\Spectrum.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ARSpectrum.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\FFTSpectrum.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\SpectralEstimator.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ARFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\P3TemporalFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\LinearClassifier.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\LPFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\ExpressionFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\Normalizer.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\FrequencyEstimator.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\AverageDisplay.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\modules\signalprocessing\RandomFilter.h">
+      <Filter>Header Files\BCI2000 Framework\shared\modules\signalprocessing</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\utils\Multithreading.h">
+      <Filter>Header Files\BCI2000 Framework\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\BCIRegistry.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\FilterDesign.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\Detrend.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\IIRFilter.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\LinearPredictor.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\MEMPredictor.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\Polynomials.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\math\TransferSpectrum.h">
+      <Filter>Header Files\BCI2000 Framework\math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\extlib\fftlib\FFTLibWrap.h">
+      <Filter>Header Files\BCI2000 Framework\fftlib</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\BCI2000.python3\src\shared\config\Resources.h">
+      <Filter>Header Files\BCI2000 Framework\shared\config</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\BCI2000.python3\build\CMakeFiles\2d8865d90e5d52dad73e5237a88d941f\SigProcRegistry.inc.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\BCI2000.python3\build\cmake\frameworks\SigProcModuleLib\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\BCI2000.python3\build\Inventory.inc">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigProcModuleLib\SigProcRegistry.inc">
+      <Filter>Generated\BCI2000 Framework</Filter>
+    </None>
+    <None Include="C:\BCI2000.python3\build\CMakeFiles\frameworks\SigProcModuleLib\BCI2000FrameworkSigProcModule\Resources.inc">
+      <Filter>Generated\Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{110FD9AA-8569-3FE5-A68E-6802E5F295ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{66CAB5FF-87FB-3800-AEEC-E2D3810284B9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\BCI2000 Framework">
+      <UniqueIdentifier>{5F667A99-7CE6-3DA4-96A4-82A7D98398CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated\Resources">
+      <UniqueIdentifier>{4FB91DE4-4DD9-3029-A175-DEEF9FED9A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C5EB4289-FE49-354E-8713-BD596DEC753C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework">
+      <UniqueIdentifier>{498D9743-F6D2-38E5-A88F-AAC3918CAFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\fftlib">
+      <UniqueIdentifier>{01640718-1A7C-332E-91EE-1A6E955BFEA2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\math">
+      <UniqueIdentifier>{57D9639F-6982-3369-B566-78524FE27659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{A23277DA-12BA-348A-9916-71CA9E12BA65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{B10A3DDD-CFA0-3C4F-AFA6-C45487E61385}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{D333AF79-ED40-369D-8F3A-9E5D16CCF51B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\modules\signalprocessing">
+      <UniqueIdentifier>{22E1DF44-74E5-38D7-99B9-9E3A40CDF883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{2DBCCB9D-4479-3D5F-9C13-F337F231BB05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{32FC710D-16A2-3962-934A-DAD03C3D02D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework">
+      <UniqueIdentifier>{8CF1C78A-0E5B-38AF-8D43-826FF604F26C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\fftlib">
+      <UniqueIdentifier>{F28B9B4D-A4E7-39AB-9E5B-3794D20E5B85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\fftlib\fftw3">
+      <UniqueIdentifier>{88317422-C3E0-38C4-9227-5F44F61A700D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\fftlib\fftw3\include">
+      <UniqueIdentifier>{4768726E-9D4F-35E1-A7B3-19E9FDA7648B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\math">
+      <UniqueIdentifier>{BAB1B2A6-28A5-3996-B584-1A9B0272518B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared">
+      <UniqueIdentifier>{EB9DBDD8-EACB-30C3-9F8A-909F47A03C0E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\config">
+      <UniqueIdentifier>{4D96E3E7-F808-3EE6-8A19-6A344C637392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules">
+      <UniqueIdentifier>{76E86A67-18EF-35F1-B46E-D09E9B955FFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\modules\signalprocessing">
+      <UniqueIdentifier>{68CE846B-9AE7-362F-A4DB-0E42D12544F7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BCI2000 Framework\shared\utils">
+      <UniqueIdentifier>{A38F8834-17BA-34DF-8B43-89644E978F8F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

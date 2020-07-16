@@ -1,0 +1,9 @@
+Source:Eyetracker:EyetrackerLogger int    LogGazeData=        1 // record gaze data to states (boolean)
+Source:Eyetracker:EyetrackerLogger int    LogEyePos=          1 // record absolute eye positions to states (boolean)
+Source:Eyetracker:EyetrackerLogger int    LogPupilSize=       1 // record pupil size to states (boolean)
+Source:Eyetracker:EyetrackerLogger int    LogEyeDist=         1 // record eye distances to states (boolean)
+
+Source:Eyetracker:EyetrackerLogger string NetworkLocation=    TT060-204-83900426.local. // network address of eyetracker
+Source:Eyetracker:EyetrackerLogger int    Port=            4455 // incoming port for eyetracker traffic
+Source:Eyetracker:EyetrackerLogger int    Interval=          10 // approx ms between data polling
+Source:Eyetracker:EyetrackerLogger string CalibrationData=    C:\BCI2000.v2.0.ECoG\prog\Calibout.cal // calibration file (inputfile)

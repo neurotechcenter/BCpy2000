@@ -1,0 +1,56 @@
+Synopsis
+
+ctfneurod is a relay program that reads data from the CTF Acq program's RealTime 
+interface, and provides them to client software over a TCP socket.
+On the client side, ctfneurod implements the Neuroscan Acquire protocol.
+
+Author
+
+This program was written by juergen.mellinger@uni-tuebingen.de. When using it in your
+research, please give credit by citing the following reference:
+J. Mellinger, G. Schalk, C. Braun, H. Preissl, W. Rosenstiel, N. Birbaumer, A. Kübler:
+An MEG-based brain-computer interface (BCI), NeuroImage 2007 Mar;36(3):581-93.
+
+Compiling and Linking
+
+ctfneurod requires CTF's development SDK. It links against the ctfds and ctfutil libraries,
+and requires the associated header files to compile.
+
+Usage
+
+ctfneurod must be started before CTF's Acq program. When started up, ctfneurod waits for
+the Acq software to begin streaming data, and acts like a Neuroscan Acquire server once the 
+data stream is available.
+Its command line syntax is
+
+  ctfneurod <listening address> <options>
+
+There, the server's listening address is specified in the form <ip>:<port>, and defaults to
+"localhost:4000".
+
+Options are:
+--pattern <regular expression>
+-p <regular expression>
+Restricts transmission to a subset of channels available on the Acq RealTime interface.
+The subset is defined by matching an extended regular expression against channel names, e.g.
+ctfneurod --pattern "^MLC.*"
+will only transfer channels whose names begin with "MLC".
+The default is to transfer all channels that are present on the Acq side.
+
+--freqCorrection <factor>
+-f <factor>
+Normally, the sampling rate on the Neuroscan side is reported to be identical to the
+one on the Acq side. When a correction factor is specified, this is multiplied onto the
+Acq sampling rate prior to reporting the sampling rate.
+
+--outputFormat <nbits>
+-o <nbits>
+Defines the bit depth of data transmission, which is either 16 or 32, and defaults to 16.
+When 16 bit data transmission is selected, the lower two bits of data are ignored to avoid 
+numeric overflow.
+
+--disableHP
+-d
+By default, ctfneurod applies a first-order HP filter with a corner frequency of 0.1Hz
+to Acq data prior to transmission. If this is undesired, use the --disableHP option to
+disable HP filtering.

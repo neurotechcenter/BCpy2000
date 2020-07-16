@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Reference:Filters - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Reference:Filters,Contributions:ADCs,Contributions:Contents,Contributions:FileWriters,Programming Reference:Filter Chain,Technical Reference:Core Modules,User Reference:ARFilter,User Reference:AlignmentFilter,User Reference:BCI2000FileWriter,User Reference:Command Line Processing,User Reference:ConditionalIntegrator" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">Filters</h1><p class="subtitle">User Reference</p><hr class="sep" /><p><i>Filters</i> are the most important building blocks of a BCI2000 system.
+This document describes the <i>filter</i> concept for users who will configure BCI2000 for their own experiments, and provides links to the documentation pages of individual filters, describing each filter's purpose and parameterization. On this page, only core components of BCI2000 are described; for contributed filters, see <a href="Contributions%253AContents.html" title="Contributions:Contents">Contributions:Contents</a>.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Reference%253AFilters.html#Data_Processing_as_a_Pipe"><span class="tocnumber">1</span> <span class="toctext">Data Processing as a Pipe</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AFilters.html#Configuration_Overview"><span class="tocnumber">2</span> <span class="toctext">Configuration Overview</span></a></li>
+<li class='toclevel-1'><a href="User_Reference%253AFilters.html#Data_Acquisition_Module"><span class="tocnumber">3</span> <span class="toctext">Data Acquisition Module</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#General_Filters"><span class="tocnumber">3.1</span> <span class="toctext">General Filters</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#Data_Acquisition"><span class="tocnumber">3.2</span> <span class="toctext">Data Acquisition</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#Data_Storage"><span class="tocnumber">3.3</span> <span class="toctext">Data Storage</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253AFilters.html#Signal_Processing_Module"><span class="tocnumber">4</span> <span class="toctext">Signal Processing Module</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#Feature_Extraction"><span class="tocnumber">4.1</span> <span class="toctext">Feature Extraction</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#Translation_Algorithm"><span class="tocnumber">4.2</span> <span class="toctext">Translation Algorithm</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#Miscellaneous_Filters"><span class="tocnumber">4.3</span> <span class="toctext">Miscellaneous Filters</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253AFilters.html#Application_Module"><span class="tocnumber">5</span> <span class="toctext">Application Module</span></a>
+<ul>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#Stimulus_Presentation_and_Feedback"><span class="tocnumber">5.1</span> <span class="toctext">Stimulus Presentation and Feedback</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#External_Interfaces"><span class="tocnumber">5.2</span> <span class="toctext">External Interfaces</span></a></li>
+<li class='toclevel-2'><a href="User_Reference%253AFilters.html#Internationalization"><span class="tocnumber">5.3</span> <span class="toctext">Internationalization</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="User_Reference%253AFilters.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Data_Processing_as_a_Pipe"></a><h2>Data Processing as a Pipe</h2>
+<p>Each of the three BCI2000 core modules contains a <i>chain of filters</i>, i.e. a sequence of filters forming a pipe where, basically, brain signal data enter on one side, and a processed version of these data leaves on the other side.
+</p><p>The notion of a <i>pipe</i> implies that, for each portion of data entering on the input side, there will be exactly one portion of output data on the output side.
+This is analogous to a water pipe: unlike a water stream (a brook, or a river), it is impossible to insert or remove water from inside the pipe without breaking it.
+Similarly, albeit signal portions may change their shape on their way through the pipe (filter chain), it is impossible to insert or remove any of them.
+Thus, each data portion acquired by the data acquisition module will run through the entire BCI2000 system, being processed by a sequence of filters.
+</p><p>This page is mostly about the way filters are used online in BCI2000 core modules. Note however that the same filter code can be accessed in order to recreate a processing chain offline, either <a href="User_Reference%253ACommand_Line_Processing.html" title="User Reference:Command Line Processing">from the system command-line</a> or <a href="User_Reference%253AMatlab_Tools.html" title="User Reference:Matlab Tools">from within Matlab</a>.
+</p>
+<a name="Configuration_Overview"></a><h2>Configuration Overview</h2>
+<p>In principle, these filters may be placed in any order by the writer (programmer) of a BCI2000 module, and it is <a href="Programming_Reference%253AFilter_Chain.html" title="Programming Reference:Filter Chain">technically easy</a> to change the number, and order, of filters. 
+However, not all combinations or orderings of filters make sense.
+</p><p>The flowchart shows modules and filters for BCI2000's configurations included in the core distribution:
+</p>
+<div align="center"><a href="../images/thumb/7/71/FilterPipelineFlowchart.png/792px-FilterPipelineFlowchart.png" class="image" title="Flowchart of the Data moving through the Filter Pipeline"><img src="../images/thumb/7/71/FilterPipelineFlowchart.png/792px-FilterPipelineFlowchart.png" alt="Flowchart of the Data moving through the Filter Pipeline" width="792" height="260" longdesc="/wiki/index.php/Image:FilterPipelineFlowchart.png" /></a><br />
+<b>Flowchart of the Data moving through the Filter Pipeline</b></div>
+<a name="Data_Acquisition_Module"></a><h2>Data Acquisition Module</h2>
+<p>In the data acquisition (source) module, the DataIOFilter manages data acquisition and storage in a general manner.
+Actual acquisition of data is provided by ADC filters,
+actual writing into data files is done by FileWriter filters representing various <a href="User_Reference%253AData_File_Formats.html" title="User Reference:Data File Formats">Data Formats</a>.
+In addition to managing the operation of ADC and FileWriter filters, the DataIOFilter handles signal calibration into physical units (typically, <span class="texhtml">&mu;<i>V</i></span>), and visualization of the source signal.
+</p><p>Filter documentation for source modules is available for
+</p>
+<a name="General_Filters"></a><h3>General Filters</h3>
+<ul><li><a href="User_Reference%253ADataIOFilter.html" title="User Reference:DataIOFilter">User Reference:DataIOFilter</a>: Storage and acquisition management, calibration.
+</li><li><a href="User_Reference%253ASourceFilter.html" title="User Reference:SourceFilter">User Reference:SourceFilter</a>: HP/LP/notch filtering prior to storage.
+</li><li><a href="User_Reference%253AAlignmentFilter.html" title="User Reference:AlignmentFilter">User Reference:AlignmentFilter</a>: Temporal alignment.
+</li><li><a href="User_Reference%253ATransmissionFilter.html" title="User Reference:TransmissionFilter">User Reference:TransmissionFilter</a>: Subset selection for online processing.
+</li></ul>
+<a name="Data_Acquisition"></a><h3>Data Acquisition</h3>
+<ul><li><a href="User_Reference%253ASignalGeneratorADC.html" title="User Reference:SignalGeneratorADC">User Reference:SignalGeneratorADC</a>: A signal generator for testing purposes.
+</li><li><a href="User_Reference%253AgUSBampADC.html" title="User Reference:gUSBampADC">User Reference:gUSBampADC</a>: Interface to the g.tec gUSBamp amplifier.
+</li><li><a href="User_Reference%253AgMOBIlabADC.html" title="User Reference:gMOBIlabADC">User Reference:gMOBIlabADC</a>: Interface to the g.tec gMOBIlab amplifier.
+</li><li><a href="User_Reference%253AgMOBIlabPlusADC.html" title="User Reference:gMOBIlabPlusADC">User Reference:gMOBIlabPlusADC</a>: Interface to the g.tec gMOBIlab+ wireless amplifier.
+</li><li><a href="Contributions%253AADCs.html" title="Contributions:ADCs">Contributions:ADCs</a>: Contributed code interfacing to other hardware.
+</li></ul>
+<a name="Data_Storage"></a><h3>Data Storage</h3>
+<ul><li><a href="User_Reference%253ABCI2000FileWriter.html" title="User Reference:BCI2000FileWriter">User Reference:BCI2000FileWriter</a>: BCI2000 data format.
+</li><li><a href="User_Reference%253AEDFFileWriter.html" title="User Reference:EDFFileWriter">User Reference:EDFFileWriter</a>: European Data Format.
+</li><li><a href="User_Reference%253AGDFFileWriter.html" title="User Reference:GDFFileWriter">User Reference:GDFFileWriter</a>: General Data Format for Biosignals.
+</li><li><a href="User_Reference%253ANullFileWriter.html" title="User Reference:NullFileWriter">User Reference:NullFileWriter</a>: Suppressing file output.
+</li><li><a href="Contributions%253AFileWriters.html" title="Contributions:FileWriters">Contributions:FileWriters</a>: Contributed code supporting other output formats.
+</li></ul>
+<a name="Signal_Processing_Module"></a><h2>Signal Processing Module</h2>
+<p>In the signal processing module, brain signals are filtered spatially and temporally, resulting in a set of extracted features. In the Classifier, these features are used to differentiate amongst a small number of mental states (classes). Finally, the Normalizer adjusts the Classifier's output to zero mean and unit variance.
+</p><p>Filter documentation for signal processing filters is available for
+</p>
+<a name="Feature_Extraction"></a><h3>Feature Extraction</h3>
+<ul><li><a href="User_Reference%253ASpatialFilter.html" title="User Reference:SpatialFilter">User Reference:SpatialFilter</a>: Instantaneous (i.e., sample-wise) linear transformation of brain signal input.
+</li><li><a href="User_Reference%253AARFilter.html" title="User Reference:ARFilter">User Reference:ARFilter</a>: Auto-regression based spectral amplitude estimator.
+</li><li><a href="User_Reference%253AFFTFilter.html" title="User Reference:FFTFilter">User Reference:FFTFilter</a>: Short-term FFT for display or feature extraction purposes.
+</li><li><a href="User_Reference%253AP3TemporalFilter.html" title="User Reference:P3TemporalFilter">User Reference:P3TemporalFilter</a>: Segmenting and averaging for ERP feature extraction.
+</li></ul>
+<a name="Translation_Algorithm"></a><h3>Translation Algorithm</h3>
+<ul><li><a href="User_Reference%253ALinearClassifier.html" title="User Reference:LinearClassifier">User Reference:LinearClassifier</a>: Linear projection of signal features onto low-dimensional classification space (control signal).
+</li><li><a href="User_Reference%253ANormalizer.html" title="User Reference:Normalizer">User Reference:Normalizer</a>: Adjustment of control signal to zero mean/unit variance.
+</li></ul>
+<a name="Miscellaneous_Filters"></a><h3>Miscellaneous Filters</h3>
+<ul><li><a href="User_Reference%253ALPFilter.html" title="User Reference:LPFilter">User Reference:LPFilter</a>: Temporal low-pass filtering at any stage of processing.
+</li><li><a href="User_Reference%253AConditionalIntegrator.html" title="User Reference:ConditionalIntegrator">User Reference:ConditionalIntegrator</a>: An offline replacement for cursor movement in an online task.
+</li><li><a href="User_Reference%253AStateTransform.html" title="User Reference:StateTransform">User Reference:StateTransform</a>: An offline replacement for hitting targets in an online task.
+</li><li><a href="User_Reference%253AExpressionFilter.html" title="User Reference:ExpressionFilter">User Reference:ExpressionFilter</a>: Computes filter output using arithmetic expressions.
+</li><li><a href="User_Reference%253AMatlabFilter.html" title="User Reference:MatlabFilter">User Reference:MatlabFilter</a>: Using MATLAB to implement online processing in the pipeline.
+</li></ul>
+<a name="Application_Module"></a><h2>Application Module</h2>
+<p>Basically, the application module contains a single filter that handles trial sequencing and brain signal feedback.
+In the standard configuration, this <i>task</i> filter is surrounded by ConnectorInput and ConnectorOutput filters. These connector filters allow for exchanging data with external software over a UDP based socket protocol.
+</p><p>Filter documentation of application module filters is available for
+</p>
+<a name="Stimulus_Presentation_and_Feedback"></a><h3>Stimulus Presentation and Feedback</h3>
+<ul><li><a href="User_Reference%253ACursorTask.html" title="User Reference:CursorTask">User Reference:CursorTask</a>: Feedback of brain signals in form of up to 3-dimensional cursor movement.
+</li><li><a href="User_Reference%253AStimulusPresentationTask.html" title="User Reference:StimulusPresentationTask">User Reference:StimulusPresentationTask</a>: Sequential presentation of stimuli.
+</li><li><a href="User_Reference%253AP3SpellerTask.html" title="User Reference:P3SpellerTask">User Reference:P3SpellerTask</a>: A P300 speller matrix application.
+</li></ul>
+<a name="External_Interfaces"></a><h3>External Interfaces</h3>
+<ul><li><a href="User_Reference%253AConnectorOutput.html" title="User Reference:ConnectorOutput">User Reference:ConnectorOutput</a>: Reports state information to a UDP socket.
+</li><li><a href="User_Reference%253AConnectorInput.html" title="User Reference:ConnectorInput">User Reference:ConnectorInput</a>: Sets state information according to input from a UDP socket.
+</li><li><a href="User_Reference%253AKeystrokeFilter.html" title="User Reference:KeystrokeFilter">User Reference:KeystrokeFilter</a>: Translates state information into simulated keyboard input.
+</li><li><a href="User_Reference%253AJoystickFilter.html" title="User Reference:JoystickFilter">User Reference:JoystickFilter</a>: Records joystick movements into a state.
+</li><li><a href="User_Reference%253AKeyLogFilter.html" title="User Reference:KeyLogFilter">User Reference:KeyLogFilter</a>: Records keyboard and mouse key presses into a state.
+</li><li><a href="User_Reference%253AMouseFilter.html" title="User Reference:MouseFilter">User Reference:MouseFilter</a>: Records mouse pointer coordinates into a state.
+</li></ul>
+<a name="Internationalization"></a><h3>Internationalization</h3>
+<ul><li><a href="User_Reference%253ALocalization.html" title="User Reference:Localization">User Reference:Localization</a>: Translating subject-visible messages.
+</li></ul>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Technical_Reference%253ACore_Modules.html" title="Technical Reference:Core Modules">Technical Reference:Core Modules</a>, <a href="Contributions%253AContents.html" title="Contributions:Contents">Contributions:Contents</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<ul><li><a href="User_Reference%253AOperator_Module.html">Operator Module</a></li>
+<li>Configuration Guide</li>
+<li>Applications</li>
+<li>Tools</li>
+</ul><a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

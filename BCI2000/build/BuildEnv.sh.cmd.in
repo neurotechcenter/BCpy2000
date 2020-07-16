@@ -1,0 +1,19 @@
+#!/bin/sh
+cd . && echo \
+@goto cmd \
+>/dev/null
+
+# posix shell code
+toolpath=$(cd @BUILDUTILS_DIR@ && pwd)
+PATH=$PATH:$toolpath
+export PATH
+echo Added BCI2000 build tools to PATH variable.
+exec /bin/sh
+
+# windows cmd code
+:cmd
+@echo off
+cls
+set PATH=%PATH%;@BUILDUTILS_DIR@
+cmd /k echo Added BCI2000 build tools to PATH variable.
+

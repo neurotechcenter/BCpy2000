@@ -1,0 +1,26 @@
+HKCR
+{
+	BCI2000PresentationLink.DataPortExtension.1 = s 'BCI2000DataPortExtension Class'
+	{
+		CLSID = s '{20F54217-4B33-4956-9961-3052447F2F79}'
+	}
+	BCI2000PresentationLink.DataPortExtension = s 'BCI2000DataPortExtension Class'
+	{
+		CLSID = s '{20F54217-4B33-4956-9961-3052447F2F79}'
+		CurVer = s 'BCI2000PresentationLink.DataPortExtension.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {20F54217-4B33-4956-9961-3052447F2F79} = s 'BCI2000DataPortExtension Class'
+		{
+			ProgID = s 'BCI2000PresentationLink.DataPortExtension.1'
+			VersionIndependentProgID = s 'BCI2000PresentationLink.DataPortExtension'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{92EB0322-0798-48D0-BB72-D2ADDE4B7781}'
+		}
+	}
+}

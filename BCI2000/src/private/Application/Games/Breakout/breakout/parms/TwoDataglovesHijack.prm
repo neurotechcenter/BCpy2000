@@ -1,0 +1,8 @@
+Filtering:SpatialFilter                       int       SpatialFilterType=              0       // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
+Filtering:Hijacking                           int       Hijack=                         1       // Turn on Hijacking? (boolean)
+Filtering:Hijacking:HijackFilter              float     HijackNoise=                    0.005   // baseline noise level 
+Filtering:Hijacking                           matrix    ControlSignal= 6 { State%20name Take%20Derivative?  Offset Gain  Take%20RMS?  Output%20Channel }                                                                                                          Glove1Sensor01 1 0.0 5e-2 1 Left      Glove1Sensor04 1 0.0 5e-2 1 Left      Glove1Sensor05 1 0.0 5e-2 1 Left                         Glove2Sensor01 1 0.0 5e-2 1 Right     Glove2Sensor04 1 0.0 5e-2 1 Right     Glove2Sensor05 1 0.0 5e-2 1 Right                         // Hijack controller matrix
+Filtering:LinearClassifier                    matrix    Classifier=    2 { input%20channel input%20element%20(bin) output%20channel weight }             Left 1 1 1    Right 1 2 1    CH053 1 3 1    CH032 1 4 1 // Linear classification matrix in sparse representation
+
+Source:Log%20Input                            int       DataGloveDerivative=            1       // measure changes in glove signals?: 0: no - measure position, 1:yes - measure velocity (enumeration)
+Source:Log%20Input                            list      DataGloveHandedness=       2    L R     // DataGlove handedness: L or R for each glove

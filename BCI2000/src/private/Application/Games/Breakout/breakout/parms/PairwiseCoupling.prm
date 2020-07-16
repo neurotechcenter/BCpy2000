@@ -1,0 +1,13 @@
+
+Filtering:Classifier                    matrix    Classifier=              4 { input%20channel input%20element%20(bin) output%20channel weight } 1 1 1 1.0     2 1 2 1.0     1 1 3 0.5    2 1 3 0.5 //
+
+Filtering:Pairwise%20Coupling           int       EnablePairwiseCoupling=            1          // turn on pairwise coupling transformation (boolean)
+Filtering:Pairwise%20Coupling           matrix    PairwiseCouplingMatrix=  3 { Input%20Channel     Group Negative%20Class Positive%20Class Shift Scaling Training%20Set%20Size } 1   P        Intention       Movement      0.0    1.0          100               2       P        Intention         Rest        0.0    1.0          100               3        P         Movement         Rest        0.0    1.0          100       //
+Filtering:Pairwise%20Coupling           matrix    PairwiseCouplingTest=    0 0       2.9444  0.7082  1.0986 //
+
+Filtering:Normalizer                    floatlist NormalizerOffsets=         3       0   0   0  // normalizer offsets
+Filtering:Normalizer                    floatlist NormalizerGains=           3       1   1   1  // normalizer gain values
+Filtering:Normalizer                    intlist   Adaptation=                3       0   0   0  // 0: no adaptation, 1: zero mean, 2: zero mean, unit variance (enumeration)
+Filtering:Normalizer                    matrix    BufferConditions=       1  3       1   1   1  // expressions corresponding to data buffers (columns correspond to output channels, multiple rows correspond to multiple buffers)
+
+Visualize:Processing%20Stages           int       VisualizePairwiseCoupling=         0          // Visualize LinearClassifier output (boolean)

@@ -1,0 +1,32 @@
+AppConnectorExample
+Author: J. Adam Wilson
+Date: 3/15/07
+Department of Biomedical Engineering, University of Wisconsin-Madison
+
+This directory contains the documentation and source code for the example AppConnector program. 
+Here are some quick instructions for generating a makefile and building the project for Windows, 
+Linux, and Macs.
+
+Windows
+-------
+Make sure that you have Qt4 and MinGW installed, and that the libraries are present in your 
+environment path (see the documentation pdf for more info if you have trouble). To generate the 
+windows Makefile, go to the Start Menu->Run, type cmd to start the command prompt, and cd to this 
+directory; you should be able to type 'dir' at the prompt, and the AppConnectorExample.pro file 
+should be listed. Type 'qmake' at the prompt. The makefile is generated for your system. Now, type 
+'mingw32-make release' at the prompt. It should compile, link, and build the project. The 
+executable is placed in the 'release\bin\' folder. If there are problems, make sure that Qt4 and 
+MinGW are installed correctly, and that the correct files are present on your path.
+
+Linux
+------
+Make sure that Qt4 is installed, and that a recent version of GCC is installed (>3.6, preferably 
+>=4.0). cd to the AppConnectorExample directory at a command prompt. Type 'qmake', which generates 
+the Makefile. Type 'make', which builds the project. The executable is placed in the 'bin/' 
+folder.
+
+Mac
+------
+Make sure that Qt4 is installed, and a recent version of GCC is installed. (GCC 3.3 which is 
+included with Xcode Tools 1.5 generates incorrect code; make sure you have a newer version or the 
+update to 3.3). Type 'qmake' to generate the makefile, and type make to build the project.

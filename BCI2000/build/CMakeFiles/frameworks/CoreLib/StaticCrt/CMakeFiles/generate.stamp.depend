@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/BCI2000.python3/build/cmake/frameworks/Core.cmake
+C:/BCI2000.python3/build/cmake/frameworks/CoreLib/Files.cmake
+C:/BCI2000.python3/build/cmake/frameworks/CoreLib/StaticCrt/CMakeLists.txt
+C:/BCI2000.python3/build/cmake/frameworks/LibTiny.cmake

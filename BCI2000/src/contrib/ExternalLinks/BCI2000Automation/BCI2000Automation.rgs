@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'{CBF4944A-318B-4447-BF30-F274C1CD69C9}' = s 'BCI2000Automation'
+		'BCI2000Automation.DLL'
+		{
+			val AppID = s '{CBF4944A-318B-4447-BF30-F274C1CD69C9}'
+		}
+	}
+}

@@ -1,0 +1,99 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.14.26433.0 (0e134aad).
+//
+// c:\bci2000.python3\build\cmakefiles\contrib\signalsource\tuckerdavis\tuckerdavis.dir\debug\zbusx.tli
+//
+// Wrapper implementations for Win32 type library zBUSx.ocx
+// compiler-generated file created 01/15/19 at 12:36:37 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _DZBUSx wrapper method implementations
+//
+
+inline long _DZBUSx::Connect ( long Interface ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003", Interface);
+    return _result;
+}
+
+inline long _DZBUSx::GetDeviceAddr ( long DevType, long DevNum ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003\x0003", DevType, DevNum);
+    return _result;
+}
+
+inline long _DZBUSx::GetDeviceVersion ( long DevType, long DevNum ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003\x0003", DevType, DevNum);
+    return _result;
+}
+
+inline long _DZBUSx::HardwareReset ( long RackNum ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003", RackNum);
+    return _result;
+}
+
+inline long _DZBUSx::FlushIO ( long RackNum ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003", RackNum);
+    return _result;
+}
+
+inline long _DZBUSx::zBusTrigA ( long RackNum, long zTrgMode, long Delay ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003\x0003\x0003", RackNum, zTrgMode, Delay);
+    return _result;
+}
+
+inline long _DZBUSx::zBusTrigB ( long RackNum, long zTrgMode, long Delay ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x7, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003\x0003\x0003", RackNum, zTrgMode, Delay);
+    return _result;
+}
+
+inline long _DZBUSx::zBusSync ( long RackMask ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x8, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003", RackMask);
+    return _result;
+}
+
+inline long _DZBUSx::KillCode ( long DevType, long DevNum, long MagicCode ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x9, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003\x0003\x0003", DevType, DevNum, MagicCode);
+    return _result;
+}
+
+inline _bstr_t _DZBUSx::GetError ( ) {
+    BSTR _result = 0;
+    _com_dispatch_method(this, 0xa, DISPATCH_METHOD, VT_BSTR, (void*)&_result, NULL);
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t _DZBUSx::GetDeviceAt ( long RackNum, long PosNum, long * DevID, long * DevNum ) {
+    BSTR _result = 0;
+    _com_dispatch_method(this, 0xb, DISPATCH_METHOD, VT_BSTR, (void*)&_result, 
+        L"\x0003\x0003\x4003\x4003", RackNum, PosNum, DevID, DevNum);
+    return _bstr_t(_result, false);
+}
+
+inline long _DZBUSx::ConnectZBUS ( _bstr_t IntName ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0xc, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0008", (BSTR)IntName);
+    return _result;
+}
+
+inline HRESULT _DZBUSx::AboutBox ( ) {
+    return _com_dispatch_method(this, DISPID_ABOUTBOX, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}

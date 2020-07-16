@@ -1,0 +1,312 @@
+html {
+    background: #fff url(whiteback.png) top left repeat-x fixed;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    margin: 2em auto;
+    padding: 0;
+    width: 48em;
+    border: 1px solid #000;
+    position: relative;
+    line-height: 1.35;
+}
+code, pre {
+    font-family: "Courier New", Courier, Monaco, monospace;
+    font-size: 110%;
+    font-weight: bold;
+    background: #dfb;
+    color: #000;
+    font-size: 110%;
+}
+body h1 {font-size: 140%;}
+body h2 {font-size: 120%;}
+body h3 {font-size: 100%;}
+
+
+/* PyDoc */
+
+.pydoc.heading   { background: #2b2; color: #fff;}
+.pydoc.section   { background: #dfb; }
+.pydoc.functions { background: #bdf; }
+
+/* header */
+
+.header {
+    background-color: #fff;
+    background-image: url(snake-faded.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-origin: content;
+    background-size: 100% auto;
+    color: #666;
+    position: relative;
+    padding-bottom: 2em;
+}
+.header h1 {
+	font-size: 200%;
+    margin: 0;
+    padding: 1em;
+    clear: none;
+}
+.header h1 a {
+    color: #000;
+}
+.header h1 a:hover {
+}
+
+
+.header a.logo {
+    display: block;
+    float: right;
+    position: relative;
+    z-index: 1;
+}
+
+/* goto bar */
+
+.bar {
+    clear: both;
+    display: block;
+    background: #fff url(whitegrad.png) repeat-x bottom left;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    float: left;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    font-style: normal;
+    font-size: small;
+}
+.bar a {
+    color: #292;
+    display: block;
+    float: left;
+    padding: 0.25em;
+    text-decoration: none;
+    border-right: 1px solid #999;
+    font-weight: bold;
+}
+.bar a:link:hover, .bar a:visited:hover {
+    background: #0b0 url(greengrad.png) repeat-x bottom left;
+    color: #fff;
+}
+.message {
+	padding: 2em;
+}
+
+
+/* General */
+
+a img {
+    border: none;
+}
+a:link, a:visited {
+    text-decoration: none;
+    font-weight: bold;
+}
+a:link {
+    color: #1b1;
+}
+a:visited {
+    color: #6b6;
+}
+a.url:link {
+    color: #36f;
+}
+a.url:visited {
+    color: #59e;
+}
+
+a:link:hover, a:visited:hover {
+    background: #eee;
+    color: #000;
+}
+a.diff {display:none;}
+a.diff:link, a.diff:visited, a.diff:hover {display:inline;}
+
+
+.footer hr, .footer br, .header hr, .header br {
+    display: none;
+}
+
+
+/* footer */
+
+.footer {
+    padding: 2.2em;
+    text-align: right;
+    font-style: italic;
+    font-size: small;
+}
+
+span.edit {
+    position: absolute;
+    margin: 0;
+    padding: 0.125em 0;
+    top: -2.5em;
+    height: 2em;
+    right: -1px;
+    color: #000;
+    font-size: small;
+    border: 1px solid #666;
+}
+.footer p {
+    font-style: normal;
+    text-align: justify;
+    font-size: small;
+}
+
+/* search box */
+form.search {
+    position: absolute;
+    margin: 0;
+    padding: 0.125em 0;
+    top: -2.2em;
+    right: 2px;
+    color: #000;
+    font-size: small;
+}
+form.search p {
+    margin: 0;
+    padding: 0;
+}
+form.search input {
+    font-size: small;
+    font-family: verdana, sans-serif;
+    border: 1px solid #222;
+    color: #444;
+}
+
+
+/* referers */
+div.refer {
+    font-size: x-small;
+    padding: 0.25em 1em;
+    background: #eee;
+}
+div.refer a {
+    color: #36f;
+    font-weight: normal;
+}
+div.refer a:visited {
+    color: #59e;
+}
+div.refer a:hover {
+    background: #ddd;
+    color: #000;
+}
+
+
+/*** content ***/
+
+.content, .rc {
+    margin: 2em;
+}
+
+.content p {
+    text-align: justify;
+}
+
+.content .quote {
+    font-style: italic;
+    background: #eee url(quote.png) 4px 4px no-repeat;
+    clear: both;
+    margin: 0.25em 1em;
+    padding: 0.25em;
+    color: #111;
+}
+
+.content .image {
+    display: block;
+    margin: 0.25em;
+    padding: 0.25em;
+    border: 1px solid #666;
+    background: #eee;
+    text-align: center;
+}
+.content a.image:hover {
+    border: 1px solid #b00;
+    background: #fee;
+}
+.content .image.noborder {
+    display: inline;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    vertical-align: middle;
+}
+.content a.image:hover {
+    border: none;
+}
+
+
+.content .right {
+    float: right;
+}
+
+table.user, table.user td, table.user th {
+	border-style: solid;
+	border-color: #000;
+	border-width: 1px;
+}
+table.user td,   table.user th   { padding: 2px; }
+table.user td.r, table.user th.r { text-align:right; }
+table.user td.l, table.user th.l { text-align:left; }
+table.user td.c, table.user th.c { text-align:center; }
+
+table.packages td, table.packages th {
+	vertical-align: top;
+	font-size: x-small;
+}
+
+/* edit form */
+
+form.edit {
+    padding-bottom: 3em;
+}
+
+form.edit textarea {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+}
+
+.header p {
+    margin: -1.5em 0 0 0
+}
+
+.sidebar {
+    float: right;
+    margin: 0.5em;
+    padding: 0.5em;
+    background: #eee;
+    border: 1px solid #666;
+}
+
+.wrapper.close {
+    clear: both;
+}
+
+div.sister, div.near { display: none }
+
+.commentshown {
+    padding: 0.5em;
+    display: block;
+    clear: both;
+    border: 1px solid #ccc;
+}
+.commentshown a {
+    display: inline;
+}
+.commenthidden {
+    display: none;
+}
+div.month a.edit { color: pink }

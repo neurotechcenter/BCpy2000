@@ -1,0 +1,24 @@
+fewer rewards per strike early on in game (when there are many bricks and a low threshold)
+more rewards later on (when it is harder to get them on both counts)
+maybe start with higher PointsRequiredForReward (and maybe also higher MaxPointsPerStroke?)
+	but reduce them both in proportion to the number of bricks left (not letting either of them get below 1.0)
+
+states: GameDifficulty, StepSize, RunningThresholdEstimate
+
+
+Multiple linear classifier weightings out as single Classifier parameter
+EITHER
+	do not calibrate
+	set shift = -bias
+	set scale = calibration factor
+OR
+	calibrate
+	set shift = -bias
+	set scale = 1.0
+RANDOM NUMBERS!
+NOTCH+BANDPASS FILTER
+MEX VERSION OF SAME
+
+
+python signal processing, for greater flexibility and instant training?
+

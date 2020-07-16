@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>User Tutorial:BCI2000 Tour - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="User Tutorial:BCI2000 Tour,BCI2000 Glossary,Contributions:How to use a Contributed Source Module,Main Page,Programming Howto:Quickstart Guide,Programming Reference:Contents,Programming Reference:MatlabFilter,Programming Reference:Rapid Development,Programming Tutorial:Implementing a Data Acquisition Module,Programming Tutorial:Implementing a Signal Processing Filter,Technical Reference:Contents" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">BCI2000 Tour</h1><p class="subtitle">User Tutorial</p><hr class="sep" /><p>The following description is intended to get you started and make you comfortable using BCI2000. It demonstrates the use of BCI2000 without the need for data acquisition hardware. In addition, it will introduce you to some of the most important software components and tools included in the BCI2000 distribution.
+</p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Starting_up_BCI2000"><span class="tocnumber">1</span> <span class="toctext">Starting up BCI2000</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#BCI2000_Help"><span class="tocnumber">2</span> <span class="toctext">BCI2000 Help</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Parameter_Files"><span class="tocnumber">3</span> <span class="toctext">Parameter Files</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Entering_a_Subject_ID"><span class="tocnumber">4</span> <span class="toctext">Entering a Subject ID</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Parameter_Help"><span class="tocnumber">5</span> <span class="toctext">Parameter Help</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Applying_Configuration_Parameters"><span class="tocnumber">6</span> <span class="toctext">Applying Configuration Parameters</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Performing_a_Session"><span class="tocnumber">7</span> <span class="toctext">Performing a Session</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Opening_Data_Files_in_BCI2000Viewer"><span class="tocnumber">8</span> <span class="toctext">Opening Data Files in BCI2000Viewer</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Viewing_Event_Marker_Information"><span class="tocnumber">9</span> <span class="toctext">Viewing Event Marker Information</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Viewing_Parameters_using_BCI2000FileInfo"><span class="tocnumber">10</span> <span class="toctext">Viewing Parameters using BCI2000FileInfo</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Stimulus_Presentation"><span class="tocnumber">11</span> <span class="toctext">Stimulus Presentation</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#P300_Speller"><span class="tocnumber">12</span> <span class="toctext">P300 Speller</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#Where_to_go_from_here"><span class="tocnumber">13</span> <span class="toctext">Where to go from here</span></a></li>
+<li class='toclevel-1'><a href="User_Tutorial%253ABCI2000_Tour.html#See_also"><span class="tocnumber">14</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Starting_up_BCI2000"></a><h2>Starting up BCI2000</h2>
+<p>BCI2000 consists of <a href="Technical_Reference%253ASystem_Design.html" title="Technical Reference:System Design">four programs</a> (modules) that need to be started up in a certain order. These modules handle acquisition of brain signals (i.e., Source module), processing of these brain signals (Signal Processing module), user feedback (i.e., User Application module), and the interface to the investigator (i.e., Operator module), respectively. These four modules  can be started using the script (batch) files in the <tt>batch</tt> directory. Alternatively, there is a <a href="User_Reference%253ABCI2000Launcher.html" title="User Reference:BCI2000Launcher">BCI2000Launcher</a> program that allows you to manage BCI2000 module startup using a graphical user interface.
+</p><p>We will begin this introductory tour by double-clicking the file <tt>batch/CursorTask_SignalGenerator.bat</tt>.
+This will launch the modules required for a simulation of a <a href="User_Tutorial%253AIntroduction_to_the_Mu_Rhythm.html" title="User Tutorial:Introduction to the Mu Rhythm">Mu rhythm BCI session</a>.
+</p>
+<a name="BCI2000_Help"></a><h2>BCI2000 Help</h2>
+<p>When the <a href="User_Reference%253AOperator_Module.html" title="User Reference:Operator Module">main operator window</a> appears, choose <i>BCI2000 Help</i> from the <i>Help</i> menu. The Operator module's help page will be opened in a web browser window. On the left side of the help page, a navigation menu provides access to available BCI2000 documentation.
+</p><p>The BCI2000 help is a local copy of the BCI2000 online documentation wiki and provides a snapshot that corresponds to your version of the BCI2000 executables.
+</p>
+<a name="Parameter_Files"></a><h2>Parameter Files</h2>
+<p>The parameters for a particular experiment implemented in BCI2000 are stored in <a href="Technical_Reference%253AParameter_File.html" title="Technical Reference:Parameter File">parameter files</a>.
+Before performing an experiment, you will typically load a parameter file that contains subject-specific as well as general configuration information.
+</p><p>In the main window, click the <i>Config</i> button. A configuration window appears. There, click the <i>Load Parameters</i> button, which will open up a file chooser dialog. Open <tt>parms/fragments/amplifiers/SignalGenerator.prm</tt>. Then, click <i>Load Parameters</i> again, and open <tt>parms/mu_tutorial/MuFeedback.prm</tt>.
+</p>
+<a name="Entering_a_Subject_ID"></a><h2>Entering a Subject ID</h2>
+<p>BCI2000 stores data files in directories with names that are constructed from subject ID and session number.
+</p><p>In the configuration dialog, go to the <i>Storage</i> tab, and identify the <i>DataDirectory</i> parameter. This parameter determines the path to the top level data directory, i.e., the directory below which session directories will be created. By default, this parameter is set to <tt>../data</tt>, a relative path that points to your BCI2000 installation's <tt>data</tt> directory.
+</p><p>Go to the <i>SubjectName</i> parameter, and enter an ID such as TEST, or your own initials.
+</p>
+<a name="Parameter_Help"></a><h2>Parameter Help</h2>
+<p>There is a "Help" button on the right side of the configuration window.
+Click that button, and observe that the mouse cursor turns into a question mark.
+Move the mouse cursor over the <i>SubjectName</i> parameter label, and press the left mouse button.
+</p><p>A web browser window will open up and show a help page that describes the <i>SubjectName</i> parameter.
+</p>
+<a name="Applying_Configuration_Parameters"></a><h2>Applying Configuration Parameters</h2>
+<p>Close the configuration dialog by using its close button (the button labeled "X" located on the top right corner of the window). This will accept your parameter changes (there is no "Cancel" option).
+</p><p>In the main window, click <i>Set Config.</i> This will apply the changes in configuration. Specifically, the Operator module sends configuration parameters to the remaining BCI2000 modules. These, in turn, will validate the parameter values to make sure they are appropriate. If all values are appropriate, a signal window will appear that displays simulated EEG. The first time, this window is rather small and is located in the upper left corner of the screen. Please resize and move it to your liking -- its size and position will be preserved across BCI2000 sessions.
+</p><p>In a true BCI session, in which you will be recording signals from the brain, you will use this window to assess the quality of the recorded signals. In this simulation session, you will notice a change in the simulated brain signal when you move your mouse. We will alter use these signal changes to control a cursor on the screen.
+</p><p>When you right-click on the signal window, this will bring up a context menu with particular display options such as increasing/decreasing the number of channels displayed, choosing display colors, applying filters to the signal, etc. (Details are described on the <a href="User_Reference%253AOperator_Module.html" title="User Reference:Operator Module">Operator Module's reference page</a>.)
+</p>
+<a name="Performing_a_Session"></a><h2>Performing a Session</h2>
+<p>Once you clicked <i>Set Config,</i> the <i>Start</i> button will be active (assuming all parameters have been validated and accepted). Press "Start" to start a simulated feedback session. During the session, you will see a cursor that moves from the left to the right at a constant rate. You will also see one of two targets highlighted on the right side of the screen. Your task is to move the cursor up or down such that it hits the highlighted target. In simulation mode, you can move this cursor by moving the mouse cursor up and down. In BCI experiments, the subject's task is to use brain signals, rather than the mouse, to move the cursor.
+</p><p>The period during which the cursor moves from left to right is called a <i>trial.</i> During operation, a number of trials will follow each other. Many trials make up one experimental <i>run,</i> where each run usually lasts about 3-5 minutes. When the run is finished, BCI2000 will stop operation on its own, and the <i>Start</i> button will change to <i>Resume.</i> At that time, the corresponding data file has been closed. Clicking <i>Resume</i> each time, you may add as many runs to the current <i>Session</i> as you like. All runs within a session will be stored as separate files in that session's data directory.
+</p><p>BCI2000 contains a component that adapts itself to the brain signal's characteristics (i.e., its mean value and its amount of variation). This component needs to observe the signal for a few trials until it has appropriately adapted to those characteristics. This means that initially you will not feel a correspondence between your actions and the cursor; just stick with it for a few trials, and you will note how control gets more accurate over time. Also, it is important that you place the mouse cursor in a center position at the beginning of each trial, to give you enough space to move into the required direction. Likewise, when a real subject controls the cursor using brain signals, cursor control will only be possible after blindly following instructions for a few trials.
+</p><p>When you have acquired one or more runs, you may quit BCI2000.
+</p>
+<a name="Opening_Data_Files_in_BCI2000Viewer"></a><h2>Opening Data Files in <a href="User_Reference%253ABCI2000Viewer.html" title="User Reference:BCI2000Viewer">BCI2000Viewer</a></h2>
+<p>Use Windows Explorer to display the contents of <tt>data/&lt;SubjectName&gt;001</tt>, which is the session directory corresponding to your recorded session (in place of <tt>&lt;SubjectName&gt;</tt>, enter the ID that you used for the <i>SubjectName</i> parameter).
+In the session directory, single runs correspond to <tt>.dat</tt> files carrying the session's name, appended with a run number.
+</p><p>To view the content of a data file, open it in the <a href="User_Reference%253ABCI2000Viewer.html" title="User Reference:BCI2000Viewer">BCI2000Viewer</a> program provided in <tt>tools/BCI2000Viewer</tt>. We recommend that you double-click the .dat file in question, and then use "Choose application" to permanently associate BCI2000Viewer with the .dat extension. Alternatively, drag a .dat file (or a link to a .dat file) onto the BCI2000Viewer icon or BCI2000Viewer's application window. This will display the file's contents.
+</p>
+<a name="Viewing_Event_Marker_Information"></a><h2>Viewing Event Marker Information</h2>
+<p>Every BCI2000 contains event marker channels that are stored with every signal sample. To view some of these event markers (which are called <a href="BCI2000_Glossary.html#State" title="BCI2000 Glossary">state variables</a> in BCI2000), check the "TargetCode", "ResultCode", and "Feedback" checkboxes displayed in the top right corner of its application window once you opened a file in BCI2000Viewer.
+</p><p>The values of these event markers will be displayed on top of the signal traces. Whenever <i>TargetCode</i> changes from 0, a target was displayed during the recording. Whenever <i>ResultCode</i> changes from 0, a target has been hit by the cursor. A <i>Feedback</i> value of 1 indicates that the feedback cursor was visible. In data analysis, this state information allows to determine trial structure and data labels. It is important to note here that the number, names, and nature of the BCI2000 state variables can be easily adapted to fit your needs. 
+</p><p>Help on state variables is available as well. Right-click the "TargetCode" entry in the top right corner of the BCI2000Viewer window and choose <i>Help on the "TargetCode" state variable</i> from the context menu. A browser window will open up and will show a help page that describes the <i>TargetCode</i> state variable.
+</p>
+<a name="Viewing_Parameters_using_BCI2000FileInfo"></a><h2>Viewing Parameters using <a href="User_Reference%253ABCI2000FileInfo.html" title="User Reference:BCI2000FileInfo">BCI2000FileInfo</a></h2>
+<p>In addition to state information, each data file contains the full set of parameters and their values that defined recording of this particular run. You may view those parameters, and save them to a parameter file, in original or modified form, using the <a href="User_Reference%253ABCI2000FileInfo.html" title="User Reference:BCI2000FileInfo">BCI2000FileInfo</a> program that is located at <tt>tools/BCI2000FileInfo</tt>.
+</p><p>To open a .dat file in BCI2000FileInfo, drag-and-drop it onto the program symbol or into the program's main window. Then, click "Show Parameters." This will open a parameter configuration dialog identical to the one you know from the Operator module.
+</p>
+<a name="Stimulus_Presentation"></a><h2>Stimulus Presentation</h2>
+<p>In addition to the cursor feedback paradigm, BCI2000 comes with a multi-purpose <a href="User_Reference%253AStimulusPresentationTask.html" title="User Reference:StimulusPresentationTask">Stimulus Presentation</a> module.
+This module has many of the features of dedicated programs like <a href="http://www.neurobs.com/presentation" class='external text' title="http://www.neurobs.com/presentation" rel="nofollow">Presentation</a> or <a href="http://www.pstnet.com/products/e-prime/" class='external text' title="http://www.pstnet.com/products/e-prime/" rel="nofollow">e-Prime</a>. In BCI research, the BCI2000 StimulusPresentation module is often used for  <a href="User_Tutorial%253AObtaining_Mu_Rhythm_Parameters_in_an_Initial_Session.html" title="User Tutorial:Obtaining Mu Rhythm Parameters in an Initial Session">an initial Mu rhythm session</a>. Still, it has very good <a href="User_Reference%253ATiming.html" title="User Reference:Timing">timing precision</a>, and thus makes its use suitable for a wide range of psychophysiological experiments such as the ERP experiments described  <a href="User_Tutorial%253AIntroduction_to_the_P300_Response.html" title="User Tutorial:Introduction to the P300 Response">here</a>. In addition, it can be used in conjunction with the P3SignalProcessing module (which can average and classify ERPs) to provide real-time feedback to evoked potentials.
+</p><p>To try the stimulus presentation module, start BCI2000 using the <tt>batch/StimulusPresentation_SignalGenerator.bat</tt> batch file.
+Then, click <i>Config</i>, and load the configuration file at <tt>parms/examples/StimulusPresentation_SignalGenerator.prm</tt>.
+Go to the <i>Storage</i> tab, and enter a subject ID into the <i>SubjectName</i> parameter.
+Run the experiment clicking <i>Set Config</i> and <i>Start</i>.  (Note: The goal here is simply to introduce you to the stimulus presentation module.  We will not show how to modify the stimuli.) 
+</p><p>When you are done, locate the resulting data file at <tt>data/&lt;SubjectName&gt;001/&lt;SubjectName&gt;S001R01.dat</tt>, and open it using BCI2000FileViewer, similar to what you did for the simulated cursor movement session earlier in this tour. In BCI2000FileViewer's main window, check the <i>StimulusCode</i> checkbox to display the <i>StimulusCode</i> state variable. During presentation of a stimulus, the <i>StimulusCode</i> state is set to an ordinal number corresponding to the stimulus. In data analysis, this information may then be used to segment data into epochs, and to group epochs according to stimuli.
+</p>
+<a name="P300_Speller"></a><h2>P300 Speller</h2>
+<p>As part of its core distribution, BCI2000 comes with a <a href="User_Reference%253AP3SpellerTask.html" title="User Reference:P3SpellerTask">P300 Speller</a> module. The P300 Speller module implements a BCI that uses evoked responses to select items from a rectangular matrix, as it was originally described by Farwell and Donchin (1988).
+</p><p>To calibrate the P300 Speller for an individual subject, it is operated in a "copy spelling" mode, which prompts the user to pay attention to pre-defined letters in sequence.
+Start <tt>batch/P3Speller_SignalGenerator.bat</tt>, click <i>Config,</i> and load <tt>parms/examples/P3Speller_CopySpelling.prm</tt>. Close the configuration window, then click <i>Set Config</i> and <i>Start</i> to view copy spelling in action.
+</p><p>In simulation mode, the simulated EEG will simulate evoked responses on the respective items, allowing to test signal classification and spelling functionality. Therefore, spelled letters will correspond to predefined letters.
+</p><p>Once calibrated, the purpose of the P300 Speller is to choose arbitrary letters from the matrix, i.e., "free spelling," without a pre-defined letter sequence.
+The speller also supports multiple matrices (or "menus"), graphical icons, and wave files.
+</p><p>To perform a "free spelling" demo with multiple menus, click <i>Config</i> and load <tt>parms/examples/P3Speller_Menus.prm</tt>. Then close the configuration window, click <i>Set Config</i>, and <i>Start.</i>
+In simulation mode, selecting a matrix element is achieved by clicking it with the mouse. Actual P300 classification is done by averaging over a fixed number of epochs, so clicking an item will not immediately select it. Rather, mouse selection will override classification once the number of averaging epochs is reached, which takes a few seconds.
+</p>
+<a name="Where_to_go_from_here"></a><h2>Where to go from here</h2>
+<p>In this tour, we covered several basic aspects of BCI2000 operation and how to view information contained in data files. Additionally, you have seen the software elements available to build BCIs based on brain signal rhythms and evoked responses.
+</p><p>When you are an <b>experimenter,</b> you might want to go through one of the tutorials that introduce you to actual EEG experiments:
+</p>
+<ul><li><a href="User_Tutorial%253AMu_Rhythm_BCI_Tutorial.html" title="User Tutorial:Mu Rhythm BCI Tutorial">Mu Rhythm BCI Tutorial</a>
+</li><li><a href="User_Tutorial%253AP300_BCI_Tutorial.html" title="User Tutorial:P300 BCI Tutorial">P300 BCI Tutorial</a>
+</li></ul>
+<p>If you are a <b>programmer</b> wishing to modify or extend BCI2000, you should start with
+</p>
+<ul><li> the <a href="Programming_Howto%253AQuickstart_Guide.html" title="Programming Howto:Quickstart Guide">Quickstart Guide</a> to creating new BCI2000 components.
+</li></ul>
+<p>In case you would like to adapt BCI2000 to your own amplifier, you may furter be interested in 
+</p>
+<ul><li> <a href="User_Reference%253AFilters.html#Data_Acquisition" title="User Reference:Filters">Using devices that are supported by the BCI2000 core distribution</a>,
+</li><li> <a href="Contributions%253AHow_to_use_a_Contributed_Source_Module.html" title="Contributions:How to use a Contributed Source Module">Using devices that are supported by user contributions</a>, or
+</li><li> a tutorial on <a href="Programming_Tutorial%253AImplementing_a_Data_Acquisition_Module.html" title="Programming Tutorial:Implementing a Data Acquisition Module">Implementing a Data Acquisition Module</a>.
+</li></ul>
+<p>If you want to apply your own signal processing to brain signals, see
+</p>
+<ul><li>the tutorial on <a href="Programming_Tutorial%253AImplementing_a_Signal_Processing_Filter.html" title="Programming Tutorial:Implementing a Signal Processing Filter">Implementing a Signal Processing Filter</a>,
+</li><li>and the <a href="Programming_Reference%253AMatlabFilter.html" title="Programming Reference:MatlabFilter">MatlabFilter Documentation</a> about piping the BCI2000 data flow through a set of Matlab scripts.
+</li></ul>
+<p>For further BCI2000 resources that support you in <b>development</b> of Data Acquisition, Signal Processing, or User Application modules, see <a href="Programming_Reference%253ARapid_Development.html" title="Programming Reference:Rapid Development">Rapid Development</a>.
+</p><p>All documentation is accessible through a hierarchy of content pages, starting at the <a href="Main_Page.html" title="Main Page">Main Page</a>.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="User_Reference%253AContents.html" title="User Reference:Contents">User Reference:Contents</a>, <a href="Technical_Reference%253AContents.html" title="Technical Reference:Contents">Technical Reference:Contents</a>, <a href="Programming_Reference%253AContents.html" title="Programming Reference:Contents">Programming Reference:Contents</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' />Getting Started<br />
+<ul><li>Tour</li>
+<li><a href="User_Tutorial%253AMu_Rhythm_BCI_Tutorial.html">Mu Tutorial</a></li>
+<li><a href="User_Tutorial%253AP300_BCI_Tutorial.html">P300 Tutorial</a></li>
+</ul><a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>

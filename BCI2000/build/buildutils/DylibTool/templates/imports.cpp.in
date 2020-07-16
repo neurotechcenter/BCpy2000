@@ -1,0 +1,35 @@
+// Import definitions for $libname$ library
+// generated $datetime$ by $toolname$
+#ifdef STATIC_LIB$libname_nu$
+
+namespace Dylib { bool $libname_n$_Loaded() { return true; } }
+$@void* p_$dname$ = &$dname$;
+@$
+
+#else // STATIC_LIB$libname_nu$
+
+#include "$libname$.imports.h"
+#include "DylibImports.h"
+namespace { extern const Dylib::Import* functionImports; }
+
+// Here you may specify a custom error message to be displayed when the library cannot be found.
+static const char* notFoundMsg = "";
+// Here you may specify an URL to some local or remote help resource.
+static const char* notFoundURL = "";
+RegisterDylibWithAliases( $libname_n$, "$libname$", functionImports, notFoundMsg, notFoundURL );
+
+$@void* p_$dname$ = Dylib::$libname_n$.ResolveDataExport( "$dname$" );
+@$$@decltype(&__$hash$_$fname$) $fname$ = 0;
+@$
+
+namespace {
+const Dylib::Import functionImports_[] =
+{
+$@  { "$fname$", (void**)&$fname$, Dylib::Import::cMangled },
+@$  { 0, 0, 0 }
+};
+const Dylib::Import* functionImports = functionImports_;
+}
+
+#endif // STATIC_LIB$libname_nu$
+

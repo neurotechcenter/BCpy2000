@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
+<head>
+<title>Technical Reference:System Design - BCI2000 Help</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Technical Reference:System Design,BCI2000 Glossary,Technical Reference:BCI2000 Messages,Technical Reference:Core Modules,Technical Reference:Parameter File" />
+<link rel="shortcut icon" href="../../favicon.ico" />
+<link rel='stylesheet' type='text/css' media='print' href='../skins/common/wikiprintable.css' />
+<link rel="stylesheet" href="../skins/common/wikistandard.css@1" type="text/css" />
+<link rel="stylesheet" href="../skins/common/common.css" type="text/css" />
+<link rel="stylesheet" href="../skins/common/htmlhelp.css" type="text/css" />
+
+<style type='text/css'>
+a.new, #quickbar a.new { color: #CC2200; }
+.editsection { display: none; }
+#quickbar { position: absolute; top: 4px; left: 4px;  }
+#article { margin-left: 152px; margin-right: 4px; }
+</style>
+</head>
+
+<body bgcolor='#FFFFFF'>
+
+<div id='content'>
+<div id='topbar'>
+<table border='0' cellspacing='0' width='98%'>
+<tr>
+</tr>
+</table>
+</div>
+
+<div id='article'>
+<h1 class="pagetitle">System Design</h1><p class="subtitle">Technical Reference</p><hr class="sep" /><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class='toclevel-1'><a href="Technical_Reference%253ASystem_Design.html#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class='toclevel-1'><a href="Technical_Reference%253ASystem_Design.html#Core-Operator_Communication"><span class="tocnumber">2</span> <span class="toctext">Core-Operator Communication</span></a>
+<ul>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#Status_Information_Messages"><span class="tocnumber">2.1</span> <span class="toctext">Status Information Messages</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#Parameter_Messages"><span class="tocnumber">2.2</span> <span class="toctext">Parameter Messages</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#State_Messages"><span class="tocnumber">2.3</span> <span class="toctext">State Messages</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#Visualization_Messages"><span class="tocnumber">2.4</span> <span class="toctext">Visualization Messages</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#System_Command_Messages"><span class="tocnumber">2.5</span> <span class="toctext">System Command Messages</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Technical_Reference%253ASystem_Design.html#Inter-Core_Communication"><span class="tocnumber">3</span> <span class="toctext">Inter-Core Communication</span></a>
+<ul>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#State_Vector_Messages"><span class="tocnumber">3.1</span> <span class="toctext">State Vector Messages</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#Brain_Signal_Messages"><span class="tocnumber">3.2</span> <span class="toctext">Brain Signal Messages</span></a></li>
+<li class='toclevel-2'><a href="Technical_Reference%253ASystem_Design.html#Control_Signal_Messages"><span class="tocnumber">3.3</span> <span class="toctext">Control Signal Messages</span></a></li>
+</ul>
+</li>
+<li class='toclevel-1'><a href="Technical_Reference%253ASystem_Design.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<a name="Overview"></a><h2>Overview</h2>
+<p>While BCIs can differ widely in the nature of the physiological components they 
+use, the signal processing they perform, the feedback they provide, or  
+the underlying training and operation paradigm, they all need the same four 
+elements: data collection, signal processing, an output device and manual or 
+automatic parameterization and configuration. Therefore, it seems to be a 
+natural choice to partition the system into four modules with respect to  
+functionality. 
+It is conceivable that for certain BCIs, the chosen decomposition might be 
+overkill, or even unfavorable, but still these modules seem to be the most appropriate 
+for a variety of systems.
+</p><p>In accordance with this decomposition, BCI2000 consists of four modules that communicate with each other. (See Figure 1.) These modules are called <i>Source</i>, <i>Signal Processing</i>, <i>Application</i>, and <i>Operator</i>. We will
+refer to the three modules Source, Signal Processing and Application
+together as
+<i>core modules</i>.
+</p>
+<div class="center"><div class="thumb tnone"><div style="width:593px;"><a href="../images/thumb/e/ec/BCI2000_SysDes_Modules.png/591px-BCI2000_SysDes_Modules.png" class="internal" title="Fig. 1 The functional modules and their interfaces"><img src="../images/thumb/e/ec/BCI2000_SysDes_Modules.png/591px-BCI2000_SysDes_Modules.png" alt="Fig. 1 The functional modules and their interfaces" width="591" height="276" longdesc="/wiki/index.php/Image:BCI2000_SysDes_Modules.png" /></a>  <div class="thumbcaption" ><div class="magnify" style="float:right"><a href="../skins/common/images/magnify-clip.png" class="internal" title="Enlarge"><img src="../skins/common/images/magnify-clip.png" width="15" height="11" alt="Enlarge" /></a></div>Fig. 1 The functional modules and their interfaces</div></div></div></div>
+<p>In a binary distribution, the four modules correspond to executables.
+For modules other than the operator module, executable file names vary, reflecting specializations of the generic modules.
+</p>
+<table border="1">
+<caption> Example Configuration
+</caption><tr>
+<th> Module Name </th><th> Executable File Name </th><th> Notes
+</th></tr>
+<tr>
+<td> Operator </td><td> Operat.exe </td><td> &nbsp;
+</td></tr>
+<tr>
+<td> Source </td><td> gUSBamp.exe </td><td> data acquisition from the gUSBamp g.tec amplifier
+</td></tr>
+<tr>
+<td> Signal Processing </td><td> ARSignalProcessing.exe </td><td> auto-regressive spectral estimation
+</td></tr>
+<tr>
+<td> Application </td><td> CursorTask.exe </td><td> moving a cursor by brain activity
+</td></tr></table>
+<a name="Core-Operator_Communication"></a><h2>Core-Operator Communication</h2>
+<p>The same communication protocol is used between each of the three core
+modules
+and the operator module. Although it can be implemented on top of any
+transport
+protocol, the communication protocol assumes the reliability of TCP (i.e., the protocol does
+not support
+acknowledgements or packet sorting or any other means of error
+correction).
+Communication consists of <a href="Technical_Reference%253ABCI2000_Messages.html" title="Technical Reference:BCI2000 Messages">messages</a> that are sent and received
+asynchronously
+between any core module and the operator module. 
+Below, an overview of message types is given. For details about specific messages, refer to the <a href="Technical_Reference%253ABCI2000_Messages.html" title="Technical Reference:BCI2000 Messages">Technical Reference:BCI2000 Messages</a> page.
+</p>
+<a name="Status_Information_Messages"></a><h3>Status Information Messages</h3>
+<p><a href="Technical_Reference%253ABCI2000_Messages.html#Status_Message" title="Technical Reference:BCI2000 Messages">Status Messages</a> are used to communicate errors and to convey status
+information (e.g., the operator module may display the remaining disk space on the Source
+module's machine).
+</p>
+<a name="Parameter_Messages"></a><h3>Parameter Messages</h3>
+<p>These messages transport <a href="BCI2000_Glossary.html#Parameter" title="BCI2000 Glossary">Parameters</a> carrying configuration information.
+The operator module receives parameter messages from core modules, which enable it to display parameters in a configuration dialog, and to save parameters to, and load them from a <a href="Technical_Reference%253AParameter_File.html" title="Technical Reference:Parameter File">parameter file</a>.
+</p>
+<a name="State_Messages"></a><h3>State Messages</h3>
+<p>As a generalization of event markers, the core modules and the operator module use messages containing <a href="BCI2000_Glossary.html#State" title="BCI2000 Glossary">States</a> to
+communicate in the system initialization phase,
+as well as during system performance and
+for system termination.
+</p>
+<a name="Visualization_Messages"></a><h3>Visualization Messages</h3>
+<p><a href="BCI2000_Glossary.html#Visualization" title="BCI2000 Glossary">Visualization</a> messages are sent from core modules to the operator module, which in turn displays their content to the operator user.
+These messages may contain signal data for graphical display, or text to be displayed in a log window. 
+A core module may also configure details of the display sending configuration messages.
+</p>
+<a name="System_Command_Messages"></a><h3>System Command Messages</h3>
+<p><a href="Technical_Reference%253ABCI2000_Messages.html#System_Command" title="Technical Reference:BCI2000 Messages">System Commands</a> are meta-messages used to control the behavior of individual modules by switching their internal state. Typical system commands are <tt>EndOfParameter</tt> and <tt>EndOfState</tt>, to terminate a list of parameter or state messages.
+The nature of these system commands is defined by the specific
+implementation of
+the modules.
+</p>
+<a name="Inter-Core_Communication"></a><h2>Inter-Core Communication</h2>
+<p>Unlike the bidirectional communication between core modules and the
+operator
+module, communication within the core modules is unidirectional. The
+initial
+setup determines the exact nature of this communication and data is
+transmitted
+with the same protocol as described above. 
+</p>
+<a name="State_Vector_Messages"></a><h3>State Vector Messages</h3>
+<p>A <a href="BCI2000_Glossary.html#State_Vector" title="BCI2000 Glossary">State Vector</a> is a data structure consisting of a series of <i>StateVectorLength</i> 
+subsequent bytes, representing an overall system state that is saved into a data file along with each sample of data.
+State vector data is always transmitted before the brain signal or control signal.
+</p>
+<a name="Brain_Signal_Messages"></a><h3>Brain Signal Messages</h3>
+<p>From the source to the signal processing module, selected channels from the brain signal are transmitted as 32-bit floating point numbers calibrated into microvolts.
+The brain signal format is similar to the data format used for graphic visualization messages.
+</p>
+<a name="Control_Signal_Messages"></a><h3>Control Signal Messages</h3>
+<p>From the signal processing to the application module, signal messages transfer decoded rather than raw brain signals. In both cases, the same kind of message is used.
+Typically, control signals consist of two or three channels carrying signals with zero mean and unit variance.
+</p>
+<a name="See_also"></a><h2>See also</h2>
+<p><a href="Technical_Reference%253ABCI2000_Messages.html" title="Technical Reference:BCI2000 Messages">Technical Reference:BCI2000 Messages</a>, <a href="Technical_Reference%253ACore_Modules.html" title="Technical Reference:Core Modules">Technical Reference:Core Modules</a>
+</p>
+<div class="printfooter">
+</div>
+
+</div><br style="clear:both" />
+
+<div id='footer'><table border="0" cellspacing="0"><tr><td width='152' rowspan='1'>&nbsp;</td><td class='bottom' align='left' valign='top'></td></tr></table>
+</div>
+</div>
+
+<div id='quickbar'>
+<table class="image"><caption align="bottom"><h2>BCI2000 Help</h2></caption><tr><td><a href="BCI2000_Help.html"><img src='../../images/bci2000logo_small.png' height=100 width=100 alt='[BCI2000 Help]' /></a></td></tr></table>
+<hr class='sep' /><a href="User_Tutorial%253ABCI2000_Tour.html">Getting Started</a><br />
+<a href="User_Reference%253AContents.html">User Manual</a><br />
+<a href="Technical_Reference%253AContents.html">Technical Reference</a><br />
+<ul><li>System Design</li>
+<li><a href="Technical_Reference%253ACore_Modules.html">Core Modules</a></li>
+<li><a href="Technical_Reference%253AStates_of_Operation.html">States of Operation</a></li>
+<li><a href="Technical_Reference%253ABCI2000_Messages.html">BCI2000 Messages</a></li>
+<li><a href="Technical_Reference%253AParameter_Definition.html">Parameter Definition</a></li>
+<li><a href="Technical_Reference%253AState_Definition.html">State Definition</a></li>
+</ul><a href="Programming_Reference%253AContents.html">Programming Manual</a><br />
+<a href="Contributions%253AContents.html">Contributions</a><br />
+<hr class='sep' />
+<a href="BCI2000_Glossary.html">BCI2000 Glossary</a><br />
+</div>
+
+</body></html>
