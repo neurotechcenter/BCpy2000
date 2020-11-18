@@ -17,6 +17,7 @@ pyglet = "*"
 pylibusb = "*"
 pyreadline = "*"
 scipy = "*"
+cryptography = "*"
 
 [requires]
-python_version = "3.6.8"
+python_version = "3.7"
