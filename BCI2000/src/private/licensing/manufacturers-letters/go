@@ -1,9 +1,0 @@
-#!/bin/bash
-
-opener="open -a Preview.app"
-test "`which xpdf 2>/dev/null`" && opener=xpdf
-a=manufacturers-letters-201102
-   pdflatex "$a"    \
-&& pdflatex "$a"    \
-&& $opener "$a".pdf \
-;

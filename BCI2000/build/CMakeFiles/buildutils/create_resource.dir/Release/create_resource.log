@@ -1,7 +1,0 @@
-﻿  Building Custom Rule C:/BCI2000.python3/build/buildutils/CMakeLists.txt
-  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/buildutils/CMakeFiles/generate.stamp is up-to-date.
-  create_resource.cpp
-  Blob.cpp
-  Generating Code...
-  create_resource.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\Release\create_resource.exe
-  Copy to destination

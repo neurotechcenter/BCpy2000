@@ -1,5 +1,0 @@
-﻿  Building Custom Rule C:/BCI2000.python3/build/buildutils/AppCopier/CMakeLists.txt
-  CMake does not need to re-run because C:/BCI2000.python3/build/CMakeFiles/buildutils/AppCopier/CMakeFiles/generate.stamp is up-to-date.
-  AppCopier.cpp
-  AppCopier.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\buildutils\AppCopier\Release\AppCopier.exe
-  Copy to destination

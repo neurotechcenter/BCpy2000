@@ -1,6 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/BCI2000.python3/src/extlib/portaudio/CMakeLists.txt
-C:/BCI2000.python3/src/extlib/portaudio/portaudio/cmake_support/FindASIOSDK.cmake
-C:/BCI2000.python3/src/extlib/portaudio/portaudio/cmake_support/options_cmake.h.in
-C:/Program Files/CMake/share/cmake-3.12/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-3.12/Modules/FindPackageMessage.cmake

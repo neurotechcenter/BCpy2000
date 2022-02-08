@@ -1,187 +1,0 @@
-BCI2000V= 1.1 HeaderLen= 13049 SourceCh= 3 StatevectorLen= 20 DataFormat= float32
-[ State Vector Definition ] 
-Recording 1 1 7 7
-SourceTime 16 0 0 0
-Running 1 1 11 4
-AppStartTime 16 0 2 0
-StimulusTime 16 17528 4 0
-FeedbackOn 1 0 11 5
-TargetClass 2 0 11 2
-Learn 1 0 11 6
-StopCueOn 1 0 11 7
-StartCueOn 1 0 15 7
-BaselineOn 1 0 16 0
-Angle 9 0 8 0
-DistanceFromCenter 8 0 10 2
-DistanceFromCorner3 8 0 12 0
-DistanceFromCorner2 8 0 13 0
-DistanceFromCorner1 8 0 14 0
-CurrentBlock 7 0 15 0
-CurrentTrial 9 0 9 1
-PresentationPhase 5 0 7 2
-EventOffset 10 0 6 0
-__pad0 30 0 16 1
-[ Parameter Definition ] 
-Source:Signal%20Properties:DataIOFilter int SourceCh= 3 // number of digitized and stored channels
-Source:Signal%20Properties:DataIOFilter int SampleBlockSize= 10 // number of samples transmitted at a time
-Source:Signal%20Properties:DataIOFilter int SamplingRate= 250Hz // sampling rate
-Source:Signal%20Properties:DataIOFilter list ChannelNames= 3 R G B // list of channel names
-Source:Signal%20Properties:DataIOFilter list SourceChOffset= 3 0 0 0 // Offset for channels in A/D units
-Source:Signal%20Properties:DataIOFilter list SourceChGain= 3 1 1 1 // gain for each channel (A/D units per physical unit)
-Storage:Data%20Location:DataIOFilter string DataDirectory= ..\data ..\data % % // path to top level data directory (directory)
-Storage:Session:DataIOFilter string SubjectName= TRIANGLE_ Name % % // subject alias
-Storage:Session:DataIOFilter string SubjectSession= 001 001 % % // three-digit session number
-Storage:Session:DataIOFilter string SubjectRun= 18 00 % % // two-digit run number
-Storage:Documentation:DataIOFilter string ID_System= % // BCI2000 System Code
-Storage:Documentation:DataIOFilter string ID_Amp= % // BCI2000 Amp Code
-Storage:Documentation:DataIOFilter string ID_Montage= % // BCI2000 Cap Montage Code
-Visualize:Timing:DataIOFilter int VisualizeTiming= 0 1 0 1 // visualize system timing (0=no, 1=yes) (boolean)
-Visualize:Source%20Signal:DataIOFilter int VisualizeSource= 0 1 0 1 // visualize raw brain signal (0=no, 1=yes) (boolean)
-Visualize:Source%20Signal:DataIOFilter int VisualizeSourceDecimation= 1 auto % % // decimation factor for raw brain signal
-Visualize:Source%20Signal:DataIOFilter int VisualizeSourceBufferSize= auto auto % % // number of blocks to aggregate before sending to operator
-Visualize:Source%20Signal:DataIOFilter int VisualizeSourceTime= 10s 2s 0 % // how much time in Source visualization
-Visualize:Source%20Signal:DataIOFilter int SourceMin= -2muV // raw signal vis Min Value
-Visualize:Source%20Signal:DataIOFilter int SourceMax= 2muV // raw signal vis Max Value
-Storage:BCI2000FileWriter string FileFormat= dat // format of data file (readonly)
-Storage:Documentation:BCI2000FileWriter string StorageTime= 2019-05-31T11:05:07 // time of beginning of data storage
-Source:Alignment:AlignmentFilter int AlignChannels= 1 0 0 1 // align channels in time (0=no, 1=yes)
-Source:Alignment:AlignmentFilter floatlist SourceChTimeOffset= 0 0 % % // time offsets for all source channels (may be empty)
-Source:Online%20Processing:TransmissionFilter list TransmitChList= 3 1 2 3 // list of transmitted channels: Channel names may contain * and ? wildcards,  and character ranges enclosed in []; wildcard patterns may be negated by prepending an exclamation mark.  Ranges of channels may be specified using : or - to separate begin from end.
-System:Protocol:EventLink int EventLink= 1 1 0 1 // Send events from Operator to Source module (boolean)
-Storage:Data%20Location:RunManager string DataFile= $%7bSubjectName%7d$%7bSubjectSession%7d/$%7bSubjectName%7dS$%7bSubjectSession%7dR$%7bSubjectRun%7d.$%7bFileFormat%7d // name of data file relative to DataDirectory
-System:Command%20Line%20Arguments variant PythonSrcClassFile= TrefoilSource.py TrefoilSource.py TrefoilSource.py TrefoilSource.py 
-System:Command%20Line%20Arguments variant PythonSrcShell= 0 0 0 0 
-System:Command%20Line%20Arguments variant PythonSrcLog= Srclogger.txt Srclogger.txt Srclogger.txt Srclogger.txt 
-System:Core%20Connections string OperatorAddress= 127.0.0.1:4002 // (noedit)
-System string ModuleName= SignalSource 
-System string ListeningAddress= 127.0.0.1:50995 
-System:Core%20Connections string OperatorIP= 127.0.0.1 127.0.0.1 % % // the Operator module's IP (noedit)(readonly)
-Source:Signal%20Properties:DataIOFilter list ReferenceChannelName= 0 % % a // list of labels for reference channel or channels
-Source:Signal%20Properties:DataIOFilter list GroundChannelName= 0 % % a // label of the ground channel
-Source:Playback int EnslavePython= 0 0 0 1 // force BCPy2000 modules to follow states supplied by the source module without being able to change them (boolean)
-Source string SignalSourceDescription= implement%20the%20Description(self)%20hook%20to%20supply%20a%20description%20of%20what%20this%20module%20does % a z // Identifies the source generation module
-Source:Playback float WarpFactor= 1.0 1.0 0.0 % // slows down or speeds up the source generator's concept of time
-System:Version matrix SignalSourceVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-02-13T21:25:22Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // SignalSource version information (noedit)(readonly)
-System:Configuration matrix SignalSourceFilterChain= 8 { Filter%20Name Position%20String } DataIOFilter 0 PythonSrcADC 1 NullFileWriter 1 BCI2000FileWriter 1 EDFFileWriter 1 GDFFileWriter 1 AlignmentFilter 1.1 TransmissionFilter 1.2 // SignalSource filter chain (noedit)(readonly)
-System:Configuration matrix Filters= 11 1 /1/DataIOFilter /1/PythonSrcADC /1/BCI2000FileWriter /1/AlignmentFilter /1/TransmissionFilter /2/SpatialFilter /2/PythonSigFilter /3/ConnectorInput /3/PythonAppFilter /3/KeystrokeFilter /3/ConnectorOutput // Filter Directory (noedit)(readonly)
-Visualize:Processing%20Stages int VisualizeAlignmentFilter= 0 0 0 1 // Visualize AlignmentFilter output (boolean)
-Visualize:Processing%20Stages int VisualizeTransmissionFilter= 0 0 0 1 // Visualize TransmissionFilter output (boolean)
-Visualize:Property%20Sets matrix VisPropertySets= 0 1 // row titles are properties in the form "SRCD.Left", columns are property sets
-System:Version matrix OperatorVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-05-24T19:12:06Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // operator module version information (noedit)(readonly)
-System:Protocol int AutoConfig= 1 1 0 1 // Use AutoConfig protocol extension (boolean)
-System:Protocol int OperatorBackLink= 1 1 0 1 // Send final state and signal information to Operator (boolean)
-System:Core%20Connections string SignalSourceIP= 127.0.0.1 // (readonly)(noedit)
-System:Core%20Connections string SignalSourcePort= 50995 // (readonly)(noedit)
-Filtering:SpatialFilter int SpatialFilterType= 0 2 0 3 // spatial filter type 0: none, 1: full matrix, 2: sparse matrix, 3: common average reference (CAR) (enumeration)
-Filtering:SpatialFilter:SpatialFilter matrix SpatialFilter= 4 4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 % % // columns represent input channels, rows represent output channels
-Filtering:SpatialFilter:SpatialFilter intlist SpatialFilterCAROutput= 0 // when using CAR filter type: list of output channels, or empty for all channels
-Filtering:SpatialFilter:SpatialFilter int SpatialFilterMissingChannels= 1 0 0 1 // how to handle missing channels 0: ignore, 1: report error (enumeration)
-System:Command%20Line%20Arguments variant PythonSigClassFile= % 
-System:Command%20Line%20Arguments variant PythonSigShell= 0 0 0 0 
-System:Command%20Line%20Arguments variant PythonSigLog= Siglogger.txt Siglogger.txt Siglogger.txt Siglogger.txt 
-System:Core%20Connections string SignalProcessingIP= 127.0.0.1 // (readonly)(noedit)
-System:Core%20Connections string SignalProcessingPort= 51035 // (readonly)(noedit)
-PythonSig string SignalProcessingDescription= implement%20the%20Description(self)%20hook%20to%20supply%20a%20description%20of%20what%20this%20module%20does % a z // Identifies the signal processing module
-System:Version matrix SignalProcessingVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-02-13T21:25:22Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // SignalProcessing version information (noedit)(readonly)
-System:Configuration matrix SignalProcessingFilterChain= 2 { Filter%20Name Position%20String } SpatialFilter 2.B PythonSigFilter 2.C // SignalProcessing filter chain (noedit)(readonly)
-Visualize:Processing%20Stages int VisualizeSpatialFilter= 0 0 0 1 // Visualize SpatialFilter output (boolean)
-Visualize:Processing%20Stages int VisualizePythonSigFilter= 0 0 0 1 // Visualize PythonSigFilter output (boolean)
-Connector:ConnectorInput list ConnectorInputFilter= 0 // list of state names or signal elements to allow, "*" for any, signal elements as in "Signal(1,0)"
-Connector:ConnectorInput string ConnectorInputAddress= % localhost:20320 % % // IP address/port to read from, e.g. localhost:20320
-Application:Human%20Interface%20Devices:KeystrokeFilter string KeystrokeStateName= % // State to be translated into keystrokes (0-F), empty for off
-Application:Human%20Interface%20Devices:KeystrokeFilter string KeystrokeExpression= % // Expression that evaluates to a virtual keycode, empty for off
-Application:Human%20Interface%20Devices:KeystrokeFilter string KeystrokeExpressionOnStartRun= % // Expression that initializes expression variables on StartRun
-Connector:ConnectorOutput string ConnectorOutputAddress= % localhost:20321 % % // one or more IP:Port combinations, e.g. localhost:20321
-System:Command%20Line%20Arguments variant PythonAppClassFile= TriangleApplicationPsychoPy.py TriangleApplicationPsychoPy.py TriangleApplicationPsychoPy.py TriangleApplicationPsychoPy.py 
-System:Command%20Line%20Arguments variant PythonAppShell= 0 0 0 0 
-System:Command%20Line%20Arguments variant PythonAppLog= Applogger.txt Applogger.txt Applogger.txt Applogger.txt 
-System:Core%20Connections string ApplicationIP= 127.0.0.1 // (readonly)(noedit)
-System:Core%20Connections string ApplicationPort= 51037 // (readonly)(noedit)
-PythonApp string ApplicationDescription= the%20techno%20triangle % a z // Identifies the stimulus presentation module
-PythonApp int ShowSignalTime= 1 0 0 1 // show a timestamp based on the number of processed samples (boolean)
-PythonApp:Design int TrialsPerBlock= 20 20 1 % // number of trials in one block
-PythonApp:Design int BlocksPerRun= 1 20 1 % // number of sub-blocks in one run
-PythonApp:Design int AlternateTargets= 0 0 0 1 // alternate target classes rather than choosing randomly (boolean)
-PythonApp:Design int ShowFixation= 0 0 0 1 // show a fixation point in the center (boolean)
-PythonApp:Screen int ScreenId= -1 -1 % % // on which screen should the stimulus window be opened - use -1 for last
-PythonApp:Screen float WindowSize= 0.8 1.0 0.0 1.0 // size of the stimulus window, proportional to the screen
-PythonApp:Stimuli float CircleRadius= 1.0 1.0 0.0 5.0 // size of the background circle
-PythonApp:Stimuli float OuterTriangleSize= 0.9 1.0 0.0 1.0 // size of the outer triangle
-PythonApp:Stimuli float InnerTriangleSize= 0.2 0.2 0.0 0.5 // size of the target triangles relative to the outer triangle
-PythonApp:Feedback int CursorFeedback= 1 1 0 1 // show online feedback cursor (boolean)
-PythonApp:Feedback int ColorFeedback= 1 0 0 1 // adapt background circle color to feedback? (boolean)
-PythonApp:Feedback int AudioFeedback= 1 0 0 1 // play continuous sounds? (boolean)
-PythonApp:Feedback matrix FeedbackWavs= 3 1 feedback-drums.wav feedback-piano.wav feedback-strings.wav // feedback wavs
-System:Version matrix ApplicationVersion= { Framework Revision Build Config Protocol } 1 3.05 N/A,%20N/A MSVC-19.14.26433.0-x86,%20release,%202019-02-13T21:25:22Z,%20user@user-PC USE_DYNAMIC_CRT:TRUE%20USE_OPENMP:ON%20USE_PRECOMPILED_HEADERS:ON%20USE_ASSERTS_IN_RELEASE_BUILDS:OFF 2.3 // Application version information (noedit)(readonly)
-System:Configuration matrix ApplicationFilterChain= 4 { Filter%20Name Position%20String } ConnectorInput 2.9999 PythonAppFilter 3 KeystrokeFilter 3.1 ConnectorOutput 3.9999 // Application filter chain (noedit)(readonly)
-Visualize:Processing%20Stages int VisualizePythonAppFilter= 0 0 0 1 // Visualize PythonAppFilter output (boolean)
-System:Randomization int RandomSeed= 21690 0 % % // seed for the BCI2000 pseudo random number generator (readonly)
-System:Randomization int RandomizationWarning= 1 1 0 1 // warn if subsequent Runs have identical RandomSeed value (boolean)
-System:State%20Vector int StateVectorLength= 20 16 % % // length of the state vector in bytes (noedit)(readonly)
-
-î?!´4?âm”>;á  xD €           ¥.?N4?™•>;á  xD €           H?¤é3?±œ•>;á  xD €           
-a?b…3?(3–>;á  xD €           ºy?È!3?üÈ–>;á  xD €           ’?Ø¾2?+^—>;á  xD €           ª?\2?²ò—>;á  xD €           ÅÁ?óú1?†˜>;á  xD €            Ù?þ™1?Ã™>;á  xD €           (ð?´91?H¬™>;á  xD €           Þ?Ú0?>š>ÖáháÔá  ó è£\A     B?{0?BÏš>ÖáháÔá  ó è£\A     U3?Ñ0?³_›>ÖáháÔá  ó è£\A     I?0¿/?nï›>ÖáháÔá  ó è£\A     Ž^?9b/?s~œ>ÖáháÔá  ó è£\A     µs?ì/?¾>ÖáháÔá  ó è£\A     ˆ?Jª.?Oš>ÖáháÔá  ó è£\A     ?SO.?"'ž>ÖáháÔá  ó è£\A     ^±?õ-?8³ž>ÖáháÔá  ó è£\A     UÅ?d›-?>Ÿ>ÖáháÔá  ó è£\A     Ù?mB-?!ÉŸ>þáØáÚá  ô Ü _B     gì? ê,?ñR >þáØáÚá  ô Ü _B     „ÿ?~’,?ýÛ >þáØáÚá  ô Ü _B     Y?†;,?Ad¡>þáØáÚá  ô Ü _B     è$?9å+?¾ë¡>þáØáÚá  ô Ü _B     27?–+?pr¢>þáØáÚá  ô Ü _B     7I?ž:+?Xø¢>þáØáÚá  ô Ü _B     øZ?Oæ*?r}£>þáØáÚá  ô Ü _B     vl?ª’*?¿¤>þáØáÚá  ô Ü _B     ²}?¯?*?<…¤>þáØáÚá  ô Ü _B     ®Ž?^í)?é¥>'ââ	â  õ ÔžaC     iŸ?¶›)?Ã‰¥>'ââ	â  õ ÔžaC     ä¯?·J)?É
-¦>'ââ	â  õ ÔžaC     !À?bú(?ûŠ¦>'ââ	â  õ ÔžaC      Ð?´ª(?W
-§>'ââ	â  õ ÔžaC     ãß?°[(?Ûˆ§>'ââ	â  õ ÔžaC     iï?S(?‡¨>'ââ	â  õ ÔžaC     µþ?ž¿'?Zƒ¨>'ââ	â  õ ÔžaC     Æ?‘r'?Rÿ¨>'ââ	â  õ ÔžaC     ž?+&'?nz©>'ââ	â  õ ÔžaC     >+?kÚ&?®ô©>Cä0âAä  ö ÐœcD     ¥9?S&?nª>Cä0âAä  ö ÐœcD     ×G?àD&?“æª>Cä0âAä  ö ÐœcD     ÒU?û%?6^«>Cä0âAä  ö ÐœcD     ˜c?ì±%?ùÔ«>Cä0âAä  ö ÐœcD     *q?ii%?ÚJ¬>Cä0âAä  ö ÐœcD     ˆ~?‹!%?Ù¿¬>Cä0âAä  ö ÐœcD     µ‹?QÚ$?õ3­>Cä0âAä  ö ÐœcD     ¯˜?»“$?-§­>Cä0âAä  ö ÐœcD     y¥?ÇM$?€®>Cä0âAä  ö ÐœcD     ²?w$?îŠ®>jäEäGä  ÷ È›dD     }¾?ÈÃ#?vû®>jäEäGä  ÷ È›dD     ¹Ê?»#?k¯>jäEäGä  ÷ È›dD     ÈÖ?O<#?ÑÙ¯>jäEäGä  ÷ È›dD     ªâ?„ù"?£G°>jäEäGä  ÷ È›dD     aî?Y·"?´°>jäEäGä  ÷ È›dD     ìù?Íu"?Ž ±>jäEäGä  ÷ È›dD     N?à4"?¥‹±>jäEäGä  ÷ È›dD     †?‘ô!?Òõ±>jäEäGä  ÷ È›dD     –?à´!?_²>jäEäGä  ÷ È›dD     }&?Ìu!?nÇ²>gæläfæ  ÷ Ä™fE     ?1?T7!?Û.³>gæläfæ  ÷ Ä™fE     Ú;?xù ?]•³>gæläfæ  ÷ Ä™fE     OF?7¼ ?óú³>gæläfæ  ÷ Ä™fE      P?‘ ?_´>gæläfæ  ÷ Ä™fE     ÎZ?„C ?[Ã´>gæläfæ  ÷ Ä™fE     Ùd? ?-&µ>gæläfæ  ÷ Ä™fE     Án?6Í?ˆµ>gæläfæ  ÷ Ä™fE     ˆx?ó’?
-éµ>gæläfæ  ÷ Ä™fE     /‚?FY?I¶>gæläfæ  ÷ Ä™fE     ¶‹?0 ?4¨¶>æiækæ  ø À˜gE     •?¯ç?f·>æiækæ  ø À˜gE     gž?Ã¯?«c·>æiækæ  ø À˜gE     ”§?kx?À·>æiækæ  ø À˜gE     £°?¦A?m¸>æiækæ  ø À˜gE     –¹?t?ëu¸>æiækæ  ø À˜gE     nÂ?ÓÕ?}Ï¸>æiækæ  ø À˜gE     ,Ë?Ã ?"(¹>æiækæ  ø À˜gE     ÏÓ?Dl?Ú¹>æiækæ  ø À˜gE     ZÜ?S8?¦Ö¹>æiækæ  ø À˜gE     Ìä?ñ?‡,º>·æ‘æ“æ  ù ¼–iF     'í?Ò?{º>·æ‘æ“æ  ù ¼–iF     jõ?ÔŸ?„Õº>·æ‘æ“æ  ù ¼–iF     ˜ý?n?¢(»>·æ‘æ“æ  ù ¼–iF     ¯?æ<?Õz»>·æ‘æ“æ  ù ¼–iF     ²???Ì»>·æ‘æ“æ  ù ¼–iF     ¡?!Ü?|¼>·æ‘æ“æ  ù ¼–iF     |?‹¬?ñk¼>·æ‘æ“æ  ù ¼–iF     D%?}}?}º¼>·æ‘æ“æ  ù ¼–iF     ú,?õN?!½>·æ‘æ“æ  ù ¼–iF     Ÿ4?ó ?ÜT½>ßæ¹æ»æ  ú ¸•jF     2<?vó?¯ ½>ßæ¹æ»æ  ú ¸•jF     ¶C?}Æ?›ë½>ßæ¹æ»æ  ú ¸•jF     )K?š?¡5¾>ßæ¹æ»æ  ú ¸•jF     ŽR?n?Á~¾>ßæ¹æ»æ  ú ¸•jF     äY?žB?üÆ¾>ßæ¹æ»æ  ú ¸•jF     -a?ª?R¿>ßæ¹æ»æ  ú ¸•jF     ih?5í?ÄT¿>ßæ¹æ»æ  ú ¸•jF     —o??Ã?Sš¿>ßæ¹æ»æ  ú ¸•jF     ºv?Æ™? ß¿>ßæ¹æ»æ  ú ¸•jF     Ò}?Ép?Ë"À>çáæãæ  û ´”kG     ß„?GH?µeÀ>çáæãæ  û ´”kG     á‹?? ?À§À>çáæãæ  û ´”kG     Ú’?±ø?ëèÀ>çáæãæ  û ´”kG     Ê™?šÑ?8)Á>çáæãæ  û ´”kG     ± ?üª?§hÁ>çáæãæ  û ´”kG     §?Ó„?:§Á>çáæãæ  û ´”kG     h®? _?ñäÁ>çáæãæ  û ´”kG     9µ?à9?Î!Â>çáæãæ  û ´”kG     ¼??Ñ]Â>çáæãæ  û ´”kG     ÇÂ?»ð?û˜Â>/ç	çç  û °“lG     †É?ÒÌ?NÓÂ>/ç	çç  û °“lG     AÐ?Z©?ËÃ>/ç	çç  û °“lG     öÖ?Q†?rEÃ>/ç	çç  û °“lG     ¨Ý?¶c?D}Ã>/ç	çç  û °“lG     Vä?ˆA?C´Ã>/ç	çç  û °“lG     ë?Æ?qêÃ>/ç	çç  û °“lG     ªñ?pþ?ÍÄ>/ç	çç  û °“lG     Qø?ƒÝ?YTÄ>/ç	çç  û °“lG     õþ?ÿ¼?ˆÄ>/ç	çç  û °“lG     ™?ãœ?»Ä>Wç1ç3ç  ü ¬’mH     <?.}?,íÄ>Wç1ç3ç  ü ¬’mH     Þ?ß]?†Å>Wç1ç3ç  ü ¬’mH     ?ô>?OÅ>Wç1ç3ç  ü ¬’mH     $ ?m ?Ý~Å>Wç1ç3ç  ü ¬’mH     È&?I?Þ­Å>Wç1ç3ç  ü ¬’mH     l-?‡ä?ÜÅ>Wç1ç3ç  ü ¬’mH     4?%Ç?	Æ>Wç1ç3ç  ü ¬’mH     ¼:?#ª?D6Æ>Wç1ç3ç  ü ¬’mH     fA??6bÆ>Wç1ç3ç  ü ¬’mH     H?8q?hÆ>çYç[ç  ü ¬’mH     ÄN?NU?Û·Æ>çYç[ç  ü ¬’mH     xU?¿9?‘áÆ>çYç[ç  ü ¬’mH     0\?‹?‹
-Ç>çYç[ç  ü ¬’mH     ëb?¯?Ë2Ç>çYç[ç  ü ¬’mH     «i?,é?QZÇ>çYç[ç  ü ¬’mH     pp? Ï? Ç>çYç[ç  ü ¬’mH     9w?*µ?9§Ç>çYç[ç  ü ¬’mH     ~?©›?žÌÇ>çYç[ç  ü ¬’mH     Ü„?|‚?PñÇ>çYç[ç  ü ¬’mH     ¶‹?¢i?PÈ>§ççƒç  ý ¨‘nH     –’?Q?¡8È>§ççƒç  ý ¨‘nH     |™?â8?C[È>§ççƒç  ý ¨‘nH     i ?û ?8}È>§ççƒç  ý ¨‘nH     ]§?b	?ƒžÈ>§ççƒç  ý ¨‘nH     W®?ò?$¿È>§ççƒç  ý ¨‘nH     Yµ?Û?ßÈ>§ççƒç  ý ¨‘nH     c¼?eÄ?pþÈ>§ççƒç  ý ¨‘nH     tÃ?ý­?É>§ççƒç  ý ¨‘nH     Ê?ß—?);É>§ççƒç  ý ¨‘nH     ®Ñ?	‚?“XÉ>Ðçªç¬ç  ý ¨oH     ×Ø?zl?]uÉ>Ðçªç¬ç  ý ¨oH     	à?2W?‰‘É>Ðçªç¬ç  ý ¨oH     Dç?0B?­É>Ðçªç¬ç  ý ¨oH     ‡î?r-?ÈÉ>Ðçªç¬ç  ý ¨oH     Óõ?÷?kâÉ>Ðçªç¬ç  ý ¨oH     )ý?¿?0üÉ>Ðçªç¬ç  ý ¨oH     ‡?Éð?_Ê>Ðçªç¬ç  ý ¨oH     ï?Ý?û-Ê>Ðçªç¬ç  ý ¨oH     a?É?FÊ>Ðçªç¬ç  ý ¨oH     Ü?e¶?~]Ê>øçÒçÔç  þ ¤oI     a"?j£?itÊ>øçÒçÔç  þ ¤oI     ð)?­?ÆŠÊ>øçÒçÔç  þ ¤oI     ‰1?*~?™ Ê>øçÒçÔç  þ ¤oI     ,9?ãk?âµÊ>øçÒçÔç  þ ¤oI     Ù@?ÕY?¤ÊÊ>øçÒçÔç  þ ¤oI     H? H?àÞÊ>øçÒçÔç  þ ¤oI     RP?b6?—òÊ>øçÒçÔç  þ ¤oI     X?ü$?ÍË>øçÒçÔç  þ ¤oI     õ_?Ë?Ë>øçÒçÔç  þ ¤oI     Ög?Ï?·*Ë>këúçië  þ ¤oI     Áo?ò?p<Ë>këúçië  þ ¤oI     ·w?rá?®MË>këúçië  þ ¤oI     ¸?Ñ?r^Ë>këúçië  þ ¤oI     Ã‡?ÞÀ?¾nË>këúçië  þ ¤oI     Ù?Ü°?•~Ë>këúçië  þ ¤oI     ú—?¡?÷Ë>këúçië  þ ¤oI     % ?g‘?çœË>këúçië  þ ¤oI     \¨?ñ?f«Ë>këúçië  þ ¤oI     œ°?¨r?v¹Ë>këúçië  þ ¤oI     è¸?‹c?ÇË>“ëmënë  þ ¤pI     >Á?™T?RÔË>“ëmënë  þ ¤pI     ŸÉ?ÑE? áË>“ëmënë  þ ¤pI     
-Ò?27?‡íË>“ëmënë  þ ¤pI     €Ú?¼(?ˆùË>“ëmënë  þ ¤pI     ã?m?$Ì>“ëmënë  þ ¤pI     Œë?E?^Ì>“ëmënë  þ ¤pI     !ô?Cþ?8Ì>“ëmënë  þ ¤pI     Áü?fð?²%Ì>“ëmënë  þ ¤pI     l	?­â?Ï/Ì>“ëmënë  þ ¤pI      	?Õ?‘9Ì>Üë•ëÚë  ÿ ¤pI     ß	?¥Ç?ùBÌ>Üë•ëÚë  ÿ ¤pI     ¨	?Tº?LÌ>Üë•ëÚë  ÿ ¤pI     {(	?$­?ÂTÌ>Üë•ëÚë  ÿ ¤pI     X1	? ?']Ì>Üë•ëÚë  ÿ ¤pI     ?:	?$“?9eÌ>Üë•ëÚë  ÿ ¤pI     0C	?S†?úlÌ>Üë•ëÚë  ÿ ¤pI     *L	? y?ltÌ>Üë•ëÚë  ÿ ¤pI     .U	?
-m?{Ì>Üë•ëÚë  ÿ ¤pI     <^	?‘`?g‚Ì>Üë•ëÚë  ÿ ¤pI     Sg	?3T?ôˆÌ>ìÞëàë†ÿ PpI   sp	?ðG?9Ì>ìÞëàë†ÿ PpI   y	?È;?6•Ì>ìÞëàë†ÿ PpI   Ï‚	?º/?îšÌ>ìÞëàë†ÿ PpI   Œ	?Ä#?b Ì>ìÞëàë†ÿ PpI   O•	?ç?”¥Ì>ìÞëàë†ÿ PpI   œž	?!?†ªÌ>ìÞëàë†ÿ PpI   ñ§	?s ?8¯Ì>ìÞëàë†ÿ PpI   O±	?Úô?®³Ì>ìÞëàë†ÿ PpI   µº	?Wé?ç·Ì>ìÞëàë†ÿ PpI   $Ä	?éÝ?æ»Ì>÷ììÏì „ÿ PpI   šÍ	?Ò?­¿Ì>÷ììÏì „ÿ PpI   ×	?JÇ?=ÃÌ>÷ììÏì „ÿ PpI   žà	?¼?—ÆÌ>÷ììÏì „ÿ PpI   +ê	?ö°?½ÉÌ>÷ììÏì „ÿ PpI   Àó	?è¥?±ÌÌ>÷ììÏì „ÿ PpI   [ý	?ëš?tÏÌ>÷ììÏì „ÿ PpI   þ
-?þ?ÒÌ>÷ììÏì „ÿ PpI   ¨
-?"…?lÔÌ>÷ììÏì „ÿ PpI   Y
-?Uz?¥ÖÌ>÷ììÏì „ÿ PpI   $
-?—o?³ØÌ>íùìûì „ÿ PpI   Í-
-?çd?—ÚÌ>íùìûì „ÿ PpI   ‘7
-?FZ?SÜÌ>íùìûì „ÿ PpI   ZA
-?²O?èÝÌ>íùìûì „ÿ PpI   *K
-?*E?XßÌ>íùìûì „ÿ PpI   ÿT
-?¯:?£àÌ>íùìûì „ÿ PpI   Ú^
-?@0?ÌáÌ>íùìûì „ÿ PpI   ºh
-?Ü%?ÔâÌ>íùìûì „ÿ PpI   Ÿr
-?ƒ?¼ãÌ>íùìûì „ÿ PpI   Š|
-?4?„äÌ>íùìûì „ÿ PpI   y†
-?ï?0åÌ>Nî!íMî „ÿ PpI   m
-?´ü?¿åÌ>Nî!íMî „ÿ PpI   eš
-?‚ò?3æÌ>Nî!íMî „ÿ PpI   a¤
-?Xè?ŽæÌ>Nî!íMî „ÿ PpI   b®
-?6Þ?ÑæÌ>Nî!íMî „ÿ PpI   f¸
-?Ô?üæÌ>Nî!íMî „ÿ PpI   nÂ
-?	Ê?çÌ>Nî!íMî „ÿ PpI   zÌ
-?ý¿?çÌ>Nî!íMî „ÿ PpI   ‰Ö
-?øµ?þæÌ>Nî!íMî „ÿ PpI   ›à
-?ù«?ØæÌ>Nî!íMî „ÿ PpI   ±ê
-?ÿ¡? æÌ>­ïPî«ï „ÿ PŽqI   Éô
-?˜?XæÌ>­ïPî«ï „ÿ PŽqI   äþ
-?Ž?æÌ>­ïPî«ï „ÿ PŽqI   	?1„?œåÌ>­ïPî«ï „ÿ PŽqI   !?Kz?)åÌ>­ïPî«ï „ÿ PŽqI   B?hp?ªäÌ>­ïPî«ï „ÿ PŽqI   f'?Šf? äÌ>­ïPî«ï „ÿ PŽqI   ‹1?®\?ŒãÌ>­ïPî«ï „ÿ PŽqI   ³;?ÖR?ïâÌ>­ïPî«ï „ÿ PŽqI   ÛE? I?IâÌ>­ïPî«ï „ÿ PŽqI   P?-??œáÌ>Õï¯ï³ï „  PŽqI   0Z?\5?èàÌ>Õï¯ï³ï „  PŽqI   \d?+?.àÌ>Õï¯ï³ï „  PŽqI   ˆn?¿!?pßÌ>Õï¯ï³ï „  PŽqI   ¶x?ó?®ÞÌ>Õï¯ï³ï „  PŽqI   ä‚?(?éÝÌ>Õï¯ï³ï „  PŽqI   ?^?!ÝÌ>Õï¯ï³ï „  PŽqI   @—?”ú?WÜÌ>Õï¯ï³ï „  PŽqI   n¡?Ëð?ÛÌ>Õï¯ï³ï „  PŽqI   «?ç?ÂÚÌ>Õï¯ï³ï „  PŽqI   Ëµ?9Ý?øÙÌ>§ðØï¤ð „  PŽqI   ø¿?pÓ?/ÙÌ>§ðØï¤ð „  PŽqI   %Ê?§É?hØÌ>§ðØï¤ð „  PŽqI   RÔ?Ý¿?£×Ì>§ðØï¤ð „  PŽqI   }Þ?¶?âÖÌ>§ðØï¤ð „  PŽqI   ¨è?F¬?$ÖÌ>§ðØï¤ð „  PŽqI   Ñò?z¢?jÕÌ>§ðØï¤ð „  PŽqI   úü?¬˜?µÔÌ>§ðØï¤ð „  PŽqI   !?ÝŽ?ÔÌ>§ðØï¤ð „  PŽqI   G?…?[ÓÌ>§ðØï¤ð „  PŽqI   k?:{?·ÒÌ>Îð¬ð°ð „  PŽqI   Ž%?fq?ÒÌ>Îð¬ð°ð „  PŽqI   ¯/?g?ƒÑÌ>Îð¬ð°ð „  PŽqI   Î9?¸]?ôÐÌ>Îð¬ð°ð „  PŽqI   ëC?ÞS?mÐÌ>Îð¬ð°ð „  PŽqI   N?J?îÏÌ>Îð¬ð°ð „  PŽqI    X?$@?wÏÌ>Îð¬ð°ð „  PŽqI   7b?D6?	ÏÌ>Îð¬ð°ð „  PŽqI   Ll?b,?¥ÎÌ>Îð¬ð°ð „  PŽqI   _v?}"?IÎÌ>Îð¬ð°ð „  PŽqI   o€?•?÷ÍÌ>¯ñÑð­ñ „  PŽqI   }Š?«?®ÍÌ>¯ñÑð­ñ „  PŽqI   ‰”?¿?pÍÌ>¯ñÑð­ñ „  PŽqI   ’ž?Ðú?;ÍÌ>¯ñÑð­ñ „  PŽqI   ™¨?ßð?ÍÌ>¯ñÑð­ñ „  PŽqI   ²?ëæ?ðÌÌ>¯ñÑð­ñ „  PŽqI   Ÿ¼?ôÜ?ÚÌÌ>¯ñÑð­ñ „  PŽqI   žÆ?ûÒ?ÏÌÌ>¯ñÑð­ñ „  PŽqI   šÐ?ÿÈ?ÎÌÌ>¯ñÑð­ñ „  PŽqI   ”Ú? ¿?×ÌÌ>¯ñÑð­ñ „  PŽqI   Œä?ÿ´?êÌÌ>Jò±ñIò „  PŽqI   €î?üª?ÍÌ>Jò±ñIò „  PŽqI   rø?ö ?0ÍÌ>Jò±ñIò „  PŽqI   b?í–?bÍÌ>Jò±ñIò „  PŽqI   O?âŒ?ŸÍÌ>Jò±ñIò „  PŽqI   9?Ô‚?åÍÌ>Jò±ñIò „  PŽqI   ! ?Åx?5ÎÌ>Jò±ñIò „  PŽqI   *?²n?ŽÎÌ>Jò±ñIò „  PŽqI   ê3?žd?ñÎÌ>Jò±ñIò „  PŽqI   Ë=?‡Z?\ÏÌ>Jò±ñIò „  PŽqI   ©G?nP?ÑÏÌ>õòMòôò „  PŽqI   †Q?SF?NÐÌ>õòMòôò „  PŽqI   `[?7<?ÓÐÌ>õòMòôò „  PŽqI   8e?2?`ÑÌ>õòMòôò „  PŽqI   o?÷'?õÑÌ>õòMòôò „  PŽqI   ãx?Õ?‘ÒÌ>õòMòôò „  PŽqI   µ‚?±?3ÓÌ>õòMòôò „  PŽqI   †Œ?Œ	?ÜÓÌ>õòMòôò „  PŽqI   V–?eÿ?‹ÔÌ>õòMòôò „  PŽqI   $ ?=õ?>ÕÌ>õòMòôò „  PŽqI   ñ©?ë?÷ÕÌ>óóøòñó „  PŽqI   ½³?éà?´ÖÌ>óóøòñó „  PŽqI   ˆ½?¾Ö?u×Ì>óóøòñó „  PŽqI   RÇ?‘Ì?9ØÌ>óóøòñó „  PŽqI   Ñ?dÂ? ÙÌ>óóøòñó „  PŽqI   åÚ?7¸?ÈÙÌ>óóøòñó „  PŽqI   ®ä?	®?’ÚÌ>óóøòñó „  PŽqI   wî?Û£?]ÛÌ>óóøòñó „  PŽqI   @ø?­™?'ÜÌ>óóøòñó „  PŽqI   	?~?ñÜÌ>óóøòñó „  PŽqI   Ó?P…?¹ÝÌ>ôõóöó „  PŽqI   ž?"{?ÞÌ>ôõóöó „  PŽqI   j?õp?BßÌ>ôõóöó „  PŽqI   7)?Èf?àÌ>ôõóöó „  PŽqI   3?œ\?¼àÌ>ôõóöó „  PŽqI   ×<?qR?qáÌ>ôõóöó „  PŽqI   ©F?FH? âÌ>ôõóöó „  PŽqI   ~P?>?ÈâÌ>ôõóöó „  PŽqI   VZ?ö3?hãÌ>ôõóöó „  PŽqI   1d?Ð)?þãÌ>ôõóöó „  PŽqI   n?¬?‹äÌ>÷ô ôõô „ PŽqI   ðw?Š?åÌ>÷ô ôõô „ PŽqI   Õ?j?‚åÌ>÷ô ôõô „ PŽqI   ¿‹?L?êåÌ>÷ô ôõô „ PŽqI   ­•?1÷
-?EæÌ>÷ô ôõô „ PŽqI    Ÿ?í
-?æÌ>÷ô ôõô „ PŽqI   ˜©?ã
-?ÌæÌ>÷ô ôõô „ PŽqI   –³?ïØ
-?öæÌ>÷ô ôõô „ PŽqI   š½?ßÎ
-?çÌ>÷ô ôõô „ PŽqI   ¤Ç?ÒÄ
-?çÌ>÷ô ôõô „ PŽqI   µÑ?Éº
-?çÌ>°õùô®õ „ PŽqI   ÎÛ?Ä°
-?ÝæÌ>°õùô®õ „ PŽqI   íå?Â¦
-? æÌ>°õùô®õ „ PŽqI   ð?Åœ
-?KæÌ>°õùô®õ „ PŽqI   Fú?Ì’
-?ÝåÌ>°õùô®õ „ PŽqI   ?×ˆ
-?TåÌ>°õùô®õ „ PŽqI   Á?ç~
-?°äÌ>°õùô®õ „ PŽqI   ?ût
-?îãÌ>°õùô®õ „ PŽqI   d#?k
-?ãÌ>°õùô®õ „ PŽqI   Å-?3a
-?âÌ>°õùô®õ „ PŽqI   28?WW
-?íàÌ>×õ±õ³õ „ PŽqI   ªB?M
-?ªßÌ>×õ±õ³õ „ PŽqI   /M?°C
-?CÞÌ>×õ±õ³õ „ PŽqI   ÀW?å9
-?·ÜÌ>×õ±õ³õ „ PŽqI   ^b? 0
-?ÛÌ>×õ±õ³õ „ PŽqI   
-m?a&
-?*ÙÌ>×õ±õ³õ „ PŽqI   Åw?¨
-?&×Ì>×õ±õ³õ „ PŽqI   Ž‚?ö
-?øÔÌ>×õ±õ³õ „ PŽqI   g?K	
-?ÒÌ>×õ±õ³õ „ PŽqI   O˜?¦ÿ	?ÐÌ>×õ±õ³õ „ PŽqI   I£?	ö	?^ÍÌ>{öÛõyö „ PŽqI   S®?rì	?vÊÌ>{öÛõyö „ PŽqI   o¹?ãâ	?\ÇÌ>{öÛõyö „ PŽqI   Ä?\Ù	?ÄÌ>{öÛõyö „ PŽqI   ßÏ?ÜÏ	?‹ÀÌ>{öÛõyö „ PŽqI   4Û?dÆ	?Ò¼Ì>{öÛõyö „ PŽqI   æ?ó¼	?à¸Ì>{öÛõyö „ PŽqI   ò?‹³	?´´Ì>{öÛõyö „ PŽqI   ®ý?+ª	?N°Ì>{öÛõyö „ PŽqI   W	?Ô 	?ª«Ì>{öÛõyö „ PŽqI   ?…—	?Ç¦Ì>¢ö|ö~ö „ PŽrI   ï ??Ž	?¥¡Ì>¢ö|ö~ö „ PŽrI   ß,?…	?AœÌ>¢ö|ö~ö „ PŽrI   ç8?Ì{	?™–Ì>¢ö|ö~ö „ PŽrI   	E?¡r	?¬Ì>¢ö|ö~ö „ PŽrI   EQ?~i	?yŠÌ>¢ö|ö~ö „ PŽrI   œ]?e`	?ýƒÌ>¢ö|ö~ö „ PŽrI   j?UW	?7}Ì>¢ö|ö~ö „ PŽrI   žv?ON	?&vÌ>¢ö|ö~ö „ PŽrI   Jƒ?RE	?ÇnÌ>¢ö|ö~ö „ PŽrI   ?_<	?gÌ>?÷¤ö>÷ „ PŽrI   ýœ?v3	?_Ì>?÷¤ö>÷ „ PŽrI   ª?–*	?ÉVÌ>?÷¤ö>÷ „ PŽrI   -·?Á!	?$NÌ>?÷¤ö>÷ „ PŽrI   vÄ?ö	?)EÌ>?÷¤ö>÷ „ PŽrI   áÑ?4	?Ö;Ì>?÷¤ö>÷ „ PŽrI   nß?}	?*2Ì>?÷¤ö>÷ „ PŽrI   í?Ñþ?#(Ì>?÷¤ö>÷ „ PŽrI   òú?.ö?¿Ì>?÷¤ö>÷ „ PŽrI   ì?–í?üÌ>?÷¤ö>÷ „ PŽrI   ?	å?ÚÌ>g÷A÷C÷ „ PŽrI   P%?…Ü?UüË>g÷A÷C÷ „ PŽrI   ½3?Ô?lðË>g÷A÷C÷ „ PŽrI   RB?ŸË?äË>g÷A÷C÷ „ PŽrI   Q?<Ã?h×Ë>g÷A÷C÷ „ PŽrI   ø_?ãº?IÊË>g÷A÷C÷ „ PŽrI   o?•²?À¼Ë>g÷A÷C÷ „ PŽrI   J~?Rª?É®Ë>g÷A÷C÷ „ PŽrI   µ?¢?e Ë>g÷A÷C÷ „ PŽrI   M?ë™?‘Ë>g÷A÷C÷ „ PŽrI   ­?È‘?I‚Ë>í÷j÷ë÷ „ PŽrI   
-½?¯‰?ŽrË>í÷j÷ë÷ „ PŽrI   0Í?¡?^bË>í÷j÷ë÷ „ PŽrI   ‡Ý?žy?·QË>í÷j÷ë÷ „ PŽrI   î?¥q?–@Ë>í÷j÷ë÷ „ PŽrI   Ëþ?·i?û.Ë>í÷j÷ë÷ „ PŽrI   »?Ôa?ãË>í÷j÷ë÷ „ PŽrI   ß ?ûY?L
-Ë>í÷j÷ë÷ „ PŽrI   92?,R?6÷Ê>í÷j÷ë÷ „ PŽrI   ÉC?hJ?ãÊ>í÷j÷ë÷ „ PŽrI   ‘U?®B?ÏÊ>øï÷ò÷ö‰ ŽqI    ‘g?ÿ:?àºÊ>øï÷ò÷ö‰ ŽqI    Ëy?Z3?·¥Ê>øï÷ò÷ö‰ ŽqI    ?Œ?¾+?Ê>øï÷ò÷ö‰ ŽqI    ïž?-$?ÉyÊ>øï÷ò÷ö‰ ŽqI    Û±?¦? cÊ>øï÷ò÷ö‰ ŽqI    Å?(?¨KÊ>øï÷ò÷ö‰ ŽqI    kØ?´?Á3Ê>øï÷ò÷ö‰ ŽqI    ì?J?HÊ>øï÷ò÷ö‰ ŽqI    ùÿ?éþ?<Ê>øï÷ò÷ö‰ ŽqI    !?‘÷?›èÉ>=øøø ˆ ŽqH    Œ(?Cð?cÎÉ>=øøø ˆ ŽqH    9=?þè?’³É>=øøø ˆ ŽqH    +R?Áá?'˜É>=øøø ˆ ŽqH    cg?Ú?!|É>=øøø ˆ ŽqH    à|?bÓ?|_É>=øøø ˆ ŽqH    ¥’??Ì?8BÉ>=øøø ˆ ŽqH    ²¨?$Å?T$É>=øøø ˆ ŽqH    	¿?¾?ÍÉ>=øøø ˆ ŽqH    ªÕ?·?¡æÈ>=øøø ˆ ŽqH    –ì?°?ÐÆÈ>ú?øú ˆ¤ŽqH    Ï?©?W¦È>ú?øú ˆ¤ŽqH    U?¢?5…È>ú?øú ˆ¤ŽqH    *3?"›?hcÈ>ú?øú ˆ¤ŽqH    NK?:”?ï@È>ú?øú ˆ¤ŽqH    Ãc?X?ÉÈ>ú?øú ˆ¤ŽqH    Š|?}†?òùÇ>ú?øú ˆ¤ŽqH    £•?¨?kÕÇ>ú?øú ˆ¤ŽqH    ¯?Øx?1°Ç>ú?øú ˆ¤ŽqH    ÒÈ?r?CŠÇ>ú?øú ˆ¤ŽqH    éâ?Gk?ŸcÇ>6úúú ˆ¤ŽqH    Wý?†d?D<Ç>6úúú ˆ¤ŽqH    ?Ê]?1Ç>6úúú ˆ¤ŽqH    =3?W?dëÆ>6úúú ˆ¤ŽqH    ¶N?]P?ÛÁÆ>6úúú ˆ¤ŽqH    Šj?«I?•—Æ>6úúú ˆ¤ŽqH    »†?ýB?lÆ>6úúú ˆ¤ŽqH    H£?R<?Ì@Æ>6úúú ˆ¤ŽqH    4À?©5?FÆ>6úúú ˆ¤ŽqH    Ý?/?þæÅ>6úúú ˆ¤ŽqH    +û?\(?ò¸Å>Îú9úÌú ˆ¤qH    7?¸!? ŠÅ>Îú9úÌú ˆ¤qH    §7??ˆZÅ>Îú9úÌú ˆ¤qH    yV?s?(*Å>Îú9úÌú ˆ¤qH    °u?Ð?ÿøÄ>Îú9úÌú ˆ¤qH    M•?.?ÇÄ>Îú9úÌú ˆ¤qH    Pµ?Š ?K”Ä>Îú9úÌú ˆ¤qH    »Õ?æù?¾`Ä>Îú9úÌú ˆ¤qH    ö??ó?c,Ä>Îú9úÌú ˆ¤qH    Í?—ì?8÷Ã>Îú9úÌú ˆ¤qH    u9?íå?=ÁÃ>œûÐúšû ˆ¨pG    ‰[??ß?oŠÃ>œûÐúšû ˆ¨pG    
-~?Ø?ÏRÃ>œûÐúšû ˆ¨pG    ù ?ÚÑ?[Ã>œûÐúšû ˆ¨pG    VÄ?!Ë?áÂ>œûÐúšû ˆ¨pG    $è?cÄ?ò¦Â>œûÐúšû ˆ¨pG    c? ½?ûkÂ>œûÐúšû ˆ¨pG    1?×¶?+0Â>œûÐúšû ˆ¨pG    7V?°?ƒóÁ>œûÐúšû ˆ¨pG    Î{?2©?ÿµÁ>œûÐúšû ˆ¨pG    Û¡?U¢?¡wÁ>Äûžû û ˆ¨pG    ^È?o›?f8Á>Äûžû û ˆ¨pG    Wï?‚”?NøÀ>Äûžû û ˆ¨pG    É?‹?X·À>Äûžû û ˆ¨pG    ´>?‹†?ƒuÀ>Äûžû û ˆ¨pG    g??Î2À>Äûžû û ˆ¨pG    ø?lx?9ï¿>Äûžû û ˆ¨pG    T¹?Kq?Âª¿>Äûžû û ˆ¨pG    ,ã?j?ie¿>Äûžû û ˆ¨pG    ƒ?çb?,¿>Äûžû û ˆ¨pG    X8?¢[?Ø¾>üÆûü ˆ¬oF    ­c?OT?¾>üÆûü ˆ¬oF    ƒ?íL?G¾>üÆûü ˆ¬oF    Û»?}E?Pý½>üÆûü ˆ¬oF    µè?þ=?›²½>üÆûü ˆ¬oF    ?n6?þf½>üÆûü ˆ¬oF    õC?Î.?{½>üÆûü ˆ¬oF    ]r?'?Í¼>üÆûü ˆ¬oF    K¡?X?º~¼>üÆûü ˆ¬oF    ÀÐ??}/¼>üÆûü ˆ¬oF    ¾ ?—?Vß»>Aüüüô¬oF    D1?™?EŽ»>Aüüüô¬oF    Tb?‡ÿ?J<»>Aüüüô¬oF    ð“?_÷?déº>Aüüüô¬oF    Æ? ï?“•º>Aüüüô¬oF    Éø?Ëæ?Ö@º>Aüüüô¬oF    
-,?_Þ?.ë¹>Aüüüô¬oF    Ù_?ÚÕ?š”¹>Aüüüô¬oF    6”?=Í?=¹>Aüüüô¬oF    $É?…Ä?­ä¸>Aüüüô¬oF    ¢þ?´»?T‹¸>iüDüFü Œ°‘nE    ²4?Ç²?1¸>iüDüFü Œ°‘nE    Tk?¾©?ÜÕ·>iüDüFü Œ°‘nE    ‰¢?™ ?½y·>iüDüFü Œ°‘nE    QÚ?W—?°·>iüDüFü Œ°‘nE    ®?ö?·¾¶>iüDüFü Œ°‘nE    ¡K?w„?Ñ_¶>iüDüFü Œ°‘nE    *…?Øz?þÿµ>iüDüFü Œ°‘nE    I¿?q?>Ÿµ>iüDüFü Œ°‘nE     ú?8g?‘=µ>iüDüFü Œ°‘nE    O5 ?5]?øÚ´>-þlü+þ Œ ´’mD    7q ?S?rw´>-þlü+þ Œ ´’mD    ¹­ ?ÇH? ´>-þlü+þ Œ ´’mD    Õê ?Z>?¢­³>-þlü+þ Œ ´’mD    ‹(!?È3?XG³>-þlü+þ Œ ´’mD    Þf!?)?#à²>-þlü+þ Œ ´’mD    Í¥!?2?x²>-þlü+þ Œ ´’mD    Xå!?,?ø²>-þlü+þ Œ ´’mD    ‚%"?ý?¥±>-þlü+þ Œ ´’mD    If"?¦ü?":±>-þlü+þ Œ ´’mD    ¯§"?$ñ?YÎ°>*ÿ0þ(ÿ Œ ¸“lD    ´é"?xå?§a°>*ÿ0þ(ÿ Œ ¸“lD    Y,#?¡Ù?ô¯>*ÿ0þ(ÿ Œ ¸“lD    Ÿo#?œÍ?‰…¯>*ÿ0þ(ÿ Œ ¸“lD    †³#?kÁ?¯>*ÿ0þ(ÿ Œ ¸“lD    ø#?µ?Î¥®>*ÿ0þ(ÿ Œ ¸“lD    8=$?}¨?—4®>*ÿ0þ(ÿ Œ ¸“lD    ƒ$?¿›?zÂ­>*ÿ0þ(ÿ Œ ¸“lD    tÉ$?ÐŽ?xO­>*ÿ0þ(ÿ Œ ¸“lD    ‡%?°?“Û¬>*ÿ0þ(ÿ Œ ¸“lD    >X%?]t?Êf¬>Qÿ,ÿ.ÿ Œ ¼”lC    ™ %?Øf?ñ«>Qÿ,ÿ.ÿ Œ ¼”lC    ™é%?Y?‘z«>Qÿ,ÿ.ÿ Œ ¼”lC    ?3&?0K?#«>Qÿ,ÿ.ÿ Œ ¼”lC    Š}&?=?ÕŠª>Qÿ,ÿ.ÿ Œ ¼”lC    {È&?±.?¨ª>Qÿ,ÿ.ÿ Œ ¼”lC    '? ?ž—©>Qÿ,ÿ.ÿ Œ ¼”lC    Q`'?T?¶©>Qÿ,ÿ.ÿ Œ ¼”lC    6­'?Q?ò ¨>Qÿ,ÿ.ÿ Œ ¼”lC    Ãú'?ó?S$¨>Qÿ,ÿ.ÿ Œ ¼”lC    øH(?›ã?Û¦§> Tÿ¨ÿ Œ À•kB    Õ—(?æÓ?Š(§> Tÿ¨ÿ Œ À•kB    Zç(?öÃ?a©¦> Tÿ¨ÿ Œ À•kB    ‡7)?Ç³?b)¦> Tÿ¨ÿ Œ À•kB    ^ˆ)?[£?Ž¨¥> Tÿ¨ÿ Œ À•kB    ÞÙ)?¯’?æ&¥> Tÿ¨ÿ Œ À•kB    ,*?Ã?l¤¤> Tÿ¨ÿ Œ À•kB    Ù~*?—p?!!¤> Tÿ¨ÿ Œ À•kB    UÒ*?(_?£> Tÿ¨ÿ Œ À•kB    {&+?wM?£> Tÿ¨ÿ Œ À•kB    L{+?‚;?e’¢>7    Œ Ä–jA    ÆÐ+?I)?â¢>7    Œ Ä–jA    ë&,?Ë?–„¡>7    Œ Ä–jA    º},??ü >7    Œ Ä–jA    3Õ,?ûð?¤s >7    Œ Ä–jA    W--?§Ý?êŸ>7    Œ Ä–jA    &†-?Ê?ž_Ÿ>7    Œ Ä–jA    Ÿß-?&¶?vÔž>7    Œ Ä–jA    Ã9.?ö¡?ŽHž>7    Œ Ä–jA    ’”.?z?è»>7    Œ Ä–jA    ð.?³x?„.>_ : < ø‘ÿÈ<—i@    /L/?žc?e œ>_ : < ø‘ÿÈ<—i@    þ¨/?<N?Œœ>_ : < ø‘ÿÈ<—i@    w0?‹8?ü›>_ : < ø‘ÿÈ<—i@    šd0?‹"?¶ñš>_ : < ø‘ÿÈ<—i@    hÃ0?:?½`š>_ : < ø‘ÿÈ<—i@    à"1?˜õ?Ï™>_ : < ø‘ÿÈ<—i@    ƒ1?£Þ?¶<™>_ : < ø‘ÿÈ<—i@    Îã1?\Ç?¬©˜>_ : < ø‘ÿÈ<—i@    CE2?Â¯?÷˜>_ : < ø‘ÿÈ<—i@    b§2?Ò—?——>ka i ÿÐ<˜g?    *
-3?Ž?ì–>ka i ÿÐ<˜g?    œm3?óf?ãV–>ka i ÿÐ<˜g?    ¶Ñ3?N?“À•>ka i ÿÐ<˜g?    x64?·4?¡)•>ka i ÿÐ<˜g?    ã›4??’”>ka i ÿÐ<˜g?    ö5??âù“>ka i ÿÐ<˜g?    °h5?Äæ ?a“>ka i ÿÐ<˜g?    Ð5?Ì ?¸Ç’>ka i ÿÐ<˜g?    86?± ?À-’>ka i ÿÐ<˜g?    É 6?• ?5“‘>“np ÿÔ<™f>    
-7?Öy ?ø>“np ÿÔ<™f>    t7?±] ?m\>“np ÿÔ<™f>    ¸Þ7?-A ?5À>“np ÿÔ<™f>    ýI8?J$ ?r#>“np ÿÔ<™f>    æµ8? ?)†Ž>“np ÿÔ<™f>    r"9?ÂÒÿ>Yè>“np ÿÔ<™f>    ¢9?´–ÿ>J>“np ÿÔ<™f>    uý9?áYÿ>6«Œ>“np ÿÔ<™f>    ék:?Gÿ>çŒ>“np ÿÔ<™f>    

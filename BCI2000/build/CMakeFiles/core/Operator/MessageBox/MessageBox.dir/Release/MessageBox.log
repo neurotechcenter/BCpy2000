@@ -1,7 +1,0 @@
-﻿  MessageBox.cpp
-  ParserToken.cpp
-  EncodedString.cpp
-  StringUtils.cpp
-  Generating Code...
-  MessageBox.vcxproj -> C:\BCI2000.python3\build\CMakeFiles\core\Operator\MessageBox\Release\MessageBox.exe
-  	Copy to destination

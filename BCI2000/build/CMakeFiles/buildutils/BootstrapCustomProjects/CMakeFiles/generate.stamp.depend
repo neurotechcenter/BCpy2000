@@ -1,4 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/BCI2000.python3/build/buildutils/BootstrapCustomProjects/CMakeLists.txt
-C:/BCI2000.python3/build/cmake/frameworks/Core.cmake
-C:/BCI2000.python3/build/cmake/frameworks/LibTiny.cmake

@@ -1,2 +1,0 @@
-- The 'DATAXCHG.DLL' file must be placed in the same directory as the 'SERVER2.EXE' program.
-- Also read the 'USING SCAN 4 DATAXCHG' document for details on the data exchange functionality of Scan 4.2.

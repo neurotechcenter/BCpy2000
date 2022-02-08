@@ -1,7 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/BCI2000.python3/build/cmake/extlib/MATH.cmake
-C:/BCI2000.python3/build/cmake/extlib/STATISTICS.cmake
-C:/BCI2000.python3/build/cmake/frameworks/Core.cmake
-C:/BCI2000.python3/build/cmake/frameworks/LibTiny.cmake
-C:/BCI2000.python3/build/cmake/frameworks/SigProcModule.cmake
-C:/BCI2000.python3/src/core/SignalProcessing/AR/CMakeLists.txt
