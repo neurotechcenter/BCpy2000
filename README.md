@@ -6,26 +6,16 @@ BCPy2000 is a system for building experimental brain-computer interface systems,
 
 - [Python 3.6.8](https://www.python.org/downloads/release/python-368/)
 - [BCI2000](www.bci2000.org)
-- [Pipenv](https://docs.pipenv.org)
 
 ### Installing
 
 ```
 git clone git@github.com:neurotechcenter/BCpy2000.git
-cd BCpy2000
-pipenv install
-```
-
-### Running 
-
-```
-pipenv shell
-
-cd BCpy2000
-
-cd batch
-
-PythonDemo1_Triangle_p3.bat
+Copy this folder to your PythonHome/Lib/site-packages
+Open you system variable settings menu and add a new path called PYTHONHOME_BCI2000
+Set the new PYTHONHOME_BCI2000 path to your PythonHome
+Follow instructions to download and install BCI2000 [BCI2000](https://www.bci2000.org/mediawiki/index.php/Programming_Howto:Building_and_Customizing_BCI2000)
+For more details on how to install BCPy2000, please refer to our [wiki page](https://www.bci2000.org/mediawiki/index.php/BCPy2000) on the topic
 ```
 
 ## Structure 
@@ -41,25 +31,4 @@ BCPy2000 stands on the shoulders of giants. It consists of:
 
 ## Status
 
-As of our current release, you have to build your BCI2000 binaries by creating a build solution in Microsoft Visual Studio. Our main focus at the moment is to implement a fully portable version of BCpy2000 by compiling executables for the BCI2000 binaries rather than relying on the developer to build their own binaries. Many of the following features are partially complete, but this isn't indicated. Look at the Issues page if you need to know what is being worked on.
-
-- [ ] Full Monty
-  - [ ] 64x exectuables
-  - [x] Pipenv installation
-    - [ ] Dependencies
-    - [x] BCI framework
-  - [ ] Higher level tool support
-- [ ] Documentation
-  - [ ] API
-    - [ ] BCICore
-    - [ ] BCIGenericSource
-    - [ ] BCIGenericSignalProcessing
-    - [ ] BCIGeneric Application
-  - [ ] Foundation(Binary exectuables)
-    - [ ] Operator
-    - [ ] Source
-    - [ ] Signal Processing
-    - [ ] application
-- [ ] Demonstration
-
-
+As of our current release, you have to build your BCI2000 binaries by creating a build solution in Microsoft Visual Studio. Our main focus at the moment is to provide the Python site packages which is necessary to build the Python environment upon which BCPy2000 is reliant.
