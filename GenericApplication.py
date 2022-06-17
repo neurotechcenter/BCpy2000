@@ -6,7 +6,7 @@
 #   implementing modules that run on top of the BCI2000 <http://bci2000.org/>
 #   platform, for the purpose of realtime biosignal processing.
 # 
-#   Copyright (C) 2007-22  Nicholas Luczak, Jeremy Hill, Thomas Schreiner,
+#   Copyright (C) 2007-11  Jeremy Hill, Thomas Schreiner,
 #                          Christian Puzicha, Jason Farquhar
 #   
 #   bcpy2000@bci2000.org
@@ -183,11 +183,12 @@ class BciGenericApplication(Core.BciCore):
 				th.post('stop')
 				th.read('ready', wait=True)
 		self._check_threads()
+		print('Halt done!')
 		for i in dir(self):
 			if i not in self._creation_parameters:
 				try: delattr(self, i)
 				except: pass
-		
+		print('Attribute Deletion done!')
 	#############################################################
 
 	def _Preflight(self, in_signal_props):
@@ -199,9 +200,12 @@ class BciGenericApplication(Core.BciCore):
 	#############################################################
 
 	def _Initialize(self, in_signal_props, out_signal_props):
+		print('_Init called')
 		super(BciGenericApplication, self)._Initialize(in_signal_props, out_signal_props)  # superclass
+		print('_Init super called')
+		
 		# if hasattr(self, '_callbacks'): self._callbacks.clear()
-		self._slave = self.states.read_only = (int(self.params['EnslavePython']) != 0)
+		self._slave = self.stateArrays.read_only = (int(self.params['EnslavePython']) != 0)
 		if self._slave:
 			print()
 			print()
@@ -209,7 +213,7 @@ class BciGenericApplication(Core.BciCore):
 			print("state variables will not be writeable from this module.")
 			print("NB: the application will not replay its previous behaviour")
 			print("exactly unless a number of criteria are met.  See the")
-			print("documentation on \"replaying\".")
+			print("documentation on \"replaying\".")	
 			print()
 			
 		self.forget('transition')
@@ -751,13 +755,17 @@ class BciGenericApplication(Core.BciCore):
 				while mythread.exception != None and not mythread.read('stop'):
 					time.sleep(0.001)  # cannot use mythread.read to wait for 'stop' in the normal way until the exception is cleared
 				mythread.read('stop', wait=True) # because waits normally fall through if the thread has posted an exception
-		self._lock.release('Frame')
 		self._stimobjlist.clear()
+		print('Cleanup')
+		self._lock.release('Frame')	
 		if hasattr(self, 'stimuli'): delattr(self, 'stimuli')
 		if hasattr(self, '_stimlist'): delattr(self, '_stimlist')
 		if hasattr(self, '_stimz'): delattr(self, '_stimz')
 		if hasattr(self, '_stimq'): delattr(self, '_stimq')
+		if hasattr(self, 'statemonitors'): delattr(self, 'statemonitors')
+		if hasattr(self, '_signalclock'): delattr(self, '_signalclock')
 		self.screen.Cleanup()
+		print('Cleanup done!')
 	
 	#############################################################
 
@@ -1601,7 +1609,7 @@ class BciStimulus(object):
 			self.__dict__['dispatcher'].append( lambda : setattr(v, key, value))
 			return True
 		return False
-
+	
 	def AddDispatch(self,fun):
 		self.__dict__['dispatcher'].append(fun)
 

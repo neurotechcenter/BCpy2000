@@ -1,29 +1,3 @@
-# -*- coding: utf-8 -*-
-# 
-#   $Id: PsychoPyRender.py 3445 2011-08-08 15:46:38Z jhill $
-#   
-#   This file is part of the BCPy2000 framework, a Python framework for
-#   implementing modules that run on top of the BCI2000 <http://bci2000.org/>
-#   platform, for the purpose of realtime biosignal processing.
-# 
-#   Copyright (C) 2007-22  Nicholas Luczak, Jeremy Hill, Thomas Schreiner,
-#                          Christian Puzicha, Jason Farquhar
-#   
-#   bcpy2000@bci2000.org
-#   
-#   The BCPy2000 framework is free software: you can redistribute it
-#   and/or modify it under the terms of the GNU General Public License
-#   as published by the Free Software Foundation, either version 3 of
-#   the License, or (at your option) any later version.
-#
-#   This program is distributed in the hope that it will be useful,
-#   but WITHOUT ANY WARRANTY; without even the implied warranty of
-#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU General Public License for more details.
-#
-#   You should have received a copy of the GNU General Public License
-#   along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
 #import sys; sys.argv=['PsychoPyRenderer'] #workaround due to some probem with caption fallback in pyglet
 
 from . import AppTools as Coords
@@ -105,9 +79,6 @@ class PsychoPyRenderer(BciGenericRenderer):
 		"""###
 		self.Cleanup()
 		import psychopy.visual as psypy
-		import pyglet
-		pyglet.options['debug_gl'] = True
-		pyglet.options['shadow_window'] = False
 		PsychoPyRenderer._currpsypywindow=psypy.Window((self._width,self._height),(self._left,self._top),units='pix',useFBO=False,winType='pyglet')
 
 
@@ -119,7 +90,10 @@ class PsychoPyRenderer(BciGenericRenderer):
 		subclass to replace our VisionEggRenderer. Your subclass should overshadow
 		this method, which must return an estimate of the screen refresh rate in Hz.
 		"""###
-		return PsychoPyRenderer._currpsypywindow.fps()
+		if PsychoPyRenderer._currpsypywindow == None:
+			return 0
+		else:
+			PsychoPyRenderer._currpsypywindow.fps()
 		pass
 	
 	def RaiseWindow(self):
@@ -150,12 +124,13 @@ class PsychoPyRenderer(BciGenericRenderer):
 		VisionEgg.Core.Stimulus objects for the VisionEggRenderer). It is called
 		immediately after BciApplication.Frame()
 		"""###
-		import psychopy.visual as psypy
-		for obj in objlist:
-			if isinstance(obj,psypy.TextBox):
-				obj.draw() #textbox call is different for some reason ... 
-			else:
-				obj.draw(PsychoPyRenderer._currpsypywindow)
+		if PsychoPyRenderer._currpsypywindow != None:
+			import psychopy.visual as psypy
+			for obj in objlist:
+				if isinstance(obj,psypy.TextBox):
+					obj.draw() #textbox call is different for some reason ... 
+				else:
+					obj.draw(PsychoPyRenderer._currpsypywindow)
 
 
 	def FinishFrame(self):
@@ -165,7 +140,8 @@ class PsychoPyRenderer(BciGenericRenderer):
 		It is called at the close of each frame, for example in order to swap
 		buffers.
 		"""###
-		PsychoPyRenderer._currpsypywindow.flip(clearBuffer=True)
+		if PsychoPyRenderer._currpsypywindow != None:
+			PsychoPyRenderer._currpsypywindow.flip(clearBuffer=True)
 		
 		
 		
@@ -175,14 +151,20 @@ class PsychoPyRenderer(BciGenericRenderer):
 		subclass to replace our VisionEggRenderer. You can overshadow this to
 		close the window and clean up.        
 		"""###
-		if PsychoPyRenderer._currpsypywindow != None: PsychoPyRenderer._currpsypywindow.close()
-		PsychoPyRenderer._currpsypywindow = None
+		if PsychoPyRenderer._currpsypywindow != None: 
+			PsychoPyRenderer._currpsypywindow.close()
+			PsychoPyRenderer._currpsypywindow = None
 		pass
 	
 	
-	def _fget_color(self): return _colorFromPsyPyToBCI(PsychoPyRenderer._currpsypywindow.color, 1)
+	def _fget_color(self): 
+		if PsychoPyRenderer._currpsypywindow != None: 
+			return _colorFromPsyPyToBCI(PsychoPyRenderer._currpsypywindow.color, 1) 
+		else:
+			return None
 	def _fset_color(self,val):
-		PsychoPyRenderer._currpsypywindow.color=_colorFromBCItoPsyPy(val)[0]
+		if PsychoPyRenderer._currpsypywindow != None: 
+			PsychoPyRenderer._currpsypywindow.color=_colorFromBCItoPsyPy(val)[0]
 	
 	color = property(_fget_color,_fset_color)
 	

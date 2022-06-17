@@ -36,7 +36,6 @@ import numpy
 import random
 import threading
 import re
-import copy
 from . import PrecisionTiming
 
 #################################################################
@@ -252,7 +251,7 @@ SUCH DAMAGES.
 		self.params = BciDict(lazy=True)
 		# self.states = BciDict(lazy=True)
 		self.stateArrays = BciDict(lazy=True)
-		self.states = BciScalarDict(self.stateArrays)
+		self.states = BciScalarDict()
 		self.prevstates = None
 		self.bits = BciDict(lazy=True)
 		self.nominal = BciDict(lazy=True)
@@ -280,21 +279,21 @@ SUCH DAMAGES.
 	#############################################################
 			
 	def _set_states(self, states): # transfer states from C++ to Python before _Process
-		f = open("C:/setState.txt", "a+")
+		f = open("D:/setState.txt", "a+")
 		f.write("#############################OPEN#############################################\n")
 		f.write(str(states))
 		f.write("\n\n")
 		self._lock.acquire('_set_states') # TODO ???
-		# if len(self._oldstates) == 0:
-		# 	self._oldstates = states.copy()
-		# 	# self._oldstates = stateArrays.copy()
+		if len(self._oldstates) == 0:
+			self._oldstates = states.copy()
+			# self._oldstates = stateArrays.copy()
 		if len(self.stateArrays) == 0:
-			self.stateArrays.update( states )
+			self.stateArrays = BciDict(states, complete=True, lazy=True)
 		# if len(self.stateArrays) == 0:
 		# 	self.stateArrays = BciScalarDict(states)
-		if len(self.states) == 0:
-			f.write("state Scalar length is 0\n")
-			f.write(str(states))
+		# if len(self.states) == 0:
+		# # 	# f.write("state Scalar length is 0\n")
+		# # 	# f.write(str(states))
 		# 	self.states = BciScalarDict(states)
 		self.stateArrays.block = True # TODO: ???
 	
@@ -307,19 +306,20 @@ SUCH DAMAGES.
 		
 		for i in list(states.keys()):
 			# if state coming from c++ is not listed in python, or if the state variable hasn't changed since last time, update python according to c++
-			decoded = numpy.fromstring(states[i], dtype=numpy.uint32)
-			f.write("before decoded: ")
-			f.write(str(states[i]))
-			f.write("\n")
+			decoded = numpy.frombuffer(states[i], dtype=numpy.uint32)
+			# f.write("before decoded: ")
+			# f.write(str(states[i]))
+			# f.write("\n")
 			if decoded.size == 1: decoded = int( decoded.flat[ 0 ] )
 			# _old_states = numpy.frombuffer(self._oldstates[i], dtype=numpy.uint32)
 
 			# if (i not in self.stateArrays) or self._oldstates[i] == decoded:  # TODO:  "and the value coming from c++ is different...."?
-			f.write("After decoded: \n")
-			f.write(i)
-			f.write(str(decoded))
-			f.write("\n\n")
+			# f.write("After decoded: \n")
+			# f.write(i)
+			# f.write(str(decoded))
+			# f.write("\n\n")
 			dict.__setitem__(self.stateArrays, i, decoded)     # bypasses 'read_only' and 'block'
+			dict.__setitem__(self.states, i, decoded)
 
 			# 	#self.stateArrays.__setitem__(i,states[i], 'really') # bypasses 'read_only'
 			# # whereas if the state has changed since last time, but not to the same value that C++ thinks it should change to, issue a warning
@@ -333,7 +333,7 @@ SUCH DAMAGES.
 		self._oldstates = self.stateArrays.copy() # TODO: move this to ^^^ ??? probably not
 		self._lock.release('_set_states') # TODO ???
 		
-		s = dict(self.states)
+		# s = dict(self.states)
 		f.write("NewArrayDict:")
 		f.write(str(self.stateArrays))
 		f.write("\nNewScalarDict:")
@@ -347,12 +347,23 @@ SUCH DAMAGES.
 	def _get_states(self):
 		# transfer states from Python to C++ after _Process
 		#
-		self.prevstates = copy.deepcopy(self.stateArrays)
+
+		# for k, v in self.states.items():
+		print(self.stateArrays.keys())
+		print('\n')
+		print(self.states.keys())
+		print('\n')
+		for i in list(self.stateArrays.keys()):
+			# dict.__setitem__(self, k, v)
+			self.stateArrays[i] = self.states[i]
+
+
 		self.stateArrays.block = True
+		self.prevstates = self.stateArrays.copy()
 		self.packet_count += 1
 		# h = dict(self.states)
 		s = dict(self.stateArrays) # makes a copy   TODO:  update _oldstates here instead of ^^^ ???
-		f = open("C:/getState.txt", "a+")
+		f = open("D:/getState.txt", "a+")
 		f.write("\n\n#########################################################################")
 		f.write("\n\nDict:")
 		f.write(str(s) + '\n\n')
@@ -1083,19 +1094,19 @@ SUCH DAMAGES.
 		to one of the values listed there. If <ignore> is supplied,
 		ignore changes to any of the values listed there.
 		"""###
-		if not self.prevstates: return False
+		if self.prevstates == None or len(self.prevstates) == 0: return False
 		val = self.stateArrays[statename]
 		prev = self.prevstates[statename]
-		if all( val == prev ): return False
+		if val == prev: return False
 		
 		if isinstance(fromVals, (bool,int,float)): fromVals = (int(fromVals),)
-		if fromVals != None and prev[-1] not in fromVals: return False
+		if fromVals != None and prev not in fromVals: return False
 
 		if isinstance(only, (bool,int,float)): only = (int(only),)
-		if only != None and val[-1] not in only: return False
+		if only != None and val not in only: return False
 			
 		if isinstance(ignore, (bool,int,float)): ignore = (int(ignore),)
-		if ignore != None and val[-1] in ignore: return False
+		if ignore != None and val in ignore: return False
 		
 		return True
 		
@@ -1820,9 +1831,11 @@ class BciDict(dict):  # a dict, but with super-powers
 				self.__setitem__(k, v.recurse(), 'really')
 		return self
 
-Unspecified = object()
 class BciScalarDict(dict):
 	def __init__(self, states = {}): #TODO: I dont know if I should be instantiating this as an empty dictionary
+		# if isinstance(states, (list,tuple)): states = dict(states)
+		# for k,v in list(states.items()):
+		# 	dict.__setitem__(self, k, v)
 		self.__dict__[ '_arrays' ] = states
 
 	@property
@@ -1838,39 +1851,22 @@ class BciScalarDict(dict):
 	def items(self):
 		return self.scalarized.items()
 
-	def update(self, d, **kwargs ):
-		for k, v in d.items(): self[ k ] = v
-		for k, v in kwargs.items(): self[ k ] = v
-	
-	def clear(self): return self._arrays.clear()
-	def copy(self): return self.scalarized
-	@classmethod
-	def fromkeys(cls, *p, **k): raise NotImplemented
-	def setdefault( self, *p, **k ): raise NotImplemented
-	def pop( self, key, default=Unspecified ):
-		if default is Unspecified: return self._arrays.pop(key)[-1]
-		else: return self._arrays.pop(key,[default])[-1]
-	def popitem( self ):
-		k, v = self._arrays.popitem()
-		return k, v[-1]
-
-	def get(self, key, default=None):
-		try: return self[ key ]
-		except KeyError: return default
+	def __setitem__(self,key, val):
+		if key not in self._arrays.keys(): raise Exception("Your key is not in the dictionary")
+		if not numpy.isscalar(val): raise Exception("Your value is not scalar")
+		array = bytearray(self._arrays[key])
+		if hasattr(array, 'flat'): array.flat = val
+		else: array[ : ] = [ val ] * len(array) 
 
 	def __getitem__(self, key):
 		return self._arrays[key][-1]
 
-	def __setitem__(self,key, val):
-
-		if key not in self._arrays.keys(): raise Exception("Your key is not in the dictionary")
-		if not numpy.isscalar(val): raise Exception("Your value is not scalar")
-		array = (self._arrays[key])
-		if hasattr(array, 'flat'): array.flat = val
-		else: array[ : ] = [ val ] * len(array) 
-
 	def __len__(self):
 		return len(self._arrays)	
+
+	def get(self, key, default=None):
+		try: return self[ key ]
+		except KeyError: return default
 
 	def __iter__(self):
 		for key in self._arrays:
