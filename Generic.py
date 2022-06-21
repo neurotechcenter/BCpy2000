@@ -36,7 +36,6 @@ import numpy
 import random
 import threading
 import re
-import copy
 from . import PrecisionTiming
 
 #################################################################
@@ -250,9 +249,7 @@ SUCH DAMAGES.
 		self._shared = {}
 		self._lock = BciLock(record_timing=False, enable=True)
 		self.params = BciDict(lazy=True)
-		# self.states = BciDict(lazy=True)
-		self.stateArrays = BciDict(lazy=True)
-		self.states = BciScalarDict(self.stateArrays)
+		self.states = BciStateDict(lazy=True)
 		self.prevstates = None
 		self.bits = BciDict(lazy=True)
 		self.nominal = BciDict(lazy=True)
@@ -285,60 +282,53 @@ SUCH DAMAGES.
 		f.write(str(states))
 		f.write("\n\n")
 		self._lock.acquire('_set_states') # TODO ???
-		# if len(self._oldstates) == 0:
-		# 	self._oldstates = states.copy()
-		# 	# self._oldstates = stateArrays.copy()
-		if len(self.stateArrays) == 0:
-			self.stateArrays.update( states )
-		# if len(self.stateArrays) == 0:
-		# 	self.stateArrays = BciScalarDict(states)
+		if len(self._oldstates) == 0:
+			self._oldstates = states.copy()
+			# self._oldstates = stateArrays.copy()
 		if len(self.states) == 0:
-			f.write("state Scalar length is 0\n")
-			f.write(str(states))
+			self.states.update( states )
+			
+		# if len(self.states) == 0:
+		# # 	# f.write("state Scalar length is 0\n")
+		# # 	# f.write(str(states))
 		# 	self.states = BciScalarDict(states)
-		self.stateArrays.block = True # TODO: ???
-	
-		f.write("\nstate Scalar:")
+		self.states.block = True # TODO: ???
+		f.write("States dict of arrays:\n")
 		f.write(str(self.states))
-		f.write("\n\n")
-		f.write("stateArrays:")
-		f.write(str(self.stateArrays))
 		f.write("\n\n")
 		
 		for i in list(states.keys()):
 			# if state coming from c++ is not listed in python, or if the state variable hasn't changed since last time, update python according to c++
-			decoded = numpy.fromstring(states[i], dtype=numpy.uint32)
+			decoded = numpy.frombuffer(states[i], dtype=numpy.uint32)
 			f.write("before decoded: ")
 			f.write(str(states[i]))
 			f.write("\n")
-			if decoded.size == 1: decoded = int( decoded.flat[ 0 ] )
+
+			# if decoded.size == 1: decoded = int( decoded.flat[ 0 ] )
+			# f.write("\nDecoded Flattened:")
+			# f.write(str(decoded.flat[ 0 ] ))
+			# f.write("\n\n")
 			# _old_states = numpy.frombuffer(self._oldstates[i], dtype=numpy.uint32)
 
-			# if (i not in self.stateArrays) or self._oldstates[i] == decoded:  # TODO:  "and the value coming from c++ is different...."?
+			# if (i not in self.states) or self._oldstates[i] == decoded:  # TODO:  "and the value coming from c++ is different...."?
 			f.write("After decoded: \n")
-			f.write(i)
 			f.write(str(decoded))
 			f.write("\n\n")
-			dict.__setitem__(self.stateArrays, i, decoded)     # bypasses 'read_only' and 'block'
+			dict.__setitem__(self.states, i, decoded)     # bypasses 'read_only' and 'block'
 
-			# 	#self.stateArrays.__setitem__(i,states[i], 'really') # bypasses 'read_only'
+			# 	#self.states.__setitem__(i,states[i], 'really') # bypasses 'read_only'
 			# # whereas if the state has changed since last time, but not to the same value that C++ thinks it should change to, issue a warning
 			# # (this python module and some other module have tried to change the same state on the same packet, to different values)
 
-			# elif _old_states != decoded and decoded != self.stateArrays[i]:
-			# 	r,firsttime = self.debug('state collision in '+i, old=_old_states, newpython=self.stateArrays[i], newbci=decoded)
-			# 	if firsttime: print('Collision in state',i,': Oldvalue:', _old_states,'  New Python Value:',self.stateArrays[i],'  New BCI Value:',states[i])
-		self.stateArrays.block = False # TODO ???
-		self.stateArrays._bits = self.bits
-		self._oldstates = self.stateArrays.copy() # TODO: move this to ^^^ ??? probably not
+			# elif _old_states != decoded and decoded != self.states[i]:
+			# 	r,firsttime = self.debug('state collision in '+i, old=_old_states, newpython=self.states[i], newbci=decoded)
+			# 	if firsttime: print('Collision in state',i,': Oldvalue:', _old_states,'  New Python Value:',self.states[i],'  New BCI Value:',states[i])
+		self.states.block = False # TODO ???
+		self.states._bits = self.bits
+		self._oldstates = self.states.copy() # TODO: move this to ^^^ ??? probably not
 		self._lock.release('_set_states') # TODO ???
-		
-		s = dict(self.states)
-		f.write("NewArrayDict:")
-		f.write(str(self.stateArrays))
-		f.write("\nNewScalarDict:")
+		f.write("NewArrayDict:\n\n")
 		f.write(str(self.states))
-		# f.write(self.stateArrays)
 		f.write("\n#############################CLOSE#############################################\n")
 		f.close()
 		
@@ -347,13 +337,15 @@ SUCH DAMAGES.
 	def _get_states(self):
 		# transfer states from Python to C++ after _Process
 		#
-		self.prevstates = copy.deepcopy(self.stateArrays)
-		self.stateArrays.block = True
+
+
+		self.states.block = True
+		self.prevstates = self.states.copy()
 		self.packet_count += 1
-		# h = dict(self.states)
-		s = dict(self.stateArrays) # makes a copy   TODO:  update _oldstates here instead of ^^^ ???
+
+		s = dict(self.states) # makes a copy   TODO:  update _oldstates here instead of ^^^ ???
 		f = open("C:/getState.txt", "a+")
-		f.write("\n\n#########################################################################")
+		f.write("\n\n#############################OPEN######################################")
 		f.write("\n\nDict:")
 		f.write(str(s) + '\n\n')
 		# data = list(s)
@@ -372,7 +364,7 @@ SUCH DAMAGES.
 			f.write(str(s[k]))
 		
 		# print(s)
-		self.stateArrays.block = False
+		self.states.block = False
 		self._handle_transients()
 		f.write("\n\nNewDict:")
 		f.write(str(s))
@@ -598,7 +590,7 @@ SUCH DAMAGES.
 			
 	def _Halt(self):
 		if self.verbose: print("calling Halt hook")
-		self._slave = self.stateArrays.read_only = False
+		self._slave = self.states.read_only = False
 
 		th = self._threads.get('share')
 		if th != None:
@@ -742,8 +734,8 @@ SUCH DAMAGES.
 			else: print('failed to find newest data file via the OS'); self.data_file = self._resolve_data_file_path()
 			#self._data_file_info(comment='Process')
 			#self._data_file_info(-1,comment='Process')
-		# f = open("D:/process.txt", "a+")
-		# f = open("D:/process.txt", "w")
+		# f = open("C:/process.txt", "a+")
+		# f = open("C:/process.txt", "w")
 		# f.write("before in signal:")
 		# f.write(str(in_signal))
 		# f.write("\n")
@@ -1050,7 +1042,7 @@ SUCH DAMAGES.
 	
 	def _handle_transients(self):
 		for statename,rec in list(self._transient_states.items()):
-			val = self.stateArrays[statename]
+			val = self.states[statename]
 			prev = rec['val']
 			rec['val'] = val
 			if val == 0: # relatively uninteresting
@@ -1067,8 +1059,8 @@ SUCH DAMAGES.
 			rec['nstored'] += 1
 			if rec['nstored'] >= rec['npackets']:
 				if rec['nstored'] > rec['npackets']:
-					self.debug('hmm', currentval=self.stateArrays[statename], storedval=val, **rec)
-				self.stateArrays[statename] = 0
+					self.debug('hmm', currentval=self.states[statename], storedval=val, **rec)
+				self.states[statename] = 0
 				rec['acknowledged'] = 0
 				rec['nstored'] = 0
 		
@@ -1083,19 +1075,19 @@ SUCH DAMAGES.
 		to one of the values listed there. If <ignore> is supplied,
 		ignore changes to any of the values listed there.
 		"""###
-		if not self.prevstates: return False
-		val = self.stateArrays[statename]
+		if self.prevstates == None or len(self.prevstates) == 0: return False
+		val = self.states[statename]
 		prev = self.prevstates[statename]
-		if all( val == prev ): return False
+		if val == prev: return False
 		
 		if isinstance(fromVals, (bool,int,float)): fromVals = (int(fromVals),)
-		if fromVals != None and prev[-1] not in fromVals: return False
+		if fromVals != None and prev not in fromVals: return False
 
 		if isinstance(only, (bool,int,float)): only = (int(only),)
-		if only != None and val[-1] not in only: return False
+		if only != None and val not in only: return False
 			
 		if isinstance(ignore, (bool,int,float)): ignore = (int(ignore),)
-		if ignore != None and val[-1] in ignore: return False
+		if ignore != None and val in ignore: return False
 		
 		return True
 		
@@ -1121,7 +1113,7 @@ SUCH DAMAGES.
 		may be before (negative) or after (positive) the current
 		packet.
 		"""###
-		eo = self.stateArrays.get('EventOffset', 0)
+		eo = self.states.get('EventOffset', 0)
 		if eo == 0: return None
 		else: return eo - 2 ** (self.bits['EventOffset'] - 1)
 	
@@ -1170,7 +1162,7 @@ SUCH DAMAGES.
 		Enable the <manual> option to delay the countdown until
 		self.acknowledge(statename) is called.
 		"""###
-		if not statename in self.stateArrays: raise KeyError('no such state "%s"' % statename)
+		if not statename in self.states: raise KeyError('no such state "%s"' % statename)
 		rec = self._transient_states[statename] = {}
 		rec['manual'] = manual
 		rec['npackets'] = npackets
@@ -1186,10 +1178,10 @@ SUCH DAMAGES.
 		transient() has been received, and that the state value can be
 		set back to 0 after the appropriate number of packets.
 		"""###
-		if not statename in self.stateArrays: raise KeyError('no such state "%s"' % statename)
+		if not statename in self.states: raise KeyError('no such state "%s"' % statename)
 		rec = self._transient_states.get(statename)
 		if rec == None: return
-		rec['acknowledged'] = self.stateArrays[statename]
+		rec['acknowledged'] = self.states[statename]
 		
 	#############################################################
 
@@ -1761,8 +1753,24 @@ class BciDict(dict):  # a dict, but with super-powers
 		if lazy != None: self.lazy = lazy
 		if hasattr(d, '_bits'): self._bits = d._bits
 
+
 	#############################################################
-	
+
+	# def __getitem__(self, key):
+	# 	print("NEW GET ITEM CALL ")
+	# 	if key in self.__dict__: 
+	# 		# print("\n IF \n")
+	# 		print(self.states.__getitem__(key))
+	# 		return super(BciDict, self).__getitem__(key)
+	# 	else:
+	# 		print("\n ELSE \n")
+	# 		print(super(BciDict, self).__getitem__(key))
+	# 		return super(BciDict, self).__getitem__(key)
+		# if key in self.__dict__: return self.__dict__[key]
+	# 	# elif self.__dict__.get('lazy') and key in self: return self[key]
+	# 	else: raise AttributeError("'%s' object has no attribute '%s'"%(self.__class__.__name__, key))
+
+
 	def __setitem__(self, key, value, *args):
 		class DictClosed(Exception): pass
 		if self.__dict__.get('read_only') and len(args) == 0: return
@@ -1770,8 +1778,8 @@ class BciDict(dict):  # a dict, but with super-powers
 		while self.__dict__.get('block'): pass
 		bits = self.__dict__.get('_bits',{}).get(key)
 		if bits != None:
-			value = int(value)
-			if value < 0 or value >= 2 ** bits: raise ValueError('state overflow (illegal value %d for %d-bit state "%s")'%(value,bits,key))
+			value = [value for i in range(len(super(BciDict, self).__getitem__(key)))]
+			if value[0] < 0 or value[0] >= 2 ** bits: raise ValueError('state overflow (illegal value %d for %d-bit state "%s")'%(value,bits,key))
 		# divert here
 		dict.__setitem__(self,key,value)
 
@@ -1789,6 +1797,9 @@ class BciDict(dict):  # a dict, but with super-powers
 		elif self.__dict__.get('lazy') and key in self: return self[key]
 		else: raise AttributeError("'%s' object has no attribute '%s'"%(self.__class__.__name__, key))
 		
+
+
+	
 	#############################################################
 		
 	def _getAttributeNames(self):
@@ -1819,68 +1830,74 @@ class BciDict(dict):  # a dict, but with super-powers
 				self.bequeath(v)
 				self.__setitem__(k, v.recurse(), 'really')
 		return self
+# class BciScalarDict(dict):
+# 	def __init__(self, states = {}): #TODO: I dont know if I should be instantiating this as an empty dictionary
+# 		# if isinstance(states, (list,tuple)): states = dict(states)
+# 		for k,v in list(states.items()):
+# 			dict.__setitem__(self, k, v)
+# 		# self.__dict__[ '_arrays' ] = states
 
-Unspecified = object()
-class BciScalarDict(dict):
-	def __init__(self, states = {}): #TODO: I dont know if I should be instantiating this as an empty dictionary
-		self.__dict__[ '_arrays' ] = states
-
-	@property
-	def scalarized(self):
-		return dict( ( k, v[-1] ) for k, v in self._arrays.items() )
+# 	@property
+# 	def scalarized(self):
+# 		return dict( ( k, v[-1] ) for k, v in self._arrays.items() )
 	
-	def keys(self):
-		return self.scalarized.keys()
+# 	def keys(self):
+# 		return self.scalarized.keys()
 
-	def values(self):
-		return self.scalarized.values()
+# 	def values(self):
+# 		return self.scalarized.values()
 
-	def items(self):
-		return self.scalarized.items()
+# 	def items(self):
+# 		return self.scalarized.items()
 
-	def update(self, d, **kwargs ):
-		for k, v in d.items(): self[ k ] = v
-		for k, v in kwargs.items(): self[ k ] = v
+# 	def __setitem__(self,key, val):
+# 		if key not in self._arrays.keys(): raise Exception("Your key is not in the dictionary")
+# 		if not numpy.isscalar(val): raise Exception("Your value is not scalar")
+# 		array = bytearray(self._arrays[key])
+# 		if hasattr(array, 'flat'): array.flat = val
+# 		else: array[ : ] = [ val ] * len(array) 
+
+# 	def __getitem__(self, key):
+# 		return self._arrays[key][-1]
+
+# 	def __len__(self):
+# 		return len(self._arrays)	
+
+# 	def get(self, key, default=None):
+# 		try: return self[ key ]
+# 		except KeyError: return default
+
+# 	def __iter__(self):
+# 		for key in self._arrays:
+# 			yield key
+
+# 	def __contains__(self, key):
+# 		return key in self._arrays
 	
-	def clear(self): return self._arrays.clear()
-	def copy(self): return self.scalarized
-	@classmethod
-	def fromkeys(cls, *p, **k): raise NotImplemented
-	def setdefault( self, *p, **k ): raise NotImplemented
-	def pop( self, key, default=Unspecified ):
-		if default is Unspecified: return self._arrays.pop(key)[-1]
-		else: return self._arrays.pop(key,[default])[-1]
-	def popitem( self ):
-		k, v = self._arrays.popitem()
-		return k, v[-1]
-
-	def get(self, key, default=None):
-		try: return self[ key ]
-		except KeyError: return default
-
+# 	__setattr__ = __setitem__
+# 	__getattr__ = __getitem__
+class BciStateDict(BciDict):
+# 	# def __init__(self, d={}, read_only=None, complete=None, block=None, lazy=None):
+# 	# 	self.__dict__['read_only'] = False  # set the read_only flag, and any attempts to change the element values silently fail (unless you know the trick of passing an extra arg to __setitem__)
+# 	# 	self.__dict__['complete'] = False   # set the complete flag, and any attempt to add new keys results in an exception
+# 	# 	self.__dict__['block'] = False      # set the block flag, and any attempt to change an element value will have to wait (in a hard loop) for the block to be unset, before succeeding and returning
+# 	# 	self.__dict__['lazy'] = False       # set the lazy flag, and elements can be addressed (and tab-completed) as if they were attributes (unless a genuine attribute with the same name overrides)
+# 	# 	self.__dict__['_bits'] = {}
+# 	# 	if isinstance(d, (list,tuple)): d = dict(d)
+# 	# 	for k,v in list(d.items()):
+# 	# 		dict.__setitem__(self, k, v)
 	def __getitem__(self, key):
-		return self._arrays[key][-1]
+		# returnVal = super(BciDict, self).__getitem__(key)[0]
+		# print(type(returnVal))
+		# print(self, "\n")
+		try:
+			return super(BciDict, self).__getitem__(key)[0]
 
-	def __setitem__(self,key, val):
+		except Exception as e:
+			print(e)
 
-		if key not in self._arrays.keys(): raise Exception("Your key is not in the dictionary")
-		if not numpy.isscalar(val): raise Exception("Your value is not scalar")
-		array = (self._arrays[key])
-		if hasattr(array, 'flat'): array.flat = val
-		else: array[ : ] = [ val ] * len(array) 
 
-	def __len__(self):
-		return len(self._arrays)	
 
-	def __iter__(self):
-		for key in self._arrays:
-			yield key
-
-	def __contains__(self, key):
-		return key in self._arrays
-	
-	__setattr__ = __setitem__
-	__getattr__ = __getitem__
 #################################################################
 ### A list which can be indexed by strings (and which, if nested,
 ### can also be indexed along multiple dimensions simultaneously,

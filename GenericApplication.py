@@ -205,7 +205,7 @@ class BciGenericApplication(Core.BciCore):
 		print('_Init super called')
 		
 		# if hasattr(self, '_callbacks'): self._callbacks.clear()
-		self._slave = self.stateArrays.read_only = (int(self.params['EnslavePython']) != 0)
+		self._slave = self.states.read_only = (int(self.params['EnslavePython']) != 0)
 		if self._slave:
 			print()
 			print()

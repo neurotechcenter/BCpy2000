@@ -86,7 +86,7 @@ class BciGenericSignalProcessing(Core.BciCore):
 
 	def _Initialize(self, in_signal_dim, out_signal_dim):
 		super(BciGenericSignalProcessing, self)._Initialize(in_signal_dim, out_signal_dim)    # superclass
-		self._slave = self.stateArrays.read_only = (int(self.params['EnslavePython']) != 0)
+		self._slave = self.states.read_only = (int(self.params['EnslavePython']) != 0)
 		if self._slave:
 			print()
 			print()
