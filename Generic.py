@@ -277,7 +277,7 @@ SUCH DAMAGES.
 	#############################################################
 			
 	def _set_states(self, states): # transfer states from C++ to Python before _Process
-		f = open("C:/setState.txt", "a+")
+		f = open("C:/Users/Brunnerlab/Documents/setState.txt", "a+")
 		f.write("#############################OPEN#############################################\n")
 		f.write(str(states))
 		f.write("\n\n")
@@ -344,7 +344,7 @@ SUCH DAMAGES.
 		self.packet_count += 1
 
 		s = dict(self.states) # makes a copy   TODO:  update _oldstates here instead of ^^^ ???
-		f = open("C:/getState.txt", "a+")
+		f = open("C:/Users/Brunnerlab/Documents/getState.txt", "a+")
 		f.write("\n\n#############################OPEN######################################")
 		f.write("\n\nDict:")
 		f.write(str(s) + '\n\n')
@@ -1771,15 +1771,24 @@ class BciDict(dict):  # a dict, but with super-powers
 	# 	else: raise AttributeError("'%s' object has no attribute '%s'"%(self.__class__.__name__, key))
 
 
-	def __setitem__(self, key, value, *args):
+	def __setitem__(self, keyindex, value, *args):
+		if type(keyindex) == tuple:
+			key = keyindex[0]
+			index = keyindex[1]
+		else:
+			key = keyindex
+			index = None
 		class DictClosed(Exception): pass
 		if self.__dict__.get('read_only') and len(args) == 0: return
 		if self.__dict__.get('complete') and key not in self: raise DictClosed('cannot add new key "'+key+'"')
 		while self.__dict__.get('block'): pass
 		bits = self.__dict__.get('_bits',{}).get(key)
 		if bits != None:
-			value = [value for i in range(len(super(BciDict, self).__getitem__(key)))]
-			if value[0] < 0 or value[0] >= 2 ** bits: raise ValueError('state overflow (illegal value %d for %d-bit state "%s")'%(value,bits,key))
+			if index:
+				value = [i if not idx == index else value for idx, i in enumerate(super(BciDict, self).__getitem__(key))]
+			else:
+				value = [value for i in range(len(super(BciDict, self).__getitem__(key)))]
+			# if value < 0 or value >= 2 ** bits: raise ValueError('state overflow (illegal value %d for %d-bit state "%s")'%(value,bits,key))
 		# divert here
 		dict.__setitem__(self,key,value)
 
@@ -1891,7 +1900,10 @@ class BciStateDict(BciDict):
 		# print(type(returnVal))
 		# print(self, "\n")
 		try:
-			return super(BciDict, self).__getitem__(key)[0]
+			if type(key) == tuple:
+				return super(BciDict, self).__getitem__(key[0])[key[1]]
+			else:
+				return super(BciDict, self).__getitem__(key)[0]
 
 		except Exception as e:
 			print(e)
