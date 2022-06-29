@@ -73,7 +73,7 @@ def updatestatemonitors(bci):
 	if not hasattr(bci, 'statemonitors'): bci.statemonitors = {}
 	for name,m in list(bci.statemonitors.items()):
 		if isinstance(m, statemonitor):
-			m.update(bci.states.get(name), t)
+			m.update(bci.states[name, 0], t)
 
 class statemonitor(object):
 	def __init__(self, name, position, showtime, params, func=None, pargs=(), kwargs={}):
