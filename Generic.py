@@ -277,10 +277,10 @@ SUCH DAMAGES.
 	#############################################################
 			
 	def _set_states(self, states): # transfer states from C++ to Python before _Process
-		f = open("C:/Users/Brunnerlab/Documents/setState.txt", "a+")
-		f.write("#############################OPEN#############################################\n")
-		f.write(str(states))
-		f.write("\n\n")
+		# f = open("C:/Users/Brunnerlab/Documents/setState.txt", "a+")
+		# f.write("#############################OPEN#############################################\n")
+		# f.write(str(states))
+		# f.write("\n\n")
 		self._lock.acquire('_set_states') # TODO ???
 		if len(self._oldstates) == 0:
 			self._oldstates = states.copy()
@@ -289,20 +289,20 @@ SUCH DAMAGES.
 			self.states.update( states )
 			
 		# if len(self.states) == 0:
-		# # 	# f.write("state Scalar length is 0\n")
-		# # 	# f.write(str(states))
+			# f.write("state Scalar length is 0\n")
+			# f.write(str(states))
 		# 	self.states = BciScalarDict(states)
 		self.states.block = True # TODO: ???
-		f.write("States dict of arrays:\n")
-		f.write(str(self.states))
-		f.write("\n\n")
+		# f.write("States dict of arrays:\n")
+		# f.write(str(self.states))
+		# f.write("\n\n")
 		
 		for i in list(states.keys()):
 			# if state coming from c++ is not listed in python, or if the state variable hasn't changed since last time, update python according to c++
 			decoded = numpy.frombuffer(states[i], dtype=numpy.uint32)
-			f.write("before decoded: ")
-			f.write(str(states[i]))
-			f.write("\n")
+			# f.write("before decoded: ")
+			# f.write(str(states[i]))
+			# f.write("\n")
 
 			# if decoded.size == 1: decoded = int( decoded.flat[ 0 ] )
 			# f.write("\nDecoded Flattened:")
@@ -311,9 +311,9 @@ SUCH DAMAGES.
 			# _old_states = numpy.frombuffer(self._oldstates[i], dtype=numpy.uint32)
 
 			# if (i not in self.states) or self._oldstates[i] == decoded:  # TODO:  "and the value coming from c++ is different...."?
-			f.write("After decoded: \n")
-			f.write(str(decoded))
-			f.write("\n\n")
+			# f.write("After decoded: \n")
+			# f.write(str(decoded))
+			# f.write("\n\n")
 			dict.__setitem__(self.states, i, decoded)     # bypasses 'read_only' and 'block'
 
 			# 	#self.states.__setitem__(i,states[i], 'really') # bypasses 'read_only'
@@ -327,10 +327,10 @@ SUCH DAMAGES.
 		self.states._bits = self.bits
 		self._oldstates = self.states.copy() # TODO: move this to ^^^ ??? probably not
 		self._lock.release('_set_states') # TODO ???
-		f.write("NewArrayDict:\n\n")
-		f.write(str(self.states))
-		f.write("\n#############################CLOSE#############################################\n")
-		f.close()
+		# f.write("NewArrayDict:\n\n")
+		# f.write(str(self.states))
+		# f.write("\n#############################CLOSE#############################################\n")
+		# f.close()
 		
 	#############################################################
 			
@@ -344,10 +344,10 @@ SUCH DAMAGES.
 		self.packet_count += 1
 
 		s = dict(self.states) # makes a copy   TODO:  update _oldstates here instead of ^^^ ???
-		f = open("C:/Users/Brunnerlab/Documents/getState.txt", "a+")
-		f.write("\n\n#############################OPEN######################################")
-		f.write("\n\nDict:")
-		f.write(str(s) + '\n\n')
+		# f = open("C:/Users/Brunnerlab/Documents/getState.txt", "a+")
+		# *("\n\n#############################OPEN######################################")
+		# f.write("\n\nDict:")
+		# f.write(str(s) + '\n\n')
 		# data = list(s)
 		# print(data)
 		# ByteArray = numpy.array(data, dtype='<u2')
@@ -360,16 +360,16 @@ SUCH DAMAGES.
 			# print(ByteArray)
 			# print(ByteArray.size())
 			s[k] = numpy.asarray(v, dtype='uint32').tobytes(order='C')
-			f.write("after to bytes: \n\n")
-			f.write(str(s[k]))
+			# f.write("after to bytes: \n\n")
+			# f.write(str(s[k]))
 		
 		# print(s)
 		self.states.block = False
 		self._handle_transients()
-		f.write("\n\nNewDict:")
-		f.write(str(s))
-		f.write("\n\n###############################CLOSE##########################################")
-		f.close()
+		# f.write("\n\nNewDict:")
+		# f.write(str(s))
+		# f.write("\n\n###############################CLOSE##########################################")
+		# f.close()
 		
 		return s
 	#############################################################

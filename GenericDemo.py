@@ -279,10 +279,10 @@ SUCH DAMAGES.
 	#############################################################
 			
 	def _set_states(self, states): # transfer states from C++ to Python before _Process
-		f = open("D:/setState.txt", "a+")
-		f.write("#############################OPEN#############################################\n")
-		f.write(str(states))
-		f.write("\n\n")
+		# f = open("D:/setState.txt", "a+")
+		# f.write("#############################OPEN#############################################\n")
+		# f.write(str(states))
+		# f.write("\n\n")
 		self._lock.acquire('_set_states') # TODO ???
 		if len(self._oldstates) == 0:
 			self._oldstates = states.copy()
@@ -292,17 +292,17 @@ SUCH DAMAGES.
 		# if len(self.stateArrays) == 0:
 		# 	self.stateArrays = BciScalarDict(states)
 		# if len(self.states) == 0:
-		# # 	# f.write("state Scalar length is 0\n")
-		# # 	# f.write(str(states))
+		# 	# f.write("state Scalar length is 0\n")
+		# 	# f.write(str(states))
 		# 	self.states = BciScalarDict(states)
 		self.stateArrays.block = True # TODO: ???
 	
-		f.write("\nstate Scalar:")
-		f.write(str(self.states))
-		f.write("\n\n")
-		f.write("stateArrays:")
-		f.write(str(self.stateArrays))
-		f.write("\n\n")
+		# f.write("\nstate Scalar:")
+		# f.write(str(self.states))
+		# f.write("\n\n")
+		# f.write("stateArrays:")
+		# f.write(str(self.stateArrays))
+		# f.write("\n\n")
 		
 		for i in list(states.keys()):
 			# if state coming from c++ is not listed in python, or if the state variable hasn't changed since last time, update python according to c++
@@ -334,13 +334,13 @@ SUCH DAMAGES.
 		self._lock.release('_set_states') # TODO ???
 		
 		# s = dict(self.states)
-		f.write("NewArrayDict:")
-		f.write(str(self.stateArrays))
-		f.write("\nNewScalarDict:")
-		f.write(str(self.states))
+		# f.write("NewArrayDict:")
+		# f.write(str(self.stateArrays))
+		# f.write("\nNewScalarDict:")
+		# f.write(str(self.states))
 		# f.write(self.stateArrays)
-		f.write("\n#############################CLOSE#############################################\n")
-		f.close()
+		# f.write("\n#############################CLOSE#############################################\n")
+		# f.close()
 		
 	#############################################################
 			
@@ -363,10 +363,10 @@ SUCH DAMAGES.
 		self.packet_count += 1
 		# h = dict(self.states)
 		s = dict(self.stateArrays) # makes a copy   TODO:  update _oldstates here instead of ^^^ ???
-		f = open("D:/getState.txt", "a+")
-		f.write("\n\n#########################################################################")
-		f.write("\n\nDict:")
-		f.write(str(s) + '\n\n')
+		# f = open("D:/getState.txt", "a+")
+		# f.write("\n\n#########################################################################")
+		# f.write("\n\nDict:")
+		# f.write(str(s) + '\n\n')
 		# data = list(s)
 		# print(data)
 		# ByteArray = numpy.array(data, dtype='<u2')
@@ -379,16 +379,16 @@ SUCH DAMAGES.
 			# print(ByteArray)
 			# print(ByteArray.size())
 			s[k] = numpy.asarray(v, dtype='uint32').tobytes(order='C')
-			f.write("after to bytes: \n\n")
-			f.write(str(s[k]))
+			# f.write("after to bytes: \n\n")
+			# f.write(str(s[k]))
 		
 		# print(s)
 		self.stateArrays.block = False
 		self._handle_transients()
-		f.write("\n\nNewDict:")
-		f.write(str(s))
-		f.write("\n\n###############################CLOSE##########################################")
-		f.close()
+		# f.write("\n\nNewDict:")
+		# f.write(str(s))
+		# f.write("\n\n###############################CLOSE##########################################")
+		# f.close()
 		
 		return s
 	#############################################################
