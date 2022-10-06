@@ -5,7 +5,7 @@ BCPy2000 is a system for building experimental brain-computer interface systems,
 ## Requirements
 
 - [Python 3.6.8](https://www.python.org/downloads/release/python-368/)
-- [BCI2000](www.bci2000.org)
+- [BCI2000](https://www.bci2000.org/)
 
 ### Installing
 
