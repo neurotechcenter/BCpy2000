@@ -242,6 +242,7 @@ class Text(object):
 		self._align_horz= align_horz
 		self._units='pix'
 		self._txtbox=psypy.TextBox2(self._window,text=self._text,
+				font='Open Sans'
 				color=self._font_color, 
 				size= None,
 				pos=self._pos,
