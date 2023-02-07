@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# 
+#
 #   $Id: CurrentRenderer.py 3445 2011-08-08 15:46:38Z jhill $
-#   
+#
 #   This file is part of the BCPy2000 framework, a Python framework for
 #   implementing modules that run on top of the BCI2000 <http://bci2000.org/>
 #   platform, for the purpose of realtime biosignal processing.
-# 
+#
 #   Copyright (C) 2007-11  Jeremy Hill, Thomas Schreiner,
 #                          Christian Puzicha, Jason Farquhar
-#   
+#
 #   bcpy2000@bci2000.org
-#   
+#
 #   The BCPy2000 framework is free software: you can redistribute it
 #   and/or modify it under the terms of the GNU General Public License
 #   as published by the Free Software Foundation, either version 3 of
@@ -40,19 +40,21 @@ phase, contain any symbols that were exported by the module in
 which the renderer subclass was defined. VisualStimuli is available
 here, and also as a global object in the namespace in which
 BciApplication.py is run.
-"""###
+"""  ###
 
 
-try:    from BCI2000PythonApplication    import VisualStimuli  # development copy
-except: from BCPy2000.GenericApplication import VisualStimuli  # installed copy
+try:
+    from BCI2000PythonApplication import VisualStimuli  # development copy
+except:
+    from BCPy2000.GenericApplication import VisualStimuli  # installed copy
+
 
 def get_screen():
-	"""
-	By the end of the Construct phase, a subclass of BciGenericRenderer
-	(by default, VisionEggRenderer) will have been defined instantiated.
-	The BciApplication instance can access this renderer instance as
-	self.screen, but the AppTools need a global interface to find it:
-	this function.
-	"""###
-	return VisualStimuli.screen
-	
+    """
+    By the end of the Construct phase, a subclass of BciGenericRenderer
+    (by default, VisionEggRenderer) will have been defined instantiated.
+    The BciApplication instance can access this renderer instance as
+    self.screen, but the AppTools need a global interface to find it:
+    this function.
+    """  ###
+    return VisualStimuli.screen

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# 
+#
 #   $Id: __init__.py 3445 2011-08-08 15:46:38Z jhill $
-#   
+#
 #   This file is part of the BCPy2000 framework, a Python framework for
 #   implementing modules that run on top of the BCI2000 <http://bci2000.org/>
 #   platform, for the purpose of realtime biosignal processing.
-# 
+#
 #   Copyright (C) 2007-11  Jeremy Hill, Thomas Schreiner,
 #                          Christian Puzicha, Jason Farquhar
-#   
+#
 #   bcpy2000@bci2000.org
-#   
+#
 #   The BCPy2000 framework is free software: you can redistribute it
 #   and/or modify it under the terms of the GNU General Public License
 #   as published by the Free Software Foundation, either version 3 of
