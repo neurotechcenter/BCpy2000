@@ -127,7 +127,7 @@ class PsychoPyRenderer(BciGenericRenderer):
 		if PsychoPyRenderer._currpsypywindow != None:
 			import psychopy.visual as psypy
 			for obj in objlist:
-				if isinstance(obj,psypy.TextBox):
+				if isinstance(obj,psypy.TextBox2) or isinstance(obj, psypy.TextBox):
 					obj.draw() #textbox call is different for some reason ... 
 				else:
 					obj.draw(PsychoPyRenderer._currpsypywindow)
@@ -210,7 +210,7 @@ class Text(object):
 	def __init__(self, window=None, text='Hello world', font_name=None, font_size=32, position=(10,10), font_color=(1, 1, 1, 0), anchor='lower left', on=True, smooth=True, color=(1, 1, 1)):
 		if BciGenericRenderer.subclass().screen is None:
 			raise Exception('Stimuli can only be created after the screen is initialized!')
-		# print("Screen Size: \n")
+		# print("Screen Size:")
 		# print(Map2PsypyCoords(BciGenericRenderer.subclass().screen,position))
 		# print("anchor: \n")
 		# print(anchor)
@@ -241,15 +241,12 @@ class Text(object):
 		self._align_vert= align_vert
 		self._align_horz= align_horz
 		self._units='pix'
-		self._txtbox=psypy.TextBox(self._window,text=self._text,
-				font_size=self._font_size,
-				font_color=self._font_color, 
-				size= self._size,
-				pos=self._pos, 
-				align_vert= self._align_vert,
-				align_horz= self._align_horz,
+		self._txtbox=psypy.TextBox2(self._window,text=self._text,
+				color=self._font_color, 
+				size= None,
+				pos=self._pos,
 				# grid_horz_justification='center',
-				units=self._units,opacity=1.0)
+				units=self._units)
 
 
 	@property

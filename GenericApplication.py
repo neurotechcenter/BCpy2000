@@ -852,7 +852,7 @@ class BciGenericApplication(Core.BciCore):
 				stim1 = VisualStimuli.Text(text=' ', font_color=color, position=((window_width/2)-150,window_height-100),  anchor='left', font_size=20)
 				stim2 = VisualStimuli.Text(text=' ', font_color=color, position=((window_width/2)-150,window_height-75), anchor='left', font_size=20)
 			except Exception as err:
-				print("cannot honour ShowSignalTime: VisionEggRenderer conventions for text implementation are not available" + err)
+				print("cannot honour ShowSignalTime: VisionEggRenderer conventions for text implementation are not available")
 			else:
 				stim1 = self.stimulus('_signalclock1', stim=stim1, z=100, on=True)
 				stim2 = self.stimulus('_signalclock2', stim=stim2, z=100, on=True)

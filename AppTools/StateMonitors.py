@@ -53,7 +53,7 @@ def addstatemonitor(bci,name,showtime=False,**kwargs):
 	mkwargs = kwargs.pop('kwargs',{})
 	nmon = len(list(bci.statemonitors.keys())) + 1
 	right,top=bci.screen.get_size()
-	m = statemonitor(name=name, position=(10,nmon*15), showtime=showtime, params=kwargs, func=mfunc, pargs=mpargs, kwargs=mkwargs)
+	m = statemonitor(name=name, position=(390,nmon*15), showtime=showtime, params=kwargs, func=mfunc, pargs=mpargs, kwargs=mkwargs)
 	# mp = getattr(m.value, 'parameters', m.value) # .parameters would be for VisionEgg objects
 	# mp.text = str(bci.states.get(name, 'no such state'))
 	bci.statemonitors[name] = m
